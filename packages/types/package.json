@@ -1,0 +1,55 @@
+{
+  "name": "@prodobit/types",
+  "version": "0.1.1",
+  "description": "Core types and validation schemas for Prodobit",
+  "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
+      "require": "./dist/src/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile && npm run generate-types",
+    "compile": "swc src -d dist --copy-files",
+    "generate-types": "tsc --emitDeclarationOnly --outDir dist/src",
+    "clean": "rm -rf dist",
+    "dev": "swc src -d dist --copy-files --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'Linting skipped - no linter configured'",
+    "test": "echo 'Tests skipped - no test framework configured'"
+  },
+  "dependencies": {
+    "arktype": "2.1.20"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.3",
+    "typescript": "^5.6.3"
+  },
+  "keywords": [
+    "prodobit",
+    "types",
+    "typescript",
+    "validation",
+    "arktype",
+    "schemas"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prodobit/prodobit.git",
+    "directory": "packages/types"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false
+}

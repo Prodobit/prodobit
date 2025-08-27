@@ -1,0 +1,52 @@
+{
+  "name": "prodobit",
+  "version": "0.1.1",
+  "description": "Open-core business application development platform",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@prodobit/types": "^0.1.1",
+    "@prodobit/config": "^0.1.1",
+    "@prodobit/database": "^0.1.1",
+    "@prodobit/sdk": "^0.1.1",
+    "@prodobit/react-sdk": "^0.1.1",
+    "@prodobit/server": "^0.1.1"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "biome check .",
+    "lint:fix": "biome check --fix .",
+    "format": "biome format --write .",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "clean": "turbo clean",
+    "db:generate": "turbo db:generate",
+    "db:migrate": "turbo db:migrate",
+    "db:studio": "turbo db:studio"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "tslib": "^2.8.1",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prodobit/prodobit.git"
+  },
+  "keywords": [
+    "erp",
+    "business",
+    "typescript",
+    "framework",
+    "open-source"
+  ]
+}
