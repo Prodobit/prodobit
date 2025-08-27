@@ -1,0 +1,45 @@
+{
+  "name": "@prodobit/config",
+  "version": "0.1.1",
+  "description": "Configuration management system for Prodobit framework",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "arktype": "2.1.20",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "configuration",
+    "config",
+    "typescript",
+    "prodobit"
+  ],
+  "author": "Prodobit Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prodobit/prodobit.git",
+    "directory": "packages/config"
+  }
+}
