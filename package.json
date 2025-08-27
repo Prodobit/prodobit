@@ -1,17 +1,17 @@
 {
   "name": "prodobit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Open-core business application development platform",
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-    "@prodobit/types": "^0.1.1",
-    "@prodobit/config": "^0.1.1",
-    "@prodobit/database": "^0.1.1",
-    "@prodobit/sdk": "^0.1.1",
-    "@prodobit/react-sdk": "^0.1.1",
-    "@prodobit/server": "^0.1.1"
+    "@prodobit/types": "^0.1.2",
+    "@prodobit/config": "^0.1.2",
+    "@prodobit/database": "^0.1.2",
+    "@prodobit/sdk": "^0.1.2",
+    "@prodobit/react-sdk": "^0.1.2",
+    "@prodobit/server": "^0.1.2"
   },
   "scripts": {
     "build": "turbo build",
@@ -24,7 +24,10 @@
     "clean": "turbo clean",
     "db:generate": "turbo db:generate",
     "db:migrate": "turbo db:migrate",
-    "db:studio": "turbo db:studio"
+    "db:studio": "turbo db:studio",
+    "publish:prep": "node scripts/publish-prep.js",
+    "publish:restore": "node scripts/publish-restore.js",
+    "publish:all": "node scripts/publish.js"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
