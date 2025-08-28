@@ -25,13 +25,16 @@ packages.forEach(pkg => {
       changed = true;
     }
 
-    // Replace workspace:* with actual versions
+    // Update prodobit package dependencies to current version
     ['dependencies', 'devDependencies', 'peerDependencies'].forEach(depType => {
       if (pkgJson[depType]) {
         Object.keys(pkgJson[depType]).forEach(dep => {
-          if (dep.startsWith('@prodobit/') && pkgJson[depType][dep] === 'workspace:*') {
-            pkgJson[depType][dep] = `^${currentVersion}`;
-            changed = true;
+          if (dep.startsWith('@prodobit/')) {
+            const targetVersion = `^${currentVersion}`;
+            if (pkgJson[depType][dep] === 'workspace:*' || pkgJson[depType][dep] !== targetVersion) {
+              pkgJson[depType][dep] = targetVersion;
+              changed = true;
+            }
           }
         });
       }
@@ -43,5 +46,23 @@ packages.forEach(pkg => {
     }
   }
 });
+
+// Update root package.json dependencies
+console.log('Updating root package.json dependencies...');
+let rootChanged = false;
+
+if (rootPkg.dependencies) {
+  Object.keys(rootPkg.dependencies).forEach(dep => {
+    if (dep.startsWith('@prodobit/') && rootPkg.dependencies[dep] !== `^${currentVersion}`) {
+      rootPkg.dependencies[dep] = `^${currentVersion}`;
+      rootChanged = true;
+    }
+  });
+}
+
+if (rootChanged) {
+  fs.writeFileSync('package.json', JSON.stringify(rootPkg, null, 2) + '\n');
+  console.log('✅ Updated root package.json dependencies');
+}
 
 console.log('✅ All packages prepared for publish');

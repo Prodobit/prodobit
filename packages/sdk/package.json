@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/sdk",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "TypeScript SDK for Prodobit API",
   "type": "module",
   "main": "./dist/src/index.js",
@@ -43,7 +43,7 @@
     "test": "echo 'Tests skipped - no test framework configured'"
   },
   "dependencies": {
-    "@prodobit/types": "^0.1.4",
+    "@prodobit/types": "^0.1.7",
     "arktype": "2.1.20"
   },
   "devDependencies": {
