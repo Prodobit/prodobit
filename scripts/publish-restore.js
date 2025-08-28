@@ -34,4 +34,23 @@ packages.forEach(pkg => {
   }
 });
 
+// Restore root package.json dependencies
+console.log('Restoring root package.json dependencies...');
+const rootPkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+let rootChanged = false;
+
+if (rootPkg.dependencies) {
+  Object.keys(rootPkg.dependencies).forEach(dep => {
+    if (dep.startsWith('@prodobit/') && rootPkg.dependencies[dep].startsWith('^')) {
+      rootPkg.dependencies[dep] = 'workspace:*';
+      rootChanged = true;
+    }
+  });
+}
+
+if (rootChanged) {
+  fs.writeFileSync('package.json', JSON.stringify(rootPkg, null, 2) + '\n');
+  console.log('✅ Restored root package.json dependencies');
+}
+
 console.log('✅ All workspace references restored');
