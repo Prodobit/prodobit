@@ -8,7 +8,8 @@ export const useAuth = () => {
   const queryClient = useQueryClient();
 
   const requestOTP = useMutation({
-    mutationFn: (email: string) => client.loginWithOTP(email),
+    mutationFn: ({ email, tenantId }: { email: string; tenantId?: string }) => 
+      client.loginWithOTP(email, tenantId),
   });
 
   const verifyOTP = useMutation({

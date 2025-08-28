@@ -137,19 +137,38 @@ export class AuthClient extends BaseClient {
   }
 
   // Auth state methods
-  async loginWithOTP(email: string): Promise<{
+  async loginWithOTP(email: string, tenantId?: string): Promise<{
     success: boolean;
     message: string;
     expiresAt?: string;
+    requiresTenantSelection?: boolean;
+    isNewUser?: boolean;
+    defaultTenantId?: string;
+    defaultTenantName?: string;
+    selectedTenantId?: string;
+    selectedTenantName?: string;
+    tenants?: Array<{
+      id: string;
+      name: string;
+      role: string;
+    }>;
   }> {
     const response = await this.requestOTP({
       email,
+      ...(tenantId && { tenantId }),
     });
 
     return {
       success: response.success,
       message: response.message,
       expiresAt: response.expiresAt,
+      requiresTenantSelection: response.requiresTenantSelection,
+      isNewUser: response.isNewUser,
+      defaultTenantId: response.defaultTenantId,
+      defaultTenantName: response.defaultTenantName,
+      selectedTenantId: response.selectedTenantId,
+      selectedTenantName: response.selectedTenantName,
+      tenants: response.tenants,
     };
   }
 

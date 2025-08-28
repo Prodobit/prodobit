@@ -77,7 +77,21 @@ export const requestOTPRequest = type({
 export const requestOTPResponse = type({
   success: "boolean",
   message: "string",
-  expiresAt: timestamp,
+  "expiresAt?": timestamp,
+  "requiresTenantSelection?": "boolean",
+  "isNewUser?": "boolean",
+  // Single tenant response
+  "defaultTenantId?": uuid,
+  "defaultTenantName?": "string",
+  // Selected tenant response  
+  "selectedTenantId?": uuid,
+  "selectedTenantName?": "string",
+  // Multiple tenant response
+  "tenants?": type({
+    id: uuid,
+    name: "string",
+    role: "string"
+  }).array(),
 });
 
 export const verifyOTPRequest = type({

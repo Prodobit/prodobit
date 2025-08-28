@@ -94,13 +94,43 @@ auth.post("/check-user", async (c) => {
     }
 
     if (userTenantMemberships.length === 1) {
-      // Single tenant - auto-select
+      // Single tenant - auto-select and send OTP
+      const defaultTenant = userTenantMemberships[0];
+      
+      // Generate and store OTP
+      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
+        expiresInMinutes: 10,
+      });
+
+      // Send OTP via email
+      const emailResult = await EmailService.sendOTPEmail({
+        email: body.email,
+        code,
+        expiresInMinutes: 10,
+      });
+
+      if (!emailResult.success) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "EMAIL_ERROR",
+              message: "Failed to send verification email",
+              details: emailResult.error,
+            },
+          },
+          500
+        );
+      }
+
       return c.json({
         success: true,
         requiresTenantSelection: false,
         isNewUser: false,
-        defaultTenantId: userTenantMemberships[0].membership.tenantId,
-        defaultTenantName: userTenantMemberships[0].tenant.name,
+        message: "Verification code sent to your email",
+        expiresAt: expiresAt.toISOString(),
+        defaultTenantId: defaultTenant.membership.tenantId,
+        defaultTenantName: defaultTenant.tenant.name,
       });
     }
 
@@ -141,37 +171,207 @@ auth.post("/request-otp", async (c) => {
       return c.json({ success: false, message: "Email is required" }, 400);
     }
 
-    // Generate and store OTP
-    const { code, expiresAt } = OTPManager.storeOTP(body.email, {
-      expiresInMinutes: 10,
-    });
+    const db = c.get("db");
 
-    // Send OTP via email
-    const emailResult = await EmailService.sendOTPEmail({
-      email: body.email,
-      code,
-      expiresInMinutes: 10,
-    });
+    // Check if tenantId is provided (second request with selected tenant)
+    if (body.tenantId) {
+      // Validate that user has access to this tenant
+      const userTenantMembership = await db
+        .select({
+          membership: tenantMemberships,
+          tenant: tenants,
+        })
+        .from(tenantMemberships)
+        .innerJoin(tenants, eq(tenantMemberships.tenantId, tenants.id))
+        .innerJoin(authMethods, eq(tenantMemberships.userId, authMethods.userId))
+        .where(
+          and(
+            eq(authMethods.provider, "email"),
+            eq(authMethods.providerId, body.email),
+            eq(tenantMemberships.tenantId, body.tenantId),
+            eq(tenantMemberships.status, "active")
+          )
+        )
+        .limit(1);
 
-    if (!emailResult.success) {
-      return c.json(
-        {
-          success: false,
-          error: {
-            code: "EMAIL_ERROR",
-            message: "Failed to send verification email",
-            details: emailResult.error,
+      if (userTenantMembership.length === 0) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "UNAUTHORIZED",
+              message: "Access to this tenant is not allowed",
+            },
           },
-        },
-        500
-      );
+          403
+        );
+      }
+
+      // Generate and store OTP
+      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
+        expiresInMinutes: 10,
+      });
+
+      // Send OTP via email
+      const emailResult = await EmailService.sendOTPEmail({
+        email: body.email,
+        code,
+        expiresInMinutes: 10,
+      });
+
+      if (!emailResult.success) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "EMAIL_ERROR",
+              message: "Failed to send verification email",
+              details: emailResult.error,
+            },
+          },
+          500
+        );
+      }
+
+      return c.json({
+        success: true,
+        message: "Verification code sent to your email",
+        expiresAt: expiresAt.toISOString(),
+        selectedTenantId: userTenantMembership[0].membership.tenantId,
+        selectedTenantName: userTenantMembership[0].tenant.name,
+      });
     }
 
+    // First request - check user's tenant status
+    const existingUser = await db
+      .select({
+        user: users,
+        authMethod: authMethods,
+      })
+      .from(authMethods)
+      .innerJoin(users, eq(authMethods.userId, users.id))
+      .where(
+        and(
+          eq(authMethods.provider, "email"),
+          eq(authMethods.providerId, body.email)
+        )
+      )
+      .limit(1);
+
+    if (existingUser.length === 0) {
+      // New user - send OTP for registration
+      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
+        expiresInMinutes: 10,
+      });
+
+      const emailResult = await EmailService.sendOTPEmail({
+        email: body.email,
+        code,
+        expiresInMinutes: 10,
+      });
+
+      if (!emailResult.success) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "EMAIL_ERROR",
+              message: "Failed to send verification email",
+              details: emailResult.error,
+            },
+          },
+          500
+        );
+      }
+
+      return c.json({
+        success: true,
+        requiresTenantSelection: true,
+        isNewUser: true,
+        message: "Verification code sent to your email",
+        expiresAt: expiresAt.toISOString(),
+        tenants: [],
+      });
+    }
+
+    // Existing user - get tenant memberships
+    const userTenantMemberships = await db
+      .select({
+        membership: tenantMemberships,
+        tenant: tenants,
+      })
+      .from(tenantMemberships)
+      .innerJoin(tenants, eq(tenantMemberships.tenantId, tenants.id))
+      .where(
+        and(
+          eq(tenantMemberships.userId, existingUser[0].user.id),
+          eq(tenantMemberships.status, "active")
+        )
+      );
+
+    if (userTenantMemberships.length === 0) {
+      // User exists but no tenant memberships
+      return c.json({
+        success: false,
+        error: {
+          code: "NO_TENANT_ACCESS",
+          message: "User has no active tenant memberships",
+        },
+      }, 403);
+    }
+
+    if (userTenantMemberships.length === 1) {
+      // Single tenant - auto-select and send OTP
+      const defaultTenant = userTenantMemberships[0];
+      
+      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
+        expiresInMinutes: 10,
+      });
+
+      const emailResult = await EmailService.sendOTPEmail({
+        email: body.email,
+        code,
+        expiresInMinutes: 10,
+      });
+
+      if (!emailResult.success) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "EMAIL_ERROR",
+              message: "Failed to send verification email",
+              details: emailResult.error,
+            },
+          },
+          500
+        );
+      }
+
+      return c.json({
+        success: true,
+        requiresTenantSelection: false,
+        isNewUser: false,
+        message: "Verification code sent to your email",
+        expiresAt: expiresAt.toISOString(),
+        defaultTenantId: defaultTenant.membership.tenantId,
+        defaultTenantName: defaultTenant.tenant.name,
+      });
+    }
+
+    // Multiple tenants - require selection, no OTP yet
     return c.json({
       success: true,
-      message: "Verification code sent to your email",
-      expiresAt: expiresAt.toISOString(),
+      requiresTenantSelection: true,
+      isNewUser: false,
+      message: "Please select your organization",
+      tenants: userTenantMemberships.map((item) => ({
+        id: item.membership.tenantId,
+        name: item.tenant.name,
+        role: item.membership.role,
+      })),
     });
+
   } catch (error) {
     console.error("Request OTP error:", error);
     return c.json(
@@ -179,7 +379,7 @@ auth.post("/request-otp", async (c) => {
         success: false,
         error: {
           code: "INTERNAL_ERROR",
-          message: "Failed to send verification code",
+          message: "Failed to process OTP request",
           details: error instanceof Error ? error.message : "Unknown error",
         },
       },
