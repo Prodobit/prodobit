@@ -1,0 +1,1 @@
+{"version":3,"file":"singleton.d.ts","sourceRoot":"","sources":["singleton.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,UAAU,CAAC;AAC1C,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,SAAS,CAAC;AAIpD,wBAAgB,0BAA0B,CAAC,MAAM,EAAE,oBAAoB,GAAG,cAAc,CAQvF;AAED,wBAAgB,4BAA4B,IAAI,IAAI,CAGnD"}
