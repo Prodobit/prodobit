@@ -42,6 +42,30 @@ export const coreModule: ModuleManifest = {
     "tenant_invitations:delete": ["admin"],
   },
   registerRoutes(app: Hono) {
+    // Health check / Welcome route
+    app.get("/", (c) => {
+      return c.json({
+        message: "🚀 Prodobit Server is running",
+        version: "1.0.0",
+        status: "ok",
+        endpoints: {
+          api: "/api/v1",
+          installation: "/api/v1/installation",
+          health: "/api/health"
+        }
+      });
+    });
+
+    // Public health endpoint (no auth required)
+    app.get("/api/health", (c) => {
+      return c.json({
+        status: "ok",
+        message: "Server is healthy",
+        timestamp: new Date().toISOString(),
+        version: "1.0.0"
+      });
+    });
+
     // Core API routes
     app.route("/api/v1/tenants", tenants);
     app.route("/api/v1/parties", parties);

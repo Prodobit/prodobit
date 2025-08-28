@@ -23,7 +23,7 @@
       "outputs": ["dist/**"]
     },
     "generate-types": {
-      "dependsOn": ["^generate-types", "compile"],
+      "dependsOn": ["^build", "compile"],
       "inputs": ["src/**/*.ts", "src/**/*.tsx", "tsconfig.json"],
       "outputs": ["dist/**/*.d.ts"]
     },

@@ -145,8 +145,8 @@ export class ProdobitClient {
     return this.auth.getMe(config);
   }
 
-  async loginWithOTP(email: string) {
-    return this.auth.loginWithOTP(email);
+  async loginWithOTP(email: string, tenantId?: string) {
+    return this.auth.loginWithOTP(email, tenantId);
   }
 
   async completeLogin(email: string, code: string, tenantId?: string) {
