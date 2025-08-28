@@ -4,9 +4,9 @@
     "outDir": "./dist/src",
     "rootDir": "./src",
     "noEmit": false,
+    "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": true,
-    "composite": true,
     "skipLibCheck": true
   },
   "include": ["src/**/*"],
