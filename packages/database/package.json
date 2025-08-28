@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/database",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Database schema and migrations with Drizzle ORM",
   "type": "module",
   "main": "./dist/src/index.js",
@@ -12,8 +12,8 @@
     }
   },
   "scripts": {
-    "build": "swc src -d dist --copy-files && tsc --emitDeclarationOnly",
-    "dev": "swc src -d dist --copy-files --watch",
+    "build": "tsdown && tsc --emitDeclarationOnly",
+    "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "db:generate": "pnpm build && drizzle-kit generate",
     "db:migrate": "pnpm build && drizzle-kit migrate",
@@ -22,12 +22,10 @@
   },
   "dependencies": {
     "decimal.js": "^10.6.0",
-    "drizzle-orm": "^0.37.0",
+    "drizzle-orm": "^0.44.5",
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "@swc/cli": "^0.7.8",
-    "@swc/core": "^1.13.3",
     "@types/pg": "^8.11.10",
     "drizzle-kit": "^0.31.4",
     "typescript": "^5.6.3"

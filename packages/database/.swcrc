@@ -1,1 +1,0 @@
-{"jsc":{"target":"es2022","parser":{"syntax":"typescript","tsx":false,"decorators":false},"transform":{"react":{"runtime":"automatic"}},"externalHelpers":false},"module":{"type":"es6"},"minify":false,"sourceMaps":true}

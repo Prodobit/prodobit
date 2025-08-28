@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/server",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Prodobit modular server core",
   "main": "./dist/src/index.js",
   "types": "./dist/src/index.d.ts",
@@ -12,31 +12,29 @@
   },
   "type": "module",
   "scripts": {
-    "build": "swc src -d dist --copy-files",
+    "build": "tsdown && tsc --emitDeclarationOnly",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
-    "@prodobit/config": "^0.2.0",
-    "@prodobit/database": "^0.2.0",
-    "@prodobit/types": "^0.2.0",
+    "@prodobit/config": "^0.2.2",
+    "@prodobit/database": "^0.2.2",
+    "@prodobit/types": "^0.2.2",
     "arktype": "2.1.20",
-    "bcryptjs": "^2.4.3",
+    "bcryptjs": "^3.0.2",
     "decimal.js": "^10.6.0",
-    "drizzle-orm": "^0.37.0",
+    "drizzle-orm": "^0.44.5",
     "hono": "^4.6.13",
     "jsonwebtoken": "^9.0.2",
     "postgres": "^3.4.5",
     "resend": "^6.0.1"
   },
   "devDependencies": {
-    "@swc/cli": "^0.7.8",
-    "@swc/core": "^1.13.3",
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^22.10.1",
+    "@types/node": "^24.3.0",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },

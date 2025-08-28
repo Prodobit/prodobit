@@ -1,33 +1,31 @@
 {
   "name": "@prodobit/react-sdk",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "React hooks and providers for Prodobit API",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/src/react-sdk/src/index.d.ts",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/src/react-sdk/src/index.d.ts"
+      "import": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
     }
   },
   "scripts": {
-    "build": "swc src -d dist --copy-files && tsc --emitDeclarationOnly --declaration",
-    "dev": "swc src -d dist --copy-files --watch",
+    "build": "tsdown && tsc --emitDeclarationOnly --declaration",
+    "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prodobit/config": "^0.2.0",
-    "@prodobit/sdk": "^0.2.0",
-    "@prodobit/types": "^0.2.0",
+    "@prodobit/config": "^0.2.2",
+    "@prodobit/sdk": "^0.2.2",
+    "@prodobit/types": "^0.2.2",
     "@tanstack/react-query": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^19.1.1"
   },
   "devDependencies": {
-    "@swc/cli": "^0.7.8",
-    "@swc/core": "^1.13.3",
     "@types/react": "^19.1.1",
     "typescript": "^5.6.3"
   },
