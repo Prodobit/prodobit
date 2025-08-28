@@ -1,17 +1,17 @@
 {
   "name": "prodobit",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Open-core business application development platform",
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-    "@prodobit/config": "^0.1.7",
-    "@prodobit/database": "^0.1.7",
-    "@prodobit/react-sdk": "^0.1.7",
-    "@prodobit/sdk": "^0.1.7",
-    "@prodobit/server": "^0.1.7",
-    "@prodobit/types": "^0.1.7"
+    "@prodobit/config": "^0.1.8",
+    "@prodobit/database": "^0.1.8",
+    "@prodobit/react-sdk": "^0.1.8",
+    "@prodobit/sdk": "^0.1.8",
+    "@prodobit/server": "^0.1.8",
+    "@prodobit/types": "^0.1.8"
   },
   "scripts": {
     "build": "turbo build",
