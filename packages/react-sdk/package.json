@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/react-sdk",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React hooks and providers for Prodobit API",
   "type": "module",
   "main": "./dist/src/index.js",
@@ -17,9 +17,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prodobit/config": "^0.1.7",
-    "@prodobit/sdk": "^0.1.7",
-    "@prodobit/types": "^0.1.7",
+    "@prodobit/config": "^0.1.8",
+    "@prodobit/sdk": "^0.1.8",
+    "@prodobit/types": "^0.1.8",
     "@tanstack/react-query": "^5.0.0"
   },
   "peerDependencies": {
