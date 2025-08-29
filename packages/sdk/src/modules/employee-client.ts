@@ -3,6 +3,7 @@ import type {
   CreateEmployeeRequest,
   UpdateEmployeeRequest,
   Response,
+  User,
 } from "@prodobit/types";
 import {
   createEmployeeRequest,
@@ -29,7 +30,7 @@ export class EmployeeClient extends BaseClient {
   async createEmployee(
     data: CreateEmployeeRequest,
     config?: RequestConfig
-  ): Promise<Response<{ employee: EmployeeEntity; user: any; message: string }>> {
+  ): Promise<Response<{ employee: EmployeeEntity; user: User; message: string }>> {
     const validatedData = validateRequest(createEmployeeRequest, data);
     return this.request("POST", "/api/v1/employees", validatedData, config);
   }

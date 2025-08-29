@@ -1,25 +1,27 @@
 {
   "name": "@prodobit/react-sdk",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "description": "React hooks and providers for Prodobit API",
   "type": "module",
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/src/index.js",
-      "types": "./dist/src/index.d.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
-    "build": "tsdown && tsc --emitDeclarationOnly --declaration",
+    "build": "pnpm build:js && pnpm build:types",
+    "build:js": "pnpm tsdown",
+    "build:types": "tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist --jsx react-jsx --target es2022 --module esnext --moduleResolution bundler --allowSyntheticDefaultImports --esModuleInterop --skipLibCheck",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prodobit/config": "^0.2.2",
-    "@prodobit/sdk": "^0.2.2",
-    "@prodobit/types": "^0.2.2",
+    "@prodobit/config": "workspace:*",
+    "@prodobit/sdk": "workspace:*",
+    "@prodobit/types": "workspace:*",
     "@tanstack/react-query": "^5.0.0"
   },
   "peerDependencies": {

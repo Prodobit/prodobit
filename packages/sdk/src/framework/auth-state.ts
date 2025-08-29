@@ -1,9 +1,9 @@
 // Authentication State Management Helpers
 
-import type { ProdobitClient } from '../client';
-import type { User, TokenInfo } from '@prodobit/types';
-import type { AuthState, AuthAction } from '../types';
-import { ProdobitError } from '../types';
+import type { TokenInfo, User } from "@prodobit/types";
+import type { ProdobitClient } from "../client";
+import type { AuthAction, AuthState } from "../types";
+import { ProdobitError } from "../types";
 
 /**
  * Initial authentication state
@@ -18,13 +18,12 @@ export const initialAuthState: AuthState = {
   tenantId: null,
 };
 
-
 /**
  * Authentication State Reducer
  */
-export function authReducer(state: AuthState, action: any): AuthState {
+export function authReducer(state: AuthState, action: AuthAction): AuthState {
   switch (action.type) {
-    case 'AUTH_START':
+    case "AUTH_START":
       return {
         ...state,
         isLoading: true,
@@ -32,7 +31,7 @@ export function authReducer(state: AuthState, action: any): AuthState {
         error: null,
       };
 
-    case 'AUTH_SUCCESS':
+    case "AUTH_SUCCESS":
       return {
         ...state,
         isLoading: false,
@@ -44,7 +43,7 @@ export function authReducer(state: AuthState, action: any): AuthState {
         error: null,
       };
 
-    case 'AUTH_ERROR':
+    case "AUTH_ERROR":
       return {
         ...state,
         isLoading: false,
@@ -53,15 +52,18 @@ export function authReducer(state: AuthState, action: any): AuthState {
         user: null,
         token: null,
         tenantId: null,
-        error: action.payload.error,
+        error:
+          typeof action.payload.error === "string"
+            ? new Error(action.payload.error)
+            : action.payload.error,
       };
 
-    case 'AUTH_LOGOUT':
+    case "AUTH_LOGOUT":
       return {
         ...initialAuthState,
       };
 
-    case 'TOKEN_REFRESH':
+    case "TOKEN_REFRESH":
       return {
         ...state,
         token: action.payload.token,
@@ -69,13 +71,13 @@ export function authReducer(state: AuthState, action: any): AuthState {
         error: (state.error as any)?.isAuthError?.() ? null : state.error, // Clear auth errors on successful refresh
       };
 
-    case 'SET_TENANT':
+    case "SET_TENANT":
       return {
         ...state,
         tenantId: action.payload.tenantId,
       };
 
-    case 'CLEAR_ERROR':
+    case "CLEAR_ERROR":
       return {
         ...state,
         isError: false,
@@ -109,7 +111,7 @@ export class AuthStateManager {
     this.listeners.add(listener);
     // Immediately call with current state
     listener(this.state);
-    
+
     return () => {
       this.listeners.delete(listener);
     };
@@ -128,11 +130,11 @@ export class AuthStateManager {
   private setState(action: AuthAction): void {
     const newState = authReducer(this.state, action);
     const hasChanged = newState !== this.state;
-    
+
     this.state = newState;
-    
+
     if (hasChanged) {
-      this.listeners.forEach(listener => listener(this.state));
+      this.listeners.forEach((listener) => listener(this.state));
     }
   }
 
@@ -141,9 +143,9 @@ export class AuthStateManager {
    */
   async initialize(): Promise<void> {
     const token = this.client.getTokenInfo();
-    
+
     if (!token) {
-      this.setState({ type: 'AUTH_LOGOUT' });
+      this.setState({ type: "AUTH_LOGOUT" });
       return;
     }
 
@@ -153,41 +155,45 @@ export class AuthStateManager {
       try {
         await this.refreshToken();
       } catch (error) {
-        this.setState({ 
-          type: 'AUTH_ERROR', 
-          payload: { 
-            error: error instanceof ProdobitError 
-              ? error 
-              : ProdobitError.unauthorized('Session expired')
-          }
+        this.setState({
+          type: "AUTH_ERROR",
+          payload: {
+            error:
+              error instanceof ProdobitError
+                ? error
+                : ProdobitError.unauthorized("Session expired"),
+          },
         });
         return;
       }
     }
 
     try {
-      this.setState({ type: 'AUTH_START' });
+      this.setState({ type: "AUTH_START" });
       const userResponse = await this.client.getCurrentUser();
-      
+
       if (userResponse.success && userResponse.data) {
         this.setState({
-          type: 'AUTH_SUCCESS',
+          type: "AUTH_SUCCESS",
           payload: {
             user: userResponse.data,
             token: this.client.getTokenInfo()!,
-          }
+          },
         });
       } else {
-        throw ProdobitError.unauthorized('Failed to get user info');
+        throw ProdobitError.unauthorized("Failed to get user info");
       }
     } catch (error) {
-      this.setState({ 
-        type: 'AUTH_ERROR', 
-        payload: { 
-          error: error instanceof ProdobitError 
-            ? error 
-            : ProdobitError.serverError('Authentication initialization failed')
-        }
+      this.setState({
+        type: "AUTH_ERROR",
+        payload: {
+          error:
+            error instanceof ProdobitError
+              ? error
+              : ProdobitError.serverError(
+                  "Authentication initialization failed"
+                ),
+        },
       });
     }
   }
@@ -195,31 +201,35 @@ export class AuthStateManager {
   /**
    * Login with OTP
    */
-  async loginWithOTP(email: string, tenantId?: string): Promise<{ success: boolean; expiresAt?: string; error?: string }> {
+  async loginWithOTP(
+    email: string,
+    tenantId?: string
+  ): Promise<{ success: boolean; expiresAt?: string; error?: string }> {
     try {
-      this.setState({ type: 'AUTH_START' });
-      
+      this.setState({ type: "AUTH_START" });
+
       const response = await this.client.requestOTP({ email, tenantId });
-      
+
       if (response.success) {
         return {
           success: true,
           expiresAt: response.expiresAt,
         };
       } else {
-        const error = ProdobitError.badRequest('Failed to send OTP');
-        this.setState({ type: 'AUTH_ERROR', payload: { error } });
+        const error = ProdobitError.badRequest("Failed to send OTP");
+        this.setState({ type: "AUTH_ERROR", payload: { error } });
         return {
           success: false,
           error: error.message,
         };
       }
     } catch (error) {
-      const authError = error instanceof ProdobitError 
-        ? error 
-        : ProdobitError.serverError('OTP request failed');
-      
-      this.setState({ type: 'AUTH_ERROR', payload: { error: authError } });
+      const authError =
+        error instanceof ProdobitError
+          ? error
+          : ProdobitError.serverError("OTP request failed");
+
+      this.setState({ type: "AUTH_ERROR", payload: { error: authError } });
       return {
         success: false,
         error: authError.message,
@@ -230,42 +240,47 @@ export class AuthStateManager {
   /**
    * Verify OTP and complete login
    */
-  async verifyOTP(email: string, code: string, tenantId?: string): Promise<{ success: boolean; user?: User; error?: string }> {
+  async verifyOTP(
+    email: string,
+    code: string,
+    tenantId?: string
+  ): Promise<{ success: boolean; user?: User; error?: string }> {
     try {
-      this.setState({ type: 'AUTH_START' });
-      
+      this.setState({ type: "AUTH_START" });
+
       const response = await this.client.verifyOTP({ email, code, tenantId });
-      
+
       if (response.success && response.data) {
         const token = this.client.getTokenInfo();
         if (token) {
           this.setState({
-            type: 'AUTH_SUCCESS',
+            type: "AUTH_SUCCESS",
             payload: {
               user: response.data.user,
               token,
-            }
+            },
           });
-          
+
           return {
             success: true,
             user: response.data.user,
           };
         }
       }
-      
-      const error = ProdobitError.unauthorized('OTP verification failed');
-      this.setState({ type: 'AUTH_ERROR', payload: { error } });
+
+      const error = ProdobitError.unauthorized("OTP verification failed");
+      this.setState({ type: "AUTH_ERROR", payload: { error } });
       return {
         success: false,
         error: error.message,
       };
     } catch (error) {
-      const authError = error instanceof ProdobitError 
-        ? error 
-        : ProdobitError.unauthorized('OTP verification failed');
-      
-      this.setState({ type: 'AUTH_ERROR', payload: { error: authError } });
+      const authError =
+        error instanceof ProdobitError
+          ? error
+          : ProdobitError.unauthorized("OTP verification failed");
+
+      this.setState({ type: "AUTH_ERROR", payload: { error: authError } });
       return {
         success: false,
         error: authError.message,
@@ -279,25 +294,26 @@ export class AuthStateManager {
   async refreshToken(): Promise<void> {
     try {
       const response = await this.client.refreshToken();
-      
+
       if (response.success && response.data) {
         const token = this.client.getTokenInfo();
         if (token) {
           this.setState({
-            type: 'TOKEN_REFRESH',
-            payload: { token }
+            type: "TOKEN_REFRESH",
+            payload: { token },
           });
           this.setupAutoRefresh(); // Reset refresh timer
         }
       } else {
-        throw ProdobitError.unauthorized('Token refresh failed');
+        throw ProdobitError.unauthorized("Token refresh failed");
       }
     } catch (error) {
-      const authError = error instanceof ProdobitError 
-        ? error 
-        : ProdobitError.unauthorized('Token refresh failed');
-      
-      this.setState({ type: 'AUTH_ERROR', payload: { error: authError } });
+      const authError =
+        error instanceof ProdobitError
+          ? error
+          : ProdobitError.unauthorized("Token refresh failed");
+
+      this.setState({ type: "AUTH_ERROR", payload: { error: authError } });
       throw authError;
     }
   }
@@ -310,10 +326,10 @@ export class AuthStateManager {
       await this.client.logout({ allDevices });
     } catch (error) {
       // Log error but still clear local state
-      console.warn('Logout API call failed:', error);
+      console.warn("Logout API call failed:", error);
     } finally {
       this.clearRefreshTimer();
-      this.setState({ type: 'AUTH_LOGOUT' });
+      this.setState({ type: "AUTH_LOGOUT" });
     }
   }
 
@@ -322,8 +338,8 @@ export class AuthStateManager {
    */
   setTenant(tenantId: string): void {
     this.setState({
-      type: 'SET_TENANT',
-      payload: { tenantId }
+      type: "SET_TENANT",
+      payload: { tenantId },
     });
   }
 
@@ -331,7 +347,7 @@ export class AuthStateManager {
    * Clear authentication error
    */
   clearError(): void {
-    this.setState({ type: 'CLEAR_ERROR' });
+    this.setState({ type: "CLEAR_ERROR" });
   }
 
   /**
@@ -339,19 +355,19 @@ export class AuthStateManager {
    */
   private setupAutoRefresh(): void {
     this.clearRefreshTimer();
-    
+
     const token = this.client.getTokenInfo();
     if (!token) return;
 
     // Refresh 5 minutes before expiration
-    const refreshTime = token.expiresAt.getTime() - Date.now() - (5 * 60 * 1000);
-    
+    const refreshTime = token.expiresAt.getTime() - Date.now() - 5 * 60 * 1000;
+
     if (refreshTime > 0) {
       this.refreshTimer = setTimeout(async () => {
         try {
           await this.refreshToken();
         } catch (error) {
-          console.warn('Automatic token refresh failed:', error);
+          console.warn("Automatic token refresh failed:", error);
           // Don't auto-logout on refresh failure - let user continue and handle it on next API call
         }
       }, refreshTime);
@@ -384,7 +400,10 @@ export const authHelpers = {
   /**
    * React hooks compatible state selector
    */
-  createStateSelector: <T>(selector: (state: AuthState) => T) => (state: AuthState): T => selector(state),
+  createStateSelector:
+    <T>(selector: (state: AuthState) => T) =>
+    (state: AuthState): T =>
+      selector(state),
 
   /**
    * Common state selectors
@@ -397,33 +416,43 @@ export const authHelpers = {
     token: (state: AuthState) => state.token,
     error: (state: AuthState) => state.error,
     tenantId: (state: AuthState) => state.tenantId,
-    
+
     // Derived state
     isReady: (state: AuthState) => !state.isLoading && !state.isError,
     hasUser: (state: AuthState) => state.isAuthenticated && !!state.user,
     hasTenant: (state: AuthState) => !!state.tenantId,
-    
+
     // Error type checks
     hasAuthError: (state: AuthState) => !!(state.error as any)?.isAuthError?.(),
-    hasNetworkError: (state: AuthState) => !!(state.error as any)?.isNetworkError?.(),
-    hasValidationError: (state: AuthState) => !!(state.error as any)?.isValidationError?.(),
+    hasNetworkError: (state: AuthState) =>
+      !!(state.error as any)?.isNetworkError?.(),
+    hasValidationError: (state: AuthState) =>
+      !!(state.error as any)?.isValidationError?.(),
   },
 
   /**
    * Action creators for external state management
    */
   actions: {
-    startAuth: (): AuthAction => ({ type: 'AUTH_START' }),
-    authSuccess: (user: User, token: TokenInfo): AuthAction => 
-      ({ type: 'AUTH_SUCCESS', payload: { user, token } }),
-    authError: (error: ProdobitError): AuthAction => 
-      ({ type: 'AUTH_ERROR', payload: { error } }),
-    logout: (): AuthAction => ({ type: 'AUTH_LOGOUT' }),
-    refreshToken: (token: TokenInfo): AuthAction => 
-      ({ type: 'TOKEN_REFRESH', payload: { token } }),
-    setTenant: (tenantId: string): AuthAction => 
-      ({ type: 'SET_TENANT', payload: { tenantId } }),
-    clearError: (): AuthAction => ({ type: 'CLEAR_ERROR' }),
+    startAuth: (): AuthAction => ({ type: "AUTH_START" }),
+    authSuccess: (user: User, token: TokenInfo): AuthAction => ({
+      type: "AUTH_SUCCESS",
+      payload: { user, token },
+    }),
+    authError: (error: ProdobitError): AuthAction => ({
+      type: "AUTH_ERROR",
+      payload: { error },
+    }),
+    logout: (): AuthAction => ({ type: "AUTH_LOGOUT" }),
+    refreshToken: (token: TokenInfo): AuthAction => ({
+      type: "TOKEN_REFRESH",
+      payload: { token },
+    }),
+    setTenant: (tenantId: string): AuthAction => ({
+      type: "SET_TENANT",
+      payload: { tenantId },
+    }),
+    clearError: (): AuthAction => ({ type: "CLEAR_ERROR" }),
   },
 };
 
@@ -453,7 +482,7 @@ export const tokenUtils = {
     const timeLeft = tokenUtils.getTimeUntilExpiration(token);
     const minutes = Math.floor(timeLeft / (60 * 1000));
     const hours = Math.floor(minutes / 60);
-    
+
     if (hours > 0) {
       return `${hours}h ${minutes % 60}m`;
     }
@@ -465,7 +494,7 @@ export const tokenUtils = {
    */
   decodeTokenPayload: (token: string): any | null => {
     try {
-      const payload = token.split('.')[1];
+      const payload = token.split(".")[1];
       return JSON.parse(atob(payload));
     } catch {
       return null;
