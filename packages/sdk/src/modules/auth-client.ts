@@ -178,7 +178,7 @@ export class AuthClient extends BaseClient {
     tenantId?: string
   ): Promise<{
     success: boolean;
-    user?: any;
+    user?: User;
     isNewUser?: boolean;
     error?: string;
   }> {

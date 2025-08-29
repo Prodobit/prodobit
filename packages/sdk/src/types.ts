@@ -1,6 +1,7 @@
+import { TokenInfo, User } from "@prodobit/types";
 import { type } from "arktype";
 
-// Re-export all common types from @prodobit/types as single source of truth  
+// Re-export all common types from @prodobit/types as single source of truth
 // (excluding framework types which are defined locally)
 export type {
   Address,
@@ -11,10 +12,6 @@ export type {
   // Asset types
   Asset,
   AssetType,
-  CreateAssetRequest,
-  CreateAssetTypeRequest,
-  UpdateAssetRequest,
-  UpdateAssetTypeRequest,
   // Attribute types
   Attribute,
   AttributeQuery,
@@ -23,42 +20,43 @@ export type {
   // BOM types
   Bom,
   BomComponent,
+  CloneBomRequest,
+  ContactMechanism,
+  CreateAssetRequest,
+  CreateAssetTypeRequest,
+  CreateAttributeRequest,
   CreateBomComponentRequest,
   CreateBomRequest,
-  UpdateBomRequest,
-  ContactMechanism,
-  CreateAttributeRequest,
+  CreateEcoRequest,
+  // Employee types from types package
+  CreateEmployeeRequest,
+  CreateItemCategoryRequest,
+  CreateItemRequest,
+  CreateLocationRequest,
+  CreateLocationTypeRequest,
   CreateOrganizationRequest,
   CreatePartyRequest,
   CreatePersonRequest,
+  CreateSalesOrderItemRequest,
+  CreateSalesOrderRequest,
   CreateTenantRequest,
   Customer,
   // ECO types
   Eco,
-  CreateEcoRequest,
-  UpdateEcoRequest,
-  RejectEcoRequest,
-  CloneBomRequest,
-  MrpRequirementsRequest,
   Employee,
   ErrorResponse,
   // Item types
   Item,
   ItemCategory,
-  CreateItemRequest,
-  CreateItemCategoryRequest,
-  UpdateItemRequest,
-  UpdateItemCategoryRequest,
+  // Enum types
+  ItemType,
   // Location types
   Location,
   LocationType,
-  CreateLocationRequest,
-  CreateLocationTypeRequest,
-  UpdateLocationRequest,
-  UpdateLocationTypeRequest,
   LoginResponse,
   LoginResponseData,
   LogoutRequest,
+  MrpRequirementsRequest,
   Organization,
   PaginatedResponse,
   Pagination,
@@ -67,6 +65,7 @@ export type {
   PartyRole,
   Person,
   RefreshTokenRequest,
+  RejectEcoRequest,
   RequestOTPRequest,
   RequestOTPResponse,
   ResendOTPRequest,
@@ -75,11 +74,6 @@ export type {
   // Sales types
   SalesOrder,
   SalesOrderItem,
-  CreateSalesOrderRequest,
-  CreateSalesOrderItemRequest,
-  UpdateSalesOrderRequest,
-  UpdateSalesOrderItemRequest,
-  UpdateSalesOrderStatusRequest,
   Session,
   SetAttributeValueRequest,
   Status,
@@ -89,21 +83,28 @@ export type {
   TenantMembership,
   TenantQuery,
   Timestamp,
+  // Base schemas for reference
+  TokenInfo,
+  UpdateAssetRequest,
+  UpdateAssetTypeRequest,
   UpdateAttributeRequest,
+  UpdateBomRequest,
+  UpdateEcoRequest,
+  UpdateEmployeeRequest,
+  UpdateItemCategoryRequest,
+  UpdateItemRequest,
+  UpdateLocationRequest,
+  UpdateLocationTypeRequest,
   UpdatePartyRequest,
+  UpdateSalesOrderItemRequest,
+  UpdateSalesOrderRequest,
+  UpdateSalesOrderStatusRequest,
   UpdateTenantRequest,
   // Auth types
   User,
   // Core types
   UUID,
   VerifyOTPRequest,
-  // Base schemas for reference
-  TokenInfo,
-  // Employee types from types package
-  CreateEmployeeRequest,
-  UpdateEmployeeRequest,
-  // Enum types
-  ItemType,
 } from "@prodobit/types";
 
 // SDK-specific arktype schemas
@@ -116,7 +117,7 @@ export const prodobitClientConfig = type({
 });
 
 export const requestConfig = type({
-  "headers?": "object", 
+  "headers?": "object",
   "timeout?": "number >= 0",
   "skipAuth?": "boolean",
 });
@@ -229,7 +230,7 @@ export const stockTransactionFilters = type({
   "limit?": "number >= 1",
 });
 
-// Framework API method filter schemas  
+// Framework API method filter schemas
 export const frameworkPartyFilters = partyFilters;
 
 export const frameworkSearchParams = type({
@@ -240,7 +241,7 @@ export const frameworkSearchParams = type({
 
 export const frameworkEmployeeFilters = type({
   "department?": "string",
-  "role?": "string", 
+  "role?": "string",
   "status?": "'active' | 'inactive' | 'on_leave'",
   "search?": "string",
   "page?": "number >= 1",
@@ -359,10 +360,12 @@ export const updateLotRequest = type({
 });
 
 // Query utility types
-export const queryPrimitive = type("string | number | boolean | Date | null | undefined");
+export const queryPrimitive = type(
+  "string | number | boolean | Date | null | undefined"
+);
 export const queryValue = queryPrimitive.or(queryPrimitive.array());
 
-// SDK-specific enum types  
+// SDK-specific enum types
 export const partyTypeEnum = type("'person' | 'organization'");
 export const roleTypeEnum = type("'customer' | 'supplier' | 'employee'");
 
@@ -370,10 +373,10 @@ export const roleTypeEnum = type("'customer' | 'supplier' | 'employee'");
 // Auth State Schema
 export const authState = type({
   isAuthenticated: "boolean",
-  isLoading: "boolean", 
+  isLoading: "boolean",
   isError: "boolean",
   "user?": "object | null",
-  "token?": "object | null", 
+  "token?": "object | null",
   "error?": "object | null",
   "tenantId?": "string | null",
 });
@@ -399,16 +402,35 @@ export const cacheConfig = type({
   },
   refetchOnWindowFocus: "boolean",
   refetchOnReconnect: "boolean",
-  "refetchInterval": "number >= 0 | false",
-  "retry": "number >= 0 | boolean",
+  refetchInterval: "number >= 0 | false",
+  retry: "number >= 0 | boolean",
   retryDelay: "number >= 0",
 });
 
-// Auth Actions Schema - simplified for arktype compatibility
-export const authAction = type({
-  type: "'AUTH_START' | 'AUTH_SUCCESS' | 'AUTH_ERROR' | 'AUTH_LOGOUT' | 'TOKEN_REFRESH' | 'SET_TENANT' | 'CLEAR_ERROR'",
-  "payload?": "object"
-});
+// Auth Actions Schema - TypeScript union types (arktype çok karmaşık oldu)
+export type AuthAction =
+  | { type: "AUTH_START" }
+  | {
+      type: "AUTH_SUCCESS";
+      payload: {
+        user: User; // User from @prodobit/types
+        token: TokenInfo; // TokenInfo from @prodobit/types
+      };
+    }
+  | {
+      type: "AUTH_ERROR";
+      payload: { error: string | Error | ProdobitError };
+    }
+  | { type: "AUTH_LOGOUT" }
+  | {
+      type: "TOKEN_REFRESH";
+      payload: { token: TokenInfo }; // TokenInfo from @prodobit/types
+    }
+  | {
+      type: "SET_TENANT";
+      payload: { tenantId: string };
+    }
+  | { type: "CLEAR_ERROR" };
 
 // Type exports from arktype schemas
 export type ProdobitClientConfig = typeof prodobitClientConfig.infer;
@@ -438,7 +460,8 @@ export type FrameworkSupplierFilters = typeof frameworkSupplierFilters.infer;
 export type FrameworkStockFilters = typeof frameworkStockFilters.infer;
 export type FrameworkLotFilters = typeof frameworkLotFilters.infer;
 export type FrameworkBomFilters = typeof frameworkBomFilters.infer;
-export type FrameworkBomComponentFilters = typeof frameworkBomComponentFilters.infer;
+export type FrameworkBomComponentFilters =
+  typeof frameworkBomComponentFilters.infer;
 
 // Additional type exports
 export type ContactInfo = typeof contactInfo.infer;
@@ -453,7 +476,7 @@ export type UpdateLotRequest = typeof updateLotRequest.infer;
 
 // Base type aliases for backward compatibility
 export type AssetBase = any; // Using Asset from @prodobit/types
-export type ItemBase = any; // Using Item from @prodobit/types  
+export type ItemBase = any; // Using Item from @prodobit/types
 export type LocationBase = any; // Using Location from @prodobit/types
 export type LotBase = any; // Lot type not yet defined in types package
 export type StockBase = any; // Stock type not yet defined in types package
@@ -466,7 +489,6 @@ export type RoleType = typeof roleTypeEnum.infer;
 // Framework type exports
 export type AuthState = typeof authState.infer;
 export type CacheConfig = typeof cacheConfig.infer;
-export type AuthAction = typeof authAction.infer;
 
 // SDK-specific error class
 export class ProdobitError extends Error {

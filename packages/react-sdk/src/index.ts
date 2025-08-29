@@ -1,4 +1,5 @@
 export { ProdobitProvider, useProdobitClient } from './providers/ProdobitProvider';
+export { ProdobitClient, getProdobitClientSingleton } from '@prodobit/sdk';
 
 export { useAuth, useCurrentUser } from './hooks/useAuth';
 export { 

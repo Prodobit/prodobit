@@ -1,18 +1,20 @@
 {
   "name": "@prodobit/database",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "description": "Database schema and migrations with Drizzle ORM",
   "type": "module",
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/src/index.d.ts",
-      "import": "./dist/src/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsdown && tsc --emitDeclarationOnly",
+    "build": "pnpm build:js && pnpm build:types",
+    "build:js": "pnpm tsdown",
+    "build:types": "tsc --emitDeclarationOnly",
     "dev": "tsdown --watch",
     "typecheck": "tsc --noEmit",
     "db:generate": "pnpm build && drizzle-kit generate",
@@ -30,6 +32,10 @@
     "drizzle-kit": "^0.31.4",
     "typescript": "^5.6.3"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
