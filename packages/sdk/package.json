@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/sdk",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "TypeScript SDK for Prodobit API",
   "type": "module",
   "main": "./dist/index.js",

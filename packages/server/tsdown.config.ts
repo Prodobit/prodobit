@@ -7,5 +7,5 @@ export default defineConfig({
   clean: true,
   target: 'es2022',
   minify: false,
-  dts: false, // tsc ile ayrı build yapacağız
+  dts: true,
 })
