@@ -8,7 +8,7 @@ export interface ModuleManifest {
   migrations: string[];
   permissions: Record<string, string[]>;
   dependencies?: string[];
-  registerRoutes: (app: Hono) => void;
+  registerRoutes: (app: Hono<{ Variables: ServerContext }>) => void;
   onEnable?: () => Promise<void>;
   onDisable?: () => Promise<void>;
 }
@@ -21,12 +21,27 @@ export interface ServerConfig {
     user: string;
     password: string;
     database: string;
-    ssl?: boolean;
+    ssl?: boolean | { rejectUnauthorized: boolean };
     max?: number;
   };
   cors?: {
     origin: string[];
     credentials?: boolean;
+  };
+  email?: {
+    provider?: "resend" | "smtp";
+    apiKey?: string;
+    smtp?: {
+      host: string;
+      port: number;
+      secure?: boolean;
+      auth?: {
+        user: string;
+        pass: string;
+      };
+    };
+    fromEmail?: string;
+    fromName?: string;
   };
   port?: number;
 }

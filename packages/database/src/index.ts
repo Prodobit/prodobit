@@ -8,18 +8,26 @@ export type DatabaseConfig = {
   user: string;
   password: string;
   database: string;
-  ssl?: boolean;
+  ssl?: boolean | { rejectUnauthorized: boolean };
   max?: number;
 };
 
 export function createDatabase(config: DatabaseConfig) {
+  let sslConfig: any = false;
+  
+  if (config.ssl === true) {
+    sslConfig = "require";
+  } else if (typeof config.ssl === "object") {
+    sslConfig = config.ssl;
+  }
+
   const client = postgres({
     host: config.host,
     port: config.port,
     user: config.user,
     password: config.password,
     database: config.database,
-    ssl: config.ssl ? "require" : false,
+    ssl: sslConfig,
     max: config.max ?? 10,
   });
 

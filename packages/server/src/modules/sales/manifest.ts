@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import type { ModuleManifest } from "../../framework/types.js";
+import type { ModuleManifest, ServerContext } from "../../framework/types.js";
 import { salesRoutes } from "./routes.js";
 
 export const salesModule: ModuleManifest = {
@@ -23,7 +23,7 @@ export const salesModule: ModuleManifest = {
   dependencies: [
     "core", // Auth, tenants, parties
   ],
-  registerRoutes(app: Hono) {
+  registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/sales-orders", salesRoutes);
   },
   async onEnable() {

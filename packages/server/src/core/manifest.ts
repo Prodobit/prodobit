@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import type { ModuleManifest } from "../framework/types.js";
+import type { Database } from "@prodobit/database";
 import { tenants } from "./tenants.js";
 import { parties } from "./parties.js";
 import { auth } from "./auth.js";
@@ -41,7 +42,7 @@ export const coreModule: ModuleManifest = {
     "tenant_invitations:update": ["admin"],
     "tenant_invitations:delete": ["admin"],
   },
-  registerRoutes(app: Hono) {
+  registerRoutes(app) {
     // Health check / Welcome route
     app.get("/", (c) => {
       return c.json({
@@ -57,12 +58,33 @@ export const coreModule: ModuleManifest = {
     });
 
     // Public health endpoint (no auth required)
-    app.get("/api/health", (c) => {
+    app.get("/health", async (c) => {
+      const db = c.get("db");
+      const enabledModules = c.get("enabledModules");
+      let dbHealthy = false;
+      let dbError = null;
+
+      try {
+        await db.$client`SELECT 1`;
+        dbHealthy = true;
+      } catch (error) {
+        dbError = error instanceof Error ? error.message : "Unknown database error";
+      }
+
+      const isHealthy = dbHealthy;
+
       return c.json({
-        status: "ok",
-        message: "Server is healthy",
+        status: isHealthy ? "ok" : "degraded",
+        message: isHealthy ? "Server is healthy" : "Server has issues",
         timestamp: new Date().toISOString(),
-        version: "1.0.0"
+        version: "1.0.0",
+        modules: Array.from(enabledModules),
+        checks: {
+          database: {
+            status: dbHealthy ? "ok" : "error",
+            ...(dbError && { error: dbError })
+          }
+        }
       });
     });
 

@@ -2,16 +2,16 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { createDatabase } from "@prodobit/database";
-import type { ModuleManifest, ServerConfig } from "./types.js";
+import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
 
 export class ModuleLoader {
-  private app: Hono;
+  private app: Hono<{ Variables: ServerContext }>;
   private db: ReturnType<typeof createDatabase>;
   private enabledModules: Set<string> = new Set();
   private moduleRegistry: Map<string, ModuleManifest> = new Map();
 
   constructor(private config: ServerConfig) {
-    this.app = new Hono();
+    this.app = new Hono<{ Variables: ServerContext }>();
     this.db = createDatabase(config.database);
     this.setupMiddleware();
     this.setupCoreRoutes();
@@ -39,15 +39,6 @@ export class ModuleLoader {
   }
 
   private setupCoreRoutes() {
-    // Health check
-    this.app.get("/health", (c) => {
-      return c.json({ 
-        status: "ok", 
-        timestamp: new Date().toISOString(),
-        modules: Array.from(this.enabledModules)
-      });
-    });
-
     // API info
     this.app.get("/api/v1", (c) => {
       const endpoints: Record<string, string> = {
@@ -150,7 +141,7 @@ export class ModuleLoader {
     }
   }
 
-  getApp(): Hono {
+  getApp(): Hono<{ Variables: ServerContext }> {
     return this.app;
   }
 

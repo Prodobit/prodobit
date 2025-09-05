@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/config",
-  "version": "0.2.6",
+  "version": "0.3.1",
   "description": "Configuration management system for Prodobit framework",
   "type": "module",
   "main": "dist/index.js",

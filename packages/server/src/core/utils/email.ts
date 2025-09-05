@@ -1,5 +1,5 @@
-import { Resend } from "resend";
-import type { CreateEmailOptions } from "resend";
+import type { EmailProvider } from "./email-provider.js";
+import { ResendEmailProvider } from "./resend-provider.js";
 
 export interface EmailOptions {
   to: string;
@@ -17,63 +17,57 @@ export interface OTPEmailOptions {
 
 export class EmailService {
   private static isDevelopment = process.env["NODE_ENV"] !== "production";
-  private static resend = new Resend(
-    process.env["RESEND_API_KEY"] || "re_erPysJ4U_NDz5vk61q1RV5qdkGXknmQAx"
-  );
+  private static provider: EmailProvider;
+  private static config = {
+    fromEmail: "no-reply@updates.prodobit.com",
+    fromName: "Prodobit"
+  };
 
-  // Email configuration
-  private static fromEmail =
-    process.env["FROM_EMAIL"] || "no-reply@updates.prodobit.com";
-  private static fromName = process.env["FROM_NAME"] || "Prodobit";
+  static initialize(emailConfig?: {
+    provider?: EmailProvider;
+    apiKey?: string;
+    fromEmail?: string;
+    fromName?: string;
+  }) {
+    this.config = {
+      fromEmail: emailConfig?.fromEmail || process.env["EMAIL_FROM_ADDRESS"] || process.env["FROM_EMAIL"] || "no-reply@updates.prodobit.com",
+      fromName: emailConfig?.fromName || process.env["EMAIL_FROM_NAME"] || process.env["FROM_NAME"] || "Prodobit"
+    };
+
+    if (emailConfig?.provider) {
+      this.provider = emailConfig.provider;
+    } else {
+      const apiKey = emailConfig?.apiKey || process.env["EMAIL_API_KEY"] || process.env["RESEND_API_KEY"];
+      if (!apiKey) {
+        throw new Error("EMAIL_API_KEY (or RESEND_API_KEY for backwards compatibility) is required for email functionality");
+      }
+      this.provider = new ResendEmailProvider(apiKey, this.config);
+    }
+  }
 
   /**
-   * Send email using Resend
+   * Send email using configured provider
    */
   static async sendEmail(options: EmailOptions): Promise<{
     success: boolean;
     messageId?: string;
     error?: string;
   }> {
+    if (!this.provider) {
+      throw new Error("EmailService not initialized. Call initialize() first.");
+    }
+
     try {
       if (this.isDevelopment) {
-        // Development mode - log AND send real email
         console.log("📧 EMAIL (Development Mode):");
         console.log("To:", options.to);
         console.log("Subject:", options.subject);
-        console.log("From:", `${this.fromName} <${this.fromEmail}>`);
+        console.log("From:", `${this.config.fromName} <${this.config.fromEmail}>`);
         console.log("Content:", options.html || options.text);
         console.log("─".repeat(50));
       }
 
-      // Send email via Resend - ensure we have either html or text
-      if (!options.html && !options.text) {
-        throw new Error("Either html or text content is required");
-      }
-
-      // Create properly typed email payload for Resend
-      const emailPayload: any = {
-        from: `${this.fromName} <${this.fromEmail}>`,
-        to: [options.to],
-        subject: options.subject,
-      };
-      
-      if (options.html) emailPayload.html = options.html;
-      if (options.text) emailPayload.text = options.text;
-      
-      const result = await this.resend.emails.send(emailPayload);
-
-      if (result.error) {
-        console.error("Resend error:", result.error);
-        return {
-          success: false,
-          error: result.error.message || "Failed to send email",
-        };
-      }
-
-      return {
-        success: true,
-        messageId: result.data?.id,
-      };
+      return await this.provider.sendEmail(options);
     } catch (error) {
       console.error("Email send error:", error);
       return {
