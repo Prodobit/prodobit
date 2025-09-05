@@ -12,6 +12,7 @@ import { inventoryModule } from "./modules/inventory/manifest.js";
 import { customerModule } from "./modules/customer/manifest.js";
 import { supplierModule } from "./modules/supplier/manifest.js";
 import { installationRoutes } from "./installation/routes.js";
+import { EmailService } from "./core/utils/email.js";
 
 export { coreModule } from "./core/manifest.js";
 export { employeeModule } from "./modules/employee/manifest.js";
@@ -38,6 +39,15 @@ export async function createServerApp(options: CreateServerAppOptions = {}) {
   // Get server configuration
   const baseConfig = configManager.getConfig();
   const config = { ...baseConfig, ...options.configOverrides };
+  
+  // Initialize email service if config provided
+  if (config.email) {
+    EmailService.initialize({
+      apiKey: config.email.apiKey,
+      fromEmail: config.email.fromEmail,
+      fromName: config.email.fromName
+    });
+  }
   
   const moduleLoader = new ModuleLoader(config);
 

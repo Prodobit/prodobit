@@ -21,7 +21,10 @@ export class RLSManager {
     }
   }
 
-  async withTenant<T>(tenantId: string, operation: () => Promise<T>): Promise<T> {
+  async withTenant<T>(
+    tenantId: string,
+    operation: () => Promise<T>
+  ): Promise<T> {
     await this.setTenantId(tenantId);
     try {
       return await operation();
@@ -36,14 +39,14 @@ export function tenantIsolationMiddleware() {
   return async (c: any, next: any) => {
     const user = c.get("user");
     const db = c.get("db");
-    
+
     if (user?.tenantId && db) {
       const rlsManager = new RLSManager(db);
       await rlsManager.setTenantId(user.tenantId);
-      
+
       // Store RLS manager in context for cleanup
       c.set("rlsManager", rlsManager);
-      
+
       try {
         await next();
       } finally {

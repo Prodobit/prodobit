@@ -9,12 +9,27 @@ export interface ServerConfig {
     user: string;
     password: string;
     database: string;
-    ssl?: boolean;
+    ssl?: boolean | { rejectUnauthorized: boolean };
     max?: number;
   };
   cors?: {
     origin: string[];
     credentials?: boolean;
+  };
+  email?: {
+    provider?: "resend" | "smtp";
+    apiKey?: string;
+    smtp?: {
+      host: string;
+      port: number;
+      secure?: boolean;
+      auth?: {
+        user: string;
+        pass: string;
+      };
+    };
+    fromEmail?: string;
+    fromName?: string;
   };
   port?: number;
 }
@@ -74,12 +89,18 @@ export class ServerConfigManager {
         user: config.database.connection.user,
         password: config.database.connection.password,
         database: config.database.connection.database,
-        ssl: config.database.connection.ssl,
+        ssl: this.getSSLConfig(config.database.connection.ssl),
         max: config.database.pool?.max,
       },
       cors: {
         origin: this.parseOrigins(config.server.cors.origins),
         credentials: config.server.cors.credentials,
+      },
+      email: {
+        apiKey: process.env["EMAIL_API_KEY"] || process.env["RESEND_API_KEY"],
+        fromEmail: process.env["EMAIL_FROM_ADDRESS"] || process.env["FROM_EMAIL"],
+        fromName: process.env["EMAIL_FROM_NAME"] || process.env["FROM_NAME"],
+        provider: (process.env["EMAIL_PROVIDER"] as "resend" | "smtp") || "resend",
       },
       port: config.server.server.port,
     };
@@ -93,6 +114,20 @@ export class ServerConfigManager {
       return ['*'];
     }
     return [origins];
+  }
+
+  private getSSLConfig(ssl?: boolean): boolean | { rejectUnauthorized: boolean } {
+    if (ssl === false) {
+      return false;
+    }
+    
+    // Production'da SSL enabled ama rejectUnauthorized false
+    if (process.env.NODE_ENV === "production") {
+      return { rejectUnauthorized: false };
+    }
+    
+    // Development'ta SSL false
+    return false;
   }
 
   // Module management delegation

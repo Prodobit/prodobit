@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import type { ModuleManifest } from "../../framework/types.js";
+import type { ModuleManifest, ServerContext } from "../../framework/types.js";
 import { manufacturingRoutes } from "./routes.js";
 
 export const manufacturingModule: ModuleManifest = {
@@ -39,7 +39,7 @@ export const manufacturingModule: ModuleManifest = {
   dependencies: [
     "core", // Auth, tenants, parties, items
   ],
-  registerRoutes(app: Hono) {
+  registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/boms", manufacturingRoutes.boms);
     app.route("/api/v1/ecos", manufacturingRoutes.ecos);
     app.route("/api/v1/routings", manufacturingRoutes.routings);

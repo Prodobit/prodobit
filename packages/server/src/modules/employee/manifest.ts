@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import type { ModuleManifest } from "../../framework/types.js";
+import type { ModuleManifest, ServerContext } from "../../framework/types.js";
 import { employeeRoutes } from "./routes.js";
 
 export const employeeModule: ModuleManifest = {
@@ -13,7 +13,7 @@ export const employeeModule: ModuleManifest = {
     "employee:read": ["admin", "hr", "manager"],
     "employee:write": ["admin", "hr"]
   },
-  registerRoutes(app: Hono) {
+  registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/employees", employeeRoutes);
   },
   async onEnable() {

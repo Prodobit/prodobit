@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import type { ModuleManifest } from "../../framework/types.js";
+import type { ModuleManifest, ServerContext } from "../../framework/types.js";
 import { inventoryRoutes } from "./routes.js";
 
 export const inventoryModule: ModuleManifest = {
@@ -30,7 +30,7 @@ export const inventoryModule: ModuleManifest = {
   dependencies: [
     "core", // Auth, tenants, parties, items
   ],
-  registerRoutes(app: Hono) {
+  registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/stocks", inventoryRoutes.stocks);
     app.route("/api/v1/lots", inventoryRoutes.lots);
     app.route("/api/v1/stock-levels", inventoryRoutes.stockLevels);
