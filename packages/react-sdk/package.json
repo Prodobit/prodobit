@@ -19,9 +19,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prodobit/config": "^0.3.2",
-    "@prodobit/sdk": "^0.3.2",
-    "@prodobit/types": "^0.3.2",
+    "@prodobit/config": "workspace:*",
+    "@prodobit/sdk": "workspace:*",
+    "@prodobit/types": "workspace:*",
     "@tanstack/react-query": "^5.0.0"
   },
   "peerDependencies": {
