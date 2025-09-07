@@ -42,7 +42,7 @@
     },
     "test": {
       "dependsOn": ["^build"],
-      "inputs": ["src/**/*.ts", "src/**/*.tsx", "test/**/*", "**/*.test.*"],
+      "inputs": ["src/**/*.ts", "src/**/*.tsx", "test/**/*", "**/*.test.*", "**/__tests__/**"],
       "outputs": ["coverage/**"]
     },
     "clean": {

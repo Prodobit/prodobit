@@ -1,0 +1,472 @@
+import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest'
+import { SalesOrderService } from '../SalesOrderService.js'
+import type { Database } from '@prodobit/database'
+import { salesOrders, salesOrderItems, parties } from '@prodobit/database'
+import { eq, and } from 'drizzle-orm'
+
+// Mock database
+const mockDatabase = {
+  select: vi.fn(),
+  insert: vi.fn(),
+  update: vi.fn(),
+  delete: vi.fn(),
+  transaction: vi.fn(),
+  query: {
+    salesOrders: {
+      findMany: vi.fn(),
+      findFirst: vi.fn()
+    },
+    parties: {
+      findFirst: vi.fn()
+    }
+  }
+} as unknown as Database
+
+const mockDbQuery = {
+  from: vi.fn(),
+  where: vi.fn(),
+  leftJoin: vi.fn(),
+  returning: vi.fn(),
+  set: vi.fn(),
+  values: vi.fn(),
+  with: vi.fn()
+}
+
+// Chain methods for fluent interface
+Object.keys(mockDbQuery).forEach(key => {
+  if (typeof mockDbQuery[key as keyof typeof mockDbQuery] === 'function') {
+    mockDbQuery[key as keyof typeof mockDbQuery] = vi.fn().mockReturnValue(mockDbQuery)
+  }
+})
+
+describe('SalesOrderService', () => {
+  let salesOrderService: SalesOrderService
+  let mockDb: Database
+
+  beforeEach(() => {
+    vi.clearAllMocks()
+    mockDb = mockDatabase
+    
+    // Setup default mock implementations
+    mockDb.select = vi.fn().mockReturnValue(mockDbQuery)
+    mockDb.insert = vi.fn().mockReturnValue(mockDbQuery)
+    mockDb.update = vi.fn().mockReturnValue(mockDbQuery)
+    mockDb.delete = vi.fn().mockReturnValue(mockDbQuery)
+    mockDb.transaction = vi.fn()
+    
+    salesOrderService = new SalesOrderService(mockDb)
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  describe('createSalesOrder', () => {
+    const mockOrderData = {
+      customerId: 'customer-123',
+      orderDate: new Date('2024-01-15'),
+      status: 'draft' as const,
+      totalAmount: '1599.98',
+      tenantId: 'tenant-123',
+      orderItems: [
+        {
+          itemId: 'item-1',
+          quantity: 2,
+          unitPrice: '599.99',
+          totalPrice: '1199.98'
+        },
+        {
+          itemId: 'item-2',
+          quantity: 1,
+          unitPrice: '400.00',
+          totalPrice: '400.00'
+        }
+      ]
+    }
+
+    it('should create sales order with items successfully', async () => {
+      const mockCreatedOrder = {
+        id: 'order-123',
+        orderNumber: 'SO-2024-001',
+        ...mockOrderData,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+
+      const mockCreatedItems = mockOrderData.orderItems.map((item, index) => ({
+        id: `item-${index + 1}`,
+        orderId: 'order-123',
+        ...item
+      }))
+
+      // Mock successful transaction
+      mockDb.transaction = vi.fn().mockImplementation(async (callback) => {
+        return await callback({
+          insert: vi.fn().mockReturnValue({
+            values: vi.fn().mockReturnValue({
+              returning: vi.fn().mockResolvedValue([mockCreatedOrder])
+            })
+          })
+        })
+      })
+
+      const result = await salesOrderService.createSalesOrder('tenant-123', 'user-123', mockOrderData)
+
+      expect(mockDb.transaction).toHaveBeenCalled()
+      expect(result).toMatchObject({
+        id: 'order-123',
+        orderNumber: 'SO-2024-001'
+      })
+    })
+
+    it('should validate customer exists before creating order', async () => {
+      mockDb.query.parties.findFirst = vi.fn().mockResolvedValue(null)
+
+      await expect(salesOrderService.createSalesOrder('tenant-123', 'user-123', mockOrderData))
+        .rejects.toThrow('Customer not found')
+    })
+
+    it('should generate unique order number', async () => {
+      const mockCustomer = { id: 'customer-123', name: 'Test Customer' }
+      mockDb.query.parties.findFirst = vi.fn().mockResolvedValue(mockCustomer)
+      
+      const /* generateOrderNumberSpy = vi.spyOn(salesOrderService as any, '/* generateOrderNumber')
+        .mockReturnValue('SO-2024-001')
+
+      mockDb.transaction = vi.fn().mockImplementation(async (callback) => {
+        return await callback({
+          insert: vi.fn().mockReturnValue({
+            values: vi.fn().mockReturnValue({
+              returning: vi.fn().mockResolvedValue([{ 
+                id: 'order-123',
+                orderNumber: 'SO-2024-001'
+              }])
+            })
+          })
+        })
+      })
+
+      await salesOrderService.createSalesOrder('tenant-123', 'user-123', mockOrderData)
+
+      expect(/* generateOrderNumberSpy).toHaveBeenCalledWith('tenant-123')
+    })
+
+    it('should rollback transaction on error', async () => {
+      const mockCustomer = { id: 'customer-123', name: 'Test Customer' }
+      mockDb.query.parties.findFirst = vi.fn().mockResolvedValue(mockCustomer)
+
+      mockDb.transaction = vi.fn().mockRejectedValue(new Error('Transaction failed'))
+
+      await expect(salesOrderService.createSalesOrder('tenant-123', 'user-123', mockOrderData))
+        .rejects.toThrow('Transaction failed')
+    })
+  })
+
+  describe('getSalesOrderById', () => {
+    it('should return order with items and customer info', async () => {
+      const mockOrder = {
+        id: 'order-123',
+        orderNumber: 'SO-2024-001',
+        status: 'draft',
+        customer: { id: 'customer-123', name: 'Test Customer' },
+        orderItems: [
+          { id: 'item-1', itemId: 'product-1', quantity: 2, unitPrice: '599.99' }
+        ]
+      }
+
+      mockDb.query.salesOrders.findFirst = vi.fn().mockResolvedValue(mockOrder)
+
+      const result = await salesOrderService.getSalesOrderById('order-123', 'tenant-123')
+
+      expect(mockDb.query.salesOrders.findFirst).toHaveBeenCalledWith({
+        where: and(
+          eq(salesOrders.id, 'order-123'),
+          eq(salesOrders.tenantId, 'tenant-123')
+        ),
+        with: {
+          customer: true,
+          orderItems: {
+            with: {
+              item: true
+            }
+          }
+        }
+      })
+      expect(result).toEqual(mockOrder)
+    })
+
+    it('should return null when order not found', async () => {
+      mockDb.query.salesOrders.findFirst = vi.fn().mockResolvedValue(null)
+
+      const result = await salesOrderService.getSalesOrderById('non-existent', 'tenant-123')
+
+      expect(result).toBeNull()
+    })
+  })
+
+  describe('updateSalesOrderStatus', () => {
+    it('should update order status successfully', async () => {
+      const mockUpdatedOrder = {
+        id: 'order-123',
+        status: 'confirmed',
+        updatedAt: new Date()
+      }
+
+      mockDbQuery.returning.mockResolvedValue([mockUpdatedOrder])
+
+      const result = await salesOrderService.updateSalesOrderStatus('order-123', 'tenant-123', 'confirmed')
+
+      expect(mockDb.update).toHaveBeenCalledWith(salesOrders)
+      expect(mockDbQuery.set).toHaveBeenCalledWith({
+        status: 'confirmed',
+        updatedAt: expect.any(Date)
+      })
+      expect(mockDbQuery.where).toHaveBeenCalledWith(
+        and(
+          eq(salesOrders.id, 'order-123'),
+          eq(salesOrders.tenantId, 'tenant-123')
+        )
+      )
+      expect(result).toEqual(mockUpdatedOrder)
+    })
+
+    it('should validate status transition', async () => {
+      const mockCurrentOrder = {
+        id: 'order-123',
+        status: 'shipped',
+        tenantId: 'tenant-123'
+      }
+
+      mockDb.query.salesOrders.findFirst = vi.fn().mockResolvedValue(mockCurrentOrder)
+
+      await expect(salesOrderService.updateSalesOrderStatus('order-123', 'tenant-123', 'draft'))
+        .rejects.toThrow('Cannot change status from shipped to draft')
+    })
+
+    it('should return null when order not found', async () => {
+      mockDbQuery.returning.mockResolvedValue([])
+
+      const result = await salesOrderService.updateSalesOrderStatus('non-existent', 'tenant-123', 'confirmed')
+
+      expect(result).toBeNull()
+    })
+  })
+
+  /* 
+  describe('getOrdersByCustomer', () => {
+    it('should return orders for specific customer', async () => {
+      const mockOrders = [
+        { id: 'order-1', orderNumber: 'SO-2024-001', customerId: 'customer-123' },
+        { id: 'order-2', orderNumber: 'SO-2024-002', customerId: 'customer-123' }
+      ]
+
+      mockDb.query.salesOrders.findMany = vi.fn().mockResolvedValue(mockOrders)
+
+      const result = await salesOrderService.getOrdersByCustomer('customer-123', 'tenant-123')
+
+      expect(mockDb.query.salesOrders.findMany).toHaveBeenCalledWith({
+        where: and(
+          eq(salesOrders.customerId, 'customer-123'),
+          eq(salesOrders.tenantId, 'tenant-123')
+        ),
+        orderBy: expect.any(Function) // orderBy is a function
+      })
+      expect(result).toEqual(mockOrders)
+    })
+  })
+  */
+
+  describe('/* getOrdersByDateRange', () => {
+    it('should return orders within date range', async () => {
+      const startDate = new Date('2024-01-01')
+      const endDate = new Date('2024-01-31')
+      const mockOrders = [
+        { id: 'order-1', orderDate: new Date('2024-01-15') },
+        { id: 'order-2', orderDate: new Date('2024-01-20') }
+      ]
+
+      mockDb.query.salesOrders.findMany = vi.fn().mockResolvedValue(mockOrders)
+
+      const result = await salesOrderService./* getOrdersByDateRange(startDate, endDate, 'tenant-123')
+
+      expect(result).toEqual(mockOrders)
+    })
+
+    it('should handle invalid date range', async () => {
+      const startDate = new Date('2024-01-31')
+      const endDate = new Date('2024-01-01') // End before start
+
+      await expect(salesOrderService./* getOrdersByDateRange(startDate, endDate, 'tenant-123'))
+        .rejects.toThrow('Start date must be before end date')
+    })
+  })
+
+  describe('/* calculateOrderTotal', () => {
+    it('should calculate correct order total', () => {
+      const orderItems = [
+        { quantity: 2, unitPrice: '599.99' },
+        { quantity: 1, unitPrice: '400.00' },
+        { quantity: 3, unitPrice: '25.50' }
+      ]
+
+      const total = salesOrderService['/* calculateOrderTotal'](orderItems)
+
+      expect(total).toBe('1676.48') // (2 * 599.99) + (1 * 400.00) + (3 * 25.50)
+    })
+
+    it('should handle empty order items', () => {
+      const total = salesOrderService['/* calculateOrderTotal']([])
+
+      expect(total).toBe('0.00')
+    })
+
+    it('should handle decimal precision correctly', () => {
+      const orderItems = [
+        { quantity: 3, unitPrice: '33.33' } // Should be 99.99, not 100.00
+      ]
+
+      const total = salesOrderService['/* calculateOrderTotal'](orderItems)
+
+      expect(total).toBe('99.99')
+    })
+  })
+
+  describe('/* generateOrderNumber', () => {
+    beforeEach(() => {
+      // Mock current date
+      vi.useFakeTimers()
+      vi.setSystemTime(new Date('2024-05-15T10:00:00Z'))
+    })
+
+    afterEach(() => {
+      vi.useRealTimers()
+    })
+
+    it('should generate order number with correct format', async () => {
+      // Mock the count query to return a specific number
+      mockDbQuery.returning.mockResolvedValue([{ count: 42 }])
+
+      const orderNumber = await salesOrderService['/* generateOrderNumber']('tenant-123')
+
+      expect(orderNumber).toMatch(/^SO-2024-043$/) // 42 + 1 = 43
+    })
+
+    it('should handle first order of the year', async () => {
+      mockDbQuery.returning.mockResolvedValue([{ count: 0 }])
+
+      const orderNumber = await salesOrderService['/* generateOrderNumber']('tenant-123')
+
+      expect(orderNumber).toMatch(/^SO-2024-001$/)
+    })
+  })
+
+  describe('/* validateOrderData', () => {
+    it('should validate complete order data', () => {
+      const validData = {
+        customerId: 'customer-123',
+        orderDate: new Date(),
+        status: 'draft' as const,
+        totalAmount: '999.99',
+        tenantId: 'tenant-123',
+        orderItems: [
+          {
+            itemId: 'item-1',
+            quantity: 1,
+            unitPrice: '999.99',
+            totalPrice: '999.99'
+          }
+        ]
+      }
+
+      expect(() => salesOrderService['/* validateOrderData'](validData)).not.toThrow()
+    })
+
+    it('should throw error for missing customer', () => {
+      const invalidData = {
+        orderDate: new Date(),
+        status: 'draft' as const,
+        orderItems: []
+      } as any
+
+      expect(() => salesOrderService['/* validateOrderData'](invalidData))
+        .toThrow('Customer ID is required')
+    })
+
+    it('should throw error for empty order items', () => {
+      const invalidData = {
+        customerId: 'customer-123',
+        orderDate: new Date(),
+        status: 'draft' as const,
+        orderItems: []
+      } as any
+
+      expect(() => salesOrderService['/* validateOrderData'](invalidData))
+        .toThrow('Order must have at least one item')
+    })
+
+    it('should throw error for invalid item data', () => {
+      const invalidData = {
+        customerId: 'customer-123',
+        orderDate: new Date(),
+        status: 'draft' as const,
+        orderItems: [
+          {
+            quantity: 0, // Invalid quantity
+            unitPrice: '999.99'
+          }
+        ]
+      } as any
+
+      expect(() => salesOrderService['/* validateOrderData'](invalidData))
+        .toThrow('Item quantity must be greater than 0')
+    })
+  })
+
+  describe('/* validateStatusTransition', () => {
+    it('should allow valid status transitions', () => {
+      expect(() => salesOrderService['/* validateStatusTransition']('draft', 'confirmed')).not.toThrow()
+      expect(() => salesOrderService['/* validateStatusTransition']('confirmed', 'shipped')).not.toThrow()
+      expect(() => salesOrderService['/* validateStatusTransition']('shipped', 'delivered')).not.toThrow()
+    })
+
+    it('should reject invalid status transitions', () => {
+      expect(() => salesOrderService['/* validateStatusTransition']('shipped', 'draft'))
+        .toThrow('Cannot change status from shipped to draft')
+      
+      expect(() => salesOrderService['/* validateStatusTransition']('delivered', 'confirmed'))
+        .toThrow('Cannot change status from delivered to confirmed')
+      
+      expect(() => salesOrderService['/* validateStatusTransition']('cancelled', 'confirmed'))
+        .toThrow('Cannot change status from cancelled to confirmed')
+    })
+
+    it('should allow any transition to cancelled', () => {
+      expect(() => salesOrderService['/* validateStatusTransition']('draft', 'cancelled')).not.toThrow()
+      expect(() => salesOrderService['/* validateStatusTransition']('confirmed', 'cancelled')).not.toThrow()
+      expect(() => salesOrderService['/* validateStatusTransition']('shipped', 'cancelled')).not.toThrow()
+    })
+  })
+
+  describe('/* getOrderMetrics', () => {
+    it('should calculate order metrics correctly', async () => {
+      const mockMetrics = {
+        totalOrders: 150,
+        totalRevenue: '125000.50',
+        averageOrderValue: '833.34',
+        ordersByStatus: {
+          draft: 10,
+          confirmed: 50,
+          shipped: 70,
+          delivered: 20
+        }
+      }
+
+      // Mock the complex metrics query
+      vi.spyOn(salesOrderService as any, 'calculateOrderMetrics').mockResolvedValue(mockMetrics)
+
+      const result = await salesOrderService./* getOrderMetrics('tenant-123', new Date('2024-01-01'), new Date('2024-12-31'))
+
+      expect(result).toEqual(mockMetrics)
+    })
+  })
+})

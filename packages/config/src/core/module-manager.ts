@@ -195,9 +195,11 @@ export class ModuleManager {
       }
 
       // Check dependencies exist
-      for (const depId of module.dependencies) {
-        if (!moduleIds.has(depId)) {
-          errors.push(`Module ${module.id} has invalid dependency: ${depId}`);
+      if (module.dependencies) {
+        for (const depId of module.dependencies) {
+          if (!moduleIds.has(depId)) {
+            errors.push(`Module ${module.id} has invalid dependency: ${depId}`);
+          }
         }
       }
 
@@ -221,7 +223,7 @@ export class ModuleManager {
 
   private buildDependencyGraph(modules: ModuleDefinition[]): void {
     for (const module of modules) {
-      const deps = new Set(module.dependencies);
+      const deps = new Set(module.dependencies || []);
       this.dependencyGraph.set(module.id, deps);
 
       // Build reverse dependency graph
@@ -292,7 +294,7 @@ export class ModuleManager {
       const newPath = [...path, moduleId];
 
       const module = modules.find(m => m.id === moduleId);
-      if (module) {
+      if (module && module.dependencies) {
         for (const depId of module.dependencies) {
           visit(depId, newPath);
         }

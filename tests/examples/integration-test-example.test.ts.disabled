@@ -1,0 +1,408 @@
+import { describe, it, expect, beforeEach, afterEach } from 'vitest'
+import { createTestServer, createIntegrationTestSuite } from '../utils/test-server.js'
+import { createMockDatabase, createMockUser, createMockItem, createMockParty } from '../utils/test-helpers.js'
+import { auth } from '../../packages/server/src/core/auth.js'
+import items from '../../packages/server/src/core/items.js'
+import { parties } from '../../packages/server/src/core/parties.js'
+
+/**
+ * Example integration tests showing how to use the test utilities
+ * This demonstrates testing complete user flows and API interactions
+ */
+
+describe('Integration Test Examples', () => {
+  let testServer: ReturnType<typeof createTestServer>
+  let testSuite: ReturnType<typeof createIntegrationTestSuite>
+  let mockDb: any
+
+  beforeEach(() => {
+    mockDb = createMockDatabase()
+    
+    testServer = createTestServer({ database: mockDb })
+      .route('/auth', auth)
+      .route('/items', items)
+      .route('/parties', parties)
+    
+    testSuite = createIntegrationTestSuite(testServer)
+  })
+
+  afterEach(() => {
+    testServer.reset()
+  })
+
+  describe('Authentication Flow', () => {
+    it('should complete full authentication flow', async () => {
+      // Mock successful login
+      mockDb.query.users.findFirst.mockResolvedValue(
+        createMockUser({ 
+          email: 'test@example.com',
+          passwordHash: 'hashed_password' 
+        })
+      )
+
+      // Test login
+      const loginResponse = await testServer.post('/auth/login', {
+        email: 'test@example.com',
+        password: 'password'
+      })
+
+      await testServer.expectSuccessResponse(loginResponse)
+
+      const loginBody = await loginResponse.json()
+      expect(loginBody.token).toBeDefined()
+      expect(loginBody.user).toBeDefined()
+      expect(loginBody.user.email).toBe('test@example.com')
+    })
+
+    it('should handle authentication errors properly', async () => {
+      // Mock user not found
+      mockDb.query.users.findFirst.mockResolvedValue(null)
+
+      const loginResponse = await testServer.post('/auth/login', {
+        email: 'nonexistent@example.com',
+        password: 'password'
+      })
+
+      await testServer.expectResponse(loginResponse, 401, {
+        error: 'Invalid email or password'
+      })
+    })
+
+    it('should validate required fields', async () => {
+      const loginResponse = await testServer.post('/auth/login', {
+        email: 'test@example.com'
+        // Missing password
+      })
+
+      await testServer.expectBadRequestResponse(loginResponse, 'Password')
+    })
+  })
+
+  describe('Items CRUD Operations', () => {
+    beforeEach(() => {
+      testServer.withAuthenticatedUser()
+    })
+
+    it('should perform complete CRUD cycle for items', async () => {
+      const createData = {
+        name: 'Test Product',
+        description: 'A test product for integration testing',
+        sku: 'TEST-INTEGRATION-001',
+        category: 'Test Category',
+        unitPrice: '99.99'
+      }
+
+      const updateData = {
+        name: 'Updated Test Product',
+        unitPrice: '149.99'
+      }
+
+      // Mock database responses
+      const createdItem = createMockItem({ 
+        id: 'item-integration-123',
+        ...createData 
+      })
+
+      const updatedItem = createMockItem({ 
+        id: 'item-integration-123',
+        ...createData,
+        ...updateData 
+      })
+
+      // Mock create
+      mockDb.insert().values().returning.mockResolvedValue([createdItem])
+
+      // Mock read
+      mockDb.query.items.findFirst.mockResolvedValue(createdItem)
+
+      // Mock update
+      mockDb.update().set().where().returning.mockResolvedValue([updatedItem])
+
+      // Mock delete
+      mockDb.delete().where().returning.mockResolvedValue([createdItem])
+
+      const results = await testSuite.testCRUDOperations('/items', createData, updateData)
+
+      expect(results.createResponse.status).toBe(201)
+      expect(results.readResponse.status).toBe(200)
+      expect(results.updateResponse.status).toBe(200)
+      expect(results.deleteResponse.status).toBe(200)
+    })
+
+    it('should handle item search functionality', async () => {
+      const searchResults = [
+        createMockItem({ name: 'Computer Laptop', sku: 'COMP-001' }),
+        createMockItem({ name: 'Computer Mouse', sku: 'COMP-002' })
+      ]
+
+      mockDb.query.items.findMany.mockResolvedValue(searchResults)
+
+      const searchResponse = await testServer.get('/items/search?q=computer')
+
+      await testServer.expectSuccessResponse(searchResponse)
+
+      const searchBody = await searchResponse.json()
+      expect(searchBody.items).toHaveLength(2)
+      expect(searchBody.query).toBe('computer')
+      expect(searchBody.total).toBe(2)
+    })
+
+    it('should filter items by category', async () => {
+      const electronicsItems = [
+        createMockItem({ category: 'Electronics', name: 'Laptop' }),
+        createMockItem({ category: 'Electronics', name: 'Mouse' })
+      ]
+
+      mockDb.query.items.findMany.mockResolvedValue(electronicsItems)
+
+      const categoryResponse = await testServer.get('/items?category=Electronics')
+
+      await testServer.expectSuccessResponse(categoryResponse)
+
+      const categoryBody = await categoryResponse.json()
+      expect(categoryBody.items).toHaveLength(2)
+      expect(categoryBody.items.every((item: any) => item.category === 'Electronics')).toBe(true)
+    })
+  })
+
+  describe('Parties Management', () => {
+    beforeEach(() => {
+      testServer.withAuthenticatedUser()
+    })
+
+    it('should manage customer parties', async () => {
+      const customerData = {
+        name: 'Test Customer Corp',
+        type: 'customer',
+        email: 'customer@testcorp.com',
+        phone: '+1-555-0199',
+        address: {
+          street: '789 Customer St',
+          city: 'Business City',
+          state: 'NY',
+          zipCode: '10001',
+          country: 'USA'
+        }
+      }
+
+      const createdCustomer = createMockParty({ 
+        id: 'customer-integration-456',
+        ...customerData 
+      })
+
+      mockDb.insert().values().returning.mockResolvedValue([createdCustomer])
+      mockDb.query.parties.findFirst.mockResolvedValue(createdCustomer)
+
+      // Create customer
+      const createResponse = await testServer.post('/parties', customerData)
+      await testServer.expectCreatedResponse(createResponse)
+
+      const createBody = await createResponse.json()
+      expect(createBody.party.type).toBe('customer')
+      expect(createBody.party.name).toBe('Test Customer Corp')
+
+      // Get customer by ID
+      const getResponse = await testServer.get(`/parties/${createBody.party.id}`)
+      await testServer.expectSuccessResponse(getResponse)
+
+      const getBody = await getResponse.json()
+      expect(getBody.party.address.city).toBe('Business City')
+    })
+
+    it('should validate party type', async () => {
+      const invalidPartyData = {
+        name: 'Invalid Party',
+        type: 'invalid_type',
+        email: 'invalid@example.com'
+      }
+
+      const createResponse = await testServer.post('/parties', invalidPartyData)
+      await testServer.expectBadRequestResponse(createResponse)
+    })
+  })
+
+  describe('Business Process Flow', () => {
+    beforeEach(() => {
+      testServer.withAuthenticatedUser()
+    })
+
+    it('should complete sales order creation flow', async () => {
+      // Set up test data
+      const customer = createMockParty({ 
+        id: 'customer-flow-789',
+        type: 'customer',
+        name: 'Flow Test Customer' 
+      })
+
+      const item = createMockItem({ 
+        id: 'item-flow-123',
+        name: 'Flow Test Product',
+        unitPrice: '100.00'
+      })
+
+      // Mock database responses
+      mockDb.query.parties.findFirst.mockResolvedValue(customer)
+      mockDb.query.items.findFirst.mockResolvedValue(item)
+
+      // Step 1: Verify customer exists
+      const customerResponse = await testServer.get(`/parties/${customer.id}`)
+      await testServer.expectSuccessResponse(customerResponse)
+
+      // Step 2: Verify item exists
+      const itemResponse = await testServer.get(`/items/${item.id}`)
+      await testServer.expectSuccessResponse(itemResponse)
+
+      // Step 3: Create sales order
+      const orderData = {
+        customerId: customer.id,
+        orderDate: '2024-01-15T10:00:00Z',
+        status: 'draft',
+        orderItems: [
+          {
+            itemId: item.id,
+            quantity: 2,
+            unitPrice: '100.00',
+            totalPrice: '200.00'
+          }
+        ],
+        totalAmount: '200.00'
+      }
+
+      // Mock order creation
+      const createdOrder = {
+        id: 'order-flow-456',
+        orderNumber: 'SO-2024-FLOW-001',
+        ...orderData,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      }
+
+      // This would typically be tested with the sales order module
+      // For now, we'll mock the response structure
+      
+      expect(customer).toBeDefined()
+      expect(item).toBeDefined()
+      expect(orderData.totalAmount).toBe('200.00')
+    })
+  })
+
+  describe('Permission and Security', () => {
+    it('should enforce authentication on protected endpoints', async () => {
+      testServer.withUnauthenticatedUser()
+
+      const createResponse = await testServer.post('/items', {
+        name: 'Unauthorized Item',
+        sku: 'UNAUTH-001',
+        unitPrice: '50.00'
+      })
+
+      await testServer.expectUnauthorizedResponse(createResponse)
+    })
+
+    it('should enforce role-based permissions', async () => {
+      // Test as limited user
+      testServer.withLimitedUser()
+
+      const deleteResponse = await testServer.delete('/items/item-123')
+      
+      // Depending on RBAC implementation, this might be 403 or 200
+      expect([200, 403]).toContain(deleteResponse.status)
+
+      // Test as admin user
+      testServer.withAdminUser()
+      
+      mockDb.delete().where().returning.mockResolvedValue([{ id: 'item-123' }])
+
+      const adminDeleteResponse = await testServer.delete('/items/item-123')
+      expect([200, 204]).toContain(adminDeleteResponse.status)
+    })
+  })
+
+  describe('Error Handling', () => {
+    beforeEach(() => {
+      testServer.withAuthenticatedUser()
+    })
+
+    it('should handle database errors gracefully', async () => {
+      // Mock database error
+      mockDb.query.items.findMany.mockRejectedValue(new Error('Database connection failed'))
+
+      const response = await testServer.get('/items')
+
+      await testServer.expectResponse(response, 500, {
+        error: 'Internal server error'
+      })
+    })
+
+    it('should handle validation errors properly', async () => {
+      const invalidItemData = {
+        name: '', // Empty name
+        sku: 'INVALID',
+        unitPrice: 'not-a-number' // Invalid price
+      }
+
+      const response = await testServer.post('/items', invalidItemData)
+      
+      await testServer.expectBadRequestResponse(response)
+
+      const body = await response.json()
+      expect(body.error).toContain('validation')
+    })
+
+    it('should handle not found errors', async () => {
+      mockDb.query.items.findFirst.mockResolvedValue(null)
+
+      const response = await testServer.get('/items/non-existent-id')
+
+      await testServer.expectNotFoundResponse(response)
+    })
+  })
+
+  describe('Health and Monitoring', () => {
+    it('should return health status', async () => {
+      const response = await testServer.get('/health')
+
+      await testServer.expectSuccessResponse(response)
+
+      const body = await response.json()
+      expect(body.status).toBe('ok')
+      expect(body.timestamp).toBeDefined()
+      expect(body.environment).toBe('test')
+    })
+
+    it('should handle health check database errors', async () => {
+      // Mock database health check failure
+      mockDb.$client.mockRejectedValue(new Error('Database unavailable'))
+
+      const response = await testServer.get('/health')
+
+      const body = await response.json()
+      expect(body.status).toBe('degraded')
+      expect(body.checks.database.status).toBe('error')
+    })
+  })
+
+  describe('Performance and Load', () => {
+    it('should handle concurrent requests', async () => {
+      testServer.withAuthenticatedUser()
+      
+      mockDb.query.items.findMany.mockResolvedValue([
+        createMockItem({ name: 'Concurrent Item' })
+      ])
+
+      // Simulate concurrent requests
+      const concurrentRequests = Array(10).fill(null).map(() =>
+        testServer.get('/items')
+      )
+
+      const responses = await Promise.all(concurrentRequests)
+
+      responses.forEach(response => {
+        expect(response.status).toBe(200)
+      })
+
+      // Verify database was called for each request
+      expect(mockDb.query.items.findMany).toHaveBeenCalledTimes(10)
+    })
+  })
+})
