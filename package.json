@@ -1,17 +1,17 @@
 {
   "name": "prodobit",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Open-core business application development platform",
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-    "@prodobit/config": "workspace:*",
-    "@prodobit/database": "workspace:*",
-    "@prodobit/react-sdk": "workspace:*",
-    "@prodobit/sdk": "workspace:*",
-    "@prodobit/server": "workspace:*",
-    "@prodobit/types": "workspace:*"
+    "@prodobit/config": "^0.3.2",
+    "@prodobit/database": "^0.3.2",
+    "@prodobit/react-sdk": "^0.3.2",
+    "@prodobit/sdk": "^0.3.2",
+    "@prodobit/server": "^0.3.2",
+    "@prodobit/types": "^0.3.2"
   },
   "scripts": {
     "build": "turbo build",
@@ -20,7 +20,11 @@
     "lint:fix": "biome check --fix .",
     "format": "biome format --write .",
     "typecheck": "turbo typecheck",
-    "test": "turbo test",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest --watch",
     "clean": "turbo clean",
     "db:generate": "turbo db:generate",
     "db:migrate": "turbo db:migrate",
@@ -33,11 +37,22 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.2",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@testcontainers/postgresql": "^11.5.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
     "chokidar": "^4.0.3",
+    "hono": "^4.6.13",
+    "jsdom": "^26.1.0",
+    "msw": "^2.11.1",
+    "supertest": "^7.1.4",
     "tslib": "^2.8.1",
     "tsdown": "^0.14.2",
-    "turbo": "^2.2.3",
-    "typescript": "^5.6.3"
+    "turbo": "^2.5.6",
+    "typescript": "^5.6.3",
+    "vitest": "^3.2.4"
   },
   "engines": {
     "node": ">=20",

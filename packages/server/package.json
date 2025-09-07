@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/server",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Prodobit modular server core",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,9 +21,9 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
-    "@prodobit/config": "workspace:*",
-    "@prodobit/database": "workspace:*",
-    "@prodobit/types": "workspace:*",
+    "@prodobit/config": "^0.3.2",
+    "@prodobit/database": "^0.3.2",
+    "@prodobit/types": "^0.3.2",
     "arktype": "2.1.20",
     "bcryptjs": "^3.0.2",
     "decimal.js": "^10.6.0",

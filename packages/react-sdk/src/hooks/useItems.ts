@@ -43,6 +43,22 @@ export const useCreateItem = (options?: MutationOptions) => {
 };
 
 
+export const useUpdateItem = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: ({ id, data }: { id: string; data: Partial<CreateItemRequest> }) => 
+      client.updateItem?.(id, data) || Promise.reject(new Error('updateItem not implemented')),
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.items.all() });
+      queryClient.setQueryData(queryKeys.items.detail(variables.id), data);
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
 export const useDeleteItem = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();

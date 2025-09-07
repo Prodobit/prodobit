@@ -8,7 +8,7 @@ export class DefaultSource implements ConfigSource {
   private readonly defaults: Partial<ProdobitConfig>;
 
   constructor(defaults: Partial<ProdobitConfig> = {}) {
-    this.defaults = { ...this.createDefaults(), ...defaults };
+    this.defaults = this.deepMerge(this.createDefaults(), defaults);
   }
 
   async load(): Promise<Record<string, unknown> | null> {
@@ -279,5 +279,31 @@ export class DefaultSource implements ConfigSource {
       },
       customConfig: {},
     };
+  }
+
+  private deepMerge<T extends Record<string, any>>(target: T, source: Partial<T>): T {
+    const result = { ...target };
+
+    for (const key in source) {
+      if (source.hasOwnProperty(key)) {
+        const sourceValue = source[key];
+        const targetValue = result[key];
+
+        if (
+          sourceValue &&
+          typeof sourceValue === 'object' &&
+          !Array.isArray(sourceValue) &&
+          targetValue &&
+          typeof targetValue === 'object' &&
+          !Array.isArray(targetValue)
+        ) {
+          result[key] = this.deepMerge(targetValue, sourceValue);
+        } else {
+          result[key] = sourceValue as T[Extract<keyof T, string>];
+        }
+      }
+    }
+
+    return result;
   }
 }
