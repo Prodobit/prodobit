@@ -50,6 +50,9 @@ export async function createServerApp(options: CreateServerAppOptions = {}) {
   }
   
   const moduleLoader = new ModuleLoader(config);
+  
+  // Initialize module loader (includes migration checks)
+  await moduleLoader.initialize();
 
   // Register core module
   moduleLoader.registerModule(coreModule);

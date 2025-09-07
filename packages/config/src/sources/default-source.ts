@@ -44,13 +44,6 @@ export class DefaultSource implements ConfigSource {
           reapIntervalMillis: 1000,
           createRetryIntervalMillis: 200,
         },
-        migrations: {
-          enabled: true,
-          migrationsTable: 'knex_migrations',
-          schemaHistoryTable: 'knex_migrations_lock',
-          autoMigrate: false,
-          validateChecksums: true,
-        },
         logging: false,
         timezone: 'UTC',
       },
