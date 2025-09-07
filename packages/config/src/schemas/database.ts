@@ -24,23 +24,16 @@ export const DatabasePoolConfigSchema = type({
   "createRetryIntervalMillis": "number >= 100",
 });
 
-export const DatabaseMigrationConfigSchema = type({
-  "enabled": "boolean",
-  "migrationsTable?": "string >= 1",
-  "schemaHistoryTable?": "string >= 1",
-  "autoMigrate?": "boolean",
-  "validateChecksums?": "boolean",
-});
+// Migration config removed - use Drizzle Kit's standard migration commands
+// Run migrations manually: pnpm db:migrate
 
 export const DatabaseConfigSchema = type({
   "connection": DatabaseConnectionSchema,
   "pool?": DatabasePoolConfigSchema,
-  "migrations?": DatabaseMigrationConfigSchema,
   "logging?": "boolean",
   "timezone?": "string >= 1",
 });
 
 export type DatabaseConnection = typeof DatabaseConnectionSchema.infer;
 export type DatabasePoolConfig = typeof DatabasePoolConfigSchema.infer;
-export type DatabaseMigrationConfig = typeof DatabaseMigrationConfigSchema.infer;
 export type DatabaseConfig = typeof DatabaseConfigSchema.infer;

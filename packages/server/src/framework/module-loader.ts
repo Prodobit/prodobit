@@ -3,6 +3,7 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { createDatabase } from "@prodobit/database";
 import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
+import health from "../core/health.js";
 
 export class ModuleLoader {
   private app: Hono<{ Variables: ServerContext }>;
@@ -15,6 +16,24 @@ export class ModuleLoader {
     this.db = createDatabase(config.database);
     this.setupMiddleware();
     this.setupCoreRoutes();
+  }
+
+  /**
+   * Initialize the module loader with database connection check
+   */
+  async initialize(): Promise<void> {
+    console.log('🚀 Initializing ModuleLoader...')
+    
+    // Simple database connection check
+    try {
+      await this.db.execute('SELECT 1')
+      console.log('✅ Database connection: OK')
+    } catch (error) {
+      console.error('❌ Database connection: FAILED', error)
+      throw new Error('Database connection failed')
+    }
+    
+    console.log('✅ ModuleLoader initialized successfully')
   }
 
   private setupMiddleware() {
@@ -39,6 +58,9 @@ export class ModuleLoader {
   }
 
   private setupCoreRoutes() {
+    // Health endpoints
+    this.app.route("/health", health);
+    
     // API info
     this.app.get("/api/v1", (c) => {
       const endpoints: Record<string, string> = {
