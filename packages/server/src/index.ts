@@ -82,6 +82,7 @@ export async function createServerApp(options: CreateServerAppOptions = {}) {
     moduleLoader,
     configManager,
     config,
+    db: moduleLoader.getApp().get("db"),
     start: (port?: number) => {
       const serverPort = port || config.port || 3001;
 
