@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/react-sdk",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "description": "React hooks and providers for Prodobit API",
   "type": "module",
   "main": "./dist/index.js",
