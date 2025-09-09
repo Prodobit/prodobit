@@ -64,8 +64,16 @@ ALTER TABLE "boms" ALTER COLUMN "production_quantity" DROP NOT NULL;--> statemen
 ALTER TABLE "engineering_change_orders" ALTER COLUMN "estimated_cost_impact" SET DATA TYPE numeric;--> statement-breakpoint
 ALTER TABLE "products" ADD COLUMN "design_ownership" text;--> statement-breakpoint
 ALTER TABLE "products" ADD COLUMN "fulfillment_strategy" text;--> statement-breakpoint
-ALTER TABLE "tenants" ADD COLUMN "slug" text;--> statement-breakpoint
-ALTER TABLE "tenants" ADD COLUMN "subdomain" text;--> statement-breakpoint
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'tenants' AND column_name = 'slug') THEN
+    ALTER TABLE "tenants" ADD COLUMN "slug" text;
+  END IF;
+END $$;--> statement-breakpoint
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name = 'tenants' AND column_name = 'subdomain') THEN
+    ALTER TABLE "tenants" ADD COLUMN "subdomain" text;
+  END IF;
+END $$;--> statement-breakpoint
 ALTER TABLE "tenants" ADD COLUMN "description" text;--> statement-breakpoint
 ALTER TABLE "tenants" ADD COLUMN "industry" text;--> statement-breakpoint
 ALTER TABLE "sales_order_items" ADD CONSTRAINT "sales_order_items_tenant_id_tenants_id_fk" FOREIGN KEY ("tenant_id") REFERENCES "public"."tenants"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
@@ -92,7 +100,23 @@ CREATE INDEX "sales_orders_tenant_status_idx" ON "sales_orders" USING btree ("te
 CREATE INDEX "sales_orders_order_date_idx" ON "sales_orders" USING btree ("order_date");--> statement-breakpoint
 CREATE INDEX "sales_orders_requested_delivery_date_idx" ON "sales_orders" USING btree ("requested_delivery_date");--> statement-breakpoint
 CREATE INDEX "sales_orders_created_by_idx" ON "sales_orders" USING btree ("created_by");--> statement-breakpoint
-CREATE UNIQUE INDEX "tenants_slug_idx" ON "tenants" USING btree ("slug");--> statement-breakpoint
-CREATE UNIQUE INDEX "tenants_subdomain_idx" ON "tenants" USING btree ("subdomain");--> statement-breakpoint
-ALTER TABLE "tenants" ADD CONSTRAINT "tenants_slug_unique" UNIQUE("slug");--> statement-breakpoint
-ALTER TABLE "tenants" ADD CONSTRAINT "tenants_subdomain_unique" UNIQUE("subdomain");
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_indexes WHERE indexname = 'tenants_slug_idx') THEN
+    CREATE UNIQUE INDEX "tenants_slug_idx" ON "tenants" USING btree ("slug");
+  END IF;
+END $$;--> statement-breakpoint
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_indexes WHERE indexname = 'tenants_subdomain_idx') THEN
+    CREATE UNIQUE INDEX "tenants_subdomain_idx" ON "tenants" USING btree ("subdomain");
+  END IF;
+END $$;--> statement-breakpoint
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM information_schema.table_constraints WHERE constraint_name = 'tenants_slug_unique') THEN
+    ALTER TABLE "tenants" ADD CONSTRAINT "tenants_slug_unique" UNIQUE("slug");
+  END IF;
+END $$;--> statement-breakpoint
+DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM information_schema.table_constraints WHERE constraint_name = 'tenants_subdomain_unique') THEN
+    ALTER TABLE "tenants" ADD CONSTRAINT "tenants_subdomain_unique" UNIQUE("subdomain");
+  END IF;
+END $$;
