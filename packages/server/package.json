@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/server",
-  "version": "0.3.13",
+  "version": "0.3.15",
   "description": "Prodobit modular server core",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -24,9 +24,7 @@
     "@prodobit/config": "workspace:*",
     "@prodobit/database": "workspace:*",
     "@prodobit/types": "workspace:*",
-    "@react-email/render": "^1.2.2",
     "arktype": "2.1.20",
-    "bcryptjs": "^3.0.2",
     "decimal.js": "^10.6.0",
     "drizzle-orm": "^0.44.5",
     "hono": "4.9.6",
@@ -35,7 +33,6 @@
     "resend": "^6.0.1"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.3.0",
     "tsx": "^4.19.2",

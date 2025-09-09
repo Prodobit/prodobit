@@ -25,7 +25,7 @@ describe('ProdobitClient - Items Management', () => {
     const mockTokenInfo = {
       accessToken: 'access-token-123',
       refreshToken: 'refresh-token-123',
-      expiresAt: new Date(Date.now() + 3600000).toISOString(),
+      expiresAt: new Date(Date.now() + 3600000),
       refreshExpiresAt: new Date(Date.now() + 7200000).toISOString(),
       tenantId: '123e4567-e89b-12d3-a456-426614174000'
     }
@@ -100,7 +100,7 @@ describe('ProdobitClient - Items Management', () => {
       })
 
       const result = await client.getItems({
-        itemType: 'product',
+        type: 'product',
         status: 'active',
         page: 1,
         limit: 10
@@ -108,7 +108,7 @@ describe('ProdobitClient - Items Management', () => {
 
       expect(result).toEqual(mockResponse)
       expect(global.fetch).toHaveBeenCalledWith(
-        'https://api.prodobit.com/api/v1/items?itemType=product&status=active&page=1&limit=10',
+        'https://api.prodobit.com/api/v1/items?type=product&status=active&page=1&limit=10',
         expect.objectContaining({
           method: 'GET'
         })

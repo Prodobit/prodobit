@@ -4,7 +4,8 @@ import {
 } from "../platform/adapter-factory.js";
 import type { PlatformAdapter } from "../platform/adapters.js";
 import { supportsFileSystem } from "../platform/runtime-detection.js";
-import { ProdobitConfigSchema, type ProdobitConfig } from "../schemas/index.js";
+import { type ProdobitConfig } from "../schemas/index.js";
+import { validateProdobitConfig } from "../schemas/type.js";
 import {
   DefaultSource,
   EnvironmentSource,
@@ -162,18 +163,20 @@ export class ConfigLoader {
     config: Record<string, unknown>
   ): ConfigValidationResult {
     try {
-      const result = ProdobitConfigSchema(config);
-      
+      const result = validateProdobitConfig(config);
+
       // Check if result is an ArkErrors object (failed validation)
-      if (result.constructor.name === 'ArkErrors') {
+      if (result.constructor.name === "ArkErrors") {
         // Convert ArkErrors to string to get error messages
         return {
           success: false,
-          errors: [{
-            path: "validation",
-            message: result.toString(),
-            value: config,
-          }],
+          errors: [
+            {
+              path: "validation",
+              message: result.toString(),
+              value: config,
+            },
+          ],
         };
       }
 

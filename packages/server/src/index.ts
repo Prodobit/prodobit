@@ -11,7 +11,6 @@ import { manufacturingModule } from "./modules/manufacturing/manifest.js";
 import { inventoryModule } from "./modules/inventory/manifest.js";
 import { customerModule } from "./modules/customer/manifest.js";
 import { supplierModule } from "./modules/supplier/manifest.js";
-import { installationRoutes } from "./installation/routes.js";
 import { EmailService } from "./core/utils/email.js";
 
 export { coreModule } from "./core/manifest.js";
@@ -71,8 +70,6 @@ export async function createServerApp(options: CreateServerAppOptions = {}) {
 
   const app = moduleLoader.getApp();
 
-  // Add installation routes (before tenant isolation)
-  app.route("/api/v1/installation", installationRoutes);
 
   // Add tenant isolation middleware
   app.use("*", tenantIsolationMiddleware());

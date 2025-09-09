@@ -1,6 +1,7 @@
 import { type } from "arktype";
 
-export const ModuleDefinitionSchema = type({
+// Internal schemas - not exported to avoid arktype internal types in d.ts
+const moduleDefinitionSchema = type({
   "id": "string >= 1",
   "name": "string >= 1",
   "version": "string >= 1",
@@ -14,13 +15,13 @@ export const ModuleDefinitionSchema = type({
   "config?": "object",
 });
 
-export const ModuleManifestSchema = type({
-  "modules": ModuleDefinitionSchema.array(),
+const moduleManifestSchema = type({
+  "modules": moduleDefinitionSchema.array(),
   "loadOrder": "string[]",
   "globalConfig?": "object",
 });
 
-export const ModuleStateSchema = type({
+const moduleStateSchema = type({
   "id": "string >= 1",
   "enabled": "boolean",
   "loaded": "boolean",
@@ -30,13 +31,13 @@ export const ModuleStateSchema = type({
   "lastUpdated": "Date",
 });
 
-export const ModuleRegistrySchema = type({
-  "states": ModuleStateSchema.array(),
+const moduleRegistrySchema = type({
+  "states": moduleStateSchema.array(),
   "loadingOrder": "string[]",
   "dependencyGraph": "object",
 });
 
-export const InventoryModuleConfigSchema = type({
+const inventoryModuleConfigSchema = type({
   "trackLots": "boolean",
   "requireSerialNumbers": "boolean",
   "allowNegativeStock": "boolean",
@@ -45,7 +46,7 @@ export const InventoryModuleConfigSchema = type({
   "enableBarcodeScanning": "boolean",
 });
 
-export const ManufacturingModuleConfigSchema = type({
+const manufacturingModuleConfigSchema = type({
   "enableRouting": "boolean",
   "allowBackflush": "boolean",
   "requireWorkCenterCapacity": "boolean",
@@ -54,7 +55,7 @@ export const ManufacturingModuleConfigSchema = type({
   "enableBomVersioning": "boolean",
 });
 
-export const SalesModuleConfigSchema = type({
+const salesModuleConfigSchema = type({
   "requireCustomerApproval": "boolean",
   "allowPartialShipments": "boolean",
   "defaultPaymentTerms": "string >= 1",
@@ -63,7 +64,7 @@ export const SalesModuleConfigSchema = type({
   "enableDiscounts": "boolean",
 });
 
-export const PurchaseModuleConfigSchema = type({
+const purchaseModuleConfigSchema = type({
   "requireApprovalForOrders": "boolean",
   "enableThreeWayMatching": "boolean",
   "defaultDeliveryDays": "1 <= number <= 365",
@@ -72,7 +73,7 @@ export const PurchaseModuleConfigSchema = type({
   "enableVendorPortal": "boolean",
 });
 
-export const EmployeeModuleConfigSchema = type({
+const employeeModuleConfigSchema = type({
   "enableTimeTracking": "boolean",
   "requireManagerApproval": "boolean",
   "enableSelfService": "boolean",
@@ -81,30 +82,89 @@ export const EmployeeModuleConfigSchema = type({
   "enableOvertimeTracking": "boolean",
 });
 
-export const ModuleConfigsSchema = type({
-  "inventory?": InventoryModuleConfigSchema,
-  "manufacturing?": ManufacturingModuleConfigSchema,
-  "sales?": SalesModuleConfigSchema,
-  "purchase?": PurchaseModuleConfigSchema,
-  "employee?": EmployeeModuleConfigSchema,
+const moduleConfigsSchema = type({
+  "inventory?": inventoryModuleConfigSchema,
+  "manufacturing?": manufacturingModuleConfigSchema,
+  "sales?": salesModuleConfigSchema,
+  "purchase?": purchaseModuleConfigSchema,
+  "employee?": employeeModuleConfigSchema,
 });
 
-export const ModulesConfigSchema = type({
-  "manifest": ModuleManifestSchema,
-  "registry": ModuleRegistrySchema,
-  "moduleConfigs": ModuleConfigsSchema,
+const modulesConfigSchema = type({
+  "manifest": moduleManifestSchema,
+  "registry": moduleRegistrySchema,
+  "moduleConfigs": moduleConfigsSchema,
   "enableHotReloading": "boolean",
   "developmentMode": "boolean",
 });
 
-export type ModuleDefinition = typeof ModuleDefinitionSchema.infer;
-export type ModuleManifest = typeof ModuleManifestSchema.infer;
-export type ModuleState = typeof ModuleStateSchema.infer;
-export type ModuleRegistry = typeof ModuleRegistrySchema.infer;
-export type InventoryModuleConfig = typeof InventoryModuleConfigSchema.infer;
-export type ManufacturingModuleConfig = typeof ManufacturingModuleConfigSchema.infer;
-export type SalesModuleConfig = typeof SalesModuleConfigSchema.infer;
-export type PurchaseModuleConfig = typeof PurchaseModuleConfigSchema.infer;
-export type EmployeeModuleConfig = typeof EmployeeModuleConfigSchema.infer;
-export type ModuleConfigs = typeof ModuleConfigsSchema.infer;
-export type ModulesConfig = typeof ModulesConfigSchema.infer;
+// Export types only
+export type ModuleDefinition = typeof moduleDefinitionSchema.infer;
+export type ModuleManifest = typeof moduleManifestSchema.infer;
+export type ModuleState = typeof moduleStateSchema.infer;
+export type ModuleRegistry = typeof moduleRegistrySchema.infer;
+export type InventoryModuleConfig = typeof inventoryModuleConfigSchema.infer;
+export type ManufacturingModuleConfig = typeof manufacturingModuleConfigSchema.infer;
+export type SalesModuleConfig = typeof salesModuleConfigSchema.infer;
+export type PurchaseModuleConfig = typeof purchaseModuleConfigSchema.infer;
+export type EmployeeModuleConfig = typeof employeeModuleConfigSchema.infer;
+export type ModuleConfigs = typeof moduleConfigsSchema.infer;
+export type ModulesConfig = typeof modulesConfigSchema.infer;
+
+// Export validation functions for runtime validation
+export function validateModuleDefinition(config: unknown): ModuleDefinition | Error {
+  const result = moduleDefinitionSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ModuleDefinition;
+}
+
+export function validateModuleManifest(config: unknown): ModuleManifest | Error {
+  const result = moduleManifestSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ModuleManifest;
+}
+
+export function validateModuleState(config: unknown): ModuleState | Error {
+  const result = moduleStateSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ModuleState;
+}
+
+export function validateModuleRegistry(config: unknown): ModuleRegistry | Error {
+  const result = moduleRegistrySchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ModuleRegistry;
+}
+
+export function validateInventoryModuleConfig(config: unknown): InventoryModuleConfig | Error {
+  const result = inventoryModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as InventoryModuleConfig;
+}
+
+export function validateManufacturingModuleConfig(config: unknown): ManufacturingModuleConfig | Error {
+  const result = manufacturingModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ManufacturingModuleConfig;
+}
+
+export function validateSalesModuleConfig(config: unknown): SalesModuleConfig | Error {
+  const result = salesModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as SalesModuleConfig;
+}
+
+export function validatePurchaseModuleConfig(config: unknown): PurchaseModuleConfig | Error {
+  const result = purchaseModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as PurchaseModuleConfig;
+}
+
+export function validateEmployeeModuleConfig(config: unknown): EmployeeModuleConfig | Error {
+  const result = employeeModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as EmployeeModuleConfig;
+}
+
+export function validateModuleConfigs(config: unknown): ModuleConfigs | Error {
+  const result = moduleConfigsSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ModuleConfigs;
+}
+
+export function validateModulesConfig(config: unknown): ModulesConfig | Error {
+  const result = modulesConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as ModulesConfig;
+}
+
+// Schemas kept internal - accessed via validation functions

@@ -9,6 +9,7 @@ import items from "./items.js";
 import { locations } from "./locations.js";
 import { assets } from "./assets.js";
 import userManagement from "./user-management.js";
+import { HealthService } from "./services/health-service.js";
 
 export const coreModule: ModuleManifest = {
   name: "core",
@@ -45,10 +46,12 @@ export const coreModule: ModuleManifest = {
   registerRoutes(app) {
     // Health check / Welcome route
     app.get("/", (c) => {
+      const db = c.get("db");
+      const healthService = new HealthService(db);
+      const basicInfo = healthService.getBasicHealthInfo();
+      
       return c.json({
-        message: "🚀 Prodobit Server is running",
-        version: "1.0.0",
-        status: "ok",
+        ...basicInfo,
         endpoints: {
           api: "/api/v1",
           installation: "/api/v1/installation",
@@ -61,31 +64,26 @@ export const coreModule: ModuleManifest = {
     app.get("/health", async (c) => {
       const db = c.get("db");
       const enabledModules = c.get("enabledModules");
-      let dbHealthy = false;
-      let dbError = null;
+      const healthService = new HealthService(db);
 
       try {
-        await db.$client`SELECT 1`;
-        dbHealthy = true;
+        const healthStatus = await healthService.getHealthStatus(enabledModules);
+        return c.json(healthStatus);
       } catch (error) {
-        dbError = error instanceof Error ? error.message : "Unknown database error";
-      }
-
-      const isHealthy = dbHealthy;
-
-      return c.json({
-        status: isHealthy ? "ok" : "degraded",
-        message: isHealthy ? "Server is healthy" : "Server has issues",
-        timestamp: new Date().toISOString(),
-        version: "1.0.0",
-        modules: Array.from(enabledModules),
-        checks: {
-          database: {
-            status: dbHealthy ? "ok" : "error",
-            ...(dbError && { error: dbError })
+        return c.json({
+          status: "degraded",
+          message: "Health check failed",
+          timestamp: new Date().toISOString(),
+          version: "1.0.0",
+          modules: Array.from(enabledModules),
+          checks: {
+            database: {
+              status: "error",
+              error: error instanceof Error ? error.message : "Unknown health check error"
+            }
           }
-        }
-      });
+        });
+      }
     });
 
     // Core API routes
