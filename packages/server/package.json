@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/server",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "Prodobit modular server core",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -24,6 +24,8 @@
     "@prodobit/config": "workspace:*",
     "@prodobit/database": "workspace:*",
     "@prodobit/types": "workspace:*",
+    "@ark/schema": "^0.49.0",
+    "@react-email/render": "^1.0.1",
     "arktype": "2.1.20",
     "bcryptjs": "^3.0.2",
     "decimal.js": "^10.6.0",
