@@ -39,4 +39,5 @@ export type Database = ReturnType<typeof createDatabase>;
 export * from "./schema/index.js";
 export * from "./types/decimal.js";
 export * from "./migrations.js";
+export * from "./setup.js";
 export { schema };

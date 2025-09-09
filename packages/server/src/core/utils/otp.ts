@@ -3,6 +3,7 @@ import { randomInt } from "crypto";
 export interface OTPOptions {
   length?: number;
   expiresInMinutes?: number;
+  purpose?: string;
 }
 
 export interface OTPRecord {

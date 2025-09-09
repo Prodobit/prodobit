@@ -185,6 +185,53 @@ export const resendOTPRequest = type({
   email: "string.email",
 });
 
+export const checkUserRequest = type({
+  email: "string.email",
+});
+
+export const checkUserResponse = type({
+  success: "boolean",
+  requiresTenantSelection: "boolean",
+  isNewUser: "boolean",
+  "tenants?": type({
+    id: uuid,
+    name: "string",
+    role: "string"
+  }).array(),
+});
+
+export const registerTenantRequest = type({
+  // Kullanıcı bilgileri
+  email: "string.email",
+  displayName: "string >= 1",
+  // Tenant bilgileri
+  tenantName: "string >= 1",
+  "tenantSlug?": "string >= 1",
+  "tenantDescription?": "string",
+  // Opsiyonel ayarlar
+  "settings?": "object",
+});
+
+export const registerTenantResponse = type({
+  success: "boolean",
+  message: "string",
+  data: type({
+    user: user,
+    tenant: type({
+      id: uuid,
+      name: "string",
+      "slug?": "string",
+      "description?": "string",
+      status,
+      insertedAt: timestamp,
+      updatedAt: timestamp,
+    }),
+    membership: tenantMembership,
+    requiresEmailVerification: "boolean",
+    "session?": session,
+  }),
+});
+
 // Audit log type
 export const authAuditLog = type({
   id: uuid,
@@ -213,6 +260,10 @@ export type RequestOTPRequest = typeof requestOTPRequest.infer;
 export type RequestOTPResponse = typeof requestOTPResponse.infer;
 export type VerifyOTPRequest = typeof verifyOTPRequest.infer;
 export type ResendOTPRequest = typeof resendOTPRequest.infer;
+export type CheckUserRequest = typeof checkUserRequest.infer;
+export type CheckUserResponse = typeof checkUserResponse.infer;
+export type RegisterTenantRequest = typeof registerTenantRequest.infer;
+export type RegisterTenantResponse = typeof registerTenantResponse.infer;
 
 // RBAC type exports
 export type Permission = typeof permission.infer;
