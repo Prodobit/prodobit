@@ -16,7 +16,7 @@ export const coreModule: ModuleManifest = {
   version: "1.0.0",
   description: "Core Prodobit functionality with parties, tenants, auth",
   migrations: [
-    "0000_cute_stone_men.sql"
+    "0000_damp_chat.sql"
   ],
   permissions: {
     "tenant:read": ["admin", "user"],
