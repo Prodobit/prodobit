@@ -6,9 +6,7 @@ export const employeeModule: ModuleManifest = {
   name: "employee",
   version: "1.0.0",
   description: "Employee management module",
-  migrations: [
-    "1001_employee.sql"
-  ],
+  migrations: [],
   permissions: {
     "employee:read": ["admin", "hr", "manager"],
     "employee:write": ["admin", "hr"]
