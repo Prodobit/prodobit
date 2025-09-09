@@ -54,7 +54,6 @@ CREATE TABLE "sales_orders" (
 	"deleted_at" timestamp (6) with time zone
 );
 --> statement-breakpoint
-ALTER TABLE "products" RENAME COLUMN "product_type" TO "sourcing_type";--> statement-breakpoint
 ALTER TABLE "bom_components" ALTER COLUMN "quantity" SET DATA TYPE numeric;--> statement-breakpoint
 ALTER TABLE "bom_components" ALTER COLUMN "run_time_per_unit_seconds" SET DATA TYPE numeric;--> statement-breakpoint
 ALTER TABLE "bom_components" ALTER COLUMN "run_time_per_unit_seconds" DROP DEFAULT;--> statement-breakpoint

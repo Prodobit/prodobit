@@ -1,5 +1,5 @@
-import { ConfigManager, type ProdobitConfig } from '@prodobit/config';
-import type { ModuleManifest } from '../framework/types.js';
+import { ConfigManager, type ProdobitConfig } from "@prodobit/config";
+import type { ModuleManifest } from "../framework/types.js";
 
 export interface ServerConfig {
   modules: ModuleManifest[];
@@ -32,6 +32,17 @@ export interface ServerConfig {
     fromName?: string;
   };
   port?: number;
+  setup?: {
+    enabled?: boolean;
+    systemTenant: {
+      name: string;
+      description?: string;
+    };
+    superAdmin: {
+      email: string;
+      displayName: string;
+    };
+  };
 }
 
 export class ServerConfigManager {
@@ -41,7 +52,7 @@ export class ServerConfigManager {
   constructor() {
     this.configManager = new ConfigManager({
       environment: this.detectEnvironment(),
-      autoReload: process.env.NODE_ENV === 'development',
+      autoReload: process.env.NODE_ENV === "development",
       validateModules: true,
     });
   }
@@ -53,7 +64,7 @@ export class ServerConfigManager {
 
   getConfig(): ServerConfig {
     if (!this.serverConfig) {
-      throw new Error('ServerConfig not initialized. Call initialize() first.');
+      throw new Error("ServerConfig not initialized. Call initialize() first.");
     }
     return this.serverConfig;
   }
@@ -71,16 +82,16 @@ export class ServerConfigManager {
     this.serverConfig = this.buildServerConfig();
   }
 
-  private detectEnvironment(): 'development' | 'production' | 'test' {
-    const env = process.env.NODE_ENV || 'development';
-    return ['development', 'production', 'test'].includes(env) 
-      ? env as 'development' | 'production' | 'test'
-      : 'development';
+  private detectEnvironment(): "development" | "production" | "test" {
+    const env = process.env.NODE_ENV || "development";
+    return ["development", "production", "test"].includes(env)
+      ? (env as "development" | "production" | "test")
+      : "development";
   }
 
   private buildServerConfig(): ServerConfig {
     const config = this.configManager.getConfig();
-    
+
     return {
       modules: [], // Will be populated by module registration
       database: {
@@ -98,11 +109,14 @@ export class ServerConfigManager {
       },
       email: {
         apiKey: process.env["EMAIL_API_KEY"] || process.env["RESEND_API_KEY"],
-        fromEmail: process.env["EMAIL_FROM_ADDRESS"] || process.env["FROM_EMAIL"],
+        fromEmail:
+          process.env["EMAIL_FROM_ADDRESS"] || process.env["FROM_EMAIL"],
         fromName: process.env["EMAIL_FROM_NAME"] || process.env["FROM_NAME"],
-        provider: (process.env["EMAIL_PROVIDER"] as "resend" | "smtp") || "resend",
+        provider:
+          (process.env["EMAIL_PROVIDER"] as "resend" | "smtp") || "resend",
       },
       port: config.server.server.port,
+      // setup: config.setup,
     };
   }
 
@@ -110,22 +124,24 @@ export class ServerConfigManager {
     if (Array.isArray(origins)) {
       return origins;
     }
-    if (origins === '*') {
-      return ['*'];
+    if (origins === "*") {
+      return ["*"];
     }
     return [origins];
   }
 
-  private getSSLConfig(ssl?: boolean): boolean | { rejectUnauthorized: boolean } {
+  private getSSLConfig(
+    ssl?: boolean
+  ): boolean | { rejectUnauthorized: boolean } {
     if (ssl === false) {
       return false;
     }
-    
+
     // Production'da SSL enabled ama rejectUnauthorized false
     if (process.env.NODE_ENV === "production") {
       return { rejectUnauthorized: false };
     }
-    
+
     // Development'ta SSL false
     return false;
   }

@@ -1,29 +1,65 @@
-export * from './common.js';
-export * from './database.js';
-export * from './auth.js';
-export * from './server.js';
-export * from './modules.js';
-export * from './setup.js';
+// Export all types
+export type * from "./auth.js";
+export type * from "./common.js";
+export type * from "./database.js";
+export type * from "./modules.js";
+export type * from "./server.js";
+export type * from "./setup.js";
+export type * from "./type.js";
 
-import { type } from "arktype";
-import { BaseConfigSchema, PaginationConfigSchema, SecurityConfigSchema, FileUploadConfigSchema } from './common.js';
-import { DatabaseConfigSchema } from './database.js';
-import { AuthConfigSchema } from './auth.js';
-import { WebServerConfigSchema } from './server.js';
-import { ModulesConfigSchema } from './modules.js';
-import { SetupConfigSchema } from './setup.js';
+// Export all validation functions
+export {
+  validateJwtConfig,
+  validateSessionConfig,
+  validateOAuthProviderConfig,
+  validateOAuthConfig,
+  validatePasswordPolicy,
+  validateTwoFactorConfig,
+  validateAuthConfig,
+} from "./auth.js";
 
-export const ProdobitConfigSchema = type({
-  "base": BaseConfigSchema,
-  "database": DatabaseConfigSchema,
-  "auth": AuthConfigSchema,
-  "server": WebServerConfigSchema,
-  "modules": ModulesConfigSchema,
-  "pagination": PaginationConfigSchema,
-  "security": SecurityConfigSchema,
-  "fileUpload": FileUploadConfigSchema,
-  "setup?": SetupConfigSchema,
-  "customConfig?": "object",
-});
+export {
+  validateBaseConfig,
+  validatePaginationConfig,
+  validateSecurityConfig,
+  validateFileUploadConfig,
+} from "./common.js";
 
-export type ProdobitConfig = typeof ProdobitConfigSchema.infer;
+export {
+  validateDatabaseConnection,
+  validateDatabasePoolConfig,
+  validateDatabaseConfig,
+} from "./database.js";
+
+export {
+  validateModuleDefinition,
+  validateModuleManifest,
+  validateModuleState,
+  validateModuleRegistry,
+  validateInventoryModuleConfig,
+  validateManufacturingModuleConfig,
+  validateSalesModuleConfig,
+  validatePurchaseModuleConfig,
+  validateEmployeeModuleConfig,
+  validateModuleConfigs,
+  validateModulesConfig,
+} from "./modules.js";
+
+export {
+  validateServerConfig,
+  validateCorsConfig,
+  validateCompressionConfig,
+  validateRequestLimitConfig,
+  validateLoggingConfig,
+  validateMetricsConfig,
+  validateClusterConfig,
+  validateWebServerConfig,
+} from "./server.js";
+
+export {
+  validateSystemTenantConfig,
+  validateSuperAdminConfig,
+  validateSetupConfig,
+} from "./setup.js";
+
+export { validateProdobitConfig } from "./type.js";

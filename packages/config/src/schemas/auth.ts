@@ -1,6 +1,7 @@
 import { type } from "arktype";
 
-export const JwtConfigSchema = type({
+// Internal schemas - not exported to avoid arktype internal types in d.ts
+const jwtConfigSchema = type({
   "accessTokenSecret": "string >= 32",
   "refreshTokenSecret": "string >= 32",
   "accessTokenExpiresIn": "string >= 1", // e.g., '15m', '1h'
@@ -10,7 +11,7 @@ export const JwtConfigSchema = type({
   "audience?": "string >= 1",
 });
 
-export const SessionConfigSchema = type({
+const sessionConfigSchema = type({
   "secret": "string >= 32",
   "resave?": "boolean",
   "saveUninitialized?": "boolean",
@@ -21,7 +22,7 @@ export const SessionConfigSchema = type({
   "sameSite?": "'strict' | 'lax' | 'none'",
 });
 
-export const OAuthProviderConfigSchema = type({
+const oAuthProviderConfigSchema = type({
   "clientId": "string >= 1",
   "clientSecret": "string >= 1",
   "redirectUri": "string >= 1",
@@ -31,13 +32,13 @@ export const OAuthProviderConfigSchema = type({
   "userInfoUrl": "string >= 1",
 });
 
-export const OAuthConfigSchema = type({
-  "google?": OAuthProviderConfigSchema,
-  "microsoft?": OAuthProviderConfigSchema,
-  "github?": OAuthProviderConfigSchema,
+const oAuthConfigSchema = type({
+  "google?": oAuthProviderConfigSchema,
+  "microsoft?": oAuthProviderConfigSchema,
+  "github?": oAuthProviderConfigSchema,
 });
 
-export const PasswordPolicySchema = type({
+const passwordPolicySchema = type({
   "minLength": "6 <= number <= 128",
   "maxLength": "8 <= number <= 256",
   "requireUppercase": "boolean",
@@ -48,28 +49,67 @@ export const PasswordPolicySchema = type({
   "maxAge?": "number >= 86400000", // 1 day minimum in milliseconds
 });
 
-export const TwoFactorConfigSchema = type({
+const twoFactorConfigSchema = type({
   "enabled": "boolean",
   "issuer": "string >= 1",
   "window?": "1 <= number <= 10",
   "enforceForRoles?": "string[]",
 });
 
-export const AuthConfigSchema = type({
-  "jwt": JwtConfigSchema,
-  "session": SessionConfigSchema,
-  "oauth?": OAuthConfigSchema,
-  "passwordPolicy": PasswordPolicySchema,
-  "twoFactor?": TwoFactorConfigSchema,
+const authConfigSchema = type({
+  "jwt": jwtConfigSchema,
+  "session": sessionConfigSchema,
+  "oauth?": oAuthConfigSchema,
+  "passwordPolicy": passwordPolicySchema,
+  "twoFactor?": twoFactorConfigSchema,
   "enableRegistration": "boolean",
   "requireEmailVerification": "boolean",
   "loginAttemptResetMinutes": "1 <= number <= 1440", // 1 minute to 24 hours
 });
 
-export type JwtConfig = typeof JwtConfigSchema.infer;
-export type SessionConfig = typeof SessionConfigSchema.infer;
-export type OAuthProviderConfig = typeof OAuthProviderConfigSchema.infer;
-export type OAuthConfig = typeof OAuthConfigSchema.infer;
-export type PasswordPolicy = typeof PasswordPolicySchema.infer;
-export type TwoFactorConfig = typeof TwoFactorConfigSchema.infer;
-export type AuthConfig = typeof AuthConfigSchema.infer;
+// Export types only
+export type JwtConfig = typeof jwtConfigSchema.infer;
+export type SessionConfig = typeof sessionConfigSchema.infer;
+export type OAuthProviderConfig = typeof oAuthProviderConfigSchema.infer;
+export type OAuthConfig = typeof oAuthConfigSchema.infer;
+export type PasswordPolicy = typeof passwordPolicySchema.infer;
+export type TwoFactorConfig = typeof twoFactorConfigSchema.infer;
+export type AuthConfig = typeof authConfigSchema.infer;
+
+// Export validation functions for runtime validation
+export function validateJwtConfig(config: unknown): JwtConfig | Error {
+  const result = jwtConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as JwtConfig;
+}
+
+export function validateSessionConfig(config: unknown): SessionConfig | Error {
+  const result = sessionConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as SessionConfig;
+}
+
+export function validateOAuthProviderConfig(config: unknown): OAuthProviderConfig | Error {
+  const result = oAuthProviderConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as OAuthProviderConfig;
+}
+
+export function validateOAuthConfig(config: unknown): OAuthConfig | Error {
+  const result = oAuthConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as OAuthConfig;
+}
+
+export function validatePasswordPolicy(config: unknown): PasswordPolicy | Error {
+  const result = passwordPolicySchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as PasswordPolicy;
+}
+
+export function validateTwoFactorConfig(config: unknown): TwoFactorConfig | Error {
+  const result = twoFactorConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as TwoFactorConfig;
+}
+
+export function validateAuthConfig(config: unknown): AuthConfig | Error {
+  const result = authConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as AuthConfig;
+}
+
+// Schemas kept internal - accessed via validation functions

@@ -1,26 +1,26 @@
 import type { Database } from "@prodobit/database";
-import { tenants as tenantsTable } from "@prodobit/database";
-import { eq } from "drizzle-orm";
 import { Hono } from "hono";
+import { TenantService } from "./services/tenant-service.js";
 
 const tenants = new Hono<{ Variables: { db: Database } }>();
 
 // GET /api/v1/tenants
 tenants.get("/", async (c) => {
   const db = c.get("db");
+  const tenantService = new TenantService(db);
 
   try {
-    const result = await db.select().from(tenantsTable);
+    // Get query parameters
+    const page = Number(c.req.query("page")) || 1;
+    const limit = Number(c.req.query("limit")) || 10;
+    const status = c.req.query("status");
+
+    const result = await tenantService.getTenants({ page, limit, status });
 
     return c.json({
       success: true,
-      data: result,
-      pagination: {
-        page: 1,
-        limit: 10,
-        total: result.length,
-        totalPages: Math.ceil(result.length / 10),
-      },
+      data: result.data,
+      pagination: result.pagination,
     });
   } catch (error) {
     return c.json(
@@ -40,15 +40,13 @@ tenants.get("/", async (c) => {
 // GET /api/v1/tenants/:id
 tenants.get("/:id", async (c) => {
   const db = c.get("db");
+  const tenantService = new TenantService(db);
   const id = c.req.param("id");
 
   try {
-    const result = await db
-      .select()
-      .from(tenantsTable)
-      .where(eq(tenantsTable.id, id));
+    const tenant = await tenantService.getTenantById(id);
 
-    if (result.length === 0) {
+    if (!tenant) {
       return c.json(
         {
           success: false,
@@ -63,7 +61,7 @@ tenants.get("/:id", async (c) => {
 
     return c.json({
       success: true,
-      data: result[0],
+      data: tenant,
     });
   } catch (error) {
     return c.json(
@@ -83,22 +81,20 @@ tenants.get("/:id", async (c) => {
 // POST /api/v1/tenants
 tenants.post("/", async (c) => {
   const db = c.get("db");
+  const tenantService = new TenantService(db);
   const body = await c.req.json();
 
   try {
-    const newTenant = {
+    const tenant = await tenantService.createTenant({
       name: body.name,
-      status: "active",
-      subscriptionPlan: body.subscriptionPlan || "basic",
-      settings: body.settings || {},
-    };
-
-    const result = await db.insert(tenantsTable).values(newTenant).returning();
+      subscriptionPlan: body.subscriptionPlan,
+      settings: body.settings,
+    });
 
     return c.json(
       {
         success: true,
-        data: result[0],
+        data: tenant,
       },
       201
     );
