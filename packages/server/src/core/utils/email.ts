@@ -46,6 +46,13 @@ export class EmailService {
   }
 
   /**
+   * Check if email service is initialized
+   */
+  static isInitialized(): boolean {
+    return !!this.provider;
+  }
+
+  /**
    * Send email using configured provider
    */
   static async sendEmail(options: EmailOptions): Promise<{

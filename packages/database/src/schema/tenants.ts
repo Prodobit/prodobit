@@ -13,6 +13,7 @@ export const tenants = pgTable(
   {
     id: uuid("id").primaryKey().defaultRandom(),
     name: text("name").notNull(),
+    slug: text("slug").unique(),
     subdomain: text("subdomain").unique(),
     description: text("description"),
     industry: text("industry"),
@@ -29,6 +30,7 @@ export const tenants = pgTable(
   },
   (table) => ({
     nameUnique: uniqueIndex("tenants_name_unique").on(table.name),
+    slugIdx: uniqueIndex("tenants_slug_idx").on(table.slug),
     subdomainIdx: uniqueIndex("tenants_subdomain_idx").on(table.subdomain),
     statusIdx: index("tenants_status_idx").on(table.status),
   })

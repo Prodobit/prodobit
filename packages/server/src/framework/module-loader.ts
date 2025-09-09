@@ -53,6 +53,7 @@ export class ModuleLoader {
     this.app.use("*", async (c, next) => {
       c.set("db", this.db);
       c.set("enabledModules", this.enabledModules);
+      c.set("config", this.config);
       await next();
     });
   }

@@ -928,4 +928,197 @@ auth.get("/me", authMiddleware, async (c) => {
   }
 });
 
+// POST /api/v1/auth/register-tenant - Tenant kaydı (kullanıcı + tenant oluşturma)
+auth.post("/register-tenant", async (c) => {
+  try {
+    // Config'den tenant kaydının aktif olup olmadığını kontrol et
+    const config = c.get("config");
+    if (config?.tenantRegistration?.enabled === false) {
+      return c.json(
+        {
+          success: false,
+          error: "Tenant registration is disabled",
+        },
+        403
+      );
+    }
+
+    const body = await c.req.json();
+    const { email, displayName, tenantName, tenantSlug, tenantDescription, settings } = body;
+
+    if (!email || !displayName || !tenantName) {
+      return c.json(
+        {
+          success: false,
+          error: "Email, display name and tenant name are required",
+        },
+        400
+      );
+    }
+
+    const db = c.get("db");
+
+    // Check if user already exists
+    const existingUser = await db
+      .select()
+      .from(authMethods)
+      .where(
+        and(
+          eq(authMethods.provider, "email"),
+          eq(authMethods.providerId, email)
+        )
+      )
+      .limit(1);
+
+    if (existingUser.length > 0) {
+      return c.json(
+        {
+          success: false,
+          error: "User with this email already exists",
+        },
+        409
+      );
+    }
+
+    // Check if tenant slug already exists (if provided)
+    if (tenantSlug) {
+      const existingTenant = await db
+        .select()
+        .from(tenants)
+        .where(eq(tenants.slug, tenantSlug))
+        .limit(1);
+
+      if (existingTenant.length > 0) {
+        return c.json(
+          {
+            success: false,
+            error: "Tenant with this slug already exists",
+          },
+          409
+        );
+      }
+    }
+
+    // Start transaction
+    const result = await db.transaction(async (tx) => {
+      // 1. Create user
+      const [newUser] = await tx
+        .insert(users)
+        .values({
+          displayName,
+          status: "active",
+          twoFactorEnabled: false,
+        })
+        .returning();
+
+      // 2. Create auth method
+      const [newAuthMethod] = await tx
+        .insert(authMethods)
+        .values({
+          userId: newUser.id,
+          provider: "email",
+          providerId: email,
+          verified: false, // Email verification needed
+        })
+        .returning();
+
+      // 3. Create tenant
+      const [newTenant] = await tx
+        .insert(tenants)
+        .values({
+          name: tenantName,
+          slug: tenantSlug || tenantName.toLowerCase().replace(/[^a-z0-9]/g, "-"),
+          description: tenantDescription,
+          status: "active",
+          settings: settings || {},
+        })
+        .returning();
+
+      // 4. Create tenant membership (admin role)
+      const [newMembership] = await tx
+        .insert(tenantMemberships)
+        .values({
+          userId: newUser.id,
+          tenantId: newTenant.id,
+          role: "admin",
+          status: "active",
+          permissions: {},
+          accessLevel: "full",
+          resourceRestrictions: {},
+          joinedAt: new Date(),
+        })
+        .returning();
+
+      return {
+        user: newUser,
+        authMethod: newAuthMethod,
+        tenant: newTenant,
+        membership: newMembership,
+      };
+    });
+
+    // Send email verification (if email service is configured)
+    let emailSent = false;
+    try {
+      if (EmailService.isInitialized()) {
+        // Generate verification token/OTP
+        const { code } = OTPManager.storeOTP(email, {
+          expiresInMinutes: 30,
+          purpose: "email-verification",
+        });
+
+        await EmailService.sendOTPEmail({
+          email,
+          code,
+          expiresInMinutes: 30,
+        });
+        emailSent = true;
+      }
+    } catch (emailError) {
+      console.error("Failed to send verification email:", emailError);
+      // Don't fail the registration if email fails
+    }
+
+    return c.json(
+      {
+        success: true,
+        message: emailSent 
+          ? "Registration successful. Please check your email to verify your account."
+          : "Registration successful.",
+        data: {
+          user: {
+            id: result.user.id,
+            displayName: result.user.displayName,
+            status: result.user.status,
+          },
+          tenant: {
+            id: result.tenant.id,
+            name: result.tenant.name,
+            slug: result.tenant.slug,
+            description: result.tenant.description,
+            status: result.tenant.status,
+          },
+          membership: {
+            role: result.membership.role,
+            status: result.membership.status,
+            accessLevel: result.membership.accessLevel,
+          },
+          requiresEmailVerification: !result.authMethod.verified,
+        },
+      },
+      201
+    );
+  } catch (error) {
+    console.error("Tenant registration error:", error);
+    return c.json(
+      {
+        success: false,
+        error: "Registration failed",
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+      500
+    );
+  }
+});
+
 export { auth };

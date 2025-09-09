@@ -2,10 +2,21 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions } from '../types';
+import type { RegisterTenantRequest } from '@prodobit/types';
 
 export const useAuth = () => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
+
+  const checkUser = useMutation({
+    mutationFn: ({ email }: { email: string }) => 
+      client.checkUser({ email }),
+  });
+
+  const registerTenant = useMutation({
+    mutationFn: (data: RegisterTenantRequest) => 
+      client.registerTenant(data),
+  });
 
   const requestOTP = useMutation({
     mutationFn: ({ email, tenantId }: { email: string; tenantId?: string }) => 
@@ -32,6 +43,8 @@ export const useAuth = () => {
   });
 
   return {
+    checkUser,
+    registerTenant,
     requestOTP,
     verifyOTP,
     logout,

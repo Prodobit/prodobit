@@ -1,7 +1,11 @@
 import type {
+  CheckUserRequest,
+  CheckUserResponse,
   LoginResponse,
   LogoutRequest,
   RefreshTokenRequest,
+  RegisterTenantRequest,
+  RegisterTenantResponse,
   RequestOTPRequest,
   RequestOTPResponse,
   ResendOTPRequest,
@@ -10,11 +14,13 @@ import type {
   VerifyOTPRequest,
 } from "@prodobit/types";
 import {
+  checkUserRequest,
   requestOTPRequest,
   resendOTPRequest,
   verifyOTPRequest,
   refreshTokenRequest,
   logoutRequest,
+  registerTenantRequest,
 } from "@prodobit/types";
 import type { RequestConfig } from "../types";
 import { BaseClient } from "./base-client";
@@ -22,6 +28,36 @@ import { ProdobitError } from "../types";
 import { validateRequest } from "../utils/validation";
 
 export class AuthClient extends BaseClient {
+  // Check user before OTP
+  async checkUser(
+    data: CheckUserRequest,
+    config?: RequestConfig
+  ): Promise<CheckUserResponse> {
+    const validatedData = validateRequest(checkUserRequest, data);
+    const response = await this.request<CheckUserResponse>(
+      "POST",
+      "/api/v1/auth/check-user",
+      validatedData,
+      { ...config, skipAuth: true }
+    );
+    return response;
+  }
+
+  // Register tenant with user
+  async registerTenant(
+    data: RegisterTenantRequest,
+    config?: RequestConfig
+  ): Promise<RegisterTenantResponse> {
+    const validatedData = validateRequest(registerTenantRequest, data);
+    const response = await this.request<RegisterTenantResponse>(
+      "POST",
+      "/api/v1/auth/register-tenant",
+      validatedData,
+      { ...config, skipAuth: true }
+    );
+    return response;
+  }
+
   // Auth methods (OTP-based)
   async requestOTP(
     data: RequestOTPRequest,

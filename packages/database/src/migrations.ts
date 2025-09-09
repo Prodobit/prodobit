@@ -1,6 +1,6 @@
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import { readdir } from "node:fs/promises";
-import { resolve, dirname } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Database } from "./index.js";
 
@@ -25,7 +25,7 @@ function getMigrationFolderPath(): string {
   // ES modules equivalent of __dirname
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
-  
+
   // We're in database package, so drizzle folder is relative to this file
   return resolve(__dirname, "..", "drizzle");
 }
@@ -90,8 +90,16 @@ export async function runMigrations(db: Database): Promise<MigrationResult> {
     const migrationFolder = getMigrationFolderPath();
     console.log(`📂 Migration folder: ${migrationFolder}`);
 
-    // Use Drizzle's migrate function
-    await migrate(db, { migrationsFolder: migrationFolder });
+    // Create separate migration client (v0.44 requirement)
+    const postgres = await import("postgres");
+    const migrationClient = postgres.default(process.env.DATABASE_URL || getDbUrl(), { max: 1 });
+    const migrationDb = (await import("drizzle-orm/postgres-js")).drizzle(migrationClient);
+
+    // Use Drizzle's migrate function with separate client
+    await migrate(migrationDb, { migrationsFolder: migrationFolder });
+    
+    // Close migration client
+    await migrationClient.end();
 
     // Get final count
     const status = await checkMigrationStatus(db);
@@ -110,4 +118,11 @@ export async function runMigrations(db: Database): Promise<MigrationResult> {
       error: error instanceof Error ? error.message : "Unknown error",
     };
   }
+}
+
+/**
+ * Get database URL from environment or construct it
+ */
+function getDbUrl(): string {
+  return `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}${process.env.DB_SSL === 'true' ? '?sslmode=require' : ''}`;
 }

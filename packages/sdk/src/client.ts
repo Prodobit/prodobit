@@ -26,6 +26,7 @@ import type {
   Pagination,
   PartyRole,
   RefreshTokenRequest,
+  RegisterTenantRequest,
   RequestOTPRequest,
   ResendOTPRequest,
   Response,
@@ -116,6 +117,14 @@ export class ProdobitClient {
   }
 
   // Auth method delegations
+  async checkUser(data: { email: string }, config?: RequestConfig) {
+    return this.auth.checkUser(data, config);
+  }
+
+  async registerTenant(data: RegisterTenantRequest, config?: RequestConfig) {
+    return this.auth.registerTenant(data, config);
+  }
+
   async requestOTP(data: RequestOTPRequest, config?: RequestConfig) {
     return this.auth.requestOTP(data, config);
   }

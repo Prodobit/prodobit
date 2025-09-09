@@ -44,16 +44,21 @@ export interface ServerConfig {
     fromName?: string;
   };
   port?: number;
+  tenantRegistration?: {
+    enabled?: boolean;
+  };
 }
 
 export interface ServerContext {
   db: ReturnType<typeof createDatabase>;
   enabledModules: Set<string>;
+  config: ServerConfig;
 }
 
 declare module "hono" {
   interface ContextVariableMap {
     db: ReturnType<typeof createDatabase>;
     enabledModules: Set<string>;
+    config: ServerConfig;
   }
 }
