@@ -1,6 +1,7 @@
 import type {
   CheckUserRequest,
   CheckUserResponse,
+  CurrentUserResponse,
   LoginResponse,
   LogoutRequest,
   RefreshTokenRequest,
@@ -166,12 +167,12 @@ export class AuthClient extends BaseClient {
     return response;
   }
 
-  async getCurrentUser(config?: RequestConfig): Promise<Response<User>> {
+  async getCurrentUser(config?: RequestConfig): Promise<CurrentUserResponse> {
     return this.request("GET", "/api/v1/auth/me", undefined, config);
   }
 
   // @deprecated Use getCurrentUser instead
-  async getMe(config?: RequestConfig): Promise<Response<User>> {
+  async getMe(config?: RequestConfig): Promise<CurrentUserResponse> {
     return this.getCurrentUser(config);
   }
 

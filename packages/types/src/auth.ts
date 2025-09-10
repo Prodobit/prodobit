@@ -124,6 +124,28 @@ export const loginResponse = type({
   "message?": "string",
 });
 
+// Me endpoint response (current user info)
+export const currentUserResponseData = type({
+  user,
+  "authMethod?": {
+    id: uuid,
+    provider: "'email' | 'google' | 'github' | 'microsoft'",
+    providerId: "string >= 1",
+    verified: "boolean",
+    "metadata?": "object",
+  },
+  tenantMemberships: tenantMembership.array(),
+  roles: "string[]", // Role names
+  permissions: "string[]", // Permission names  
+  currentTenant: uuid,
+});
+
+export const currentUserResponse = type({
+  success: "boolean",
+  data: currentUserResponseData,
+  "message?": "string",
+});
+
 export const refreshTokenRequest = type({
   refreshToken: "string",
 });
@@ -260,6 +282,8 @@ export type TenantMembership = typeof tenantMembership.infer;
 export type Session = typeof session.infer;
 export type LoginResponseData = typeof loginResponseData.infer;
 export type LoginResponse = typeof loginResponse.infer;
+export type CurrentUserResponseData = typeof currentUserResponseData.infer;
+export type CurrentUserResponse = typeof currentUserResponse.infer;
 export type RefreshTokenRequest = typeof refreshTokenRequest.infer;
 
 // OTP type exports

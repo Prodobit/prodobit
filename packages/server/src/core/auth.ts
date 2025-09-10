@@ -13,7 +13,7 @@ import type {
   ResendOTPRequest,
   VerifyOTPRequest,
 } from "@prodobit/types";
-import { and, eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { Hono } from "hono";
 import { authMiddleware } from "./middleware/auth.js";
 import { RBACService } from "./middleware/rbac.js";
@@ -96,7 +96,7 @@ auth.post("/check-user", async (c) => {
     if (userTenantMemberships.length === 1) {
       // Single tenant - auto-select and send OTP
       const defaultTenant = userTenantMemberships[0];
-      
+
       // Generate and store OTP
       const { code, expiresAt } = OTPManager.storeOTP(body.email, {
         expiresInMinutes: 10,
@@ -166,7 +166,7 @@ auth.post("/check-user", async (c) => {
 auth.post("/request-otp", async (c) => {
   try {
     const body = (await c.req.json()) as RequestOTPRequest;
-    
+
     if (!body.email) {
       return c.json({ success: false, message: "Email is required" }, 400);
     }
@@ -183,7 +183,10 @@ auth.post("/request-otp", async (c) => {
         })
         .from(tenantMemberships)
         .innerJoin(tenants, eq(tenantMemberships.tenantId, tenants.id))
-        .innerJoin(authMethods, eq(tenantMemberships.userId, authMethods.userId))
+        .innerJoin(
+          authMethods,
+          eq(tenantMemberships.userId, authMethods.userId)
+        )
         .where(
           and(
             eq(authMethods.provider, "email"),
@@ -311,19 +314,22 @@ auth.post("/request-otp", async (c) => {
 
     if (userTenantMemberships.length === 0) {
       // User exists but no tenant memberships
-      return c.json({
-        success: false,
-        error: {
-          code: "NO_TENANT_ACCESS",
-          message: "User has no active tenant memberships",
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "NO_TENANT_ACCESS",
+            message: "User has no active tenant memberships",
+          },
         },
-      }, 403);
+        403
+      );
     }
 
     if (userTenantMemberships.length === 1) {
       // Single tenant - auto-select and send OTP
       const defaultTenant = userTenantMemberships[0];
-      
+
       const { code, expiresAt } = OTPManager.storeOTP(body.email, {
         expiresInMinutes: 10,
       });
@@ -371,7 +377,6 @@ auth.post("/request-otp", async (c) => {
         role: item.membership.role,
       })),
     });
-
   } catch (error) {
     console.error("Request OTP error:", error);
     return c.json(
@@ -894,6 +899,16 @@ auth.get("/me", authMiddleware, async (c) => {
         )
       );
 
+    // Get auth method (primary auth method for the user)
+    const authMethodResult = await db
+      .select()
+      .from(authMethods)
+      .where(eq(authMethods.userId, user.id))
+      .orderBy(desc(authMethods.insertedAt))
+      .limit(1);
+
+    const authMethod = authMethodResult[0] || null;
+
     // Get roles and permissions
     const roles = await RBACService.getUserRoles(db, user.id, user.tenantId);
     const permissions = await RBACService.getUserPermissions(
@@ -913,6 +928,13 @@ auth.get("/me", authMiddleware, async (c) => {
           insertedAt: userDetails[0].insertedAt.toISOString(),
           updatedAt: userDetails[0].updatedAt.toISOString(),
         },
+        authMethod: authMethod ? {
+          id: authMethod.id,
+          provider: authMethod.provider,
+          providerId: authMethod.providerId,
+          verified: authMethod.verified,
+          metadata: authMethod.metadata,
+        } : null,
         tenantMemberships: memberships,
         roles,
         permissions,
@@ -951,7 +973,14 @@ auth.post("/register-tenant", async (c) => {
     }
 
     const body = await c.req.json();
-    const { email, displayName, tenantName, tenantSlug, tenantDescription, settings } = body;
+    const {
+      email,
+      displayName,
+      tenantName,
+      tenantSlug,
+      tenantDescription,
+      settings,
+    } = body;
 
     if (!email || !displayName || !tenantName) {
       return c.json(
@@ -1034,7 +1063,8 @@ auth.post("/register-tenant", async (c) => {
         .insert(tenants)
         .values({
           name: tenantName,
-          slug: tenantSlug || tenantName.toLowerCase().replace(/[^a-z0-9]/g, "-"),
+          slug:
+            tenantSlug || tenantName.toLowerCase().replace(/[^a-z0-9]/g, "-"),
           description: tenantDescription,
           status: "active",
           settings: settings || {},
@@ -1089,7 +1119,7 @@ auth.post("/register-tenant", async (c) => {
     return c.json(
       {
         success: true,
-        message: emailSent 
+        message: emailSent
           ? "Registration successful. Please check your email to verify your account."
           : "Registration successful.",
         data: {
