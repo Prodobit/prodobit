@@ -12,6 +12,7 @@ import { inventoryModule } from "./modules/inventory/manifest.js";
 import { customerModule } from "./modules/customer/manifest.js";
 import { supplierModule } from "./modules/supplier/manifest.js";
 import { EmailService } from "./core/utils/email.js";
+import type { Database } from "@prodobit/database";
 
 export { coreModule } from "./core/manifest.js";
 export { employeeModule } from "./modules/employee/manifest.js";
@@ -30,7 +31,19 @@ export interface CreateServerAppOptions {
   configManager?: ServerConfigManager;
 }
 
-export async function createServerApp(options: CreateServerAppOptions = {}) {
+export async function createServerApp(options: CreateServerAppOptions = {}): Promise<{
+  app: ReturnType<ModuleLoader['getApp']>;
+  moduleLoader: ModuleLoader;
+  configManager: ServerConfigManager;
+  config: ServerConfig;
+  db: Database;
+  start: (port?: number) => void;
+  enableModule: (moduleId: string) => Promise<boolean>;
+  disableModule: (moduleId: string) => Promise<boolean>;
+  getEnabledModules: () => string[];
+  getConfigManager: () => ServerConfigManager;
+  close: () => Promise<void>;
+}> {
   // Initialize configuration manager
   const configManager = options.configManager || new ServerConfigManager();
   await configManager.initialize();
@@ -79,7 +92,7 @@ export async function createServerApp(options: CreateServerAppOptions = {}) {
     moduleLoader,
     configManager,
     config,
-    db: moduleLoader.getApp().get("db"),
+    db: moduleLoader.getDatabase(),
     start: (port?: number) => {
       const serverPort = port || config.port || 3001;
 

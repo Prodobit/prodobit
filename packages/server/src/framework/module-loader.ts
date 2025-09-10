@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-import { createDatabase } from "@prodobit/database";
+import { createDatabase, type Database } from "@prodobit/database";
 import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
 import health from "../core/health.js";
 
@@ -174,5 +174,9 @@ export class ModuleLoader {
 
   isModuleEnabled(moduleName: string): boolean {
     return this.enabledModules.has(moduleName);
+  }
+
+  getDatabase(): Database {
+    return this.db;
   }
 }
