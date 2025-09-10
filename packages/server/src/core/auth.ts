@@ -621,6 +621,13 @@ auth.post("/verify-otp", async (c) => {
           refreshToken: tokenPair.refreshToken,
           expiresAt: tokenPair.expiresAt.toISOString(),
         },
+        authMethod: {
+          id: authMethod.id,
+          provider: authMethod.provider,
+          providerId: authMethod.providerId,
+          verified: authMethod.verified,
+          metadata: authMethod.metadata,
+        },
         tenantMemberships: memberships,
         isNewUser,
       },
