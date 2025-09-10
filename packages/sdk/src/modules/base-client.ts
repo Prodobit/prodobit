@@ -8,12 +8,16 @@ export abstract class BaseClient {
   protected tokenInfo?: TokenInfo;
   protected autoRefresh: boolean;
   protected refreshPromise?: Promise<void>;
+  protected persistToken: boolean;
+  protected tokenStorageKey: string;
 
   constructor(config: ProdobitClientConfig) {
     this.baseUrl = config.baseUrl.replace(/\/$/, "");
     this.apiKey = config.apiKey;
     this.timeout = config.timeout ?? 30000;
     this.autoRefresh = config.autoRefresh ?? true;
+    this.persistToken = config.persistToken ?? true;
+    this.tokenStorageKey = config.tokenStorageKey ?? 'prodobit_token';
     this.defaultHeaders = {
       "Content-Type": "application/json",
       ...config.headers,
@@ -22,6 +26,9 @@ export abstract class BaseClient {
     if (this.apiKey) {
       this.defaultHeaders["Authorization"] = `Bearer ${this.apiKey}`;
     }
+
+    // Load token from storage on initialization
+    this.loadTokenFromStorage();
   }
 
   protected async request<T>(
@@ -181,6 +188,7 @@ export abstract class BaseClient {
   // Token management methods
   setTokenInfo(tokenInfo: TokenInfo): void {
     this.tokenInfo = tokenInfo;
+    this.saveTokenToStorage();
   }
 
   getTokenInfo(): TokenInfo | undefined {
@@ -189,6 +197,60 @@ export abstract class BaseClient {
 
   clearTokenInfo(): void {
     this.tokenInfo = undefined;
+    this.removeTokenFromStorage();
+  }
+
+  // Token persistence methods
+  private loadTokenFromStorage(): void {
+    if (!this.persistToken || typeof window === 'undefined' || !window.localStorage) {
+      return;
+    }
+
+    try {
+      const stored = localStorage.getItem(this.tokenStorageKey);
+      if (stored) {
+        const tokenData = JSON.parse(stored);
+        // Convert expiresAt back to Date object
+        if (tokenData.expiresAt) {
+          tokenData.expiresAt = new Date(tokenData.expiresAt);
+        }
+        
+        // Check if token is still valid
+        if (tokenData.expiresAt && tokenData.expiresAt > new Date()) {
+          this.tokenInfo = tokenData;
+        } else {
+          // Token expired, remove it
+          this.removeTokenFromStorage();
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to load token from storage:', error);
+      this.removeTokenFromStorage();
+    }
+  }
+
+  private saveTokenToStorage(): void {
+    if (!this.persistToken || typeof window === 'undefined' || !window.localStorage || !this.tokenInfo) {
+      return;
+    }
+
+    try {
+      localStorage.setItem(this.tokenStorageKey, JSON.stringify(this.tokenInfo));
+    } catch (error) {
+      console.warn('Failed to save token to storage:', error);
+    }
+  }
+
+  private removeTokenFromStorage(): void {
+    if (!this.persistToken || typeof window === 'undefined' || !window.localStorage) {
+      return;
+    }
+
+    try {
+      localStorage.removeItem(this.tokenStorageKey);
+    } catch (error) {
+      console.warn('Failed to remove token from storage:', error);
+    }
   }
 
   getCurrentTenantId(): string | undefined {

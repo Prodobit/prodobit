@@ -114,6 +114,8 @@ export const prodobitClientConfig = type({
   "timeout?": "number >= 0",
   "headers?": "object",
   "autoRefresh?": "boolean",
+  "persistToken?": "boolean",
+  "tokenStorageKey?": "string",
 });
 
 export const requestConfig = type({
