@@ -107,6 +107,13 @@ export const loginResponseData = type({
     "refreshToken?": "string",
     expiresAt: timestamp,
   },
+  authMethod: {
+    id: uuid,
+    provider: "'email' | 'google' | 'github' | 'microsoft'",
+    providerId: "string >= 1",
+    verified: "boolean",
+    "metadata?": "object",
+  },
   "tenantMemberships?": tenantMembership.array(),
   isNewUser: "boolean",
 });

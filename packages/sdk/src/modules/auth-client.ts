@@ -15,17 +15,18 @@ import type {
 } from "@prodobit/types";
 import {
   checkUserRequest,
+  logoutRequest,
+  refreshTokenRequest,
+  registerTenantRequest,
   requestOTPRequest,
   resendOTPRequest,
   verifyOTPRequest,
-  refreshTokenRequest,
-  logoutRequest,
-  registerTenantRequest,
 } from "@prodobit/types";
+import { LoginResponseData } from "packages/types/dist/auth";
 import type { RequestConfig } from "../types";
-import { BaseClient } from "./base-client";
 import { ProdobitError } from "../types";
 import { validateRequest } from "../utils/validation";
+import { BaseClient } from "./base-client";
 
 export class AuthClient extends BaseClient {
   // Check user before OTP
@@ -120,7 +121,9 @@ export class AuthClient extends BaseClient {
       throw ProdobitError.unauthorized("No refresh token available");
     }
 
-    const validatedData = validateRequest(refreshTokenRequest, { refreshToken });
+    const validatedData = validateRequest(refreshTokenRequest, {
+      refreshToken,
+    });
     const response = await this.request<LoginResponse>(
       "POST",
       "/api/v1/auth/refresh",
@@ -173,7 +176,10 @@ export class AuthClient extends BaseClient {
   }
 
   // Auth state methods
-  async loginWithOTP(email: string, tenantId?: string): Promise<{
+  async loginWithOTP(
+    email: string,
+    tenantId?: string
+  ): Promise<{
     success: boolean;
     message: string;
     expiresAt?: string;
@@ -215,8 +221,11 @@ export class AuthClient extends BaseClient {
   ): Promise<{
     success: boolean;
     user?: User;
+    authMethod?: LoginResponseData["authMethod"];
     isNewUser?: boolean;
     error?: string;
+    session?: LoginResponseData["session"];
+    tenantMemberships?: LoginResponseData["tenantMemberships"];
   }> {
     try {
       const response = await this.verifyOTP({
@@ -229,7 +238,10 @@ export class AuthClient extends BaseClient {
         return {
           success: true,
           user: response.data.user,
+          authMethod: response.data.authMethod,
           isNewUser: response.data.isNewUser,
+          session: response.data.session,
+          tenantMemberships: response.data.tenantMemberships,
         };
       }
 
