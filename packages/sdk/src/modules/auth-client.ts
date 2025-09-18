@@ -1,6 +1,8 @@
 import type {
   CheckUserRequest,
   CheckUserResponse,
+  CheckVerificationStatusRequest,
+  CheckVerificationStatusResponse,
   CurrentUserResponse,
   LoginResponse,
   LogoutRequest,
@@ -10,17 +12,26 @@ import type {
   RequestOTPRequest,
   RequestOTPResponse,
   ResendOTPRequest,
+  ResendVerificationEmailRequest,
   Response,
+  SendVerificationEmailRequest,
+  SendVerificationEmailResponse,
   User,
+  VerifyEmailRequest,
+  VerifyEmailResponse,
   VerifyOTPRequest,
 } from "@prodobit/types";
 import {
   checkUserRequest,
+  checkVerificationStatusRequest,
   logoutRequest,
   refreshTokenRequest,
   registerTenantRequest,
   requestOTPRequest,
   resendOTPRequest,
+  resendVerificationEmailRequest,
+  sendVerificationEmailRequest,
+  verifyEmailRequest,
   verifyOTPRequest,
 } from "@prodobit/types";
 import { LoginResponseData } from "packages/types/dist/auth";
@@ -105,8 +116,9 @@ export class AuthClient extends BaseClient {
     if (response.success && response.data) {
       this.setTokenInfo({
         accessToken: response.data.session.accessToken,
-        refreshToken: response.data.session.refreshToken ?? "",
         expiresAt: new Date(response.data.session.expiresAt),
+        csrfToken: response.data.session.csrfToken,
+        tenantId: response.data.user.id, // Set from user context
       });
     }
 
@@ -117,18 +129,11 @@ export class AuthClient extends BaseClient {
     data?: RefreshTokenRequest,
     config?: RequestConfig
   ): Promise<LoginResponse> {
-    const refreshToken = data?.refreshToken || this.tokenInfo?.refreshToken;
-    if (!refreshToken) {
-      throw ProdobitError.unauthorized("No refresh token available");
-    }
-
-    const validatedData = validateRequest(refreshTokenRequest, {
-      refreshToken,
-    });
+    // No longer need refresh token in request body - comes from cookie
     const response = await this.request<LoginResponse>(
       "POST",
       "/api/v1/auth/refresh",
-      validatedData,
+      {}, // Empty body
       { ...config, skipAuth: true }
     );
 
@@ -136,8 +141,9 @@ export class AuthClient extends BaseClient {
     if (response.success && response.data) {
       this.setTokenInfo({
         accessToken: response.data.session.accessToken,
-        refreshToken: response.data.session.refreshToken ?? refreshToken,
         expiresAt: new Date(response.data.session.expiresAt),
+        csrfToken: response.data.session.csrfToken,
+        tenantId: this.tokenInfo?.tenantId, // Preserve tenantId
       });
     }
 
@@ -267,5 +273,62 @@ export class AuthClient extends BaseClient {
       this.clearTokenInfo();
       return false;
     }
+  }
+
+  // Email verification methods
+  async sendVerificationEmail(
+    data: SendVerificationEmailRequest,
+    config?: RequestConfig
+  ): Promise<SendVerificationEmailResponse> {
+    const validatedData = validateRequest(sendVerificationEmailRequest, data);
+    const response = await this.request<SendVerificationEmailResponse>(
+      "POST",
+      "/api/v1/auth/send-verification-email",
+      validatedData,
+      { ...config, skipAuth: true }
+    );
+    return response;
+  }
+
+  async verifyEmail(
+    data: VerifyEmailRequest,
+    config?: RequestConfig
+  ): Promise<VerifyEmailResponse> {
+    const validatedData = validateRequest(verifyEmailRequest, data);
+    const response = await this.request<VerifyEmailResponse>(
+      "GET",
+      `/api/v1/auth/verify-email/${encodeURIComponent(validatedData.token)}`,
+      undefined,
+      { ...config, skipAuth: true }
+    );
+    return response;
+  }
+
+  async resendVerificationEmail(
+    data: ResendVerificationEmailRequest,
+    config?: RequestConfig
+  ): Promise<SendVerificationEmailResponse> {
+    const validatedData = validateRequest(resendVerificationEmailRequest, data);
+    const response = await this.request<SendVerificationEmailResponse>(
+      "POST",
+      "/api/v1/auth/resend-verification-email",
+      validatedData,
+      { ...config, skipAuth: true }
+    );
+    return response;
+  }
+
+  async checkVerificationStatus(
+    data: CheckVerificationStatusRequest,
+    config?: RequestConfig
+  ): Promise<CheckVerificationStatusResponse> {
+    const validatedData = validateRequest(checkVerificationStatusRequest, data);
+    const response = await this.request<CheckVerificationStatusResponse>(
+      "POST",
+      "/api/v1/auth/check-verification-status",
+      validatedData,
+      { ...config, skipAuth: true }
+    );
+    return response;
   }
 }

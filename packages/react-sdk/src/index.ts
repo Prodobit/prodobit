@@ -26,6 +26,7 @@ export {
   useItems, 
   useItem, 
   useCreateItem, 
+  useUpdateItem,
   useDeleteItem 
 } from './hooks/useItems';
 export { 

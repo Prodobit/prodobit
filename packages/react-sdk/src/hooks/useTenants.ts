@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, TenantQuery, Pagination } from '../types';
-import type { CreateTenantRequest, UpdateTenantRequest } from '@prodobit/types';
+import type { Tenant, TenantMembership, TenantInvitation, CreateTenantRequest, UpdateTenantRequest, Response, PaginatedResponse } from '@prodobit/types';
 
 export const useTenants = (
   query?: TenantQuery & Pagination,
@@ -10,7 +10,7 @@ export const useTenants = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Tenant[]>, Error>({
     queryKey: queryKeys.tenants.list(query),
     queryFn: () => client.getTenants(query),
     ...options,
@@ -20,7 +20,7 @@ export const useTenants = (
 export const useTenant = (id: string, options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<Response<Tenant>, Error>({
     queryKey: queryKeys.tenants.detail(id),
     queryFn: () => client.getTenant(id),
     enabled: !!id && options?.enabled !== false,
@@ -32,7 +32,7 @@ export const useCreateTenant = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Tenant>, Error, CreateTenantRequest>({
     mutationFn: (data: CreateTenantRequest) => client.createTenant(data),
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.tenants.all() });
@@ -46,7 +46,7 @@ export const useUpdateTenant = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Tenant>, Error, { id: string; data: UpdateTenantRequest }>({
     mutationFn: ({ id, data }: { id: string; data: UpdateTenantRequest }) => 
       client.updateTenant(id, data),
     onSuccess: (data, variables) => {
@@ -62,7 +62,7 @@ export const useDeleteTenant = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<void>, Error, string>({
     mutationFn: (id: string) => client.deleteTenant(id),
     onSuccess: (data, id) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.tenants.all() });
@@ -79,7 +79,7 @@ export const useTenantMembers = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<TenantMembership[]>, Error>({
     queryKey: queryKeys.tenants.members(tenantId),
     queryFn: () => client.getTenantMembers(tenantId),
     enabled: !!tenantId && options?.enabled !== false,
@@ -93,7 +93,7 @@ export const useTenantInvitations = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<TenantInvitation[]>, Error>({
     queryKey: queryKeys.tenants.invitations(tenantId),
     queryFn: () => client.getTenantInvitations(tenantId),
     enabled: !!tenantId && options?.enabled !== false,

@@ -21,6 +21,13 @@ npm install @prodobit/database
 npm install @prodobit/server
 ```
 
+For Flutter development:
+
+```yaml
+dependencies:
+  prodobit_flutter_sdk: ^0.4.1
+```
+
 ## Packages
 
 - **@prodobit/types** - Core types and validation schemas
@@ -29,6 +36,7 @@ npm install @prodobit/server
 - **@prodobit/sdk** - TypeScript API client
 - **@prodobit/react-sdk** - React hooks and providers
 - **@prodobit/server** - Modular server core
+- **prodobit_flutter_sdk** - Flutter SDK for mobile development
 
 ## 🚀 Development Setup
 
@@ -37,6 +45,7 @@ npm install @prodobit/server
 - Node.js 20+
 - pnpm 9+
 - Docker & Docker Compose
+- Flutter 3.19+ (for Flutter SDK development)
 
 ### Installation
 
@@ -63,9 +72,10 @@ pnpm dev
 ├── packages/
 │   ├── types/          # Type definitions with Arktype
 │   ├── database/       # Drizzle ORM schema
-│   └── sdk/           # TypeScript SDK
-├── apps/
-│   └── api/           # Hono API server
+│   ├── sdk/           # TypeScript SDK
+│   ├── react-sdk/     # React hooks and providers
+│   ├── flutter-sdk/   # Flutter SDK for mobile
+│   └── server/        # Modular server core
 ├── examples/
 │   └── react-app/     # React example
 └── docker-compose.yml
@@ -80,6 +90,16 @@ pnpm build             # Build all packages
 pnpm typecheck         # Type checking
 pnpm lint              # Lint with Biome
 pnpm format            # Format with Biome
+
+# Testing
+pnpm test              # Run TypeScript tests
+pnpm flutter:test      # Run Flutter tests  
+pnpm test:all          # Run all tests
+
+# Flutter SDK
+pnpm flutter:deps      # Get Flutter dependencies
+pnpm flutter:analyze   # Analyze Flutter code
+pnpm flutter:codegen   # Run code generation
 
 # Database
 pnpm db:generate       # Generate migrations

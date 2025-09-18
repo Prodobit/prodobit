@@ -50,8 +50,8 @@ export const session = type({
   userId: uuid,
   "authMethodId?": uuid,
   "currentTenantId?": uuid,
-  accessTokenHash: "string",
   "refreshTokenHash?": "string",
+  csrfTokenHash: "string",
   expiresAt: timestamp,
   "refreshExpiresAt?": timestamp,
   "deviceType?": "'mobile' | 'desktop' | 'tablet' | 'api'",
@@ -59,10 +59,11 @@ export const session = type({
   "userAgent?": "string",
   "ipAddress?": "string",
   "locationData?": "object",
+  "deviceFingerprint?": "string",
   status: "'active' | 'expired' | 'revoked'",
   lastActivityAt: timestamp,
   "revokedAt?": timestamp,
-  "revokedReason?": "'user_logout' | 'admin_revoke' | 'security_breach'",
+  "revokedReason?": "'user_logout' | 'admin_revoke' | 'security_breach' | 'suspicious_activity'",
   insertedAt: timestamp,
   updatedAt: timestamp,
   "deletedAt?": timestamp,
@@ -104,8 +105,8 @@ export const loginResponseData = type({
   user,
   session: {
     accessToken: "string",
-    "refreshToken?": "string",
     expiresAt: timestamp,
+    csrfToken: "string",
   },
   authMethod: {
     id: uuid,
@@ -311,12 +312,70 @@ export const permissionCheck = type({
   "resourceId?": "string",
 });
 
-// Token Info Schema
+// Token Info Schema - Only for in-memory storage
 export const tokenInfo = type({
   accessToken: "string",
-  "refreshToken?": "string",
   expiresAt: "Date",
+  csrfToken: "string",
   "tenantId?": uuid,
+});
+
+// CSRF Protection Schema
+export const csrfTokenRequest = type({
+  csrfToken: "string >= 1",
+});
+
+export const validateCSRFRequest = type({
+  csrfToken: "string >= 1",
+});
+
+// Email verification types
+export const sendVerificationEmailRequest = type({
+  email: "string.email",
+});
+
+export const sendVerificationEmailResponse = type({
+  success: "boolean",
+  message: "string",
+  "expiresAt?": timestamp,
+});
+
+export const verifyEmailRequest = type({
+  token: "string >= 1",
+});
+
+export const verifyEmailResponse = type({
+  success: "boolean",
+  message: "string",
+  "redirectUrl?": "string",
+});
+
+export const resendVerificationEmailRequest = type({
+  email: "string.email",
+});
+
+export const checkVerificationStatusRequest = type({
+  email: "string.email",
+});
+
+export const checkVerificationStatusResponse = type({
+  success: "boolean",
+  verified: "boolean",
+  message: "string",
+  "sentAt?": timestamp,
+  "expiresAt?": timestamp,
+});
+
+// Email verification token schema (for database)
+export const emailVerificationToken = type({
+  id: uuid,
+  email: "string.email",
+  tokenHash: "string",
+  expiresAt: timestamp,
+  "usedAt?": timestamp,
+  "createdBy?": uuid,
+  insertedAt: timestamp,
+  updatedAt: timestamp,
 });
 
 // Auth API type exports
@@ -324,3 +383,15 @@ export type LogoutRequest = typeof logoutRequest.infer;
 export type AuthAuditLog = typeof authAuditLog.infer;
 export type PermissionCheck = typeof permissionCheck.infer;
 export type TokenInfo = typeof tokenInfo.infer;
+export type CSRFTokenRequest = typeof csrfTokenRequest.infer;
+export type ValidateCSRFRequest = typeof validateCSRFRequest.infer;
+
+// Email verification type exports
+export type SendVerificationEmailRequest = typeof sendVerificationEmailRequest.infer;
+export type SendVerificationEmailResponse = typeof sendVerificationEmailResponse.infer;
+export type VerifyEmailRequest = typeof verifyEmailRequest.infer;
+export type VerifyEmailResponse = typeof verifyEmailResponse.infer;
+export type ResendVerificationEmailRequest = typeof resendVerificationEmailRequest.infer;
+export type CheckVerificationStatusRequest = typeof checkVerificationStatusRequest.infer;
+export type CheckVerificationStatusResponse = typeof checkVerificationStatusResponse.infer;
+export type EmailVerificationToken = typeof emailVerificationToken.infer;

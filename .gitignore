@@ -5,6 +5,10 @@ node_modules/
 dist/
 *.tsbuildinfo
 
+# Panda CSS generated files
+styled-system/
+/styled-system
+
 # Environment variables
 .env
 .env.local
@@ -25,3 +29,23 @@ dist/
 # Temp
 tmp/
 temp/
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+.packages
+build/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+android/app/src/main/java/io/flutter/plugins/
+android/.gradle/
+android/app/build/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties

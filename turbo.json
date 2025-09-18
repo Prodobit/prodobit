@@ -62,6 +62,33 @@
     "db:studio": {
       "cache": false,
       "persistent": true
+    },
+    "flutter:test": {
+      "dependsOn": ["^build"],
+      "inputs": ["lib/**/*.dart", "test/**/*.dart", "pubspec.yaml"],
+      "outputs": []
+    },
+    "flutter:analyze": {
+      "inputs": ["lib/**/*.dart", "test/**/*.dart", "pubspec.yaml", "analysis_options.yaml"],
+      "outputs": []
+    },
+    "flutter:build": {
+      "dependsOn": ["^build"],
+      "inputs": ["lib/**/*.dart", "pubspec.yaml", "analysis_options.yaml"],
+      "outputs": ["build/**"]
+    },
+    "flutter:codegen": {
+      "inputs": ["lib/**/*.dart", "pubspec.yaml", "build.yaml"],
+      "outputs": ["lib/**/*.g.dart", "lib/**/*.freezed.dart"]
+    },
+    "start": {
+      "cache": false,
+      "persistent": true
+    },
+    "start:prod": {
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV"]
     }
   }
 }

@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, AttributeQuery, Pagination } from '../types';
-import type { CreateAttributeRequest, UpdateAttributeRequest } from '@prodobit/types';
+import type { Attribute, CreateAttributeRequest, UpdateAttributeRequest, Response, PaginatedResponse } from '@prodobit/types';
 
 export const useAttributes = (
   query?: AttributeQuery & Pagination,
@@ -10,7 +10,7 @@ export const useAttributes = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Attribute[]>, Error>({
     queryKey: queryKeys.attributes.list(query),
     queryFn: () => client.getAttributes(query),
     ...options,
@@ -20,7 +20,7 @@ export const useAttributes = (
 export const useAttribute = (id: string, options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<Response<Attribute>, Error>({
     queryKey: queryKeys.attributes.detail(id),
     queryFn: () => client.getAttribute(id),
     enabled: !!id && options?.enabled !== false,
@@ -32,7 +32,7 @@ export const useCreateAttribute = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Attribute>, Error, CreateAttributeRequest>({
     mutationFn: (data: CreateAttributeRequest) => client.createAttribute(data),
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.attributes.all() });
@@ -46,7 +46,7 @@ export const useUpdateAttribute = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Attribute>, Error, { id: string; data: UpdateAttributeRequest }>({
     mutationFn: ({ id, data }: { id: string; data: UpdateAttributeRequest }) => 
       client.updateAttribute(id, data),
     onSuccess: (data, variables) => {
@@ -62,7 +62,7 @@ export const useDeleteAttribute = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<void>, Error, string>({
     mutationFn: (id: string) => client.deleteAttribute(id),
     onSuccess: (data, id) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.attributes.all() });

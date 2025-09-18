@@ -12,6 +12,19 @@ const packages = fs.readdirSync(packagesDir);
 
 console.log(`Preparing packages for publish (v${currentVersion})...`);
 
+// Update Flutter SDK pubspec.yaml version
+const flutterPubspecPath = path.join(packagesDir, 'flutter-sdk', 'pubspec.yaml');
+if (fs.existsSync(flutterPubspecPath)) {
+  let pubspecContent = fs.readFileSync(flutterPubspecPath, 'utf8');
+  const versionRegex = /^version:\s*[\d.]+$/m;
+  
+  if (versionRegex.test(pubspecContent)) {
+    pubspecContent = pubspecContent.replace(versionRegex, `version: ${currentVersion}`);
+    fs.writeFileSync(flutterPubspecPath, pubspecContent);
+    console.log(`✅ Updated Flutter SDK to v${currentVersion}`);
+  }
+}
+
 packages.forEach(pkg => {
   const pkgPath = path.join(packagesDir, pkg, 'package.json');
   
