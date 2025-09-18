@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/types",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "description": "Core types and validation schemas for Prodobit",
   "type": "module",
   "main": "./dist/index.js",

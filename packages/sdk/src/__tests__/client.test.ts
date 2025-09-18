@@ -75,8 +75,8 @@ describe('ProdobitClient', () => {
   describe('token management', () => {
     const mockTokenInfo = {
       accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyLTEyMyIsInRlbmFudElkIjoidGVuYW50LTEyMyIsImV4cCI6OTk5OTk5OTk5OX0.fake-signature',
-      refreshToken: 'refresh-token-123',
       expiresAt: new Date(Date.now() + 3600000),
+      csrfToken: 'csrf-token-123',
       tenantId: 'tenant-123'
     }
 

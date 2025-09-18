@@ -24,9 +24,8 @@ describe('ProdobitClient - Items Management', () => {
     // Set up authentication
     const mockTokenInfo = {
       accessToken: 'access-token-123',
-      refreshToken: 'refresh-token-123',
       expiresAt: new Date(Date.now() + 3600000),
-      refreshExpiresAt: new Date(Date.now() + 7200000).toISOString(),
+      csrfToken: 'csrf-token-123',
       tenantId: '123e4567-e89b-12d3-a456-426614174000'
     }
     client.setTokenInfo(mockTokenInfo)
