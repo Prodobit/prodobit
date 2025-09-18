@@ -24,6 +24,7 @@ export { supplierModule } from "./modules/supplier/manifest.js";
 export { ModuleLoader, rbacManager, ServerConfigManager };
 export type { ModuleManifest, ServerConfig };
 export * from './config/index.js';
+export { authMiddleware, optionalAuthMiddleware, tenantContextMiddleware } from "./core/middleware/auth.js";
 
 export interface CreateServerAppOptions {
   modules?: ModuleManifest[];

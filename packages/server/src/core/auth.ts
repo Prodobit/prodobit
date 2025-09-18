@@ -1,16 +1,24 @@
 import type { Database } from "@prodobit/database";
 import {
   authMethods,
+  emailVerificationTokens,
   sessions,
   tenantMemberships,
   tenants,
   users,
 } from "@prodobit/database";
 import type {
+  CheckVerificationStatusRequest,
+  CheckVerificationStatusResponse,
   LogoutRequest,
   RefreshTokenRequest,
   RequestOTPRequest,
   ResendOTPRequest,
+  ResendVerificationEmailRequest,
+  SendVerificationEmailRequest,
+  SendVerificationEmailResponse,
+  VerifyEmailRequest,
+  VerifyEmailResponse,
   VerifyOTPRequest,
 } from "@prodobit/types";
 import { and, desc, eq } from "drizzle-orm";
@@ -18,9 +26,12 @@ import { Hono } from "hono";
 import { authMiddleware } from "./middleware/auth.js";
 import { RBACService } from "./middleware/rbac.js";
 import { EmailService } from "./utils/email.js";
+import { EmailVerificationService } from "./utils/email-verification.js";
 import { JwtTokenManager } from "./utils/jwt.js";
 import { OTPManager } from "./utils/otp.js";
 import { TokenUtils } from "./utils/tokens.js";
+import { CSRFTokenManager } from "./utils/csrf.js";
+import { CookieManager } from "./utils/cookies.js";
 
 const auth = new Hono<{ Variables: { db: Database } }>();
 
@@ -570,7 +581,7 @@ auth.post("/verify-otp", async (c) => {
       throw new Error("tenantId is required for token generation");
     }
 
-    // Generate tokens
+    // Generate tokens and CSRF token
     const tokenPayload = {
       sub: user.id,
       tenantId,
@@ -578,26 +589,33 @@ auth.post("/verify-otp", async (c) => {
       permissions,
     };
     const tokenPair = JwtTokenManager.generateTokenPair(tokenPayload);
+    const csrfTokenPair = CSRFTokenManager.generateTokenPair();
+    const deviceFingerprint = CookieManager.generateDeviceFingerprint(c);
 
     // Create session
-    await db
+    const newSession = await db
       .insert(sessions)
       .values({
         userId: user.id,
         authMethodId: authMethod.id,
         currentTenantId: body.tenantId,
-        accessTokenHash: TokenUtils.hashToken(tokenPair.accessToken),
         refreshTokenHash: tokenPair.refreshToken
           ? TokenUtils.hashToken(tokenPair.refreshToken)
           : null,
+        csrfTokenHash: csrfTokenPair.hash,
         expiresAt: tokenPair.expiresAt,
         refreshExpiresAt: tokenPair.refreshExpiresAt,
         userAgent: c.req.header("User-Agent"),
         ipAddress:
           c.req.header("CF-Connecting-IP") || c.req.header("X-Forwarded-For"),
+        deviceFingerprint,
         status: "active",
       })
       .returning();
+
+    // Set secure cookies
+    CookieManager.setRefreshTokenCookie(c, tokenPair.refreshToken, tokenPair.refreshExpiresAt);
+    CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.expiresAt);
 
     // Get tenant memberships
     const memberships = await db
@@ -623,8 +641,8 @@ auth.post("/verify-otp", async (c) => {
         },
         session: {
           accessToken: tokenPair.accessToken,
-          refreshToken: tokenPair.refreshToken,
           expiresAt: tokenPair.expiresAt.toISOString(),
+          csrfToken: csrfTokenPair.token,
         },
         authMethod: {
           id: authMethod.id,
@@ -656,14 +674,29 @@ auth.post("/verify-otp", async (c) => {
 // POST /api/v1/auth/refresh
 auth.post("/refresh", async (c) => {
   try {
-    const body = (await c.req.json()) as RefreshTokenRequest;
     const db = c.get("db");
+
+    // Get refresh token from cookie (instead of request body)
+    const refreshToken = CookieManager.getRefreshTokenFromCookie(c);
+    if (!refreshToken) {
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Refresh token not found",
+          },
+        },
+        401
+      );
+    }
 
     // Verify refresh token
     let tokenPayload;
     try {
-      tokenPayload = JwtTokenManager.verifyRefreshToken(body.refreshToken);
+      tokenPayload = JwtTokenManager.verifyRefreshToken(refreshToken);
     } catch (error) {
+      CookieManager.clearAuthCookies(c);
       return c.json(
         {
           success: false,
@@ -685,7 +718,7 @@ auth.post("/refresh", async (c) => {
           eq(sessions.userId, tokenPayload.sub),
           eq(
             sessions.refreshTokenHash,
-            TokenUtils.hashToken(body.refreshToken)
+            TokenUtils.hashToken(refreshToken)
           ),
           eq(sessions.status, "active")
         )
@@ -693,12 +726,39 @@ auth.post("/refresh", async (c) => {
       .limit(1);
 
     if (session.length === 0) {
+      CookieManager.clearAuthCookies(c);
       return c.json(
         {
           success: false,
           error: {
             code: "UNAUTHORIZED",
             message: "Session not found or expired",
+          },
+        },
+        401
+      );
+    }
+
+    // Validate device fingerprint
+    const currentFingerprint = CookieManager.generateDeviceFingerprint(c);
+    if (session[0].deviceFingerprint && session[0].deviceFingerprint !== currentFingerprint) {
+      // Revoke session for security
+      await db
+        .update(sessions)
+        .set({
+          status: "revoked",
+          revokedAt: new Date(),
+          revokedReason: "suspicious_activity",
+        })
+        .where(eq(sessions.id, session[0].id));
+
+      CookieManager.clearAuthCookies(c);
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Session security violation detected",
           },
         },
         401
@@ -713,6 +773,7 @@ auth.post("/refresh", async (c) => {
       .limit(1);
 
     if (user.length === 0 || user[0].status !== "active") {
+      CookieManager.clearAuthCookies(c);
       return c.json(
         {
           success: false,
@@ -742,7 +803,7 @@ auth.post("/refresh", async (c) => {
       throw new Error("tenantId is required for token refresh");
     }
 
-    // Generate new tokens
+    // Generate new tokens (including new refresh token for rotation)
     const tokenPayloadForJwt = {
       sub: user[0].id,
       tenantId: tokenPayload.tenantId,
@@ -750,21 +811,24 @@ auth.post("/refresh", async (c) => {
       permissions,
     };
     const tokenPair = JwtTokenManager.generateTokenPair(tokenPayloadForJwt);
+    const csrfTokenPair = CSRFTokenManager.generateTokenPair();
 
-    // Update session
+    // Update session with new tokens
     await db
       .update(sessions)
       .set({
-        accessTokenHash: TokenUtils.hashToken(tokenPair.accessToken),
-        refreshTokenHash: tokenPair.refreshToken
-          ? TokenUtils.hashToken(tokenPair.refreshToken)
-          : null,
+        refreshTokenHash: TokenUtils.hashToken(tokenPair.refreshToken),
+        csrfTokenHash: csrfTokenPair.hash,
         expiresAt: tokenPair.expiresAt,
         refreshExpiresAt: tokenPair.refreshExpiresAt,
         lastActivityAt: new Date(),
         updatedAt: new Date(),
       })
       .where(eq(sessions.id, session[0].id));
+
+    // Set new secure cookies
+    CookieManager.setRefreshTokenCookie(c, tokenPair.refreshToken, tokenPair.refreshExpiresAt);
+    CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.expiresAt);
 
     return c.json({
       success: true,
@@ -779,13 +843,14 @@ auth.post("/refresh", async (c) => {
         },
         session: {
           accessToken: tokenPair.accessToken,
-          refreshToken: tokenPair.refreshToken,
           expiresAt: tokenPair.expiresAt.toISOString(),
+          csrfToken: csrfTokenPair.token,
         },
       },
     });
   } catch (error) {
     console.error("Refresh token error:", error);
+    CookieManager.clearAuthCookies(c);
     return c.json(
       {
         success: false,
@@ -819,11 +884,9 @@ auth.post("/logout", authMiddleware, async (c) => {
         })
         .where(eq(sessions.userId, user.id));
     } else {
-      // Logout from current device only
-      const authHeader = c.req.header("Authorization");
-      const token = JwtTokenManager.extractTokenFromHeader(authHeader);
-
-      if (token) {
+      // Logout from current device only using refresh token
+      const refreshToken = CookieManager.getRefreshTokenFromCookie(c);
+      if (refreshToken) {
         await db
           .update(sessions)
           .set({
@@ -835,11 +898,14 @@ auth.post("/logout", authMiddleware, async (c) => {
           .where(
             and(
               eq(sessions.userId, user.id),
-              eq(sessions.accessTokenHash, TokenUtils.hashToken(token))
+              eq(sessions.refreshTokenHash, TokenUtils.hashToken(refreshToken))
             )
           );
       }
     }
+
+    // Clear auth cookies
+    CookieManager.clearAuthCookies(c);
 
     return c.json({
       success: true,
@@ -848,6 +914,8 @@ auth.post("/logout", authMiddleware, async (c) => {
     });
   } catch (error) {
     console.error("Logout error:", error);
+    // Clear cookies even on error
+    CookieManager.clearAuthCookies(c);
     return c.json(
       {
         success: false,
@@ -1098,18 +1166,28 @@ auth.post("/register-tenant", async (c) => {
     let emailSent = false;
     try {
       if (EmailService.isInitialized()) {
-        // Generate verification token/OTP
-        const { code } = OTPManager.storeOTP(email, {
-          expiresInMinutes: 30,
-          purpose: "email-verification",
-        });
-
-        await EmailService.sendOTPEmail({
+        // Generate verification token
+        const tokenResult = await EmailVerificationService.generateVerificationToken(
+          db,
           email,
-          code,
-          expiresInMinutes: 30,
-        });
-        emailSent = true;
+          result.user.id
+        );
+
+        if (tokenResult.success) {
+          // Build verification URL
+          const baseUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+          const verificationUrl = `${baseUrl}/auth/verify-email?token=${tokenResult.token}`;
+
+          // Send verification email
+          const emailResult = await EmailService.sendVerificationEmail({
+            email,
+            verificationUrl,
+            userName: result.user.displayName ?? undefined,
+            expiresInHours: 24,
+          });
+
+          emailSent = emailResult.success;
+        }
       }
     } catch (emailError) {
       console.error("Failed to send verification email:", emailError);
@@ -1155,6 +1233,378 @@ auth.post("/register-tenant", async (c) => {
       },
       500
     );
+  }
+});
+
+// POST /api/v1/auth/send-verification-email - Send verification email
+auth.post("/send-verification-email", async (c) => {
+  try {
+    const body = (await c.req.json()) as SendVerificationEmailRequest;
+    const { email } = body;
+
+    if (!email) {
+      return c.json({
+        success: false,
+        message: "Email is required",
+      }, 400);
+    }
+
+    const db = c.get("db");
+
+    // Check if user exists and get auth method
+    const existingAuthMethod = await db
+      .select({
+        authMethod: authMethods,
+        user: users,
+      })
+      .from(authMethods)
+      .innerJoin(users, eq(authMethods.userId, users.id))
+      .where(
+        and(
+          eq(authMethods.provider, "email"),
+          eq(authMethods.providerId, email)
+        )
+      )
+      .limit(1);
+
+    if (existingAuthMethod.length === 0) {
+      return c.json({
+        success: false,
+        message: "User with this email address does not exist",
+      }, 404);
+    }
+
+    const authMethod = existingAuthMethod[0].authMethod;
+    const user = existingAuthMethod[0].user;
+
+    // Check if already verified
+    if (authMethod.verified) {
+      return c.json({
+        success: false,
+        message: "Email address is already verified",
+      }, 400);
+    }
+
+    // Check rate limiting
+    const rateLimitCheck = await EmailVerificationService.canSendVerificationEmail(db, email);
+    if (!rateLimitCheck.canSend) {
+      return c.json({
+        success: false,
+        message: rateLimitCheck.message,
+      }, 429);
+    }
+
+    // Generate verification token
+    const tokenResult = await EmailVerificationService.generateVerificationToken(
+      db,
+      email,
+      user.id
+    );
+
+    if (!tokenResult.success) {
+      return c.json({
+        success: false,
+        message: tokenResult.message,
+        error: tokenResult.error,
+      }, 500);
+    }
+
+    // Build verification URL - this would need to be configured based on your frontend URL
+    const baseUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+    const verificationUrl = `${baseUrl}/auth/verify-email?token=${tokenResult.token}`;
+
+    // Send verification email
+    if (EmailService.isInitialized()) {
+      const emailResult = await EmailService.sendVerificationEmail({
+        email,
+        verificationUrl,
+        userName: user.displayName ?? undefined,
+        expiresInHours: 24,
+      });
+
+      if (!emailResult.success) {
+        return c.json({
+          success: false,
+          message: "Failed to send verification email",
+          error: emailResult.error,
+        }, 500);
+      }
+    } else {
+      console.warn("EmailService not initialized, verification email not sent");
+      return c.json({
+        success: false,
+        message: "Email service not configured",
+      }, 500);
+    }
+
+    return c.json({
+      success: true,
+      message: "Verification email sent successfully",
+      expiresAt: tokenResult.expiresAt?.toISOString(),
+    });
+  } catch (error) {
+    console.error("Send verification email error:", error);
+    return c.json({
+      success: false,
+      message: "Failed to send verification email",
+      error: error instanceof Error ? error.message : "Unknown error",
+    }, 500);
+  }
+});
+
+// GET /api/v1/auth/verify-email/:token - Verify email with token
+auth.get("/verify-email/:token", async (c) => {
+  try {
+    const token = c.req.param("token");
+
+    if (!token) {
+      return c.json({
+        success: false,
+        message: "Verification token is required",
+      }, 400);
+    }
+
+    const db = c.get("db");
+
+    // Verify the token
+    const verifyResult = await EmailVerificationService.verifyToken(db, token);
+
+    if (!verifyResult.success) {
+      return c.json({
+        success: false,
+        message: verifyResult.message,
+        error: verifyResult.error,
+      }, 400);
+    }
+
+    const email = verifyResult.email!;
+
+    // Update auth method to verified
+    await db
+      .update(authMethods)
+      .set({
+        verified: true,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(
+          eq(authMethods.provider, "email"),
+          eq(authMethods.providerId, email)
+        )
+      );
+
+    // Invalidate any remaining tokens for this email
+    await EmailVerificationService.invalidateTokensForEmail(db, email);
+
+    // For web browsers, you might want to redirect
+    const redirectUrl = process.env.FRONTEND_URL 
+      ? `${process.env.FRONTEND_URL}/auth/verification-success`
+      : undefined;
+
+    return c.json({
+      success: true,
+      message: "Email verified successfully",
+      redirectUrl,
+    });
+  } catch (error) {
+    console.error("Verify email error:", error);
+    return c.json({
+      success: false,
+      message: "Email verification failed",
+      error: error instanceof Error ? error.message : "Unknown error",
+    }, 500);
+  }
+});
+
+// POST /api/v1/auth/resend-verification-email - Resend verification email
+auth.post("/resend-verification-email", async (c) => {
+  try {
+    const body = (await c.req.json()) as ResendVerificationEmailRequest;
+    const { email } = body;
+
+    if (!email) {
+      return c.json({
+        success: false,
+        message: "Email is required",
+      }, 400);
+    }
+
+    const db = c.get("db");
+
+    // Check if user exists and get auth method
+    const existingAuthMethod = await db
+      .select({
+        authMethod: authMethods,
+        user: users,
+      })
+      .from(authMethods)
+      .innerJoin(users, eq(authMethods.userId, users.id))
+      .where(
+        and(
+          eq(authMethods.provider, "email"),
+          eq(authMethods.providerId, email)
+        )
+      )
+      .limit(1);
+
+    if (existingAuthMethod.length === 0) {
+      return c.json({
+        success: false,
+        message: "User with this email address does not exist",
+      }, 404);
+    }
+
+    const authMethod = existingAuthMethod[0].authMethod;
+    const user = existingAuthMethod[0].user;
+
+    // Check if already verified
+    if (authMethod.verified) {
+      return c.json({
+        success: false,
+        message: "Email address is already verified",
+      }, 400);
+    }
+
+    // Check rate limiting
+    const rateLimitCheck = await EmailVerificationService.canSendVerificationEmail(db, email);
+    if (!rateLimitCheck.canSend) {
+      return c.json({
+        success: false,
+        message: rateLimitCheck.message,
+      }, 429);
+    }
+
+    // Generate new verification token
+    const tokenResult = await EmailVerificationService.generateVerificationToken(
+      db,
+      email,
+      user.id
+    );
+
+    if (!tokenResult.success) {
+      return c.json({
+        success: false,
+        message: tokenResult.message,
+        error: tokenResult.error,
+      }, 500);
+    }
+
+    // Build verification URL
+    const baseUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+    const verificationUrl = `${baseUrl}/auth/verify-email?token=${tokenResult.token}`;
+
+    // Send verification email
+    if (EmailService.isInitialized()) {
+      const emailResult = await EmailService.sendVerificationEmail({
+        email,
+        verificationUrl,
+        userName: user.displayName ?? undefined,
+        expiresInHours: 24,
+      });
+
+      if (!emailResult.success) {
+        return c.json({
+          success: false,
+          message: "Failed to resend verification email",
+          error: emailResult.error,
+        }, 500);
+      }
+    } else {
+      console.warn("EmailService not initialized, verification email not sent");
+      return c.json({
+        success: false,
+        message: "Email service not configured",
+      }, 500);
+    }
+
+    return c.json({
+      success: true,
+      message: "Verification email resent successfully",
+      expiresAt: tokenResult.expiresAt?.toISOString(),
+    });
+  } catch (error) {
+    console.error("Resend verification email error:", error);
+    return c.json({
+      success: false,
+      message: "Failed to resend verification email",
+      error: error instanceof Error ? error.message : "Unknown error",
+    }, 500);
+  }
+});
+
+// POST /api/v1/auth/check-verification-status - Check verification status
+auth.post("/check-verification-status", async (c) => {
+  try {
+    const body = (await c.req.json()) as CheckVerificationStatusRequest;
+    const { email } = body;
+
+    if (!email) {
+      return c.json({
+        success: false,
+        verified: false,
+        message: "Email is required",
+      }, 400);
+    }
+
+    const db = c.get("db");
+
+    // Check if user exists and get auth method
+    const existingAuthMethod = await db
+      .select({
+        authMethod: authMethods,
+        user: users,
+      })
+      .from(authMethods)
+      .innerJoin(users, eq(authMethods.userId, users.id))
+      .where(
+        and(
+          eq(authMethods.provider, "email"),
+          eq(authMethods.providerId, email)
+        )
+      )
+      .limit(1);
+
+    if (existingAuthMethod.length === 0) {
+      return c.json({
+        success: false,
+        verified: false,
+        message: "User with this email address does not exist",
+      }, 404);
+    }
+
+    const authMethod = existingAuthMethod[0].authMethod;
+
+    // Check verification status
+    const isVerified = authMethod.verified;
+
+    if (isVerified) {
+      return c.json({
+        success: true,
+        verified: true,
+        message: "Email address is verified",
+      });
+    }
+
+    // Check for pending tokens
+    const tokenInfo = await EmailVerificationService.hasValidToken(db, email);
+
+    return c.json({
+      success: true,
+      verified: false,
+      message: tokenInfo.exists 
+        ? "Email verification pending - check your inbox"
+        : "Email verification required",
+      sentAt: tokenInfo.sentAt?.toISOString(),
+      expiresAt: tokenInfo.expiresAt?.toISOString(),
+    });
+  } catch (error) {
+    console.error("Check verification status error:", error);
+    return c.json({
+      success: false,
+      verified: false,
+      message: "Failed to check verification status",
+      error: error instanceof Error ? error.message : "Unknown error",
+    }, 500);
   }
 });
 

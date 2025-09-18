@@ -8,6 +8,13 @@ export interface EmailOptions {
   text?: string;
 }
 
+export interface VerificationEmailOptions {
+  email: string;
+  verificationUrl: string;
+  userName?: string;
+  expiresInHours?: number;
+}
+
 export interface OTPEmailOptions {
   email: string;
   code: string;
@@ -748,6 +755,240 @@ The Prodobit Team
       html,
       text,
     });
+  }
+
+  /**
+   * Send email verification email
+   */
+  static async sendVerificationEmail(options: VerificationEmailOptions): Promise<{
+    success: boolean;
+    messageId?: string;
+    error?: string;
+  }> {
+    const { email, verificationUrl, userName, expiresInHours = 24 } = options;
+
+    const subject = "Please verify your email address";
+    const html = this.generateVerificationEmailHTML(verificationUrl, expiresInHours, userName);
+    const text = this.generateVerificationEmailText(verificationUrl, expiresInHours, userName);
+
+    return this.sendEmail({
+      to: email,
+      subject,
+      html,
+      text,
+    });
+  }
+
+  /**
+   * Generate HTML email template for email verification
+   */
+  private static generateVerificationEmailHTML(
+    verificationUrl: string,
+    expiresInHours: number,
+    userName?: string
+  ): string {
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Verify Your Email Address</title>
+      <style>
+        * { box-sizing: border-box; }
+        body { 
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0;
+          background-color: #f8fafc;
+        }
+        .container {
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+          margin: 20px;
+          overflow: hidden;
+        }
+        .header {
+          background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+          color: white;
+          text-align: center;
+          padding: 40px 20px;
+        }
+        .header h1 {
+          margin: 0;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        .content {
+          padding: 40px 30px;
+        }
+        .greeting {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+        .verification-box {
+          background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+          border: 2px solid #3b82f6;
+          border-radius: 12px;
+          padding: 25px;
+          margin: 25px 0;
+          text-align: center;
+        }
+        .verify-button {
+          background: #3b82f6;
+          color: white;
+          padding: 15px 30px;
+          border-radius: 8px;
+          text-decoration: none;
+          display: inline-block;
+          font-weight: 600;
+          margin: 20px 0;
+          border: none;
+          cursor: pointer;
+        }
+        .verify-button:hover {
+          background: #2563eb;
+        }
+        .expiry {
+          background: #fef3c7;
+          border: 1px solid #f59e0b;
+          border-radius: 8px;
+          padding: 12px;
+          margin: 20px 0;
+          color: #92400e;
+          text-align: center;
+          font-weight: 500;
+        }
+        .warning {
+          background: #fef2f2;
+          border: 1px solid #ef4444;
+          border-radius: 8px;
+          padding: 12px;
+          margin: 20px 0;
+          color: #dc2626;
+          text-align: center;
+          font-weight: 500;
+        }
+        .alternative-link {
+          background: #f3f4f6;
+          border-radius: 8px;
+          padding: 15px;
+          margin: 20px 0;
+          font-size: 14px;
+          word-break: break-all;
+        }
+        .footer {
+          background: #f7fafc;
+          padding: 20px 30px;
+          text-align: center;
+          color: #718096;
+          font-size: 14px;
+          border-top: 1px solid #e2e8f0;
+        }
+        .logo {
+          font-size: 28px;
+          margin-bottom: 5px;
+        }
+        @media (max-width: 480px) {
+          .container { margin: 10px; }
+          .content { padding: 30px 20px; }
+          .header { padding: 30px 20px; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <div class="logo">✉️</div>
+          <h1>Verify Your Email</h1>
+        </div>
+        
+        <div class="content">
+          <div class="greeting">
+            Hello${userName ? ` ${userName}` : ""},
+          </div>
+          
+          <p>Thank you for signing up for Prodobit! To complete your account setup, please verify your email address by clicking the button below.</p>
+          
+          <div class="verification-box">
+            <h2 style="margin: 0 0 15px 0; color: #1e40af;">
+              🔒 Verify Your Email Address
+            </h2>
+            <p style="margin: 0; color: #374151;">
+              Click the button below to confirm your email address and activate your account.
+            </p>
+          </div>
+          
+          <div style="text-align: center;">
+            <a href="${verificationUrl}" class="verify-button">Verify Email Address</a>
+          </div>
+          
+          <div class="expiry">
+            ⏰ This verification link will expire in ${expiresInHours} hours
+          </div>
+          
+          <p>If the button above doesn't work, you can copy and paste this link into your browser:</p>
+          
+          <div class="alternative-link">
+            <strong>Verification Link:</strong><br>
+            <a href="${verificationUrl}" style="color: #3b82f6;">${verificationUrl}</a>
+          </div>
+          
+          <div class="warning">
+            🛡️ If you didn't create an account with us, please ignore this email.
+          </div>
+          
+          <p>Once verified, you'll have full access to all Prodobit features and can start building amazing applications.</p>
+          
+          <p><strong>What happens after verification?</strong></p>
+          <ul>
+            <li>Your account will be fully activated</li>
+            <li>You can sign in using your email address</li>
+            <li>Access all Prodobit platform features</li>
+            <li>Start building your first application</li>
+          </ul>
+        </div>
+        
+        <div class="footer">
+          <p>This is an automated message from Prodobit.<br>
+          For support, visit <a href="https://prodobit.com/support" style="color: #3b82f6;">prodobit.com/support</a></p>
+        </div>
+      </div>
+    </body>
+    </html>
+    `;
+  }
+
+  /**
+   * Generate plain text email for email verification
+   */
+  private static generateVerificationEmailText(
+    verificationUrl: string,
+    expiresInHours: number,
+    userName?: string
+  ): string {
+    return `
+VERIFY YOUR EMAIL ADDRESS
+
+Hello${userName ? ` ${userName}` : ""},
+
+Thank you for signing up for Prodobit! To complete your account setup, please verify your email address.
+
+Click this link to verify your email:
+${verificationUrl}
+
+This verification link will expire in ${expiresInHours} hours.
+
+If you didn't create an account with us, please ignore this email.
+
+Once verified, you'll have full access to all Prodobit features.
+
+This is an automated message from Prodobit.
+    `.trim();
   }
 }
 

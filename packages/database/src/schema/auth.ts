@@ -132,8 +132,8 @@ export const sessions = pgTable(
     currentTenantId: uuid("current_tenant_id").references(() => tenants.id, {
       onDelete: "set null",
     }),
-    accessTokenHash: text("access_token_hash").notNull(),
     refreshTokenHash: text("refresh_token_hash"),
+    csrfTokenHash: text("csrf_token_hash").notNull(),
     expiresAt: timestamp("expires_at", {
       withTimezone: true,
       precision: 6,
@@ -147,6 +147,7 @@ export const sessions = pgTable(
     userAgent: text("user_agent"),
     ipAddress: inet("ip_address"),
     locationData: jsonb("location_data"),
+    deviceFingerprint: text("device_fingerprint"),
     status: text("status").notNull().default("active"),
     lastActivityAt: timestamp("last_activity_at", {
       withTimezone: true,
@@ -169,16 +170,19 @@ export const sessions = pgTable(
     currentTenantIdIdx: index("sessions_current_tenant_id_idx").on(
       table.currentTenantId
     ),
-    accessTokenHashIdx: index("sessions_access_token_hash_idx").on(
-      table.accessTokenHash
-    ),
     refreshTokenHashIdx: index("sessions_refresh_token_hash_idx").on(
       table.refreshTokenHash
+    ),
+    csrfTokenHashIdx: index("sessions_csrf_token_hash_idx").on(
+      table.csrfTokenHash
     ),
     expiresAtIdx: index("sessions_expires_at_idx").on(table.expiresAt),
     statusIdx: index("sessions_status_idx").on(table.status),
     lastActivityAtIdx: index("sessions_last_activity_at_idx").on(
       table.lastActivityAt
+    ),
+    deviceFingerprintIdx: index("sessions_device_fingerprint_idx").on(
+      table.deviceFingerprint
     ),
   })
 );
@@ -342,6 +346,35 @@ export const userInvitations = pgTable(
     ),
     expiresAtIdx: index("user_invitations_expires_at_idx").on(table.expiresAt),
     emailIdx: index("user_invitations_email_idx").on(table.email),
+  })
+);
+
+// Email verification tokens
+export const emailVerificationTokens = pgTable(
+  "email_verification_tokens",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    email: text("email").notNull(),
+    tokenHash: text("token_hash").notNull().unique(),
+    expiresAt: timestamp("expires_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .default(sql`now() + interval '24 hours'`),
+    usedAt: timestamp("used_at", { withTimezone: true, precision: 6 }),
+    createdBy: uuid("created_by").references(() => users.id),
+    insertedAt: timestamp("inserted_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+  },
+  (table) => ({
+    emailIdx: index("email_verification_tokens_email_idx").on(table.email),
+    tokenHashIdx: uniqueIndex("email_verification_tokens_token_hash_idx").on(table.tokenHash),
+    expiresAtIdx: index("email_verification_tokens_expires_at_idx").on(table.expiresAt),
+    emailUnusedIdx: index("email_verification_tokens_email_unused_idx")
+      .on(table.email)
+      .where(sql`used_at IS NULL AND expires_at > now()`),
   })
 );
 

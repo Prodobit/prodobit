@@ -142,41 +142,28 @@ export class AuthStateManager {
    * Initialize authentication from stored token
    */
   async initialize(): Promise<void> {
-    const token = this.client.getTokenInfo();
-
-    if (!token) {
-      this.setState({ type: "AUTH_LOGOUT" });
-      return;
-    }
-
-    // Check if token is still valid
-    if (!this.client.isTokenValid()) {
-      // Try to refresh token
-      try {
-        await this.refreshToken();
-      } catch (error) {
-        this.setState({
-          type: "AUTH_ERROR",
-          payload: {
-            error:
-              error instanceof ProdobitError
-                ? error
-                : ProdobitError.unauthorized("Session expired"),
-          },
-        });
-        return;
-      }
-    }
-
+    // Try to get current user to check if we have valid session
+    // (refresh token in cookie will be used automatically if needed)
     try {
       this.setState({ type: "AUTH_START" });
+      
+      // First try to refresh token to get a valid access token
+      try {
+        await this.client.refreshToken();
+      } catch (error) {
+        // If refresh fails, we're not authenticated
+        this.setState({ type: "AUTH_LOGOUT" });
+        return;
+      }
+
+      // If refresh succeeded, get current user
       const userResponse = await this.client.getCurrentUser();
 
       if (userResponse.success && userResponse.data) {
         this.setState({
           type: "AUTH_SUCCESS",
           payload: {
-            user: userResponse.data,
+            user: userResponse.data.user,
             token: this.client.getTokenInfo()!,
           },
         });

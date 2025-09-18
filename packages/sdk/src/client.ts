@@ -40,6 +40,7 @@ import type {
 import type {
   AssetBase,
   CreateItemRequest,
+  UpdateItemRequest,
   ItemBase,
   LocationBase,
   LotBase,
@@ -164,6 +165,23 @@ export class ProdobitClient {
 
   async signOut(allDevices = false) {
     return this.auth.signOut(allDevices);
+  }
+
+  // Email verification method delegations
+  async sendVerificationEmail(data: { email: string }, config?: RequestConfig) {
+    return this.auth.sendVerificationEmail(data, config);
+  }
+
+  async verifyEmail(data: { token: string }, config?: RequestConfig) {
+    return this.auth.verifyEmail(data, config);
+  }
+
+  async resendVerificationEmail(data: { email: string }, config?: RequestConfig) {
+    return this.auth.resendVerificationEmail(data, config);
+  }
+
+  async checkVerificationStatus(data: { email: string }, config?: RequestConfig) {
+    return this.auth.checkVerificationStatus(data, config);
   }
 
   // Tenant method delegations
@@ -541,6 +559,14 @@ export class ProdobitClient {
     config?: RequestConfig
   ): Promise<Response<ItemBase>> {
     return this.auth.makeRequest("POST", "/api/v1/items", data, config);
+  }
+
+  async updateItem(
+    id: string,
+    data: UpdateItemRequest,
+    config?: RequestConfig
+  ): Promise<Response<ItemBase>> {
+    return this.auth.makeRequest("PUT", `/api/v1/items/${id}`, data, config);
   }
 
   async createProduct(

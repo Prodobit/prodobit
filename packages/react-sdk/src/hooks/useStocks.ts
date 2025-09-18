@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, StockFilters } from '../types';
-import type { CreateStockRequest, UpdateStockRequest, CreateLotRequest, UpdateLotRequest } from '@prodobit/sdk';
+import type { CreateStockRequest, UpdateStockRequest, CreateLotRequest, UpdateLotRequest, Stock, StockMovement } from '@prodobit/sdk';
 
 export const useStocks = (
   filters?: StockFilters,
@@ -10,7 +10,7 @@ export const useStocks = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<Stock[], Error>({
     queryKey: queryKeys.stocks.list(filters),
     queryFn: () => client.getStocks(filters),
     ...options,
@@ -20,7 +20,7 @@ export const useStocks = (
 export const useStock = (id: string, options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<Stock, Error>({
     queryKey: queryKeys.stocks.detail(id),
     queryFn: () => client.getStock(id),
     enabled: !!id && options?.enabled !== false,
@@ -34,7 +34,7 @@ export const useStockMovements = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<StockMovement[], Error>({
     queryKey: queryKeys.stocks.movements(filters),
     queryFn: () => client.getStockMovements(filters),
     ...options,
@@ -45,7 +45,7 @@ export const useCreateStock = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Stock, Error, CreateStockRequest>({
     mutationFn: (data: CreateStockRequest) => client.createStock(data),
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.stocks.all() });
@@ -59,7 +59,7 @@ export const useUpdateStock = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Stock, Error, { id: string; data: UpdateStockRequest }>({
     mutationFn: ({ id, data }: { id: string; data: UpdateStockRequest }) => 
       client.updateStock(id, data),
     onSuccess: (data, variables) => {

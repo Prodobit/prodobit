@@ -31,7 +31,20 @@ export const tenantQuery = type({
   "subscriptionPlan?": "'basic' | 'pro' | 'enterprise'",
 });
 
+export const tenantInvitation = type({
+  id: uuid,
+  tenantId: uuid,
+  email: "string.email",
+  role: "string",
+  status: "'pending' | 'accepted' | 'declined' | 'expired'",
+  token: "string",
+  expiresAt: timestamp,
+  insertedAt: timestamp,
+  updatedAt: timestamp,
+});
+
 export type Tenant = typeof tenant.infer;
 export type CreateTenantRequest = typeof createTenantRequest.infer;
 export type UpdateTenantRequest = typeof updateTenantRequest.infer;
 export type TenantQuery = typeof tenantQuery.infer;
+export type TenantInvitation = typeof tenantInvitation.infer;

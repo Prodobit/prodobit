@@ -53,4 +53,16 @@ if (rootChanged) {
   console.log('✅ Restored root package.json dependencies');
 }
 
+// Restore Flutter SDK pubspec.yaml version to a development version
+const flutterPubspecPath = path.join(__dirname, '../packages/flutter-sdk/pubspec.yaml');
+if (fs.existsSync(flutterPubspecPath)) {
+  let pubspecContent = fs.readFileSync(flutterPubspecPath, 'utf8');
+  const versionRegex = /^version:\s*[\d.]+$/m;
+  
+  if (versionRegex.test(pubspecContent)) {
+    // Keep the published version for now - no need to change back
+    console.log('✅ Flutter SDK version maintained');
+  }
+}
+
 console.log('✅ All workspace references restored');

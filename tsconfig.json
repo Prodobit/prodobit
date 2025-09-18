@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -17,7 +21,6 @@
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
     "forceConsistentCasingInFileNames": true,
-    
     "noEmit": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -33,10 +36,18 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@prodobit/database": ["./packages/database/src"],
-      "@prodobit/sdk": ["./packages/sdk/src"],
-      "@prodobit/types": ["./packages/types/src"],
-      "@prodobit/react-sdk": ["./packages/react-sdk/src"]
+      "@prodobit/database": [
+        "./packages/database/src"
+      ],
+      "@prodobit/sdk": [
+        "./packages/sdk/src"
+      ],
+      "@prodobit/types": [
+        "./packages/types/src"
+      ],
+      "@prodobit/react-sdk": [
+        "./packages/react-sdk/src"
+      ]
     },
     "declaration": true,
     "declarationMap": true,
@@ -45,7 +56,6 @@
   },
   "include": [
     "packages/*/src/**/*",
-    "apps/*/src/**/*",
     "examples/*/src/**/*"
   ],
   "exclude": [

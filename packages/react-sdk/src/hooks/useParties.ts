@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, PartyFilters, Pagination } from '../types';
-import type { CreatePersonRequest, CreateOrganizationRequest, UpdatePartyRequest } from '@prodobit/types';
+import type { Party, Person, Organization, Customer, Supplier, Employee, CreatePersonRequest, CreateOrganizationRequest, UpdatePartyRequest, Response, PaginatedResponse } from '@prodobit/types';
 
 export const useParties = (
   query?: PartyFilters & Pagination,
@@ -10,7 +10,7 @@ export const useParties = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Party[]>, Error>({
     queryKey: queryKeys.parties.list(query),
     queryFn: () => client.getParties(query),
     ...options,
@@ -20,7 +20,7 @@ export const useParties = (
 export const useParty = (id: string, options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<Response<Party>, Error>({
     queryKey: queryKeys.parties.detail(id),
     queryFn: () => client.getParty(id),
     enabled: !!id && options?.enabled !== false,
@@ -32,7 +32,7 @@ export const useCreatePerson = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Person>, Error, CreatePersonRequest>({
     mutationFn: (data: CreatePersonRequest) => client.createPerson(data),
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.parties.all() });
@@ -46,7 +46,7 @@ export const useCreateOrganization = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Organization>, Error, CreateOrganizationRequest>({
     mutationFn: (data: CreateOrganizationRequest) => client.createOrganization(data),
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.parties.all() });
@@ -60,7 +60,7 @@ export const useUpdateParty = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<Party>, Error, { id: string; data: UpdatePartyRequest }>({
     mutationFn: ({ id, data }: { id: string; data: UpdatePartyRequest }) => 
       client.updateParty(id, data),
     onSuccess: (data, variables) => {
@@ -76,7 +76,7 @@ export const useDeleteParty = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation({
+  return useMutation<Response<void>, Error, string>({
     mutationFn: (id: string) => client.deleteParty(id),
     onSuccess: (data, id) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.parties.all() });
@@ -90,7 +90,7 @@ export const useDeleteParty = (options?: MutationOptions) => {
 export const useCustomers = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Customer[]>, Error>({
     queryKey: queryKeys.parties.customers(),
     queryFn: () => client.getCustomers(),
     ...options,
@@ -100,7 +100,7 @@ export const useCustomers = (options?: QueryOptions) => {
 export const useSuppliers = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Supplier[]>, Error>({
     queryKey: queryKeys.parties.suppliers(),
     queryFn: () => client.getSuppliers(),
     ...options,
@@ -110,7 +110,7 @@ export const useSuppliers = (options?: QueryOptions) => {
 export const useEmployees = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Employee[]>, Error>({
     queryKey: queryKeys.parties.employees(),
     queryFn: () => client.getEmployees(),
     ...options,
