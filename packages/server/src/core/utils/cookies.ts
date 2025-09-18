@@ -24,9 +24,10 @@ export class CookieManager {
     c.res.headers.set('Set-Cookie', this.serializeCookie('refresh_token', refreshToken, {
       httpOnly: true,
       secure: isProduction,
-      sameSite: 'strict',
+      sameSite: isProduction ? 'strict' as const : 'lax' as const, // Localhost için lax
       expires: expiresAt,
-      path: '/api/v1/auth',
+      path: '/',
+      domain: isProduction ? '.prodobit.com' : undefined,
     }));
   }
 
@@ -43,9 +44,10 @@ export class CookieManager {
     c.res.headers.set('Set-Cookie', this.serializeCookie('csrf_token', csrfToken, {
       httpOnly: false, // JavaScript needs access for double-submit pattern
       secure: isProduction,
-      sameSite: 'strict',
+      sameSite: isProduction ? 'strict' as const : 'lax' as const, // Localhost için lax
       expires: expiresAt,
       path: '/',
+      domain: isProduction ? '.prodobit.com' : undefined,
     }));
   }
 
@@ -53,12 +55,14 @@ export class CookieManager {
    * Clear authentication cookies
    */
   static clearAuthCookies(c: Context): void {
+    const isProduction = process.env.NODE_ENV === 'production';
     const cookieOptions = {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict' as const,
+      secure: isProduction,
+      sameSite: isProduction ? 'strict' as const : 'lax' as const,
       expires: new Date(0), // Expire immediately
-      path: '/api/v1/auth',
+      path: '/',
+      domain: isProduction ? '.prodobit.com' : undefined,
     };
 
     // Clear refresh token
@@ -68,7 +72,6 @@ export class CookieManager {
     c.res.headers.set('Set-Cookie', this.serializeCookie('csrf_token', '', {
       ...cookieOptions,
       httpOnly: false,
-      path: '/',
     }));
   }
 

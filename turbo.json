@@ -4,6 +4,32 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": ["NODE_ENV", "CI"],
   "tasks": {
+    "@prodobit/types#build": {
+      "outputs": ["dist/**"]
+    },
+    "@prodobit/database#build": {
+      "dependsOn": ["@prodobit/types#build"],
+      "outputs": ["dist/**"]
+    },
+    "@prodobit/config#build": {
+      "outputs": ["dist/**"]
+    },
+    "@prodobit/sdk#build": {
+      "dependsOn": ["@prodobit/types#build"],
+      "outputs": ["dist/**"]
+    },
+    "@prodobit/react-sdk#build": {
+      "dependsOn": ["@prodobit/types#build", "@prodobit/sdk#build"],
+      "outputs": ["dist/**"]
+    },
+    "@prodobit/server#build": {
+      "dependsOn": ["@prodobit/types#build", "@prodobit/database#build"],
+      "outputs": ["dist/**"]
+    },
+    "@prodobit/business-ui#build": {
+      "dependsOn": ["@prodobit/types#build", "@prodobit/react-sdk#build"],
+      "outputs": ["dist/**"]
+    },
     "build": {
       "dependsOn": ["^build"],
       "inputs": [

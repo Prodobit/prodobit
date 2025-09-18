@@ -132,8 +132,9 @@ export const sessions = pgTable(
     currentTenantId: uuid("current_tenant_id").references(() => tenants.id, {
       onDelete: "set null",
     }),
+    accessTokenHash: text("access_token_hash"), // Temporary - to be removed
     refreshTokenHash: text("refresh_token_hash"),
-    csrfTokenHash: text("csrf_token_hash").notNull(),
+    csrfTokenHash: text("csrf_token_hash").notNull().default(''),
     expiresAt: timestamp("expires_at", {
       withTimezone: true,
       precision: 6,
