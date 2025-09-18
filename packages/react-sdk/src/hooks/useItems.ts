@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, ItemFilters, Pagination } from '../types';
-import type { CreateItemRequest, Item } from '@prodobit/types';
+import type { CreateItemRequest, Item, Response } from '@prodobit/types';
 
 export const useItems = (
   query?: ItemFilters & Pagination,
@@ -10,7 +10,7 @@ export const useItems = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery<Item[], Error>({
+  return useQuery<Response<any[]>, Error>({
     queryKey: queryKeys.items.list(query),
     queryFn: () => client.getItems(query),
     ...options,

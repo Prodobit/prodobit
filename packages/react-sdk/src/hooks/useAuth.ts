@@ -56,6 +56,14 @@ export const useAuth = () => {
     mutationFn: () => client.refreshToken(),
   });
 
+  const refreshAuthState = useMutation<void, Error, void>({
+    mutationFn: async () => {
+      await client.auth.refreshAuthState();
+      // Invalidate auth queries to force refetch
+      queryClient.invalidateQueries({ queryKey: queryKeys.auth.me() });
+    },
+  });
+
   // Email verification mutations
   const sendVerificationEmail = useMutation<SendVerificationEmailResponse, Error, SendVerificationEmailRequest>({
     mutationFn: (data: SendVerificationEmailRequest) => 
@@ -88,6 +96,7 @@ export const useAuth = () => {
     verifyOTP,
     logout,
     refreshToken,
+    refreshAuthState,
     // Email verification methods
     sendVerificationEmail,
     verifyEmail,

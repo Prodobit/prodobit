@@ -114,11 +114,25 @@ export class AuthClient extends BaseClient {
 
     // Auto-store token info on successful login
     if (response.success && response.data) {
+      // Extract tenantId from access token or get first tenant membership
+      let tenantId: string | undefined;
+      
+      // Try to get tenantId from access token payload
+      try {
+        const tokenPayload = JSON.parse(atob(response.data.session.accessToken.split('.')[1]));
+        tenantId = tokenPayload.tenantId;
+      } catch {
+        // Fallback to first tenant membership if token parsing fails
+        if (response.data.tenantMemberships && response.data.tenantMemberships.length > 0) {
+          tenantId = response.data.tenantMemberships[0]?.tenantId;
+        }
+      }
+      
       this.setTokenInfo({
         accessToken: response.data.session.accessToken,
         expiresAt: new Date(response.data.session.expiresAt),
         csrfToken: response.data.session.csrfToken,
-        tenantId: response.data.user.id, // Set from user context
+        tenantId: tenantId,
       });
     }
 
@@ -272,6 +286,22 @@ export class AuthClient extends BaseClient {
       // Clear local token even if API call fails
       this.clearTokenInfo();
       return false;
+    }
+  }
+
+  /**
+   * Force refresh auth state - useful after login to ensure everything is synced
+   */
+  async refreshAuthState(): Promise<void> {
+    // Simply trigger a token refresh which will update local state
+    if (this.isAuthenticated()) {
+      try {
+        await this.refreshToken();
+      } catch (error) {
+        // If refresh fails, clear local state
+        this.clearTokenInfo();
+        throw error;
+      }
     }
   }
 
