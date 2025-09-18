@@ -21,13 +21,15 @@ export class CookieManager {
   ): void {
     const isProduction = process.env.NODE_ENV === 'production';
     
-    c.res.headers.set('Set-Cookie', this.serializeCookie('refresh_token', refreshToken, {
+    console.log(`🍪 Setting refresh token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}`);
+    
+    c.res.headers.append('Set-Cookie', this.serializeCookie('refresh_token', refreshToken, {
       httpOnly: true,
       secure: isProduction,
       sameSite: isProduction ? 'strict' as const : 'lax' as const, // Localhost için lax
       expires: expiresAt,
       path: '/',
-      domain: isProduction ? '.prodobit.com' : undefined,
+      domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
     }));
   }
 
@@ -41,13 +43,13 @@ export class CookieManager {
   ): void {
     const isProduction = process.env.NODE_ENV === 'production';
     
-    c.res.headers.set('Set-Cookie', this.serializeCookie('csrf_token', csrfToken, {
+    c.res.headers.append('Set-Cookie', this.serializeCookie('csrf_token', csrfToken, {
       httpOnly: false, // JavaScript needs access for double-submit pattern
       secure: isProduction,
       sameSite: isProduction ? 'strict' as const : 'lax' as const, // Localhost için lax
       expires: expiresAt,
       path: '/',
-      domain: isProduction ? '.prodobit.com' : undefined,
+      domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
     }));
   }
 
@@ -62,14 +64,14 @@ export class CookieManager {
       sameSite: isProduction ? 'strict' as const : 'lax' as const,
       expires: new Date(0), // Expire immediately
       path: '/',
-      domain: isProduction ? '.prodobit.com' : undefined,
+      domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
     };
 
     // Clear refresh token
-    c.res.headers.set('Set-Cookie', this.serializeCookie('refresh_token', '', cookieOptions));
+    c.res.headers.append('Set-Cookie', this.serializeCookie('refresh_token', '', cookieOptions));
     
     // Clear CSRF token
-    c.res.headers.set('Set-Cookie', this.serializeCookie('csrf_token', '', {
+    c.res.headers.append('Set-Cookie', this.serializeCookie('csrf_token', '', {
       ...cookieOptions,
       httpOnly: false,
     }));
@@ -79,7 +81,13 @@ export class CookieManager {
    * Get refresh token from cookie
    */
   static getRefreshTokenFromCookie(c: Context): string | null {
-    return this.getCookieValue(c, 'refresh_token');
+    const cookieHeader = c.req.header('Cookie');
+    console.log(`🍪 Reading cookies: Cookie header="${cookieHeader}"`);
+    
+    const refreshToken = this.getCookieValue(c, 'refresh_token');
+    console.log(`🍪 Refresh token found: ${refreshToken ? 'YES' : 'NO'}`);
+    
+    return refreshToken;
   }
 
   /**
