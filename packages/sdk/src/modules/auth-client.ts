@@ -25,7 +25,6 @@ import {
   checkUserRequest,
   checkVerificationStatusRequest,
   logoutRequest,
-  refreshTokenRequest,
   registerTenantRequest,
   requestOTPRequest,
   resendOTPRequest,
@@ -39,8 +38,39 @@ import type { RequestConfig } from "../types";
 import { ProdobitError } from "../types";
 import { validateRequest } from "../utils/validation";
 import { BaseClient } from "./base-client";
+import { AuthStateManager } from "../framework/auth-state";
+import type { AuthState } from "../types";
 
 export class AuthClient extends BaseClient {
+  private stateManager?: AuthStateManager;
+
+  // Initialize state manager lazily
+  private getStateManager(): AuthStateManager {
+    if (!this.stateManager) {
+      // Create a proxy client for AuthStateManager to avoid circular dependency
+      const proxyClient = {
+        refreshToken: this.refreshToken.bind(this),
+        getCurrentUser: this.getCurrentUser.bind(this),
+        getTokenInfo: this.getTokenInfo.bind(this),
+        logout: this.logout.bind(this),
+      } as any;
+      this.stateManager = new AuthStateManager(proxyClient);
+    }
+    return this.stateManager;
+  }
+
+  // Auth state methods
+  getState(): AuthState {
+    return this.getStateManager().getState();
+  }
+
+  subscribe(listener: (state: AuthState) => void): () => void {
+    return this.getStateManager().subscribe(listener);
+  }
+
+  async initialize(): Promise<void> {
+    return this.getStateManager().initialize();
+  }
   // Check user before OTP
   async checkUser(
     data: CheckUserRequest,
