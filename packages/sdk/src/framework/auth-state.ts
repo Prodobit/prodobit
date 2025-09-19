@@ -102,6 +102,16 @@ export class AuthStateManager {
 
   constructor(client: ProdobitClient) {
     this.client = client;
+    
+    // If we have a token in sessionStorage, start in loading state
+    const existingToken = this.client.getTokenInfo();
+    if (existingToken) {
+      this.state = {
+        ...initialAuthState,
+        isLoading: true,
+      };
+    }
+    
     this.setupAutoRefresh();
   }
 

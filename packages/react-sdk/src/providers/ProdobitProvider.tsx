@@ -10,10 +10,13 @@ const AuthStateContext = createContext<AuthState | null>(null);
 const defaultQueryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 5 * 60 * 1000,
-      gcTime: 10 * 60 * 1000,
+      staleTime: 5 * 60 * 1000, // Data is fresh for 5 minutes
+      gcTime: 10 * 60 * 1000, // Keep cache for 10 minutes
       refetchOnWindowFocus: false,
+      refetchOnMount: false, // Don't refetch on component mount if data exists
+      refetchOnReconnect: false, // Don't refetch on network reconnect
       retry: 1,
+      retryOnMount: false, // Don't retry failed queries on mount
     },
   },
 });
