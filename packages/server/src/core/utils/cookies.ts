@@ -30,7 +30,7 @@ export class CookieManager {
     const cookieString = this.serializeCookie('refresh_token', refreshToken, {
       httpOnly: true,
       secure: isProduction,
-      sameSite: 'none' as const, // Use 'none' for cross-subdomain with secure cookies
+      sameSite: isProduction ? 'none' as const : 'lax' as const, // Use 'lax' for development
       expires: expiresAt,
       path: '/',
       domain: domain,
@@ -54,7 +54,7 @@ export class CookieManager {
     const cookieString = this.serializeCookie('csrf_token', csrfToken, {
       httpOnly: false, // JavaScript needs access for double-submit pattern
       secure: isProduction,
-      sameSite: 'none' as const, // Use 'none' for cross-subdomain with secure cookies
+      sameSite: isProduction ? 'none' as const : 'lax' as const, // Use 'lax' for development
       expires: expiresAt,
       path: '/',
       domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
@@ -72,7 +72,7 @@ export class CookieManager {
     const cookieOptions = {
       httpOnly: true,
       secure: isProduction,
-      sameSite: 'none' as const, // Use 'none' for cross-subdomain with secure cookies
+      sameSite: isProduction ? 'none' as const : 'lax' as const, // Use 'lax' for development
       expires: new Date(0), // Expire immediately
       path: '/',
       domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
