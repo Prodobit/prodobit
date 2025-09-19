@@ -37,6 +37,7 @@ import type {
   UpdateTenantRequest,
   VerifyOTPRequest,
 } from "@prodobit/types";
+import { AuthStateManager } from "./framework/auth-state";
 import type {
   AssetBase,
   CreateItemRequest,
