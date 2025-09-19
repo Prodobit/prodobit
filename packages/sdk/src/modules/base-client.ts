@@ -199,7 +199,11 @@ export abstract class BaseClient {
         return undefined;
       }
       
-      return parsed;
+      // Convert expiresAt string back to Date object
+      return {
+        ...parsed,
+        expiresAt: parsed.expiresAt ? new Date(parsed.expiresAt) : undefined
+      };
     } catch {
       this.clearTokenInfo();
       return undefined;

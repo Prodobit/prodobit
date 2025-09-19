@@ -27,18 +27,22 @@ export const ProdobitProvider: React.FC<ProdobitProviderProps> = ({
   }
 
   const [authState, setAuthState] = useState(() => client.auth.getState());
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     // Subscribe to auth state changes
     const unsubscribe = client.auth.subscribe(setAuthState);
     
-    // Initialize auth state on mount
-    client.auth.initialize().catch((error) => {
-      console.warn('Auth initialization failed:', error);
-    });
+    // Initialize auth state only once
+    if (!isInitialized) {
+      setIsInitialized(true);
+      client.auth.initialize().catch((error) => {
+        console.warn('Auth initialization failed:', error);
+      });
+    }
 
     return unsubscribe;
-  }, [client]);
+  }, [client, isInitialized]);
 
   return (
     <QueryClientProvider client={defaultQueryClient}>

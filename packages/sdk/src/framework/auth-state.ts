@@ -98,6 +98,7 @@ export class AuthStateManager {
   private listeners = new Set<(state: AuthState) => void>();
   private client: ProdobitClient;
   private refreshTimer: ReturnType<typeof setTimeout> | null = null;
+  private isInitialized = false;
 
   constructor(client: ProdobitClient) {
     this.client = client;
@@ -142,21 +143,32 @@ export class AuthStateManager {
    * Initialize authentication from stored token
    */
   async initialize(): Promise<void> {
+    // Prevent multiple initializations
+    if (this.isInitialized) {
+      return;
+    }
+    this.isInitialized = true;
+
     // Try to get current user to check if we have valid session
-    // (refresh token in cookie will be used automatically if needed)
     try {
       this.setState({ type: "AUTH_START" });
       
-      // First try to refresh token to get a valid access token
-      try {
-        await this.client.refreshToken();
-      } catch (error) {
-        // If refresh fails, we're not authenticated
-        this.setState({ type: "AUTH_LOGOUT" });
-        return;
+      // Check if we have a valid token first
+      const currentToken = this.client.getTokenInfo();
+      const isTokenValid = this.client.isTokenValid();
+      
+      // Only refresh if we don't have a valid token
+      if (!currentToken || !isTokenValid) {
+        try {
+          await this.client.refreshToken();
+        } catch (error) {
+          // If refresh fails, we're not authenticated
+          this.setState({ type: "AUTH_LOGOUT" });
+          return;
+        }
       }
 
-      // If refresh succeeded, get current user
+      // Get current user info
       const userResponse = await this.client.getCurrentUser();
 
       if (userResponse.success && userResponse.data) {
