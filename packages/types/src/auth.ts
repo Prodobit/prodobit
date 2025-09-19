@@ -28,7 +28,7 @@ export const tenantMembership = type({
   id: uuid,
   userId: uuid,
   tenantId: uuid,
-  role: "'admin' | 'manager' | 'user' | 'viewer' | 'external'",
+  role: "'super_admin' | 'admin' | 'manager' | 'user' | 'viewer' | 'external'",
   status: "'active' | 'inactive' | 'invited' | 'suspended'",
   permissions: "object",
   accessLevel: "'full' | 'limited' | 'read_only'",
@@ -63,7 +63,8 @@ export const session = type({
   status: "'active' | 'expired' | 'revoked'",
   lastActivityAt: timestamp,
   "revokedAt?": timestamp,
-  "revokedReason?": "'user_logout' | 'admin_revoke' | 'security_breach' | 'suspicious_activity'",
+  "revokedReason?":
+    "'user_logout' | 'admin_revoke' | 'security_breach' | 'suspicious_activity'",
   insertedAt: timestamp,
   updatedAt: timestamp,
   "deletedAt?": timestamp,
@@ -84,14 +85,14 @@ export const requestOTPResponse = type({
   // Single tenant response
   "defaultTenantId?": uuid,
   "defaultTenantName?": "string",
-  // Selected tenant response  
+  // Selected tenant response
   "selectedTenantId?": uuid,
   "selectedTenantName?": "string",
   // Multiple tenant response
   "tenants?": type({
     id: uuid,
     name: "string",
-    role: "string"
+    role: "string",
   }).array(),
 });
 
@@ -137,7 +138,7 @@ export const currentUserResponseData = type({
   },
   tenantMemberships: tenantMembership.array(),
   roles: "string[]", // Role names
-  permissions: "string[]", // Permission names  
+  permissions: "string[]", // Permission names
   currentTenant: uuid,
 });
 
@@ -226,7 +227,7 @@ export const checkUserResponse = type({
   "tenants?": type({
     id: uuid,
     name: "string",
-    role: "string"
+    role: "string",
   }).array(),
 });
 
@@ -387,11 +388,16 @@ export type CSRFTokenRequest = typeof csrfTokenRequest.infer;
 export type ValidateCSRFRequest = typeof validateCSRFRequest.infer;
 
 // Email verification type exports
-export type SendVerificationEmailRequest = typeof sendVerificationEmailRequest.infer;
-export type SendVerificationEmailResponse = typeof sendVerificationEmailResponse.infer;
+export type SendVerificationEmailRequest =
+  typeof sendVerificationEmailRequest.infer;
+export type SendVerificationEmailResponse =
+  typeof sendVerificationEmailResponse.infer;
 export type VerifyEmailRequest = typeof verifyEmailRequest.infer;
 export type VerifyEmailResponse = typeof verifyEmailResponse.infer;
-export type ResendVerificationEmailRequest = typeof resendVerificationEmailRequest.infer;
-export type CheckVerificationStatusRequest = typeof checkVerificationStatusRequest.infer;
-export type CheckVerificationStatusResponse = typeof checkVerificationStatusResponse.infer;
+export type ResendVerificationEmailRequest =
+  typeof resendVerificationEmailRequest.infer;
+export type CheckVerificationStatusRequest =
+  typeof checkVerificationStatusRequest.infer;
+export type CheckVerificationStatusResponse =
+  typeof checkVerificationStatusResponse.infer;
 export type EmailVerificationToken = typeof emailVerificationToken.infer;

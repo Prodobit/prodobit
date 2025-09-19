@@ -1,9 +1,11 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ProdobitClient } from '@prodobit/sdk';
+import type { AuthState } from '@prodobit/sdk';
 import type { ProdobitProviderProps } from '../types';
 
 const ProdobitContext = createContext<ProdobitClient | null>(null);
+const AuthStateContext = createContext<AuthState | null>(null);
 
 const defaultQueryClient = new QueryClient({
   defaultOptions: {
@@ -24,10 +26,26 @@ export const ProdobitProvider: React.FC<ProdobitProviderProps> = ({
     throw new Error('ProdobitProvider requires a client prop');
   }
 
+  const [authState, setAuthState] = useState(() => client.auth.getState());
+
+  useEffect(() => {
+    // Subscribe to auth state changes
+    const unsubscribe = client.auth.subscribe(setAuthState);
+    
+    // Initialize auth state on mount
+    client.auth.initialize().catch((error) => {
+      console.warn('Auth initialization failed:', error);
+    });
+
+    return unsubscribe;
+  }, [client]);
+
   return (
     <QueryClientProvider client={defaultQueryClient}>
       <ProdobitContext.Provider value={client}>
-        {children}
+        <AuthStateContext.Provider value={authState}>
+          {children}
+        </AuthStateContext.Provider>
       </ProdobitContext.Provider>
     </QueryClientProvider>
   );
@@ -41,4 +59,14 @@ export const useProdobitClient = (): ProdobitClient => {
   }
   
   return client;
+};
+
+export const useAuthState = (): AuthState => {
+  const authState = useContext(AuthStateContext);
+  
+  if (authState === null) {
+    throw new Error('useAuthState must be used within a ProdobitProvider');
+  }
+  
+  return authState;
 };

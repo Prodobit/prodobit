@@ -276,7 +276,7 @@ export abstract class BaseClient {
   }
 
   isAuthenticated(): boolean {
-    return !!this.tokenInfo?.accessToken;
+    return !!this.tokenInfo?.accessToken && this.isTokenValid();
   }
 
   isTokenValid(): boolean {

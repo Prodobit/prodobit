@@ -46,7 +46,7 @@ export function useRoleBasedAccess(): RolePermissions {
   // System admin kontrolü - herhangi bir tenant'ta system admin rolü var mı?
   const isSystemAdmin = tenantMemberships.some(
     (membership) =>
-      membership.role === "admin" && membership.accessLevel === "full"
+      membership.role === "super_admin" && membership.accessLevel === "full"
   );
 
   // Current tenant'ta admin rolü var mı?

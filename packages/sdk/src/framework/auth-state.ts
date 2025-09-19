@@ -355,7 +355,8 @@ export class AuthStateManager {
           await this.refreshToken();
         } catch (error) {
           console.warn("Automatic token refresh failed:", error);
-          // Don't auto-logout on refresh failure - let user continue and handle it on next API call
+          // If refresh fails, logout user to force re-authentication
+          this.setState({ type: "AUTH_LOGOUT" });
         }
       }, refreshTime);
     }
