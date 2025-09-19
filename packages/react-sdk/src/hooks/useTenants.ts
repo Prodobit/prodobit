@@ -79,7 +79,7 @@ export const useTenantMembers = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery<PaginatedResponse<TenantMembership[]>, Error>({
+  return useQuery<Response<TenantMembership[]>, Error>({
     queryKey: queryKeys.tenants.members(tenantId),
     queryFn: () => client.getTenantMembers(tenantId),
     enabled: !!tenantId && options?.enabled !== false,
@@ -93,7 +93,7 @@ export const useTenantInvitations = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery<PaginatedResponse<TenantInvitation[]>, Error>({
+  return useQuery<Response<{ id: string; email: string; status: string; expiresAt: string }[]>, Error>({
     queryKey: queryKeys.tenants.invitations(tenantId),
     queryFn: () => client.getTenantInvitations(tenantId),
     enabled: !!tenantId && options?.enabled !== false,

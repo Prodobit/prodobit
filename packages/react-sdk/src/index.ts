@@ -71,6 +71,14 @@ export {
   useUpdateSalesOrder, 
   useDeleteSalesOrder 
 } from './hooks/useSalesOrders';
+export { 
+  useRoleBasedAccess, 
+  usePermissionCheck,
+  useCanManageUsers,
+  useCanManageTenants,
+  useIsSystemAdmin,
+  useIsTenantAdmin
+} from './hooks/useRoleBasedAccess';
 
 export * from './types';
 export { queryKeys } from './utils/query-keys';
