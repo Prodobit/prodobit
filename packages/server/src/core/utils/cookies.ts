@@ -21,16 +21,24 @@ export class CookieManager {
   ): void {
     const isProduction = process.env.NODE_ENV === 'production';
     
-    console.log(`🍪 Setting refresh token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}`);
+    // For cross-subdomain sharing, use .prodobit.com domain in production
+    const domain = isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined;
     
-    c.res.headers.append('Set-Cookie', this.serializeCookie('refresh_token', refreshToken, {
+    console.log(`🍪 Setting refresh token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}, domain=${domain}`);
+    console.log(`🍪 Request host: ${c.req.header('host')}`);
+    
+    const cookieString = this.serializeCookie('refresh_token', refreshToken, {
       httpOnly: true,
       secure: isProduction,
-      sameSite: isProduction ? 'strict' as const : 'lax' as const, // Localhost için lax
+      sameSite: 'none' as const, // Use 'none' for cross-subdomain with secure cookies
       expires: expiresAt,
       path: '/',
-      domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
-    }));
+      domain: domain,
+    });
+    
+    console.log(`🍪 Cookie string: ${cookieString}`);
+    
+    c.res.headers.append('Set-Cookie', cookieString);
   }
 
   /**
@@ -43,14 +51,17 @@ export class CookieManager {
   ): void {
     const isProduction = process.env.NODE_ENV === 'production';
     
-    c.res.headers.append('Set-Cookie', this.serializeCookie('csrf_token', csrfToken, {
+    const cookieString = this.serializeCookie('csrf_token', csrfToken, {
       httpOnly: false, // JavaScript needs access for double-submit pattern
       secure: isProduction,
-      sameSite: isProduction ? 'strict' as const : 'lax' as const, // Localhost için lax
+      sameSite: 'none' as const, // Use 'none' for cross-subdomain with secure cookies
       expires: expiresAt,
       path: '/',
       domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
-    }));
+    });
+    
+    console.log(`🍪 CSRF Cookie string: ${cookieString}`);
+    c.res.headers.append('Set-Cookie', cookieString);
   }
 
   /**
@@ -61,7 +72,7 @@ export class CookieManager {
     const cookieOptions = {
       httpOnly: true,
       secure: isProduction,
-      sameSite: isProduction ? 'strict' as const : 'lax' as const,
+      sameSite: 'none' as const, // Use 'none' for cross-subdomain with secure cookies
       expires: new Date(0), // Expire immediately
       path: '/',
       domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,

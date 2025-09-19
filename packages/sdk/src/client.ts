@@ -142,6 +142,10 @@ export class ProdobitClient {
     return this.auth.refreshToken(data, config);
   }
 
+  async refreshAuthState() {
+    return this.auth.refreshAuthState();
+  }
+
   async logout(data?: LogoutRequest, config?: RequestConfig) {
     return this.auth.logout(data, config);
   }

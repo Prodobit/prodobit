@@ -23,8 +23,8 @@ export abstract class BaseClient {
       this.defaultHeaders["Authorization"] = `Bearer ${this.apiKey}`;
     }
 
-    // Token is now stored only in memory
-    this.tokenInfo = undefined;
+    // Load token from sessionStorage if available
+    this.tokenInfo = this.loadTokenFromSession();
   }
 
   protected async request<T>(
@@ -45,7 +45,12 @@ export abstract class BaseClient {
     // Add access token and CSRF token if available
     if (this.tokenInfo && !config?.skipAuth) {
       headers["Authorization"] = `Bearer ${this.tokenInfo.accessToken}`;
-      headers["X-CSRF-Token"] = this.tokenInfo.csrfToken;
+      
+      // Read CSRF token from cookie instead of storing it
+      const csrfToken = this.getCSRFTokenFromCookie();
+      if (csrfToken) {
+        headers["X-CSRF-Token"] = csrfToken;
+      }
     }
 
     const controller = new AbortController();
@@ -179,17 +184,79 @@ export abstract class BaseClient {
     }
   }
 
-  // Token management methods - now in-memory only
+  // Token management methods - now using sessionStorage
+  private loadTokenFromSession(): TokenInfo | undefined {
+    if (typeof window === 'undefined') return undefined; // SSR guard
+    
+    try {
+      const stored = sessionStorage.getItem('prodobit_token');
+      if (!stored) return undefined;
+      
+      const parsed = JSON.parse(stored);
+      // Check if token is expired
+      if (parsed.expiresAt && new Date(parsed.expiresAt) <= new Date()) {
+        this.clearTokenInfo();
+        return undefined;
+      }
+      
+      return parsed;
+    } catch {
+      this.clearTokenInfo();
+      return undefined;
+    }
+  }
+
   setTokenInfo(tokenInfo: TokenInfo): void {
     this.tokenInfo = tokenInfo;
+    
+    if (typeof window !== 'undefined') {
+      try {
+        // Only store accessToken and expiresAt in sessionStorage
+        // CSRF token should only be in cookie, not persisted
+        const tokenToStore = {
+          accessToken: tokenInfo.accessToken,
+          expiresAt: tokenInfo.expiresAt,
+          tenantId: tokenInfo.tenantId
+        };
+        sessionStorage.setItem('prodobit_token', JSON.stringify(tokenToStore));
+      } catch {
+        // SessionStorage full or disabled, fallback to memory only
+      }
+    }
   }
 
   getTokenInfo(): TokenInfo | undefined {
+    // Always return from memory (already loaded from session in constructor)
     return this.tokenInfo;
   }
 
   clearTokenInfo(): void {
     this.tokenInfo = undefined;
+    
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.removeItem('prodobit_token');
+      } catch {
+        // Ignore sessionStorage errors
+      }
+    }
+  }
+
+  private getCSRFTokenFromCookie(): string | null {
+    if (typeof window === 'undefined') return null;
+    
+    try {
+      const cookies = document.cookie.split(';');
+      for (const cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if (name === 'csrf_token') {
+          return decodeURIComponent(value);
+        }
+      }
+      return null;
+    } catch {
+      return null;
+    }
   }
 
   getCurrentTenantId(): string | undefined {
