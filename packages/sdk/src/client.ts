@@ -81,7 +81,7 @@ import type {
 import { ProdobitError } from "./types";
 
 export class ProdobitClient {
-  private auth: AuthClient;
+  public auth: AuthClient;
   private tenant: TenantClient;
   private party: PartyClient;
   private locationAsset: LocationAssetClient;
