@@ -644,6 +644,7 @@ auth.post("/verify-otp", async (c) => {
           expiresAt: tokenPair.expiresAt.toISOString(),
           csrfToken: csrfTokenPair.token,
         },
+        refreshToken: tokenPair.refreshToken, // Add refreshToken to response
         authMethod: {
           id: authMethod.id,
           provider: authMethod.provider,
@@ -676,8 +677,9 @@ auth.post("/refresh", async (c) => {
   try {
     const db = c.get("db");
 
-    // Get refresh token from cookie (instead of request body)
-    const refreshToken = CookieManager.getRefreshTokenFromCookie(c);
+    // Get refresh token from request body (changed from cookie)
+    const body = await c.req.json();
+    const refreshToken = body.refreshToken;
     if (!refreshToken) {
       return c.json(
         {
@@ -846,6 +848,7 @@ auth.post("/refresh", async (c) => {
           expiresAt: tokenPair.expiresAt.toISOString(),
           csrfToken: csrfTokenPair.token,
         },
+        refreshToken: tokenPair.refreshToken, // Add refreshToken to refresh response
       },
     });
   } catch (error) {

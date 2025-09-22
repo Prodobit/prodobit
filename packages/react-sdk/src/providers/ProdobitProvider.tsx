@@ -36,14 +36,26 @@ export const ProdobitProvider: React.FC<ProdobitProviderProps> = ({
     // Subscribe to auth state changes
     const unsubscribe = client.auth.subscribe(setAuthState);
     
-    // Initialize auth state only once
-    if (!isInitialized) {
-      setIsInitialized(true);
-      client.auth.initialize().catch((error) => {
-        console.warn('Auth initialization failed:', error);
-      });
-    }
+    // Initialize auth state and sync with stored tokens
+    const initializeAuth = async () => {
+      if (!isInitialized) {
+        setIsInitialized(true);
+        try {
+          await client.auth.initialize();
+          // Force auth state update after initialization
+          const newState = client.auth.getState();
+          setAuthState(newState);
+          console.log('Auth initialized successfully:', newState);
+        } catch (error) {
+          console.warn('Auth initialization failed:', error);
+          // Try to get current state anyway
+          const currentState = client.auth.getState();
+          setAuthState(currentState);
+        }
+      }
+    };
 
+    initializeAuth();
     return unsubscribe;
   }, [client, isInitialized]);
 
