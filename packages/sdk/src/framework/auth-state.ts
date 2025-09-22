@@ -167,12 +167,21 @@ export class AuthStateManager {
       const currentToken = this.client.getTokenInfo();
       const isTokenValid = this.client.isTokenValid();
       
-      // Only refresh if we don't have a valid token
+      // Only refresh if we don't have a valid token AND have refresh token
       if (!currentToken || !isTokenValid) {
-        try {
-          await this.client.refreshToken();
-        } catch (error) {
-          // If refresh fails, we're not authenticated
+        if (currentToken?.refreshToken) {
+          try {
+            console.log('Attempting token refresh during initialization');
+            await this.client.refreshToken();
+          } catch (error) {
+            console.log('Refresh failed during initialization:', error);
+            // If refresh fails, we're not authenticated
+            this.setState({ type: "AUTH_LOGOUT" });
+            return;
+          }
+        } else {
+          console.log('No refresh token available, clearing auth state');
+          // No refresh token, clear auth state
           this.setState({ type: "AUTH_LOGOUT" });
           return;
         }
@@ -193,6 +202,7 @@ export class AuthStateManager {
         throw ProdobitError.unauthorized("Failed to get user info");
       }
     } catch (error) {
+      console.log('Auth initialization failed:', error);
       this.setState({
         type: "AUTH_ERROR",
         payload: {

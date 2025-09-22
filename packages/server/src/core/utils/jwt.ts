@@ -71,7 +71,7 @@ export class JwtTokenManager {
     );
 
     const now = new Date();
-    const expiresAt = new Date(now.getTime() + 15 * 60 * 1000); // 15 minutes
+    const expiresAt = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours (1 day)
     const refreshExpiresAt = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
     return {

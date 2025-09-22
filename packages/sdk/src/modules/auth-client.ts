@@ -168,13 +168,19 @@ export class AuthClient extends BaseClient {
         hasCsrfToken: !!response.data.session.csrfToken
       });
       
-      this.setTokenInfo({
+      // Only set refreshToken if it exists in response
+      const tokenInfo: any = {
         accessToken: response.data.session.accessToken,
-        refreshToken: response.data.refreshToken,
         expiresAt: new Date(response.data.session.expiresAt),
         csrfToken: response.data.session.csrfToken,
         tenantId: tenantId,
-      });
+      };
+      
+      if (response.data.refreshToken) {
+        tokenInfo.refreshToken = response.data.refreshToken;
+      }
+      
+      this.setTokenInfo(tokenInfo);
     }
 
     return response;
@@ -344,8 +350,9 @@ export class AuthClient extends BaseClient {
    */
   async refreshAuthState(): Promise<void> {
     console.log('refreshAuthState called, isAuthenticated:', this.isAuthenticated());
-    // Simply trigger a token refresh which will update local state
-    if (this.isAuthenticated()) {
+    
+    // Only refresh if we have a refresh token and token is expiring
+    if (this.isAuthenticated() && this.tokenInfo?.refreshToken) {
       try {
         console.log('Calling refreshToken from refreshAuthState');
         await this.refreshToken();
@@ -355,6 +362,8 @@ export class AuthClient extends BaseClient {
         this.clearTokenInfo();
         throw error;
       }
+    } else {
+      console.log('Skipping refresh - no refresh token available');
     }
   }
 
