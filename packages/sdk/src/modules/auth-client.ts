@@ -34,12 +34,11 @@ import {
   verifyOTPRequest,
 } from "@prodobit/types";
 import { LoginResponseData } from "packages/types/dist/auth";
-import type { RequestConfig } from "../types";
+import { AuthStateManager } from "../framework/auth-state";
+import type { AuthState, RequestConfig } from "../types";
 import { ProdobitError } from "../types";
 import { validateRequest } from "../utils/validation";
 import { BaseClient } from "./base-client";
-import { AuthStateManager } from "../framework/auth-state";
-import type { AuthState } from "../types";
 
 export class AuthClient extends BaseClient {
   private stateManager?: AuthStateManager;
@@ -146,20 +145,32 @@ export class AuthClient extends BaseClient {
     if (response.success && response.data) {
       // Extract tenantId from access token or get first tenant membership
       let tenantId: string | undefined;
-      
+
       // Try to get tenantId from access token payload
       try {
-        const tokenPayload = JSON.parse(atob(response.data.session.accessToken.split('.')[1]));
+        const tokenPayload = JSON.parse(
+          atob(response.data.session.accessToken.split(".")[1])
+        );
         tenantId = tokenPayload.tenantId;
       } catch {
         // Fallback to first tenant membership if token parsing fails
-        if (response.data.tenantMemberships && response.data.tenantMemberships.length > 0) {
+        if (
+          response.data.tenantMemberships &&
+          response.data.tenantMemberships.length > 0
+        ) {
           tenantId = response.data.tenantMemberships[0]?.tenantId;
         }
       }
+
+      console.log('Login success, storing tokens:', {
+        hasAccessToken: !!response.data.session.accessToken,
+        hasRefreshToken: !!response.data.refreshToken,
+        hasCsrfToken: !!response.data.session.csrfToken
+      });
       
       this.setTokenInfo({
         accessToken: response.data.session.accessToken,
+        refreshToken: response.data.refreshToken,
         expiresAt: new Date(response.data.session.expiresAt),
         csrfToken: response.data.session.csrfToken,
         tenantId: tenantId,
@@ -173,11 +184,19 @@ export class AuthClient extends BaseClient {
     data?: RefreshTokenRequest,
     config?: RequestConfig
   ): Promise<LoginResponse> {
-    // No longer need refresh token in request body - comes from cookie
+    // Use refresh token from sessionStorage
+    if (!this.tokenInfo?.refreshToken) {
+      throw new ProdobitError('No refresh token available', 401, 'REFRESH_TOKEN_MISSING');
+    }
+    
+    console.log('Refreshing with token:', this.tokenInfo.refreshToken?.substring(0, 20) + '...');
+    
     const response = await this.request<LoginResponse>(
       "POST",
       "/api/v1/auth/refresh",
-      {}, // Empty body
+      {
+        refreshToken: this.tokenInfo.refreshToken,
+      },
       { ...config, skipAuth: true }
     );
 
@@ -185,6 +204,7 @@ export class AuthClient extends BaseClient {
     if (response.success && response.data) {
       this.setTokenInfo({
         accessToken: response.data.session.accessToken,
+        refreshToken: response.data.refreshToken,
         expiresAt: new Date(response.data.session.expiresAt),
         csrfToken: response.data.session.csrfToken,
         tenantId: this.tokenInfo?.tenantId, // Preserve tenantId
@@ -323,11 +343,14 @@ export class AuthClient extends BaseClient {
    * Force refresh auth state - useful after login to ensure everything is synced
    */
   async refreshAuthState(): Promise<void> {
+    console.log('refreshAuthState called, isAuthenticated:', this.isAuthenticated());
     // Simply trigger a token refresh which will update local state
     if (this.isAuthenticated()) {
       try {
+        console.log('Calling refreshToken from refreshAuthState');
         await this.refreshToken();
       } catch (error) {
+        console.log('refreshAuthState failed:', error);
         // If refresh fails, clear local state
         this.clearTokenInfo();
         throw error;

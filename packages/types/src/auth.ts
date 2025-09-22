@@ -109,6 +109,7 @@ export const loginResponseData = type({
     expiresAt: timestamp,
     csrfToken: "string",
   },
+  "refreshToken?": "string",
   authMethod: {
     id: uuid,
     provider: "'email' | 'google' | 'github' | 'microsoft'",
@@ -313,9 +314,10 @@ export const permissionCheck = type({
   "resourceId?": "string",
 });
 
-// Token Info Schema - Only for in-memory storage
+// Token Info Schema - Now includes refreshToken for sessionStorage
 export const tokenInfo = type({
   accessToken: "string",
+  "refreshToken?": "string",
   expiresAt: "Date",
   csrfToken: "string",
   "tenantId?": uuid,

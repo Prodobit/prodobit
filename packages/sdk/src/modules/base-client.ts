@@ -46,10 +46,9 @@ export abstract class BaseClient {
     if (this.tokenInfo && !config?.skipAuth) {
       headers["Authorization"] = `Bearer ${this.tokenInfo.accessToken}`;
       
-      // Read CSRF token from cookie instead of storing it
-      const csrfToken = this.getCSRFTokenFromCookie();
-      if (csrfToken) {
-        headers["X-CSRF-Token"] = csrfToken;
+      // Use CSRF token from sessionStorage
+      if (this.tokenInfo.csrfToken) {
+        headers["X-CSRF-Token"] = this.tokenInfo.csrfToken;
       }
     }
 
@@ -62,7 +61,7 @@ export abstract class BaseClient {
         headers,
         body: data ? JSON.stringify(data) : null,
         signal: controller.signal,
-        credentials: 'include', // Include cookies for refresh token
+        credentials: 'same-origin', // Remove cookie dependency
       });
 
       clearTimeout(timeoutId);
@@ -144,7 +143,18 @@ export abstract class BaseClient {
 
     // Check if token expires in the next 5 minutes
     const fiveMinutesFromNow = new Date(Date.now() + 5 * 60 * 1000);
-    return this.tokenInfo.expiresAt <= fiveMinutesFromNow;
+    const isExpiring = this.tokenInfo.expiresAt <= fiveMinutesFromNow;
+    
+    if (isExpiring) {
+      console.log('Token expiring soon:', {
+        expiresAt: this.tokenInfo.expiresAt,
+        now: new Date(),
+        fiveMinutesFromNow,
+        isExpiring
+      });
+    }
+    
+    return isExpiring;
   }
 
   private async ensureTokenRefresh(): Promise<void> {
@@ -165,13 +175,16 @@ export abstract class BaseClient {
       const response = await this.request<any>(
         "POST",
         "/api/v1/auth/refresh",
-        {}, // No body needed, refresh token comes from cookie
+        { 
+          refreshToken: this.tokenInfo?.refreshToken 
+        },
         { skipAuth: true }
       );
 
       if (response.success && response.data) {
         this.setTokenInfo({
           accessToken: response.data.session.accessToken,
+          refreshToken: response.data.session.refreshToken,
           expiresAt: new Date(response.data.session.expiresAt),
           csrfToken: response.data.session.csrfToken,
           tenantId: this.tokenInfo?.tenantId, // Preserve current tenantId
@@ -215,11 +228,12 @@ export abstract class BaseClient {
     
     if (typeof window !== 'undefined') {
       try {
-        // Only store accessToken and expiresAt in sessionStorage
-        // CSRF token should only be in cookie, not persisted
+        // Store all tokens in sessionStorage now
         const tokenToStore = {
           accessToken: tokenInfo.accessToken,
+          refreshToken: tokenInfo.refreshToken,
           expiresAt: tokenInfo.expiresAt,
+          csrfToken: tokenInfo.csrfToken,
           tenantId: tokenInfo.tenantId
         };
         sessionStorage.setItem('prodobit_token', JSON.stringify(tokenToStore));
@@ -246,22 +260,6 @@ export abstract class BaseClient {
     }
   }
 
-  private getCSRFTokenFromCookie(): string | null {
-    if (typeof window === 'undefined') return null;
-    
-    try {
-      const cookies = document.cookie.split(';');
-      for (const cookie of cookies) {
-        const [name, value] = cookie.trim().split('=');
-        if (name === 'csrf_token') {
-          return decodeURIComponent(value);
-        }
-      }
-      return null;
-    } catch {
-      return null;
-    }
-  }
 
   getCurrentTenantId(): string | undefined {
     if (!this.tokenInfo?.accessToken) {
