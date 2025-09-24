@@ -51,6 +51,7 @@ export class AuthClient extends BaseClient {
         refreshToken: this.refreshToken.bind(this),
         getCurrentUser: this.getCurrentUser.bind(this),
         getTokenInfo: this.getTokenInfo.bind(this),
+        isTokenValid: this.isTokenValid.bind(this),
         logout: this.logout.bind(this),
       } as any;
       this.stateManager = new AuthStateManager(proxyClient);
