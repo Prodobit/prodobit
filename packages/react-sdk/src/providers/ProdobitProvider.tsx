@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ProdobitClient } from '@prodobit/sdk';
+import { ProdobitClient, tokenCookies } from '@prodobit/sdk';
 import type { AuthState } from '@prodobit/sdk';
 import type { ProdobitProviderProps } from '../types';
 
@@ -29,7 +29,21 @@ export const ProdobitProvider: React.FC<ProdobitProviderProps> = ({
     throw new Error('ProdobitProvider requires a client prop');
   }
 
-  const [authState, setAuthState] = useState(() => client.auth.getState());
+  const [authState, setAuthState] = useState(() => {
+    // Initialize auth state based on cookies
+    const hasValidTokens = tokenCookies.hasValidTokens();
+    const initialState = client.auth.getState();
+    
+    // If we have valid tokens in cookies but client doesn't know about it yet
+    if (hasValidTokens && !initialState.isAuthenticated) {
+      return {
+        ...initialState,
+        isLoading: true, // We'll verify the tokens during initialization
+      };
+    }
+    
+    return initialState;
+  });
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
@@ -45,10 +59,11 @@ export const ProdobitProvider: React.FC<ProdobitProviderProps> = ({
           // Force auth state update after initialization
           const newState = client.auth.getState();
           setAuthState(newState);
-          console.log('Auth initialized successfully:', newState);
+          console.log('Auth initialized successfully from cookies:', newState);
         } catch (error) {
           console.warn('Auth initialization failed:', error);
-          // Try to get current state anyway
+          // Clear invalid cookies and update state
+          tokenCookies.clearTokens();
           const currentState = client.auth.getState();
           setAuthState(currentState);
         }

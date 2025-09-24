@@ -613,9 +613,15 @@ auth.post("/verify-otp", async (c) => {
       })
       .returning();
 
-    // Set secure cookies
+    // Set secure cookies - now includes access token for client-side auth state
+    CookieManager.setAccessTokenCookie(c, tokenPair.accessToken, tokenPair.expiresAt);
     CookieManager.setRefreshTokenCookie(c, tokenPair.refreshToken, tokenPair.refreshExpiresAt);
     CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.expiresAt);
+    
+    // Set tenant ID cookie for client-side access
+    if (tenantId) {
+      CookieManager.setTenantIdCookie(c, tenantId, tokenPair.refreshExpiresAt);
+    }
 
     // Get tenant memberships
     const memberships = await db
@@ -828,9 +834,15 @@ auth.post("/refresh", async (c) => {
       })
       .where(eq(sessions.id, session[0].id));
 
-    // Set new secure cookies
+    // Set new secure cookies - include access token for client-side auth state
+    CookieManager.setAccessTokenCookie(c, tokenPair.accessToken, tokenPair.expiresAt);
     CookieManager.setRefreshTokenCookie(c, tokenPair.refreshToken, tokenPair.refreshExpiresAt);
     CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.expiresAt);
+    
+    // Preserve tenant ID cookie
+    if (tokenPayload.tenantId) {
+      CookieManager.setTenantIdCookie(c, tokenPayload.tenantId, tokenPair.refreshExpiresAt);
+    }
 
     return c.json({
       success: true,

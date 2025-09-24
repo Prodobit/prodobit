@@ -162,17 +162,17 @@ export class AuthClient extends BaseClient {
         }
       }
 
-      console.log('Login success, storing tokens:', {
+      console.log('Login success, storing tokens in cookies:', {
         hasAccessToken: !!response.data.session.accessToken,
         hasRefreshToken: !!response.data.refreshToken,
         hasCsrfToken: !!response.data.session.csrfToken
       });
       
-      // Only set refreshToken if it exists in response
+      // Store tokens in accessible cookies (except CSRF which will be HTTP-only from server)
       const tokenInfo: any = {
         accessToken: response.data.session.accessToken,
         expiresAt: new Date(response.data.session.expiresAt),
-        csrfToken: response.data.session.csrfToken,
+        csrfToken: response.data.session.csrfToken, // For internal use, actual CSRF is HTTP-only
         tenantId: tenantId,
       };
       
@@ -190,12 +190,12 @@ export class AuthClient extends BaseClient {
     data?: RefreshTokenRequest,
     config?: RequestConfig
   ): Promise<LoginResponse> {
-    // Use refresh token from sessionStorage
+    // Use refresh token from cookies
     if (!this.tokenInfo?.refreshToken) {
       throw new ProdobitError('No refresh token available', 401, 'REFRESH_TOKEN_MISSING');
     }
     
-    console.log('Refreshing with token:', this.tokenInfo.refreshToken?.substring(0, 20) + '...');
+    console.log('Refreshing with token from cookies:', this.tokenInfo.refreshToken?.substring(0, 20) + '...');
     
     const response = await this.request<LoginResponse>(
       "POST",
@@ -206,11 +206,11 @@ export class AuthClient extends BaseClient {
       { ...config, skipAuth: true }
     );
 
-    // Update token info on successful refresh
+    // Update token info on successful refresh - store in cookies
     if (response.success && response.data) {
       this.setTokenInfo({
         accessToken: response.data.session.accessToken,
-        refreshToken: response.data.refreshToken,
+        refreshToken: response.data.refreshToken || this.tokenInfo.refreshToken, // Keep existing if not provided
         expiresAt: new Date(response.data.session.expiresAt),
         csrfToken: response.data.session.csrfToken,
         tenantId: this.tokenInfo?.tenantId, // Preserve tenantId
@@ -237,7 +237,7 @@ export class AuthClient extends BaseClient {
       config
     );
 
-    // Clear token info on logout
+    // Clear token info on logout - this will clear cookies
     this.clearTokenInfo();
 
     return response;
