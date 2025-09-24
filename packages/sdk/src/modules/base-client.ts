@@ -1,4 +1,5 @@
 import { ProdobitError, TokenInfo, type ProdobitClientConfig, type RequestConfig } from "../types";
+import { tokenCookies } from "../utils/cookie-utils";
 
 export abstract class BaseClient {
   protected baseUrl: string;
@@ -23,8 +24,8 @@ export abstract class BaseClient {
       this.defaultHeaders["Authorization"] = `Bearer ${this.apiKey}`;
     }
 
-    // Load token from sessionStorage if available
-    this.tokenInfo = this.loadTokenFromSession();
+    // Load token from cookies if available
+    this.tokenInfo = this.loadTokenFromCookies();
   }
 
   protected async request<T>(
@@ -46,10 +47,8 @@ export abstract class BaseClient {
     if (this.tokenInfo && !config?.skipAuth) {
       headers["Authorization"] = `Bearer ${this.tokenInfo.accessToken}`;
       
-      // Use CSRF token from sessionStorage
-      if (this.tokenInfo.csrfToken) {
-        headers["X-CSRF-Token"] = this.tokenInfo.csrfToken;
-      }
+      // CSRF token is now HTTP-only cookie, browser will send it automatically
+      // We don't need to set it manually in headers
     }
 
     const controller = new AbortController();
@@ -61,7 +60,7 @@ export abstract class BaseClient {
         headers,
         body: data ? JSON.stringify(data) : null,
         signal: controller.signal,
-        credentials: 'same-origin', // Remove cookie dependency
+        credentials: 'include', // Include cookies for CSRF token
       });
 
       clearTimeout(timeoutId);
@@ -184,7 +183,7 @@ export abstract class BaseClient {
       if (response.success && response.data) {
         this.setTokenInfo({
           accessToken: response.data.session.accessToken,
-          refreshToken: response.data.session.refreshToken,
+          refreshToken: response.data.refreshToken || this.tokenInfo?.refreshToken,
           expiresAt: new Date(response.data.session.expiresAt),
           csrfToken: response.data.session.csrfToken,
           tenantId: this.tokenInfo?.tenantId, // Preserve current tenantId
@@ -197,26 +196,20 @@ export abstract class BaseClient {
     }
   }
 
-  // Token management methods - now using sessionStorage
-  private loadTokenFromSession(): TokenInfo | undefined {
+  // Token management methods - now using cookies
+  private loadTokenFromCookies(): TokenInfo | undefined {
     if (typeof window === 'undefined') return undefined; // SSR guard
     
     try {
-      const stored = sessionStorage.getItem('prodobit_token');
-      if (!stored) return undefined;
+      const tokenInfo = tokenCookies.getTokens();
       
-      const parsed = JSON.parse(stored);
       // Check if token is expired
-      if (parsed.expiresAt && new Date(parsed.expiresAt) <= new Date()) {
+      if (tokenInfo?.expiresAt && tokenInfo.expiresAt <= new Date()) {
         this.clearTokenInfo();
         return undefined;
       }
       
-      // Convert expiresAt string back to Date object
-      return {
-        ...parsed,
-        expiresAt: parsed.expiresAt ? new Date(parsed.expiresAt) : undefined
-      };
+      return tokenInfo;
     } catch {
       this.clearTokenInfo();
       return undefined;
@@ -228,23 +221,17 @@ export abstract class BaseClient {
     
     if (typeof window !== 'undefined') {
       try {
-        // Store all tokens in sessionStorage now
-        const tokenToStore = {
-          accessToken: tokenInfo.accessToken,
-          refreshToken: tokenInfo.refreshToken,
-          expiresAt: tokenInfo.expiresAt,
-          csrfToken: tokenInfo.csrfToken,
-          tenantId: tokenInfo.tenantId
-        };
-        sessionStorage.setItem('prodobit_token', JSON.stringify(tokenToStore));
-      } catch {
-        // SessionStorage full or disabled, fallback to memory only
+        // Store tokens in cookies now
+        tokenCookies.setTokens(tokenInfo);
+      } catch (error) {
+        console.warn('Failed to store tokens in cookies:', error);
+        // Fallback to memory only
       }
     }
   }
 
   getTokenInfo(): TokenInfo | undefined {
-    // Always return from memory (already loaded from session in constructor)
+    // Always return from memory (already loaded from cookies in constructor)
     return this.tokenInfo;
   }
 
@@ -253,9 +240,9 @@ export abstract class BaseClient {
     
     if (typeof window !== 'undefined') {
       try {
-        sessionStorage.removeItem('prodobit_token');
-      } catch {
-        // Ignore sessionStorage errors
+        tokenCookies.clearTokens();
+      } catch (error) {
+        console.warn('Failed to clear tokens from cookies:', error);
       }
     }
   }
