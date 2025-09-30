@@ -115,12 +115,19 @@ export const tokenCookies = {
    * - CSRF token: HTTP-only (set by server, used in headers)
    */
   setTokens(tokenInfo: TokenInfo): void {
-    const isProduction = process.env.NODE_ENV === 'production';
+    // Check both NODE_ENV and domain to determine production environment
+    const isProduction = process.env.NODE_ENV === 'production' || 
+                         (typeof window !== 'undefined' && window.location.hostname.includes('prodobit.com'));
+    
+    // Use same domain logic as server to prevent duplicates
+    const domain = isProduction ? '.prodobit.com' : undefined;
+    
     const cookieOptions: CookieOptions = {
       path: '/',
       secure: isProduction, // Only secure in production
       sameSite: 'lax',
-      httpOnly: false // These need to be accessible to JS
+      httpOnly: false, // These need to be accessible to JS
+      domain: domain // Match server domain setting
     };
 
     // Calculate maxAge from expiresAt
@@ -185,23 +192,36 @@ export const tokenCookies = {
       refreshToken,
       expiresAt: expiresAt || new Date(Date.now() + 60 * 60 * 1000),
       tenantId,
-      // CSRF token is HTTP-only, we'll get it from headers when needed
-      csrfToken: undefined
-    };
+      // CSRF token is HTTP-only, we can't read it from cookies
+      // We'll omit it here since it's optional in TokenInfo
+    } as TokenInfo;
   },
 
   /**
    * Clear all auth cookies
    */
   clearTokens(): void {
+    // Check both NODE_ENV and domain to determine production environment
+    const isProduction = process.env.NODE_ENV === 'production' || 
+                         (typeof window !== 'undefined' && window.location.hostname.includes('prodobit.com'));
+    const domain = isProduction ? '.prodobit.com' : undefined;
+    
     const cookieOptions = {
       path: '/',
-      domain: undefined // Let browser handle domain
+      domain: domain // Use same domain as when setting
     };
 
     cookieUtils.remove(this.ACCESS_TOKEN, cookieOptions);
     cookieUtils.remove(this.REFRESH_TOKEN, cookieOptions);
     cookieUtils.remove(this.TENANT_ID, cookieOptions);
+    
+    // Also try to clear from current domain in case of legacy cookies
+    if (domain) {
+      const currentDomainOptions = { path: '/', domain: undefined };
+      cookieUtils.remove(this.ACCESS_TOKEN, currentDomainOptions);
+      cookieUtils.remove(this.REFRESH_TOKEN, currentDomainOptions);
+      cookieUtils.remove(this.TENANT_ID, currentDomainOptions);
+    }
     
     // Note: CSRF token is HTTP-only, cleared by server
   },
