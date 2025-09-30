@@ -28,7 +28,7 @@ export const tenantMembership = type({
   id: uuid,
   userId: uuid,
   tenantId: uuid,
-  role: "'super_admin' | 'admin' | 'manager' | 'user' | 'viewer' | 'external'",
+  role: "'system_admin' | 'admin' | 'manager' | 'user' | 'viewer' | 'external'",
   status: "'active' | 'inactive' | 'invited' | 'suspended'",
   permissions: "object",
   accessLevel: "'full' | 'limited' | 'read_only'",

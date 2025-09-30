@@ -1,6 +1,6 @@
 name: prodobit_flutter_sdk
 description: Flutter SDK for Prodobit framework - Build manufacturing and business applications with modern Flutter patterns
-version: 0.6.25
+version: 0.6.28
 homepage: https://github.com/prodobit/prodobit
 repository: https://github.com/prodobit/prodobit
 issue_tracker: https://github.com/prodobit/prodobit/issues
