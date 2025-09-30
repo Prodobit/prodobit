@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/database",
-  "version": "0.6.28",
+  "version": "0.7.0",
   "description": "Database schema and migrations with Drizzle ORM",
   "type": "module",
   "main": "./dist/index.js",

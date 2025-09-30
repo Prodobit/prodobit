@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import type { Database } from "./index.js";
-import { users, authMethods, tenants, tenantMemberships } from "./schema/index.js";
+import { users, authMethods, tenants, tenantMemberships, roles } from "./schema/index.js";
 
 // Sistem tenant'ı için sabit slug
 export const SYSTEM_TENANT_SLUG = "system";
@@ -77,7 +77,47 @@ export async function setupSystem(
 
     result.systemTenantId = systemTenantId;
 
-    // 2. Super admin kullanıcısını oluştur
+    // 2. Create default roles for system tenant
+    console.log("🔐 Creating default roles for system tenant...");
+    const defaultSystemRoles = [
+      { name: "system_admin", description: "System administrator with full access", color: "#EF4444" },
+      { name: "user", description: "Regular user", color: "#3B82F6" }
+    ];
+
+    const createdRoles: Record<string, string> = {};
+    for (const roleData of defaultSystemRoles) {
+      const existingRole = await db
+        .select()
+        .from(roles)
+        .where(
+          and(
+            eq(roles.tenantId, systemTenantId),
+            eq(roles.name, roleData.name)
+          )
+        )
+        .limit(1);
+
+      if (existingRole.length === 0) {
+        const [newRole] = await db
+          .insert(roles)
+          .values({
+            tenantId: systemTenantId,
+            name: roleData.name,
+            description: roleData.description,
+            isSystem: true,
+            isActive: true,
+            color: roleData.color,
+          })
+          .returning();
+        createdRoles[roleData.name] = newRole.id;
+        console.log(`✅ Created role: ${roleData.name}`);
+      } else {
+        createdRoles[roleData.name] = existingRole[0].id;
+        console.log(`ℹ️  Role already exists: ${roleData.name}`);
+      }
+    }
+
+    // 3. Super admin kullanıcısını oluştur
     console.log("👤 Creating super admin...");
     const existingSuperAdmin = await db
       .select({ authMethod: authMethods, user: users })
@@ -113,7 +153,7 @@ export async function setupSystem(
       await db.insert(tenantMemberships).values({
         userId: superAdminUser.id,
         tenantId: systemTenantId,
-        role: "system_admin",
+        roleId: createdRoles["system_admin"],
         status: "active",
         permissions: { "*": ["*"] }, // Sistem tenant içinde full yetki
         accessLevel: "full",
@@ -138,7 +178,7 @@ export async function setupSystem(
         await db.insert(tenantMemberships).values({
           userId: existingSuperAdmin[0].user.id,
           tenantId: systemTenantId,
-          role: "system_admin",
+          roleId: createdRoles["system_admin"],
           status: "active",
           permissions: { "*": ["*"] },
           accessLevel: "full",
@@ -218,4 +258,57 @@ export async function checkSystemSetup(db: Database): Promise<{
       needsSetup: true,
     };
   }
+}
+
+/**
+ * Creates default roles for a new tenant
+ */
+export async function createDefaultTenantRoles(
+  db: Database | any, // Accept both Database and Transaction
+  tenantId: string
+): Promise<Record<string, string>> {
+  console.log(`🔐 Creating default roles for tenant ${tenantId}...`);
+
+  const defaultRoles = [
+    { name: "admin", description: "Tenant administrator", color: "#EF4444" },
+    { name: "manager", description: "Tenant manager", color: "#F59E0B" },
+    { name: "user", description: "Regular user", color: "#3B82F6" },
+    { name: "viewer", description: "Read-only access", color: "#6B7280" }
+  ];
+
+  const createdRoles: Record<string, string> = {};
+
+  for (const roleData of defaultRoles) {
+    const existingRole = await db
+      .select()
+      .from(roles)
+      .where(
+        and(
+          eq(roles.tenantId, tenantId),
+          eq(roles.name, roleData.name)
+        )
+      )
+      .limit(1);
+
+    if (existingRole.length === 0) {
+      const [newRole] = await db
+        .insert(roles)
+        .values({
+          tenantId: tenantId,
+          name: roleData.name,
+          description: roleData.description,
+          isSystem: true,
+          isActive: true,
+          color: roleData.color,
+        })
+        .returning();
+      createdRoles[roleData.name] = newRole.id;
+      console.log(`✅ Created role: ${roleData.name}`);
+    } else {
+      createdRoles[roleData.name] = existingRole[0].id;
+      console.log(`ℹ️  Role already exists: ${roleData.name}`);
+    }
+  }
+
+  return createdRoles;
 }

@@ -320,8 +320,13 @@ export const addressInfo = type({
 
 export const createInvitationRequest = type({
   email: "string.email",
-  "role?": "string",
-  "permissions?": "string[]",
+  roleId: "string.uuid",
+  "message?": "string",
+  "expiresInDays?": "number >= 1",
+  "membershipExpiresAt?": "string.date",
+  "accessLevel?": "'full' | 'limited' | 'read_only'",
+  "permissions?": "object",
+  "resourceRestrictions?": "object",
 });
 
 export const updateMembershipRequest = type({

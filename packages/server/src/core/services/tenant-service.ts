@@ -1,5 +1,5 @@
 import type { Database } from "@prodobit/database";
-import { tenants as tenantsTable } from "@prodobit/database";
+import { tenants as tenantsTable, createDefaultTenantRoles } from "@prodobit/database";
 import { eq } from "drizzle-orm";
 
 export interface CreateTenantData {
@@ -77,6 +77,9 @@ export class TenantService {
       .insert(tenantsTable)
       .values(newTenant)
       .returning();
+
+    // Create default roles for new tenant
+    await createDefaultTenantRoles(this.db, tenant.id);
 
     return tenant;
   }

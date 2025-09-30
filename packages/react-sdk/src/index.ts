@@ -2,14 +2,18 @@ export { ProdobitProvider, useProdobitClient, useAuthState } from './providers/P
 export { ProdobitClient, getProdobitClientSingleton } from '@prodobit/sdk';
 
 export { useAuth, useCurrentUser } from './hooks/useAuth';
-export { 
-  useTenants, 
-  useTenant, 
-  useCreateTenant, 
-  useUpdateTenant, 
+export {
+  useTenants,
+  useTenant,
+  useCreateTenant,
+  useUpdateTenant,
   useDeleteTenant,
   useTenantMembers,
-  useTenantInvitations 
+  useTenantInvitations,
+  useCreateInvitation,
+  useUpdateMembership,
+  useRemoveMember,
+  useTenantRoles
 } from './hooks/useTenants';
 export { 
   useParties, 

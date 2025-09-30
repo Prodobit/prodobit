@@ -165,11 +165,12 @@ export class RBACService {
 
       const query = db
         .select({
-          id: tenantMemberships.role, // Use role string directly
-          name: tenantMemberships.role, // Use role string as name
-          description: tenantMemberships.role, // Simple fallback
+          id: roles.id,
+          name: roles.name,
+          description: roles.description,
         })
         .from(tenantMemberships)
+        .innerJoin(roles, eq(roles.id, tenantMemberships.roleId))
         .where(and(...whereConditions));
 
       return await query;

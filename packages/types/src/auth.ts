@@ -28,7 +28,7 @@ export const tenantMembership = type({
   id: uuid,
   userId: uuid,
   tenantId: uuid,
-  role: "'system_admin' | 'admin' | 'manager' | 'user' | 'viewer' | 'external'",
+  roleId: uuid, // Foreign key to roles table
   status: "'active' | 'inactive' | 'invited' | 'suspended'",
   permissions: "object",
   accessLevel: "'full' | 'limited' | 'read_only'",
@@ -43,6 +43,30 @@ export const tenantMembership = type({
   insertedAt: timestamp,
   updatedAt: timestamp,
   "deletedAt?": timestamp,
+});
+
+// Extended tenant membership with role information (from API responses)
+export const tenantMembershipWithRole = type({
+  id: uuid,
+  userId: uuid,
+  tenantId: uuid,
+  roleId: uuid,
+  roleName: "string", // Role name from joined roles table
+  "roleDescription?": "string",
+  "roleColor?": "string",
+  status: "'active' | 'inactive' | 'invited' | 'suspended'",
+  permissions: "object",
+  accessLevel: "'full' | 'limited' | 'read_only'",
+  resourceRestrictions: "object",
+  "ipRestrictions?": "object",
+  "timeRestrictions?": "object",
+  "expiresAt?": timestamp,
+  "invitedBy?": uuid,
+  "invitedAt?": timestamp,
+  "joinedAt?": timestamp,
+  "lastLoginAt?": timestamp,
+  insertedAt: timestamp,
+  updatedAt: timestamp,
 });
 
 export const session = type({

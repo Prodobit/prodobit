@@ -1,10 +1,11 @@
 import { eq, and } from "drizzle-orm";
 import type { createDatabase } from "@prodobit/database";
 import { employees } from "./schema.js";
-import { 
-  users, 
-  authMethods, 
+import {
+  users,
+  authMethods,
   tenantMemberships,
+  roles,
   parties,
   persons,
   partyRoles
@@ -114,14 +115,33 @@ export class EmployeeService {
         })
         .returning();
 
-      // 7. Create Tenant Membership
+      // 7. Find or create employee role
+      const employeeRole = await tx
+        .select()
+        .from(roles)
+        .where(
+          and(
+            eq(roles.tenantId, data.tenantId),
+            eq(roles.name, 'user')
+          )
+        )
+        .limit(1);
+
+      if (employeeRole.length === 0) {
+        throw new Error('Default user role not found for tenant');
+      }
+
+      // 8. Create Tenant Membership
       const [membership] = await tx
         .insert(tenantMemberships)
         .values({
           userId: user.id,
           tenantId: data.tenantId,
-          role: data.role || 'employee',
+          roleId: employeeRole[0].id,
           status: 'active',
+          permissions: {},
+          accessLevel: 'full',
+          resourceRestrictions: {},
           invitedBy: data.invitedBy,
           joinedAt: new Date(),
         })

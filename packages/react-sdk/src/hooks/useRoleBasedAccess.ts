@@ -1,4 +1,7 @@
-import type { JwtPayload, TenantMembership } from "@prodobit/types";
+import type { JwtPayload } from "@prodobit/types";
+import { type tenantMembershipWithRole } from "@prodobit/types";
+
+type TenantMembershipWithRole = typeof tenantMembershipWithRole.infer;
 import { useProdobitClient } from "../providers/ProdobitProvider";
 import { useCurrentUser } from "./useAuth";
 
@@ -11,7 +14,7 @@ export interface RolePermissions {
   currentTenantId: string | undefined;
   userRoles: string[];
   userPermissions: string[];
-  tenantMemberships: TenantMembership[];
+  tenantMemberships: TenantMembershipWithRole[];
 }
 
 export function useRoleBasedAccess(): RolePermissions {
@@ -38,22 +41,22 @@ export function useRoleBasedAccess(): RolePermissions {
     }
   }
 
-  // CurrentUser response'dan tenant memberships'ları al
-  const tenantMemberships: TenantMembership[] = currentUser?.success
-    ? currentUser.data.tenantMemberships
+  // CurrentUser response'dan tenant memberships'ları al (artık roleName ile geliyor)
+  const tenantMemberships: TenantMembershipWithRole[] = currentUser?.success
+    ? (currentUser.data.tenantMemberships as TenantMembershipWithRole[])
     : [];
 
-  // System admin kontrolü - herhangi bir tenant'ta system admin rolü var mı?
+  // System admin kontrolü - herhangi bir tenant'ta system_admin rolü var mı?
   const isSystemAdmin = tenantMemberships.some(
     (membership) =>
-      membership.role === "system_admin" && membership.accessLevel === "full"
+      membership.roleName === "system_admin" && membership.accessLevel === "full"
   );
 
   // Current tenant'ta admin rolü var mı?
   const isTenantAdmin = tenantMemberships.some(
     (membership) =>
       membership.tenantId === currentTenantId &&
-      membership.role === "admin" &&
+      membership.roleName === "admin" &&
       membership.status === "active"
   );
 
@@ -61,7 +64,7 @@ export function useRoleBasedAccess(): RolePermissions {
   const isTenantManager = tenantMemberships.some(
     (membership) =>
       membership.tenantId === currentTenantId &&
-      (membership.role === "admin" || membership.role === "manager") &&
+      (membership.roleName === "admin" || membership.roleName === "manager") &&
       membership.status === "active"
   );
 
@@ -140,7 +143,7 @@ export function usePermissionCheck() {
     return tenantMemberships.some(
       (membership) =>
         membership.tenantId === targetTenantId &&
-        membership.role === role &&
+        membership.roleName === role &&
         membership.status === "active"
     );
   };
@@ -186,7 +189,7 @@ export function useIsTenantAdmin(tenantId?: string) {
   return tenantMemberships.some(
     (membership) =>
       membership.tenantId === targetTenantId &&
-      membership.role === "admin" &&
+      membership.roleName === "admin" &&
       membership.status === "active"
   );
 }
