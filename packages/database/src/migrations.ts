@@ -83,21 +83,29 @@ export async function checkMigrationStatus(
 /**
  * Run pending database migrations
  */
-export async function runMigrations(db: Database): Promise<MigrationResult> {
+export async function runMigrations(db: Database, connectionString?: string): Promise<MigrationResult> {
   try {
     console.log("🔄 Running database migrations...");
 
     const migrationFolder = getMigrationFolderPath();
     console.log(`📂 Migration folder: ${migrationFolder}`);
 
+    // Determine connection string
+    let dbUrl = connectionString || process.env.DATABASE_URL;
+
+    if (!dbUrl) {
+      dbUrl = getDbUrl();
+      console.log("ℹ️ Using constructed DATABASE_URL from environment variables");
+    }
+
     // Create separate migration client (v0.44 requirement)
     const postgres = await import("postgres");
-    const migrationClient = postgres.default(process.env.DATABASE_URL || getDbUrl(), { max: 1 });
+    const migrationClient = postgres.default(dbUrl, { max: 1 });
     const migrationDb = (await import("drizzle-orm/postgres-js")).drizzle(migrationClient);
 
     // Use Drizzle's migrate function with separate client
     await migrate(migrationDb, { migrationsFolder: migrationFolder });
-    
+
     // Close migration client
     await migrationClient.end();
 

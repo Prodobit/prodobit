@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-import { createDatabase, type Database } from "@prodobit/database";
+import { createDatabase, type Database, runMigrations, checkMigrationStatus } from "@prodobit/database";
 import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
 import health from "../core/health.js";
 
@@ -19,11 +19,11 @@ export class ModuleLoader {
   }
 
   /**
-   * Initialize the module loader with database connection check
+   * Initialize the module loader with database connection check and migrations
    */
   async initialize(): Promise<void> {
     console.log('🚀 Initializing ModuleLoader...')
-    
+
     // Simple database connection check
     try {
       await this.db.execute('SELECT 1')
@@ -32,7 +32,44 @@ export class ModuleLoader {
       console.error('❌ Database connection: FAILED', error)
       throw new Error('Database connection failed')
     }
-    
+
+    // Check and run migrations
+    try {
+      console.log('🔍 Checking database migrations...')
+      const status = await checkMigrationStatus(this.db)
+
+      if (status.needsMigration) {
+        console.log(`📊 Pending migrations: ${status.pendingCount}`)
+        console.log('🔄 Running migrations...')
+
+        // Build connection string from config
+        const dbConfig = this.config.database
+        let sslParam = ''
+        if (dbConfig.ssl === true) {
+          sslParam = '?sslmode=require'
+        } else if (typeof dbConfig.ssl === 'object' && !dbConfig.ssl.rejectUnauthorized) {
+          sslParam = '?sslmode=require'
+        }
+
+        const connectionString = `postgresql://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}${sslParam}`
+
+        const result = await runMigrations(this.db, connectionString)
+
+        if (result.success) {
+          console.log(`✅ Migrations completed: ${result.appliedCount} applied`)
+        } else {
+          console.error('❌ Migration failed:', result.error)
+          throw new Error(`Migration failed: ${result.error}`)
+        }
+      } else {
+        console.log('✅ Database schema is up to date')
+      }
+    } catch (error) {
+      console.error('❌ Migration check/run failed:', error)
+      // Don't throw - let server start even if migrations fail
+      console.warn('⚠️  Server will start but database schema may be outdated')
+    }
+
     console.log('✅ ModuleLoader initialized successfully')
   }
 
