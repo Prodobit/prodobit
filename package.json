@@ -1,6 +1,6 @@
 {
   "name": "prodobit",
-  "version": "0.6.25",
+  "version": "0.6.27",
   "description": "Open-core business application development platform",
   "workspaces": [
     "packages/*"
