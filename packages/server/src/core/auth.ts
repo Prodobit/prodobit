@@ -6,6 +6,8 @@ import {
   tenantMemberships,
   tenants,
   users,
+  roles as rolesTable,
+  createDefaultTenantRoles,
 } from "@prodobit/database";
 import type {
   CheckVerificationStatusRequest,
@@ -84,9 +86,11 @@ auth.post("/check-user", async (c) => {
       .select({
         membership: tenantMemberships,
         tenant: tenants,
+        role: rolesTable,
       })
       .from(tenantMemberships)
       .innerJoin(tenants, eq(tenantMemberships.tenantId, tenants.id))
+      .innerJoin(rolesTable, eq(rolesTable.id, tenantMemberships.roleId))
       .where(
         and(
           eq(tenantMemberships.userId, existingUser[0].user.id),
@@ -152,12 +156,13 @@ auth.post("/check-user", async (c) => {
       isNewUser: false,
       tenants: userTenantMemberships.map(
         (item: {
-          membership: { tenantId: string; role: string };
+          membership: { tenantId: string };
           tenant: { name: string };
+          role: { name: string };
         }) => ({
           id: item.membership.tenantId,
           name: item.tenant.name,
-          role: item.membership.role,
+          role: item.role.name,
         })
       ),
     });
@@ -313,9 +318,11 @@ auth.post("/request-otp", async (c) => {
       .select({
         membership: tenantMemberships,
         tenant: tenants,
+        role: rolesTable,
       })
       .from(tenantMemberships)
       .innerJoin(tenants, eq(tenantMemberships.tenantId, tenants.id))
+      .innerJoin(rolesTable, eq(rolesTable.id, tenantMemberships.roleId))
       .where(
         and(
           eq(tenantMemberships.userId, existingUser[0].user.id),
@@ -385,7 +392,7 @@ auth.post("/request-otp", async (c) => {
       tenants: userTenantMemberships.map((item) => ({
         id: item.membership.tenantId,
         name: item.tenant.name,
-        role: item.membership.role,
+        role: item.role.name,
       })),
     });
   } catch (error) {
@@ -535,13 +542,30 @@ auth.post("/verify-otp", async (c) => {
 
       // Create default tenant membership for new user
       if (body.tenantId) {
-        await db.insert(tenantMemberships).values({
-          userId: user.id,
-          tenantId: body.tenantId,
-          role: "user", // Default role for new users
-          status: "active",
-          joinedAt: new Date(),
-        });
+        // Find the "user" role for this tenant
+        const userRole = await db
+          .select()
+          .from(rolesTable)
+          .where(
+            and(
+              eq(rolesTable.tenantId, body.tenantId),
+              eq(rolesTable.name, "user")
+            )
+          )
+          .limit(1);
+
+        if (userRole.length > 0) {
+          await db.insert(tenantMemberships).values({
+            userId: user.id,
+            tenantId: body.tenantId,
+            roleId: userRole[0].id,
+            status: "active",
+            permissions: {},
+            accessLevel: "full",
+            resourceRestrictions: {},
+            joinedAt: new Date(),
+          });
+        }
       }
 
       // Send welcome email for new users
@@ -623,10 +647,28 @@ auth.post("/verify-otp", async (c) => {
       CookieManager.setTenantIdCookie(c, tenantId, tokenPair.refreshExpiresAt);
     }
 
-    // Get tenant memberships
+    // Get tenant memberships with role information
     const memberships = await db
-      .select()
+      .select({
+        id: tenantMemberships.id,
+        userId: tenantMemberships.userId,
+        tenantId: tenantMemberships.tenantId,
+        roleId: tenantMemberships.roleId,
+        roleName: rolesTable.name,
+        roleDescription: rolesTable.description,
+        roleColor: rolesTable.color,
+        status: tenantMemberships.status,
+        permissions: tenantMemberships.permissions,
+        accessLevel: tenantMemberships.accessLevel,
+        resourceRestrictions: tenantMemberships.resourceRestrictions,
+        expiresAt: tenantMemberships.expiresAt,
+        joinedAt: tenantMemberships.joinedAt,
+        lastLoginAt: tenantMemberships.lastLoginAt,
+        insertedAt: tenantMemberships.insertedAt,
+        updatedAt: tenantMemberships.updatedAt,
+      })
       .from(tenantMemberships)
+      .innerJoin(rolesTable, eq(rolesTable.id, tenantMemberships.roleId))
       .where(
         and(
           eq(tenantMemberships.userId, user.id),
@@ -971,10 +1013,32 @@ auth.get("/me", authMiddleware, async (c) => {
       );
     }
 
-    // Get tenant memberships
+    // Get tenant memberships with role information
     const memberships = await db
-      .select()
+      .select({
+        id: tenantMemberships.id,
+        userId: tenantMemberships.userId,
+        tenantId: tenantMemberships.tenantId,
+        roleId: tenantMemberships.roleId,
+        roleName: rolesTable.name,
+        roleDescription: rolesTable.description,
+        roleColor: rolesTable.color,
+        status: tenantMemberships.status,
+        permissions: tenantMemberships.permissions,
+        accessLevel: tenantMemberships.accessLevel,
+        resourceRestrictions: tenantMemberships.resourceRestrictions,
+        ipRestrictions: tenantMemberships.ipRestrictions,
+        timeRestrictions: tenantMemberships.timeRestrictions,
+        expiresAt: tenantMemberships.expiresAt,
+        invitedBy: tenantMemberships.invitedBy,
+        invitedAt: tenantMemberships.invitedAt,
+        joinedAt: tenantMemberships.joinedAt,
+        lastLoginAt: tenantMemberships.lastLoginAt,
+        insertedAt: tenantMemberships.insertedAt,
+        updatedAt: tenantMemberships.updatedAt,
+      })
       .from(tenantMemberships)
+      .innerJoin(rolesTable, eq(rolesTable.id, tenantMemberships.roleId))
       .where(
         and(
           eq(tenantMemberships.userId, user.id),
@@ -1154,13 +1218,16 @@ auth.post("/register-tenant", async (c) => {
         })
         .returning();
 
-      // 4. Create tenant membership (admin role)
+      // 4. Create default roles for new tenant
+      const defaultRoles = await createDefaultTenantRoles(tx, newTenant.id);
+
+      // 5. Create tenant membership (admin role)
       const [newMembership] = await tx
         .insert(tenantMemberships)
         .values({
           userId: newUser.id,
           tenantId: newTenant.id,
-          role: "admin",
+          roleId: defaultRoles["admin"],
           status: "active",
           permissions: {},
           accessLevel: "full",
@@ -1174,6 +1241,7 @@ auth.post("/register-tenant", async (c) => {
         authMethod: newAuthMethod,
         tenant: newTenant,
         membership: newMembership,
+        roleName: "admin", // We know it's admin because we just created it
       };
     });
 
@@ -1229,7 +1297,8 @@ auth.post("/register-tenant", async (c) => {
             status: result.tenant.status,
           },
           membership: {
-            role: result.membership.role,
+            roleId: result.membership.roleId,
+            roleName: result.roleName,
             status: result.membership.status,
             accessLevel: result.membership.accessLevel,
           },

@@ -33,6 +33,39 @@ export const users = pgTable(
   })
 );
 
+// Tenant-specific roles - must be defined before tenantMemberships
+export const roles = pgTable(
+  "roles",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tenantId: uuid("tenant_id")
+      .notNull()
+      .references(() => tenants.id, { onDelete: "cascade" }),
+    name: text("name").notNull(), // e.g., "system_admin", "admin", "user", "manager", "viewer"
+    description: text("description"),
+    isSystem: boolean("is_system").notNull().default(false), // Built-in roles
+    isActive: boolean("is_active").notNull().default(true),
+    color: text("color"), // UI color for role display
+    insertedAt: timestamp("inserted_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    deletedAt: timestamp("deleted_at", { withTimezone: true, precision: 6 }),
+  },
+  (table) => ({
+    tenantNameIdx: uniqueIndex("roles_tenant_name_idx").on(
+      table.tenantId,
+      table.name
+    ),
+    tenantActiveIdx: index("roles_tenant_active_idx").on(
+      table.tenantId,
+      table.isActive
+    ),
+  })
+);
+
 export const authMethods = pgTable(
   "auth_methods",
   {
@@ -61,6 +94,9 @@ export const authMethods = pgTable(
   })
 );
 
+// Note: roles table must be defined before tenantMemberships
+// See roles table definition below (line ~219)
+
 export const tenantMemberships = pgTable(
   "tenant_memberships",
   {
@@ -71,7 +107,9 @@ export const tenantMemberships = pgTable(
     tenantId: uuid("tenant_id")
       .notNull()
       .references(() => tenants.id, { onDelete: "cascade" }),
-    role: text("role").notNull(),
+    roleId: uuid("role_id")
+      .notNull()
+      .references(() => roles.id, { onDelete: "restrict" }),
     status: text("status").notNull().default("active"),
     permissions: jsonb("permissions").notNull().default({}),
     accessLevel: text("access_level").notNull().default("full"),
@@ -99,9 +137,10 @@ export const tenantMemberships = pgTable(
       table.userId,
       table.tenantId
     ),
+    roleIdIdx: index("tenant_memberships_role_id_idx").on(table.roleId),
     tenantRoleIdx: index("tenant_memberships_tenant_role_idx").on(
       table.tenantId,
-      table.role
+      table.roleId
     ),
     tenantStatusIdx: index("tenant_memberships_tenant_status_idx").on(
       table.tenantId,
@@ -215,38 +254,7 @@ export const permissions = pgTable(
   })
 );
 
-// Tenant-specific roles
-export const roles = pgTable(
-  "roles",
-  {
-    id: uuid("id").primaryKey().defaultRandom(),
-    tenantId: uuid("tenant_id")
-      .notNull()
-      .references(() => tenants.id, { onDelete: "cascade" }),
-    name: text("name").notNull(), // e.g., "admin", "user", "viewer"
-    description: text("description"),
-    isSystem: boolean("is_system").notNull().default(false), // Built-in roles
-    isActive: boolean("is_active").notNull().default(true),
-    color: text("color"), // UI color for role display
-    insertedAt: timestamp("inserted_at", { withTimezone: true, precision: 6 })
-      .notNull()
-      .defaultNow(),
-    updatedAt: timestamp("updated_at", { withTimezone: true, precision: 6 })
-      .notNull()
-      .defaultNow(),
-    deletedAt: timestamp("deleted_at", { withTimezone: true, precision: 6 }),
-  },
-  (table) => ({
-    tenantNameIdx: uniqueIndex("roles_tenant_name_idx").on(
-      table.tenantId,
-      table.name
-    ),
-    tenantActiveIdx: index("roles_tenant_active_idx").on(
-      table.tenantId,
-      table.isActive
-    ),
-  })
-);
+// roles table already defined above (line 37) before tenantMemberships
 
 // Role permission assignments (many-to-many)
 export const rolePermissions = pgTable(

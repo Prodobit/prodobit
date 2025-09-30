@@ -22,6 +22,7 @@ export const queryKeys = {
     detail: (id: string) => ['tenants', 'detail', id] as const,
     members: (id: string) => ['tenants', id, 'members'] as const,
     invitations: (id: string) => ['tenants', id, 'invitations'] as const,
+    roles: (id: string) => ['tenants', id, 'roles'] as const,
   },
   parties: {
     all: () => ['parties'] as const,

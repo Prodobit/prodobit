@@ -3,6 +3,7 @@ import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, TenantQuery, Pagination } from '../types';
 import type { Tenant, TenantMembership, TenantInvitation, CreateTenantRequest, UpdateTenantRequest, Response, PaginatedResponse } from '@prodobit/types';
+import type { CreateInvitationRequest, UpdateMembershipRequest } from '@prodobit/sdk';
 
 export const useTenants = (
   query?: TenantQuery & Pagination,
@@ -96,6 +97,66 @@ export const useTenantInvitations = (
   return useQuery<Response<{ id: string; email: string; status: string; expiresAt: string }[]>, Error>({
     queryKey: queryKeys.tenants.invitations(tenantId),
     queryFn: () => client.getTenantInvitations(tenantId),
+    enabled: !!tenantId && options?.enabled !== false,
+    ...options,
+  });
+};
+
+export const useCreateInvitation = (tenantId: string, options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<unknown>, Error, CreateInvitationRequest>({
+    mutationFn: (data: CreateInvitationRequest) =>
+      client.createInvitation(tenantId, data),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.tenants.invitations(tenantId) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.tenants.members(tenantId) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+export const useUpdateMembership = (tenantId: string, options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<unknown>, Error, { membershipId: string; data: UpdateMembershipRequest }>({
+    mutationFn: ({ membershipId, data }: { membershipId: string; data: UpdateMembershipRequest }) =>
+      client.updateMembership(tenantId, membershipId, data),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.tenants.members(tenantId) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+export const useRemoveMember = (tenantId: string, options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<unknown>, Error, string>({
+    mutationFn: (membershipId: string) =>
+      client.removeMember(tenantId, membershipId),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.tenants.members(tenantId) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+export const useTenantRoles = (
+  tenantId: string,
+  options?: QueryOptions
+) => {
+  const client = useProdobitClient();
+
+  return useQuery<Response<{ id: string; name: string; description?: string }[]>, Error>({
+    queryKey: queryKeys.tenants.roles(tenantId),
+    queryFn: () => client.getTenantRoles(tenantId),
     enabled: !!tenantId && options?.enabled !== false,
     ...options,
   });

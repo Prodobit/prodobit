@@ -21,11 +21,12 @@ app.use("*", authMiddleware);
 // Validation interfaces (using simple TypeScript validation instead of schema libraries)
 interface CreateInvitationBody {
   email: string;
-  roleId: string;
+  role?: string; // Simple role string like "admin", "user", "manager"
+  roleId?: string; // Optional UUID for custom roles table (future use)
   message?: string | null;
   expiresInDays?: number;
   membershipExpiresAt?: string | null;
-  accessLevel?: 'full' | 'limited';
+  accessLevel?: 'full' | 'limited' | 'read_only';
   permissions?: Record<string, any>;
   resourceRestrictions?: Record<string, any>;
 }
@@ -44,12 +45,15 @@ function validateCreateInvitation(body: any): CreateInvitationBody {
   if (!body.email || typeof body.email !== 'string') {
     throw new Error('Valid email is required');
   }
-  if (!body.roleId || typeof body.roleId !== 'string') {
-    throw new Error('Valid roleId is required');
+
+  // Accept either role string or roleId
+  if (!body.role && !body.roleId) {
+    throw new Error('Valid role or roleId is required');
   }
-  
+
   return {
     email: body.email,
+    role: body.role,
     roleId: body.roleId,
     message: body.message || null,
     expiresInDays: body.expiresInDays || 7,
@@ -88,8 +92,10 @@ app.get(
           userId: users.id,
           displayName: users.displayName,
           status: tenantMemberships.status,
-          role: tenantMemberships.role,
-          roleName: tenantMemberships.role, // Use role as roleName since no roles table data
+          roleId: tenantMemberships.roleId,
+          roleName: roles.name,
+          roleDescription: roles.description,
+          roleColor: roles.color,
           accessLevel: tenantMemberships.accessLevel,
           permissions: tenantMemberships.permissions,
           resourceRestrictions: tenantMemberships.resourceRestrictions,
@@ -101,6 +107,7 @@ app.get(
         })
         .from(tenantMemberships)
         .innerJoin(users, sql`${users.id} = ${tenantMemberships.userId}`)
+        .innerJoin(roles, eq(roles.id, tenantMemberships.roleId))
         .where(
           and(
             sql`${tenantMemberships.tenantId} = ${tenantId}::uuid`,
@@ -206,7 +213,43 @@ app.post(
       }
 
       const db = c.get("db");
-      
+
+      // If role string is provided instead of roleId, convert it
+      let roleId = data.roleId;
+      if (!roleId && data.role) {
+        const roleResult = await db
+          .select()
+          .from(roles)
+          .where(
+            and(
+              eq(roles.tenantId, tenantId),
+              eq(roles.name, data.role)
+            )
+          )
+          .limit(1);
+
+        if (roleResult.length === 0) {
+          return c.json(
+            {
+              success: false,
+              error: `Role '${data.role}' not found for this tenant`,
+            },
+            400
+          );
+        }
+        roleId = roleResult[0].id;
+      }
+
+      if (!roleId) {
+        return c.json(
+          {
+            success: false,
+            error: "Valid roleId is required",
+          },
+          400
+        );
+      }
+
       // Check if user already has a pending invitation for this tenant
       const existingInvitation = await db
         .select()
@@ -242,7 +285,7 @@ app.post(
           inviterName: users.displayName,
         })
         .from(tenants)
-        .innerJoin(roles, sql`${roles.id} = ${data.roleId}::uuid AND ${roles.tenantId} = ${tenantId}::uuid`)
+        .innerJoin(roles, sql`${roles.id} = ${roleId}::uuid AND ${roles.tenantId} = ${tenantId}::uuid`)
         .innerJoin(users, eq(users.id, invitedBy))
         .where(sql`${tenants.id} = ${tenantId}::uuid`)
         .limit(1);
@@ -268,7 +311,7 @@ app.post(
         .values({
           tenantId,
           email: data.email,
-          roleId: data.roleId,
+          roleId: roleId,
           invitedBy,
           token,
           message: data.message,
@@ -422,7 +465,7 @@ app.patch(
         updatedAt: new Date(),
       };
 
-      if (data.roleId) updateData.role = data.roleId;
+      if (data.roleId) updateData.roleId = data.roleId;
       if (data.status) updateData.status = data.status;
       if (data.accessLevel) updateData.accessLevel = data.accessLevel;
       if (data.expiresAt) updateData.expiresAt = new Date(data.expiresAt);
@@ -670,7 +713,7 @@ app.post("/invitations/:token/accept", authMiddleware, async (c) => {
       .values({
         userId,
         tenantId: inv.tenantId,
-        role: inv.roleId,
+        roleId: inv.roleId,
         permissions: inv.permissions,
         accessLevel: inv.accessLevel,
         resourceRestrictions: inv.resourceRestrictions,
@@ -678,6 +721,7 @@ app.post("/invitations/:token/accept", authMiddleware, async (c) => {
         invitedBy: inv.invitedBy,
         invitedAt: inv.insertedAt,
         joinedAt: new Date(),
+        status: "active",
       })
       .returning();
 
