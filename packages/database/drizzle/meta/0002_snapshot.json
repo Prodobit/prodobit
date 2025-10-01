@@ -1,5 +1,5 @@
 {
-  "id": "2991e0ff-9fa5-4c1c-9e1a-e7d3e498345d",
+  "id": "4b0d4fd0-bb28-4f8e-a1b4-b278e412b2e5",
   "prevId": "1efb7ebd-df95-474d-8140-9af7b8ce5928",
   "version": "7",
   "dialect": "postgresql",
@@ -8061,7 +8061,7 @@
           "name": "role_id",
           "type": "uuid",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "status": {
           "name": "status",

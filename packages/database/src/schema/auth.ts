@@ -1,15 +1,15 @@
+import { sql } from "drizzle-orm";
 import {
-  pgTable,
-  uuid,
-  text,
-  timestamp,
-  jsonb,
   boolean,
   index,
-  uniqueIndex,
   inet,
+  jsonb,
+  pgTable,
+  text,
+  timestamp,
+  uniqueIndex,
+  uuid,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
 import { tenants } from "./tenants.js";
 
 export const users = pgTable(
@@ -107,9 +107,9 @@ export const tenantMemberships = pgTable(
     tenantId: uuid("tenant_id")
       .notNull()
       .references(() => tenants.id, { onDelete: "cascade" }),
-    roleId: uuid("role_id")
-      .notNull()
-      .references(() => roles.id, { onDelete: "restrict" }),
+    roleId: uuid("role_id").references(() => roles.id, {
+      onDelete: "restrict",
+    }),
     status: text("status").notNull().default("active"),
     permissions: jsonb("permissions").notNull().default({}),
     accessLevel: text("access_level").notNull().default("full"),
@@ -173,7 +173,7 @@ export const sessions = pgTable(
     }),
     accessTokenHash: text("access_token_hash"), // Temporary - to be removed
     refreshTokenHash: text("refresh_token_hash"),
-    csrfTokenHash: text("csrf_token_hash").notNull().default(''),
+    csrfTokenHash: text("csrf_token_hash").notNull().default(""),
     expiresAt: timestamp("expires_at", {
       withTimezone: true,
       precision: 6,
@@ -379,8 +379,12 @@ export const emailVerificationTokens = pgTable(
   },
   (table) => ({
     emailIdx: index("email_verification_tokens_email_idx").on(table.email),
-    tokenHashIdx: uniqueIndex("email_verification_tokens_token_hash_idx").on(table.tokenHash),
-    expiresAtIdx: index("email_verification_tokens_expires_at_idx").on(table.expiresAt),
+    tokenHashIdx: uniqueIndex("email_verification_tokens_token_hash_idx").on(
+      table.tokenHash
+    ),
+    expiresAtIdx: index("email_verification_tokens_expires_at_idx").on(
+      table.expiresAt
+    ),
     emailUnusedIdx: index("email_verification_tokens_email_unused_idx")
       .on(table.email)
       .where(sql`used_at IS NULL AND expires_at > now()`),
