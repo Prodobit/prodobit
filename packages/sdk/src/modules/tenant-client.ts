@@ -123,8 +123,8 @@ export class TenantClient extends BaseClient {
   ): Promise<Response<unknown>> {
     return this.request(
       "POST",
-      `/api/v1/invitations/${token}/accept`,
-      undefined,
+      `/api/v1/auth/accept-invitation`,
+      { token },
       config
     );
   }
