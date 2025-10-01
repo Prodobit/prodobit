@@ -161,3 +161,20 @@ export const useTenantRoles = (
     ...options,
   });
 };
+
+export const useAcceptInvitation = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<unknown>, Error, { token: string }>({
+    mutationFn: ({ token }: { token: string }) =>
+      client.acceptInvitation(token),
+    onSuccess: (data) => {
+      // Invalidate user session to refetch with new tenant membership
+      queryClient.invalidateQueries({ queryKey: ['auth', 'me'] });
+      queryClient.invalidateQueries({ queryKey: queryKeys.tenants.all() });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
