@@ -3,7 +3,6 @@ import {
   rolePermissions,
   roles,
   tenantMemberships,
-  userRoles,
 } from "@prodobit/database";
 import type { PermissionCheck } from "@prodobit/types";
 import { and, eq, sql } from "drizzle-orm";
@@ -22,13 +21,13 @@ export class RBACService {
     tenantId?: string
   ): Promise<string[]> {
     try {
-      // Get user roles in the tenant
+      // Get user roles in the tenant via tenantMemberships
       const userRoleQuery = db
         .select({
           permissionName: permissions.name,
         })
-        .from(userRoles)
-        .innerJoin(roles, eq(userRoles.roleId, roles.id))
+        .from(tenantMemberships)
+        .innerJoin(roles, eq(tenantMemberships.roleId, roles.id))
         .innerJoin(rolePermissions, eq(roles.id, rolePermissions.roleId))
         .innerJoin(
           permissions,
@@ -36,8 +35,9 @@ export class RBACService {
         )
         .where(
           and(
-            eq(userRoles.userId, userId),
-            tenantId ? eq(roles.tenantId, tenantId) : undefined,
+            eq(tenantMemberships.userId, userId),
+            tenantId ? eq(tenantMemberships.tenantId, tenantId) : undefined,
+            eq(tenantMemberships.status, "active"),
             eq(roles.isActive, true)
           )
         );
@@ -73,14 +73,18 @@ export class RBACService {
       }
 
       const membership = await db
-        .select()
+        .select({
+          roleId: tenantMemberships.roleId,
+          roleName: roles.name,
+        })
         .from(tenantMemberships)
+        .innerJoin(roles, eq(roles.id, tenantMemberships.roleId))
         .where(and(...whereConditions))
         .limit(1);
 
       // If user is active member, allow most operations
       if (membership.length > 0) {
-        const userRole = membership[0].role;
+        const userRole = membership[0].roleName;
 
         // Admin can do everything
         if (userRole === "admin") {
@@ -191,8 +195,12 @@ export class RBACService {
   ): Promise<boolean> {
     try {
       const membership = await db
-        .select()
+        .select({
+          roleId: tenantMemberships.roleId,
+          roleName: roles.name,
+        })
         .from(tenantMemberships)
+        .innerJoin(roles, eq(roles.id, tenantMemberships.roleId))
         .where(
           and(
             sql`${tenantMemberships.userId} = ${userId}::uuid`,
@@ -206,7 +214,7 @@ export class RBACService {
         return false;
       }
 
-      if (requiredRole && membership[0].role !== requiredRole) {
+      if (requiredRole && membership[0].roleName !== requiredRole) {
         return false;
       }
 

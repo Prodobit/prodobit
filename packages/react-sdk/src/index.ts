@@ -13,7 +13,8 @@ export {
   useCreateInvitation,
   useUpdateMembership,
   useRemoveMember,
-  useTenantRoles
+  useTenantRoles,
+  useAcceptInvitation
 } from './hooks/useTenants';
 export { 
   useParties, 

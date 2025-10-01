@@ -8,6 +8,7 @@ import {
   users,
   roles as rolesTable,
   createDefaultTenantRoles,
+  userInvitations,
 } from "@prodobit/database";
 import type {
   CheckVerificationStatusRequest,
@@ -1688,6 +1689,132 @@ auth.post("/check-verification-status", async (c) => {
       verified: false,
       message: "Failed to check verification status",
       error: error instanceof Error ? error.message : "Unknown error",
+    }, 500);
+  }
+});
+
+// POST /api/v1/auth/accept-invitation (PUBLIC)
+auth.post("/accept-invitation", async (c) => {
+  try {
+    const db = c.get("db");
+    const body = await c.req.json();
+    const { token } = body;
+
+    if (!token) {
+      return c.json({
+        success: false,
+        error: {
+          code: "INVALID_REQUEST",
+          message: "Invitation token is required",
+        },
+      }, 400);
+    }
+
+    // Find invitation by token
+    const invitation = await db
+      .select()
+      .from(userInvitations)
+      .where(eq(userInvitations.token, token))
+      .limit(1);
+
+    if (invitation.length === 0) {
+      return c.json({
+        success: false,
+        error: {
+          code: "INVALID_TOKEN",
+          message: "Invalid or expired invitation token",
+        },
+      }, 404);
+    }
+
+    const inv = invitation[0];
+
+    // Check if invitation is still valid
+    if (inv.status !== "pending") {
+      return c.json({
+        success: false,
+        error: {
+          code: "INVALID_STATUS",
+          message: `Invitation has already been ${inv.status}`,
+        },
+      }, 400);
+    }
+
+    if (inv.expiresAt && new Date(inv.expiresAt) < new Date()) {
+      return c.json({
+        success: false,
+        error: {
+          code: "EXPIRED",
+          message: "Invitation has expired",
+        },
+      }, 400);
+    }
+
+    // Check if user exists
+    const existingUser = await db
+      .select()
+      .from(authMethods)
+      .where(eq(authMethods.providerId, inv.email))
+      .limit(1);
+
+    let userId: string;
+
+    if (existingUser.length > 0) {
+      // Existing user - just add to tenant
+      userId = existingUser[0].userId;
+    } else {
+      // New user - they need to register first
+      return c.json({
+        success: false,
+        error: {
+          code: "REGISTRATION_REQUIRED",
+          message: "Please complete registration first",
+          data: {
+            email: inv.email,
+            tenantId: inv.tenantId,
+            roleId: inv.roleId,
+          },
+        },
+      }, 400);
+    }
+
+    // Add user to tenant
+    await db.insert(tenantMemberships).values({
+      userId,
+      tenantId: inv.tenantId,
+      roleId: inv.roleId,
+      status: "active",
+      accessLevel: inv.accessLevel || "full",
+      permissions: inv.permissions,
+      invitedBy: inv.invitedBy,
+      invitedAt: inv.insertedAt,
+      joinedAt: new Date(),
+    });
+
+    // Update invitation status
+    await db
+      .update(userInvitations)
+      .set({
+        status: "accepted",
+        acceptedAt: new Date(),
+      })
+      .where(eq(userInvitations.id, inv.id));
+
+    return c.json({
+      success: true,
+      data: {
+        message: "Invitation accepted successfully",
+        tenantId: inv.tenantId,
+      },
+    });
+  } catch (error) {
+    console.error("Accept invitation error:", error);
+    return c.json({
+      success: false,
+      error: {
+        code: "INTERNAL_ERROR",
+        message: "Failed to accept invitation",
+      },
     }, 500);
   }
 });
