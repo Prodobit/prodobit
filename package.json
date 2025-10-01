@@ -6,12 +6,12 @@
     "packages/*"
   ],
   "dependencies": {
-    "@prodobit/config": "^0.7.7",
-    "@prodobit/database": "^0.7.7",
-    "@prodobit/react-sdk": "^0.7.7",
-    "@prodobit/sdk": "^0.7.7",
-    "@prodobit/server": "^0.7.7",
-    "@prodobit/types": "^0.7.7"
+    "@prodobit/config": "workspace:*",
+    "@prodobit/database": "workspace:*",
+    "@prodobit/react-sdk": "workspace:*",
+    "@prodobit/sdk": "workspace:*",
+    "@prodobit/server": "workspace:*",
+    "@prodobit/types": "workspace:*"
   },
   "scripts": {
     "build": "turbo build",
