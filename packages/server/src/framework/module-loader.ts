@@ -153,6 +153,11 @@ export class ModuleLoader {
     }
 
     try {
+      // Sync permissions to database
+      if (module.permissions) {
+        await this.syncPermissions(moduleName, module.permissions);
+      }
+
       // Run onEnable hook if exists
       if (module.onEnable) {
         await module.onEnable();
@@ -160,16 +165,54 @@ export class ModuleLoader {
 
       // Register routes
       module.registerRoutes(this.app);
-      
+
       // Mark as enabled
       this.enabledModules.add(moduleName);
-      
+
       console.log(`✅ Enabled module: ${moduleName}`);
       return true;
     } catch (error) {
       console.error(`❌ Failed to enable module ${moduleName}:`, error);
       return false;
     }
+  }
+
+  private async syncPermissions(moduleName: string, permissions: Record<string, string[]>): Promise<void> {
+    const { permissions: permissionsTable } = await import('@prodobit/database');
+
+    for (const [permissionKey, _allowedRoles] of Object.entries(permissions)) {
+      const [resource, action] = permissionKey.split(':');
+
+      if (!resource || !action) {
+        console.warn(`⚠️  Invalid permission format: ${permissionKey}`);
+        continue;
+      }
+
+      try {
+        // Upsert permission
+        await this.db
+          .insert(permissionsTable)
+          .values({
+            name: permissionKey,
+            resource,
+            action,
+            description: `${action} ${resource} (from ${moduleName} module)`,
+            scope: 'tenant',
+            isSystem: true,
+          })
+          .onConflictDoUpdate({
+            target: permissionsTable.name,
+            set: {
+              description: `${action} ${resource} (from ${moduleName} module)`,
+              updatedAt: new Date(),
+            },
+          });
+      } catch (error) {
+        console.error(`❌ Failed to sync permission ${permissionKey}:`, error);
+      }
+    }
+
+    console.log(`✅ Synced permissions for module: ${moduleName}`);
   }
 
   async disableModule(moduleName: string): Promise<boolean> {
