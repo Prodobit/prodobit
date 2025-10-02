@@ -1763,17 +1763,45 @@ auth.post("/accept-invitation", async (c) => {
       // Existing user - just add to tenant
       userId = existingUser[0].userId;
     } else {
-      // New user - they need to register first
+      // New user - create user account automatically
+      const newUser = await db
+        .insert(users)
+        .values({
+          displayName: inv.email.split('@')[0], // Use email prefix as display name
+          status: "active",
+          twoFactorEnabled: false,
+        })
+        .returning();
+
+      userId = newUser[0].id;
+
+      // Create auth method for the new user
+      await db.insert(authMethods).values({
+        userId,
+        provider: "email",
+        providerId: inv.email,
+        verified: true, // Auto-verify since they came from invitation
+      });
+    }
+
+    // Check if user is already a member of this tenant
+    const existingMembership = await db
+      .select()
+      .from(tenantMemberships)
+      .where(
+        and(
+          eq(tenantMemberships.userId, userId),
+          eq(tenantMemberships.tenantId, inv.tenantId)
+        )
+      )
+      .limit(1);
+
+    if (existingMembership.length > 0) {
       return c.json({
         success: false,
         error: {
-          code: "REGISTRATION_REQUIRED",
-          message: "Please complete registration first",
-          data: {
-            email: inv.email,
-            tenantId: inv.tenantId,
-            roleId: inv.roleId,
-          },
+          code: "ALREADY_MEMBER",
+          message: "User is already a member of this tenant",
         },
       }, 400);
     }
