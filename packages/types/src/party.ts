@@ -182,3 +182,14 @@ export type UpdatePartyRequest = typeof updatePartyRequest.infer;
 
 // Legacy
 export type CreatePartyRequest = typeof createPartyRequest.infer;
+
+// GetParty Response
+export const getPartyResponse = type({
+  party,
+  specificData: person.or(organization),
+  roles: partyRole.array(),
+  addresses: address.array(),
+  contacts: contactMechanism.array(),
+});
+
+export type GetPartyResponse = typeof getPartyResponse.infer;

@@ -1,5 +1,5 @@
 import { type } from "arktype";
-import { uuid, timestamp, status } from "./common";
+import { status, timestamp, uuid } from "./common";
 
 export const tenant = type({
   id: uuid,
@@ -38,6 +38,7 @@ export const tenantInvitation = type({
   role: "string",
   status: "'pending' | 'accepted' | 'declined' | 'expired'",
   token: "string",
+  inviterName: "string",
   expiresAt: timestamp,
   insertedAt: timestamp,
   updatedAt: timestamp,
