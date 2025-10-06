@@ -8,7 +8,8 @@ export interface OTPOptions {
 
 export interface OTPRecord {
   code: string;
-  email: string;
+  identifier: string; // email or phone
+  type: "email" | "phone";
   expiresAt: Date;
   attempts: number;
   maxAttempts: number;
@@ -30,10 +31,11 @@ export class OTPManager {
   }
 
   /**
-   * Store OTP for email verification
+   * Store OTP for email or phone verification
    */
   static storeOTP(
-    email: string, 
+    identifier: string,
+    type: "email" | "phone",
     options: OTPOptions = {}
   ): { code: string; expiresAt: Date } {
     const { expiresInMinutes = 10 } = options;
@@ -42,14 +44,16 @@ export class OTPManager {
 
     const otpRecord: OTPRecord = {
       code,
-      email,
+      identifier,
+      type,
       expiresAt,
       attempts: 0,
       maxAttempts: 3,
     };
 
-    // Use email as key for easy lookup
-    this.otpStore.set(email.toLowerCase(), otpRecord);
+    // Use identifier as key for easy lookup (lowercase for email, as-is for phone)
+    const key = type === "email" ? identifier.toLowerCase() : identifier;
+    this.otpStore.set(key, otpRecord);
 
     // Start cleanup if not already running
     if (!this.cleanupInterval) {
@@ -62,24 +66,28 @@ export class OTPManager {
   /**
    * Verify OTP code
    */
-  static verifyOTP(email: string, code: string): {
+  static verifyOTP(
+    identifier: string,
+    type: "email" | "phone",
+    code: string
+  ): {
     success: boolean;
     message: string;
     attemptsLeft?: number;
   } {
-    const normalizedEmail = email.toLowerCase();
-    const otpRecord = this.otpStore.get(normalizedEmail);
+    const key = type === "email" ? identifier.toLowerCase() : identifier;
+    const otpRecord = this.otpStore.get(key);
 
     if (!otpRecord) {
       return {
         success: false,
-        message: "No OTP found for this email. Please request a new one.",
+        message: `No OTP found for this ${type}. Please request a new one.`,
       };
     }
 
     // Check if expired
     if (new Date() > otpRecord.expiresAt) {
-      this.otpStore.delete(normalizedEmail);
+      this.otpStore.delete(key);
       return {
         success: false,
         message: "OTP has expired. Please request a new one.",
@@ -88,7 +96,7 @@ export class OTPManager {
 
     // Check attempts
     if (otpRecord.attempts >= otpRecord.maxAttempts) {
-      this.otpStore.delete(normalizedEmail);
+      this.otpStore.delete(key);
       return {
         success: false,
         message: "Too many failed attempts. Please request a new OTP.",
@@ -97,12 +105,12 @@ export class OTPManager {
 
     // Verify code
     otpRecord.attempts++;
-    
+
     if (otpRecord.code !== code) {
       const attemptsLeft = otpRecord.maxAttempts - otpRecord.attempts;
-      
+
       if (attemptsLeft <= 0) {
-        this.otpStore.delete(normalizedEmail);
+        this.otpStore.delete(key);
         return {
           success: false,
           message: "Invalid OTP. Too many failed attempts.",
@@ -117,7 +125,7 @@ export class OTPManager {
     }
 
     // Success - remove from store
-    this.otpStore.delete(normalizedEmail);
+    this.otpStore.delete(key);
     return {
       success: true,
       message: "OTP verified successfully.",
@@ -125,15 +133,15 @@ export class OTPManager {
   }
 
   /**
-   * Check if OTP exists and is valid for email
+   * Check if OTP exists and is valid
    */
-  static hasValidOTP(email: string): boolean {
-    const normalizedEmail = email.toLowerCase();
-    const otpRecord = this.otpStore.get(normalizedEmail);
+  static hasValidOTP(identifier: string, type: "email" | "phone"): boolean {
+    const key = type === "email" ? identifier.toLowerCase() : identifier;
+    const otpRecord = this.otpStore.get(key);
 
     if (!otpRecord) return false;
     if (new Date() > otpRecord.expiresAt) {
-      this.otpStore.delete(normalizedEmail);
+      this.otpStore.delete(key);
       return false;
     }
 
@@ -143,14 +151,14 @@ export class OTPManager {
   /**
    * Get OTP info (for debugging/testing)
    */
-  static getOTPInfo(email: string): {
+  static getOTPInfo(identifier: string, type: "email" | "phone"): {
     exists: boolean;
     expiresAt?: Date;
     attempts?: number;
     attemptsLeft?: number;
   } {
-    const normalizedEmail = email.toLowerCase();
-    const otpRecord = this.otpStore.get(normalizedEmail);
+    const key = type === "email" ? identifier.toLowerCase() : identifier;
+    const otpRecord = this.otpStore.get(key);
 
     if (!otpRecord) {
       return { exists: false };

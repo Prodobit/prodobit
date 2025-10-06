@@ -35,6 +35,8 @@ import { OTPManager } from "./utils/otp.js";
 import { TokenUtils } from "./utils/tokens.js";
 import { CSRFTokenManager } from "./utils/csrf.js";
 import { CookieManager } from "./utils/cookies.js";
+import { SMSService } from "./utils/sms.js";
+import { sendOTP, getProviderAndIdentifier } from "./utils/otp-sender.js";
 
 const auth = new Hono<{ Variables: { db: Database } }>();
 
@@ -42,19 +44,23 @@ const auth = new Hono<{ Variables: { db: Database } }>();
 auth.post("/check-user", async (c) => {
   try {
     const body = await c.req.json();
-    const { email } = body;
+    const { email, phone } = body;
 
-    if (!email) {
+    if (!email && !phone) {
       return c.json(
         {
           success: false,
-          error: "Email is required",
+          error: "Email or phone is required",
         },
         400
       );
     }
 
     const db = c.get("db");
+
+    // Determine provider and identifier
+    const provider = email ? "email" : "phone";
+    const identifier = email || phone;
 
     // Check if user exists in database
     const existingUser = await db
@@ -66,8 +72,8 @@ auth.post("/check-user", async (c) => {
       .innerJoin(users, eq(authMethods.userId, users.id))
       .where(
         and(
-          eq(authMethods.provider, "email"),
-          eq(authMethods.providerId, email)
+          eq(authMethods.provider, provider),
+          eq(authMethods.providerId, identifier)
         )
       )
       .limit(1);
@@ -113,37 +119,30 @@ auth.post("/check-user", async (c) => {
       // Single tenant - auto-select and send OTP
       const defaultTenant = userTenantMemberships[0];
 
-      // Generate and store OTP
-      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
-        expiresInMinutes: 10,
-      });
+      // Send OTP
+      const otpResult = await sendOTP(identifier, provider as "email" | "phone");
 
-      // Send OTP via email
-      const emailResult = await EmailService.sendOTPEmail({
-        email: body.email,
-        code,
-        expiresInMinutes: 10,
-      });
-
-      if (!emailResult.success) {
+      if (!otpResult.success) {
         return c.json(
           {
             success: false,
             error: {
-              code: "EMAIL_ERROR",
-              message: "Failed to send verification email",
-              details: emailResult.error,
+              code: provider === "email" ? "EMAIL_ERROR" : "SMS_ERROR",
+              message: `Failed to send verification ${provider === "email" ? "email" : "SMS"}`,
+              details: otpResult.error,
             },
           },
           500
         );
       }
 
+      const { expiresAt } = otpResult;
+
       return c.json({
         success: true,
         requiresTenantSelection: false,
         isNewUser: false,
-        message: "Verification code sent to your email",
+        message: `Verification code sent to your ${provider}`,
         expiresAt: expiresAt.toISOString(),
         defaultTenantId: defaultTenant.membership.tenantId,
         defaultTenantName: defaultTenant.tenant.name,
@@ -184,10 +183,15 @@ auth.post("/request-otp", async (c) => {
   try {
     const body = (await c.req.json()) as RequestOTPRequest;
 
-    if (!body.email) {
-      return c.json({ success: false, message: "Email is required" }, 400);
+    const providerInfo = getProviderAndIdentifier(body);
+    if (!providerInfo) {
+      return c.json(
+        { success: false, message: "Email or phone is required" },
+        400
+      );
     }
 
+    const { provider, identifier } = providerInfo;
     const db = c.get("db");
 
     // Check if tenantId is provided (second request with selected tenant)
@@ -206,8 +210,8 @@ auth.post("/request-otp", async (c) => {
         )
         .where(
           and(
-            eq(authMethods.provider, "email"),
-            eq(authMethods.providerId, body.email),
+            eq(authMethods.provider, provider),
+            eq(authMethods.providerId, identifier),
             eq(tenantMemberships.tenantId, body.tenantId),
             eq(tenantMemberships.status, "active")
           )
@@ -227,35 +231,28 @@ auth.post("/request-otp", async (c) => {
         );
       }
 
-      // Generate and store OTP
-      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
-        expiresInMinutes: 10,
-      });
+      // Send OTP
+      const otpResult = await sendOTP(identifier, provider);
 
-      // Send OTP via email
-      const emailResult = await EmailService.sendOTPEmail({
-        email: body.email,
-        code,
-        expiresInMinutes: 10,
-      });
-
-      if (!emailResult.success) {
+      if (!otpResult.success) {
         return c.json(
           {
             success: false,
             error: {
-              code: "EMAIL_ERROR",
-              message: "Failed to send verification email",
-              details: emailResult.error,
+              code: provider === "email" ? "EMAIL_ERROR" : "SMS_ERROR",
+              message: `Failed to send verification ${provider === "email" ? "email" : "SMS"}`,
+              details: otpResult.error,
             },
           },
           500
         );
       }
 
+      const { expiresAt } = otpResult;
+
       return c.json({
         success: true,
-        message: "Verification code sent to your email",
+        message: `Verification code sent to your ${provider}`,
         expiresAt: expiresAt.toISOString(),
         selectedTenantId: userTenantMembership[0].membership.tenantId,
         selectedTenantName: userTenantMembership[0].tenant.name,
@@ -272,32 +269,24 @@ auth.post("/request-otp", async (c) => {
       .innerJoin(users, eq(authMethods.userId, users.id))
       .where(
         and(
-          eq(authMethods.provider, "email"),
-          eq(authMethods.providerId, body.email)
+          eq(authMethods.provider, provider),
+          eq(authMethods.providerId, identifier)
         )
       )
       .limit(1);
 
     if (existingUser.length === 0) {
       // New user - send OTP for registration
-      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
-        expiresInMinutes: 10,
-      });
+      const otpResult = await sendOTP(identifier, provider);
 
-      const emailResult = await EmailService.sendOTPEmail({
-        email: body.email,
-        code,
-        expiresInMinutes: 10,
-      });
-
-      if (!emailResult.success) {
+      if (!otpResult.success) {
         return c.json(
           {
             success: false,
             error: {
-              code: "EMAIL_ERROR",
-              message: "Failed to send verification email",
-              details: emailResult.error,
+              code: provider === "email" ? "EMAIL_ERROR" : "SMS_ERROR",
+              message: `Failed to send verification ${provider === "email" ? "email" : "SMS"}`,
+              details: otpResult.error,
             },
           },
           500
@@ -308,8 +297,8 @@ auth.post("/request-otp", async (c) => {
         success: true,
         requiresTenantSelection: true,
         isNewUser: true,
-        message: "Verification code sent to your email",
-        expiresAt: expiresAt.toISOString(),
+        message: `Verification code sent to your ${provider}`,
+        expiresAt: otpResult.expiresAt.toISOString(),
         tenants: [],
       });
     }
@@ -349,24 +338,16 @@ auth.post("/request-otp", async (c) => {
       // Single tenant - auto-select and send OTP
       const defaultTenant = userTenantMemberships[0];
 
-      const { code, expiresAt } = OTPManager.storeOTP(body.email, {
-        expiresInMinutes: 10,
-      });
+      const otpResult = await sendOTP(identifier, provider);
 
-      const emailResult = await EmailService.sendOTPEmail({
-        email: body.email,
-        code,
-        expiresInMinutes: 10,
-      });
-
-      if (!emailResult.success) {
+      if (!otpResult.success) {
         return c.json(
           {
             success: false,
             error: {
-              code: "EMAIL_ERROR",
-              message: "Failed to send verification email",
-              details: emailResult.error,
+              code: provider === "email" ? "EMAIL_ERROR" : "SMS_ERROR",
+              message: `Failed to send verification ${provider === "email" ? "email" : "SMS"}`,
+              details: otpResult.error,
             },
           },
           500
@@ -377,8 +358,8 @@ auth.post("/request-otp", async (c) => {
         success: true,
         requiresTenantSelection: false,
         isNewUser: false,
-        message: "Verification code sent to your email",
-        expiresAt: expiresAt.toISOString(),
+        message: `Verification code sent to your ${provider}`,
+        expiresAt: otpResult.expiresAt.toISOString(),
         defaultTenantId: defaultTenant.membership.tenantId,
         defaultTenantName: defaultTenant.tenant.name,
       });
@@ -417,26 +398,30 @@ auth.post("/resend-otp", async (c) => {
   try {
     const body = (await c.req.json()) as ResendOTPRequest;
 
-    // Generate and store new OTP
-    const { code, expiresAt } = OTPManager.storeOTP(body.email, {
-      expiresInMinutes: 10,
-    });
+    const providerInfo = getProviderAndIdentifier(body);
+    if (!providerInfo) {
+      return c.json(
+        {
+          success: false,
+          message: "Email or phone is required",
+        },
+        400
+      );
+    }
 
-    // Send OTP via email
-    const emailResult = await EmailService.sendOTPEmail({
-      email: body.email,
-      code,
-      expiresInMinutes: 10,
-    });
+    const { provider, identifier } = providerInfo;
 
-    if (!emailResult.success) {
+    // Send OTP
+    const otpResult = await sendOTP(identifier, provider);
+
+    if (!otpResult.success) {
       return c.json(
         {
           success: false,
           error: {
-            code: "EMAIL_ERROR",
-            message: "Failed to resend verification email",
-            details: emailResult.error,
+            code: provider === "email" ? "EMAIL_ERROR" : "SMS_ERROR",
+            message: `Failed to resend verification ${provider === "email" ? "email" : "SMS"}`,
+            details: otpResult.error,
           },
         },
         500
@@ -445,8 +430,8 @@ auth.post("/resend-otp", async (c) => {
 
     return c.json({
       success: true,
-      message: "Verification code resent to your email",
-      expiresAt: expiresAt.toISOString(),
+      message: `Verification code resent to your ${provider}`,
+      expiresAt: otpResult.expiresAt.toISOString(),
     });
   } catch (error) {
     console.error("Resend OTP error:", error);
@@ -470,8 +455,24 @@ auth.post("/verify-otp", async (c) => {
     const body = (await c.req.json()) as VerifyOTPRequest;
     const db = c.get("db");
 
+    const providerInfo = getProviderAndIdentifier(body);
+    if (!providerInfo) {
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "INVALID_REQUEST",
+            message: "Email or phone is required",
+          },
+        },
+        400
+      );
+    }
+
+    const { provider, identifier } = providerInfo;
+
     // Verify OTP
-    const otpResult = OTPManager.verifyOTP(body.email, body.code);
+    const otpResult = OTPManager.verifyOTP(identifier, provider, body.code);
 
     if (!otpResult.success) {
       return c.json(
@@ -501,8 +502,8 @@ auth.post("/verify-otp", async (c) => {
       .innerJoin(users, eq(authMethods.userId, users.id))
       .where(
         and(
-          eq(authMethods.provider, "email"),
-          eq(authMethods.providerId, body.email)
+          eq(authMethods.provider, provider),
+          eq(authMethods.providerId, identifier)
         )
       )
       .limit(1);
@@ -515,10 +516,16 @@ auth.post("/verify-otp", async (c) => {
       // New user - create account
       isNewUser = true;
 
+      // Generate display name from identifier
+      const displayName =
+        provider === "email"
+          ? identifier.split("@")[0]
+          : `User_${identifier.slice(-4)}`;
+
       const newUser = await db
         .insert(users)
         .values({
-          displayName: body.email.split("@")[0], // Use email prefix as display name
+          displayName,
           status: "active",
           twoFactorEnabled: false,
         })
@@ -530,12 +537,13 @@ auth.post("/verify-otp", async (c) => {
         .insert(authMethods)
         .values({
           userId: user.id,
-          provider: "email",
-          providerId: body.email,
-          verified: true, // OTP verified = email verified
-          metadata: {
-            email: body.email,
-          },
+          provider,
+          providerId: identifier,
+          verified: true, // OTP verified
+          metadata:
+            provider === "email"
+              ? { email: identifier }
+              : { phone: identifier },
         })
         .returning();
 
@@ -569,11 +577,18 @@ auth.post("/verify-otp", async (c) => {
         }
       }
 
-      // Send welcome email for new users
-      await EmailService.sendWelcomeEmail(
-        body.email,
-        user.displayName || undefined
-      );
+      // Send welcome message for new users
+      if (provider === "email") {
+        await EmailService.sendWelcomeEmail(
+          identifier,
+          user.displayName || undefined
+        );
+      } else {
+        await SMSService.sendWelcomeSMS(
+          identifier,
+          user.displayName || undefined
+        );
+      }
     }
 
     // Check if user is active

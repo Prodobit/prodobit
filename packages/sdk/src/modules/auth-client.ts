@@ -255,8 +255,9 @@ export class AuthClient extends BaseClient {
 
   // Auth state methods
   async loginWithOTP(
-    email: string,
-    tenantId?: string
+    identifier: string, // email or phone
+    tenantId?: string,
+    type?: "email" | "phone" // auto-detect if not provided
   ): Promise<{
     success: boolean;
     message: string;
@@ -273,10 +274,16 @@ export class AuthClient extends BaseClient {
       role: string;
     }>;
   }> {
-    const response = await this.requestOTP({
-      email,
-      ...(tenantId && { tenantId }),
-    });
+    // Auto-detect type if not provided
+    const isEmail = identifier.includes("@");
+    const authType = type || (isEmail ? "email" : "phone");
+
+    const requestData: RequestOTPRequest =
+      authType === "email"
+        ? { email: identifier, ...(tenantId && { tenantId }) }
+        : { phone: identifier, ...(tenantId && { tenantId }) };
+
+    const response = await this.requestOTP(requestData);
 
     return {
       success: response.success,
@@ -293,9 +300,10 @@ export class AuthClient extends BaseClient {
   }
 
   async completeLogin(
-    email: string,
+    identifier: string, // email or phone
     code: string,
-    tenantId?: string
+    tenantId?: string,
+    type?: "email" | "phone" // auto-detect if not provided
   ): Promise<{
     success: boolean;
     user?: User;
@@ -306,11 +314,16 @@ export class AuthClient extends BaseClient {
     tenantMemberships?: LoginResponseData["tenantMemberships"];
   }> {
     try {
-      const response = await this.verifyOTP({
-        email,
-        code,
-        ...(tenantId && { tenantId }),
-      });
+      // Auto-detect type if not provided
+      const isEmail = identifier.includes("@");
+      const authType = type || (isEmail ? "email" : "phone");
+
+      const verifyData: VerifyOTPRequest =
+        authType === "email"
+          ? { email: identifier, code, ...(tenantId && { tenantId }) }
+          : { phone: identifier, code, ...(tenantId && { tenantId }) };
+
+      const response = await this.verifyOTP(verifyData);
 
       if (response.success && response.data) {
         return {

@@ -25,9 +25,10 @@ export const useAuth = () => {
   const checkUser = useMutation<
     Response<{ userExists: boolean; tenantMemberships: any[] }>,
     Error,
-    { email: string }
+    { email?: string; phone?: string }
   >({
-    mutationFn: ({ email }: { email: string }) => client.checkUser({ email }),
+    mutationFn: (data: { email?: string; phone?: string }) =>
+      client.checkUser(data),
   });
 
   const registerTenant = useMutation<
@@ -41,26 +42,40 @@ export const useAuth = () => {
   const requestOTP = useMutation<
     Response<RequestOTPResponse>,
     Error,
-    { email: string; tenantId?: string }
+    { identifier: string; tenantId?: string; type?: "email" | "phone" }
   >({
-    mutationFn: ({ email, tenantId }: { email: string; tenantId?: string }) =>
-      client.loginWithOTP(email, tenantId),
+    mutationFn: ({
+      identifier,
+      tenantId,
+      type,
+    }: {
+      identifier: string;
+      tenantId?: string;
+      type?: "email" | "phone";
+    }) => client.loginWithOTP(identifier, tenantId, type),
   });
 
   const verifyOTP = useMutation<
     Response<LoginResponse>,
     Error,
-    { email: string; code: string; tenantId?: string }
-  >({
-    mutationFn: ({
-      email,
-      code,
-      tenantId,
-    }: {
-      email: string;
+    {
+      identifier: string;
       code: string;
       tenantId?: string;
-    }) => client.completeLogin(email, code, tenantId),
+      type?: "email" | "phone";
+    }
+  >({
+    mutationFn: ({
+      identifier,
+      code,
+      tenantId,
+      type,
+    }: {
+      identifier: string;
+      code: string;
+      tenantId?: string;
+      type?: "email" | "phone";
+    }) => client.completeLogin(identifier, code, tenantId, type),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.auth.me() });
     },

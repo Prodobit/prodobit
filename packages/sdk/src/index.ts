@@ -16,3 +16,6 @@ export { getProdobitClientSingleton, clearProdobitClientSingleton } from "./sing
 
 // Export cookie utilities for React SDK
 export { tokenCookies, cookieUtils } from "./utils/cookie-utils";
+
+// Export phone utilities
+export * from "./utils/phone-utils";

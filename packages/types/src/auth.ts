@@ -15,7 +15,7 @@ export const user = type({
 export const authMethod = type({
   id: uuid,
   userId: uuid,
-  provider: "'email' | 'google' | 'github' | 'microsoft'",
+  provider: "'email' | 'phone' | 'google' | 'github' | 'microsoft'",
   providerId: "string >= 1",
   verified: "boolean",
   "metadata?": "object",
@@ -94,9 +94,10 @@ export const session = type({
   "deletedAt?": timestamp,
 });
 
-// OTP-based authentication requests
+// OTP-based authentication requests (email or phone)
 export const requestOTPRequest = type({
-  email: "string.email",
+  "email?": "string.email",
+  "phone?": "string >= 10", // Phone number
   "tenantId?": uuid,
 });
 
@@ -121,7 +122,8 @@ export const requestOTPResponse = type({
 });
 
 export const verifyOTPRequest = type({
-  email: "string.email",
+  "email?": "string.email",
+  "phone?": "string >= 10", // Phone number
   code: "string >= 6", // 6 digit code
   "tenantId?": uuid,
 });
@@ -238,11 +240,13 @@ export const logoutRequest = type({
 });
 
 export const resendOTPRequest = type({
-  email: "string.email",
+  "email?": "string.email",
+  "phone?": "string >= 10",
 });
 
 export const checkUserRequest = type({
-  email: "string.email",
+  "email?": "string.email",
+  "phone?": "string >= 10",
 });
 
 export const checkUserResponse = type({
