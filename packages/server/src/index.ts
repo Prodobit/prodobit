@@ -12,6 +12,7 @@ import { inventoryModule } from "./modules/inventory/manifest.js";
 import { customerModule } from "./modules/customer/manifest.js";
 import { supplierModule } from "./modules/supplier/manifest.js";
 import { EmailService } from "./core/utils/email.js";
+import { SMSService } from "./core/utils/sms.js";
 import type { Database } from "@prodobit/database";
 
 export { coreModule } from "./core/manifest.js";
@@ -25,6 +26,10 @@ export { ModuleLoader, rbacManager, ServerConfigManager };
 export type { ModuleManifest, ServerConfig };
 export * from './config/index.js';
 export { authMiddleware, optionalAuthMiddleware, tenantContextMiddleware } from "./core/middleware/auth.js";
+export { SMSService } from "./core/utils/sms.js";
+export { EmailService } from "./core/utils/email.js";
+export type { SMSProvider, SMSProviderConfig } from "./core/utils/sms-provider.js";
+export type { EmailProvider, EmailProviderConfig } from "./core/utils/email-provider.js";
 
 export interface CreateServerAppOptions {
   modules?: ModuleManifest[];
@@ -61,6 +66,9 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
       fromName: config.email.fromName
     });
   }
+
+  // Initialize SMS service with NetGSM provider from environment
+  SMSService.initializeWithNetGSM();
   
   const moduleLoader = new ModuleLoader(config);
   
