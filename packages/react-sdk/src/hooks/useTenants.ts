@@ -94,7 +94,7 @@ export const useTenantInvitations = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery<Response<{ id: string; email: string; status: string; expiresAt: string }[]>, Error>({
+  return useQuery<Response<TenantInvitation[]>, Error>({
     queryKey: queryKeys.tenants.invitations(tenantId),
     queryFn: () => client.getTenantInvitations(tenantId),
     enabled: !!tenantId && options?.enabled !== false,
@@ -106,7 +106,7 @@ export const useCreateInvitation = (tenantId: string, options?: MutationOptions)
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation<Response<unknown>, Error, CreateInvitationRequest>({
+  return useMutation<Response<TenantInvitation>, Error, CreateInvitationRequest>({
     mutationFn: (data: CreateInvitationRequest) =>
       client.createInvitation(tenantId, data),
     onSuccess: (data) => {
@@ -122,7 +122,7 @@ export const useUpdateMembership = (tenantId: string, options?: MutationOptions)
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation<Response<unknown>, Error, { membershipId: string; data: UpdateMembershipRequest }>({
+  return useMutation<Response<TenantMembership>, Error, { membershipId: string; data: UpdateMembershipRequest }>({
     mutationFn: ({ membershipId, data }: { membershipId: string; data: UpdateMembershipRequest }) =>
       client.updateMembership(tenantId, membershipId, data),
     onSuccess: (data) => {
@@ -137,7 +137,7 @@ export const useRemoveMember = (tenantId: string, options?: MutationOptions) => 
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation<Response<unknown>, Error, string>({
+  return useMutation<Response<void>, Error, string>({
     mutationFn: (membershipId: string) =>
       client.removeMember(tenantId, membershipId),
     onSuccess: (data) => {
@@ -166,7 +166,7 @@ export const useAcceptInvitation = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation<Response<unknown>, Error, { token: string }>({
+  return useMutation<Response<TenantMembership>, Error, { token: string }>({
     mutationFn: ({ token }: { token: string }) =>
       client.acceptInvitation(token),
     onSuccess: (data) => {

@@ -11,6 +11,8 @@ import type {
   Response,
   UpdatePartyRequest,
   Pagination,
+  GetPartyResponse,
+  PaginatedResponse,
 } from "@prodobit/types";
 import {
   createPersonRequest,
@@ -75,7 +77,7 @@ export class PartyClient extends BaseClient {
   async getParties(
     query?: PartyFilters & Pagination,
     config?: RequestConfig
-  ): Promise<Response<Party[]>> {
+  ): Promise<PaginatedResponse<Party[]>> {
     const queryString = buildQuery(query);
     const path = `/api/v1/parties${queryString ? `?${queryString}` : ""}`;
     return this.request("GET", path, undefined, config);
@@ -85,15 +87,7 @@ export class PartyClient extends BaseClient {
   async getParty(
     id: string,
     config?: RequestConfig
-  ): Promise<
-    Response<{
-      party: Party;
-      specificData: Person | Organization;
-      roles: PartyRole[];
-      addresses: Address[];
-      contacts: ContactMechanism[];
-    }>
-  > {
+  ): Promise<Response<GetPartyResponse>> {
     return this.request("GET", `/api/v1/parties/${id}`, undefined, config);
   }
 
@@ -102,15 +96,7 @@ export class PartyClient extends BaseClient {
     id: string,
     data: UpdatePartyRequest,
     config?: RequestConfig
-  ): Promise<
-    Response<{
-      party: Party;
-      specificData: Person | Organization;
-      roles: PartyRole[];
-      addresses: Address[];
-      contacts: ContactMechanism[];
-    }>
-  > {
+  ): Promise<Response<GetPartyResponse>> {
     const validatedData = validateRequest(updatePartyRequest, data);
     return this.request("PUT", `/api/v1/parties/${id}`, validatedData, config);
   }
@@ -126,17 +112,17 @@ export class PartyClient extends BaseClient {
   // Role-specific party methods
 
   // Get all customers (persons + organizations with customer role)
-  async getCustomers(config?: RequestConfig): Promise<Response<Party[]>> {
+  async getCustomers(config?: RequestConfig): Promise<PaginatedResponse<Party[]>> {
     return this.request("GET", "/api/v1/customers", undefined, config);
   }
 
   // Get all suppliers (persons + organizations with supplier role)
-  async getSuppliers(config?: RequestConfig): Promise<Response<Party[]>> {
+  async getSuppliers(config?: RequestConfig): Promise<PaginatedResponse<Party[]>> {
     return this.request("GET", "/api/v1/suppliers", undefined, config);
   }
 
   // Get all employee parties
-  async getEmployeeParties(config?: RequestConfig): Promise<Response<Party[]>> {
+  async getEmployeeParties(config?: RequestConfig): Promise<PaginatedResponse<Party[]>> {
     return this.request("GET", "/api/v1/parties/employees", undefined, config);
   }
 

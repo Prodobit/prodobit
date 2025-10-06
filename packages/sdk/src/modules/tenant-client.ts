@@ -4,6 +4,7 @@ import type {
   Response,
   Tenant,
   TenantMembership,
+  TenantInvitation,
   TenantQuery,
   UpdateTenantRequest,
   Pagination,
@@ -83,7 +84,7 @@ export class TenantClient extends BaseClient {
   async getTenantInvitations(
     tenantId: string,
     config?: RequestConfig
-  ): Promise<Response<{ id: string; email: string; status: string; expiresAt: string }[]>> {
+  ): Promise<Response<TenantInvitation[]>> {
     return this.request(
       "GET",
       `/api/v1/tenants/${tenantId}/invitations`,
@@ -96,7 +97,7 @@ export class TenantClient extends BaseClient {
     tenantId: string,
     data: CreateInvitationRequest,
     config?: RequestConfig
-  ): Promise<Response<unknown>> {
+  ): Promise<Response<TenantInvitation>> {
     return this.request(
       "POST",
       `/api/v1/tenants/${tenantId}/invitations`,
@@ -108,7 +109,7 @@ export class TenantClient extends BaseClient {
   async getInvitationByToken(
     token: string,
     config?: RequestConfig
-  ): Promise<Response<unknown>> {
+  ): Promise<Response<TenantInvitation>> {
     return this.request(
       "GET",
       `/api/v1/invitations/${token}`,
@@ -120,7 +121,7 @@ export class TenantClient extends BaseClient {
   async acceptInvitation(
     token: string,
     config?: RequestConfig
-  ): Promise<Response<unknown>> {
+  ): Promise<Response<TenantMembership>> {
     return this.request(
       "POST",
       `/api/v1/auth/accept-invitation`,
@@ -134,7 +135,7 @@ export class TenantClient extends BaseClient {
     membershipId: string,
     data: UpdateMembershipRequest,
     config?: RequestConfig
-  ): Promise<Response<unknown>> {
+  ): Promise<Response<TenantMembership>> {
     return this.request(
       "PATCH",
       `/api/v1/tenants/${tenantId}/members/${membershipId}`,
@@ -147,7 +148,7 @@ export class TenantClient extends BaseClient {
     tenantId: string,
     membershipId: string,
     config?: RequestConfig
-  ): Promise<Response<unknown>> {
+  ): Promise<Response<void>> {
     return this.request(
       "DELETE",
       `/api/v1/tenants/${tenantId}/members/${membershipId}`,
