@@ -24,7 +24,7 @@ import type {
   VerifyEmailResponse,
   VerifyOTPRequest,
 } from "@prodobit/types";
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, sql } from "drizzle-orm";
 import { Hono } from "hono";
 import { authMiddleware } from "./middleware/auth.js";
 import { RBACService } from "./middleware/rbac.js";
@@ -1859,6 +1859,189 @@ auth.post("/accept-invitation", async (c) => {
         message: "Failed to accept invitation",
       },
     }, 500);
+  }
+});
+
+// GET /api/v1/auth/sessions - List all active sessions for current user
+auth.get("/sessions", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+
+    const userSessions = await db
+      .select({
+        id: sessions.id,
+        userId: sessions.userId,
+        authMethodId: sessions.authMethodId,
+        currentTenantId: sessions.currentTenantId,
+        expiresAt: sessions.expiresAt,
+        refreshExpiresAt: sessions.refreshExpiresAt,
+        deviceType: sessions.deviceType,
+        deviceName: sessions.deviceName,
+        userAgent: sessions.userAgent,
+        ipAddress: sessions.ipAddress,
+        locationData: sessions.locationData,
+        deviceFingerprint: sessions.deviceFingerprint,
+        status: sessions.status,
+        lastActivityAt: sessions.lastActivityAt,
+        revokedAt: sessions.revokedAt,
+        revokedReason: sessions.revokedReason,
+        insertedAt: sessions.insertedAt,
+        updatedAt: sessions.updatedAt,
+      })
+      .from(sessions)
+      .where(
+        and(
+          eq(sessions.userId, user.id),
+          eq(sessions.status, "active")
+        )
+      )
+      .orderBy(desc(sessions.lastActivityAt));
+
+    return c.json({
+      success: true,
+      data: userSessions,
+    });
+  } catch (error) {
+    console.error("List sessions error:", error);
+    return c.json(
+      {
+        success: false,
+        error: "Failed to list sessions",
+      },
+      500
+    );
+  }
+});
+
+// DELETE /api/v1/auth/sessions/:id - Revoke a specific session
+auth.delete("/sessions/:id", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const sessionId = c.req.param("id");
+    const body = await c.req.json().catch(() => ({}));
+    const reason = body.reason || "user_logout";
+
+    // Check if session belongs to user
+    const sessionToRevoke = await db
+      .select()
+      .from(sessions)
+      .where(
+        and(
+          eq(sessions.id, sessionId),
+          eq(sessions.userId, user.id)
+        )
+      )
+      .limit(1);
+
+    if (sessionToRevoke.length === 0) {
+      return c.json(
+        {
+          success: false,
+          error: "Session not found",
+        },
+        404
+      );
+    }
+
+    // Revoke session
+    await db
+      .update(sessions)
+      .set({
+        status: "revoked",
+        revokedAt: new Date(),
+        revokedReason: reason,
+        updatedAt: new Date(),
+      })
+      .where(eq(sessions.id, sessionId));
+
+    return c.json({
+      success: true,
+      message: "Session revoked successfully",
+    });
+  } catch (error) {
+    console.error("Revoke session error:", error);
+    return c.json(
+      {
+        success: false,
+        error: "Failed to revoke session",
+      },
+      500
+    );
+  }
+});
+
+// DELETE /api/v1/auth/sessions - Revoke all sessions except current
+auth.delete("/sessions", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const body = await c.req.json().catch(() => ({}));
+    const reason = body.reason || "user_logout";
+    const excludeCurrent = body.excludeCurrent !== false; // Default true
+
+    // Get current session from refresh token if we want to exclude it
+    let currentSessionId: string | null = null;
+
+    if (excludeCurrent) {
+      const refreshToken = CookieManager.getRefreshTokenFromCookie(c);
+      if (refreshToken) {
+        const refreshTokenHash = TokenUtils.hashToken(refreshToken);
+        const currentSession = await db
+          .select()
+          .from(sessions)
+          .where(
+            and(
+              eq(sessions.userId, user.id),
+              eq(sessions.refreshTokenHash, refreshTokenHash)
+            )
+          )
+          .limit(1);
+
+        if (currentSession.length > 0) {
+          currentSessionId = currentSession[0].id;
+        }
+      }
+    }
+
+    // Build where conditions
+    const conditions = [
+      eq(sessions.userId, user.id),
+      eq(sessions.status, "active"),
+    ];
+
+    if (currentSessionId) {
+      // @ts-ignore - drizzle types issue with not()
+      conditions.push(sql`${sessions.id} != ${currentSessionId}`);
+    }
+
+    // Revoke all sessions (except current if excludeCurrent is true)
+    const result = await db
+      .update(sessions)
+      .set({
+        status: "revoked",
+        revokedAt: new Date(),
+        revokedReason: reason,
+        updatedAt: new Date(),
+      })
+      .where(and(...conditions))
+      .returning();
+
+    return c.json({
+      success: true,
+      message: `${result.length} session(s) revoked successfully`,
+      revokedCount: result.length,
+    });
+  } catch (error) {
+    console.error("Revoke all sessions error:", error);
+    return c.json(
+      {
+        success: false,
+        error: "Failed to revoke sessions",
+      },
+      500
+    );
   }
 });
 
