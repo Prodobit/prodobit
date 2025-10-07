@@ -27,14 +27,14 @@ export class SalesClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<{ data: SalesOrder[]; pagination: any }>> {
     const query = buildQuery(filters);
-    return this.request("GET", `/api/v1/sales${query}`, undefined, config);
+    return this.request("GET", `/api/v1/sales-orders${query}`, undefined, config);
   }
 
   async getSalesOrderById(
     id: string,
     config?: RequestConfig
   ): Promise<Response<SalesOrder>> {
-    return this.request("GET", `/api/v1/sales/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/sales-orders/${id}`, undefined, config);
   }
 
   async createSalesOrder(
@@ -42,7 +42,7 @@ export class SalesClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<SalesOrder>> {
     const validatedData = validateRequest(createSalesOrderRequest, data);
-    return this.request("POST", "/api/v1/sales", validatedData, config);
+    return this.request("POST", "/api/v1/sales-orders", validatedData, config);
   }
 
   async updateSalesOrder(
@@ -51,7 +51,7 @@ export class SalesClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<SalesOrder>> {
     const validatedData = validateRequest(updateSalesOrderRequest, data);
-    return this.request("PUT", `/api/v1/sales/${id}`, validatedData, config);
+    return this.request("PUT", `/api/v1/sales-orders/${id}`, validatedData, config);
   }
 
   async updateSalesOrderStatus(
@@ -60,14 +60,14 @@ export class SalesClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<SalesOrder>> {
     const validatedData = validateRequest(updateSalesOrderStatusRequest, data);
-    return this.request("PUT", `/api/v1/sales/${id}/status`, validatedData, config);
+    return this.request("PUT", `/api/v1/sales-orders/${id}/status`, validatedData, config);
   }
 
   async deleteSalesOrder(
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/sales/${id}`, undefined, config);
+    return this.request("DELETE", `/api/v1/sales-orders/${id}`, undefined, config);
   }
 
   // Sales Order Item Methods
@@ -77,7 +77,7 @@ export class SalesClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<SalesOrderItem>> {
     const validatedData = validateRequest(createSalesOrderItemRequest, data);
-    return this.request("POST", `/api/v1/sales/${salesOrderId}/items`, validatedData, config);
+    return this.request("POST", `/api/v1/sales-orders/${salesOrderId}/items`, validatedData, config);
   }
 
   async updateSalesOrderItem(
@@ -87,7 +87,7 @@ export class SalesClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<SalesOrderItem>> {
     const validatedData = validateRequest(updateSalesOrderItemRequest, data);
-    return this.request("PUT", `/api/v1/sales/${salesOrderId}/items/${itemId}`, validatedData, config);
+    return this.request("PUT", `/api/v1/sales-orders/${salesOrderId}/items/${itemId}`, validatedData, config);
   }
 
   async removeSalesOrderItem(
@@ -95,13 +95,13 @@ export class SalesClient extends BaseClient {
     itemId: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/sales/${salesOrderId}/items/${itemId}`, undefined, config);
+    return this.request("DELETE", `/api/v1/sales-orders/${salesOrderId}/items/${itemId}`, undefined, config);
   }
 
   async getSalesOrderHistory(
     id: string,
     config?: RequestConfig
   ): Promise<Response<any[]>> {
-    return this.request("GET", `/api/v1/sales/${id}/history`, undefined, config);
+    return this.request("GET", `/api/v1/sales-orders/${id}/history`, undefined, config);
   }
 }

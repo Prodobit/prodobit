@@ -69,12 +69,17 @@ export {
   useUpdateBom, 
   useDeleteBom 
 } from './hooks/useBoms';
-export { 
-  useSalesOrders, 
-  useSalesOrder, 
-  useCreateSalesOrder, 
-  useUpdateSalesOrder, 
-  useDeleteSalesOrder 
+export {
+  useSalesOrders,
+  useSalesOrder,
+  useCreateSalesOrder,
+  useUpdateSalesOrder,
+  useDeleteSalesOrder,
+  useUpdateSalesOrderStatus,
+  useAddSalesOrderItem,
+  useUpdateSalesOrderItem,
+  useRemoveSalesOrderItem,
+  useSalesOrderHistory
 } from './hooks/useSalesOrders';
 export { 
   useRoleBasedAccess, 

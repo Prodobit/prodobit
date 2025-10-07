@@ -1241,6 +1241,10 @@ export class ProdobitClient {
     return this.sales.removeSalesOrderItem(salesOrderId, itemId, config);
   }
 
+  async getSalesOrderHistory(id: string, config?: RequestConfig) {
+    return this.sales.getSalesOrderHistory(id, config);
+  }
+
   // Manufacturing method delegations
   async getBoms(filters?: BomQuery, config?: RequestConfig) {
     return this.manufacturing.getBoms(filters, config);
