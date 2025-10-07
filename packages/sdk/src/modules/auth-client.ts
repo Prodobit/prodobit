@@ -14,8 +14,13 @@ import type {
   ResendOTPRequest,
   ResendVerificationEmailRequest,
   Response,
+  RevokeAllSessionsRequest,
+  RevokeAllSessionsResponse,
+  RevokeSessionRequest,
+  RevokeSessionResponse,
   SendVerificationEmailRequest,
   SendVerificationEmailResponse,
+  Session,
   User,
   VerifyEmailRequest,
   VerifyEmailResponse,
@@ -163,12 +168,12 @@ export class AuthClient extends BaseClient {
         }
       }
 
-      console.log('Login success, storing tokens in cookies:', {
+      console.log("Login success, storing tokens in cookies:", {
         hasAccessToken: !!response.data.session.accessToken,
         hasRefreshToken: !!response.data.refreshToken,
-        hasCsrfToken: !!response.data.session.csrfToken
+        hasCsrfToken: !!response.data.session.csrfToken,
       });
-      
+
       // Store tokens in accessible cookies (except CSRF which will be HTTP-only from server)
       const tokenInfo: any = {
         accessToken: response.data.session.accessToken,
@@ -176,11 +181,11 @@ export class AuthClient extends BaseClient {
         csrfToken: response.data.session.csrfToken, // For internal use, actual CSRF is HTTP-only
         tenantId: tenantId,
       };
-      
+
       if (response.data.refreshToken) {
         tokenInfo.refreshToken = response.data.refreshToken;
       }
-      
+
       this.setTokenInfo(tokenInfo);
     }
 
@@ -193,11 +198,18 @@ export class AuthClient extends BaseClient {
   ): Promise<LoginResponse> {
     // Use refresh token from cookies
     if (!this.tokenInfo?.refreshToken) {
-      throw new ProdobitError('No refresh token available', 401, 'REFRESH_TOKEN_MISSING');
+      throw new ProdobitError(
+        "No refresh token available",
+        401,
+        "REFRESH_TOKEN_MISSING"
+      );
     }
-    
-    console.log('Refreshing with token from cookies:', this.tokenInfo.refreshToken?.substring(0, 20) + '...');
-    
+
+    console.log(
+      "Refreshing with token from cookies:",
+      this.tokenInfo.refreshToken?.substring(0, 20) + "..."
+    );
+
     const response = await this.request<LoginResponse>(
       "POST",
       "/api/v1/auth/refresh",
@@ -363,21 +375,24 @@ export class AuthClient extends BaseClient {
    * Force refresh auth state - useful after login to ensure everything is synced
    */
   async refreshAuthState(): Promise<void> {
-    console.log('refreshAuthState called, isAuthenticated:', this.isAuthenticated());
-    
+    console.log(
+      "refreshAuthState called, isAuthenticated:",
+      this.isAuthenticated()
+    );
+
     // Only refresh if we have a refresh token and token is expiring
     if (this.isAuthenticated() && this.tokenInfo?.refreshToken) {
       try {
-        console.log('Calling refreshToken from refreshAuthState');
+        console.log("Calling refreshToken from refreshAuthState");
         await this.refreshToken();
       } catch (error) {
-        console.log('refreshAuthState failed:', error);
+        console.log("refreshAuthState failed:", error);
         // If refresh fails, clear local state
         this.clearTokenInfo();
         throw error;
       }
     } else {
-      console.log('Skipping refresh - no refresh token available');
+      console.log("Skipping refresh - no refresh token available");
     }
   }
 
