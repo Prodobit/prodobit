@@ -2,7 +2,17 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, SalesOrderFilters } from '../types';
-import type { SalesOrder, CreateSalesOrderRequest, UpdateSalesOrderRequest, UpdateSalesOrderStatusRequest, Response, PaginatedResponse } from '@prodobit/types';
+import type {
+  SalesOrder,
+  SalesOrderItem,
+  CreateSalesOrderRequest,
+  UpdateSalesOrderRequest,
+  UpdateSalesOrderStatusRequest,
+  CreateSalesOrderItemRequest,
+  UpdateSalesOrderItemRequest,
+  Response,
+  PaginatedResponse
+} from '@prodobit/types';
 
 export const useSalesOrders = (
   filters?: SalesOrderFilters,
@@ -70,5 +80,95 @@ export const useDeleteSalesOrder = (options?: MutationOptions) => {
       options?.onSuccess?.(data);
     },
     onError: options?.onError,
+  });
+};
+
+// Update Sales Order Status
+export const useUpdateSalesOrderStatus = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<SalesOrder>, Error, { id: string; data: UpdateSalesOrderStatusRequest }>({
+    mutationFn: ({ id, data }: { id: string; data: UpdateSalesOrderStatusRequest }) =>
+      client.updateSalesOrderStatus(id, data),
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.all() });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.detail(variables.id) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.history(variables.id) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+// Sales Order Items Hooks
+
+// Add Sales Order Item
+export const useAddSalesOrderItem = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<SalesOrderItem>, Error, { salesOrderId: string; data: CreateSalesOrderItemRequest }>({
+    mutationFn: ({ salesOrderId, data }: { salesOrderId: string; data: CreateSalesOrderItemRequest }) =>
+      client.addSalesOrderItem(salesOrderId, data),
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.all() });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.detail(variables.salesOrderId) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.items(variables.salesOrderId) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+// Update Sales Order Item
+export const useUpdateSalesOrderItem = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<
+    Response<SalesOrderItem>,
+    Error,
+    { salesOrderId: string; itemId: string; data: UpdateSalesOrderItemRequest }
+  >({
+    mutationFn: ({ salesOrderId, itemId, data }) =>
+      client.updateSalesOrderItem(salesOrderId, itemId, data),
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.all() });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.detail(variables.salesOrderId) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.items(variables.salesOrderId) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+// Remove Sales Order Item
+export const useRemoveSalesOrderItem = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<void>, Error, { salesOrderId: string; itemId: string }>({
+    mutationFn: ({ salesOrderId, itemId }: { salesOrderId: string; itemId: string }) =>
+      client.removeSalesOrderItem(salesOrderId, itemId),
+    onSuccess: (data, variables) => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.all() });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.detail(variables.salesOrderId) });
+      queryClient.invalidateQueries({ queryKey: queryKeys.salesOrders.items(variables.salesOrderId) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+// Get Sales Order History
+export const useSalesOrderHistory = (salesOrderId: string, options?: QueryOptions) => {
+  const client = useProdobitClient();
+
+  return useQuery<Response<any[]>, Error>({
+    queryKey: queryKeys.salesOrders.history(salesOrderId),
+    queryFn: () => client.getSalesOrderHistory(salesOrderId),
+    enabled: !!salesOrderId && options?.enabled !== false,
+    ...options,
   });
 };
