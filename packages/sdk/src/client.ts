@@ -172,6 +172,19 @@ export class ProdobitClient {
     return this.auth.signOut(allDevices);
   }
 
+  // Session Management
+  async getSessions(config?: RequestConfig) {
+    return this.auth.getSessions(config);
+  }
+
+  async revokeSession(sessionId: string, data?: any, config?: RequestConfig) {
+    return this.auth.revokeSession(sessionId, data, config);
+  }
+
+  async revokeAllSessions(data?: any, config?: RequestConfig) {
+    return this.auth.revokeAllSessions(data, config);
+  }
+
   // Email verification method delegations
   async sendVerificationEmail(data: { email: string }, config?: RequestConfig) {
     return this.auth.sendVerificationEmail(data, config);

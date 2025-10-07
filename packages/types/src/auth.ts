@@ -431,3 +431,38 @@ export type CheckVerificationStatusRequest =
 export type CheckVerificationStatusResponse =
   typeof checkVerificationStatusResponse.infer;
 export type EmailVerificationToken = typeof emailVerificationToken.infer;
+
+// Session Management types
+export const sessionListResponse = type({
+  success: "boolean",
+  data: session.array(),
+});
+
+export const revokeSessionRequest = type({
+  "reason?":
+    "'user_logout' | 'admin_revoke' | 'security_breach' | 'suspicious_activity'",
+});
+
+export const revokeSessionResponse = type({
+  success: "boolean",
+  message: "string",
+});
+
+export const revokeAllSessionsRequest = type({
+  "reason?":
+    "'user_logout' | 'admin_revoke' | 'security_breach' | 'suspicious_activity'",
+  "excludeCurrent?": "boolean",
+});
+
+export const revokeAllSessionsResponse = type({
+  success: "boolean",
+  message: "string",
+  revokedCount: "number",
+});
+
+// Session management type exports
+export type SessionListResponse = typeof sessionListResponse.infer;
+export type RevokeSessionRequest = typeof revokeSessionRequest.infer;
+export type RevokeSessionResponse = typeof revokeSessionResponse.infer;
+export type RevokeAllSessionsRequest = typeof revokeAllSessionsRequest.infer;
+export type RevokeAllSessionsResponse = typeof revokeAllSessionsResponse.infer;

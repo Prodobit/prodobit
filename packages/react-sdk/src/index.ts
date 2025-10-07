@@ -3,6 +3,13 @@ export { ProdobitClient, getProdobitClientSingleton } from '@prodobit/sdk';
 
 export { useAuth, useCurrentUser } from './hooks/useAuth';
 export {
+  useSessions,
+  useRevokeSession,
+  useRevokeAllSessions,
+  useLogoutOtherDevices,
+  useLogoutAllDevices
+} from './hooks/useSessions';
+export {
   useTenants,
   useTenant,
   useCreateTenant,

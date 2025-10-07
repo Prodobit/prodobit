@@ -437,4 +437,52 @@ export class AuthClient extends BaseClient {
     );
     return response;
   }
+
+  // Session Management Methods
+
+  /**
+   * Get all active sessions for the current user
+   */
+  async getSessions(config?: RequestConfig): Promise<Response<Session[]>> {
+    const response = await this.request<Response<Session[]>>(
+      "GET",
+      "/api/v1/auth/sessions",
+      undefined,
+      config
+    );
+    return response;
+  }
+
+  /**
+   * Revoke a specific session
+   */
+  async revokeSession(
+    sessionId: string,
+    data?: RevokeSessionRequest,
+    config?: RequestConfig
+  ): Promise<RevokeSessionResponse> {
+    const response = await this.request<RevokeSessionResponse>(
+      "DELETE",
+      `/api/v1/auth/sessions/${sessionId}`,
+      data,
+      config
+    );
+    return response;
+  }
+
+  /**
+   * Revoke all sessions except current (default) or all sessions
+   */
+  async revokeAllSessions(
+    data?: RevokeAllSessionsRequest,
+    config?: RequestConfig
+  ): Promise<RevokeAllSessionsResponse> {
+    const response = await this.request<RevokeAllSessionsResponse>(
+      "DELETE",
+      "/api/v1/auth/sessions",
+      data,
+      config
+    );
+    return response;
+  }
 }
