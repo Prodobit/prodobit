@@ -164,7 +164,11 @@ export const currentUserResponseData = type({
     "metadata?": "object",
   },
   tenantMemberships: tenantMembership.array(),
-  roles: "string[]", // Role names
+  roles: type({
+    id: uuid,
+    name: "string",
+    "description?": "string",
+  }).array(),
   permissions: "string[]", // Permission names
   currentTenant: uuid,
 });

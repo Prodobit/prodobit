@@ -35,7 +35,14 @@ export abstract class BaseClient {
     config?: RequestConfig
   ): Promise<T> {
     // Check if token needs refresh before making the request
-    if (this.tokenInfo && this.autoRefresh && this.isTokenExpiring()) {
+    // BUT skip this check for refresh requests to avoid infinite recursion
+    if (
+      this.tokenInfo &&
+      this.autoRefresh &&
+      this.isTokenExpiring() &&
+      !config?.skipAuth && // Don't refresh during skipAuth requests
+      path !== '/api/v1/auth/refresh' // Don't refresh during refresh itself!
+    ) {
       await this.ensureTokenRefresh();
     }
 

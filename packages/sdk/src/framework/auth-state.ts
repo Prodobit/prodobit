@@ -371,10 +371,16 @@ export class AuthStateManager {
 
   /**
    * Setup automatic token refresh
+   *
+   * NOTE: Disabled in favor of BaseClient's per-request refresh mechanism
+   * BaseClient automatically refreshes tokens before each request when needed
    */
   private setupAutoRefresh(): void {
+    // Disabled - BaseClient handles refresh automatically
     this.clearRefreshTimer();
 
+    // If you want to re-enable timer-based refresh, uncomment below:
+    /*
     const token = this.client.getTokenInfo();
     if (!token) return;
 
@@ -392,6 +398,7 @@ export class AuthStateManager {
         }
       }, refreshTime);
     }
+    */
   }
 
   /**
