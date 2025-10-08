@@ -171,25 +171,49 @@ export abstract class BaseClient {
 
   private async performTokenRefresh(): Promise<void> {
     try {
+      console.log('🔄 performTokenRefresh: Starting token refresh...');
+
+      if (!this.tokenInfo?.refreshToken) {
+        console.error('❌ performTokenRefresh: No refresh token available');
+        throw new Error('No refresh token available');
+      }
+
+      console.log('🔄 performTokenRefresh: Calling refresh endpoint...');
       const response = await this.request<any>(
         "POST",
         "/api/v1/auth/refresh",
-        { 
-          refreshToken: this.tokenInfo?.refreshToken 
+        {
+          refreshToken: this.tokenInfo.refreshToken
         },
         { skipAuth: true }
       );
 
+      console.log('✅ performTokenRefresh: Refresh response received:', {
+        success: response.success,
+        hasData: !!response.data,
+      });
+
       if (response.success && response.data) {
-        this.setTokenInfo({
+        const newTokenInfo = {
           accessToken: response.data.session.accessToken,
-          refreshToken: response.data.refreshToken || this.tokenInfo?.refreshToken,
+          refreshToken: response.data.refreshToken || this.tokenInfo.refreshToken,
           expiresAt: new Date(response.data.session.expiresAt),
           csrfToken: response.data.session.csrfToken,
-          tenantId: this.tokenInfo?.tenantId, // Preserve current tenantId
+          tenantId: this.tokenInfo.tenantId, // Preserve current tenantId
+        };
+
+        console.log('✅ performTokenRefresh: Setting new token info:', {
+          expiresAt: newTokenInfo.expiresAt,
+          hasRefreshToken: !!newTokenInfo.refreshToken,
         });
+
+        this.setTokenInfo(newTokenInfo);
+      } else {
+        console.error('❌ performTokenRefresh: Invalid refresh response:', response);
+        throw new Error('Invalid refresh response');
       }
     } catch (error) {
+      console.error('❌ performTokenRefresh: Refresh failed:', error);
       // Clear token on refresh failure
       this.clearTokenInfo();
       throw error;
