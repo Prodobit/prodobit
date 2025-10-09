@@ -445,12 +445,13 @@ export class PartyService {
       // For customers, get data from customers table with proper JOINs
       const customerQuery = this.db
         .select({
-          id: parties.id,
+          id: customers.id,
+          partyId: parties.id,
           name: sql<string>`
-            CASE 
-              WHEN parties.party_type = 'person' THEN 
+            CASE
+              WHEN parties.party_type = 'person' THEN
                 CONCAT(persons.first_name, ' ', persons.last_name)
-              WHEN parties.party_type = 'organization' THEN 
+              WHEN parties.party_type = 'organization' THEN
                 organizations.name
             END
           `.as('name'),
@@ -481,12 +482,13 @@ export class PartyService {
       // For suppliers, get data from suppliers table with proper JOINs
       const supplierQuery = this.db
         .select({
-          id: parties.id,
+          id: suppliers.id,
+          partyId: parties.id,
           name: sql<string>`
-            CASE 
-              WHEN parties.party_type = 'person' THEN 
+            CASE
+              WHEN parties.party_type = 'person' THEN
                 CONCAT(persons.first_name, ' ', persons.last_name)
-              WHEN parties.party_type = 'organization' THEN 
+              WHEN parties.party_type = 'organization' THEN
                 organizations.name
             END
           `.as('name'),
@@ -517,12 +519,13 @@ export class PartyService {
       // For employees, get data from employees table with proper JOINs
       const employeeQuery = this.db
         .select({
-          id: parties.id,
+          id: employees.id,
+          partyId: parties.id,
           name: sql<string>`
-            CASE 
-              WHEN parties.party_type = 'person' THEN 
+            CASE
+              WHEN parties.party_type = 'person' THEN
                 CONCAT(persons.first_name, ' ', persons.last_name)
-              WHEN parties.party_type = 'organization' THEN 
+              WHEN parties.party_type = 'organization' THEN
                 organizations.name
             END
           `.as('name'),

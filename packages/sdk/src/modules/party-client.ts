@@ -13,6 +13,9 @@ import type {
   Pagination,
   GetPartyResponse,
   PaginatedResponse,
+  CustomerListItem,
+  SupplierListItem,
+  EmployeeListItem,
 } from "@prodobit/types";
 import {
   createPersonRequest,
@@ -112,17 +115,17 @@ export class PartyClient extends BaseClient {
   // Role-specific party methods
 
   // Get all customers (persons + organizations with customer role)
-  async getCustomers(config?: RequestConfig): Promise<PaginatedResponse<Party[]>> {
+  async getCustomers(config?: RequestConfig): Promise<PaginatedResponse<CustomerListItem[]>> {
     return this.request("GET", "/api/v1/customers", undefined, config);
   }
 
   // Get all suppliers (persons + organizations with supplier role)
-  async getSuppliers(config?: RequestConfig): Promise<PaginatedResponse<Party[]>> {
+  async getSuppliers(config?: RequestConfig): Promise<PaginatedResponse<SupplierListItem[]>> {
     return this.request("GET", "/api/v1/suppliers", undefined, config);
   }
 
   // Get all employee parties
-  async getEmployeeParties(config?: RequestConfig): Promise<PaginatedResponse<Party[]>> {
+  async getEmployeeParties(config?: RequestConfig): Promise<PaginatedResponse<EmployeeListItem[]>> {
     return this.request("GET", "/api/v1/parties/employees", undefined, config);
   }
 

@@ -193,3 +193,41 @@ export const getPartyResponse = type({
 });
 
 export type GetPartyResponse = typeof getPartyResponse.infer;
+
+// List responses for customers/suppliers/employees with extended data
+export const customerListItem = type({
+  id: uuid,
+  partyId: uuid,
+  name: "string",
+  partyType: "'person' | 'organization'",
+  customerCode: "string >= 1",
+  code: "string >= 1",
+  insertedAt: timestamp,
+  updatedAt: timestamp,
+});
+
+export const supplierListItem = type({
+  id: uuid,
+  partyId: uuid,
+  name: "string",
+  partyType: "'person' | 'organization'",
+  supplierCode: "string >= 1",
+  code: "string >= 1",
+  insertedAt: timestamp,
+  updatedAt: timestamp,
+});
+
+export const employeeListItem = type({
+  id: uuid,
+  partyId: uuid,
+  name: "string",
+  partyType: "'person' | 'organization'",
+  employeeCode: "string >= 1",
+  code: "string >= 1",
+  insertedAt: timestamp,
+  updatedAt: timestamp,
+});
+
+export type CustomerListItem = typeof customerListItem.infer;
+export type SupplierListItem = typeof supplierListItem.infer;
+export type EmployeeListItem = typeof employeeListItem.infer;
