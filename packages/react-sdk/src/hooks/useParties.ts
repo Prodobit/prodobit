@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, PartyFilters, Pagination } from '../types';
-import type { Party, Person, Organization, Customer, Supplier, Employee, CreatePersonRequest, CreateOrganizationRequest, UpdatePartyRequest, Response, PaginatedResponse, GetPartyResponse, PartyRole } from '@prodobit/types';
+import type { Party, Person, Organization, Customer, Supplier, Employee, CreatePersonRequest, CreateOrganizationRequest, UpdatePartyRequest, Response, PaginatedResponse, GetPartyResponse, PartyRole, CustomerListItem, SupplierListItem, EmployeeListItem } from '@prodobit/types';
 
 export const useParties = (
   query?: PartyFilters & Pagination,
@@ -90,7 +90,7 @@ export const useDeleteParty = (options?: MutationOptions) => {
 export const useCustomers = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery<PaginatedResponse<Party[]>, Error>({
+  return useQuery<PaginatedResponse<CustomerListItem[]>, Error>({
     queryKey: queryKeys.parties.customers(),
     queryFn: () => client.getCustomers(),
     ...options,
@@ -100,7 +100,7 @@ export const useCustomers = (options?: QueryOptions) => {
 export const useSuppliers = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery<PaginatedResponse<Party[]>, Error>({
+  return useQuery<PaginatedResponse<SupplierListItem[]>, Error>({
     queryKey: queryKeys.parties.suppliers(),
     queryFn: () => client.getSuppliers(),
     ...options,
@@ -110,7 +110,7 @@ export const useSuppliers = (options?: QueryOptions) => {
 export const useEmployees = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery<PaginatedResponse<Party[]>, Error>({
+  return useQuery<PaginatedResponse<EmployeeListItem[]>, Error>({
     queryKey: queryKeys.parties.employees(),
     queryFn: () => client.getEmployeeParties(),
     ...options,
