@@ -89,6 +89,13 @@ export {
   useRejectEco
 } from './hooks/useEcos';
 export {
+  useBrands,
+  useBrand,
+  useCreateBrand,
+  useUpdateBrand,
+  useDeleteBrand
+} from './hooks/useBrands';
+export {
   useSalesOrders,
   useSalesOrder,
   useCreateSalesOrder,

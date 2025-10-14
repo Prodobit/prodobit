@@ -2,6 +2,7 @@ export * from "./assets.js";
 export * from "./attributes.js";
 export * from "./auth.js";
 export * from "./boms.js";
+export * from "./brands.js";
 export * from "./items.js";
 export * from "./parties.js";
 export * from "./sales.js";

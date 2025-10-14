@@ -11,7 +11,7 @@ import type {
   TenantQuery,
   Pagination
 } from '@prodobit/sdk';
-import type { BomQuery, EcoQuery } from '@prodobit/types';
+import type { BomQuery, EcoQuery, BrandQuery } from '@prodobit/types';
 
 export interface ProdobitProviderProps {
   children: React.ReactNode;
@@ -44,5 +44,6 @@ export type {
   TenantQuery,
   Pagination,
   BomQuery,
-  EcoQuery
+  EcoQuery,
+  BrandQuery
 };

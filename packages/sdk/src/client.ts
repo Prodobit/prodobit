@@ -8,6 +8,7 @@ import { SalesClient } from "./modules/sales-client";
 import { EmployeeClient } from "./modules/employee-client";
 import { InventoryClient } from "./modules/inventory-client";
 import { PurchaseClient } from "./modules/purchase-client";
+import { BrandClient } from "./modules/brand-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -15,6 +16,10 @@ import type {
   BomQuery,
   BomComponentQuery,
   EcoQuery,
+  Brand,
+  BrandQuery,
+  CreateBrandRequest,
+  UpdateBrandRequest,
   CreateAttributeRequest,
   CreateOrganizationRequest,
   CreatePartyRequest,
@@ -90,6 +95,7 @@ export class ProdobitClient {
   private employee: EmployeeClient;
   private inventory: InventoryClient;
   private purchase: PurchaseClient;
+  private brand: BrandClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -101,6 +107,7 @@ export class ProdobitClient {
     this.employee = new EmployeeClient(config);
     this.inventory = new InventoryClient(config);
     this.purchase = new PurchaseClient(config);
+    this.brand = new BrandClient(config);
   }
 
   // Public request method for framework integrations
@@ -769,6 +776,7 @@ export class ProdobitClient {
     this.employee.setTokenInfo(tokenInfo);
     this.inventory.setTokenInfo(tokenInfo);
     this.purchase.setTokenInfo(tokenInfo);
+    this.brand.setTokenInfo(tokenInfo);
   }
 
   getTokenInfo(): TokenInfo | undefined {
@@ -786,6 +794,7 @@ export class ProdobitClient {
     this.employee.clearTokenInfo();
     this.inventory.clearTokenInfo();
     this.purchase.clearTokenInfo();
+    this.brand.clearTokenInfo();
   }
 
   getCurrentTenantId(): string | undefined {
@@ -1341,6 +1350,32 @@ export class ProdobitClient {
 
   async createBomQuick(itemId: string, bomCode: string, name: string, components: any[], config?: RequestConfig) {
     return this.manufacturing.createBomQuick({ itemId, bomCode, name, components }, config);
+  }
+
+  // Brand method delegations
+  async getBrands(filters?: Partial<BrandQuery>, config?: RequestConfig): Promise<Response<Brand[]>> {
+    return this.brand.getBrands(filters, config);
+  }
+
+  async getBrand(id: string, config?: RequestConfig): Promise<Response<Brand>> {
+    return this.brand.getBrand(id, config);
+  }
+
+  async createBrand(data: CreateBrandRequest, config?: RequestConfig): Promise<Response<Brand>> {
+    return this.brand.createBrand(data, config);
+  }
+
+  async updateBrand(id: string, data: UpdateBrandRequest, config?: RequestConfig): Promise<Response<Brand>> {
+    return this.brand.updateBrand(id, data, config);
+  }
+
+  async deleteBrand(id: string, config?: RequestConfig): Promise<Response<Brand>> {
+    return this.brand.deleteBrand(id, config);
+  }
+
+  // Brand client getter
+  get brandClient(): BrandClient {
+    return this.brand;
   }
 }
 
