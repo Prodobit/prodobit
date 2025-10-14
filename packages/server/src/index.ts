@@ -11,6 +11,7 @@ import { manufacturingModule } from "./modules/manufacturing/manifest.js";
 import { inventoryModule } from "./modules/inventory/manifest.js";
 import { customerModule } from "./modules/customer/manifest.js";
 import { supplierModule } from "./modules/supplier/manifest.js";
+import { brandModule } from "./modules/brand/manifest.js";
 import { EmailService } from "./core/utils/email.js";
 import { SMSService } from "./core/utils/sms.js";
 import type { Database } from "@prodobit/database";
@@ -22,6 +23,7 @@ export { manufacturingModule } from "./modules/manufacturing/manifest.js";
 export { inventoryModule } from "./modules/inventory/manifest.js";
 export { customerModule } from "./modules/customer/manifest.js";
 export { supplierModule } from "./modules/supplier/manifest.js";
+export { brandModule } from "./modules/brand/manifest.js";
 export { ModuleLoader, rbacManager, ServerConfigManager };
 export type { ModuleManifest, ServerConfig };
 export * from './config/index.js';
@@ -134,7 +136,7 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
 // Example usage for direct server start
 if (process.argv[1] === new URL(import.meta.url).pathname) {
   const server = await createServerApp({
-    modules: [employeeModule, salesModule, manufacturingModule, inventoryModule, customerModule, supplierModule], // Include modules
+    modules: [employeeModule, salesModule, manufacturingModule, inventoryModule, customerModule, supplierModule, brandModule], // Include modules
   });
 
   // Setup graceful shutdown
@@ -149,6 +151,7 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
 
   try {
     // Enable modules in dependency order
+    await server.enableModule("brand"); // brand can be enabled first (no dependencies)
     await server.enableModule("inventory"); // manufacturing depends on this
     await server.enableModule("employee");
     await server.enableModule("sales");

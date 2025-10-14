@@ -12,6 +12,7 @@ import {
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 import { tenants } from "./tenants.js";
+import { brands } from "./brands.js";
 
 // Ana Items tablosu - Core fields
 export const items = pgTable(
@@ -29,7 +30,10 @@ export const items = pgTable(
     code: text("code"),
     name: text("name").notNull(),
     status: text("status").notNull().default("active"),
-    
+
+    // Brand reference
+    brandId: uuid("brand_id").references(() => brands.id, { onDelete: "set null" }),
+
     // Core business flags
     isInventoryItem: boolean("is_inventory_item").notNull().default(true),
     isStockItem: boolean("is_stock_item").notNull().default(true),
@@ -57,6 +61,7 @@ export const items = pgTable(
       .where(sql`code IS NOT NULL`),
     tenantItemTypeIdx: index("items_tenant_item_type_idx").on(table.tenantId, table.itemType),
     tenantStatusIdx: index("items_tenant_status_idx").on(table.tenantId, table.status),
+    brandIdx: index("items_brand_idx").on(table.brandId),
     referenceItemIdx: index("items_reference_item_idx").on(table.referenceItemId),
     nameSearchIdx: index("items_name_search_idx").on(table.nameSearchTrimmed),
     
