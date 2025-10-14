@@ -41,6 +41,7 @@ export const manufacturingModule: ModuleManifest = {
   ],
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/boms", manufacturingRoutes.boms);
+    app.route("/api/v1/bom-components", manufacturingRoutes.bomComponents);
     app.route("/api/v1/ecos", manufacturingRoutes.ecos);
     app.route("/api/v1/routings", manufacturingRoutes.routings);
   },

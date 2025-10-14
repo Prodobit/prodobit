@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useProdobitClient } from '../providers/ProdobitProvider';
 import { queryKeys } from '../utils/query-keys';
 import type { QueryOptions, MutationOptions, BomQuery } from '../types';
-import type { Bom, CreateBomRequest, UpdateBomRequest, Response, PaginatedResponse } from '@prodobit/types';
+import type { Bom, CreateBomRequest, UpdateBomRequest, CreateBomComponentRequest, Response, PaginatedResponse } from '@prodobit/types';
 
 export const useBoms = (
   filters?: BomQuery,
@@ -10,7 +10,7 @@ export const useBoms = (
 ) => {
   const client = useProdobitClient();
 
-  return useQuery<PaginatedResponse<Bom[]>, Error>({
+  return useQuery<Response<Bom[]>, Error>({
     queryKey: queryKeys.boms.list(filters),
     queryFn: () => client.getBoms(filters),
     ...options,
@@ -67,6 +67,62 @@ export const useDeleteBom = (options?: MutationOptions) => {
     onSuccess: (data, id) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.boms.all() });
       queryClient.removeQueries({ queryKey: queryKeys.boms.detail(id) });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+// BOM Components hooks
+export const useBomComponents = (
+  filters?: { bomId?: string; itemId?: string; page?: number; limit?: number },
+  options?: QueryOptions
+) => {
+  const client = useProdobitClient();
+
+  return useQuery<Response<any[]>, Error>({
+    queryKey: ['bomComponents', filters],
+    queryFn: () => client.getBomComponents(filters),
+    ...options,
+  });
+};
+
+export const useCreateBomComponent = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<any>, Error, CreateBomComponentRequest>({
+    mutationFn: (data: CreateBomComponentRequest) => client.createBomComponent(data),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ['bomComponents'] });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+export const useUpdateBomComponent = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<any>, Error, { id: string; data: any }>({
+    mutationFn: ({ id, data }) => client.updateBomComponent(id, data),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ['bomComponents'] });
+      options?.onSuccess?.(data);
+    },
+    onError: options?.onError,
+  });
+};
+
+export const useDeleteBomComponent = (options?: MutationOptions) => {
+  const client = useProdobitClient();
+  const queryClient = useQueryClient();
+
+  return useMutation<Response<void>, Error, string>({
+    mutationFn: (id: string) => client.deleteBomComponent(id),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ['bomComponents'] });
       options?.onSuccess?.(data);
     },
     onError: options?.onError,

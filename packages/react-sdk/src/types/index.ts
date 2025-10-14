@@ -1,5 +1,5 @@
 import type { ProdobitClient } from '@prodobit/sdk';
-import type { 
+import type {
   ItemFilters,
   AssetFilters,
   LocationFilters,
@@ -11,7 +11,7 @@ import type {
   TenantQuery,
   Pagination
 } from '@prodobit/sdk';
-import type { BomQuery } from '@prodobit/types';
+import type { BomQuery, EcoQuery } from '@prodobit/types';
 
 export interface ProdobitProviderProps {
   children: React.ReactNode;
@@ -32,7 +32,7 @@ export interface MutationOptions {
 }
 
 // Re-export filter types from SDK
-export type { 
+export type {
   ItemFilters,
   AssetFilters,
   LocationFilters,
@@ -43,5 +43,6 @@ export type {
   AttributeQuery,
   TenantQuery,
   Pagination,
-  BomQuery
+  BomQuery,
+  EcoQuery
 };

@@ -146,7 +146,8 @@ export class SalesOrderService {
       })
       .from(salesOrders)
       .innerJoin(customers, eq(salesOrders.customerId, customers.id))
-      .innerJoin(parties, eq(customers.partyRoleId, parties.id))
+      .innerJoin(partyRoles, eq(customers.partyRoleId, partyRoles.id))
+      .innerJoin(parties, eq(partyRoles.partyId, parties.id))
       .leftJoin(organizations, eq(parties.id, organizations.partyId))
       .leftJoin(persons, eq(parties.id, persons.partyId))
       .innerJoin(users, eq(salesOrders.createdBy, users.id))
@@ -161,7 +162,8 @@ export class SalesOrderService {
       .select({ count: count() })
       .from(salesOrders)
       .innerJoin(customers, eq(salesOrders.customerId, customers.id))
-      .innerJoin(parties, eq(customers.partyRoleId, parties.id))
+      .innerJoin(partyRoles, eq(customers.partyRoleId, partyRoles.id))
+      .innerJoin(parties, eq(partyRoles.partyId, parties.id))
       .leftJoin(organizations, eq(parties.id, organizations.partyId))
       .leftJoin(persons, eq(parties.id, persons.partyId))
       .where(and(...whereConditions));
@@ -256,7 +258,8 @@ export class SalesOrderService {
       })
       .from(salesOrders)
       .innerJoin(customers, eq(salesOrders.customerId, customers.id))
-      .innerJoin(parties, eq(customers.partyRoleId, parties.id))
+      .innerJoin(partyRoles, eq(customers.partyRoleId, partyRoles.id))
+      .innerJoin(parties, eq(partyRoles.partyId, parties.id))
       .leftJoin(organizations, eq(parties.id, organizations.partyId))
       .leftJoin(persons, eq(parties.id, persons.partyId))
       .leftJoin(addresses, eq(salesOrders.shippingAddressId, addresses.id))
@@ -383,17 +386,14 @@ export class SalesOrderService {
 
   async createSalesOrder(tenantId: string, createdBy: string, data: CreateSalesOrderData) {
     return this.db.transaction(async (tx) => {
-      // Validate customer exists (customerId is actually partyId)
+      // Validate customer exists
       const customerExists = await tx
-        .select({ id: parties.id })
-        .from(parties)
-        .innerJoin(partyRoles, eq(partyRoles.partyId, parties.id))
+        .select({ id: customers.id })
+        .from(customers)
         .where(
           and(
-            eq(parties.tenantId, tenantId),
-            eq(parties.id, data.customerId),
-            eq(partyRoles.roleType, "customer"),
-            eq(partyRoles.status, "active")
+            eq(customers.tenantId, tenantId),
+            eq(customers.id, data.customerId)
           )
         )
         .limit(1);
