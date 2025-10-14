@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/server",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Prodobit modular server core",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

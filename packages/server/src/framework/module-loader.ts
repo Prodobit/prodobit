@@ -1,9 +1,14 @@
+import {
+  checkMigrationStatus,
+  createDatabase,
+  type Database,
+  runMigrations,
+} from "@prodobit/database";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-import { createDatabase, type Database, runMigrations, checkMigrationStatus } from "@prodobit/database";
-import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
 import health from "../core/health.js";
+import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
 
 export class ModuleLoader {
   private app: Hono<{ Variables: ServerContext }>;
@@ -22,55 +27,60 @@ export class ModuleLoader {
    * Initialize the module loader with database connection check and migrations
    */
   async initialize(): Promise<void> {
-    console.log('🚀 Initializing ModuleLoader...')
+    console.log("🚀 Initializing ModuleLoader...");
 
     // Simple database connection check
     try {
-      await this.db.execute('SELECT 1')
-      console.log('✅ Database connection: OK')
+      await this.db.execute("SELECT 1");
+      console.log("✅ Database connection: OK");
     } catch (error) {
-      console.error('❌ Database connection: FAILED', error)
-      throw new Error('Database connection failed')
+      console.error("❌ Database connection: FAILED", error);
+      throw new Error("Database connection failed");
     }
 
     // Check and run migrations
     try {
-      console.log('🔍 Checking database migrations...')
-      const status = await checkMigrationStatus(this.db)
+      console.log("🔍 Checking database migrations...");
+      const status = await checkMigrationStatus(this.db);
 
       if (status.needsMigration) {
-        console.log(`📊 Pending migrations: ${status.pendingCount}`)
-        console.log('🔄 Running migrations...')
+        console.log(`📊 Pending migrations: ${status.pendingCount}`);
+        console.log("🔄 Running migrations...");
 
         // Build connection string from config
-        const dbConfig = this.config.database
-        let sslParam = ''
+        const dbConfig = this.config.database;
+        let sslParam = "";
         if (dbConfig.ssl === true) {
-          sslParam = '?sslmode=require'
-        } else if (typeof dbConfig.ssl === 'object' && !dbConfig.ssl.rejectUnauthorized) {
-          sslParam = '?sslmode=require'
+          sslParam = "?sslmode=require";
+        } else if (
+          typeof dbConfig.ssl === "object" &&
+          !dbConfig.ssl.rejectUnauthorized
+        ) {
+          sslParam = "?sslmode=require";
         }
 
-        const connectionString = `postgresql://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}${sslParam}`
+        const connectionString = `postgresql://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}${sslParam}`;
 
-        const result = await runMigrations(this.db, connectionString)
+        const result = await runMigrations(this.db, connectionString);
 
         if (result.success) {
-          console.log(`✅ Migrations completed: ${result.appliedCount} applied`)
+          console.log(
+            `✅ Migrations completed: ${result.appliedCount} applied`
+          );
         } else {
-          console.error('❌ Migration failed:', result.error)
-          throw new Error(`Migration failed: ${result.error}`)
+          console.error("❌ Migration failed:", result.error);
+          throw new Error(`Migration failed: ${result.error}`);
         }
       } else {
-        console.log('✅ Database schema is up to date')
+        console.log("✅ Database schema is up to date");
       }
     } catch (error) {
-      console.error('❌ Migration check/run failed:', error)
+      console.error("❌ Migration check/run failed:", error);
       // Don't throw - let server start even if migrations fail
-      console.warn('⚠️  Server will start but database schema may be outdated')
+      console.warn("⚠️  Server will start but database schema may be outdated");
     }
 
-    console.log('✅ ModuleLoader initialized successfully')
+    console.log("✅ ModuleLoader initialized successfully");
   }
 
   private setupMiddleware() {
@@ -80,10 +90,12 @@ export class ModuleLoader {
     // CORS
     this.app.use(
       "*",
-      cors(this.config.cors || {
-        origin: ["http://localhost:3000", "http://localhost:5173"],
-        credentials: true,
-      })
+      cors(
+        this.config.cors || {
+          origin: ["http://localhost:3000", "http://localhost:5173"],
+          credentials: true,
+        }
+      )
     );
 
     // Context setup
@@ -98,7 +110,7 @@ export class ModuleLoader {
   private setupCoreRoutes() {
     // Health endpoints
     this.app.route("/health", health);
-    
+
     // API info
     this.app.get("/api/v1", (c) => {
       const endpoints: Record<string, string> = {
@@ -123,19 +135,19 @@ export class ModuleLoader {
 
     // Feature discovery endpoint
     this.app.get("/api/v1/features", (c) => {
-      const features = Array.from(this.enabledModules).map(name => {
+      const features = Array.from(this.enabledModules).map((name) => {
         const module = this.moduleRegistry.get(name);
         return {
           name,
           version: module?.version || "1.0.0",
           description: module?.description || "",
-          permissions: module?.permissions || {}
+          permissions: module?.permissions || {},
         };
       });
 
       return c.json({
         enabled: Array.from(this.enabledModules),
-        features
+        features,
       });
     });
   }
@@ -146,6 +158,7 @@ export class ModuleLoader {
   }
 
   async enableModule(moduleName: string): Promise<boolean> {
+    console.log(`🔵 Enabling module: ${moduleName}`);
     const module = this.moduleRegistry.get(moduleName);
     if (!module) {
       console.error(`❌ Module not found: ${moduleName}`);
@@ -177,11 +190,16 @@ export class ModuleLoader {
     }
   }
 
-  private async syncPermissions(moduleName: string, permissions: Record<string, string[]>): Promise<void> {
-    const { permissions: permissionsTable } = await import('@prodobit/database');
+  private async syncPermissions(
+    moduleName: string,
+    permissions: Record<string, string[]>
+  ): Promise<void> {
+    const { permissions: permissionsTable } = await import(
+      "@prodobit/database"
+    );
 
     for (const [permissionKey, _allowedRoles] of Object.entries(permissions)) {
-      const [resource, action] = permissionKey.split(':');
+      const [resource, action] = permissionKey.split(":");
 
       if (!resource || !action) {
         console.warn(`⚠️  Invalid permission format: ${permissionKey}`);
@@ -197,7 +215,7 @@ export class ModuleLoader {
             resource,
             action,
             description: `${action} ${resource} (from ${moduleName} module)`,
-            scope: 'tenant',
+            scope: "tenant",
             isSystem: true,
           })
           .onConflictDoUpdate({
@@ -235,7 +253,7 @@ export class ModuleLoader {
 
       // Remove from enabled modules
       this.enabledModules.delete(moduleName);
-      
+
       console.log(`🔴 Disabled module: ${moduleName}`);
       return true;
     } catch (error) {
