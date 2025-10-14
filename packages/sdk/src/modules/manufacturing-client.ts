@@ -35,14 +35,14 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Bom[]>> {
     const query = buildQuery(filters);
-    return this.request("GET", `/api/v1/manufacturing/boms${query}`, undefined, config);
+    return this.request("GET", `/api/v1/boms${query ? `?${query}` : ''}`, undefined, config);
   }
 
   async getBomById(
     id: string,
     config?: RequestConfig
   ): Promise<Response<Bom>> {
-    return this.request("GET", `/api/v1/manufacturing/boms/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/boms/${id}`, undefined, config);
   }
 
   async createBom(
@@ -50,7 +50,7 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Bom>> {
     const validatedData = validateRequest(createBomRequest, data);
-    return this.request("POST", "/api/v1/manufacturing/boms", validatedData, config);
+    return this.request("POST", "/api/v1/boms", validatedData, config);
   }
 
   async updateBom(
@@ -59,14 +59,14 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Bom>> {
     const validatedData = validateRequest(updateBomRequest, data);
-    return this.request("PUT", `/api/v1/manufacturing/boms/${id}`, validatedData, config);
+    return this.request("PUT", `/api/v1/boms/${id}`, validatedData, config);
   }
 
   async deleteBom(
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/manufacturing/boms/${id}`, undefined, config);
+    return this.request("DELETE", `/api/v1/boms/${id}`, undefined, config);
   }
 
   async getBomExplosion(
@@ -75,7 +75,7 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<any[]>> {
     const query = explodePhantoms ? "?explodePhantoms=true" : "?explodePhantoms=false";
-    return this.request("GET", `/api/v1/manufacturing/boms/${id}/explosion${query}`, undefined, config);
+    return this.request("GET", `/api/v1/boms/${id}/explosion${query}`, undefined, config);
   }
 
   async cloneBom(
@@ -84,7 +84,7 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Bom>> {
     const validatedData = validateRequest(cloneBomRequest, data);
-    return this.request("POST", `/api/v1/manufacturing/boms/${id}/clone`, validatedData, config);
+    return this.request("POST", `/api/v1/boms/${id}/clone`, validatedData, config);
   }
 
   // BOM Component Methods
@@ -93,7 +93,7 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<any>> {
     const validatedData = validateRequest(createBomComponentRequest, data);
-    return this.request("POST", "/api/v1/manufacturing/bom-components", validatedData, config);
+    return this.request("POST", "/api/v1/bom-components", validatedData, config);
   }
 
   async getBomComponents(
@@ -101,7 +101,7 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<any[]>> {
     const query = buildQuery(filters);
-    return this.request("GET", `/api/v1/manufacturing/bom-components${query}`, undefined, config);
+    return this.request("GET", `/api/v1/bom-components${query ? `?${query}` : ''}`, undefined, config);
   }
 
   async updateBomComponent(
@@ -115,14 +115,14 @@ export class ManufacturingClient extends BaseClient {
     },
     config?: RequestConfig
   ): Promise<Response<any>> {
-    return this.request("PUT", `/api/v1/manufacturing/bom-components/${id}`, data, config);
+    return this.request("PUT", `/api/v1/bom-components/${id}`, data, config);
   }
 
   async deleteBomComponent(
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/manufacturing/bom-components/${id}`, undefined, config);
+    return this.request("DELETE", `/api/v1/bom-components/${id}`, undefined, config);
   }
 
   // ECO Methods
@@ -131,14 +131,14 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Eco[]>> {
     const query = buildQuery(filters);
-    return this.request("GET", `/api/v1/manufacturing/ecos${query}`, undefined, config);
+    return this.request("GET", `/api/v1/ecos${query ? `?${query}` : ''}`, undefined, config);
   }
 
   async getEcoById(
     id: string,
     config?: RequestConfig
   ): Promise<Response<Eco>> {
-    return this.request("GET", `/api/v1/manufacturing/ecos/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/ecos/${id}`, undefined, config);
   }
 
   async createEco(
@@ -146,7 +146,7 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Eco>> {
     const validatedData = validateRequest(createEcoRequest, data);
-    return this.request("POST", "/api/v1/manufacturing/ecos", validatedData, config);
+    return this.request("POST", "/api/v1/ecos", validatedData, config);
   }
 
   async updateEco(
@@ -155,14 +155,14 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Eco>> {
     const validatedData = validateRequest(updateEcoRequest, data);
-    return this.request("PUT", `/api/v1/manufacturing/ecos/${id}`, validatedData, config);
+    return this.request("PUT", `/api/v1/ecos/${id}`, validatedData, config);
   }
 
   async approveEco(
     id: string,
     config?: RequestConfig
   ): Promise<Response<Eco>> {
-    return this.request("POST", `/api/v1/manufacturing/ecos/${id}/approve`, undefined, config);
+    return this.request("POST", `/api/v1/ecos/${id}/approve`, undefined, config);
   }
 
   async rejectEco(
@@ -171,16 +171,16 @@ export class ManufacturingClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<Eco>> {
     const validatedData = validateRequest(rejectEcoRequest, data);
-    return this.request("POST", `/api/v1/manufacturing/ecos/${id}/reject`, validatedData, config);
+    return this.request("POST", `/api/v1/ecos/${id}/reject`, validatedData, config);
   }
 
-  // MRP Methods  
+  // MRP Methods
   async runMrpRequirements(
     data: MrpRequirementsRequest,
     config?: RequestConfig
   ): Promise<Response<any[]>> {
     const validatedData = validateRequest(mrpRequirementsRequest, data);
-    return this.request("POST", "/api/v1/manufacturing/mrp/requirements", validatedData, config);
+    return this.request("POST", "/api/v1/mrp/requirements", validatedData, config);
   }
 
   // BOM Analytics Methods
@@ -188,7 +188,7 @@ export class ManufacturingClient extends BaseClient {
     bomId: string,
     config?: RequestConfig
   ): Promise<Response<{ leadTime: number; criticalPath: any[] }>> {
-    return this.request("GET", `/api/v1/manufacturing/boms/${bomId}/lead-time`, undefined, config);
+    return this.request("GET", `/api/v1/boms/${bomId}/lead-time`, undefined, config);
   }
 
   async getBomStats(
@@ -202,7 +202,7 @@ export class ManufacturingClient extends BaseClient {
     costAnalysis: any;
   }>> {
     const query = buildQuery(filters);
-    return this.request("GET", `/api/v1/manufacturing/boms/stats${query}`, undefined, config);
+    return this.request("GET", `/api/v1/boms/stats${query ? `?${query}` : ''}`, undefined, config);
   }
 
   // BOM Quick Creation
@@ -219,6 +219,6 @@ export class ManufacturingClient extends BaseClient {
     },
     config?: RequestConfig
   ): Promise<Response<Bom>> {
-    return this.request("POST", "/api/v1/manufacturing/boms/quick", data, config);
+    return this.request("POST", "/api/v1/boms/quick", data, config);
   }
 }

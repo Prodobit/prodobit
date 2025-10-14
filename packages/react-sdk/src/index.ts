@@ -69,13 +69,25 @@ export {
   useUpdateAttribute, 
   useDeleteAttribute 
 } from './hooks/useAttributes';
-export { 
-  useBoms, 
-  useBom, 
-  useCreateBom, 
-  useUpdateBom, 
-  useDeleteBom 
+export {
+  useBoms,
+  useBom,
+  useCreateBom,
+  useUpdateBom,
+  useDeleteBom,
+  useBomComponents,
+  useCreateBomComponent,
+  useUpdateBomComponent,
+  useDeleteBomComponent
 } from './hooks/useBoms';
+export {
+  useEcos,
+  useEco,
+  useCreateEco,
+  useUpdateEco,
+  useApproveEco,
+  useRejectEco
+} from './hooks/useEcos';
 export {
   useSalesOrders,
   useSalesOrder,

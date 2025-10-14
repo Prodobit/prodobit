@@ -18,7 +18,10 @@ import Decimal from "decimal.js";
 // BOM Routes
 export const bomRoutes = new Hono();
 
-// ECO Routes  
+// BOM Components Routes
+export const bomComponentRoutes = new Hono();
+
+// ECO Routes
 export const ecoRoutes = new Hono();
 
 // Routing Routes (for future work centers and routings)
@@ -27,6 +30,7 @@ export const routingRoutes = new Hono();
 
 // Apply auth middleware to all routes
 bomRoutes.use("*", authMiddleware);
+bomComponentRoutes.use("*", authMiddleware);
 ecoRoutes.use("*", authMiddleware);
 routingRoutes.use("*", authMiddleware);
 
@@ -552,6 +556,174 @@ ecoRoutes.post("/:id/reject", requirePermission("eco", "update"), async (c) => {
 });
 
 // ===================
+// BOM COMPONENT ROUTES
+// ===================
+
+// GET / - List BOM components with filtering
+bomComponentRoutes.get("/", requirePermission("bom", "read"), async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+
+    const bomId = c.req.query("bomId");
+    const componentType = c.req.query("componentType");
+    const sourcingType = c.req.query("sourcingType");
+    const isOptional = c.req.query("isOptional") === "true";
+    const isCritical = c.req.query("isCritical") === "true";
+
+    const bomService = new BomService(db, user.tenantId);
+    const components = await bomService.getBomComponents({
+      bomId,
+      componentType,
+      sourcingType,
+      isOptional: c.req.query("isOptional") ? isOptional : undefined,
+      isCritical: c.req.query("isCritical") ? isCritical : undefined,
+    });
+
+    return c.json({
+      success: true,
+      data: components,
+    });
+  } catch (error) {
+    console.error("List BOM components error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to list BOM components",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// POST / - Add component to BOM
+bomComponentRoutes.post("/", requirePermission("bom", "create"), async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const body = await c.req.json();
+
+    const validation = createBomComponentRequest(body);
+
+    if (validation instanceof type.errors) {
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "VALIDATION_ERROR",
+            message: "Validation failed",
+            details: validation,
+          },
+        },
+        400
+      );
+    }
+
+    const componentData: any = {
+      ...validation,
+      quantity: new Decimal(validation.quantity),
+      setupTimeMinutes: validation.setupTimeMinutes ? new Decimal(validation.setupTimeMinutes) : undefined,
+      runTimePerUnitSeconds: validation.runTimePerUnitSeconds ? new Decimal(validation.runTimePerUnitSeconds) : undefined,
+    };
+
+    const bomService = new BomService(db, user.tenantId);
+    const component = await bomService.createBomComponent(componentData);
+
+    return c.json({
+      success: true,
+      data: component,
+      message: "BOM component added successfully",
+    });
+  } catch (error) {
+    console.error("Add BOM component error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to add BOM component",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// PUT /:id - Update BOM component
+bomComponentRoutes.put("/:id", requirePermission("bom", "update"), async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const componentId = c.req.param("id");
+    const body = await c.req.json();
+
+    const updateData = {
+      ...body,
+      quantity: body.quantity ? new Decimal(body.quantity) : undefined,
+      setupTimeMinutes: body.setupTimeMinutes ? new Decimal(body.setupTimeMinutes) : undefined,
+      runTimePerUnitSeconds: body.runTimePerUnitSeconds ? new Decimal(body.runTimePerUnitSeconds) : undefined,
+    };
+
+    const bomService = new BomService(db, user.tenantId);
+    const component = await bomService.updateBomComponent(componentId, updateData);
+
+    return c.json({
+      success: true,
+      data: component,
+      message: "BOM component updated successfully",
+    });
+  } catch (error) {
+    console.error("Update BOM component error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to update BOM component",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// DELETE /:id - Delete BOM component
+bomComponentRoutes.delete("/:id", requirePermission("bom", "delete"), async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const componentId = c.req.param("id");
+
+    const bomService = new BomService(db, user.tenantId);
+    await bomService.deleteBomComponent(componentId);
+
+    return c.json({
+      success: true,
+      message: "BOM component deleted successfully",
+    });
+  } catch (error) {
+    console.error("Delete BOM component error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to delete BOM component",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// ===================
 // ROUTING ROUTES (Placeholder for future work centers)
 // ===================
 
@@ -567,6 +739,7 @@ routingRoutes.get("/", requirePermission("routing", "read"), async (c) => {
 // Export all routes as a single object
 export const manufacturingRoutes = {
   boms: bomRoutes,
+  bomComponents: bomComponentRoutes,
   ecos: ecoRoutes,
   routings: routingRoutes,
 };
