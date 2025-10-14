@@ -82,12 +82,33 @@ const employeeModuleConfigSchema = type({
   "enableOvertimeTracking": "boolean",
 });
 
+const brandModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enableAutoCode": "boolean",
+  "allowDuplicateNames": "boolean",
+});
+
+const customerModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enableCreditLimit": "boolean",
+  "defaultPaymentTerms": "string >= 1",
+});
+
+const supplierModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enableRating": "boolean",
+  "defaultPaymentTerms": "string >= 1",
+});
+
 const moduleConfigsSchema = type({
   "inventory?": inventoryModuleConfigSchema,
   "manufacturing?": manufacturingModuleConfigSchema,
   "sales?": salesModuleConfigSchema,
   "purchase?": purchaseModuleConfigSchema,
   "employee?": employeeModuleConfigSchema,
+  "brand?": brandModuleConfigSchema,
+  "customer?": customerModuleConfigSchema,
+  "supplier?": supplierModuleConfigSchema,
 });
 
 const modulesConfigSchema = type({
@@ -108,6 +129,9 @@ export type ManufacturingModuleConfig = typeof manufacturingModuleConfigSchema.i
 export type SalesModuleConfig = typeof salesModuleConfigSchema.infer;
 export type PurchaseModuleConfig = typeof purchaseModuleConfigSchema.infer;
 export type EmployeeModuleConfig = typeof employeeModuleConfigSchema.infer;
+export type BrandModuleConfig = typeof brandModuleConfigSchema.infer;
+export type CustomerModuleConfig = typeof customerModuleConfigSchema.infer;
+export type SupplierModuleConfig = typeof supplierModuleConfigSchema.infer;
 export type ModuleConfigs = typeof moduleConfigsSchema.infer;
 export type ModulesConfig = typeof modulesConfigSchema.infer;
 
@@ -155,6 +179,21 @@ export function validatePurchaseModuleConfig(config: unknown): PurchaseModuleCon
 export function validateEmployeeModuleConfig(config: unknown): EmployeeModuleConfig | Error {
   const result = employeeModuleConfigSchema(config);
   return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as EmployeeModuleConfig;
+}
+
+export function validateBrandModuleConfig(config: unknown): BrandModuleConfig | Error {
+  const result = brandModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as BrandModuleConfig;
+}
+
+export function validateCustomerModuleConfig(config: unknown): CustomerModuleConfig | Error {
+  const result = customerModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as CustomerModuleConfig;
+}
+
+export function validateSupplierModuleConfig(config: unknown): SupplierModuleConfig | Error {
+  const result = supplierModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as SupplierModuleConfig;
 }
 
 export function validateModuleConfigs(config: unknown): ModuleConfigs | Error {
