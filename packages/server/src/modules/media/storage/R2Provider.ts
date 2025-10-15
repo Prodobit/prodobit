@@ -23,7 +23,8 @@ import type {
 } from "./StorageProvider.js";
 
 export interface R2Config {
-  accountId: string;
+  accountId?: string; // Optional if endpoint is provided
+  endpoint?: string; // Optional if accountId is provided
   accessKeyId: string;
   secretAccessKey: string;
   bucket: string;
@@ -40,8 +41,17 @@ export class R2Provider implements StorageProvider {
     this.bucket = config.bucket;
     this.publicUrl = config.publicUrl;
 
-    // R2 endpoint format: https://<account_id>.r2.cloudflarestorage.com
-    const endpoint = `https://${config.accountId}.r2.cloudflarestorage.com`;
+    // Determine endpoint
+    let endpoint: string;
+    if (config.endpoint) {
+      // Use provided endpoint (jurisdiction-specific)
+      endpoint = config.endpoint;
+    } else if (config.accountId) {
+      // Use accountId to construct endpoint
+      endpoint = `https://${config.accountId}.r2.cloudflarestorage.com`;
+    } else {
+      throw new Error("Either accountId or endpoint must be provided for R2");
+    }
 
     this.client = new S3Client({
       region: "auto",
