@@ -1,5 +1,6 @@
 import type { Hono } from "hono";
 import type { createDatabase } from "@prodobit/database";
+import type { StorageProvider } from "../modules/media/storage/StorageProvider.js";
 
 export interface ModuleManifest {
   name: string;
@@ -53,6 +54,7 @@ export interface ServerContext {
   db: ReturnType<typeof createDatabase>;
   enabledModules: Set<string>;
   config: ServerConfig;
+  storage?: StorageProvider;
 }
 
 declare module "hono" {
@@ -60,5 +62,6 @@ declare module "hono" {
     db: ReturnType<typeof createDatabase>;
     enabledModules: Set<string>;
     config: ServerConfig;
+    storage?: StorageProvider;
   }
 }

@@ -11,4 +11,5 @@ export * from "./item";
 export * from "./inventory";
 export * from "./purchase";
 export * from "./brand";
+export * from "./media";
 export * from "./common";

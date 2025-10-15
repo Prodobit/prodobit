@@ -96,6 +96,16 @@ export {
   useDeleteBrand
 } from './hooks/useBrands';
 export {
+  useItemImages,
+  useItemImage,
+  useUploadItemImage,
+  useDeleteItemImage,
+  useSetPrimaryImage,
+  useReorderImages,
+  useUpdateAltText,
+  useStorageStats
+} from './hooks/useMedia';
+export {
   useSalesOrders,
   useSalesOrder,
   useCreateSalesOrder,
