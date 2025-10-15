@@ -9,6 +9,7 @@ import { EmployeeClient } from "./modules/employee-client";
 import { InventoryClient } from "./modules/inventory-client";
 import { PurchaseClient } from "./modules/purchase-client";
 import { BrandClient } from "./modules/brand-client";
+import { MediaClient } from "./modules/media-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -96,6 +97,7 @@ export class ProdobitClient {
   private inventory: InventoryClient;
   private purchase: PurchaseClient;
   private brand: BrandClient;
+  private media: MediaClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -108,6 +110,7 @@ export class ProdobitClient {
     this.inventory = new InventoryClient(config);
     this.purchase = new PurchaseClient(config);
     this.brand = new BrandClient(config);
+    this.media = new MediaClient(config);
   }
 
   // Public request method for framework integrations
@@ -777,6 +780,7 @@ export class ProdobitClient {
     this.inventory.setTokenInfo(tokenInfo);
     this.purchase.setTokenInfo(tokenInfo);
     this.brand.setTokenInfo(tokenInfo);
+    this.media.setTokenInfo(tokenInfo);
   }
 
   getTokenInfo(): TokenInfo | undefined {
@@ -795,6 +799,7 @@ export class ProdobitClient {
     this.inventory.clearTokenInfo();
     this.purchase.clearTokenInfo();
     this.brand.clearTokenInfo();
+    this.media.clearTokenInfo();
   }
 
   getCurrentTenantId(): string | undefined {
@@ -1376,6 +1381,49 @@ export class ProdobitClient {
   // Brand client getter
   get brandClient(): BrandClient {
     return this.brand;
+  }
+
+  // Media method delegations
+  async uploadItemImage(
+    itemId: string,
+    file: File | Blob,
+    metadata?: Partial<typeof import("@prodobit/types").uploadItemImageRequest.infer>,
+    config?: RequestConfig
+  ) {
+    return this.media.uploadItemImage(itemId, file, metadata, config);
+  }
+
+  async listItemImages(itemId: string, config?: RequestConfig) {
+    return this.media.listItemImages(itemId, config);
+  }
+
+  async getItemImage(imageId: string, config?: RequestConfig) {
+    return this.media.getItemImage(imageId, config);
+  }
+
+  async deleteItemImage(imageId: string, config?: RequestConfig) {
+    return this.media.deleteItemImage(imageId, config);
+  }
+
+  async setPrimaryImage(imageId: string, itemId: string, config?: RequestConfig) {
+    return this.media.setPrimaryImage(imageId, itemId, config);
+  }
+
+  async reorderImages(itemId: string, imageIds: string[], config?: RequestConfig) {
+    return this.media.reorderImages(itemId, imageIds, config);
+  }
+
+  async updateAltText(imageId: string, altText: string, config?: RequestConfig) {
+    return this.media.updateAltText(imageId, altText, config);
+  }
+
+  async getStorageStats(config?: RequestConfig) {
+    return this.media.getStorageStats(config);
+  }
+
+  // Media client getter
+  get mediaClient(): MediaClient {
+    return this.media;
   }
 }
 

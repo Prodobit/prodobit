@@ -4,6 +4,7 @@ export * from "./auth.js";
 export * from "./boms.js";
 export * from "./brands.js";
 export * from "./items.js";
+export * from "./media.js";
 export * from "./parties.js";
 export * from "./sales.js";
 export * from "./stocks.js";

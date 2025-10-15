@@ -1,4 +1,4 @@
-import { eq, and, desc, or, ilike, sql } from "drizzle-orm";
+import { eq, and, desc, or, ilike, sql, isNull } from "drizzle-orm";
 import type { BrandQuery, CreateBrandRequest, UpdateBrandRequest } from "@prodobit/types";
 import { brands } from "@prodobit/database";
 import type { Database } from "@prodobit/database";
@@ -12,7 +12,7 @@ export class BrandService {
   async listBrands(tenantId: string, filters?: Partial<BrandQuery>) {
     const conditions: any[] = [
       eq(brands.tenantId, tenantId),
-      eq(brands.deletedAt, null as any),
+      isNull(brands.deletedAt),
     ];
 
     if (filters?.status) {
@@ -48,7 +48,7 @@ export class BrandService {
         and(
           eq(brands.id, brandId),
           eq(brands.tenantId, tenantId),
-          eq(brands.deletedAt, null as any)
+          isNull(brands.deletedAt)
         )
       );
 
@@ -89,7 +89,7 @@ export class BrandService {
         and(
           eq(brands.id, brandId),
           eq(brands.tenantId, tenantId),
-          eq(brands.deletedAt, null as any)
+          isNull(brands.deletedAt)
         )
       )
       .returning();
@@ -111,7 +111,7 @@ export class BrandService {
         and(
           eq(brands.id, brandId),
           eq(brands.tenantId, tenantId),
-          eq(brands.deletedAt, null as any)
+          isNull(brands.deletedAt)
         )
       )
       .returning();
@@ -126,7 +126,7 @@ export class BrandService {
     const conditions: any[] = [
       eq(brands.tenantId, tenantId),
       eq(brands.name, name),
-      eq(brands.deletedAt, null as any),
+      isNull(brands.deletedAt),
     ];
 
     if (excludeBrandId) {

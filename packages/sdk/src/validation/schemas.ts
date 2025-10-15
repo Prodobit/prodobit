@@ -312,6 +312,85 @@ export const employeeSchemas = {
 };
 
 /**
+ * Brand Schemas
+ */
+export const brandSchemas = {
+  create: validators.schema()
+    .field('name', validators.field().required().string().minLength(1).maxLength(255))
+    .field('code', validators.field().string().minLength(1).maxLength(100))
+    .field('description', validators.optionalString())
+    .field('website', validators.optionalString())
+    .field('status', validators.field().oneOf(['active', 'inactive'])),
+
+  update: validators.schema()
+    .field('name', validators.field().string().minLength(1).maxLength(255))
+    .field('code', validators.field().string().minLength(1).maxLength(100))
+    .field('description', validators.optionalString())
+    .field('website', validators.optionalString())
+    .field('status', validators.field().oneOf(['active', 'inactive'])),
+
+  query: validators.schema()
+    .field('status', validators.field().oneOf(['active', 'inactive']))
+    .field('search', validators.optionalString())
+    .field('page', validators.field().number().min(1))
+    .field('limit', validators.field().number().min(1).max(100))
+    .field('orderBy', validators.optionalString())
+    .field('orderDirection', validators.field().oneOf(['asc', 'desc'])),
+};
+
+/**
+ * Customer Schemas
+ */
+export const customerSchemas = {
+  create: validators.schema()
+    .field('partyId', validators.requiredUuid())
+    .field('customerCode', validators.field().string().maxLength(50))
+    .field('creditLimit', validators.field().string()) // Decimal as string
+    .field('paymentTerms', validators.optionalString())
+    .field('status', validators.field().oneOf(['active', 'inactive', 'suspended'])),
+
+  update: validators.schema()
+    .field('customerCode', validators.field().string().maxLength(50))
+    .field('creditLimit', validators.field().string()) // Decimal as string
+    .field('paymentTerms', validators.optionalString())
+    .field('status', validators.field().oneOf(['active', 'inactive', 'suspended'])),
+
+  query: validators.schema()
+    .field('status', validators.field().oneOf(['active', 'inactive', 'suspended']))
+    .field('search', validators.optionalString())
+    .field('page', validators.field().number().min(1))
+    .field('limit', validators.field().number().min(1).max(100))
+    .field('orderBy', validators.optionalString())
+    .field('orderDirection', validators.field().oneOf(['asc', 'desc'])),
+};
+
+/**
+ * Supplier Schemas
+ */
+export const supplierSchemas = {
+  create: validators.schema()
+    .field('partyId', validators.requiredUuid())
+    .field('supplierCode', validators.field().string().maxLength(50))
+    .field('rating', validators.field().number().min(1).max(5))
+    .field('paymentTerms', validators.optionalString())
+    .field('status', validators.field().oneOf(['active', 'inactive', 'suspended'])),
+
+  update: validators.schema()
+    .field('supplierCode', validators.field().string().maxLength(50))
+    .field('rating', validators.field().number().min(1).max(5))
+    .field('paymentTerms', validators.optionalString())
+    .field('status', validators.field().oneOf(['active', 'inactive', 'suspended'])),
+
+  query: validators.schema()
+    .field('status', validators.field().oneOf(['active', 'inactive', 'suspended']))
+    .field('search', validators.optionalString())
+    .field('page', validators.field().number().min(1))
+    .field('limit', validators.field().number().min(1).max(100))
+    .field('orderBy', validators.optionalString())
+    .field('orderDirection', validators.field().oneOf(['asc', 'desc'])),
+};
+
+/**
  * Attribute Schemas
  */
 export const attributeSchemas = {
@@ -356,5 +435,8 @@ export const validationSchemas = {
   bom: bomSchemas,
   salesOrder: salesOrderSchemas,
   employee: employeeSchemas,
+  brand: brandSchemas,
+  customer: customerSchemas,
+  supplier: supplierSchemas,
   attribute: attributeSchemas,
 };

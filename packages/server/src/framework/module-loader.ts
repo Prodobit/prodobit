@@ -9,6 +9,7 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import health from "../core/health.js";
 import type { ModuleManifest, ServerConfig, ServerContext } from "./types.js";
+import { storageMiddleware } from "../modules/media/middleware/storage.js";
 
 export class ModuleLoader {
   private app: Hono<{ Variables: ServerContext }>;
@@ -97,6 +98,9 @@ export class ModuleLoader {
         }
       )
     );
+
+    // Storage middleware - inject storage provider
+    this.app.use("*", storageMiddleware);
 
     // Context setup
     this.app.use("*", async (c, next) => {
