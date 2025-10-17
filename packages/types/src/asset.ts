@@ -8,9 +8,11 @@ export const asset = type({
   locationId: uuid,
   name: "string >= 1",
   "code?": "string",
-  assetType: "string >= 1",
+  "assetTypeId?": uuid,
   status,
   "parentAssetId?": uuid,
+  "serialNumber?": "string",
+  "qrCode?": "string",
   insertedAt: timestamp,
   updatedAt: timestamp,
   "deletedAt?": timestamp,
@@ -20,18 +22,22 @@ export const createAssetRequest = type({
   locationId: uuid,
   name: "string >= 1",
   "code?": "string",
-  assetType: "string >= 1",
+  "assetTypeId?": uuid,
   "status?": status,
   "parentAssetId?": uuid,
+  "serialNumber?": "string",
+  "qrCode?": "string",
 });
 
 export const updateAssetRequest = type({
   "locationId?": uuid,
   "name?": "string >= 1",
   "code?": "string",
-  "assetType?": "string >= 1",
+  "assetTypeId?": uuid,
   "status?": status,
   "parentAssetId?": uuid,
+  "serialNumber?": "string",
+  "qrCode?": "string",
 });
 
 // Asset Type schemas
@@ -67,9 +73,11 @@ export const updateAssetTypeRequest = type({
 // Asset query filters
 export const assetQuery = type({
   "locationId?": uuid,
-  "assetType?": "string",
+  "assetTypeId?": uuid,
   "status?": status,
   "parentAssetId?": uuid,
+  "serialNumber?": "string",
+  "qrCode?": "string",
   "search?": "string",
 });
 

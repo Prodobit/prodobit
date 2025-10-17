@@ -117,8 +117,49 @@ export {
   useRemoveSalesOrderItem,
   useSalesOrderHistory
 } from './hooks/useSalesOrders';
-export { 
-  useRoleBasedAccess, 
+export {
+  useWarranties,
+  useWarranty,
+  useAssetWarranties,
+  useActiveAssetWarranty,
+  useExpiringWarranties,
+  useCreateWarranty,
+  useUpdateWarranty,
+  useDeleteWarranty
+} from './hooks/useWarranties';
+export {
+  useAssignments,
+  useAssignment,
+  useAssetAssignmentHistory,
+  useActiveAssignments,
+  useCreateAssignment,
+  useReturnAssignment,
+  useTransferAssignment,
+  useUpdateAssignment,
+  useDeleteAssignment
+} from './hooks/useAssignments';
+export {
+  useAssetPurchases,
+  useAssetPurchase,
+  useAssetPurchasesByAsset,
+  useCreateAssetPurchase,
+  useUpdateAssetPurchase,
+  useDeleteAssetPurchase
+} from './hooks/useAssetPurchases';
+export {
+  useDepartments,
+  useDepartment,
+  useDepartmentHierarchy,
+  useCreateDepartment,
+  useUpdateDepartment,
+  useDeleteDepartment,
+  useDepartmentMembers,
+  useAddDepartmentMember,
+  useUpdateDepartmentMember,
+  useRemoveDepartmentMember
+} from './hooks/useDepartments';
+export {
+  useRoleBasedAccess,
   usePermissionCheck,
   useCanManageUsers,
   useCanManageTenants,

@@ -31,7 +31,7 @@ export class AssetService {
 
     // Generate code if not provided
     const code =
-      data.code || this.generateAssetCode(tenantId, data.assetType);
+      data.code || this.generateAssetCode(tenantId);
 
     const [asset] = await this.db
       .insert(assets)
@@ -40,9 +40,11 @@ export class AssetService {
         locationId: data.locationId,
         name: data.name,
         code,
-        assetType: data.assetType,
+        assetTypeId: data.assetTypeId,
         status: data.status || "active",
         parentAssetId: data.parentAssetId,
+        serialNumber: data.serialNumber,
+        qrCode: data.qrCode,
       })
       .returning();
 
@@ -61,8 +63,8 @@ export class AssetService {
       conditions.push(eq(assets.locationId, filters.locationId));
     }
 
-    if (filters?.assetType) {
-      conditions.push(eq(assets.assetType, filters.assetType));
+    if (filters?.assetTypeId) {
+      conditions.push(eq(assets.assetTypeId, filters.assetTypeId));
     }
 
     if (filters?.status) {
@@ -75,11 +77,21 @@ export class AssetService {
       conditions.push(isNull(assets.parentAssetId));
     }
 
+    if (filters?.serialNumber) {
+      conditions.push(eq(assets.serialNumber, filters.serialNumber));
+    }
+
+    if (filters?.qrCode) {
+      conditions.push(eq(assets.qrCode, filters.qrCode));
+    }
+
     if (filters?.search) {
       conditions.push(
         or(
           like(assets.name, `%${filters.search}%`),
-          like(assets.code, `%${filters.search}%`)
+          like(assets.code, `%${filters.search}%`),
+          like(assets.serialNumber, `%${filters.search}%`),
+          like(assets.qrCode, `%${filters.search}%`)
         ) as SQL<unknown>
       );
     }
@@ -91,7 +103,7 @@ export class AssetService {
           id: locations.id,
           name: locations.name,
           code: locations.code,
-          locationType: locations.locationType,
+          locationTypeId: locations.locationTypeId,
         },
       })
       .from(assets)
@@ -114,7 +126,7 @@ export class AssetService {
           id: locations.id,
           name: locations.name,
           code: locations.code,
-          locationType: locations.locationType,
+          locationTypeId: locations.locationTypeId,
         },
       })
       .from(assets)
@@ -294,26 +306,11 @@ export class AssetService {
   }
 
   // Helper methods
-  private generateAssetCode(tenantId: string, assetType: string): string {
-    const prefix = this.getAssetPrefix(assetType);
+  private generateAssetCode(tenantId: string): string {
+    const prefix = "AST";
     const timestamp = Date.now().toString().slice(-6);
     const random = Math.random().toString(36).substring(2, 4).toUpperCase();
     return `${prefix}${timestamp}${random}`;
-  }
-
-  private getAssetPrefix(assetType: string): string {
-    switch (assetType.toLowerCase()) {
-      case "work_station":
-        return "WS";
-      case "work_center":
-        return "WC";
-      case "machine":
-        return "MCH";
-      case "equipment":
-        return "EQP";
-      default:
-        return "AST";
-    }
   }
 
   private generateAssetTypeCode(tenantId: string, name: string): string {
@@ -337,7 +334,7 @@ export class AssetService {
 
     allAssets.forEach((asset) => {
       // Count by type
-      const type = asset.assetType || "unspecified";
+      const type = asset.assetTypeId || "unspecified";
       assetsByType[type] = (assetsByType[type] || 0) + 1;
 
       // Count by status
@@ -366,7 +363,8 @@ export class AssetService {
       or(
         like(assets.name, `%${query}%`),
         like(assets.code, `%${query}%`),
-        like(assets.assetType, `%${query}%`)
+        like(assets.serialNumber, `%${query}%`),
+        like(assets.qrCode, `%${query}%`)
       ),
     ];
 
@@ -377,7 +375,7 @@ export class AssetService {
           id: locations.id,
           name: locations.name,
           code: locations.code,
-          locationType: locations.locationType,
+          locationTypeId: locations.locationTypeId,
         },
       })
       .from(assets)

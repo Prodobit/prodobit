@@ -7,11 +7,9 @@ export const location = type({
   tenantId: uuid,
   name: "string >= 1",
   "code?": "string",
-  locationType: "string >= 1",
+  "locationTypeId?": uuid,
   "parentLocationId?": uuid,
   status,
-  "address?": "string",
-  "coordinates?": "string",
   insertedAt: timestamp,
   updatedAt: timestamp,
   "deletedAt?": timestamp,
@@ -20,21 +18,17 @@ export const location = type({
 export const createLocationRequest = type({
   name: "string >= 1",
   "code?": "string",
-  locationType: "string >= 1",
+  "locationTypeId?": uuid,
   "parentLocationId?": uuid,
   "status?": status,
-  "address?": "string",
-  "coordinates?": "string",
 });
 
 export const updateLocationRequest = type({
   "name?": "string >= 1",
   "code?": "string",
-  "locationType?": "string >= 1",
+  "locationTypeId?": uuid,
   "parentLocationId?": uuid,
   "status?": status,
-  "address?": "string",
-  "coordinates?": "string",
 });
 
 // Location Type schemas
@@ -69,7 +63,7 @@ export const updateLocationTypeRequest = type({
 
 // Location query filters
 export const locationQuery = type({
-  "locationType?": "string",
+  "locationTypeId?": uuid,
   "parentLocationId?": uuid,
   "status?": status,
   "search?": "string",

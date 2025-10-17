@@ -36,6 +36,20 @@
       "when": 1760521283579,
       "tag": "0004_unusual_doctor_spectrum",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1760689609484,
+      "tag": "0005_lean_captain_america",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1760702783834,
+      "tag": "0007_rapid_lilandra",
+      "breakpoints": true
     }
   ]
 }

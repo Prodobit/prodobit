@@ -10,6 +10,10 @@ import { InventoryClient } from "./modules/inventory-client";
 import { PurchaseClient } from "./modules/purchase-client";
 import { BrandClient } from "./modules/brand-client";
 import { MediaClient } from "./modules/media-client";
+import { WarrantyClient } from "./modules/warranty-client";
+import { AssignmentClient } from "./modules/assignment-client";
+import { AssetPurchaseClient } from "./modules/asset-purchase-client";
+import { DepartmentClient } from "./modules/department-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -98,6 +102,10 @@ export class ProdobitClient {
   private purchase: PurchaseClient;
   private brand: BrandClient;
   private media: MediaClient;
+  private warranty: WarrantyClient;
+  private assignment: AssignmentClient;
+  private assetPurchase: AssetPurchaseClient;
+  private department: DepartmentClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -111,6 +119,10 @@ export class ProdobitClient {
     this.purchase = new PurchaseClient(config);
     this.brand = new BrandClient(config);
     this.media = new MediaClient(config);
+    this.warranty = new WarrantyClient(config);
+    this.assignment = new AssignmentClient(config);
+    this.assetPurchase = new AssetPurchaseClient(config);
+    this.department = new DepartmentClient(config);
   }
 
   // Public request method for framework integrations
@@ -781,6 +793,10 @@ export class ProdobitClient {
     this.purchase.setTokenInfo(tokenInfo);
     this.brand.setTokenInfo(tokenInfo);
     this.media.setTokenInfo(tokenInfo);
+    this.warranty.setTokenInfo(tokenInfo);
+    this.assignment.setTokenInfo(tokenInfo);
+    this.assetPurchase.setTokenInfo(tokenInfo);
+    this.department.setTokenInfo(tokenInfo);
   }
 
   getTokenInfo(): TokenInfo | undefined {
@@ -800,6 +816,10 @@ export class ProdobitClient {
     this.purchase.clearTokenInfo();
     this.brand.clearTokenInfo();
     this.media.clearTokenInfo();
+    this.warranty.clearTokenInfo();
+    this.assignment.clearTokenInfo();
+    this.assetPurchase.clearTokenInfo();
+    this.department.clearTokenInfo();
   }
 
   getCurrentTenantId(): string | undefined {
@@ -875,6 +895,22 @@ export class ProdobitClient {
 
   get purchaseClient(): PurchaseClient {
     return this.purchase;
+  }
+
+  get warrantyClient(): WarrantyClient {
+    return this.warranty;
+  }
+
+  get assignmentClient(): AssignmentClient {
+    return this.assignment;
+  }
+
+  get assetPurchaseClient(): AssetPurchaseClient {
+    return this.assetPurchase;
+  }
+
+  get departmentClient(): DepartmentClient {
+    return this.department;
   }
 
   // Inventory management method delegations
@@ -1424,6 +1460,142 @@ export class ProdobitClient {
   // Media client getter
   get mediaClient(): MediaClient {
     return this.media;
+  }
+
+  // Warranty method delegations
+  async getWarranties(query?: any, config?: RequestConfig) {
+    return this.warranty.getAll(query);
+  }
+
+  async getWarranty(id: string, config?: RequestConfig) {
+    return this.warranty.getById(id);
+  }
+
+  async getAssetWarranties(assetId: string, config?: RequestConfig) {
+    return this.warranty.getByAsset(assetId);
+  }
+
+  async getActiveAssetWarranty(assetId: string, config?: RequestConfig) {
+    return this.warranty.getActiveByAsset(assetId);
+  }
+
+  async getExpiringWarranties(days: number = 30, config?: RequestConfig) {
+    return this.warranty.getExpiring(days);
+  }
+
+  async createWarranty(data: any, config?: RequestConfig) {
+    return this.warranty.create(data);
+  }
+
+  async updateWarranty(id: string, data: any, config?: RequestConfig) {
+    return this.warranty.update(id, data);
+  }
+
+  async deleteWarranty(id: string, config?: RequestConfig) {
+    return this.warranty.delete(id);
+  }
+
+  // Assignment method delegations
+  async getAssignments(query?: any, config?: RequestConfig) {
+    return this.assignment.getAll(query);
+  }
+
+  async getAssignment(id: string, config?: RequestConfig) {
+    return this.assignment.getById(id);
+  }
+
+  async getAssetAssignmentHistory(assetId: string, config?: RequestConfig) {
+    return this.assignment.getAssetHistory(assetId);
+  }
+
+  async getActiveAssignments(assignedTo: string, config?: RequestConfig) {
+    return this.assignment.getActiveAssignments(assignedTo);
+  }
+
+  async createAssignment(data: any, config?: RequestConfig) {
+    return this.assignment.create(data);
+  }
+
+  async returnAssignment(id: string, returnCondition?: "good" | "damaged" | "needs_repair", config?: RequestConfig) {
+    return this.assignment.return(id, returnCondition);
+  }
+
+  async transferAssignment(id: string, newAssignedTo: string, newAssignedType: "user" | "department" | "location", config?: RequestConfig) {
+    return this.assignment.transfer(id, newAssignedTo, newAssignedType);
+  }
+
+  async updateAssignment(id: string, data: any, config?: RequestConfig) {
+    return this.assignment.update(id, data);
+  }
+
+  async deleteAssignment(id: string, config?: RequestConfig) {
+    return this.assignment.delete(id);
+  }
+
+  // Asset Purchase method delegations
+  async getAssetPurchases(query?: any, config?: RequestConfig) {
+    return this.assetPurchase.getAll(query);
+  }
+
+  async getAssetPurchase(id: string, config?: RequestConfig) {
+    return this.assetPurchase.getById(id);
+  }
+
+  async getAssetPurchasesByAsset(assetId: string, config?: RequestConfig) {
+    return this.assetPurchase.getByAsset(assetId);
+  }
+
+  async createAssetPurchase(data: any, config?: RequestConfig) {
+    return this.assetPurchase.create(data);
+  }
+
+  async updateAssetPurchase(id: string, data: any, config?: RequestConfig) {
+    return this.assetPurchase.update(id, data);
+  }
+
+  async deleteAssetPurchase(id: string, config?: RequestConfig) {
+    return this.assetPurchase.delete(id);
+  }
+
+  // Department method delegations
+  async getDepartments(query?: any, config?: RequestConfig) {
+    return this.department.getAll(query);
+  }
+
+  async getDepartment(id: string, config?: RequestConfig) {
+    return this.department.getById(id);
+  }
+
+  async getDepartmentHierarchy(id: string, config?: RequestConfig) {
+    return this.department.getHierarchy(id);
+  }
+
+  async createDepartment(data: any, config?: RequestConfig) {
+    return this.department.create(data);
+  }
+
+  async updateDepartment(id: string, data: any, config?: RequestConfig) {
+    return this.department.update(id, data);
+  }
+
+  async deleteDepartment(id: string, config?: RequestConfig) {
+    return this.department.delete(id);
+  }
+
+  async getDepartmentMembers(departmentId: string, query?: any, config?: RequestConfig) {
+    return this.department.getMembers(departmentId, query);
+  }
+
+  async addDepartmentMember(departmentId: string, data: any, config?: RequestConfig) {
+    return this.department.addMember(departmentId, data);
+  }
+
+  async updateDepartmentMember(memberId: string, data: any, config?: RequestConfig) {
+    return this.department.updateMember(memberId, data);
+  }
+
+  async removeDepartmentMember(memberId: string, config?: RequestConfig) {
+    return this.department.removeMember(memberId);
   }
 }
 
