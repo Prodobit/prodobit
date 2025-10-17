@@ -6,7 +6,7 @@ export interface CreateLocationRequest {
   tenantId: string;
   name: string;
   code?: string;
-  locationType?: string;
+  locationTypeId?: string;
   status?: string;
   parentLocationId?: string;
 }
@@ -22,7 +22,7 @@ export interface CreateLocationTypeRequest {
 
 export interface LocationFilters {
   tenantId: string;
-  locationType?: string;
+  locationTypeId?: string;
   status?: string;
   parentLocationId?: string;
   search?: string;
@@ -36,7 +36,7 @@ export class LocationService {
     // Generate code if not provided
     const code =
       data.code ||
-      this.generateLocationCode(data.tenantId, data.locationType || "LOC");
+      this.generateLocationCode(data.tenantId, "LOC");
 
     const [location] = await this.db
       .insert(locations)
@@ -44,7 +44,7 @@ export class LocationService {
         tenantId: data.tenantId,
         name: data.name,
         code,
-        locationType: data.locationType,
+        locationTypeId: data.locationTypeId,
         status: data.status || "available",
         parentLocationId: data.parentLocationId,
       })
@@ -60,8 +60,8 @@ export class LocationService {
       isNull(locations.deletedAt),
     ];
 
-    if (filters.locationType) {
-      conditions.push(eq(locations.locationType, filters.locationType));
+    if (filters.locationTypeId) {
+      conditions.push(eq(locations.locationTypeId, filters.locationTypeId));
     }
 
     if (filters.status) {
@@ -278,7 +278,7 @@ export class LocationService {
 
     allLocations.forEach((location) => {
       // Count by type
-      const type = location.locationType || "unspecified";
+      const type = location.locationTypeId || "unspecified";
       locationsByType[type] = (locationsByType[type] || 0) + 1;
 
       // Count by status

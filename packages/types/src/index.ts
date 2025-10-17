@@ -13,3 +13,7 @@ export * from "./purchase";
 export * from "./brand";
 export * from "./media";
 export * from "./common";
+export * from "./warranty";
+export * from "./assignment";
+export * from "./asset-purchase";
+export * from "./department";
