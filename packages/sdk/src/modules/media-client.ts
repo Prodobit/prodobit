@@ -34,7 +34,7 @@ export class MediaClient extends BaseClient {
 
     // Create FormData for file upload
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("image", file); // Server expects "image" field
     if (validatedMetadata?.altText) {
       formData.append("altText", validatedMetadata.altText);
     }
