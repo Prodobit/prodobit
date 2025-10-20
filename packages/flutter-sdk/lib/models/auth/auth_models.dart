@@ -22,12 +22,29 @@ class LoginResponseData with _$LoginResponseData {
   const factory LoginResponseData({
     required UserData user,
     required SessionData session,
+    required AuthMethodData authMethod,
     required bool isNewUser,
+    String? refreshToken,
     List<TenantMembership>? tenantMemberships,
   }) = _LoginResponseData;
 
   factory LoginResponseData.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseDataFromJson(json);
+}
+
+/// Auth method data model
+@freezed
+class AuthMethodData with _$AuthMethodData {
+  const factory AuthMethodData({
+    required String id,
+    required String provider,
+    required String providerId,
+    required bool verified,
+    Map<String, dynamic>? metadata,
+  }) = _AuthMethodData;
+
+  factory AuthMethodData.fromJson(Map<String, dynamic> json) =>
+      _$AuthMethodDataFromJson(json);
 }
 
 /// Organization info model (deprecated - use TenantInfo)
@@ -102,7 +119,7 @@ class SessionData with _$SessionData {
   const factory SessionData({
     required String accessToken,
     required String expiresAt,
-    String? refreshToken,
+    required String csrfToken,
   }) = _SessionData;
 
   factory SessionData.fromJson(Map<String, dynamic> json) =>
@@ -122,20 +139,23 @@ class TenantInfo with _$TenantInfo {
       _$TenantInfoFromJson(json);
 }
 
-/// Tenant membership model
+/// Tenant membership model (extended with role information from API responses)
 @freezed
 class TenantMembership with _$TenantMembership {
   const factory TenantMembership({
     required String id,
     required String userId,
     required String tenantId,
-    required String role,
+    required String roleId,
+    required String roleName,
     required String status,
     required Map<String, dynamic> permissions,
     required String accessLevel,
     required Map<String, dynamic> resourceRestrictions,
     required String insertedAt,
     required String updatedAt,
+    String? roleDescription,
+    String? roleColor,
     Map<String, dynamic>? ipRestrictions,
     Map<String, dynamic>? timeRestrictions,
     String? expiresAt,

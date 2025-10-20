@@ -117,7 +117,7 @@ class AuthService {
         // Update stored tokens
         await _storeTokens(
           accessToken: refreshResponse.data!.session.accessToken,
-          refreshToken: refreshResponse.data!.session.refreshToken,
+          refreshToken: refreshResponse.data!.refreshToken,
         );
 
         // Update API client authorization header
@@ -232,7 +232,7 @@ class AuthService {
       if (loginResponse.success && loginResponse.data != null) {
         await _storeTokens(
           accessToken: loginResponse.data!.session.accessToken,
-          refreshToken: loginResponse.data!.session.refreshToken,
+          refreshToken: loginResponse.data!.refreshToken,
         );
 
         // Store user data

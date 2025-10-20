@@ -5,6 +5,43 @@ All notable changes to the Prodobit Flutter SDK will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.1] - 2025-10-20
+
+### Fixed
+- 🐛 **CRITICAL**: Included all generated files (*.g.dart, *.freezed.dart) in the package distribution
+- ✅ Fixed "method toJson not defined" errors by committing Freezed and JSON serialization generated files
+- 📦 Package is now fully functional when installed from pub.dev
+
+### Technical Details
+- Previously, generated files were excluded by .gitignore, causing the published package to be incomplete
+- All 54 generated model and provider files are now properly tracked in git
+- Users can now use the SDK directly from pub.dev without local code generation
+
+## [0.13.0] - 2025-10-20
+
+### Added
+- 🔐 Extended `TenantMembership` model with role information (`roleId`, `roleName`, `roleDescription`, `roleColor`)
+- ✨ Added `AuthMethodData` model for auth method details in login responses
+- 🛡️ Added `csrfToken` to `SessionData` model for CSRF protection
+- 🔑 Added `refreshToken` and `authMethod` fields to `LoginResponseData`
+
+### Changed
+- 🔄 Updated auth models to match server API v1 response structure
+- 📦 Improved tenant membership model with role details from database joined queries
+- 🎯 Aligned with server-side TypeScript type definitions from @prodobit/types
+
+### Breaking Changes
+- ⚠️ `TenantMembership` now requires `roleId` and `roleName` fields instead of just `role`
+- ⚠️ `SessionData` now requires `csrfToken` field
+- ⚠️ `LoginResponseData` now requires `authMethod` field
+
+### Migration Guide
+If you're upgrading from 0.12.x or earlier:
+1. Update `TenantMembership` usage to use `roleName` instead of `role`
+2. Handle `csrfToken` from session data in your auth flow
+3. Access auth method details from `authMethod` field in login response
+4. Regenerate code with `flutter pub run build_runner build --delete-conflicting-outputs`
+
 ## [0.5.0] - 2025-01-17
 
 ### Changed
