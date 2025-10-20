@@ -24,16 +24,23 @@ class AuthService {
   static const String _orgKey = 'current_organization';
   final ApiClient _apiClient;
   late final FlutterSecureStorage _storage;
-  late final SharedPreferences _prefs;
+  SharedPreferences? _prefs;
+
+  /// Ensure SharedPreferences is initialized
+  Future<SharedPreferences> get _prefsInstance async {
+    _prefs ??= await SharedPreferences.getInstance();
+    return _prefs!;
+  }
 
   /// Get the current tenant ID
   String? getCurrentTenantId() {
-    return _prefs.getString(_orgKey);
+    return _prefs?.getString(_orgKey);
   }
 
   /// Get cached user data
   Future<UserData?> getCachedUser() async {
-    final userJson = _prefs.getString(_userKey);
+    final prefs = await _prefsInstance;
+    final userJson = prefs.getString(_userKey);
     if (userJson == null) return null;
 
     try {
@@ -49,7 +56,7 @@ class AuthService {
 
   /// Initialize the service
   Future<void> initialize() async {
-    _prefs = await SharedPreferences.getInstance();
+    final prefs = await _prefsInstance;
 
     // Restore authentication state
     final accessToken = await _getAccessToken();
@@ -57,7 +64,7 @@ class AuthService {
       _apiClient.setAuthToken(accessToken);
 
       // Restore organization context
-      final orgId = _prefs.getString(_orgKey);
+      final orgId = prefs.getString(_orgKey);
       if (orgId != null) {
         _apiClient.setOrganization(orgId);
       }
@@ -206,7 +213,8 @@ class AuthService {
 
   /// Set the current tenant ID
   Future<void> setCurrentTenantId(String tenantId) async {
-    await _prefs.setString(_orgKey, tenantId);
+    final prefs = await _prefsInstance;
+    await prefs.setString(_orgKey, tenantId);
     _apiClient.setOrganization(tenantId);
   }
 
@@ -245,7 +253,8 @@ class AuthService {
         if (loginResponse.data!.tenantMemberships?.isNotEmpty ?? false) {
           final membership = loginResponse.data!.tenantMemberships!.first;
           _apiClient.setOrganization(membership.tenantId);
-          await _prefs.setString(_orgKey, membership.tenantId);
+          final prefs = await _prefsInstance;
+          await prefs.setString(_orgKey, membership.tenantId);
         }
       }
 
@@ -263,8 +272,9 @@ class AuthService {
   /// Clear all stored authentication data
   Future<void> _clearStoredData() async {
     await _storage.deleteAll();
-    await _prefs.remove(_userKey);
-    await _prefs.remove(_orgKey);
+    final prefs = await _prefsInstance;
+    await prefs.remove(_userKey);
+    await prefs.remove(_orgKey);
   }
 
   /// Get stored access token
@@ -290,7 +300,8 @@ class AuthService {
 
   /// Store user data
   Future<void> _storeUserData(UserData user) async {
-    await _prefs.setString(_userKey, user.toJson().toString());
+    final prefs = await _prefsInstance;
+    await prefs.setString(_userKey, user.toJson().toString());
   }
 
   /// Check user before OTP request

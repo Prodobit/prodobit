@@ -305,6 +305,39 @@ export class AssetService {
     return assetType || null;
   }
 
+  async updateAssetType(
+    assetTypeId: string,
+    tenantId: string,
+    data: Partial<CreateAssetTypeRequest>
+  ): Promise<any | null> {
+    const [assetType] = await this.db
+      .update(assetTypes)
+      .set({
+        ...data,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(eq(assetTypes.id, assetTypeId), eq(assetTypes.tenantId, tenantId))
+      )
+      .returning();
+
+    return assetType || null;
+  }
+
+  async deleteAssetType(
+    assetTypeId: string,
+    tenantId: string
+  ): Promise<boolean> {
+    const [deleted] = await this.db
+      .delete(assetTypes)
+      .where(
+        and(eq(assetTypes.id, assetTypeId), eq(assetTypes.tenantId, tenantId))
+      )
+      .returning();
+
+    return !!deleted;
+  }
+
   // Helper methods
   private generateAssetCode(tenantId: string): string {
     const prefix = "AST";

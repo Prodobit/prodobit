@@ -16,10 +16,12 @@ export class ModuleLoader {
   private db: ReturnType<typeof createDatabase>;
   private enabledModules: Set<string> = new Set();
   private moduleRegistry: Map<string, ModuleManifest> = new Map();
+  private cookiePrefix?: string;
 
-  constructor(private config: ServerConfig) {
+  constructor(private config: ServerConfig, cookiePrefix?: string) {
     this.app = new Hono<{ Variables: ServerContext }>();
     this.db = createDatabase(config.database);
+    this.cookiePrefix = cookiePrefix;
     this.setupMiddleware();
     this.setupCoreRoutes();
   }
@@ -107,6 +109,9 @@ export class ModuleLoader {
       c.set("db", this.db);
       c.set("enabledModules", this.enabledModules);
       c.set("config", this.config);
+      if (this.cookiePrefix) {
+        c.set("cookiePrefix", this.cookiePrefix);
+      }
       await next();
     });
   }

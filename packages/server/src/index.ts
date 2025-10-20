@@ -39,6 +39,7 @@ export interface CreateServerAppOptions {
   modules?: ModuleManifest[];
   configOverrides?: Partial<ServerConfig>;
   configManager?: ServerConfigManager;
+  cookiePrefix?: string;
 }
 
 export async function createServerApp(options: CreateServerAppOptions = {}): Promise<{
@@ -73,8 +74,8 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
 
   // Initialize SMS service with NetGSM provider from environment
   SMSService.initializeWithNetGSM();
-  
-  const moduleLoader = new ModuleLoader(config);
+
+  const moduleLoader = new ModuleLoader(config, options.cookiePrefix);
   
   // Initialize module loader (includes migration checks)
   await moduleLoader.initialize();

@@ -252,6 +252,45 @@ export class LocationService {
     return locationType || null;
   }
 
+  async updateLocationType(
+    locationTypeId: string,
+    tenantId: string,
+    data: Partial<CreateLocationTypeRequest>
+  ): Promise<any | null> {
+    const [locationType] = await this.db
+      .update(locationTypes)
+      .set({
+        ...data,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(
+          eq(locationTypes.id, locationTypeId),
+          eq(locationTypes.tenantId, tenantId)
+        )
+      )
+      .returning();
+
+    return locationType || null;
+  }
+
+  async deleteLocationType(
+    locationTypeId: string,
+    tenantId: string
+  ): Promise<boolean> {
+    const [deleted] = await this.db
+      .delete(locationTypes)
+      .where(
+        and(
+          eq(locationTypes.id, locationTypeId),
+          eq(locationTypes.tenantId, tenantId)
+        )
+      )
+      .returning();
+
+    return !!deleted;
+  }
+
   // Helper methods
   private generateLocationCode(tenantId: string, prefix: string): string {
     const timestamp = Date.now().toString().slice(-6);

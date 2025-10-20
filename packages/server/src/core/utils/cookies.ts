@@ -12,6 +12,29 @@ export interface CookieOptions {
 
 export class CookieManager {
   /**
+   * Get cookie prefix from context or environment variable
+   * Defaults to 'prodobit' if not set
+   */
+  private static getCookiePrefix(c?: Context): string {
+    // First priority: context (from createServerApp options)
+    if (c) {
+      const contextPrefix = c.get('cookiePrefix');
+      if (contextPrefix) {
+        return contextPrefix;
+      }
+    }
+    // Second priority: environment variable
+    return process.env.COOKIE_PREFIX || 'prodobit';
+  }
+
+  /**
+   * Generate cookie name with dynamic prefix
+   */
+  private static getCookieName(name: string, c?: Context): string {
+    return `${this.getCookiePrefix(c)}_${name}`;
+  }
+
+  /**
    * Set access token cookie (accessible to JavaScript)
    */
   static setAccessTokenCookie(
@@ -25,7 +48,7 @@ export class CookieManager {
     
     console.log(`🍪 Setting access token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}, domain=${domain}`);
     
-    const cookieString = this.serializeCookie('prodobit_access_token', accessToken, {
+    const cookieString = this.serializeCookie(this.getCookieName('access_token', c), accessToken, {
       httpOnly: false, // JavaScript needs access for auth state
       secure: isProduction,
       sameSite: isProduction ? 'none' as const : 'lax' as const,
@@ -54,7 +77,7 @@ export class CookieManager {
     console.log(`🍪 Setting refresh token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}, domain=${domain}`);
     console.log(`🍪 Request host: ${c.req.header('host')}`);
     
-    const cookieString = this.serializeCookie('prodobit_refresh_token', refreshToken, {
+    const cookieString = this.serializeCookie(this.getCookieName('refresh_token', c), refreshToken, {
       httpOnly: false, // Changed: JavaScript needs access for client-side refresh
       secure: isProduction,
       sameSite: isProduction ? 'none' as const : 'lax' as const,
@@ -77,7 +100,7 @@ export class CookieManager {
   ): void {
     const isProduction = process.env.NODE_ENV === 'production';
     
-    const cookieString = this.serializeCookie('prodobit_csrf_token', csrfToken, {
+    const cookieString = this.serializeCookie(this.getCookieName('csrf_token', c), csrfToken, {
       httpOnly: true, // Changed: HTTP-only for security, server will validate
       secure: isProduction,
       sameSite: isProduction ? 'none' as const : 'lax' as const,
@@ -100,7 +123,7 @@ export class CookieManager {
   ): void {
     const isProduction = process.env.NODE_ENV === 'production';
     
-    const cookieString = this.serializeCookie('prodobit_tenant_id', tenantId, {
+    const cookieString = this.serializeCookie(this.getCookieName('tenant_id', c), tenantId, {
       httpOnly: false, // JavaScript needs access
       secure: isProduction,
       sameSite: isProduction ? 'none' as const : 'lax' as const,
@@ -127,25 +150,25 @@ export class CookieManager {
     };
 
     // Clear access token (accessible)
-    c.res.headers.append('Set-Cookie', this.serializeCookie('prodobit_access_token', '', {
+    c.res.headers.append('Set-Cookie', this.serializeCookie(this.getCookieName('access_token', c), '', {
       ...cookieOptions,
       httpOnly: false,
     }));
 
     // Clear refresh token (accessible)
-    c.res.headers.append('Set-Cookie', this.serializeCookie('prodobit_refresh_token', '', {
+    c.res.headers.append('Set-Cookie', this.serializeCookie(this.getCookieName('refresh_token', c), '', {
       ...cookieOptions,
       httpOnly: false,
     }));
-    
+
     // Clear CSRF token (HTTP-only)
-    c.res.headers.append('Set-Cookie', this.serializeCookie('prodobit_csrf_token', '', {
+    c.res.headers.append('Set-Cookie', this.serializeCookie(this.getCookieName('csrf_token', c), '', {
       ...cookieOptions,
       httpOnly: true,
     }));
 
     // Clear tenant ID
-    c.res.headers.append('Set-Cookie', this.serializeCookie('prodobit_tenant_id', '', {
+    c.res.headers.append('Set-Cookie', this.serializeCookie(this.getCookieName('tenant_id', c), '', {
       ...cookieOptions,
       httpOnly: false,
     }));
@@ -157,10 +180,10 @@ export class CookieManager {
   static getRefreshTokenFromCookie(c: Context): string | null {
     const cookieHeader = c.req.header('Cookie');
     console.log(`🍪 Reading cookies: Cookie header="${cookieHeader}"`);
-    
-    const refreshToken = this.getCookieValue(c, 'prodobit_refresh_token');
+
+    const refreshToken = this.getCookieValue(c, this.getCookieName('refresh_token', c));
     console.log(`🍪 Refresh token found: ${refreshToken ? 'YES' : 'NO'}`);
-    
+
     return refreshToken;
   }
 
@@ -168,21 +191,21 @@ export class CookieManager {
    * Get CSRF token from cookie (HTTP-only)
    */
   static getCSRFTokenFromCookie(c: Context): string | null {
-    return this.getCookieValue(c, 'prodobit_csrf_token');
+    return this.getCookieValue(c, this.getCookieName('csrf_token', c));
   }
 
   /**
    * Get access token from cookie
    */
   static getAccessTokenFromCookie(c: Context): string | null {
-    return this.getCookieValue(c, 'prodobit_access_token');
+    return this.getCookieValue(c, this.getCookieName('access_token', c));
   }
 
   /**
    * Get tenant ID from cookie
    */
   static getTenantIdFromCookie(c: Context): string | null {
-    return this.getCookieValue(c, 'prodobit_tenant_id');
+    return this.getCookieValue(c, this.getCookieName('tenant_id', c));
   }
 
   /**

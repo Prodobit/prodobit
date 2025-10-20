@@ -41,13 +41,20 @@ export {
   useUpdateItem,
   useDeleteItem 
 } from './hooks/useItems';
-export { 
-  useAssets, 
-  useAsset, 
-  useCreateAsset, 
-  useUpdateAsset, 
-  useDeleteAsset 
+export {
+  useAssets,
+  useAsset,
+  useCreateAsset,
+  useUpdateAsset,
+  useDeleteAsset
 } from './hooks/useAssets';
+export {
+  useAssetTypes,
+  useAssetType,
+  useCreateAssetType,
+  useUpdateAssetType,
+  useDeleteAssetType
+} from './hooks/useAssetTypes';
 export { 
   useStocks, 
   useStock, 
@@ -55,13 +62,20 @@ export {
   useCreateStock,
   useUpdateStock 
 } from './hooks/useStocks';
-export { 
-  useLocations, 
-  useLocation, 
-  useCreateLocation, 
-  useUpdateLocation, 
-  useDeleteLocation 
+export {
+  useLocations,
+  useLocation,
+  useCreateLocation,
+  useUpdateLocation,
+  useDeleteLocation
 } from './hooks/useLocations';
+export {
+  useLocationTypes,
+  useLocationType,
+  useCreateLocationType,
+  useUpdateLocationType,
+  useDeleteLocationType
+} from './hooks/useLocationTypes';
 export { 
   useAttributes, 
   useAttribute, 

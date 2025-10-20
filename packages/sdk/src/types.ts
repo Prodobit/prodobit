@@ -116,6 +116,7 @@ export const prodobitClientConfig = type({
   "autoRefresh?": "boolean",
   "persistToken?": "boolean",
   "tokenStorageKey?": "string",
+  "cookiePrefix?": "string",
 });
 
 export const requestConfig = type({
