@@ -188,8 +188,18 @@ class ApiClient {
           // Try to extract error message from response
           String? errorMessage;
           if (responseData is Map<String, dynamic>) {
-            errorMessage = responseData['message'] as String? ??
-                responseData['error'] as String?;
+            // Try direct message field first
+            errorMessage = responseData['message'] as String?;
+
+            // If no message, check if error is a map with message field
+            if (errorMessage == null && responseData['error'] is Map<String, dynamic>) {
+              final errorMap = responseData['error'] as Map<String, dynamic>;
+              errorMessage = errorMap['message'] as String?;
+            }
+            // Fallback to error as string (legacy format)
+            else if (errorMessage == null && responseData['error'] is String) {
+              errorMessage = responseData['error'] as String;
+            }
           }
 
           exception = ApiException.fromStatusCode(
