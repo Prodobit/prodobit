@@ -14,6 +14,8 @@ import { WarrantyClient } from "./modules/warranty-client";
 import { AssignmentClient } from "./modules/assignment-client";
 import { AssetPurchaseClient } from "./modules/asset-purchase-client";
 import { DepartmentClient } from "./modules/department-client";
+import { LocationTypeClient } from "./modules/location-type-client";
+import { AssetTypeClient } from "./modules/asset-type-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -106,6 +108,8 @@ export class ProdobitClient {
   private assignment: AssignmentClient;
   private assetPurchase: AssetPurchaseClient;
   private department: DepartmentClient;
+  private locationType: LocationTypeClient;
+  private assetType: AssetTypeClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -123,6 +127,8 @@ export class ProdobitClient {
     this.assignment = new AssignmentClient(config);
     this.assetPurchase = new AssetPurchaseClient(config);
     this.department = new DepartmentClient(config);
+    this.locationType = new LocationTypeClient(config);
+    this.assetType = new AssetTypeClient(config);
   }
 
   // Public request method for framework integrations
@@ -403,16 +409,6 @@ export class ProdobitClient {
     return this.locationAsset.getLocationStats(config);
   }
 
-  async getLocationTypes(category?: string, config?: RequestConfig) {
-    return this.locationAsset.getLocationTypes(category, config);
-  }
-
-  async createLocationType(
-    data: CreateLocationTypeRequest, 
-    config?: RequestConfig
-  ) {
-    return this.locationAsset.createLocationType(data, config);
-  }
 
   async getAssets(filters?: AssetFilters, config?: RequestConfig) {
     return this.locationAsset.getAssets(filters, config);
@@ -468,17 +464,6 @@ export class ProdobitClient {
 
   async getAssetStats(config?: RequestConfig) {
     return this.locationAsset.getAssetStats(config);
-  }
-
-  async getAssetTypes(category?: string, config?: RequestConfig) {
-    return this.locationAsset.getAssetTypes(category, config);
-  }
-
-  async createAssetType(
-    data: CreateAssetTypeRequest, 
-    config?: RequestConfig
-  ) {
-    return this.locationAsset.createAssetType(data, config);
   }
 
   async createLocationQuick(name: string, locationType?: string, parentLocationId?: string, config?: RequestConfig) {
@@ -1596,6 +1581,48 @@ export class ProdobitClient {
 
   async removeDepartmentMember(memberId: string, config?: RequestConfig) {
     return this.department.removeMember(memberId);
+  }
+
+  // LocationType methods
+  async getLocationTypes(params?: { category?: string }, config?: RequestConfig) {
+    return this.locationType.list(params, config);
+  }
+
+  async getLocationTypeById(id: string, config?: RequestConfig) {
+    return this.locationType.get(id, config);
+  }
+
+  async createLocationType(data: any, config?: RequestConfig) {
+    return this.locationType.create(data, config);
+  }
+
+  async updateLocationType(id: string, data: any, config?: RequestConfig) {
+    return this.locationType.update(id, data, config);
+  }
+
+  async deleteLocationType(id: string, config?: RequestConfig) {
+    return this.locationType.delete(id, config);
+  }
+
+  // AssetType methods
+  async getAssetTypes(params?: { category?: string }, config?: RequestConfig) {
+    return this.assetType.list(params, config);
+  }
+
+  async getAssetTypeById(id: string, config?: RequestConfig) {
+    return this.assetType.get(id, config);
+  }
+
+  async createAssetType(data: any, config?: RequestConfig) {
+    return this.assetType.create(data, config);
+  }
+
+  async updateAssetType(id: string, data: any, config?: RequestConfig) {
+    return this.assetType.update(id, data, config);
+  }
+
+  async deleteAssetType(id: string, config?: RequestConfig) {
+    return this.assetType.delete(id, config);
   }
 }
 

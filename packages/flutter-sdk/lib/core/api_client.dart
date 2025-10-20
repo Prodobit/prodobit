@@ -271,7 +271,7 @@ class ApiClient {
 
     _dio = Dio(
       BaseOptions(
-        baseUrl: config.apiBaseUrl,
+        baseUrl: config.baseUrl,
         connectTimeout: config.connectTimeout,
         receiveTimeout: config.receiveTimeout,
         sendTimeout: config.timeout,

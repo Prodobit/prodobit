@@ -7,7 +7,9 @@ import { auth } from "./auth.js";
 import { attributes } from "./attributes.js";
 import items from "./items.js";
 import { locations } from "./locations.js";
+import { locationTypes } from "./location-types.js";
 import { assets } from "./assets.js";
+import { assetTypes } from "./asset-types.js";
 import { warranties } from "./warranties.js";
 import { assignments } from "./assignments.js";
 import { assetPurchases } from "./asset-purchases.js";
@@ -31,8 +33,12 @@ export const coreModule: ModuleManifest = {
     "item:write": ["admin", "user"],
     "location:read": ["admin", "user"],
     "location:write": ["admin", "user"],
+    "location_type:read": ["admin", "user"],
+    "location_type:write": ["admin"],
     "asset:read": ["admin", "user"],
     "asset:write": ["admin", "user"],
+    "asset_type:read": ["admin", "user"],
+    "asset_type:write": ["admin"],
     "warranty:read": ["admin", "user"],
     "warranty:write": ["admin", "user"],
     "assignment:read": ["admin", "user"],
@@ -103,7 +109,9 @@ export const coreModule: ModuleManifest = {
     app.route("/api/v1/parties", parties);
     app.route("/api/v1/items", items);
     app.route("/api/v1/locations", locations);
+    app.route("/api/v1/location-types", locationTypes);
     app.route("/api/v1/assets", assets);
+    app.route("/api/v1/asset-types", assetTypes);
     app.route("/api/v1/warranties", warranties);
     app.route("/api/v1/assignments", assignments);
     app.route("/api/v1/asset-purchases", assetPurchases);

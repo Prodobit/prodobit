@@ -55,6 +55,7 @@ export interface ServerContext {
   enabledModules: Set<string>;
   config: ServerConfig;
   storage?: StorageProvider;
+  cookiePrefix?: string;
 }
 
 declare module "hono" {
@@ -63,5 +64,6 @@ declare module "hono" {
     enabledModules: Set<string>;
     config: ServerConfig;
     storage?: StorageProvider;
+    cookiePrefix?: string;
   }
 }

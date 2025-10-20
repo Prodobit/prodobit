@@ -98,15 +98,55 @@ export const cookieUtils = {
   }
 };
 
+// Global cookie prefix store
+let globalCookiePrefix: string | undefined;
+
+/**
+ * Set global cookie prefix (called from client initialization)
+ */
+export function setCookiePrefix(prefix: string | undefined): void {
+  globalCookiePrefix = prefix;
+}
+
+/**
+ * Get cookie prefix from multiple sources in priority order:
+ * 1. Global prefix (set via setCookiePrefix from client config)
+ * 2. Environment variable
+ * 3. Window object (browser only)
+ * Defaults to 'prodobit' if not set
+ */
+function getCookiePrefix(): string {
+  // First priority: global prefix from client config
+  if (globalCookiePrefix) {
+    return globalCookiePrefix;
+  }
+  // Second priority: environment variable
+  if (typeof process !== 'undefined' && process.env?.COOKIE_PREFIX) {
+    return process.env.COOKIE_PREFIX;
+  }
+  // Third priority: window object (browser)
+  if (typeof window !== 'undefined' && (window as any).__COOKIE_PREFIX__) {
+    return (window as any).__COOKIE_PREFIX__;
+  }
+  return 'prodobit';
+}
+
+/**
+ * Generate cookie name with dynamic prefix
+ */
+function getCookieName(name: string): string {
+  return `${getCookiePrefix()}_${name}`;
+}
+
 /**
  * Token-specific cookie management
  */
 export const tokenCookies = {
-  // Cookie names
-  ACCESS_TOKEN: 'prodobit_access_token',
-  REFRESH_TOKEN: 'prodobit_refresh_token',
-  CSRF_TOKEN: 'prodobit_csrf_token', // This will be HTTP-only from server
-  TENANT_ID: 'prodobit_tenant_id',
+  // Cookie names - now dynamic
+  get ACCESS_TOKEN() { return getCookieName('access_token'); },
+  get REFRESH_TOKEN() { return getCookieName('refresh_token'); },
+  get CSRF_TOKEN() { return getCookieName('csrf_token'); }, // This will be HTTP-only from server
+  get TENANT_ID() { return getCookieName('tenant_id'); },
 
   /**
    * Store auth tokens in cookies

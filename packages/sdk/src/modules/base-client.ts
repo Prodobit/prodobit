@@ -1,5 +1,5 @@
 import { ProdobitError, TokenInfo, type ProdobitClientConfig, type RequestConfig } from "../types";
-import { tokenCookies } from "../utils/cookie-utils";
+import { tokenCookies, setCookiePrefix } from "../utils/cookie-utils";
 
 export abstract class BaseClient {
   protected baseUrl: string;
@@ -22,6 +22,11 @@ export abstract class BaseClient {
 
     if (this.apiKey) {
       this.defaultHeaders["Authorization"] = `Bearer ${this.apiKey}`;
+    }
+
+    // Set cookie prefix from config
+    if (config.cookiePrefix) {
+      setCookiePrefix(config.cookiePrefix);
     }
 
     // Load token from cookies if available
