@@ -1,7 +1,11 @@
 // Core models
 export 'asset/asset_models.dart';
+export 'asset_issue/asset_issue_models.dart';
 export 'auth/auth_models.dart';
+export 'calibration/calibration_models.dart';
 export 'common/common_models.dart';
+export 'maintenance/maintenance_models.dart';
+export 'task/task_models.dart';
 // Business models
 export 'employee/employee_models.dart';
 export 'inventory/inventory_models.dart';
