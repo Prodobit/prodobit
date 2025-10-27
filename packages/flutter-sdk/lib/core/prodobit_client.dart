@@ -46,6 +46,10 @@ class ProdobitClient {
   late final ManufacturingService manufacturing;
   late final PurchaseService purchase;
   late final AssetService asset;
+  late final AssetIssueService assetIssue;
+  late final MaintenanceService maintenance;
+  late final CalibrationService calibration;
+  late final TaskService task;
   late final FileService file;
   late final TenantService tenant;
   late final EmployeeService employee;
@@ -91,6 +95,10 @@ class ProdobitClient {
     manufacturing = ManufacturingService(_apiClient);
     purchase = PurchaseService(_apiClient);
     asset = AssetService(_apiClient);
+    assetIssue = AssetIssueService(_apiClient);
+    maintenance = MaintenanceService(_apiClient);
+    calibration = CalibrationService(_apiClient);
+    task = TaskService(_apiClient);
     file = FileService(_apiClient);
     tenant = TenantService(_apiClient);
     employee = EmployeeService(_apiClient);
