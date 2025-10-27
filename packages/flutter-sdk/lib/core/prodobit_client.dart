@@ -40,6 +40,7 @@ class ProdobitClient {
   late final AuthService auth;
   late final UserService user;
   late final InventoryService inventory;
+  late final LocationService location;
   late final PartyService party;
   late final SalesService sales;
   late final ManufacturingService manufacturing;
@@ -84,6 +85,7 @@ class ProdobitClient {
     auth = AuthService(_apiClient);
     user = UserService(_apiClient);
     inventory = InventoryService(_apiClient);
+    location = LocationService(_apiClient);
     party = PartyService(_apiClient);
     sales = SalesService(_apiClient);
     manufacturing = ManufacturingService(_apiClient);

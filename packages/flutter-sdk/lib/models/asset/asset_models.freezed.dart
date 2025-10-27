@@ -21,23 +21,19 @@ Asset _$AssetFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Asset {
   String get id => throw _privateConstructorUsedError;
+  String get tenantId => throw _privateConstructorUsedError;
+  String get locationId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get location => throw _privateConstructorUsedError;
+  String get status =>
+      throw _privateConstructorUsedError; // 'active', 'inactive', 'maintenance', 'retired'
+  DateTime get insertedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  String? get parentAssetId => throw _privateConstructorUsedError;
+  String? get assetTypeId => throw _privateConstructorUsedError;
   String? get serialNumber => throw _privateConstructorUsedError;
-  Money? get purchasePrice => throw _privateConstructorUsedError;
-  DateTime? get purchaseDate => throw _privateConstructorUsedError;
-  DateTime? get warrantyExpiry => throw _privateConstructorUsedError;
-  String? get supplierId => throw _privateConstructorUsedError;
-  String? get supplierName => throw _privateConstructorUsedError;
-  String? get organizationId => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String? get qrCode => throw _privateConstructorUsedError;
+  DateTime? get deletedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,25 +47,18 @@ abstract class $AssetCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String tenantId,
+      String locationId,
       String name,
       String code,
-      String category,
       String status,
-      DateTime createdAt,
-      String? description,
-      String? location,
+      DateTime insertedAt,
+      DateTime updatedAt,
+      String? parentAssetId,
+      String? assetTypeId,
       String? serialNumber,
-      Money? purchasePrice,
-      DateTime? purchaseDate,
-      DateTime? warrantyExpiry,
-      String? supplierId,
-      String? supplierName,
-      String? organizationId,
-      bool? isActive,
-      DateTime? updatedAt,
-      Map<String, dynamic>? metadata});
-
-  $MoneyCopyWith<$Res>? get purchasePrice;
+      String? qrCode,
+      DateTime? deletedAt});
 }
 
 /// @nodoc
@@ -86,28 +75,31 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
   @override
   $Res call({
     Object? id = null,
+    Object? tenantId = null,
+    Object? locationId = null,
     Object? name = null,
     Object? code = null,
-    Object? category = null,
     Object? status = null,
-    Object? createdAt = null,
-    Object? description = freezed,
-    Object? location = freezed,
+    Object? insertedAt = null,
+    Object? updatedAt = null,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
-    Object? purchasePrice = freezed,
-    Object? purchaseDate = freezed,
-    Object? warrantyExpiry = freezed,
-    Object? supplierId = freezed,
-    Object? supplierName = freezed,
-    Object? organizationId = freezed,
-    Object? isActive = freezed,
-    Object? updatedAt = freezed,
-    Object? metadata = freezed,
+    Object? qrCode = freezed,
+    Object? deletedAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      tenantId: null == tenantId
+          ? _value.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -117,79 +109,39 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      insertedAt: null == insertedAt
+          ? _value.insertedAt
+          : insertedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      parentAssetId: freezed == parentAssetId
+          ? _value.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
+      assetTypeId: freezed == assetTypeId
+          ? _value.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
           ? _value.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasePrice: freezed == purchasePrice
-          ? _value.purchasePrice
-          : purchasePrice // ignore: cast_nullable_to_non_nullable
-              as Money?,
-      purchaseDate: freezed == purchaseDate
-          ? _value.purchaseDate
-          : purchaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      warrantyExpiry: freezed == warrantyExpiry
-          ? _value.warrantyExpiry
-          : warrantyExpiry // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      supplierId: freezed == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      supplierName: freezed == supplierName
-          ? _value.supplierName
-          : supplierName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      organizationId: freezed == organizationId
-          ? _value.organizationId
-          : organizationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      deletedAt: freezed == deletedAt
+          ? _value.deletedAt
+          : deletedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $MoneyCopyWith<$Res>? get purchasePrice {
-    if (_value.purchasePrice == null) {
-      return null;
-    }
-
-    return $MoneyCopyWith<$Res>(_value.purchasePrice!, (value) {
-      return _then(_value.copyWith(purchasePrice: value) as $Val);
-    });
   }
 }
 
@@ -202,26 +154,18 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String tenantId,
+      String locationId,
       String name,
       String code,
-      String category,
       String status,
-      DateTime createdAt,
-      String? description,
-      String? location,
+      DateTime insertedAt,
+      DateTime updatedAt,
+      String? parentAssetId,
+      String? assetTypeId,
       String? serialNumber,
-      Money? purchasePrice,
-      DateTime? purchaseDate,
-      DateTime? warrantyExpiry,
-      String? supplierId,
-      String? supplierName,
-      String? organizationId,
-      bool? isActive,
-      DateTime? updatedAt,
-      Map<String, dynamic>? metadata});
-
-  @override
-  $MoneyCopyWith<$Res>? get purchasePrice;
+      String? qrCode,
+      DateTime? deletedAt});
 }
 
 /// @nodoc
@@ -236,28 +180,31 @@ class __$$AssetImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? tenantId = null,
+    Object? locationId = null,
     Object? name = null,
     Object? code = null,
-    Object? category = null,
     Object? status = null,
-    Object? createdAt = null,
-    Object? description = freezed,
-    Object? location = freezed,
+    Object? insertedAt = null,
+    Object? updatedAt = null,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
-    Object? purchasePrice = freezed,
-    Object? purchaseDate = freezed,
-    Object? warrantyExpiry = freezed,
-    Object? supplierId = freezed,
-    Object? supplierName = freezed,
-    Object? organizationId = freezed,
-    Object? isActive = freezed,
-    Object? updatedAt = freezed,
-    Object? metadata = freezed,
+    Object? qrCode = freezed,
+    Object? deletedAt = freezed,
   }) {
     return _then(_$AssetImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      tenantId: null == tenantId
+          ? _value.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -267,66 +214,38 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      insertedAt: null == insertedAt
+          ? _value.insertedAt
+          : insertedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      parentAssetId: freezed == parentAssetId
+          ? _value.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
+      assetTypeId: freezed == assetTypeId
+          ? _value.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
           ? _value.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasePrice: freezed == purchasePrice
-          ? _value.purchasePrice
-          : purchasePrice // ignore: cast_nullable_to_non_nullable
-              as Money?,
-      purchaseDate: freezed == purchaseDate
-          ? _value.purchaseDate
-          : purchaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      warrantyExpiry: freezed == warrantyExpiry
-          ? _value.warrantyExpiry
-          : warrantyExpiry // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      supplierId: freezed == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      supplierName: freezed == supplierName
-          ? _value.supplierName
-          : supplierName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      organizationId: freezed == organizationId
-          ? _value.organizationId
-          : organizationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      deletedAt: freezed == deletedAt
+          ? _value.deletedAt
+          : deletedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ));
   }
 }
@@ -336,24 +255,18 @@ class __$$AssetImplCopyWithImpl<$Res>
 class _$AssetImpl implements _Asset {
   const _$AssetImpl(
       {required this.id,
+      required this.tenantId,
+      required this.locationId,
       required this.name,
       required this.code,
-      required this.category,
       required this.status,
-      required this.createdAt,
-      this.description,
-      this.location,
+      required this.insertedAt,
+      required this.updatedAt,
+      this.parentAssetId,
+      this.assetTypeId,
       this.serialNumber,
-      this.purchasePrice,
-      this.purchaseDate,
-      this.warrantyExpiry,
-      this.supplierId,
-      this.supplierName,
-      this.organizationId,
-      this.isActive,
-      this.updatedAt,
-      final Map<String, dynamic>? metadata})
-      : _metadata = metadata;
+      this.qrCode,
+      this.deletedAt});
 
   factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetImplFromJson(json);
@@ -361,50 +274,34 @@ class _$AssetImpl implements _Asset {
   @override
   final String id;
   @override
+  final String tenantId;
+  @override
+  final String locationId;
+  @override
   final String name;
   @override
   final String code;
   @override
-  final String category;
-  @override
   final String status;
+// 'active', 'inactive', 'maintenance', 'retired'
   @override
-  final DateTime createdAt;
+  final DateTime insertedAt;
   @override
-  final String? description;
+  final DateTime updatedAt;
   @override
-  final String? location;
+  final String? parentAssetId;
+  @override
+  final String? assetTypeId;
   @override
   final String? serialNumber;
   @override
-  final Money? purchasePrice;
+  final String? qrCode;
   @override
-  final DateTime? purchaseDate;
-  @override
-  final DateTime? warrantyExpiry;
-  @override
-  final String? supplierId;
-  @override
-  final String? supplierName;
-  @override
-  final String? organizationId;
-  @override
-  final bool? isActive;
-  @override
-  final DateTime? updatedAt;
-  final Map<String, dynamic>? _metadata;
-  @override
-  Map<String, dynamic>? get metadata {
-    final value = _metadata;
-    if (value == null) return null;
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final DateTime? deletedAt;
 
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, code: $code, category: $category, status: $status, createdAt: $createdAt, description: $description, location: $location, serialNumber: $serialNumber, purchasePrice: $purchasePrice, purchaseDate: $purchaseDate, warrantyExpiry: $warrantyExpiry, supplierId: $supplierId, supplierName: $supplierName, organizationId: $organizationId, isActive: $isActive, updatedAt: $updatedAt, metadata: $metadata)';
+    return 'Asset(id: $id, tenantId: $tenantId, locationId: $locationId, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, deletedAt: $deletedAt)';
   }
 
   @override
@@ -413,36 +310,26 @@ class _$AssetImpl implements _Asset {
         (other.runtimeType == runtimeType &&
             other is _$AssetImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.tenantId, tenantId) ||
+                other.tenantId == tenantId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.serialNumber, serialNumber) ||
-                other.serialNumber == serialNumber) &&
-            (identical(other.purchasePrice, purchasePrice) ||
-                other.purchasePrice == purchasePrice) &&
-            (identical(other.purchaseDate, purchaseDate) ||
-                other.purchaseDate == purchaseDate) &&
-            (identical(other.warrantyExpiry, warrantyExpiry) ||
-                other.warrantyExpiry == warrantyExpiry) &&
-            (identical(other.supplierId, supplierId) ||
-                other.supplierId == supplierId) &&
-            (identical(other.supplierName, supplierName) ||
-                other.supplierName == supplierName) &&
-            (identical(other.organizationId, organizationId) ||
-                other.organizationId == organizationId) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
+            (identical(other.insertedAt, insertedAt) ||
+                other.insertedAt == insertedAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata));
+            (identical(other.parentAssetId, parentAssetId) ||
+                other.parentAssetId == parentAssetId) &&
+            (identical(other.assetTypeId, assetTypeId) ||
+                other.assetTypeId == assetTypeId) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.deletedAt, deletedAt) ||
+                other.deletedAt == deletedAt));
   }
 
   @JsonKey(ignore: true)
@@ -450,23 +337,18 @@ class _$AssetImpl implements _Asset {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      tenantId,
+      locationId,
       name,
       code,
-      category,
       status,
-      createdAt,
-      description,
-      location,
-      serialNumber,
-      purchasePrice,
-      purchaseDate,
-      warrantyExpiry,
-      supplierId,
-      supplierName,
-      organizationId,
-      isActive,
+      insertedAt,
       updatedAt,
-      const DeepCollectionEquality().hash(_metadata));
+      parentAssetId,
+      assetTypeId,
+      serialNumber,
+      qrCode,
+      deletedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -485,62 +367,47 @@ class _$AssetImpl implements _Asset {
 abstract class _Asset implements Asset {
   const factory _Asset(
       {required final String id,
+      required final String tenantId,
+      required final String locationId,
       required final String name,
       required final String code,
-      required final String category,
       required final String status,
-      required final DateTime createdAt,
-      final String? description,
-      final String? location,
+      required final DateTime insertedAt,
+      required final DateTime updatedAt,
+      final String? parentAssetId,
+      final String? assetTypeId,
       final String? serialNumber,
-      final Money? purchasePrice,
-      final DateTime? purchaseDate,
-      final DateTime? warrantyExpiry,
-      final String? supplierId,
-      final String? supplierName,
-      final String? organizationId,
-      final bool? isActive,
-      final DateTime? updatedAt,
-      final Map<String, dynamic>? metadata}) = _$AssetImpl;
+      final String? qrCode,
+      final DateTime? deletedAt}) = _$AssetImpl;
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
   @override
   String get id;
   @override
+  String get tenantId;
+  @override
+  String get locationId;
+  @override
   String get name;
   @override
   String get code;
   @override
-  String get category;
-  @override
   String get status;
+  @override // 'active', 'inactive', 'maintenance', 'retired'
+  DateTime get insertedAt;
   @override
-  DateTime get createdAt;
+  DateTime get updatedAt;
   @override
-  String? get description;
+  String? get parentAssetId;
   @override
-  String? get location;
+  String? get assetTypeId;
   @override
   String? get serialNumber;
   @override
-  Money? get purchasePrice;
+  String? get qrCode;
   @override
-  DateTime? get purchaseDate;
-  @override
-  DateTime? get warrantyExpiry;
-  @override
-  String? get supplierId;
-  @override
-  String? get supplierName;
-  @override
-  String? get organizationId;
-  @override
-  bool? get isActive;
-  @override
-  DateTime? get updatedAt;
-  @override
-  Map<String, dynamic>? get metadata;
+  DateTime? get deletedAt;
   @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
@@ -553,17 +420,13 @@ CreateAssetRequest _$CreateAssetRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CreateAssetRequest {
+  String get locationId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get location => throw _privateConstructorUsedError;
+  String? get parentAssetId => throw _privateConstructorUsedError;
+  String? get assetTypeId => throw _privateConstructorUsedError;
   String? get serialNumber => throw _privateConstructorUsedError;
-  Money? get purchasePrice => throw _privateConstructorUsedError;
-  DateTime? get purchaseDate => throw _privateConstructorUsedError;
-  DateTime? get warrantyExpiry => throw _privateConstructorUsedError;
-  String? get supplierId => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String? get qrCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -578,19 +441,13 @@ abstract class $CreateAssetRequestCopyWith<$Res> {
       _$CreateAssetRequestCopyWithImpl<$Res, CreateAssetRequest>;
   @useResult
   $Res call(
-      {String name,
+      {String locationId,
+      String name,
       String code,
-      String category,
-      String? description,
-      String? location,
+      String? parentAssetId,
+      String? assetTypeId,
       String? serialNumber,
-      Money? purchasePrice,
-      DateTime? purchaseDate,
-      DateTime? warrantyExpiry,
-      String? supplierId,
-      Map<String, dynamic>? metadata});
-
-  $MoneyCopyWith<$Res>? get purchasePrice;
+      String? qrCode});
 }
 
 /// @nodoc
@@ -606,19 +463,19 @@ class _$CreateAssetRequestCopyWithImpl<$Res, $Val extends CreateAssetRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? locationId = null,
     Object? name = null,
     Object? code = null,
-    Object? category = null,
-    Object? description = freezed,
-    Object? location = freezed,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
-    Object? purchasePrice = freezed,
-    Object? purchaseDate = freezed,
-    Object? warrantyExpiry = freezed,
-    Object? supplierId = freezed,
-    Object? metadata = freezed,
+    Object? qrCode = freezed,
   }) {
     return _then(_value.copyWith(
+      locationId: null == locationId
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -627,55 +484,23 @@ class _$CreateAssetRequestCopyWithImpl<$Res, $Val extends CreateAssetRequest>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      parentAssetId: freezed == parentAssetId
+          ? _value.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
+      assetTypeId: freezed == assetTypeId
+          ? _value.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
           ? _value.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasePrice: freezed == purchasePrice
-          ? _value.purchasePrice
-          : purchasePrice // ignore: cast_nullable_to_non_nullable
-              as Money?,
-      purchaseDate: freezed == purchaseDate
-          ? _value.purchaseDate
-          : purchaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      warrantyExpiry: freezed == warrantyExpiry
-          ? _value.warrantyExpiry
-          : warrantyExpiry // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      supplierId: freezed == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $MoneyCopyWith<$Res>? get purchasePrice {
-    if (_value.purchasePrice == null) {
-      return null;
-    }
-
-    return $MoneyCopyWith<$Res>(_value.purchasePrice!, (value) {
-      return _then(_value.copyWith(purchasePrice: value) as $Val);
-    });
   }
 }
 
@@ -688,20 +513,13 @@ abstract class _$$CreateAssetRequestImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name,
+      {String locationId,
+      String name,
       String code,
-      String category,
-      String? description,
-      String? location,
+      String? parentAssetId,
+      String? assetTypeId,
       String? serialNumber,
-      Money? purchasePrice,
-      DateTime? purchaseDate,
-      DateTime? warrantyExpiry,
-      String? supplierId,
-      Map<String, dynamic>? metadata});
-
-  @override
-  $MoneyCopyWith<$Res>? get purchasePrice;
+      String? qrCode});
 }
 
 /// @nodoc
@@ -715,19 +533,19 @@ class __$$CreateAssetRequestImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? locationId = null,
     Object? name = null,
     Object? code = null,
-    Object? category = null,
-    Object? description = freezed,
-    Object? location = freezed,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
-    Object? purchasePrice = freezed,
-    Object? purchaseDate = freezed,
-    Object? warrantyExpiry = freezed,
-    Object? supplierId = freezed,
-    Object? metadata = freezed,
+    Object? qrCode = freezed,
   }) {
     return _then(_$CreateAssetRequestImpl(
+      locationId: null == locationId
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -736,42 +554,22 @@ class __$$CreateAssetRequestImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      parentAssetId: freezed == parentAssetId
+          ? _value.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
+      assetTypeId: freezed == assetTypeId
+          ? _value.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
           ? _value.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      purchasePrice: freezed == purchasePrice
-          ? _value.purchasePrice
-          : purchasePrice // ignore: cast_nullable_to_non_nullable
-              as Money?,
-      purchaseDate: freezed == purchaseDate
-          ? _value.purchaseDate
-          : purchaseDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      warrantyExpiry: freezed == warrantyExpiry
-          ? _value.warrantyExpiry
-          : warrantyExpiry // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      supplierId: freezed == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ));
   }
 }
@@ -780,55 +578,35 @@ class __$$CreateAssetRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CreateAssetRequestImpl implements _CreateAssetRequest {
   const _$CreateAssetRequestImpl(
-      {required this.name,
+      {required this.locationId,
+      required this.name,
       required this.code,
-      required this.category,
-      this.description,
-      this.location,
+      this.parentAssetId,
+      this.assetTypeId,
       this.serialNumber,
-      this.purchasePrice,
-      this.purchaseDate,
-      this.warrantyExpiry,
-      this.supplierId,
-      final Map<String, dynamic>? metadata})
-      : _metadata = metadata;
+      this.qrCode});
 
   factory _$CreateAssetRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$CreateAssetRequestImplFromJson(json);
 
   @override
+  final String locationId;
+  @override
   final String name;
   @override
   final String code;
   @override
-  final String category;
+  final String? parentAssetId;
   @override
-  final String? description;
-  @override
-  final String? location;
+  final String? assetTypeId;
   @override
   final String? serialNumber;
   @override
-  final Money? purchasePrice;
-  @override
-  final DateTime? purchaseDate;
-  @override
-  final DateTime? warrantyExpiry;
-  @override
-  final String? supplierId;
-  final Map<String, dynamic>? _metadata;
-  @override
-  Map<String, dynamic>? get metadata {
-    final value = _metadata;
-    if (value == null) return null;
-    if (_metadata is EqualUnmodifiableMapView) return _metadata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final String? qrCode;
 
   @override
   String toString() {
-    return 'CreateAssetRequest(name: $name, code: $code, category: $category, description: $description, location: $location, serialNumber: $serialNumber, purchasePrice: $purchasePrice, purchaseDate: $purchaseDate, warrantyExpiry: $warrantyExpiry, supplierId: $supplierId, metadata: $metadata)';
+    return 'CreateAssetRequest(locationId: $locationId, name: $name, code: $code, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode)';
   }
 
   @override
@@ -836,42 +614,23 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateAssetRequestImpl &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
+            (identical(other.parentAssetId, parentAssetId) ||
+                other.parentAssetId == parentAssetId) &&
+            (identical(other.assetTypeId, assetTypeId) ||
+                other.assetTypeId == assetTypeId) &&
             (identical(other.serialNumber, serialNumber) ||
                 other.serialNumber == serialNumber) &&
-            (identical(other.purchasePrice, purchasePrice) ||
-                other.purchasePrice == purchasePrice) &&
-            (identical(other.purchaseDate, purchaseDate) ||
-                other.purchaseDate == purchaseDate) &&
-            (identical(other.warrantyExpiry, warrantyExpiry) ||
-                other.warrantyExpiry == warrantyExpiry) &&
-            (identical(other.supplierId, supplierId) ||
-                other.supplierId == supplierId) &&
-            const DeepCollectionEquality().equals(other._metadata, _metadata));
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      name,
-      code,
-      category,
-      description,
-      location,
-      serialNumber,
-      purchasePrice,
-      purchaseDate,
-      warrantyExpiry,
-      supplierId,
-      const DeepCollectionEquality().hash(_metadata));
+  int get hashCode => Object.hash(runtimeType, locationId, name, code,
+      parentAssetId, assetTypeId, serialNumber, qrCode);
 
   @JsonKey(ignore: true)
   @override
@@ -890,45 +649,319 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
 
 abstract class _CreateAssetRequest implements CreateAssetRequest {
   const factory _CreateAssetRequest(
-      {required final String name,
+      {required final String locationId,
+      required final String name,
       required final String code,
-      required final String category,
-      final String? description,
-      final String? location,
+      final String? parentAssetId,
+      final String? assetTypeId,
       final String? serialNumber,
-      final Money? purchasePrice,
-      final DateTime? purchaseDate,
-      final DateTime? warrantyExpiry,
-      final String? supplierId,
-      final Map<String, dynamic>? metadata}) = _$CreateAssetRequestImpl;
+      final String? qrCode}) = _$CreateAssetRequestImpl;
 
   factory _CreateAssetRequest.fromJson(Map<String, dynamic> json) =
       _$CreateAssetRequestImpl.fromJson;
 
   @override
+  String get locationId;
+  @override
   String get name;
   @override
   String get code;
   @override
-  String get category;
+  String? get parentAssetId;
   @override
-  String? get description;
-  @override
-  String? get location;
+  String? get assetTypeId;
   @override
   String? get serialNumber;
   @override
-  Money? get purchasePrice;
-  @override
-  DateTime? get purchaseDate;
-  @override
-  DateTime? get warrantyExpiry;
-  @override
-  String? get supplierId;
-  @override
-  Map<String, dynamic>? get metadata;
+  String? get qrCode;
   @override
   @JsonKey(ignore: true)
   _$$CreateAssetRequestImplCopyWith<_$CreateAssetRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UpdateAssetRequest _$UpdateAssetRequestFromJson(Map<String, dynamic> json) {
+  return _UpdateAssetRequest.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UpdateAssetRequest {
+  String? get locationId => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get code => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  String? get parentAssetId => throw _privateConstructorUsedError;
+  String? get assetTypeId => throw _privateConstructorUsedError;
+  String? get serialNumber => throw _privateConstructorUsedError;
+  String? get qrCode => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UpdateAssetRequestCopyWith<UpdateAssetRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateAssetRequestCopyWith<$Res> {
+  factory $UpdateAssetRequestCopyWith(
+          UpdateAssetRequest value, $Res Function(UpdateAssetRequest) then) =
+      _$UpdateAssetRequestCopyWithImpl<$Res, UpdateAssetRequest>;
+  @useResult
+  $Res call(
+      {String? locationId,
+      String? name,
+      String? code,
+      String? status,
+      String? parentAssetId,
+      String? assetTypeId,
+      String? serialNumber,
+      String? qrCode});
+}
+
+/// @nodoc
+class _$UpdateAssetRequestCopyWithImpl<$Res, $Val extends UpdateAssetRequest>
+    implements $UpdateAssetRequestCopyWith<$Res> {
+  _$UpdateAssetRequestCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locationId = freezed,
+    Object? name = freezed,
+    Object? code = freezed,
+    Object? status = freezed,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
+    Object? serialNumber = freezed,
+    Object? qrCode = freezed,
+  }) {
+    return _then(_value.copyWith(
+      locationId: freezed == locationId
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentAssetId: freezed == parentAssetId
+          ? _value.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetTypeId: freezed == assetTypeId
+          ? _value.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _value.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdateAssetRequestImplCopyWith<$Res>
+    implements $UpdateAssetRequestCopyWith<$Res> {
+  factory _$$UpdateAssetRequestImplCopyWith(_$UpdateAssetRequestImpl value,
+          $Res Function(_$UpdateAssetRequestImpl) then) =
+      __$$UpdateAssetRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? locationId,
+      String? name,
+      String? code,
+      String? status,
+      String? parentAssetId,
+      String? assetTypeId,
+      String? serialNumber,
+      String? qrCode});
+}
+
+/// @nodoc
+class __$$UpdateAssetRequestImplCopyWithImpl<$Res>
+    extends _$UpdateAssetRequestCopyWithImpl<$Res, _$UpdateAssetRequestImpl>
+    implements _$$UpdateAssetRequestImplCopyWith<$Res> {
+  __$$UpdateAssetRequestImplCopyWithImpl(_$UpdateAssetRequestImpl _value,
+      $Res Function(_$UpdateAssetRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locationId = freezed,
+    Object? name = freezed,
+    Object? code = freezed,
+    Object? status = freezed,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
+    Object? serialNumber = freezed,
+    Object? qrCode = freezed,
+  }) {
+    return _then(_$UpdateAssetRequestImpl(
+      locationId: freezed == locationId
+          ? _value.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentAssetId: freezed == parentAssetId
+          ? _value.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetTypeId: freezed == assetTypeId
+          ? _value.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _value.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
+  const _$UpdateAssetRequestImpl(
+      {this.locationId,
+      this.name,
+      this.code,
+      this.status,
+      this.parentAssetId,
+      this.assetTypeId,
+      this.serialNumber,
+      this.qrCode});
+
+  factory _$UpdateAssetRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateAssetRequestImplFromJson(json);
+
+  @override
+  final String? locationId;
+  @override
+  final String? name;
+  @override
+  final String? code;
+  @override
+  final String? status;
+  @override
+  final String? parentAssetId;
+  @override
+  final String? assetTypeId;
+  @override
+  final String? serialNumber;
+  @override
+  final String? qrCode;
+
+  @override
+  String toString() {
+    return 'UpdateAssetRequest(locationId: $locationId, name: $name, code: $code, status: $status, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateAssetRequestImpl &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.parentAssetId, parentAssetId) ||
+                other.parentAssetId == parentAssetId) &&
+            (identical(other.assetTypeId, assetTypeId) ||
+                other.assetTypeId == assetTypeId) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, locationId, name, code, status,
+      parentAssetId, assetTypeId, serialNumber, qrCode);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateAssetRequestImplCopyWith<_$UpdateAssetRequestImpl> get copyWith =>
+      __$$UpdateAssetRequestImplCopyWithImpl<_$UpdateAssetRequestImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UpdateAssetRequestImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UpdateAssetRequest implements UpdateAssetRequest {
+  const factory _UpdateAssetRequest(
+      {final String? locationId,
+      final String? name,
+      final String? code,
+      final String? status,
+      final String? parentAssetId,
+      final String? assetTypeId,
+      final String? serialNumber,
+      final String? qrCode}) = _$UpdateAssetRequestImpl;
+
+  factory _UpdateAssetRequest.fromJson(Map<String, dynamic> json) =
+      _$UpdateAssetRequestImpl.fromJson;
+
+  @override
+  String? get locationId;
+  @override
+  String? get name;
+  @override
+  String? get code;
+  @override
+  String? get status;
+  @override
+  String? get parentAssetId;
+  @override
+  String? get assetTypeId;
+  @override
+  String? get serialNumber;
+  @override
+  String? get qrCode;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateAssetRequestImplCopyWith<_$UpdateAssetRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

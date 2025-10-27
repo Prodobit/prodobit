@@ -5,6 +5,7 @@
 library prodobit_flutter_sdk;
 
 export 'core/api_client.dart';
+export 'core/cache_setup.dart';
 // Core exports
 export 'core/prodobit_client.dart';
 export 'core/prodobit_config.dart';

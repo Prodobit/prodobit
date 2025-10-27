@@ -121,12 +121,21 @@ _$LocationImpl _$$LocationImplFromJson(Map<String, dynamic> json) =>
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           code: $checkedConvert('code', (v) => v as String),
-          isActive: $checkedConvert('isActive', (v) => v as bool),
-          auditInfo: $checkedConvert('auditInfo',
-              (v) => AuditInfo.fromJson(v as Map<String, dynamic>)),
+          status: $checkedConvert('status', (v) => v as String),
+          insertedAt:
+              $checkedConvert('insertedAt', (v) => DateTime.parse(v as String)),
+          updatedAt:
+              $checkedConvert('updatedAt', (v) => DateTime.parse(v as String)),
+          tenantId: $checkedConvert('tenantId', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           type: $checkedConvert('type', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
+          parentLocationId:
+              $checkedConvert('parentLocationId', (v) => v as String?),
+          locationTypeId:
+              $checkedConvert('locationTypeId', (v) => v as String?),
+          deletedAt: $checkedConvert('deletedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           address: $checkedConvert(
               'address',
               (v) => v == null
@@ -149,11 +158,16 @@ Map<String, dynamic> _$$LocationImplToJson(_$LocationImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
-      'isActive': instance.isActive,
-      'auditInfo': instance.auditInfo.toJson(),
+      'status': instance.status,
+      'insertedAt': instance.insertedAt.toIso8601String(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'tenantId': instance.tenantId,
       'description': instance.description,
       'type': instance.type,
       'parentId': instance.parentId,
+      'parentLocationId': instance.parentLocationId,
+      'locationTypeId': instance.locationTypeId,
+      'deletedAt': instance.deletedAt?.toIso8601String(),
       'address': instance.address?.toJson(),
       'contactInfo': instance.contactInfo?.toJson(),
       'metadata': instance.metadata,

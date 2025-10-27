@@ -9,3 +9,7 @@ export * from "./parties.js";
 export * from "./sales.js";
 export * from "./stocks.js";
 export * from "./tenants.js";
+export * from "./asset-issues.js";
+export * from "./tasks.js";
+export * from "./maintenance-plans.js";
+export * from "./calibration-plans.js";
