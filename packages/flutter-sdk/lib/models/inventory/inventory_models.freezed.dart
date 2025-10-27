@@ -1019,12 +1019,18 @@ mixin _$Location {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-  bool get isActive => throw _privateConstructorUsedError;
-  AuditInfo get auditInfo => throw _privateConstructorUsedError;
+  String get status =>
+      throw _privateConstructorUsedError; // 'available', 'occupied', 'maintenance', 'inactive'
+  DateTime get insertedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  String? get tenantId => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get type =>
       throw _privateConstructorUsedError; // 'warehouse', 'store', 'production', etc.
   String? get parentId => throw _privateConstructorUsedError;
+  String? get parentLocationId => throw _privateConstructorUsedError;
+  String? get locationTypeId => throw _privateConstructorUsedError;
+  DateTime? get deletedAt => throw _privateConstructorUsedError;
   Address? get address => throw _privateConstructorUsedError;
   ContactInfo? get contactInfo => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
@@ -1044,16 +1050,20 @@ abstract class $LocationCopyWith<$Res> {
       {String id,
       String name,
       String code,
-      bool isActive,
-      AuditInfo auditInfo,
+      String status,
+      DateTime insertedAt,
+      DateTime updatedAt,
+      String? tenantId,
       String? description,
       String? type,
       String? parentId,
+      String? parentLocationId,
+      String? locationTypeId,
+      DateTime? deletedAt,
       Address? address,
       ContactInfo? contactInfo,
       Map<String, dynamic>? metadata});
 
-  $AuditInfoCopyWith<$Res> get auditInfo;
   $AddressCopyWith<$Res>? get address;
   $ContactInfoCopyWith<$Res>? get contactInfo;
 }
@@ -1074,11 +1084,16 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
     Object? id = null,
     Object? name = null,
     Object? code = null,
-    Object? isActive = null,
-    Object? auditInfo = null,
+    Object? status = null,
+    Object? insertedAt = null,
+    Object? updatedAt = null,
+    Object? tenantId = freezed,
     Object? description = freezed,
     Object? type = freezed,
     Object? parentId = freezed,
+    Object? parentLocationId = freezed,
+    Object? locationTypeId = freezed,
+    Object? deletedAt = freezed,
     Object? address = freezed,
     Object? contactInfo = freezed,
     Object? metadata = freezed,
@@ -1096,14 +1111,22 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      auditInfo: null == auditInfo
-          ? _value.auditInfo
-          : auditInfo // ignore: cast_nullable_to_non_nullable
-              as AuditInfo,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      insertedAt: null == insertedAt
+          ? _value.insertedAt
+          : insertedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      tenantId: freezed == tenantId
+          ? _value.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -1116,6 +1139,18 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
+      parentLocationId: freezed == parentLocationId
+          ? _value.parentLocationId
+          : parentLocationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locationTypeId: freezed == locationTypeId
+          ? _value.locationTypeId
+          : locationTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deletedAt: freezed == deletedAt
+          ? _value.deletedAt
+          : deletedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -1129,14 +1164,6 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AuditInfoCopyWith<$Res> get auditInfo {
-    return $AuditInfoCopyWith<$Res>(_value.auditInfo, (value) {
-      return _then(_value.copyWith(auditInfo: value) as $Val);
-    });
   }
 
   @override
@@ -1176,17 +1203,20 @@ abstract class _$$LocationImplCopyWith<$Res>
       {String id,
       String name,
       String code,
-      bool isActive,
-      AuditInfo auditInfo,
+      String status,
+      DateTime insertedAt,
+      DateTime updatedAt,
+      String? tenantId,
       String? description,
       String? type,
       String? parentId,
+      String? parentLocationId,
+      String? locationTypeId,
+      DateTime? deletedAt,
       Address? address,
       ContactInfo? contactInfo,
       Map<String, dynamic>? metadata});
 
-  @override
-  $AuditInfoCopyWith<$Res> get auditInfo;
   @override
   $AddressCopyWith<$Res>? get address;
   @override
@@ -1207,11 +1237,16 @@ class __$$LocationImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? code = null,
-    Object? isActive = null,
-    Object? auditInfo = null,
+    Object? status = null,
+    Object? insertedAt = null,
+    Object? updatedAt = null,
+    Object? tenantId = freezed,
     Object? description = freezed,
     Object? type = freezed,
     Object? parentId = freezed,
+    Object? parentLocationId = freezed,
+    Object? locationTypeId = freezed,
+    Object? deletedAt = freezed,
     Object? address = freezed,
     Object? contactInfo = freezed,
     Object? metadata = freezed,
@@ -1229,14 +1264,22 @@ class __$$LocationImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      auditInfo: null == auditInfo
-          ? _value.auditInfo
-          : auditInfo // ignore: cast_nullable_to_non_nullable
-              as AuditInfo,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      insertedAt: null == insertedAt
+          ? _value.insertedAt
+          : insertedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      tenantId: freezed == tenantId
+          ? _value.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -1249,6 +1292,18 @@ class __$$LocationImplCopyWithImpl<$Res>
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
+      parentLocationId: freezed == parentLocationId
+          ? _value.parentLocationId
+          : parentLocationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locationTypeId: freezed == locationTypeId
+          ? _value.locationTypeId
+          : locationTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deletedAt: freezed == deletedAt
+          ? _value.deletedAt
+          : deletedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -1272,11 +1327,16 @@ class _$LocationImpl implements _Location {
       {required this.id,
       required this.name,
       required this.code,
-      required this.isActive,
-      required this.auditInfo,
+      required this.status,
+      required this.insertedAt,
+      required this.updatedAt,
+      this.tenantId,
       this.description,
       this.type,
       this.parentId,
+      this.parentLocationId,
+      this.locationTypeId,
+      this.deletedAt,
       this.address,
       this.contactInfo,
       final Map<String, dynamic>? metadata})
@@ -1292,9 +1352,14 @@ class _$LocationImpl implements _Location {
   @override
   final String code;
   @override
-  final bool isActive;
+  final String status;
+// 'available', 'occupied', 'maintenance', 'inactive'
   @override
-  final AuditInfo auditInfo;
+  final DateTime insertedAt;
+  @override
+  final DateTime updatedAt;
+  @override
+  final String? tenantId;
   @override
   final String? description;
   @override
@@ -1302,6 +1367,12 @@ class _$LocationImpl implements _Location {
 // 'warehouse', 'store', 'production', etc.
   @override
   final String? parentId;
+  @override
+  final String? parentLocationId;
+  @override
+  final String? locationTypeId;
+  @override
+  final DateTime? deletedAt;
   @override
   final Address? address;
   @override
@@ -1318,7 +1389,7 @@ class _$LocationImpl implements _Location {
 
   @override
   String toString() {
-    return 'Location(id: $id, name: $name, code: $code, isActive: $isActive, auditInfo: $auditInfo, description: $description, type: $type, parentId: $parentId, address: $address, contactInfo: $contactInfo, metadata: $metadata)';
+    return 'Location(id: $id, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, tenantId: $tenantId, description: $description, type: $type, parentId: $parentId, parentLocationId: $parentLocationId, locationTypeId: $locationTypeId, deletedAt: $deletedAt, address: $address, contactInfo: $contactInfo, metadata: $metadata)';
   }
 
   @override
@@ -1329,15 +1400,24 @@ class _$LocationImpl implements _Location {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
-            (identical(other.auditInfo, auditInfo) ||
-                other.auditInfo == auditInfo) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.insertedAt, insertedAt) ||
+                other.insertedAt == insertedAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.tenantId, tenantId) ||
+                other.tenantId == tenantId) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.parentId, parentId) ||
                 other.parentId == parentId) &&
+            (identical(other.parentLocationId, parentLocationId) ||
+                other.parentLocationId == parentLocationId) &&
+            (identical(other.locationTypeId, locationTypeId) ||
+                other.locationTypeId == locationTypeId) &&
+            (identical(other.deletedAt, deletedAt) ||
+                other.deletedAt == deletedAt) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.contactInfo, contactInfo) ||
                 other.contactInfo == contactInfo) &&
@@ -1351,11 +1431,16 @@ class _$LocationImpl implements _Location {
       id,
       name,
       code,
-      isActive,
-      auditInfo,
+      status,
+      insertedAt,
+      updatedAt,
+      tenantId,
       description,
       type,
       parentId,
+      parentLocationId,
+      locationTypeId,
+      deletedAt,
       address,
       contactInfo,
       const DeepCollectionEquality().hash(_metadata));
@@ -1379,11 +1464,16 @@ abstract class _Location implements Location {
       {required final String id,
       required final String name,
       required final String code,
-      required final bool isActive,
-      required final AuditInfo auditInfo,
+      required final String status,
+      required final DateTime insertedAt,
+      required final DateTime updatedAt,
+      final String? tenantId,
       final String? description,
       final String? type,
       final String? parentId,
+      final String? parentLocationId,
+      final String? locationTypeId,
+      final DateTime? deletedAt,
       final Address? address,
       final ContactInfo? contactInfo,
       final Map<String, dynamic>? metadata}) = _$LocationImpl;
@@ -1398,15 +1488,25 @@ abstract class _Location implements Location {
   @override
   String get code;
   @override
-  bool get isActive;
+  String get status;
+  @override // 'available', 'occupied', 'maintenance', 'inactive'
+  DateTime get insertedAt;
   @override
-  AuditInfo get auditInfo;
+  DateTime get updatedAt;
+  @override
+  String? get tenantId;
   @override
   String? get description;
   @override
   String? get type;
   @override // 'warehouse', 'store', 'production', etc.
   String? get parentId;
+  @override
+  String? get parentLocationId;
+  @override
+  String? get locationTypeId;
+  @override
+  DateTime? get deletedAt;
   @override
   Address? get address;
   @override

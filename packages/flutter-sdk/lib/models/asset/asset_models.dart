@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:prodobit_flutter_sdk/models/common/common_models.dart';
 
 part 'asset_models.freezed.dart';
 part 'asset_models.g.dart';
@@ -9,23 +8,18 @@ part 'asset_models.g.dart';
 class Asset with _$Asset {
   const factory Asset({
     required String id,
+    required String tenantId,
+    required String locationId,
     required String name,
     required String code,
-    required String category,
-    required String status,
-    required DateTime createdAt,
-    String? description,
-    String? location,
+    required String status, // 'active', 'inactive', 'maintenance', 'retired'
+    required DateTime insertedAt,
+    required DateTime updatedAt,
+    String? parentAssetId,
+    String? assetTypeId,
     String? serialNumber,
-    Money? purchasePrice,
-    DateTime? purchaseDate,
-    DateTime? warrantyExpiry,
-    String? supplierId,
-    String? supplierName,
-    String? organizationId,
-    bool? isActive,
-    DateTime? updatedAt,
-    Map<String, dynamic>? metadata,
+    String? qrCode,
+    DateTime? deletedAt,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
@@ -35,19 +29,33 @@ class Asset with _$Asset {
 @freezed
 class CreateAssetRequest with _$CreateAssetRequest {
   const factory CreateAssetRequest({
+    required String locationId,
     required String name,
     required String code,
-    required String category,
-    String? description,
-    String? location,
+    String? parentAssetId,
+    String? assetTypeId,
     String? serialNumber,
-    Money? purchasePrice,
-    DateTime? purchaseDate,
-    DateTime? warrantyExpiry,
-    String? supplierId,
-    Map<String, dynamic>? metadata,
+    String? qrCode,
   }) = _CreateAssetRequest;
 
   factory CreateAssetRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateAssetRequestFromJson(json);
+}
+
+/// Asset update request
+@freezed
+class UpdateAssetRequest with _$UpdateAssetRequest {
+  const factory UpdateAssetRequest({
+    String? locationId,
+    String? name,
+    String? code,
+    String? status,
+    String? parentAssetId,
+    String? assetTypeId,
+    String? serialNumber,
+    String? qrCode,
+  }) = _UpdateAssetRequest;
+
+  factory UpdateAssetRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateAssetRequestFromJson(json);
 }

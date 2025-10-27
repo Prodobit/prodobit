@@ -1,5 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:prodobit_flutter_sdk/core/api_client.dart';
+import 'package:prodobit_flutter_sdk/core/auth_interceptor.dart';
+import 'package:prodobit_flutter_sdk/core/cache_setup.dart';
 import 'package:prodobit_flutter_sdk/exceptions/exceptions.dart';
 import 'package:prodobit_flutter_sdk/models/models.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +22,7 @@ class AuthService {
   static const String _accessTokenKey = 'access_token';
   static const String _refreshTokenKey = 'refresh_token';
   static const String _userKey = 'user_data';
+  static const String _expiresAtKey = 'token_expires_at';
 
   static const String _orgKey = 'current_organization';
   final ApiClient _apiClient;
@@ -57,6 +60,15 @@ class AuthService {
   /// Initialize the service
   Future<void> initialize() async {
     final prefs = await _prefsInstance;
+
+    // Add cache interceptor for offline support
+    final cacheInterceptor = CacheSetup.getCacheInterceptor();
+    if (cacheInterceptor != null) {
+      _apiClient.addCacheInterceptor(cacheInterceptor);
+    }
+
+    // Add auth interceptor for automatic token refresh
+    _apiClient.addAuthInterceptor(AuthInterceptor(this));
 
     // Restore authentication state
     final accessToken = await _getAccessToken();
@@ -125,6 +137,7 @@ class AuthService {
         await _storeTokens(
           accessToken: refreshResponse.data!.session.accessToken,
           refreshToken: refreshResponse.data!.refreshToken,
+          expiresAt: refreshResponse.data!.session.expiresAt,
         );
 
         // Update API client authorization header
@@ -241,6 +254,7 @@ class AuthService {
         await _storeTokens(
           accessToken: loginResponse.data!.session.accessToken,
           refreshToken: loginResponse.data!.refreshToken,
+          expiresAt: loginResponse.data!.session.expiresAt,
         );
 
         // Store user data
@@ -287,14 +301,43 @@ class AuthService {
     return _storage.read(key: _refreshTokenKey);
   }
 
+  /// Get stored token expiration time
+  Future<String?> getTokenExpiresAt() async {
+    return _storage.read(key: _expiresAtKey);
+  }
+
+  /// Check if the current token is expired or will expire soon
+  /// Returns true if token is expired or will expire within the next minute
+  Future<bool> isTokenExpired({Duration buffer = const Duration(minutes: 1)}) async {
+    final expiresAt = await getTokenExpiresAt();
+    if (expiresAt == null) {
+      return true; // No expiration time means token is considered expired
+    }
+
+    try {
+      final expirationDate = DateTime.parse(expiresAt);
+      final now = DateTime.now();
+      final expiresWithBuffer = expirationDate.subtract(buffer);
+
+      return now.isAfter(expiresWithBuffer);
+    } catch (e) {
+      // If we can't parse the expiration date, consider token expired
+      return true;
+    }
+  }
+
   /// Store authentication tokens securely
   Future<void> _storeTokens({
     required String accessToken,
     String? refreshToken,
+    String? expiresAt,
   }) async {
     await _storage.write(key: _accessTokenKey, value: accessToken);
     if (refreshToken != null) {
       await _storage.write(key: _refreshTokenKey, value: refreshToken);
+    }
+    if (expiresAt != null) {
+      await _storage.write(key: _expiresAtKey, value: expiresAt);
     }
   }
 

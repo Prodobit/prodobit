@@ -60,11 +60,16 @@ class Location with _$Location {
     required String id,
     required String name,
     required String code,
-    required bool isActive,
-    required AuditInfo auditInfo,
+    required String status, // 'available', 'occupied', 'maintenance', 'inactive'
+    required DateTime insertedAt,
+    required DateTime updatedAt,
+    String? tenantId,
     String? description,
     String? type, // 'warehouse', 'store', 'production', etc.
     String? parentId,
+    String? parentLocationId,
+    String? locationTypeId,
+    DateTime? deletedAt,
     Address? address,
     ContactInfo? contactInfo,
     Map<String, dynamic>? metadata,

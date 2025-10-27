@@ -17,3 +17,7 @@ export * from "./warranty";
 export * from "./assignment";
 export * from "./asset-purchase";
 export * from "./department";
+export * from "./asset-issue";
+export * from "./task";
+export * from "./maintenance-plan";
+export * from "./calibration-plan";

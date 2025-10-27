@@ -180,6 +180,55 @@ export {
   useIsSystemAdmin,
   useIsTenantAdmin
 } from './hooks/useRoleBasedAccess';
+export {
+  useAssetIssues,
+  useAssetIssue,
+  useAssetIssuesByAsset,
+  useCriticalAssetIssues,
+  useAssetIssueStatistics,
+  useCreateAssetIssue,
+  useUpdateAssetIssue,
+  useDeleteAssetIssue
+} from './hooks/useAssetIssues';
+export {
+  useTasks,
+  useTask,
+  useSubtasks,
+  useTaskDependencies,
+  useTasksByAssignee,
+  useOverdueTasks,
+  useTaskStatistics,
+  useCreateTask,
+  useUpdateTask,
+  useDeleteTask,
+  useCreateTaskDependency,
+  useDeleteTaskDependency
+} from './hooks/useTasks';
+export {
+  useMaintenancePlans,
+  useMaintenancePlan,
+  useUpcomingMaintenance,
+  useCreateMaintenancePlan,
+  useUpdateMaintenancePlan,
+  useDeleteMaintenancePlan,
+  useMaintenanceRecords,
+  useMaintenanceRecord,
+  useCreateMaintenanceRecord,
+  useUpdateMaintenanceRecord
+} from './hooks/useMaintenance';
+export {
+  useCalibrationPlans,
+  useCalibrationPlan,
+  useUpcomingCalibrations,
+  useExpiringCertificates,
+  useCreateCalibrationPlan,
+  useUpdateCalibrationPlan,
+  useDeleteCalibrationPlan,
+  useCalibrationRecords,
+  useCalibrationRecord,
+  useCreateCalibrationRecord,
+  useUpdateCalibrationRecord
+} from './hooks/useCalibration';
 
 export * from './types';
 export { queryKeys } from './utils/query-keys';

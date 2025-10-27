@@ -13,6 +13,8 @@ class ApiClient {
   final ProdobitConfig config;
   late final Dio _dio;
   late final Logger _logger;
+  bool _authInterceptorAdded = false;
+  bool _cacheInterceptorAdded = false;
 
   /// Get the configured Dio instance
   Dio get dio => _dio;
@@ -125,6 +127,29 @@ class ApiClient {
   /// Set organization context
   void setOrganization(String organizationId) {
     _dio.options.headers['X-Organization-ID'] = organizationId;
+  }
+
+  /// Add auth interceptor for automatic token refresh
+  /// This should be called after AuthService is initialized to avoid circular dependency
+  void addAuthInterceptor(Interceptor authInterceptor) {
+    if (!_authInterceptorAdded) {
+      // Add auth interceptor at the beginning (before error handler)
+      _dio.interceptors.insert(0, authInterceptor);
+      _authInterceptorAdded = true;
+      _logger.i('🔐 Auth interceptor added for automatic token refresh');
+    }
+  }
+
+  /// Add cache interceptor for offline support
+  /// This should be called after cache is initialized
+  void addCacheInterceptor(Interceptor cacheInterceptor) {
+    if (!_cacheInterceptorAdded) {
+      // Add cache interceptor after auth interceptor
+      final insertIndex = _authInterceptorAdded ? 1 : 0;
+      _dio.interceptors.insert(insertIndex, cacheInterceptor);
+      _cacheInterceptorAdded = true;
+      _logger.i('💾 Cache interceptor added for offline support');
+    }
   }
 
   /// Upload file with progress tracking

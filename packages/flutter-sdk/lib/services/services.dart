@@ -3,6 +3,7 @@ export 'auth_service.dart';
 export 'employee_service.dart';
 export 'file_service.dart';
 export 'inventory_service.dart';
+export 'location_service.dart';
 export 'manufacturing_service.dart';
 export 'party_service.dart';
 export 'purchase_service.dart';
