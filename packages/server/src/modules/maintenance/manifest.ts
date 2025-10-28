@@ -11,8 +11,8 @@ export const maintenanceModule: ModuleManifest = {
   description: "Preventive and predictive maintenance planning module",
   migrations: [],
   permissions: {
-    "maintenance:read": ["admin", "manager", "supervisor", "technician"],
-    "maintenance:write": ["admin", "manager", "supervisor"],
+    "maintenance:read": ["admin", "user"],
+    "maintenance:write": ["admin", "user"],
   },
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/maintenance", maintenanceRoutes);

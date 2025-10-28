@@ -11,8 +11,8 @@ export const calibrationModule: ModuleManifest = {
   description: "Equipment calibration and certification management module",
   migrations: [],
   permissions: {
-    "calibration:read": ["admin", "manager", "supervisor", "technician", "quality_control"],
-    "calibration:write": ["admin", "manager", "quality_control"],
+    "calibration:read": ["admin", "user"],
+    "calibration:write": ["admin", "user"],
   },
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/calibration", calibrationRoutes);

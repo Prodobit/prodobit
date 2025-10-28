@@ -11,8 +11,8 @@ export const taskModule: ModuleManifest = {
   description: "Task and work order management module",
   migrations: [],
   permissions: {
-    "task:read": ["admin", "manager", "supervisor", "technician", "user"],
-    "task:write": ["admin", "manager", "supervisor"],
+    "task:read": ["admin", "user"],
+    "task:write": ["admin", "user"],
   },
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/tasks", taskRoutes);
