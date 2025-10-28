@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/sdk",
-  "version": "0.14.1",
+  "version": "0.14.5",
   "description": "TypeScript SDK for Prodobit API",
   "type": "module",
   "main": "./dist/index.js",
@@ -25,7 +25,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@prodobit/types": "workspace:*",
+    "@prodobit/types": "^0.14.5",
     "arktype": "2.1.20"
   },
   "devDependencies": {

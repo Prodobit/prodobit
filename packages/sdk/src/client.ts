@@ -16,6 +16,10 @@ import { AssetPurchaseClient } from "./modules/asset-purchase-client";
 import { DepartmentClient } from "./modules/department-client";
 import { LocationTypeClient } from "./modules/location-type-client";
 import { AssetTypeClient } from "./modules/asset-type-client";
+import { AssetIssueClient } from "./modules/asset-issue-client";
+import { TaskClient } from "./modules/task-client";
+import { MaintenanceClient } from "./modules/maintenance-client";
+import { CalibrationClient } from "./modules/calibration-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -110,6 +114,10 @@ export class ProdobitClient {
   private department: DepartmentClient;
   private locationType: LocationTypeClient;
   private assetType: AssetTypeClient;
+  private assetIssue: AssetIssueClient;
+  private task: TaskClient;
+  private maintenance: MaintenanceClient;
+  private calibration: CalibrationClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -129,6 +137,10 @@ export class ProdobitClient {
     this.department = new DepartmentClient(config);
     this.locationType = new LocationTypeClient(config);
     this.assetType = new AssetTypeClient(config);
+    this.assetIssue = new AssetIssueClient(config);
+    this.task = new TaskClient(config);
+    this.maintenance = new MaintenanceClient(config);
+    this.calibration = new CalibrationClient(config);
   }
 
   // Public request method for framework integrations
@@ -1623,6 +1635,210 @@ export class ProdobitClient {
 
   async deleteAssetType(id: string, config?: RequestConfig) {
     return this.assetType.delete(id, config);
+  }
+
+  // AssetIssue methods
+  async getAssetIssues(query?: any, config?: RequestConfig) {
+    return this.assetIssue.getAll(query, config);
+  }
+
+  async getAssetIssueById(id: string, config?: RequestConfig) {
+    return this.assetIssue.getById(id, config);
+  }
+
+  async getAssetIssuesByAsset(assetId: string, config?: RequestConfig) {
+    return this.assetIssue.getByAsset(assetId, config);
+  }
+
+  async getCriticalAssetIssues(config?: RequestConfig) {
+    return this.assetIssue.getCritical(config);
+  }
+
+  async getAssetIssueStatistics(config?: RequestConfig) {
+    return this.assetIssue.getStatistics(config);
+  }
+
+  async createAssetIssue(data: any, config?: RequestConfig) {
+    return this.assetIssue.create(data, config);
+  }
+
+  async updateAssetIssue(id: string, data: any, config?: RequestConfig) {
+    return this.assetIssue.update(id, data, config);
+  }
+
+  async deleteAssetIssue(id: string, config?: RequestConfig) {
+    return this.assetIssue.delete(id, config);
+  }
+
+  // Task methods
+  async getTasks(query?: any, config?: RequestConfig) {
+    return this.task.getAll(query, config);
+  }
+
+  async getTaskById(id: string, config?: RequestConfig) {
+    return this.task.getById(id, config);
+  }
+
+  async getTaskSubtasks(parentTaskId: string, config?: RequestConfig) {
+    return this.task.getSubtasks(parentTaskId, config);
+  }
+
+  async getOverdueTasks(config?: RequestConfig) {
+    return this.task.getOverdue(config);
+  }
+
+  async getUpcomingTasks(days: number, config?: RequestConfig) {
+    return this.task.getUpcoming(days, config);
+  }
+
+  async getMyTasks(config?: RequestConfig) {
+    return this.task.getMyTasks(config);
+  }
+
+  async getTaskDependencies(taskId: string, config?: RequestConfig) {
+    return this.task.getDependencies(taskId, config);
+  }
+
+  async createTask(data: any, config?: RequestConfig) {
+    return this.task.create(data, config);
+  }
+
+  async updateTask(id: string, data: any, config?: RequestConfig) {
+    return this.task.update(id, data, config);
+  }
+
+  async deleteTask(id: string, config?: RequestConfig) {
+    return this.task.delete(id, config);
+  }
+
+  async addTaskDependency(taskId: string, data: any, config?: RequestConfig) {
+    return this.task.addDependency(taskId, data, config);
+  }
+
+  async removeTaskDependency(dependencyId: string, config?: RequestConfig) {
+    return this.task.removeDependency(dependencyId, config);
+  }
+
+  // Maintenance methods
+  async getMaintenancePlans(query?: any, config?: RequestConfig) {
+    return this.maintenance.getPlans(query, config);
+  }
+
+  async getMaintenancePlanById(id: string, config?: RequestConfig) {
+    return this.maintenance.getPlanById(id, config);
+  }
+
+  async getMaintenancePlansByAsset(assetId: string, config?: RequestConfig) {
+    return this.maintenance.getPlansByAsset(assetId, config);
+  }
+
+  async getUpcomingMaintenancePlans(days: number, config?: RequestConfig) {
+    return this.maintenance.getUpcomingPlans(days, config);
+  }
+
+  async createMaintenancePlan(data: any, config?: RequestConfig) {
+    return this.maintenance.createPlan(data, config);
+  }
+
+  async updateMaintenancePlan(id: string, data: any, config?: RequestConfig) {
+    return this.maintenance.updatePlan(id, data, config);
+  }
+
+  async deleteMaintenancePlan(id: string, config?: RequestConfig) {
+    return this.maintenance.deletePlan(id, config);
+  }
+
+  async getMaintenanceRecords(query?: any, config?: RequestConfig) {
+    return this.maintenance.getRecords(query, config);
+  }
+
+  async getMaintenanceRecordById(id: string, config?: RequestConfig) {
+    return this.maintenance.getRecordById(id, config);
+  }
+
+  async getMaintenanceRecordsByPlan(planId: string, config?: RequestConfig) {
+    return this.maintenance.getRecordsByPlan(planId, config);
+  }
+
+  async getMaintenanceRecordsByAsset(assetId: string, config?: RequestConfig) {
+    return this.maintenance.getRecordsByAsset(assetId, config);
+  }
+
+  async createMaintenanceRecord(data: any, config?: RequestConfig) {
+    return this.maintenance.createRecord(data, config);
+  }
+
+  async updateMaintenanceRecord(id: string, data: any, config?: RequestConfig) {
+    return this.maintenance.updateRecord(id, data, config);
+  }
+
+  async deleteMaintenanceRecord(id: string, config?: RequestConfig) {
+    return this.maintenance.deleteRecord(id, config);
+  }
+
+  // Calibration methods
+  async getCalibrationPlans(query?: any, config?: RequestConfig) {
+    return this.calibration.getPlans(query, config);
+  }
+
+  async getCalibrationPlanById(id: string, config?: RequestConfig) {
+    return this.calibration.getPlanById(id, config);
+  }
+
+  async getCalibrationPlansByAsset(assetId: string, config?: RequestConfig) {
+    return this.calibration.getPlansByAsset(assetId, config);
+  }
+
+  async getUpcomingCalibrationPlans(days: number, config?: RequestConfig) {
+    return this.calibration.getUpcomingPlans(days, config);
+  }
+
+  async getOverdueCalibrationPlans(config?: RequestConfig) {
+    return this.calibration.getOverduePlans(config);
+  }
+
+  async createCalibrationPlan(data: any, config?: RequestConfig) {
+    return this.calibration.createPlan(data, config);
+  }
+
+  async updateCalibrationPlan(id: string, data: any, config?: RequestConfig) {
+    return this.calibration.updatePlan(id, data, config);
+  }
+
+  async deleteCalibrationPlan(id: string, config?: RequestConfig) {
+    return this.calibration.deletePlan(id, config);
+  }
+
+  async getCalibrationRecords(query?: any, config?: RequestConfig) {
+    return this.calibration.getRecords(query, config);
+  }
+
+  async getCalibrationRecordById(id: string, config?: RequestConfig) {
+    return this.calibration.getRecordById(id, config);
+  }
+
+  async getCalibrationRecordsByPlan(planId: string, config?: RequestConfig) {
+    return this.calibration.getRecordsByPlan(planId, config);
+  }
+
+  async getCalibrationRecordsByAsset(assetId: string, config?: RequestConfig) {
+    return this.calibration.getRecordsByAsset(assetId, config);
+  }
+
+  async getExpiringCalibrationCertificates(days: number, config?: RequestConfig) {
+    return this.calibration.getExpiringCertificates(days, config);
+  }
+
+  async createCalibrationRecord(data: any, config?: RequestConfig) {
+    return this.calibration.createRecord(data, config);
+  }
+
+  async updateCalibrationRecord(id: string, data: any, config?: RequestConfig) {
+    return this.calibration.updateRecord(id, data, config);
+  }
+
+  async deleteCalibrationRecord(id: string, config?: RequestConfig) {
+    return this.calibration.deleteRecord(id, config);
   }
 }
 

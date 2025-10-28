@@ -11,8 +11,8 @@ export const assetIssueModule: ModuleManifest = {
   description: "Asset issue and problem reporting module",
   migrations: [],
   permissions: {
-    "asset-issue:read": ["admin", "manager", "technician", "user"],
-    "asset-issue:write": ["admin", "manager", "technician"],
+    "asset-issue:read": ["admin", "user"],
+    "asset-issue:write": ["admin", "user"],
   },
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
     app.route("/api/v1/asset-issues", assetIssueRoutes);
