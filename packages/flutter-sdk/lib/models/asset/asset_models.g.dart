@@ -25,6 +25,7 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => $checkedCreate(
           assetTypeId: $checkedConvert('assetTypeId', (v) => v as String?),
           serialNumber: $checkedConvert('serialNumber', (v) => v as String?),
           qrCode: $checkedConvert('qrCode', (v) => v as String?),
+          imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
           deletedAt: $checkedConvert('deletedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
         );
@@ -46,6 +47,7 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'assetTypeId': instance.assetTypeId,
       'serialNumber': instance.serialNumber,
       'qrCode': instance.qrCode,
+      'imageUrl': instance.imageUrl,
       'deletedAt': instance.deletedAt?.toIso8601String(),
     };
 
@@ -63,6 +65,7 @@ _$CreateAssetRequestImpl _$$CreateAssetRequestImplFromJson(
           assetTypeId: $checkedConvert('assetTypeId', (v) => v as String?),
           serialNumber: $checkedConvert('serialNumber', (v) => v as String?),
           qrCode: $checkedConvert('qrCode', (v) => v as String?),
+          imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
         );
         return val;
       },
@@ -78,6 +81,7 @@ Map<String, dynamic> _$$CreateAssetRequestImplToJson(
       'assetTypeId': instance.assetTypeId,
       'serialNumber': instance.serialNumber,
       'qrCode': instance.qrCode,
+      'imageUrl': instance.imageUrl,
     };
 
 _$UpdateAssetRequestImpl _$$UpdateAssetRequestImplFromJson(
@@ -95,6 +99,7 @@ _$UpdateAssetRequestImpl _$$UpdateAssetRequestImplFromJson(
           assetTypeId: $checkedConvert('assetTypeId', (v) => v as String?),
           serialNumber: $checkedConvert('serialNumber', (v) => v as String?),
           qrCode: $checkedConvert('qrCode', (v) => v as String?),
+          imageUrl: $checkedConvert('imageUrl', (v) => v as String?),
         );
         return val;
       },
@@ -111,4 +116,5 @@ Map<String, dynamic> _$$UpdateAssetRequestImplToJson(
       'assetTypeId': instance.assetTypeId,
       'serialNumber': instance.serialNumber,
       'qrCode': instance.qrCode,
+      'imageUrl': instance.imageUrl,
     };

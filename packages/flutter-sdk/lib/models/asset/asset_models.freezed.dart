@@ -33,6 +33,7 @@ mixin _$Asset {
   String? get assetTypeId => throw _privateConstructorUsedError;
   String? get serialNumber => throw _privateConstructorUsedError;
   String? get qrCode => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
   DateTime? get deletedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -58,6 +59,7 @@ abstract class $AssetCopyWith<$Res> {
       String? assetTypeId,
       String? serialNumber,
       String? qrCode,
+      String? imageUrl,
       DateTime? deletedAt});
 }
 
@@ -86,6 +88,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
+    Object? imageUrl = freezed,
     Object? deletedAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -137,6 +140,10 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       deletedAt: freezed == deletedAt
           ? _value.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
@@ -165,6 +172,7 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       String? assetTypeId,
       String? serialNumber,
       String? qrCode,
+      String? imageUrl,
       DateTime? deletedAt});
 }
 
@@ -191,6 +199,7 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
+    Object? imageUrl = freezed,
     Object? deletedAt = freezed,
   }) {
     return _then(_$AssetImpl(
@@ -242,6 +251,10 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       deletedAt: freezed == deletedAt
           ? _value.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
@@ -266,6 +279,7 @@ class _$AssetImpl implements _Asset {
       this.assetTypeId,
       this.serialNumber,
       this.qrCode,
+      this.imageUrl,
       this.deletedAt});
 
   factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
@@ -297,11 +311,13 @@ class _$AssetImpl implements _Asset {
   @override
   final String? qrCode;
   @override
+  final String? imageUrl;
+  @override
   final DateTime? deletedAt;
 
   @override
   String toString() {
-    return 'Asset(id: $id, tenantId: $tenantId, locationId: $locationId, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, deletedAt: $deletedAt)';
+    return 'Asset(id: $id, tenantId: $tenantId, locationId: $locationId, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl, deletedAt: $deletedAt)';
   }
 
   @override
@@ -328,6 +344,8 @@ class _$AssetImpl implements _Asset {
             (identical(other.serialNumber, serialNumber) ||
                 other.serialNumber == serialNumber) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
             (identical(other.deletedAt, deletedAt) ||
                 other.deletedAt == deletedAt));
   }
@@ -348,6 +366,7 @@ class _$AssetImpl implements _Asset {
       assetTypeId,
       serialNumber,
       qrCode,
+      imageUrl,
       deletedAt);
 
   @JsonKey(ignore: true)
@@ -378,6 +397,7 @@ abstract class _Asset implements Asset {
       final String? assetTypeId,
       final String? serialNumber,
       final String? qrCode,
+      final String? imageUrl,
       final DateTime? deletedAt}) = _$AssetImpl;
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
@@ -407,6 +427,8 @@ abstract class _Asset implements Asset {
   @override
   String? get qrCode;
   @override
+  String? get imageUrl;
+  @override
   DateTime? get deletedAt;
   @override
   @JsonKey(ignore: true)
@@ -427,6 +449,7 @@ mixin _$CreateAssetRequest {
   String? get assetTypeId => throw _privateConstructorUsedError;
   String? get serialNumber => throw _privateConstructorUsedError;
   String? get qrCode => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -447,7 +470,8 @@ abstract class $CreateAssetRequestCopyWith<$Res> {
       String? parentAssetId,
       String? assetTypeId,
       String? serialNumber,
-      String? qrCode});
+      String? qrCode,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -470,6 +494,7 @@ class _$CreateAssetRequestCopyWithImpl<$Res, $Val extends CreateAssetRequest>
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       locationId: null == locationId
@@ -500,6 +525,10 @@ class _$CreateAssetRequestCopyWithImpl<$Res, $Val extends CreateAssetRequest>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -519,7 +548,8 @@ abstract class _$$CreateAssetRequestImplCopyWith<$Res>
       String? parentAssetId,
       String? assetTypeId,
       String? serialNumber,
-      String? qrCode});
+      String? qrCode,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -540,6 +570,7 @@ class __$$CreateAssetRequestImplCopyWithImpl<$Res>
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$CreateAssetRequestImpl(
       locationId: null == locationId
@@ -570,6 +601,10 @@ class __$$CreateAssetRequestImplCopyWithImpl<$Res>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -584,7 +619,8 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
       this.parentAssetId,
       this.assetTypeId,
       this.serialNumber,
-      this.qrCode});
+      this.qrCode,
+      this.imageUrl});
 
   factory _$CreateAssetRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$CreateAssetRequestImplFromJson(json);
@@ -603,10 +639,12 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
   final String? serialNumber;
   @override
   final String? qrCode;
+  @override
+  final String? imageUrl;
 
   @override
   String toString() {
-    return 'CreateAssetRequest(locationId: $locationId, name: $name, code: $code, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode)';
+    return 'CreateAssetRequest(locationId: $locationId, name: $name, code: $code, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
   }
 
   @override
@@ -624,13 +662,15 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
                 other.assetTypeId == assetTypeId) &&
             (identical(other.serialNumber, serialNumber) ||
                 other.serialNumber == serialNumber) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, locationId, name, code,
-      parentAssetId, assetTypeId, serialNumber, qrCode);
+      parentAssetId, assetTypeId, serialNumber, qrCode, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -655,7 +695,8 @@ abstract class _CreateAssetRequest implements CreateAssetRequest {
       final String? parentAssetId,
       final String? assetTypeId,
       final String? serialNumber,
-      final String? qrCode}) = _$CreateAssetRequestImpl;
+      final String? qrCode,
+      final String? imageUrl}) = _$CreateAssetRequestImpl;
 
   factory _CreateAssetRequest.fromJson(Map<String, dynamic> json) =
       _$CreateAssetRequestImpl.fromJson;
@@ -674,6 +715,8 @@ abstract class _CreateAssetRequest implements CreateAssetRequest {
   String? get serialNumber;
   @override
   String? get qrCode;
+  @override
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$CreateAssetRequestImplCopyWith<_$CreateAssetRequestImpl> get copyWith =>
@@ -694,6 +737,7 @@ mixin _$UpdateAssetRequest {
   String? get assetTypeId => throw _privateConstructorUsedError;
   String? get serialNumber => throw _privateConstructorUsedError;
   String? get qrCode => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -715,7 +759,8 @@ abstract class $UpdateAssetRequestCopyWith<$Res> {
       String? parentAssetId,
       String? assetTypeId,
       String? serialNumber,
-      String? qrCode});
+      String? qrCode,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -739,6 +784,7 @@ class _$UpdateAssetRequestCopyWithImpl<$Res, $Val extends UpdateAssetRequest>
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       locationId: freezed == locationId
@@ -773,6 +819,10 @@ class _$UpdateAssetRequestCopyWithImpl<$Res, $Val extends UpdateAssetRequest>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -793,7 +843,8 @@ abstract class _$$UpdateAssetRequestImplCopyWith<$Res>
       String? parentAssetId,
       String? assetTypeId,
       String? serialNumber,
-      String? qrCode});
+      String? qrCode,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -815,6 +866,7 @@ class __$$UpdateAssetRequestImplCopyWithImpl<$Res>
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$UpdateAssetRequestImpl(
       locationId: freezed == locationId
@@ -849,6 +901,10 @@ class __$$UpdateAssetRequestImplCopyWithImpl<$Res>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -864,7 +920,8 @@ class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
       this.parentAssetId,
       this.assetTypeId,
       this.serialNumber,
-      this.qrCode});
+      this.qrCode,
+      this.imageUrl});
 
   factory _$UpdateAssetRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdateAssetRequestImplFromJson(json);
@@ -885,10 +942,12 @@ class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
   final String? serialNumber;
   @override
   final String? qrCode;
+  @override
+  final String? imageUrl;
 
   @override
   String toString() {
-    return 'UpdateAssetRequest(locationId: $locationId, name: $name, code: $code, status: $status, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode)';
+    return 'UpdateAssetRequest(locationId: $locationId, name: $name, code: $code, status: $status, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
   }
 
   @override
@@ -907,13 +966,15 @@ class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
                 other.assetTypeId == assetTypeId) &&
             (identical(other.serialNumber, serialNumber) ||
                 other.serialNumber == serialNumber) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, locationId, name, code, status,
-      parentAssetId, assetTypeId, serialNumber, qrCode);
+      parentAssetId, assetTypeId, serialNumber, qrCode, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -939,7 +1000,8 @@ abstract class _UpdateAssetRequest implements UpdateAssetRequest {
       final String? parentAssetId,
       final String? assetTypeId,
       final String? serialNumber,
-      final String? qrCode}) = _$UpdateAssetRequestImpl;
+      final String? qrCode,
+      final String? imageUrl}) = _$UpdateAssetRequestImpl;
 
   factory _UpdateAssetRequest.fromJson(Map<String, dynamic> json) =
       _$UpdateAssetRequestImpl.fromJson;
@@ -960,6 +1022,8 @@ abstract class _UpdateAssetRequest implements UpdateAssetRequest {
   String? get serialNumber;
   @override
   String? get qrCode;
+  @override
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$UpdateAssetRequestImplCopyWith<_$UpdateAssetRequestImpl> get copyWith =>

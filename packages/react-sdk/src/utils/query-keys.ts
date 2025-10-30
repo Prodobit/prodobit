@@ -111,4 +111,9 @@ export const queryKeys = {
     detail: (id: string) => ['calibration-records', 'detail', id] as const,
     expiringCertificates: (days: number) => ['calibration-records', 'expiring-certificates', days] as const,
   },
+  assetImages: {
+    all: () => ['asset-images'] as const,
+    list: (assetId: string) => ['asset-images', 'list', assetId] as const,
+    detail: (imageId: string) => ['asset-images', 'detail', imageId] as const,
+  },
 } as const;

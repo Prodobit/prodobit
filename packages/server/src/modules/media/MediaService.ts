@@ -5,7 +5,7 @@
 
 import { eq, and, isNull, desc, asc, count, sum } from "drizzle-orm";
 import type { Database } from "@prodobit/database";
-import { media, itemImages } from "@prodobit/database";
+import { media, itemImages, assetImages } from "@prodobit/database";
 import type { StorageProvider } from "./storage/StorageProvider.js";
 import { ImageProcessor } from "./image/ImageProcessor.js";
 import { nanoid } from "nanoid";
@@ -377,6 +377,245 @@ export class MediaService {
   /**
    * Helper: Get file extension from MIME type
    */
+  /**
+   * Upload an image for an asset
+   */
+  async uploadAssetImage(
+    options: Omit<UploadItemImageOptions, 'itemId'> & { assetId: string }
+  ): Promise<UploadItemImageResult> {
+    // Validate image
+    const validation = await this.imageProcessor.validate(options.file);
+    if (!validation.valid) {
+      throw new Error(validation.error || "Invalid image");
+    }
+
+    // Get metadata
+    const metadata = await this.imageProcessor.getMetadata(options.file);
+
+    // Generate unique ID and base key
+    const mediaId = nanoid();
+    const ext = this.getExtensionFromMimeType(options.mimeType);
+    const baseKey = `assets/${this.tenantId}/${options.assetId}/${mediaId}`;
+
+    // Process image variants
+    const variants = await this.imageProcessor.processVariants(options.file);
+
+    // Upload original
+    const originalKey = `${baseKey}/original.${ext}`;
+    const originalResult = await this.storage.upload({
+      file: options.file,
+      key: originalKey,
+      contentType: options.mimeType,
+      metadata: {
+        tenantId: this.tenantId,
+        assetId: options.assetId,
+        originalFilename: options.filename,
+      },
+    });
+
+    // Upload variants
+    const variantUrls: Record<string, string> = {};
+    for (const [variantName, processedImage] of variants) {
+      const variantKey = `${baseKey}/${variantName}.webp`;
+      const variantResult = await this.storage.upload({
+        file: processedImage.buffer,
+        key: variantKey,
+        contentType: "image/webp",
+        metadata: {
+          tenantId: this.tenantId,
+          assetId: options.assetId,
+          variant: variantName,
+        },
+      });
+      variantUrls[variantName] = variantResult.url;
+    }
+
+    // Save media record
+    const [mediaRecord] = await this.db
+      .insert(media)
+      .values({
+        tenantId: this.tenantId,
+        storageProvider: this.storage.name,
+        bucket: originalResult.bucket,
+        key: baseKey,
+        filename: `${mediaId}.${ext}`,
+        originalFilename: options.filename,
+        mimeType: options.mimeType,
+        size: options.file.length,
+        width: metadata.width,
+        height: metadata.height,
+        url: originalResult.url,
+        entityType: "asset",
+        entityId: options.assetId,
+        altText: options.altText,
+      })
+      .returning();
+
+    // If this is primary, unset other primaries
+    if (options.isPrimary) {
+      await this.db
+        .update(assetImages)
+        .set({ isPrimary: false })
+        .where(
+          and(
+            eq(assetImages.assetId, options.assetId),
+            eq(assetImages.tenantId, this.tenantId),
+            isNull(assetImages.deletedAt)
+          )
+        );
+    }
+
+    // Save asset image record
+    const [assetImage] = await this.db
+      .insert(assetImages)
+      .values({
+        tenantId: this.tenantId,
+        assetId: options.assetId,
+        mediaId: mediaRecord.id,
+        displayOrder: options.displayOrder || 0,
+        isPrimary: options.isPrimary || false,
+        thumbnailUrl: variantUrls.thumbnail,
+        mediumUrl: variantUrls.medium,
+        largeUrl: variantUrls.large,
+      })
+      .returning();
+
+    return {
+      mediaId: mediaRecord.id,
+      itemImageId: assetImage.id,
+      url: originalResult.url,
+      thumbnailUrl: variantUrls.thumbnail,
+      mediumUrl: variantUrls.medium,
+      largeUrl: variantUrls.large,
+      width: metadata.width,
+      height: metadata.height,
+      size: options.file.length,
+    };
+  }
+
+  /**
+   * List all images for an asset
+   */
+  async listAssetImages(assetId: string) {
+    const images = await this.db
+      .select({
+        id: assetImages.id,
+        mediaId: assetImages.mediaId,
+        displayOrder: assetImages.displayOrder,
+        isPrimary: assetImages.isPrimary,
+        thumbnailUrl: assetImages.thumbnailUrl,
+        mediumUrl: assetImages.mediumUrl,
+        largeUrl: assetImages.largeUrl,
+        insertedAt: assetImages.insertedAt,
+        updatedAt: assetImages.updatedAt,
+        // Media fields
+        url: media.url,
+        filename: media.filename,
+        originalFilename: media.originalFilename,
+        mimeType: media.mimeType,
+        size: media.size,
+        width: media.width,
+        height: media.height,
+        altText: media.altText,
+      })
+      .from(assetImages)
+      .innerJoin(media, eq(assetImages.mediaId, media.id))
+      .where(
+        and(
+          eq(assetImages.assetId, assetId),
+          eq(assetImages.tenantId, this.tenantId),
+          isNull(assetImages.deletedAt),
+          isNull(media.deletedAt)
+        )
+      )
+      .orderBy(desc(assetImages.isPrimary), asc(assetImages.displayOrder));
+
+    return images;
+  }
+
+  /**
+   * Update asset image
+   */
+  async updateAssetImage(
+    assetImageId: string,
+    updates: {
+      displayOrder?: number;
+      isPrimary?: boolean;
+      altText?: string;
+    }
+  ) {
+    // If setting as primary, unset others
+    if (updates.isPrimary) {
+      const [assetImage] = await this.db
+        .select({ assetId: assetImages.assetId })
+        .from(assetImages)
+        .where(eq(assetImages.id, assetImageId));
+
+      if (assetImage) {
+        await this.db
+          .update(assetImages)
+          .set({ isPrimary: false })
+          .where(
+            and(
+              eq(assetImages.assetId, assetImage.assetId),
+              eq(assetImages.tenantId, this.tenantId),
+              isNull(assetImages.deletedAt)
+            )
+          );
+      }
+    }
+
+    const [updated] = await this.db
+      .update(assetImages)
+      .set({
+        ...updates,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(
+          eq(assetImages.id, assetImageId),
+          eq(assetImages.tenantId, this.tenantId)
+        )
+      )
+      .returning();
+
+    // Update altText in media if provided
+    if (updates.altText !== undefined) {
+      await this.db
+        .update(media)
+        .set({ altText: updates.altText })
+        .where(eq(media.id, updated.mediaId));
+    }
+
+    return updated;
+  }
+
+  /**
+   * Delete asset image (soft delete)
+   */
+  async deleteAssetImage(assetImageId: string) {
+    const [deleted] = await this.db
+      .update(assetImages)
+      .set({ deletedAt: new Date() })
+      .where(
+        and(
+          eq(assetImages.id, assetImageId),
+          eq(assetImages.tenantId, this.tenantId)
+        )
+      )
+      .returning();
+
+    // Also soft delete the media record
+    if (deleted) {
+      await this.db
+        .update(media)
+        .set({ deletedAt: new Date() })
+        .where(eq(media.id, deleted.mediaId));
+    }
+
+    return deleted;
+  }
+
   private getExtensionFromMimeType(mimeType: string): string {
     const map: Record<string, string> = {
       "image/jpeg": "jpg",

@@ -135,4 +135,82 @@ export class MediaClient extends BaseClient {
   async getStorageStats(config?: RequestConfig): Promise<Response<StorageStats>> {
     return this.request("GET", "/api/v1/media/storage/stats", undefined, config);
   }
+
+  // ==================== ASSET IMAGE METHODS ====================
+
+  /**
+   * Upload an image for an asset
+   */
+  async uploadAssetImage(
+    assetId: string,
+    file: File | Blob,
+    metadata?: Partial<UploadItemImageRequest>,
+    config?: RequestConfig
+  ): Promise<Response<UploadItemImageResult>> {
+    // Validate metadata if provided
+    let validatedMetadata;
+    if (metadata) {
+      validatedMetadata = validateRequest(uploadItemImageRequest, metadata);
+    }
+
+    // Create FormData for file upload
+    const formData = new FormData();
+    formData.append("image", file);
+    if (validatedMetadata?.altText) {
+      formData.append("altText", validatedMetadata.altText);
+    }
+    if (validatedMetadata?.isPrimary !== undefined) {
+      formData.append("isPrimary", String(validatedMetadata.isPrimary));
+    }
+    if (validatedMetadata?.displayOrder !== undefined) {
+      formData.append("displayOrder", String(validatedMetadata.displayOrder));
+    }
+
+    return this.request(
+      "POST",
+      `/api/v1/media/assets/${assetId}/images`,
+      formData,
+      {
+        ...config,
+        headers: {
+          ...config?.headers,
+        },
+      }
+    );
+  }
+
+  /**
+   * List all images for an asset
+   */
+  async listAssetImages(
+    assetId: string,
+    config?: RequestConfig
+  ): Promise<Response<ItemImage[]>> {
+    return this.request("GET", `/api/v1/media/assets/${assetId}/images`, undefined, config);
+  }
+
+  /**
+   * Update an asset image
+   */
+  async updateAssetImage(
+    imageId: string,
+    updates: {
+      displayOrder?: number;
+      isPrimary?: boolean;
+      altText?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<ItemImage>> {
+    return this.request("PUT", `/api/v1/media/asset-images/${imageId}`, updates, config);
+  }
+
+  /**
+   * Delete an asset image
+   */
+  async deleteAssetImage(
+    imageId: string,
+    config?: RequestConfig
+  ): Promise<Response<void>> {
+    return this.request("DELETE", `/api/v1/media/asset-images/${imageId}`, undefined, config);
+  }
 }

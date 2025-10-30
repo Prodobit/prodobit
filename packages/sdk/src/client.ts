@@ -486,6 +486,27 @@ export class ProdobitClient {
     return this.locationAsset.createAssetQuick(name, locationId, assetType, config);
   }
 
+  // Asset nested resource methods
+  async getAssetIssuesNested(assetId: string, config?: RequestConfig) {
+    return this.auth.makeRequest("GET", `/api/v1/assets/${assetId}/issues`, undefined, config);
+  }
+
+  async getAssetMaintenancePlansNested(assetId: string, config?: RequestConfig) {
+    return this.auth.makeRequest("GET", `/api/v1/assets/${assetId}/maintenance-plans`, undefined, config);
+  }
+
+  async getAssetMaintenanceRecordsNested(assetId: string, config?: RequestConfig) {
+    return this.auth.makeRequest("GET", `/api/v1/assets/${assetId}/maintenance-records`, undefined, config);
+  }
+
+  async getAssetCalibrationPlansNested(assetId: string, config?: RequestConfig) {
+    return this.auth.makeRequest("GET", `/api/v1/assets/${assetId}/calibration-plans`, undefined, config);
+  }
+
+  async getAssetCalibrationRecordsNested(assetId: string, config?: RequestConfig) {
+    return this.auth.makeRequest("GET", `/api/v1/assets/${assetId}/calibration-records`, undefined, config);
+  }
+
   // Attribute methods with buildQuery
   async getAttributes(
     query?: AttributeQuery & Pagination,
@@ -1452,6 +1473,32 @@ export class ProdobitClient {
 
   async getStorageStats(config?: RequestConfig) {
     return this.media.getStorageStats(config);
+  }
+
+  // Asset image method delegations
+  async uploadAssetImage(
+    assetId: string,
+    file: File | Blob,
+    metadata?: Partial<typeof import("@prodobit/types").uploadItemImageRequest.infer>,
+    config?: RequestConfig
+  ) {
+    return this.media.uploadAssetImage(assetId, file, metadata, config);
+  }
+
+  async listAssetImages(assetId: string, config?: RequestConfig) {
+    return this.media.listAssetImages(assetId, config);
+  }
+
+  async updateAssetImage(
+    imageId: string,
+    updates: { displayOrder?: number; isPrimary?: boolean; altText?: string },
+    config?: RequestConfig
+  ) {
+    return this.media.updateAssetImage(imageId, updates, config);
+  }
+
+  async deleteAssetImage(imageId: string, config?: RequestConfig) {
+    return this.media.deleteAssetImage(imageId, config);
   }
 
   // Media client getter
