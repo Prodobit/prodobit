@@ -16,6 +16,9 @@ class ApiClient {
   bool _authInterceptorAdded = false;
   bool _cacheInterceptorAdded = false;
 
+  /// Callback for handling authentication failures (401 errors after refresh failed)
+  void Function()? onAuthenticationFailed;
+
   /// Get the configured Dio instance
   Dio get dio => _dio;
 
@@ -233,6 +236,13 @@ class ApiClient {
             response:
                 responseData is Map<String, dynamic> ? responseData : null,
           );
+
+          // If 401 error and callback is set, call it
+          // This means refresh token also failed
+          if (statusCode == 401 && onAuthenticationFailed != null) {
+            _logger.w('🔐 Authentication failed (401) - calling callback');
+            onAuthenticationFailed!();
+          }
         } else {
           exception = const ApiException(
             'Invalid response from server',

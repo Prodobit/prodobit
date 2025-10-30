@@ -515,3 +515,254 @@ mediaRoutes.get("/storage/stats", requirePermission("item", "read"), async (c) =
     );
   }
 });
+
+// ==================== ASSET IMAGE ROUTES ====================
+
+/**
+ * POST /assets/:assetId/images
+ * Upload an image for an asset
+ */
+mediaRoutes.post(
+  "/assets/:assetId/images",
+  requirePermission("asset", "update"),
+  async (c) => {
+    try {
+      const db = c.get("db");
+      const user = c.get("user");
+      const storage = c.get("storage");
+      const assetId = c.req.param("assetId");
+
+      if (!storage) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "STORAGE_NOT_CONFIGURED",
+              message: "Storage provider not configured",
+            },
+          },
+          500
+        );
+      }
+
+      // Parse multipart form data
+      const formData = await c.req.formData();
+      const file = formData.get("image") as File;
+      const altText = formData.get("altText") as string | null;
+      const isPrimary = formData.get("isPrimary") === "true";
+      const displayOrder = formData.get("displayOrder")
+        ? parseInt(formData.get("displayOrder") as string)
+        : undefined;
+
+      if (!file) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "NO_FILE",
+              message: "No image file provided",
+            },
+          },
+          400
+        );
+      }
+
+      // Convert File to Buffer
+      const arrayBuffer = await file.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+
+      const mediaService = new MediaService(db, storage, user.tenantId);
+
+      const result = await mediaService.uploadAssetImage({
+        assetId,
+        file: buffer,
+        filename: file.name,
+        mimeType: file.type,
+        altText: altText || undefined,
+        isPrimary,
+        displayOrder,
+      });
+
+      return c.json(
+        {
+          success: true,
+          data: result,
+        },
+        201
+      );
+    } catch (error) {
+      console.error("Upload asset image error:", error);
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "UPLOAD_FAILED",
+            message: "Failed to upload image",
+            details: error instanceof Error ? error.message : "Unknown error",
+          },
+        },
+        500
+      );
+    }
+  }
+);
+
+/**
+ * GET /assets/:assetId/images
+ * List all images for an asset
+ */
+mediaRoutes.get(
+  "/assets/:assetId/images",
+  requirePermission("asset", "read"),
+  async (c) => {
+    try {
+      const db = c.get("db");
+      const user = c.get("user");
+      const storage = c.get("storage");
+      const assetId = c.req.param("assetId");
+
+      if (!storage) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "STORAGE_NOT_CONFIGURED",
+              message: "Storage provider not configured",
+            },
+          },
+          500
+        );
+      }
+
+      const mediaService = new MediaService(db, storage, user.tenantId);
+      const images = await mediaService.listAssetImages(assetId);
+
+      return c.json({
+        success: true,
+        data: images,
+      });
+    } catch (error) {
+      console.error("List asset images error:", error);
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "LIST_FAILED",
+            message: "Failed to list images",
+            details: error instanceof Error ? error.message : "Unknown error",
+          },
+        },
+        500
+      );
+    }
+  }
+);
+
+/**
+ * PUT /asset-images/:imageId
+ * Update an asset image
+ */
+mediaRoutes.put(
+  "/asset-images/:imageId",
+  requirePermission("asset", "update"),
+  async (c) => {
+    try {
+      const db = c.get("db");
+      const user = c.get("user");
+      const storage = c.get("storage");
+      const imageId = c.req.param("imageId");
+
+      if (!storage) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "STORAGE_NOT_CONFIGURED",
+              message: "Storage provider not configured",
+            },
+          },
+          500
+        );
+      }
+
+      const body = await c.req.json();
+      const { displayOrder, isPrimary, altText } = body;
+
+      const mediaService = new MediaService(db, storage, user.tenantId);
+      const updated = await mediaService.updateAssetImage(imageId, {
+        displayOrder,
+        isPrimary,
+        altText,
+      });
+
+      return c.json({
+        success: true,
+        data: updated,
+      });
+    } catch (error) {
+      console.error("Update asset image error:", error);
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "UPDATE_FAILED",
+            message: "Failed to update image",
+            details: error instanceof Error ? error.message : "Unknown error",
+          },
+        },
+        500
+      );
+    }
+  }
+);
+
+/**
+ * DELETE /asset-images/:imageId
+ * Delete an asset image
+ */
+mediaRoutes.delete(
+  "/asset-images/:imageId",
+  requirePermission("asset", "update"),
+  async (c) => {
+    try {
+      const db = c.get("db");
+      const user = c.get("user");
+      const storage = c.get("storage");
+      const imageId = c.req.param("imageId");
+
+      if (!storage) {
+        return c.json(
+          {
+            success: false,
+            error: {
+              code: "STORAGE_NOT_CONFIGURED",
+              message: "Storage provider not configured",
+            },
+          },
+          500
+        );
+      }
+
+      const mediaService = new MediaService(db, storage, user.tenantId);
+      await mediaService.deleteAssetImage(imageId);
+
+      return c.json({
+        success: true,
+        message: "Asset image deleted successfully",
+      });
+    } catch (error) {
+      console.error("Delete asset image error:", error);
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "DELETE_FAILED",
+            message: "Failed to delete image",
+            details: error instanceof Error ? error.message : "Unknown error",
+          },
+        },
+        500
+      );
+    }
+  }
+);

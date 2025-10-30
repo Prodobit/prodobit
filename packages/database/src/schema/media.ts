@@ -11,6 +11,7 @@ import {
 import { relations } from "drizzle-orm";
 import { tenants } from "./tenants.js";
 import { items } from "./items.js";
+import { assets } from "./assets.js";
 
 /**
  * Media files table - stores metadata for uploaded media
@@ -145,6 +146,72 @@ export const itemImagesRelations = relations(itemImages, ({ one }) => ({
   }),
   media: one(media, {
     fields: [itemImages.mediaId],
+    references: [media.id],
+  }),
+}));
+
+/**
+ * Asset images table - specific to asset media with display ordering
+ */
+export const assetImages = pgTable(
+  "asset_images",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    tenantId: uuid("tenant_id")
+      .notNull()
+      .references(() => tenants.id, { onDelete: "cascade" }),
+    assetId: uuid("asset_id")
+      .notNull()
+      .references(() => assets.id, { onDelete: "cascade" }),
+    mediaId: uuid("media_id")
+      .notNull()
+      .references(() => media.id, { onDelete: "cascade" }),
+
+    // Display info
+    displayOrder: integer("display_order").notNull().default(0),
+    isPrimary: boolean("is_primary").notNull().default(false),
+
+    // Processed variants URLs
+    thumbnailUrl: text("thumbnail_url"), // 200x200
+    mediumUrl: text("medium_url"), // 800x800
+    largeUrl: text("large_url"), // 1600x1600
+
+    // Timestamps
+    insertedAt: timestamp("inserted_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    deletedAt: timestamp("deleted_at", { withTimezone: true }),
+  },
+  (table) => ({
+    tenantAssetIdx: index("asset_images_tenant_asset_idx").on(
+      table.tenantId,
+      table.assetId
+    ),
+    assetPrimaryIdx: index("asset_images_asset_primary_idx").on(
+      table.assetId,
+      table.isPrimary
+    ),
+    displayOrderIdx: index("asset_images_display_order_idx").on(
+      table.assetId,
+      table.displayOrder
+    ),
+  })
+);
+
+export const assetImagesRelations = relations(assetImages, ({ one }) => ({
+  tenant: one(tenants, {
+    fields: [assetImages.tenantId],
+    references: [tenants.id],
+  }),
+  asset: one(assets, {
+    fields: [assetImages.assetId],
+    references: [assets.id],
+  }),
+  media: one(media, {
+    fields: [assetImages.mediaId],
     references: [media.id],
   }),
 }));

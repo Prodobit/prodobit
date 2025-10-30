@@ -19,6 +19,7 @@ class Asset with _$Asset {
     String? assetTypeId,
     String? serialNumber,
     String? qrCode,
+    String? imageUrl,
     DateTime? deletedAt,
   }) = _Asset;
 
@@ -36,6 +37,7 @@ class CreateAssetRequest with _$CreateAssetRequest {
     String? assetTypeId,
     String? serialNumber,
     String? qrCode,
+    String? imageUrl,
   }) = _CreateAssetRequest;
 
   factory CreateAssetRequest.fromJson(Map<String, dynamic> json) =>
@@ -54,6 +56,7 @@ class UpdateAssetRequest with _$UpdateAssetRequest {
     String? assetTypeId,
     String? serialNumber,
     String? qrCode,
+    String? imageUrl,
   }) = _UpdateAssetRequest;
 
   factory UpdateAssetRequest.fromJson(Map<String, dynamic> json) =>

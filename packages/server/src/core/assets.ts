@@ -2,6 +2,9 @@ import type { Database } from "@prodobit/database";
 import { Hono } from "hono";
 import { authMiddleware } from "./middleware/auth.js";
 import { AssetService } from "./services/AssetService.js";
+import { AssetIssueService } from "../modules/asset-issue/service.js";
+import { MaintenanceService } from "../modules/maintenance/service.js";
+import { CalibrationService } from "../modules/calibration/service.js";
 
 export const assets = new Hono<{ Variables: { db: Database } }>();
 
@@ -168,6 +171,158 @@ assets.delete("/:id", async (c) => {
         error: {
           code: "INTERNAL_ERROR",
           message: "Failed to delete asset",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// ==================== NESTED RESOURCES ====================
+
+// GET /:assetId/issues - Get all issues for an asset
+assets.get("/:assetId/issues", async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const assetId = c.req.param("assetId");
+
+    const assetIssueService = new AssetIssueService(db);
+    const issues = await assetIssueService.getIssuesByAsset(assetId, user.tenantId);
+
+    return c.json({
+      success: true,
+      data: issues,
+    });
+  } catch (error) {
+    console.error("Get asset issues error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to get asset issues",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// GET /:assetId/maintenance-plans - Get all maintenance plans for an asset
+assets.get("/:assetId/maintenance-plans", async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const assetId = c.req.param("assetId");
+
+    const maintenanceService = new MaintenanceService(db);
+    const plans = await maintenanceService.getMaintenancePlans(user.tenantId, { assetId });
+
+    return c.json({
+      success: true,
+      data: plans,
+    });
+  } catch (error) {
+    console.error("Get asset maintenance plans error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to get maintenance plans",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// GET /:assetId/maintenance-records - Get all maintenance records for an asset
+assets.get("/:assetId/maintenance-records", async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const assetId = c.req.param("assetId");
+
+    const maintenanceService = new MaintenanceService(db);
+    const records = await maintenanceService.getMaintenanceRecords(user.tenantId, { assetId });
+
+    return c.json({
+      success: true,
+      data: records,
+    });
+  } catch (error) {
+    console.error("Get asset maintenance records error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to get maintenance records",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// GET /:assetId/calibration-plans - Get all calibration plans for an asset
+assets.get("/:assetId/calibration-plans", async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const assetId = c.req.param("assetId");
+
+    const calibrationService = new CalibrationService(db);
+    const plans = await calibrationService.getCalibrationPlans(user.tenantId, { assetId });
+
+    return c.json({
+      success: true,
+      data: plans,
+    });
+  } catch (error) {
+    console.error("Get asset calibration plans error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to get calibration plans",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// GET /:assetId/calibration-records - Get all calibration records for an asset
+assets.get("/:assetId/calibration-records", async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const assetId = c.req.param("assetId");
+
+    const calibrationService = new CalibrationService(db);
+    const records = await calibrationService.getCalibrationRecords(user.tenantId, { assetId });
+
+    return c.json({
+      success: true,
+      data: records,
+    });
+  } catch (error) {
+    console.error("Get asset calibration records error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to get calibration records",
           details: error instanceof Error ? error.message : "Unknown error",
         },
       },

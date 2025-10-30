@@ -72,3 +72,75 @@ export const useDeleteAsset = (options?: MutationOptions) => {
     onError: options?.onError,
   });
 };
+
+// ==================== NESTED RESOURCE HOOKS ====================
+
+/**
+ * Hook to get all issues for a specific asset
+ */
+export const useAssetIssuesNested = (assetId: string, options?: QueryOptions) => {
+  const client = useProdobitClient();
+
+  return useQuery({
+    queryKey: ['assets', assetId, 'issues'],
+    queryFn: () => client.getAssetIssuesNested(assetId),
+    enabled: !!assetId && options?.enabled !== false,
+    ...options,
+  });
+};
+
+/**
+ * Hook to get all maintenance plans for a specific asset
+ */
+export const useAssetMaintenancePlansNested = (assetId: string, options?: QueryOptions) => {
+  const client = useProdobitClient();
+
+  return useQuery({
+    queryKey: ['assets', assetId, 'maintenance-plans'],
+    queryFn: () => client.getAssetMaintenancePlansNested(assetId),
+    enabled: !!assetId && options?.enabled !== false,
+    ...options,
+  });
+};
+
+/**
+ * Hook to get all maintenance records for a specific asset
+ */
+export const useAssetMaintenanceRecordsNested = (assetId: string, options?: QueryOptions) => {
+  const client = useProdobitClient();
+
+  return useQuery({
+    queryKey: ['assets', assetId, 'maintenance-records'],
+    queryFn: () => client.getAssetMaintenanceRecordsNested(assetId),
+    enabled: !!assetId && options?.enabled !== false,
+    ...options,
+  });
+};
+
+/**
+ * Hook to get all calibration plans for a specific asset
+ */
+export const useAssetCalibrationPlansNested = (assetId: string, options?: QueryOptions) => {
+  const client = useProdobitClient();
+
+  return useQuery({
+    queryKey: ['assets', assetId, 'calibration-plans'],
+    queryFn: () => client.getAssetCalibrationPlansNested(assetId),
+    enabled: !!assetId && options?.enabled !== false,
+    ...options,
+  });
+};
+
+/**
+ * Hook to get all calibration records for a specific asset
+ */
+export const useAssetCalibrationRecordsNested = (assetId: string, options?: QueryOptions) => {
+  const client = useProdobitClient();
+
+  return useQuery({
+    queryKey: ['assets', assetId, 'calibration-records'],
+    queryFn: () => client.getAssetCalibrationRecordsNested(assetId),
+    enabled: !!assetId && options?.enabled !== false,
+    ...options,
+  });
+};

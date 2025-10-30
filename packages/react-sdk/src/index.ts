@@ -46,7 +46,12 @@ export {
   useAsset,
   useCreateAsset,
   useUpdateAsset,
-  useDeleteAsset
+  useDeleteAsset,
+  useAssetIssuesNested,
+  useAssetMaintenancePlansNested,
+  useAssetMaintenanceRecordsNested,
+  useAssetCalibrationPlansNested,
+  useAssetCalibrationRecordsNested
 } from './hooks/useAssets';
 export {
   useAssetTypes,
@@ -119,6 +124,12 @@ export {
   useUpdateAltText,
   useStorageStats
 } from './hooks/useMedia';
+export {
+  useAssetImages,
+  useUploadAssetImage,
+  useUpdateAssetImage,
+  useDeleteAssetImage
+} from './hooks/useAssetImages';
 export {
   useSalesOrders,
   useSalesOrder,
