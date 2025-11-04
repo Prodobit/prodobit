@@ -16,7 +16,10 @@ export const useTasks = (filters?: TaskQuery, options?: QueryOptions) => {
 
   return useQuery<Task[], Error>({
     queryKey: queryKeys.tasks.list(filters),
-    queryFn: () => client.getTasks(filters),
+    queryFn: async () => {
+      const response = await client.getTasks(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -26,7 +29,10 @@ export const useTask = (id: string, options?: QueryOptions) => {
 
   return useQuery<Task, Error>({
     queryKey: queryKeys.tasks.detail(id),
-    queryFn: () => client.getTask(id),
+    queryFn: async () => {
+      const response = await client.getTaskById(id);
+      return response.data as Task;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -37,7 +43,10 @@ export const useSubtasks = (parentTaskId: string, options?: QueryOptions) => {
 
   return useQuery<Task[], Error>({
     queryKey: queryKeys.tasks.subtasks(parentTaskId),
-    queryFn: () => client.getSubtasks(parentTaskId),
+    queryFn: async () => {
+      const response = await client.getTaskSubtasks(parentTaskId);
+      return response.data || [];
+    },
     enabled: !!parentTaskId && options?.enabled !== false,
     ...options,
   });
@@ -48,7 +57,10 @@ export const useTaskDependencies = (taskId: string, options?: QueryOptions) => {
 
   return useQuery<TaskDependency[], Error>({
     queryKey: queryKeys.tasks.dependencies(taskId),
-    queryFn: () => client.getTaskDependencies(taskId),
+    queryFn: async () => {
+      const response = await client.getTaskDependencies(taskId);
+      return response.data || [];
+    },
     enabled: !!taskId && options?.enabled !== false,
     ...options,
   });
@@ -62,7 +74,10 @@ export const useTasksByAssignee = (
 
   return useQuery<Task[], Error>({
     queryKey: queryKeys.tasks.byAssignee(assigneeId),
-    queryFn: () => client.getTasksByAssignee(assigneeId),
+    queryFn: async () => {
+      const response = await client.getTasks({ assigneeId });
+      return response.data || [];
+    },
     enabled: !!assigneeId && options?.enabled !== false,
     ...options,
   });
@@ -73,7 +88,10 @@ export const useOverdueTasks = (options?: QueryOptions) => {
 
   return useQuery<Task[], Error>({
     queryKey: queryKeys.tasks.overdue(),
-    queryFn: () => client.getOverdueTasks(),
+    queryFn: async () => {
+      const response = await client.getOverdueTasks();
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -81,9 +99,20 @@ export const useOverdueTasks = (options?: QueryOptions) => {
 export const useTaskStatistics = (options?: QueryOptions) => {
   const client = useProdobitClient();
 
-  return useQuery<any[], Error>({
+  return useQuery<Record<string, unknown>, Error>({
     queryKey: queryKeys.tasks.statistics(),
-    queryFn: () => client.getTaskStatistics(),
+    queryFn: async () => {
+      // Note: Task statistics endpoint may not be implemented yet
+      // Using getTasks to compute basic stats
+      const response = await client.getTasks();
+      const tasks = response.data || [];
+      return {
+        total: tasks.length,
+        pending: tasks.filter((t: Task) => t.status === 'pending').length,
+        in_progress: tasks.filter((t: Task) => t.status === 'in_progress').length,
+        completed: tasks.filter((t: Task) => t.status === 'completed').length,
+      };
+    },
     ...options,
   });
 };
@@ -93,7 +122,10 @@ export const useCreateTask = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<Task, Error, CreateTaskRequest>({
-    mutationFn: (data: CreateTaskRequest) => client.createTask(data),
+    mutationFn: async (data: CreateTaskRequest) => {
+      const response = await client.createTask(data);
+      return response.data as Task;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.tasks.all() });
       if (data.parentTaskId) {
@@ -117,8 +149,10 @@ export const useUpdateTask = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<Task, Error, { id: string; data: UpdateTaskRequest }>({
-    mutationFn: ({ id, data }: { id: string; data: UpdateTaskRequest }) =>
-      client.updateTask(id, data),
+    mutationFn: async ({ id, data }: { id: string; data: UpdateTaskRequest }) => {
+      const response = await client.updateTask(id, data);
+      return response.data as Task;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.tasks.all() });
       queryClient.invalidateQueries({
@@ -145,7 +179,9 @@ export const useDeleteTask = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<void, Error, string>({
-    mutationFn: (id: string) => client.deleteTask(id),
+    mutationFn: async (id: string) => {
+      await client.deleteTask(id);
+    },
     onSuccess: (data, id) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.tasks.all() });
       queryClient.removeQueries({ queryKey: queryKeys.tasks.detail(id) });
@@ -159,12 +195,14 @@ export const useCreateTaskDependency = (options?: MutationOptions) => {
   const client = useProdobitClient();
   const queryClient = useQueryClient();
 
-  return useMutation<TaskDependency, Error, CreateTaskDependencyRequest>({
-    mutationFn: (data: CreateTaskDependencyRequest) =>
-      client.createTaskDependency(data),
-    onSuccess: (data) => {
+  return useMutation<TaskDependency, Error, { taskId: string; data: CreateTaskDependencyRequest }>({
+    mutationFn: async ({ taskId, data }: { taskId: string; data: CreateTaskDependencyRequest }) => {
+      const response = await client.addTaskDependency(taskId, data);
+      return response.data as TaskDependency;
+    },
+    onSuccess: (data, variables) => {
       queryClient.invalidateQueries({
-        queryKey: queryKeys.tasks.dependencies(data.taskId),
+        queryKey: queryKeys.tasks.dependencies(variables.taskId),
       });
       options?.onSuccess?.(data);
     },
@@ -177,13 +215,15 @@ export const useDeleteTaskDependency = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<void, Error, { taskId: string; dependencyId: string }>({
-    mutationFn: ({
-      taskId,
+    mutationFn: async ({
       dependencyId,
+      taskId,
     }: {
       taskId: string;
       dependencyId: string;
-    }) => client.deleteTaskDependency(taskId, dependencyId),
+    }) => {
+      await client.removeTaskDependency(dependencyId);
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.tasks.dependencies(variables.taskId),

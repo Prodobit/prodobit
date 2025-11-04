@@ -3,7 +3,6 @@ import type {
   CreateAssetIssueRequest,
   UpdateAssetIssueRequest,
   AssetIssueQuery,
-  AssetIssueStatistics,
   Response,
 } from "@prodobit/types";
 import type { RequestConfig } from "../types";
@@ -56,7 +55,7 @@ export class AssetIssueClient extends BaseClient {
    */
   async getStatistics(
     config?: RequestConfig
-  ): Promise<Response<AssetIssueStatistics>> {
+  ): Promise<Response<any>> {
     return this.request("GET", "/api/v1/asset-issues/statistics", undefined, config);
   }
 

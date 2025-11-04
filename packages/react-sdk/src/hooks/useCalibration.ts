@@ -22,7 +22,10 @@ export const useCalibrationPlans = (
 
   return useQuery<CalibrationPlan[], Error>({
     queryKey: queryKeys.calibrationPlans.list(filters),
-    queryFn: () => client.getCalibrationPlans(filters),
+    queryFn: async () => {
+      const response = await client.getCalibrationPlans(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -32,7 +35,10 @@ export const useCalibrationPlan = (id: string, options?: QueryOptions) => {
 
   return useQuery<CalibrationPlan, Error>({
     queryKey: queryKeys.calibrationPlans.detail(id),
-    queryFn: () => client.getCalibrationPlan(id),
+    queryFn: async () => {
+      const response = await client.getCalibrationPlan(id);
+      return response.data as CalibrationPlan;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -46,7 +52,10 @@ export const useUpcomingCalibrations = (
 
   return useQuery<CalibrationPlan[], Error>({
     queryKey: queryKeys.calibrationPlans.upcoming(days),
-    queryFn: () => client.getUpcomingCalibrations(days),
+    queryFn: async () => {
+      const response = await client.getUpcomingCalibrations(days);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -59,7 +68,10 @@ export const useExpiringCertificates = (
 
   return useQuery<CalibrationRecord[], Error>({
     queryKey: queryKeys.calibrationRecords.expiringCertificates(days),
-    queryFn: () => client.getExpiringCertificates(days),
+    queryFn: async () => {
+      const response = await client.getExpiringCertificates(days);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -69,8 +81,10 @@ export const useCreateCalibrationPlan = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<CalibrationPlan, Error, CreateCalibrationPlanRequest>({
-    mutationFn: (data: CreateCalibrationPlanRequest) =>
-      client.createCalibrationPlan(data),
+    mutationFn: async (data: CreateCalibrationPlanRequest) => {
+      const response = await client.createCalibrationPlan(data);
+      return response.data as CalibrationPlan;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.calibrationPlans.all(),
@@ -90,13 +104,16 @@ export const useUpdateCalibrationPlan = (options?: MutationOptions) => {
     Error,
     { id: string; data: UpdateCalibrationPlanRequest }
   >({
-    mutationFn: ({
+    mutationFn: async ({
       id,
       data,
     }: {
       id: string;
       data: UpdateCalibrationPlanRequest;
-    }) => client.updateCalibrationPlan(id, data),
+    }) => {
+      const response = await client.updateCalibrationPlan(id, data);
+      return response.data as CalibrationPlan;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.calibrationPlans.all(),
@@ -138,7 +155,10 @@ export const useCalibrationRecords = (
 
   return useQuery<CalibrationRecord[], Error>({
     queryKey: queryKeys.calibrationRecords.list(filters),
-    queryFn: () => client.getCalibrationRecords(filters),
+    queryFn: async () => {
+      const response = await client.getCalibrationRecords(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -148,7 +168,10 @@ export const useCalibrationRecord = (id: string, options?: QueryOptions) => {
 
   return useQuery<CalibrationRecord, Error>({
     queryKey: queryKeys.calibrationRecords.detail(id),
-    queryFn: () => client.getCalibrationRecord(id),
+    queryFn: async () => {
+      const response = await client.getCalibrationRecord(id);
+      return response.data as CalibrationRecord;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -159,8 +182,10 @@ export const useCreateCalibrationRecord = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<CalibrationRecord, Error, CreateCalibrationRecordRequest>({
-    mutationFn: (data: CreateCalibrationRecordRequest) =>
-      client.createCalibrationRecord(data),
+    mutationFn: async (data: CreateCalibrationRecordRequest) => {
+      const response = await client.createCalibrationRecord(data);
+      return response.data as CalibrationRecord;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.calibrationRecords.all(),
@@ -183,13 +208,16 @@ export const useUpdateCalibrationRecord = (options?: MutationOptions) => {
     Error,
     { id: string; data: UpdateCalibrationRecordRequest }
   >({
-    mutationFn: ({
+    mutationFn: async ({
       id,
       data,
     }: {
       id: string;
       data: UpdateCalibrationRecordRequest;
-    }) => client.updateCalibrationRecord(id, data),
+    }) => {
+      const response = await client.updateCalibrationRecord(id, data);
+      return response.data as CalibrationRecord;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.calibrationRecords.all(),

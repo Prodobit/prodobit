@@ -12,7 +12,10 @@ export const useAssets = (
 
   return useQuery<Asset[], Error>({
     queryKey: queryKeys.assets.list(filters),
-    queryFn: () => client.getAssets(filters),
+    queryFn: async () => {
+      const response = await client.getAssets(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -22,7 +25,10 @@ export const useAsset = (id: string, options?: QueryOptions) => {
 
   return useQuery<Asset, Error>({
     queryKey: queryKeys.assets.detail(id),
-    queryFn: () => client.getAsset(id),
+    queryFn: async () => {
+      const response = await client.getAsset(id);
+      return response.data as Asset;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -33,7 +39,10 @@ export const useCreateAsset = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<Asset, Error, CreateAssetRequest>({
-    mutationFn: (data: CreateAssetRequest) => client.createAsset(data),
+    mutationFn: async (data: CreateAssetRequest) => {
+      const response = await client.createAsset(data);
+      return response.data as Asset;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.assets.all() });
       options?.onSuccess?.(data);
@@ -47,8 +56,10 @@ export const useUpdateAsset = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<Asset, Error, { id: string; data: UpdateAssetRequest }>({
-    mutationFn: ({ id, data }: { id: string; data: UpdateAssetRequest }) => 
-      client.updateAsset(id, data),
+    mutationFn: async ({ id, data }: { id: string; data: UpdateAssetRequest }) => {
+      const response = await client.updateAsset(id, data);
+      return response.data as Asset;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.assets.all() });
       queryClient.invalidateQueries({ queryKey: queryKeys.assets.detail(variables.id) });

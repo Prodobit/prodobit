@@ -22,7 +22,10 @@ export const useMaintenancePlans = (
 
   return useQuery<MaintenancePlan[], Error>({
     queryKey: queryKeys.maintenancePlans.list(filters),
-    queryFn: () => client.getMaintenancePlans(filters),
+    queryFn: async () => {
+      const response = await client.getMaintenancePlans(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -32,7 +35,10 @@ export const useMaintenancePlan = (id: string, options?: QueryOptions) => {
 
   return useQuery<MaintenancePlan, Error>({
     queryKey: queryKeys.maintenancePlans.detail(id),
-    queryFn: () => client.getMaintenancePlan(id),
+    queryFn: async () => {
+      const response = await client.getMaintenancePlan(id);
+      return response.data as MaintenancePlan;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -46,7 +52,10 @@ export const useUpcomingMaintenance = (
 
   return useQuery<MaintenancePlan[], Error>({
     queryKey: queryKeys.maintenancePlans.upcoming(days),
-    queryFn: () => client.getUpcomingMaintenance(days),
+    queryFn: async () => {
+      const response = await client.getUpcomingMaintenance(days);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -56,8 +65,10 @@ export const useCreateMaintenancePlan = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<MaintenancePlan, Error, CreateMaintenancePlanRequest>({
-    mutationFn: (data: CreateMaintenancePlanRequest) =>
-      client.createMaintenancePlan(data),
+    mutationFn: async (data: CreateMaintenancePlanRequest) => {
+      const response = await client.createMaintenancePlan(data);
+      return response.data as MaintenancePlan;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.maintenancePlans.all(),
@@ -77,13 +88,16 @@ export const useUpdateMaintenancePlan = (options?: MutationOptions) => {
     Error,
     { id: string; data: UpdateMaintenancePlanRequest }
   >({
-    mutationFn: ({
+    mutationFn: async ({
       id,
       data,
     }: {
       id: string;
       data: UpdateMaintenancePlanRequest;
-    }) => client.updateMaintenancePlan(id, data),
+    }) => {
+      const response = await client.updateMaintenancePlan(id, data);
+      return response.data as MaintenancePlan;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.maintenancePlans.all(),
@@ -125,7 +139,10 @@ export const useMaintenanceRecords = (
 
   return useQuery<MaintenanceRecord[], Error>({
     queryKey: queryKeys.maintenanceRecords.list(filters),
-    queryFn: () => client.getMaintenanceRecords(filters),
+    queryFn: async () => {
+      const response = await client.getMaintenanceRecords(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -135,7 +152,10 @@ export const useMaintenanceRecord = (id: string, options?: QueryOptions) => {
 
   return useQuery<MaintenanceRecord, Error>({
     queryKey: queryKeys.maintenanceRecords.detail(id),
-    queryFn: () => client.getMaintenanceRecord(id),
+    queryFn: async () => {
+      const response = await client.getMaintenanceRecord(id);
+      return response.data as MaintenanceRecord;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -146,8 +166,10 @@ export const useCreateMaintenanceRecord = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<MaintenanceRecord, Error, CreateMaintenanceRecordRequest>({
-    mutationFn: (data: CreateMaintenanceRecordRequest) =>
-      client.createMaintenanceRecord(data),
+    mutationFn: async (data: CreateMaintenanceRecordRequest) => {
+      const response = await client.createMaintenanceRecord(data);
+      return response.data as MaintenanceRecord;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.maintenanceRecords.all(),
@@ -170,13 +192,16 @@ export const useUpdateMaintenanceRecord = (options?: MutationOptions) => {
     Error,
     { id: string; data: UpdateMaintenanceRecordRequest }
   >({
-    mutationFn: ({
+    mutationFn: async ({
       id,
       data,
     }: {
       id: string;
       data: UpdateMaintenanceRecordRequest;
-    }) => client.updateMaintenanceRecord(id, data),
+    }) => {
+      const response = await client.updateMaintenanceRecord(id, data);
+      return response.data as MaintenanceRecord;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({
         queryKey: queryKeys.maintenanceRecords.all(),

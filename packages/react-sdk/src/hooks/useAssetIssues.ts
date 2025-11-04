@@ -17,7 +17,10 @@ export const useAssetIssues = (
 
   return useQuery<AssetIssue[], Error>({
     queryKey: queryKeys.assetIssues.list(filters),
-    queryFn: () => client.getAssetIssues(filters),
+    queryFn: async () => {
+      const response = await client.getAssetIssues(filters);
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -27,7 +30,10 @@ export const useAssetIssue = (id: string, options?: QueryOptions) => {
 
   return useQuery<AssetIssue, Error>({
     queryKey: queryKeys.assetIssues.detail(id),
-    queryFn: () => client.getAssetIssue(id),
+    queryFn: async () => {
+      const response = await client.getAssetIssue(id);
+      return response.data as AssetIssue;
+    },
     enabled: !!id && options?.enabled !== false,
     ...options,
   });
@@ -72,8 +78,10 @@ export const useCreateAssetIssue = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<AssetIssue, Error, CreateAssetIssueRequest>({
-    mutationFn: (data: CreateAssetIssueRequest) =>
-      client.createAssetIssue(data),
+    mutationFn: async (data: CreateAssetIssueRequest) => {
+      const response = await client.createAssetIssue(data);
+      return response.data as AssetIssue;
+    },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.assetIssues.all() });
       if (data.assetId) {
