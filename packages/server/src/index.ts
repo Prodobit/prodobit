@@ -206,6 +206,10 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
     await server.enableModule("customer");
     await server.enableModule("supplier");
     await server.enableModule("manufacturing"); // enable after inventory
+    await server.enableModule("asset-issue");
+    await server.enableModule("task");
+    await server.enableModule("calibration");
+    await server.enableModule("maintenance");
 
     server.start();
   } catch (error) {
