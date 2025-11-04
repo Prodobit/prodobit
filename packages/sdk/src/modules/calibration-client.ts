@@ -1,17 +1,17 @@
 import type {
   CalibrationPlan,
-  CalibrationRecord,
-  CreateCalibrationPlanRequest,
-  UpdateCalibrationPlanRequest,
   CalibrationPlanQuery,
-  CreateCalibrationRecordRequest,
-  UpdateCalibrationRecordRequest,
+  CalibrationRecord,
   CalibrationRecordQuery,
+  CreateCalibrationPlanRequest,
+  CreateCalibrationRecordRequest,
   Response,
+  UpdateCalibrationPlanRequest,
+  UpdateCalibrationRecordRequest,
 } from "@prodobit/types";
 import type { RequestConfig } from "../types";
-import { BaseClient } from "./base-client";
 import { buildQuery } from "../utils/query-builder";
+import { BaseClient } from "./base-client";
 
 export class CalibrationClient extends BaseClient {
   /**
@@ -22,7 +22,12 @@ export class CalibrationClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan[]>> {
     const queryString = buildQuery(query);
-    return this.request("GET", `/api/v1/calibration-plans${queryString ? `?${queryString}` : ""}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration${queryString ? `?${queryString}` : ""}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -32,7 +37,7 @@ export class CalibrationClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan>> {
-    return this.request("GET", `/api/v1/calibration-plans/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/calibration/${id}`, undefined, config);
   }
 
   /**
@@ -42,7 +47,12 @@ export class CalibrationClient extends BaseClient {
     assetId: string,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan[]>> {
-    return this.request("GET", `/api/v1/calibration-plans/asset/${assetId}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration/asset/${assetId}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -52,7 +62,12 @@ export class CalibrationClient extends BaseClient {
     days: number,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan[]>> {
-    return this.request("GET", `/api/v1/calibration-plans/upcoming?days=${days}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration/upcoming?days=${days}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -61,7 +76,12 @@ export class CalibrationClient extends BaseClient {
   async getOverduePlans(
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan[]>> {
-    return this.request("GET", "/api/v1/calibration-plans/overdue", undefined, config);
+    return this.request(
+      "GET",
+      "/api/v1/calibration/overdue",
+      undefined,
+      config
+    );
   }
 
   /**
@@ -71,7 +91,7 @@ export class CalibrationClient extends BaseClient {
     data: CreateCalibrationPlanRequest,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan>> {
-    return this.request("POST", "/api/v1/calibration-plans", data, config);
+    return this.request("POST", "/api/v1/calibration", data, config);
   }
 
   /**
@@ -82,7 +102,7 @@ export class CalibrationClient extends BaseClient {
     data: UpdateCalibrationPlanRequest,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan>> {
-    return this.request("PUT", `/api/v1/calibration-plans/${id}`, data, config);
+    return this.request("PUT", `/api/v1/calibration/${id}`, data, config);
   }
 
   /**
@@ -92,7 +112,12 @@ export class CalibrationClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/calibration-plans/${id}`, undefined, config);
+    return this.request(
+      "DELETE",
+      `/api/v1/calibration/${id}`,
+      undefined,
+      config
+    );
   }
 
   // Calibration Records
@@ -105,7 +130,12 @@ export class CalibrationClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord[]>> {
     const queryString = buildQuery(query);
-    return this.request("GET", `/api/v1/calibration-records${queryString ? `?${queryString}` : ""}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration-records${queryString ? `?${queryString}` : ""}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -115,7 +145,12 @@ export class CalibrationClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord>> {
-    return this.request("GET", `/api/v1/calibration-records/${id}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration-records/${id}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -125,7 +160,12 @@ export class CalibrationClient extends BaseClient {
     planId: string,
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord[]>> {
-    return this.request("GET", `/api/v1/calibration-records/plan/${planId}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration-records/plan/${planId}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -135,7 +175,12 @@ export class CalibrationClient extends BaseClient {
     assetId: string,
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord[]>> {
-    return this.request("GET", `/api/v1/calibration-records/asset/${assetId}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration-records/asset/${assetId}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -145,7 +190,12 @@ export class CalibrationClient extends BaseClient {
     days: number,
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord[]>> {
-    return this.request("GET", `/api/v1/calibration-records/expiring-certificates?days=${days}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/calibration-records/expiring-certificates?days=${days}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -166,7 +216,12 @@ export class CalibrationClient extends BaseClient {
     data: UpdateCalibrationRecordRequest,
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord>> {
-    return this.request("PUT", `/api/v1/calibration-records/${id}`, data, config);
+    return this.request(
+      "PUT",
+      `/api/v1/calibration-records/${id}`,
+      data,
+      config
+    );
   }
 
   /**
@@ -176,6 +231,11 @@ export class CalibrationClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/calibration-records/${id}`, undefined, config);
+    return this.request(
+      "DELETE",
+      `/api/v1/calibration-records/${id}`,
+      undefined,
+      config
+    );
   }
 }

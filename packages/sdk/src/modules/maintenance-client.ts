@@ -1,17 +1,17 @@
 import type {
-  MaintenancePlan,
-  MaintenanceRecord,
   CreateMaintenancePlanRequest,
-  UpdateMaintenancePlanRequest,
-  MaintenancePlanQuery,
   CreateMaintenanceRecordRequest,
-  UpdateMaintenanceRecordRequest,
+  MaintenancePlan,
+  MaintenancePlanQuery,
+  MaintenanceRecord,
   MaintenanceRecordQuery,
   Response,
+  UpdateMaintenancePlanRequest,
+  UpdateMaintenanceRecordRequest,
 } from "@prodobit/types";
 import type { RequestConfig } from "../types";
-import { BaseClient } from "./base-client";
 import { buildQuery } from "../utils/query-builder";
+import { BaseClient } from "./base-client";
 
 export class MaintenanceClient extends BaseClient {
   /**
@@ -22,7 +22,12 @@ export class MaintenanceClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan[]>> {
     const queryString = buildQuery(query);
-    return this.request("GET", `/api/v1/maintenance-plans${queryString ? `?${queryString}` : ""}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance${queryString ? `?${queryString}` : ""}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -32,7 +37,7 @@ export class MaintenanceClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan>> {
-    return this.request("GET", `/api/v1/maintenance-plans/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/maintenance/${id}`, undefined, config);
   }
 
   /**
@@ -42,7 +47,12 @@ export class MaintenanceClient extends BaseClient {
     assetId: string,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan[]>> {
-    return this.request("GET", `/api/v1/maintenance-plans/asset/${assetId}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance/asset/${assetId}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -52,7 +62,12 @@ export class MaintenanceClient extends BaseClient {
     days: number,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan[]>> {
-    return this.request("GET", `/api/v1/maintenance-plans/upcoming?days=${days}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance/upcoming?days=${days}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -62,7 +77,7 @@ export class MaintenanceClient extends BaseClient {
     data: CreateMaintenancePlanRequest,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan>> {
-    return this.request("POST", "/api/v1/maintenance-plans", data, config);
+    return this.request("POST", "/api/v1/maintenance", data, config);
   }
 
   /**
@@ -73,7 +88,7 @@ export class MaintenanceClient extends BaseClient {
     data: UpdateMaintenancePlanRequest,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan>> {
-    return this.request("PUT", `/api/v1/maintenance-plans/${id}`, data, config);
+    return this.request("PUT", `/api/v1/maintenance/${id}`, data, config);
   }
 
   /**
@@ -83,7 +98,12 @@ export class MaintenanceClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/maintenance-plans/${id}`, undefined, config);
+    return this.request(
+      "DELETE",
+      `/api/v1/maintenance/${id}`,
+      undefined,
+      config
+    );
   }
 
   // Maintenance Records
@@ -96,7 +116,12 @@ export class MaintenanceClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<MaintenanceRecord[]>> {
     const queryString = buildQuery(query);
-    return this.request("GET", `/api/v1/maintenance-records${queryString ? `?${queryString}` : ""}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance-records${queryString ? `?${queryString}` : ""}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -106,7 +131,12 @@ export class MaintenanceClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<MaintenanceRecord>> {
-    return this.request("GET", `/api/v1/maintenance-records/${id}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance-records/${id}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -116,7 +146,12 @@ export class MaintenanceClient extends BaseClient {
     planId: string,
     config?: RequestConfig
   ): Promise<Response<MaintenanceRecord[]>> {
-    return this.request("GET", `/api/v1/maintenance-records/plan/${planId}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance-records/plan/${planId}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -126,7 +161,12 @@ export class MaintenanceClient extends BaseClient {
     assetId: string,
     config?: RequestConfig
   ): Promise<Response<MaintenanceRecord[]>> {
-    return this.request("GET", `/api/v1/maintenance-records/asset/${assetId}`, undefined, config);
+    return this.request(
+      "GET",
+      `/api/v1/maintenance-records/asset/${assetId}`,
+      undefined,
+      config
+    );
   }
 
   /**
@@ -147,7 +187,12 @@ export class MaintenanceClient extends BaseClient {
     data: UpdateMaintenanceRecordRequest,
     config?: RequestConfig
   ): Promise<Response<MaintenanceRecord>> {
-    return this.request("PUT", `/api/v1/maintenance-records/${id}`, data, config);
+    return this.request(
+      "PUT",
+      `/api/v1/maintenance-records/${id}`,
+      data,
+      config
+    );
   }
 
   /**
@@ -157,6 +202,11 @@ export class MaintenanceClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<void>> {
-    return this.request("DELETE", `/api/v1/maintenance-records/${id}`, undefined, config);
+    return this.request(
+      "DELETE",
+      `/api/v1/maintenance-records/${id}`,
+      undefined,
+      config
+    );
   }
 }
