@@ -36,12 +36,22 @@ export { maintenanceModule } from "./modules/maintenance/manifest.js";
 export { calibrationModule } from "./modules/calibration/manifest.js";
 export { ModuleLoader, rbacManager, ServerConfigManager };
 export type { ModuleManifest, ServerConfig };
-export * from './config/index.js';
-export { authMiddleware, optionalAuthMiddleware, tenantContextMiddleware } from "./core/middleware/auth.js";
+export * from "./config/index.js";
+export {
+  authMiddleware,
+  optionalAuthMiddleware,
+  tenantContextMiddleware,
+} from "./core/middleware/auth.js";
 export { SMSService } from "./core/utils/sms.js";
 export { EmailService } from "./core/utils/email.js";
-export type { SMSProvider, SMSProviderConfig } from "./core/utils/sms-provider.js";
-export type { EmailProvider, EmailProviderConfig } from "./core/utils/email-provider.js";
+export type {
+  SMSProvider,
+  SMSProviderConfig,
+} from "./core/utils/sms-provider.js";
+export type {
+  EmailProvider,
+  EmailProviderConfig,
+} from "./core/utils/email-provider.js";
 
 export interface CreateServerAppOptions {
   modules?: ModuleManifest[];
@@ -50,8 +60,10 @@ export interface CreateServerAppOptions {
   cookiePrefix?: string;
 }
 
-export async function createServerApp(options: CreateServerAppOptions = {}): Promise<{
-  app: ReturnType<ModuleLoader['getApp']>;
+export async function createServerApp(
+  options: CreateServerAppOptions = {}
+): Promise<{
+  app: ReturnType<ModuleLoader["getApp"]>;
   moduleLoader: ModuleLoader;
   configManager: ServerConfigManager;
   config: ServerConfig;
@@ -66,17 +78,17 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
   // Initialize configuration manager
   const configManager = options.configManager || new ServerConfigManager();
   await configManager.initialize();
-  
+
   // Get server configuration
   const baseConfig = configManager.getConfig();
   const config = { ...baseConfig, ...options.configOverrides };
-  
+
   // Initialize email service if config provided
   if (config.email) {
     EmailService.initialize({
       apiKey: config.email.apiKey,
       fromEmail: config.email.fromEmail,
-      fromName: config.email.fromName
+      fromName: config.email.fromName,
     });
   }
 
@@ -84,7 +96,7 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
   SMSService.initializeWithNetGSM();
 
   const moduleLoader = new ModuleLoader(config, options.cookiePrefix);
-  
+
   // Initialize module loader (includes migration checks)
   await moduleLoader.initialize();
 
@@ -105,7 +117,6 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
 
   const app = moduleLoader.getApp();
 
-
   // Add tenant isolation middleware
   app.use("*", tenantIsolationMiddleware());
 
@@ -119,9 +130,21 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
       const serverPort = port || config.port || 3001;
 
       console.log(`🚀 Prodobit Server starting on port ${serverPort}`);
-      console.log(`🌍 Environment: ${configManager.isDevelopment() ? 'development' : configManager.isProduction() ? 'production' : 'test'}`);
-      console.log(`📦 Enabled modules: ${moduleLoader.getEnabledModules().join(", ")}`);
-      console.log(`🔧 Config modules: ${configManager.getEnabledModules().join(", ")}`);
+      console.log(
+        `🌍 Environment: ${
+          configManager.isDevelopment()
+            ? "development"
+            : configManager.isProduction()
+            ? "production"
+            : "test"
+        }`
+      );
+      console.log(
+        `📦 Enabled modules: ${moduleLoader.getEnabledModules().join(", ")}`
+      );
+      console.log(
+        `🔧 Config modules: ${configManager.getEnabledModules().join(", ")}`
+      );
 
       serve({
         fetch: app.fetch,
@@ -147,7 +170,20 @@ export async function createServerApp(options: CreateServerAppOptions = {}): Pro
 // Example usage for direct server start
 if (process.argv[1] === new URL(import.meta.url).pathname) {
   const server = await createServerApp({
-    modules: [employeeModule, salesModule, manufacturingModule, inventoryModule, customerModule, supplierModule, brandModule, mediaModule], // Include modules
+    modules: [
+      employeeModule,
+      salesModule,
+      manufacturingModule,
+      inventoryModule,
+      customerModule,
+      supplierModule,
+      brandModule,
+      mediaModule,
+      assetIssueModule,
+      taskModule,
+      calibrationModule,
+      maintenanceModule,
+    ], // Include modules
   });
 
   // Setup graceful shutdown
@@ -157,8 +193,8 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
     process.exit(0);
   };
 
-  process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
-  process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+  process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
+  process.on("SIGINT", () => gracefulShutdown("SIGINT"));
 
   try {
     // Enable modules in dependency order
@@ -173,7 +209,7 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
 
     server.start();
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error("Failed to start server:", error);
     await server.close();
     process.exit(1);
   }

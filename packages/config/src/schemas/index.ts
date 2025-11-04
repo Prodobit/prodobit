@@ -44,6 +44,10 @@ export {
   validateBrandModuleConfig,
   validateCustomerModuleConfig,
   validateSupplierModuleConfig,
+  validateAssetIssueModuleConfig,
+  validateTaskModuleConfig,
+  validateCalibrationModuleConfig,
+  validateMaintenanceModuleConfig,
   validateModuleConfigs,
   validateModulesConfig,
 } from "./modules.js";

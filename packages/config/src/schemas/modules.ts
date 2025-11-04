@@ -100,6 +100,42 @@ const supplierModuleConfigSchema = type({
   "defaultPaymentTerms": "string >= 1",
 });
 
+const assetIssueModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enableAutoAssignment": "boolean",
+  "defaultPriority": "'low' | 'medium' | 'high' | 'critical'",
+  "enableNotifications": "boolean",
+  "requirePhotos": "boolean",
+  "allowGuestReporting": "boolean",
+});
+
+const taskModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enableRecurringTasks": "boolean",
+  "defaultPriority": "'low' | 'medium' | 'high' | 'urgent'",
+  "enableTimeTracking": "boolean",
+  "enableSubtasks": "boolean",
+  "requireAssignee": "boolean",
+});
+
+const calibrationModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enableAutoScheduling": "boolean",
+  "defaultCalibrationInterval": "1 <= number <= 365",
+  "enableCertificates": "boolean",
+  "requireExternalProvider": "boolean",
+  "reminderDaysBefore": "1 <= number <= 90",
+});
+
+const maintenanceModuleConfigSchema = type({
+  "requireApproval": "boolean",
+  "enablePreventiveMaintenance": "boolean",
+  "defaultMaintenanceInterval": "1 <= number <= 365",
+  "enableDowntimeTracking": "boolean",
+  "requireWorkOrder": "boolean",
+  "enableSparePartsTracking": "boolean",
+});
+
 const moduleConfigsSchema = type({
   "inventory?": inventoryModuleConfigSchema,
   "manufacturing?": manufacturingModuleConfigSchema,
@@ -109,6 +145,10 @@ const moduleConfigsSchema = type({
   "brand?": brandModuleConfigSchema,
   "customer?": customerModuleConfigSchema,
   "supplier?": supplierModuleConfigSchema,
+  "assetIssue?": assetIssueModuleConfigSchema,
+  "task?": taskModuleConfigSchema,
+  "calibration?": calibrationModuleConfigSchema,
+  "maintenance?": maintenanceModuleConfigSchema,
 });
 
 const modulesConfigSchema = type({
@@ -132,6 +172,10 @@ export type EmployeeModuleConfig = typeof employeeModuleConfigSchema.infer;
 export type BrandModuleConfig = typeof brandModuleConfigSchema.infer;
 export type CustomerModuleConfig = typeof customerModuleConfigSchema.infer;
 export type SupplierModuleConfig = typeof supplierModuleConfigSchema.infer;
+export type AssetIssueModuleConfig = typeof assetIssueModuleConfigSchema.infer;
+export type TaskModuleConfig = typeof taskModuleConfigSchema.infer;
+export type CalibrationModuleConfig = typeof calibrationModuleConfigSchema.infer;
+export type MaintenanceModuleConfig = typeof maintenanceModuleConfigSchema.infer;
 export type ModuleConfigs = typeof moduleConfigsSchema.infer;
 export type ModulesConfig = typeof modulesConfigSchema.infer;
 
@@ -194,6 +238,26 @@ export function validateCustomerModuleConfig(config: unknown): CustomerModuleCon
 export function validateSupplierModuleConfig(config: unknown): SupplierModuleConfig | Error {
   const result = supplierModuleConfigSchema(config);
   return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as SupplierModuleConfig;
+}
+
+export function validateAssetIssueModuleConfig(config: unknown): AssetIssueModuleConfig | Error {
+  const result = assetIssueModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as AssetIssueModuleConfig;
+}
+
+export function validateTaskModuleConfig(config: unknown): TaskModuleConfig | Error {
+  const result = taskModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as TaskModuleConfig;
+}
+
+export function validateCalibrationModuleConfig(config: unknown): CalibrationModuleConfig | Error {
+  const result = calibrationModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as CalibrationModuleConfig;
+}
+
+export function validateMaintenanceModuleConfig(config: unknown): MaintenanceModuleConfig | Error {
+  const result = maintenanceModuleConfigSchema(config);
+  return result.constructor.name === 'ArkErrors' ? new Error(result.toString()) : result as MaintenanceModuleConfig;
 }
 
 export function validateModuleConfigs(config: unknown): ModuleConfigs | Error {
