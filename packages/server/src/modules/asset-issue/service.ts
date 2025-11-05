@@ -53,11 +53,24 @@ export class AssetIssueService {
       );
     }
 
-    const issues = await this.db
-      .select()
-      .from(assetIssues)
-      .where(and(...conditions))
-      .orderBy(desc(assetIssues.reportedAt));
+    const issues = await this.db.query.assetIssues.findMany({
+      where: and(...conditions),
+      with: {
+        reportedByUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+        assignedToUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+      },
+      orderBy: desc(assetIssues.reportedAt),
+    });
 
     return issues;
   }
@@ -66,12 +79,23 @@ export class AssetIssueService {
    * Get a single asset issue by ID
    */
   async getAssetIssueById(id: string, tenantId: string) {
-    const [issue] = await this.db
-      .select()
-      .from(assetIssues)
-      .where(
-        and(eq(assetIssues.id, id), eq(assetIssues.tenantId, tenantId))
-      );
+    const issue = await this.db.query.assetIssues.findFirst({
+      where: and(eq(assetIssues.id, id), eq(assetIssues.tenantId, tenantId)),
+      with: {
+        reportedByUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+        assignedToUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+      },
+    });
 
     return issue;
   }
@@ -155,16 +179,27 @@ export class AssetIssueService {
    * Get issues by asset ID
    */
   async getIssuesByAsset(assetId: string, tenantId: string) {
-    const issues = await this.db
-      .select()
-      .from(assetIssues)
-      .where(
-        and(
-          eq(assetIssues.assetId, assetId),
-          eq(assetIssues.tenantId, tenantId)
-        )
-      )
-      .orderBy(desc(assetIssues.reportedAt));
+    const issues = await this.db.query.assetIssues.findMany({
+      where: and(
+        eq(assetIssues.assetId, assetId),
+        eq(assetIssues.tenantId, tenantId)
+      ),
+      with: {
+        reportedByUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+        assignedToUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+      },
+      orderBy: desc(assetIssues.reportedAt),
+    });
 
     return issues;
   }
@@ -173,21 +208,32 @@ export class AssetIssueService {
    * Get critical/high severity open issues
    */
   async getCriticalIssues(tenantId: string) {
-    const issues = await this.db
-      .select()
-      .from(assetIssues)
-      .where(
-        and(
-          eq(assetIssues.tenantId, tenantId),
-          inArray(assetIssues.severity, ["critical", "high"]),
-          inArray(assetIssues.status, [
-            "reported",
-            "acknowledged",
-            "in_progress",
-          ])
-        )
-      )
-      .orderBy(desc(assetIssues.reportedAt));
+    const issues = await this.db.query.assetIssues.findMany({
+      where: and(
+        eq(assetIssues.tenantId, tenantId),
+        inArray(assetIssues.severity, ["critical", "high"]),
+        inArray(assetIssues.status, [
+          "reported",
+          "acknowledged",
+          "in_progress",
+        ])
+      ),
+      with: {
+        reportedByUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+        assignedToUser: {
+          columns: {
+            id: true,
+            displayName: true,
+          },
+        },
+      },
+      orderBy: desc(assetIssues.reportedAt),
+    });
 
     return issues;
   }

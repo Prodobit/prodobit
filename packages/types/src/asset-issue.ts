@@ -26,6 +26,11 @@ export const assetIssueStatus = type(
   "'reported' | 'acknowledged' | 'in_progress' | 'resolved' | 'closed' | 'cancelled'"
 );
 
+const userBasicInfo = type({
+  id: uuid,
+  "displayName?": "string",
+});
+
 export const assetIssue = type({
   id: uuid,
   tenantId: uuid,
@@ -36,7 +41,9 @@ export const assetIssue = type({
   severity: assetIssueSeverity,
   status: assetIssueStatus,
   "reportedBy": uuid, // employee/user id
+  "reportedByUser?": userBasicInfo, // user details
   "assignedTo?": uuid, // employee id - kim bu sorunu çözecek
+  "assignedToUser?": userBasicInfo, // user details
   "relatedTaskId?": uuid, // bu arıza için oluşturulan task
   "reportedAt": timestamp,
   "acknowledgedAt?": timestamp,
