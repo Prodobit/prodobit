@@ -36,7 +36,7 @@ export const useCalibrationPlan = (id: string, options?: QueryOptions) => {
   return useQuery<CalibrationPlan, Error>({
     queryKey: queryKeys.calibrationPlans.detail(id),
     queryFn: async () => {
-      const response = await client.getCalibrationPlan(id);
+      const response = await client.getCalibrationPlanById(id);
       return response.data as CalibrationPlan;
     },
     enabled: !!id && options?.enabled !== false,
@@ -53,7 +53,7 @@ export const useUpcomingCalibrations = (
   return useQuery<CalibrationPlan[], Error>({
     queryKey: queryKeys.calibrationPlans.upcoming(days),
     queryFn: async () => {
-      const response = await client.getUpcomingCalibrations(days);
+      const response = await client.getUpcomingCalibrationPlans(days);
       return response.data || [];
     },
     ...options,
@@ -69,7 +69,7 @@ export const useExpiringCertificates = (
   return useQuery<CalibrationRecord[], Error>({
     queryKey: queryKeys.calibrationRecords.expiringCertificates(days),
     queryFn: async () => {
-      const response = await client.getExpiringCertificates(days);
+      const response = await client.getExpiringCalibrationCertificates(days);
       return response.data || [];
     },
     ...options,
@@ -169,7 +169,7 @@ export const useCalibrationRecord = (id: string, options?: QueryOptions) => {
   return useQuery<CalibrationRecord, Error>({
     queryKey: queryKeys.calibrationRecords.detail(id),
     queryFn: async () => {
-      const response = await client.getCalibrationRecord(id);
+      const response = await client.getCalibrationRecordById(id);
       return response.data as CalibrationRecord;
     },
     enabled: !!id && options?.enabled !== false,

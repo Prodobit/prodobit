@@ -31,7 +31,7 @@ export const useAssetIssue = (id: string, options?: QueryOptions) => {
   return useQuery<AssetIssue, Error>({
     queryKey: queryKeys.assetIssues.detail(id),
     queryFn: async () => {
-      const response = await client.getAssetIssue(id);
+      const response = await client.getAssetIssueById(id);
       return response.data as AssetIssue;
     },
     enabled: !!id && options?.enabled !== false,
@@ -47,7 +47,10 @@ export const useAssetIssuesByAsset = (
 
   return useQuery<AssetIssue[], Error>({
     queryKey: queryKeys.assetIssues.byAsset(assetId),
-    queryFn: () => client.getAssetIssuesByAsset(assetId),
+    queryFn: async () => {
+      const response = await client.getAssetIssuesByAsset(assetId);
+      return response.data || [];
+    },
     enabled: !!assetId && options?.enabled !== false,
     ...options,
   });
@@ -58,7 +61,10 @@ export const useCriticalAssetIssues = (options?: QueryOptions) => {
 
   return useQuery<AssetIssue[], Error>({
     queryKey: queryKeys.assetIssues.critical(),
-    queryFn: () => client.getCriticalAssetIssues(),
+    queryFn: async () => {
+      const response = await client.getCriticalAssetIssues();
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -68,7 +74,10 @@ export const useAssetIssueStatistics = (options?: QueryOptions) => {
 
   return useQuery<any[], Error>({
     queryKey: queryKeys.assetIssues.statistics(),
-    queryFn: () => client.getAssetIssueStatistics(),
+    queryFn: async () => {
+      const response = await client.getAssetIssueStatistics();
+      return response.data || [];
+    },
     ...options,
   });
 };
@@ -104,8 +113,10 @@ export const useUpdateAssetIssue = (options?: MutationOptions) => {
     Error,
     { id: string; data: UpdateAssetIssueRequest }
   >({
-    mutationFn: ({ id, data }: { id: string; data: UpdateAssetIssueRequest }) =>
-      client.updateAssetIssue(id, data),
+    mutationFn: async ({ id, data }: { id: string; data: UpdateAssetIssueRequest }) => {
+      const response = await client.updateAssetIssue(id, data);
+      return response.data as AssetIssue;
+    },
     onSuccess: (data, variables) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.assetIssues.all() });
       queryClient.invalidateQueries({
@@ -127,7 +138,9 @@ export const useDeleteAssetIssue = (options?: MutationOptions) => {
   const queryClient = useQueryClient();
 
   return useMutation<void, Error, string>({
-    mutationFn: (id: string) => client.deleteAssetIssue(id),
+    mutationFn: async (id: string) => {
+      await client.deleteAssetIssue(id);
+    },
     onSuccess: (data, id) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.assetIssues.all() });
       queryClient.removeQueries({

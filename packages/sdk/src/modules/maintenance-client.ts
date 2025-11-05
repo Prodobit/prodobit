@@ -24,7 +24,7 @@ export class MaintenanceClient extends BaseClient {
     const queryString = buildQuery(query);
     return this.request(
       "GET",
-      `/api/v1/maintenance${queryString ? `?${queryString}` : ""}`,
+      `/api/v1/maintenance/plans${queryString ? `?${queryString}` : ""}`,
       undefined,
       config
     );
@@ -37,7 +37,7 @@ export class MaintenanceClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan>> {
-    return this.request("GET", `/api/v1/maintenance/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/maintenance/plans/${id}`, undefined, config);
   }
 
   /**
@@ -49,7 +49,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<MaintenancePlan[]>> {
     return this.request(
       "GET",
-      `/api/v1/maintenance/asset/${assetId}`,
+      `/api/v1/maintenance/plans/asset/${assetId}`,
       undefined,
       config
     );
@@ -64,7 +64,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<MaintenancePlan[]>> {
     return this.request(
       "GET",
-      `/api/v1/maintenance/upcoming?days=${days}`,
+      `/api/v1/maintenance/plans/upcoming?days=${days}`,
       undefined,
       config
     );
@@ -77,7 +77,7 @@ export class MaintenanceClient extends BaseClient {
     data: CreateMaintenancePlanRequest,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan>> {
-    return this.request("POST", "/api/v1/maintenance", data, config);
+    return this.request("POST", "/api/v1/maintenance/plans", data, config);
   }
 
   /**
@@ -88,7 +88,7 @@ export class MaintenanceClient extends BaseClient {
     data: UpdateMaintenancePlanRequest,
     config?: RequestConfig
   ): Promise<Response<MaintenancePlan>> {
-    return this.request("PUT", `/api/v1/maintenance/${id}`, data, config);
+    return this.request("PUT", `/api/v1/maintenance/plans/${id}`, data, config);
   }
 
   /**
@@ -100,7 +100,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<void>> {
     return this.request(
       "DELETE",
-      `/api/v1/maintenance/${id}`,
+      `/api/v1/maintenance/plans/${id}`,
       undefined,
       config
     );
@@ -118,7 +118,7 @@ export class MaintenanceClient extends BaseClient {
     const queryString = buildQuery(query);
     return this.request(
       "GET",
-      `/api/v1/maintenance-records${queryString ? `?${queryString}` : ""}`,
+      `/api/v1/maintenance/records${queryString ? `?${queryString}` : ""}`,
       undefined,
       config
     );
@@ -133,7 +133,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<MaintenanceRecord>> {
     return this.request(
       "GET",
-      `/api/v1/maintenance-records/${id}`,
+      `/api/v1/maintenance/records/${id}`,
       undefined,
       config
     );
@@ -148,7 +148,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<MaintenanceRecord[]>> {
     return this.request(
       "GET",
-      `/api/v1/maintenance-records/plan/${planId}`,
+      `/api/v1/maintenance/records/plan/${planId}`,
       undefined,
       config
     );
@@ -163,7 +163,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<MaintenanceRecord[]>> {
     return this.request(
       "GET",
-      `/api/v1/maintenance-records/asset/${assetId}`,
+      `/api/v1/maintenance/records/asset/${assetId}`,
       undefined,
       config
     );
@@ -176,7 +176,7 @@ export class MaintenanceClient extends BaseClient {
     data: CreateMaintenanceRecordRequest,
     config?: RequestConfig
   ): Promise<Response<MaintenanceRecord>> {
-    return this.request("POST", "/api/v1/maintenance-records", data, config);
+    return this.request("POST", "/api/v1/maintenance/records", data, config);
   }
 
   /**
@@ -189,7 +189,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<MaintenanceRecord>> {
     return this.request(
       "PUT",
-      `/api/v1/maintenance-records/${id}`,
+      `/api/v1/maintenance/records/${id}`,
       data,
       config
     );
@@ -204,7 +204,7 @@ export class MaintenanceClient extends BaseClient {
   ): Promise<Response<void>> {
     return this.request(
       "DELETE",
-      `/api/v1/maintenance-records/${id}`,
+      `/api/v1/maintenance/records/${id}`,
       undefined,
       config
     );

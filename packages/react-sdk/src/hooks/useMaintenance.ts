@@ -36,7 +36,7 @@ export const useMaintenancePlan = (id: string, options?: QueryOptions) => {
   return useQuery<MaintenancePlan, Error>({
     queryKey: queryKeys.maintenancePlans.detail(id),
     queryFn: async () => {
-      const response = await client.getMaintenancePlan(id);
+      const response = await client.getMaintenancePlanById(id);
       return response.data as MaintenancePlan;
     },
     enabled: !!id && options?.enabled !== false,
@@ -53,7 +53,7 @@ export const useUpcomingMaintenance = (
   return useQuery<MaintenancePlan[], Error>({
     queryKey: queryKeys.maintenancePlans.upcoming(days),
     queryFn: async () => {
-      const response = await client.getUpcomingMaintenance(days);
+      const response = await client.getUpcomingMaintenancePlans(days);
       return response.data || [];
     },
     ...options,
@@ -153,7 +153,7 @@ export const useMaintenanceRecord = (id: string, options?: QueryOptions) => {
   return useQuery<MaintenanceRecord, Error>({
     queryKey: queryKeys.maintenanceRecords.detail(id),
     queryFn: async () => {
-      const response = await client.getMaintenanceRecord(id);
+      const response = await client.getMaintenanceRecordById(id);
       return response.data as MaintenanceRecord;
     },
     enabled: !!id && options?.enabled !== false,

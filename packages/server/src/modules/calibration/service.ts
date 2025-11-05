@@ -83,6 +83,25 @@ export class CalibrationService {
   }
 
   /**
+   * Get calibration plans by asset ID
+   */
+  async getCalibrationPlansByAsset(assetId: string, tenantId: string) {
+    const plans = await this.db
+      .select()
+      .from(calibrationPlans)
+      .where(
+        and(
+          eq(calibrationPlans.assetId, assetId),
+          eq(calibrationPlans.tenantId, tenantId),
+          isNull(calibrationPlans.deletedAt)
+        )
+      )
+      .orderBy(desc(calibrationPlans.insertedAt));
+
+    return plans;
+  }
+
+  /**
    * Create a new calibration plan
    */
   async createCalibrationPlan(
@@ -210,6 +229,25 @@ export class CalibrationService {
     return records;
   }
 
+  /**
+   * Get overdue calibrations
+   */
+  async getOverdueCalibrations(tenantId: string) {
+    const plans = await this.db
+      .select()
+      .from(calibrationPlans)
+      .where(
+        and(
+          eq(calibrationPlans.tenantId, tenantId),
+          isNull(calibrationPlans.deletedAt),
+          sql`${calibrationPlans.nextCalibrationDate} < ${new Date()}`
+        )
+      )
+      .orderBy(calibrationPlans.nextCalibrationDate);
+
+    return plans;
+  }
+
   // ============ CALIBRATION RECORDS ============
 
   /**
@@ -294,6 +332,42 @@ export class CalibrationService {
   }
 
   /**
+   * Get calibration records by plan ID
+   */
+  async getCalibrationRecordsByPlan(planId: string, tenantId: string) {
+    const records = await this.db
+      .select()
+      .from(calibrationRecords)
+      .where(
+        and(
+          eq(calibrationRecords.calibrationPlanId, planId),
+          eq(calibrationRecords.tenantId, tenantId)
+        )
+      )
+      .orderBy(desc(calibrationRecords.scheduledDate));
+
+    return records;
+  }
+
+  /**
+   * Get calibration records by asset ID
+   */
+  async getCalibrationRecordsByAsset(assetId: string, tenantId: string) {
+    const records = await this.db
+      .select()
+      .from(calibrationRecords)
+      .where(
+        and(
+          eq(calibrationRecords.assetId, assetId),
+          eq(calibrationRecords.tenantId, tenantId)
+        )
+      )
+      .orderBy(desc(calibrationRecords.scheduledDate));
+
+    return records;
+  }
+
+  /**
    * Create a new calibration record
    */
   async createCalibrationRecord(
@@ -347,6 +421,23 @@ export class CalibrationService {
         ...updateData,
         updatedAt: new Date(),
       })
+      .where(
+        and(
+          eq(calibrationRecords.id, id),
+          eq(calibrationRecords.tenantId, tenantId)
+        )
+      )
+      .returning();
+
+    return record;
+  }
+
+  /**
+   * Delete a calibration record
+   */
+  async deleteCalibrationRecord(id: string, tenantId: string) {
+    const [record] = await this.db
+      .delete(calibrationRecords)
       .where(
         and(
           eq(calibrationRecords.id, id),

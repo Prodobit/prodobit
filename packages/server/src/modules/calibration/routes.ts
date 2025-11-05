@@ -106,6 +106,56 @@ calibrationRoutes.get(
   }
 );
 
+// GET /calibration/plans/asset/:assetId - Get calibration plans by asset
+calibrationRoutes.get(
+  "/plans/asset/:assetId",
+  requirePermission("calibration", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { assetId } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const calibrationService = new CalibrationService(db);
+    const plans = await calibrationService.getCalibrationPlansByAsset(
+      assetId,
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: plans,
+    });
+  }
+);
+
+// GET /calibration/plans/overdue - Get overdue calibration plans
+calibrationRoutes.get(
+  "/plans/overdue",
+  requirePermission("calibration", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const calibrationService = new CalibrationService(db);
+    const plans = await calibrationService.getOverdueCalibrations(
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: plans,
+    });
+  }
+);
+
 // GET /calibration/plans/:id - Get single calibration plan
 calibrationRoutes.get(
   "/plans/:id",
@@ -328,6 +378,58 @@ calibrationRoutes.get(
   }
 );
 
+// GET /calibration/records/plan/:planId - Get records by plan
+calibrationRoutes.get(
+  "/records/plan/:planId",
+  requirePermission("calibration", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { planId } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const calibrationService = new CalibrationService(db);
+    const records = await calibrationService.getCalibrationRecordsByPlan(
+      planId,
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: records,
+    });
+  }
+);
+
+// GET /calibration/records/asset/:assetId - Get records by asset
+calibrationRoutes.get(
+  "/records/asset/:assetId",
+  requirePermission("calibration", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { assetId } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const calibrationService = new CalibrationService(db);
+    const records = await calibrationService.getCalibrationRecordsByAsset(
+      assetId,
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: records,
+    });
+  }
+);
+
 // GET /calibration/records/:id - Get single calibration record
 calibrationRoutes.get(
   "/records/:id",
@@ -499,6 +601,29 @@ calibrationRoutes.put(
       success: true,
       data: record,
       message: "Calibration record updated successfully",
+    });
+  }
+);
+
+// DELETE /calibration/records/:id - Delete calibration record
+calibrationRoutes.delete(
+  "/records/:id",
+  requirePermission("calibration", "write"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { id } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const calibrationService = new CalibrationService(db);
+    await calibrationService.deleteCalibrationRecord(id, user.tenantId);
+
+    return c.json({
+      success: true,
+      message: "Calibration record deleted successfully",
     });
   }
 );

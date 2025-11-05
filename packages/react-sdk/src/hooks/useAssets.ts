@@ -94,7 +94,10 @@ export const useAssetIssuesNested = (assetId: string, options?: QueryOptions) =>
 
   return useQuery({
     queryKey: ['assets', assetId, 'issues'],
-    queryFn: () => client.getAssetIssuesNested(assetId),
+    queryFn: async () => {
+      const response = await client.getAssetIssuesNested(assetId);
+      return response.data || [];
+    },
     enabled: !!assetId && options?.enabled !== false,
     ...options,
   });

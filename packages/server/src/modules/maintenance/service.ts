@@ -83,6 +83,25 @@ export class MaintenanceService {
   }
 
   /**
+   * Get maintenance plans by asset ID
+   */
+  async getMaintenancePlansByAsset(assetId: string, tenantId: string) {
+    const plans = await this.db
+      .select()
+      .from(maintenancePlans)
+      .where(
+        and(
+          eq(maintenancePlans.assetId, assetId),
+          eq(maintenancePlans.tenantId, tenantId),
+          isNull(maintenancePlans.deletedAt)
+        )
+      )
+      .orderBy(desc(maintenancePlans.insertedAt));
+
+    return plans;
+  }
+
+  /**
    * Create a new maintenance plan
    */
   async createMaintenancePlan(
@@ -253,6 +272,42 @@ export class MaintenanceService {
   }
 
   /**
+   * Get maintenance records by plan ID
+   */
+  async getMaintenanceRecordsByPlan(planId: string, tenantId: string) {
+    const records = await this.db
+      .select()
+      .from(maintenanceRecords)
+      .where(
+        and(
+          eq(maintenanceRecords.maintenancePlanId, planId),
+          eq(maintenanceRecords.tenantId, tenantId)
+        )
+      )
+      .orderBy(desc(maintenanceRecords.scheduledDate));
+
+    return records;
+  }
+
+  /**
+   * Get maintenance records by asset ID
+   */
+  async getMaintenanceRecordsByAsset(assetId: string, tenantId: string) {
+    const records = await this.db
+      .select()
+      .from(maintenanceRecords)
+      .where(
+        and(
+          eq(maintenanceRecords.assetId, assetId),
+          eq(maintenanceRecords.tenantId, tenantId)
+        )
+      )
+      .orderBy(desc(maintenanceRecords.scheduledDate));
+
+    return records;
+  }
+
+  /**
    * Create a new maintenance record
    */
   async createMaintenanceRecord(
@@ -303,6 +358,23 @@ export class MaintenanceService {
         ...updateData,
         updatedAt: new Date(),
       })
+      .where(
+        and(
+          eq(maintenanceRecords.id, id),
+          eq(maintenanceRecords.tenantId, tenantId)
+        )
+      )
+      .returning();
+
+    return record;
+  }
+
+  /**
+   * Delete a maintenance record
+   */
+  async deleteMaintenanceRecord(id: string, tenantId: string) {
+    const [record] = await this.db
+      .delete(maintenanceRecords)
       .where(
         and(
           eq(maintenanceRecords.id, id),

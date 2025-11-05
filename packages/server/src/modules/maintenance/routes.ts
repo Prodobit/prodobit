@@ -79,6 +79,32 @@ maintenanceRoutes.get(
   }
 );
 
+// GET /maintenance/plans/asset/:assetId - Get maintenance plans by asset
+maintenanceRoutes.get(
+  "/plans/asset/:assetId",
+  requirePermission("maintenance", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { assetId } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const maintenanceService = new MaintenanceService(db);
+    const plans = await maintenanceService.getMaintenancePlansByAsset(
+      assetId,
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: plans,
+    });
+  }
+);
+
 // GET /maintenance/plans/:id - Get single maintenance plan
 maintenanceRoutes.get(
   "/plans/:id",
@@ -295,6 +321,58 @@ maintenanceRoutes.get(
   }
 );
 
+// GET /maintenance/records/plan/:planId - Get records by plan
+maintenanceRoutes.get(
+  "/records/plan/:planId",
+  requirePermission("maintenance", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { planId } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const maintenanceService = new MaintenanceService(db);
+    const records = await maintenanceService.getMaintenanceRecordsByPlan(
+      planId,
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: records,
+    });
+  }
+);
+
+// GET /maintenance/records/asset/:assetId - Get records by asset
+maintenanceRoutes.get(
+  "/records/asset/:assetId",
+  requirePermission("maintenance", "read"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { assetId } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const maintenanceService = new MaintenanceService(db);
+    const records = await maintenanceService.getMaintenanceRecordsByAsset(
+      assetId,
+      user.tenantId
+    );
+
+    return c.json({
+      success: true,
+      data: records,
+    });
+  }
+);
+
 // GET /maintenance/records/:id - Get single maintenance record
 maintenanceRoutes.get(
   "/records/:id",
@@ -467,6 +545,29 @@ maintenanceRoutes.put(
       success: true,
       data: record,
       message: "Maintenance record updated successfully",
+    });
+  }
+);
+
+// DELETE /maintenance/records/:id - Delete maintenance record
+maintenanceRoutes.delete(
+  "/records/:id",
+  requirePermission("maintenance", "write"),
+  async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const { id } = c.req.param();
+
+    if (!user?.tenantId) {
+      return c.json({ error: "Tenant ID required" }, 400);
+    }
+
+    const maintenanceService = new MaintenanceService(db);
+    await maintenanceService.deleteMaintenanceRecord(id, user.tenantId);
+
+    return c.json({
+      success: true,
+      message: "Maintenance record deleted successfully",
     });
   }
 );

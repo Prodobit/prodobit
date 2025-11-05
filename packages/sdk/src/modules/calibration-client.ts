@@ -24,7 +24,7 @@ export class CalibrationClient extends BaseClient {
     const queryString = buildQuery(query);
     return this.request(
       "GET",
-      `/api/v1/calibration${queryString ? `?${queryString}` : ""}`,
+      `/api/v1/calibration/plans${queryString ? `?${queryString}` : ""}`,
       undefined,
       config
     );
@@ -37,7 +37,7 @@ export class CalibrationClient extends BaseClient {
     id: string,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan>> {
-    return this.request("GET", `/api/v1/calibration/${id}`, undefined, config);
+    return this.request("GET", `/api/v1/calibration/plans/${id}`, undefined, config);
   }
 
   /**
@@ -49,7 +49,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationPlan[]>> {
     return this.request(
       "GET",
-      `/api/v1/calibration/asset/${assetId}`,
+      `/api/v1/calibration/plans/asset/${assetId}`,
       undefined,
       config
     );
@@ -64,7 +64,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationPlan[]>> {
     return this.request(
       "GET",
-      `/api/v1/calibration/upcoming?days=${days}`,
+      `/api/v1/calibration/plans/upcoming?days=${days}`,
       undefined,
       config
     );
@@ -78,7 +78,22 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationPlan[]>> {
     return this.request(
       "GET",
-      "/api/v1/calibration/overdue",
+      "/api/v1/calibration/plans/overdue",
+      undefined,
+      config
+    );
+  }
+
+  /**
+   * Get expiring certificates
+   */
+  async getExpiringCertificates(
+    days: number,
+    config?: RequestConfig
+  ): Promise<Response<CalibrationRecord[]>> {
+    return this.request(
+      "GET",
+      `/api/v1/calibration/certificates/expiring?days=${days}`,
       undefined,
       config
     );
@@ -91,7 +106,7 @@ export class CalibrationClient extends BaseClient {
     data: CreateCalibrationPlanRequest,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan>> {
-    return this.request("POST", "/api/v1/calibration", data, config);
+    return this.request("POST", "/api/v1/calibration/plans", data, config);
   }
 
   /**
@@ -102,7 +117,7 @@ export class CalibrationClient extends BaseClient {
     data: UpdateCalibrationPlanRequest,
     config?: RequestConfig
   ): Promise<Response<CalibrationPlan>> {
-    return this.request("PUT", `/api/v1/calibration/${id}`, data, config);
+    return this.request("PUT", `/api/v1/calibration/plans/${id}`, data, config);
   }
 
   /**
@@ -114,7 +129,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<void>> {
     return this.request(
       "DELETE",
-      `/api/v1/calibration/${id}`,
+      `/api/v1/calibration/plans/${id}`,
       undefined,
       config
     );
@@ -132,7 +147,7 @@ export class CalibrationClient extends BaseClient {
     const queryString = buildQuery(query);
     return this.request(
       "GET",
-      `/api/v1/calibration-records${queryString ? `?${queryString}` : ""}`,
+      `/api/v1/calibration/records${queryString ? `?${queryString}` : ""}`,
       undefined,
       config
     );
@@ -147,7 +162,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationRecord>> {
     return this.request(
       "GET",
-      `/api/v1/calibration-records/${id}`,
+      `/api/v1/calibration/records/${id}`,
       undefined,
       config
     );
@@ -162,7 +177,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationRecord[]>> {
     return this.request(
       "GET",
-      `/api/v1/calibration-records/plan/${planId}`,
+      `/api/v1/calibration/records/plan/${planId}`,
       undefined,
       config
     );
@@ -177,22 +192,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationRecord[]>> {
     return this.request(
       "GET",
-      `/api/v1/calibration-records/asset/${assetId}`,
-      undefined,
-      config
-    );
-  }
-
-  /**
-   * Get expiring certificates
-   */
-  async getExpiringCertificates(
-    days: number,
-    config?: RequestConfig
-  ): Promise<Response<CalibrationRecord[]>> {
-    return this.request(
-      "GET",
-      `/api/v1/calibration-records/expiring-certificates?days=${days}`,
+      `/api/v1/calibration/records/asset/${assetId}`,
       undefined,
       config
     );
@@ -205,7 +205,7 @@ export class CalibrationClient extends BaseClient {
     data: CreateCalibrationRecordRequest,
     config?: RequestConfig
   ): Promise<Response<CalibrationRecord>> {
-    return this.request("POST", "/api/v1/calibration-records", data, config);
+    return this.request("POST", "/api/v1/calibration/records", data, config);
   }
 
   /**
@@ -218,7 +218,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<CalibrationRecord>> {
     return this.request(
       "PUT",
-      `/api/v1/calibration-records/${id}`,
+      `/api/v1/calibration/records/${id}`,
       data,
       config
     );
@@ -233,7 +233,7 @@ export class CalibrationClient extends BaseClient {
   ): Promise<Response<void>> {
     return this.request(
       "DELETE",
-      `/api/v1/calibration-records/${id}`,
+      `/api/v1/calibration/records/${id}`,
       undefined,
       config
     );
