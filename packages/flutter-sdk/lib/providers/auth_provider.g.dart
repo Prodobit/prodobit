@@ -6,13 +6,13 @@ part of 'auth_provider.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AuthStateAuthenticatedImpl _$$AuthStateAuthenticatedImplFromJson(
+AuthStateAuthenticated _$AuthStateAuthenticatedFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthStateAuthenticatedImpl',
+      'AuthStateAuthenticated',
       json,
       ($checkedConvert) {
-        final val = _$AuthStateAuthenticatedImpl(
+        final val = AuthStateAuthenticated(
           $checkedConvert(
               'user', (v) => UserData.fromJson(v as Map<String, dynamic>)),
           $checkedConvert('tenantId', (v) => v as String?),
@@ -23,20 +23,20 @@ _$AuthStateAuthenticatedImpl _$$AuthStateAuthenticatedImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$AuthStateAuthenticatedImplToJson(
-        _$AuthStateAuthenticatedImpl instance) =>
+Map<String, dynamic> _$AuthStateAuthenticatedToJson(
+        AuthStateAuthenticated instance) =>
     <String, dynamic>{
       'user': instance.user.toJson(),
       'tenantId': instance.tenantId,
       'runtimeType': instance.$type,
     };
 
-_$AuthStateErrorImpl _$$AuthStateErrorImplFromJson(Map<String, dynamic> json) =>
+AuthStateError _$AuthStateErrorFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthStateErrorImpl',
+      'AuthStateError',
       json,
       ($checkedConvert) {
-        final val = _$AuthStateErrorImpl(
+        final val = AuthStateError(
           $checkedConvert('message', (v) => v as String),
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
@@ -45,20 +45,18 @@ _$AuthStateErrorImpl _$$AuthStateErrorImplFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$AuthStateErrorImplToJson(
-        _$AuthStateErrorImpl instance) =>
+Map<String, dynamic> _$AuthStateErrorToJson(AuthStateError instance) =>
     <String, dynamic>{
       'message': instance.message,
       'runtimeType': instance.$type,
     };
 
-_$AuthStateInitialImpl _$$AuthStateInitialImplFromJson(
-        Map<String, dynamic> json) =>
+AuthStateInitial _$AuthStateInitialFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthStateInitialImpl',
+      'AuthStateInitial',
       json,
       ($checkedConvert) {
-        final val = _$AuthStateInitialImpl(
+        final val = AuthStateInitial(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -66,19 +64,17 @@ _$AuthStateInitialImpl _$$AuthStateInitialImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$AuthStateInitialImplToJson(
-        _$AuthStateInitialImpl instance) =>
+Map<String, dynamic> _$AuthStateInitialToJson(AuthStateInitial instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$AuthStateLoadingImpl _$$AuthStateLoadingImplFromJson(
-        Map<String, dynamic> json) =>
+AuthStateLoading _$AuthStateLoadingFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthStateLoadingImpl',
+      'AuthStateLoading',
       json,
       ($checkedConvert) {
-        final val = _$AuthStateLoadingImpl(
+        final val = AuthStateLoading(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -86,19 +82,18 @@ _$AuthStateLoadingImpl _$$AuthStateLoadingImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$AuthStateLoadingImplToJson(
-        _$AuthStateLoadingImpl instance) =>
+Map<String, dynamic> _$AuthStateLoadingToJson(AuthStateLoading instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$AuthStateUnauthenticatedImpl _$$AuthStateUnauthenticatedImplFromJson(
+AuthStateUnauthenticated _$AuthStateUnauthenticatedFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthStateUnauthenticatedImpl',
+      'AuthStateUnauthenticated',
       json,
       ($checkedConvert) {
-        final val = _$AuthStateUnauthenticatedImpl(
+        final val = AuthStateUnauthenticated(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -106,18 +101,18 @@ _$AuthStateUnauthenticatedImpl _$$AuthStateUnauthenticatedImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$AuthStateUnauthenticatedImplToJson(
-        _$AuthStateUnauthenticatedImpl instance) =>
+Map<String, dynamic> _$AuthStateUnauthenticatedToJson(
+        AuthStateUnauthenticated instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$OTPStateErrorImpl _$$OTPStateErrorImplFromJson(Map<String, dynamic> json) =>
+OTPStateError _$OTPStateErrorFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateErrorImpl',
+      'OTPStateError',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateErrorImpl(
+        final val = OTPStateError(
           $checkedConvert('message', (v) => v as String),
           attemptsLeft:
               $checkedConvert('attemptsLeft', (v) => (v as num?)?.toInt()),
@@ -128,20 +123,19 @@ _$OTPStateErrorImpl _$$OTPStateErrorImplFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateErrorImplToJson(_$OTPStateErrorImpl instance) =>
+Map<String, dynamic> _$OTPStateErrorToJson(OTPStateError instance) =>
     <String, dynamic>{
       'message': instance.message,
       'attemptsLeft': instance.attemptsLeft,
       'runtimeType': instance.$type,
     };
 
-_$OTPStateInitialImpl _$$OTPStateInitialImplFromJson(
-        Map<String, dynamic> json) =>
+OTPStateInitial _$OTPStateInitialFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateInitialImpl',
+      'OTPStateInitial',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateInitialImpl(
+        final val = OTPStateInitial(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -149,19 +143,17 @@ _$OTPStateInitialImpl _$$OTPStateInitialImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateInitialImplToJson(
-        _$OTPStateInitialImpl instance) =>
+Map<String, dynamic> _$OTPStateInitialToJson(OTPStateInitial instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$OTPStateRequestingImpl _$$OTPStateRequestingImplFromJson(
-        Map<String, dynamic> json) =>
+OTPStateRequesting _$OTPStateRequestingFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateRequestingImpl',
+      'OTPStateRequesting',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateRequestingImpl(
+        final val = OTPStateRequesting(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -169,18 +161,17 @@ _$OTPStateRequestingImpl _$$OTPStateRequestingImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateRequestingImplToJson(
-        _$OTPStateRequestingImpl instance) =>
+Map<String, dynamic> _$OTPStateRequestingToJson(OTPStateRequesting instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$OTPStateSentImpl _$$OTPStateSentImplFromJson(Map<String, dynamic> json) =>
+OTPStateSent _$OTPStateSentFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateSentImpl',
+      'OTPStateSent',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateSentImpl(
+        final val = OTPStateSent(
           $checkedConvert('email', (v) => v as String),
           $checkedConvert('expiresAt', (v) => v as String),
           $checkedConvert('tenantId', (v) => v as String?),
@@ -192,7 +183,7 @@ _$OTPStateSentImpl _$$OTPStateSentImplFromJson(Map<String, dynamic> json) =>
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateSentImplToJson(_$OTPStateSentImpl instance) =>
+Map<String, dynamic> _$OTPStateSentToJson(OTPStateSent instance) =>
     <String, dynamic>{
       'email': instance.email,
       'expiresAt': instance.expiresAt,
@@ -201,13 +192,13 @@ Map<String, dynamic> _$$OTPStateSentImplToJson(_$OTPStateSentImpl instance) =>
       'runtimeType': instance.$type,
     };
 
-_$OTPStateTenantSelectionImpl _$$OTPStateTenantSelectionImplFromJson(
+OTPStateTenantSelection _$OTPStateTenantSelectionFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateTenantSelectionImpl',
+      'OTPStateTenantSelection',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateTenantSelectionImpl(
+        final val = OTPStateTenantSelection(
           $checkedConvert('email', (v) => v as String),
           $checkedConvert(
               'tenants',
@@ -222,8 +213,8 @@ _$OTPStateTenantSelectionImpl _$$OTPStateTenantSelectionImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateTenantSelectionImplToJson(
-        _$OTPStateTenantSelectionImpl instance) =>
+Map<String, dynamic> _$OTPStateTenantSelectionToJson(
+        OTPStateTenantSelection instance) =>
     <String, dynamic>{
       'email': instance.email,
       'tenants': instance.tenants.map((e) => e.toJson()).toList(),
@@ -231,13 +222,12 @@ Map<String, dynamic> _$$OTPStateTenantSelectionImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$OTPStateVerifiedImpl _$$OTPStateVerifiedImplFromJson(
-        Map<String, dynamic> json) =>
+OTPStateVerified _$OTPStateVerifiedFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateVerifiedImpl',
+      'OTPStateVerified',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateVerifiedImpl(
+        final val = OTPStateVerified(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -245,19 +235,17 @@ _$OTPStateVerifiedImpl _$$OTPStateVerifiedImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateVerifiedImplToJson(
-        _$OTPStateVerifiedImpl instance) =>
+Map<String, dynamic> _$OTPStateVerifiedToJson(OTPStateVerified instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$OTPStateVerifyingImpl _$$OTPStateVerifyingImplFromJson(
-        Map<String, dynamic> json) =>
+OTPStateVerifying _$OTPStateVerifyingFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OTPStateVerifyingImpl',
+      'OTPStateVerifying',
       json,
       ($checkedConvert) {
-        final val = _$OTPStateVerifyingImpl(
+        final val = OTPStateVerifying(
           $type: $checkedConvert('runtimeType', (v) => v as String?),
         );
         return val;
@@ -265,8 +253,7 @@ _$OTPStateVerifyingImpl _$$OTPStateVerifyingImplFromJson(
       fieldKeyMap: const {r'$type': 'runtimeType'},
     );
 
-Map<String, dynamic> _$$OTPStateVerifyingImplToJson(
-        _$OTPStateVerifyingImpl instance) =>
+Map<String, dynamic> _$OTPStateVerifyingToJson(OTPStateVerifying instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
@@ -275,120 +262,330 @@ Map<String, dynamic> _$$OTPStateVerifyingImplToJson(
 // RiverpodGenerator
 // **************************************************************************
 
-String _$currentTenantHash() => r'53c2977dcc53265324e1ddbecd879130fcd168c9';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+/// Current tenant provider
+
+@ProviderFor(currentTenant)
+const currentTenantProvider = CurrentTenantProvider._();
 
 /// Current tenant provider
-///
-/// Copied from [currentTenant].
-@ProviderFor(currentTenant)
-final currentTenantProvider = AutoDisposeProvider<String?>.internal(
-  currentTenant,
-  name: r'currentTenantProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$currentTenantHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef CurrentTenantRef = AutoDisposeProviderRef<String?>;
-String _$currentUserHash() => r'07b8125fa5fd6b1a76773786f4c634e408afcad3';
+final class CurrentTenantProvider
+    extends $FunctionalProvider<String?, String?, String?>
+    with $Provider<String?> {
+  /// Current tenant provider
+  const CurrentTenantProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'currentTenantProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$currentTenantHash();
+
+  @$internal
+  @override
+  $ProviderElement<String?> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  String? create(Ref ref) {
+    return currentTenant(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(String? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<String?>(value),
+    );
+  }
+}
+
+String _$currentTenantHash() => r'53c2977dcc53265324e1ddbecd879130fcd168c9';
 
 /// Current user provider
-///
-/// Copied from [currentUser].
-@ProviderFor(currentUser)
-final currentUserProvider = AutoDisposeProvider<UserData?>.internal(
-  currentUser,
-  name: r'currentUserProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$currentUserHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef CurrentUserRef = AutoDisposeProviderRef<UserData?>;
-String _$isAuthenticatedHash() => r'663ed980908c622a83890adf55e1f9507a12a6ab';
+@ProviderFor(currentUser)
+const currentUserProvider = CurrentUserProvider._();
+
+/// Current user provider
+
+final class CurrentUserProvider
+    extends $FunctionalProvider<UserData?, UserData?, UserData?>
+    with $Provider<UserData?> {
+  /// Current user provider
+  const CurrentUserProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'currentUserProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$currentUserHash();
+
+  @$internal
+  @override
+  $ProviderElement<UserData?> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  UserData? create(Ref ref) {
+    return currentUser(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(UserData? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<UserData?>(value),
+    );
+  }
+}
+
+String _$currentUserHash() => r'07b8125fa5fd6b1a76773786f4c634e408afcad3';
 
 /// Is authenticated provider
-///
-/// Copied from [isAuthenticated].
-@ProviderFor(isAuthenticated)
-final isAuthenticatedProvider = AutoDisposeProvider<bool>.internal(
-  isAuthenticated,
-  name: r'isAuthenticatedProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$isAuthenticatedHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef IsAuthenticatedRef = AutoDisposeProviderRef<bool>;
-String _$isAuthLoadingHash() => r'b9e25036f2f11d488204a6e453070e7f191b2292';
+@ProviderFor(isAuthenticated)
+const isAuthenticatedProvider = IsAuthenticatedProvider._();
+
+/// Is authenticated provider
+
+final class IsAuthenticatedProvider
+    extends $FunctionalProvider<bool, bool, bool> with $Provider<bool> {
+  /// Is authenticated provider
+  const IsAuthenticatedProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'isAuthenticatedProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$isAuthenticatedHash();
+
+  @$internal
+  @override
+  $ProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  bool create(Ref ref) {
+    return isAuthenticated(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(bool value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<bool>(value),
+    );
+  }
+}
+
+String _$isAuthenticatedHash() => r'663ed980908c622a83890adf55e1f9507a12a6ab';
 
 /// Auth loading provider
-///
-/// Copied from [isAuthLoading].
-@ProviderFor(isAuthLoading)
-final isAuthLoadingProvider = AutoDisposeProvider<bool>.internal(
-  isAuthLoading,
-  name: r'isAuthLoadingProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$isAuthLoadingHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef IsAuthLoadingRef = AutoDisposeProviderRef<bool>;
-String _$isOTPLoadingHash() => r'e9de552a0d792cb636bf82dee004607849b08d97';
+@ProviderFor(isAuthLoading)
+const isAuthLoadingProvider = IsAuthLoadingProvider._();
+
+/// Auth loading provider
+
+final class IsAuthLoadingProvider extends $FunctionalProvider<bool, bool, bool>
+    with $Provider<bool> {
+  /// Auth loading provider
+  const IsAuthLoadingProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'isAuthLoadingProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$isAuthLoadingHash();
+
+  @$internal
+  @override
+  $ProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  bool create(Ref ref) {
+    return isAuthLoading(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(bool value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<bool>(value),
+    );
+  }
+}
+
+String _$isAuthLoadingHash() => r'b9e25036f2f11d488204a6e453070e7f191b2292';
 
 /// OTP loading provider
-///
-/// Copied from [isOTPLoading].
-@ProviderFor(isOTPLoading)
-final isOTPLoadingProvider = AutoDisposeProvider<bool>.internal(
-  isOTPLoading,
-  name: r'isOTPLoadingProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$isOTPLoadingHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef IsOTPLoadingRef = AutoDisposeProviderRef<bool>;
+@ProviderFor(isOTPLoading)
+const isOTPLoadingProvider = IsOTPLoadingProvider._();
+
+/// OTP loading provider
+
+final class IsOTPLoadingProvider extends $FunctionalProvider<bool, bool, bool>
+    with $Provider<bool> {
+  /// OTP loading provider
+  const IsOTPLoadingProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'isOTPLoadingProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$isOTPLoadingHash();
+
+  @$internal
+  @override
+  $ProviderElement<bool> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  bool create(Ref ref) {
+    return isOTPLoading(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(bool value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<bool>(value),
+    );
+  }
+}
+
+String _$isOTPLoadingHash() => r'e9de552a0d792cb636bf82dee004607849b08d97';
+
+/// Auth state notifier
+
+@ProviderFor(Auth)
+const authProvider = AuthProvider._();
+
+/// Auth state notifier
+final class AuthProvider extends $AsyncNotifierProvider<Auth, AuthState> {
+  /// Auth state notifier
+  const AuthProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'authProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$authHash();
+
+  @$internal
+  @override
+  Auth create() => Auth();
+}
+
 String _$authHash() => r'5f585d05d4811b894a2af342a8dc37466e463deb';
 
 /// Auth state notifier
-///
-/// Copied from [Auth].
-@ProviderFor(Auth)
-final authProvider = AutoDisposeAsyncNotifierProvider<Auth, AuthState>.internal(
-  Auth.new,
-  name: r'authProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$authHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef _$Auth = AutoDisposeAsyncNotifier<AuthState>;
+abstract class _$Auth extends $AsyncNotifier<AuthState> {
+  FutureOr<AuthState> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<AuthState>, AuthState>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<AsyncValue<AuthState>, AuthState>,
+        AsyncValue<AuthState>,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}
+
+/// OTP state notifier
+
+@ProviderFor(Otp)
+const otpProvider = OtpProvider._();
+
+/// OTP state notifier
+final class OtpProvider extends $NotifierProvider<Otp, OTPState> {
+  /// OTP state notifier
+  const OtpProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'otpProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$otpHash();
+
+  @$internal
+  @override
+  Otp create() => Otp();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(OTPState value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<OTPState>(value),
+    );
+  }
+}
+
 String _$otpHash() => r'b2d30b433dc025a9cc6156eb743b638ca0dc5bb9';
 
 /// OTP state notifier
-///
-/// Copied from [Otp].
-@ProviderFor(Otp)
-final otpProvider = AutoDisposeNotifierProvider<Otp, OTPState>.internal(
-  Otp.new,
-  name: r'otpProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$otpHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
 
-typedef _$Otp = AutoDisposeNotifier<OTPState>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+abstract class _$Otp extends $Notifier<OTPState> {
+  OTPState build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<OTPState, OTPState>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<OTPState, OTPState>, OTPState, Object?, Object?>;
+    element.handleValue(ref, created);
+  }
+}

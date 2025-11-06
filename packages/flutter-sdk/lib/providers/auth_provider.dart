@@ -262,7 +262,7 @@ class Auth extends _$Auth {
 
 /// Authentication state
 @freezed
-class AuthState with _$AuthState {
+sealed class AuthState with _$AuthState {
   const factory AuthState.authenticated(UserData user, String? tenantId) =
       AuthStateAuthenticated;
   const factory AuthState.error(String message) = AuthStateError;
@@ -324,7 +324,7 @@ class Otp extends _$Otp {
 
 /// OTP verification state
 @freezed
-class OTPState with _$OTPState {
+sealed class OTPState with _$OTPState {
   const factory OTPState.error(String message, {int? attemptsLeft}) =
       OTPStateError;
   const factory OTPState.initial() = OTPStateInitial;

@@ -6,13 +6,12 @@ part of 'stock_adjustment_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StockAdjustmentImpl _$$StockAdjustmentImplFromJson(
-        Map<String, dynamic> json) =>
+_StockAdjustment _$StockAdjustmentFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$StockAdjustmentImpl',
+      '_StockAdjustment',
       json,
       ($checkedConvert) {
-        final val = _$StockAdjustmentImpl(
+        final val = _StockAdjustment(
           id: $checkedConvert('id', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
           locationId: $checkedConvert('locationId', (v) => v as String),
@@ -49,8 +48,7 @@ _$StockAdjustmentImpl _$$StockAdjustmentImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$StockAdjustmentImplToJson(
-        _$StockAdjustmentImpl instance) =>
+Map<String, dynamic> _$StockAdjustmentToJson(_StockAdjustment instance) =>
     <String, dynamic>{
       'id': instance.id,
       'itemId': instance.itemId,
@@ -77,13 +75,12 @@ Map<String, dynamic> _$$StockAdjustmentImplToJson(
       'metadata': instance.metadata,
     };
 
-_$StockAdjustmentItemImpl _$$StockAdjustmentItemImplFromJson(
-        Map<String, dynamic> json) =>
+_StockAdjustmentItem _$StockAdjustmentItemFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$StockAdjustmentItemImpl',
+      '_StockAdjustmentItem',
       json,
       ($checkedConvert) {
-        final val = _$StockAdjustmentItemImpl(
+        final val = _StockAdjustmentItem(
           id: $checkedConvert('id', (v) => v as String),
           stockAdjustmentId:
               $checkedConvert('stockAdjustmentId', (v) => v as String),
@@ -104,8 +101,8 @@ _$StockAdjustmentItemImpl _$$StockAdjustmentItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$StockAdjustmentItemImplToJson(
-        _$StockAdjustmentItemImpl instance) =>
+Map<String, dynamic> _$StockAdjustmentItemToJson(
+        _StockAdjustmentItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'stockAdjustmentId': instance.stockAdjustmentId,
@@ -121,13 +118,13 @@ Map<String, dynamic> _$$StockAdjustmentItemImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateStockAdjustmentRequestImpl _$$CreateStockAdjustmentRequestImplFromJson(
+_CreateStockAdjustmentRequest _$CreateStockAdjustmentRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateStockAdjustmentRequestImpl',
+      '_CreateStockAdjustmentRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateStockAdjustmentRequestImpl(
+        final val = _CreateStockAdjustmentRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           locationId: $checkedConvert('locationId', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
@@ -145,8 +142,8 @@ _$CreateStockAdjustmentRequestImpl _$$CreateStockAdjustmentRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateStockAdjustmentRequestImplToJson(
-        _$CreateStockAdjustmentRequestImpl instance) =>
+Map<String, dynamic> _$CreateStockAdjustmentRequestToJson(
+        _CreateStockAdjustmentRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'locationId': instance.locationId,
@@ -160,13 +157,13 @@ Map<String, dynamic> _$$CreateStockAdjustmentRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateStockAdjustmentRequestImpl _$$UpdateStockAdjustmentRequestImplFromJson(
+_UpdateStockAdjustmentRequest _$UpdateStockAdjustmentRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateStockAdjustmentRequestImpl',
+      '_UpdateStockAdjustmentRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateStockAdjustmentRequestImpl(
+        final val = _UpdateStockAdjustmentRequest(
           quantity: $checkedConvert('quantity', (v) => (v as num?)?.toDouble()),
           reason: $checkedConvert('reason', (v) => v as String?),
           referenceNumber:
@@ -181,8 +178,8 @@ _$UpdateStockAdjustmentRequestImpl _$$UpdateStockAdjustmentRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateStockAdjustmentRequestImplToJson(
-        _$UpdateStockAdjustmentRequestImpl instance) =>
+Map<String, dynamic> _$UpdateStockAdjustmentRequestToJson(
+        _UpdateStockAdjustmentRequest instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'reason': instance.reason,
@@ -193,13 +190,13 @@ Map<String, dynamic> _$$UpdateStockAdjustmentRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$StockAdjustmentFiltersImpl _$$StockAdjustmentFiltersImplFromJson(
+_StockAdjustmentFilters _$StockAdjustmentFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$StockAdjustmentFiltersImpl',
+      '_StockAdjustmentFilters',
       json,
       ($checkedConvert) {
-        final val = _$StockAdjustmentFiltersImpl(
+        final val = _StockAdjustmentFilters(
           itemId: $checkedConvert('itemId', (v) => v as String?),
           locationId: $checkedConvert('locationId', (v) => v as String?),
           type: $checkedConvert('type', (v) => v as String?),
@@ -228,8 +225,8 @@ _$StockAdjustmentFiltersImpl _$$StockAdjustmentFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$StockAdjustmentFiltersImplToJson(
-        _$StockAdjustmentFiltersImpl instance) =>
+Map<String, dynamic> _$StockAdjustmentFiltersToJson(
+        _StockAdjustmentFilters instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'locationId': instance.locationId,
@@ -250,32 +247,32 @@ Map<String, dynamic> _$$StockAdjustmentFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$ApproveStockAdjustmentRequestImpl
-    _$$ApproveStockAdjustmentRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$ApproveStockAdjustmentRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$ApproveStockAdjustmentRequestImpl(
-              notes: $checkedConvert('notes', (v) => v as String?),
-            );
-            return val;
-          },
+_ApproveStockAdjustmentRequest _$ApproveStockAdjustmentRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_ApproveStockAdjustmentRequest',
+      json,
+      ($checkedConvert) {
+        final val = _ApproveStockAdjustmentRequest(
+          notes: $checkedConvert('notes', (v) => v as String?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$ApproveStockAdjustmentRequestImplToJson(
-        _$ApproveStockAdjustmentRequestImpl instance) =>
+Map<String, dynamic> _$ApproveStockAdjustmentRequestToJson(
+        _ApproveStockAdjustmentRequest instance) =>
     <String, dynamic>{
       'notes': instance.notes,
     };
 
-_$RejectStockAdjustmentRequestImpl _$$RejectStockAdjustmentRequestImplFromJson(
+_RejectStockAdjustmentRequest _$RejectStockAdjustmentRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$RejectStockAdjustmentRequestImpl',
+      '_RejectStockAdjustmentRequest',
       json,
       ($checkedConvert) {
-        final val = _$RejectStockAdjustmentRequestImpl(
+        final val = _RejectStockAdjustmentRequest(
           reason: $checkedConvert('reason', (v) => v as String),
           notes: $checkedConvert('notes', (v) => v as String?),
         );
@@ -283,8 +280,8 @@ _$RejectStockAdjustmentRequestImpl _$$RejectStockAdjustmentRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$RejectStockAdjustmentRequestImplToJson(
-        _$RejectStockAdjustmentRequestImpl instance) =>
+Map<String, dynamic> _$RejectStockAdjustmentRequestToJson(
+        _RejectStockAdjustmentRequest instance) =>
     <String, dynamic>{
       'reason': instance.reason,
       'notes': instance.notes,

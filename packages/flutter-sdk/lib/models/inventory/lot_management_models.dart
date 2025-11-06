@@ -5,7 +5,7 @@ part 'lot_management_models.g.dart';
 
 /// Lot genealogy model
 @freezed
-class LotGenealogy with _$LotGenealogy {
+sealed class LotGenealogy with _$LotGenealogy {
   const factory LotGenealogy({
     required String id,
     required String lotNumber,
@@ -35,7 +35,7 @@ class LotGenealogy with _$LotGenealogy {
 
 /// Lot tracking history model
 @freezed
-class LotTrackingHistory with _$LotTrackingHistory {
+sealed class LotTrackingHistory with _$LotTrackingHistory {
   const factory LotTrackingHistory({
     required String id,
     required String lotId,
@@ -58,7 +58,7 @@ class LotTrackingHistory with _$LotTrackingHistory {
 
 /// Lot split request
 @freezed
-class SplitLotRequest with _$SplitLotRequest {
+sealed class SplitLotRequest with _$SplitLotRequest {
   const factory SplitLotRequest({
     required String sourceLotId,
     required List<LotSplitItem> splitItems,
@@ -72,7 +72,7 @@ class SplitLotRequest with _$SplitLotRequest {
 
 /// Lot split item
 @freezed
-class LotSplitItem with _$LotSplitItem {
+sealed class LotSplitItem with _$LotSplitItem {
   const factory LotSplitItem({
     required String newLotNumber,
     required double quantity,
@@ -87,7 +87,7 @@ class LotSplitItem with _$LotSplitItem {
 
 /// Merge lots request
 @freezed
-class MergeLotsRequest with _$MergeLotsRequest {
+sealed class MergeLotsRequest with _$MergeLotsRequest {
   const factory MergeLotsRequest({
     required List<String> sourceLotIds,
     required String targetLotNumber,
@@ -104,7 +104,7 @@ class MergeLotsRequest with _$MergeLotsRequest {
 
 /// Update lot tracking request
 @freezed
-class UpdateLotTrackingRequest with _$UpdateLotTrackingRequest {
+sealed class UpdateLotTrackingRequest with _$UpdateLotTrackingRequest {
   const factory UpdateLotTrackingRequest({
     String? status,
     DateTime? expiryDate,
@@ -118,7 +118,7 @@ class UpdateLotTrackingRequest with _$UpdateLotTrackingRequest {
 
 /// Quarantine lot request
 @freezed
-class QuarantineLotRequest with _$QuarantineLotRequest {
+sealed class QuarantineLotRequest with _$QuarantineLotRequest {
   const factory QuarantineLotRequest({
     required String reason,
     String? notes,
@@ -131,7 +131,7 @@ class QuarantineLotRequest with _$QuarantineLotRequest {
 
 /// Release lot request
 @freezed
-class ReleaseLotRequest with _$ReleaseLotRequest {
+sealed class ReleaseLotRequest with _$ReleaseLotRequest {
   const factory ReleaseLotRequest({
     required String releaseReason,
     String? notes,
@@ -145,7 +145,7 @@ class ReleaseLotRequest with _$ReleaseLotRequest {
 
 /// Lot genealogy filters
 @freezed
-class LotGenealogyFilters with _$LotGenealogyFilters {
+sealed class LotGenealogyFilters with _$LotGenealogyFilters {
   const factory LotGenealogyFilters({
     String? itemId,
     String? locationId,
@@ -195,7 +195,7 @@ class LotGenealogyFilters with _$LotGenealogyFilters {
 
 /// Lot tracking history filters
 @freezed
-class LotTrackingHistoryFilters with _$LotTrackingHistoryFilters {
+sealed class LotTrackingHistoryFilters with _$LotTrackingHistoryFilters {
   const factory LotTrackingHistoryFilters({
     String? lotId,
     String? eventType,
@@ -239,7 +239,7 @@ class LotTrackingHistoryFilters with _$LotTrackingHistoryFilters {
 
 /// Expiring lots response
 @freezed
-class ExpiringLot with _$ExpiringLot {
+sealed class ExpiringLot with _$ExpiringLot {
   const factory ExpiringLot({
     required String lotId,
     required String lotNumber,

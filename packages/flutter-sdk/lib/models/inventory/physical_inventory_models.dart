@@ -5,7 +5,7 @@ part 'physical_inventory_models.g.dart';
 
 /// Physical inventory model
 @freezed
-class PhysicalInventory with _$PhysicalInventory {
+sealed class PhysicalInventory with _$PhysicalInventory {
   const factory PhysicalInventory({
     required String id,
     required String name,
@@ -30,7 +30,7 @@ class PhysicalInventory with _$PhysicalInventory {
 
 /// Physical inventory item model
 @freezed
-class PhysicalInventoryItem with _$PhysicalInventoryItem {
+sealed class PhysicalInventoryItem with _$PhysicalInventoryItem {
   const factory PhysicalInventoryItem({
     required String id,
     required String physicalInventoryId,
@@ -55,7 +55,7 @@ class PhysicalInventoryItem with _$PhysicalInventoryItem {
 
 /// Create physical inventory request
 @freezed
-class CreatePhysicalInventoryRequest with _$CreatePhysicalInventoryRequest {
+sealed class CreatePhysicalInventoryRequest with _$CreatePhysicalInventoryRequest {
   const factory CreatePhysicalInventoryRequest({
     required String name,
     required String description,
@@ -69,7 +69,7 @@ class CreatePhysicalInventoryRequest with _$CreatePhysicalInventoryRequest {
 
 /// Update physical inventory request
 @freezed
-class UpdatePhysicalInventoryRequest with _$UpdatePhysicalInventoryRequest {
+sealed class UpdatePhysicalInventoryRequest with _$UpdatePhysicalInventoryRequest {
   const factory UpdatePhysicalInventoryRequest({
     String? name,
     String? description,
@@ -82,7 +82,7 @@ class UpdatePhysicalInventoryRequest with _$UpdatePhysicalInventoryRequest {
 
 /// Physical inventory filters
 @freezed
-class PhysicalInventoryFilters with _$PhysicalInventoryFilters {
+sealed class PhysicalInventoryFilters with _$PhysicalInventoryFilters {
   const factory PhysicalInventoryFilters({
     String? locationId,
     String? status,
@@ -126,7 +126,7 @@ class PhysicalInventoryFilters with _$PhysicalInventoryFilters {
 
 /// Update physical inventory item request
 @freezed
-class UpdatePhysicalInventoryItemRequest with _$UpdatePhysicalInventoryItemRequest {
+sealed class UpdatePhysicalInventoryItemRequest with _$UpdatePhysicalInventoryItemRequest {
   const factory UpdatePhysicalInventoryItemRequest({
     required double countedQuantity,
     String? notes,
@@ -140,7 +140,7 @@ class UpdatePhysicalInventoryItemRequest with _$UpdatePhysicalInventoryItemReque
 
 /// Physical inventory adjustment
 @freezed
-class PhysicalInventoryAdjustment with _$PhysicalInventoryAdjustment {
+sealed class PhysicalInventoryAdjustment with _$PhysicalInventoryAdjustment {
   const factory PhysicalInventoryAdjustment({
     required String id,
     required String physicalInventoryId,

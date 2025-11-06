@@ -5,7 +5,7 @@ part 'contact_models.g.dart';
 
 /// Contact mechanism model
 @freezed
-class ContactMechanism with _$ContactMechanism {
+sealed class ContactMechanism with _$ContactMechanism {
   const factory ContactMechanism({
     required String id,
     required String partyId,
@@ -28,7 +28,7 @@ class ContactMechanism with _$ContactMechanism {
 
 /// Party address model
 @freezed
-class PartyAddress with _$PartyAddress {
+sealed class PartyAddress with _$PartyAddress {
   const factory PartyAddress({
     required String id,
     required String partyId,
@@ -58,7 +58,7 @@ class PartyAddress with _$PartyAddress {
 
 /// Create contact mechanism request
 @freezed
-class CreateContactMechanismRequest with _$CreateContactMechanismRequest {
+sealed class CreateContactMechanismRequest with _$CreateContactMechanismRequest {
   const factory CreateContactMechanismRequest({
     required String type,
     required String value,
@@ -77,7 +77,7 @@ class CreateContactMechanismRequest with _$CreateContactMechanismRequest {
 
 /// Update contact mechanism request
 @freezed
-class UpdateContactMechanismRequest with _$UpdateContactMechanismRequest {
+sealed class UpdateContactMechanismRequest with _$UpdateContactMechanismRequest {
   const factory UpdateContactMechanismRequest({
     String? value,
     bool? isPrimary,
@@ -96,7 +96,7 @@ class UpdateContactMechanismRequest with _$UpdateContactMechanismRequest {
 
 /// Create address request
 @freezed
-class CreateAddressRequest with _$CreateAddressRequest {
+sealed class CreateAddressRequest with _$CreateAddressRequest {
   const factory CreateAddressRequest({
     required String type,
     required String addressLine1,
@@ -122,7 +122,7 @@ class CreateAddressRequest with _$CreateAddressRequest {
 
 /// Update address request
 @freezed
-class UpdateAddressRequest with _$UpdateAddressRequest {
+sealed class UpdateAddressRequest with _$UpdateAddressRequest {
   const factory UpdateAddressRequest({
     String? addressLine1,
     String? addressLine2,

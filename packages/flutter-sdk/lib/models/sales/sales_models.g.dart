@@ -6,13 +6,13 @@ part of 'sales_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreateSalesOrderItemRequestImpl _$$CreateSalesOrderItemRequestImplFromJson(
+_CreateSalesOrderItemRequest _$CreateSalesOrderItemRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateSalesOrderItemRequestImpl',
+      '_CreateSalesOrderItemRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateSalesOrderItemRequestImpl(
+        final val = _CreateSalesOrderItemRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
           unitPrice: $checkedConvert(
@@ -23,8 +23,8 @@ _$CreateSalesOrderItemRequestImpl _$$CreateSalesOrderItemRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateSalesOrderItemRequestImplToJson(
-        _$CreateSalesOrderItemRequestImpl instance) =>
+Map<String, dynamic> _$CreateSalesOrderItemRequestToJson(
+        _CreateSalesOrderItemRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -32,13 +32,13 @@ Map<String, dynamic> _$$CreateSalesOrderItemRequestImplToJson(
       'description': instance.description,
     };
 
-_$CreateSalesOrderRequestImpl _$$CreateSalesOrderRequestImplFromJson(
+_CreateSalesOrderRequest _$CreateSalesOrderRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateSalesOrderRequestImpl',
+      '_CreateSalesOrderRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateSalesOrderRequestImpl(
+        final val = _CreateSalesOrderRequest(
           customerId: $checkedConvert('customerId', (v) => v as String),
           orderDate:
               $checkedConvert('orderDate', (v) => DateTime.parse(v as String)),
@@ -56,8 +56,8 @@ _$CreateSalesOrderRequestImpl _$$CreateSalesOrderRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateSalesOrderRequestImplToJson(
-        _$CreateSalesOrderRequestImpl instance) =>
+Map<String, dynamic> _$CreateSalesOrderRequestToJson(
+        _CreateSalesOrderRequest instance) =>
     <String, dynamic>{
       'customerId': instance.customerId,
       'orderDate': instance.orderDate.toIso8601String(),
@@ -66,12 +66,11 @@ Map<String, dynamic> _$$CreateSalesOrderRequestImplToJson(
       'notes': instance.notes,
     };
 
-_$SalesOrderImpl _$$SalesOrderImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$SalesOrderImpl',
+_SalesOrder _$SalesOrderFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_SalesOrder',
       json,
       ($checkedConvert) {
-        final val = _$SalesOrderImpl(
+        final val = _SalesOrder(
           id: $checkedConvert('id', (v) => v as String),
           orderNumber: $checkedConvert('orderNumber', (v) => v as String),
           customerId: $checkedConvert('customerId', (v) => v as String),
@@ -101,7 +100,7 @@ _$SalesOrderImpl _$$SalesOrderImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$SalesOrderImplToJson(_$SalesOrderImpl instance) =>
+Map<String, dynamic> _$SalesOrderToJson(_SalesOrder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderNumber': instance.orderNumber,
@@ -118,13 +117,13 @@ Map<String, dynamic> _$$SalesOrderImplToJson(_$SalesOrderImpl instance) =>
       'updatedAt': instance.updatedAt?.toIso8601String(),
     };
 
-_$UpdateSalesOrderRequestImpl _$$UpdateSalesOrderRequestImplFromJson(
+_UpdateSalesOrderRequest _$UpdateSalesOrderRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateSalesOrderRequestImpl',
+      '_UpdateSalesOrderRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateSalesOrderRequestImpl(
+        final val = _UpdateSalesOrderRequest(
           orderNumber: $checkedConvert('orderNumber', (v) => v as String?),
           orderDate: $checkedConvert('orderDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -139,8 +138,8 @@ _$UpdateSalesOrderRequestImpl _$$UpdateSalesOrderRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateSalesOrderRequestImplToJson(
-        _$UpdateSalesOrderRequestImpl instance) =>
+Map<String, dynamic> _$UpdateSalesOrderRequestToJson(
+        _UpdateSalesOrderRequest instance) =>
     <String, dynamic>{
       'orderNumber': instance.orderNumber,
       'orderDate': instance.orderDate?.toIso8601String(),
@@ -150,12 +149,12 @@ Map<String, dynamic> _$$UpdateSalesOrderRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$SalesOrderItemImpl _$$SalesOrderItemImplFromJson(Map<String, dynamic> json) =>
+_SalesOrderItem _$SalesOrderItemFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SalesOrderItemImpl',
+      '_SalesOrderItem',
       json,
       ($checkedConvert) {
-        final val = _$SalesOrderItemImpl(
+        final val = _SalesOrderItem(
           id: $checkedConvert('id', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
           itemName: $checkedConvert('itemName', (v) => v as String),
@@ -170,8 +169,7 @@ _$SalesOrderItemImpl _$$SalesOrderItemImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$SalesOrderItemImplToJson(
-        _$SalesOrderItemImpl instance) =>
+Map<String, dynamic> _$SalesOrderItemToJson(_SalesOrderItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'itemId': instance.itemId,

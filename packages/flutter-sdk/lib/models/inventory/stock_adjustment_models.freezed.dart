@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,223 +9,133 @@ part of 'stock_adjustment_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-StockAdjustment _$StockAdjustmentFromJson(Map<String, dynamic> json) {
-  return _StockAdjustment.fromJson(json);
-}
 
 /// @nodoc
 mixin _$StockAdjustment {
-  String get id => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  double get value => throw _privateConstructorUsedError;
-  String get type =>
-      throw _privateConstructorUsedError; // 'increase', 'decrease'
-  String get reason =>
-      throw _privateConstructorUsedError; // 'damage', 'theft', 'obsolete', 'found', 'correction', 'other'
-  String get status =>
-      throw _privateConstructorUsedError; // 'draft', 'pending_approval', 'approved', 'rejected', 'posted'
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  String? get referenceNumber => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
-  String? get approvedBy => throw _privateConstructorUsedError;
-  String? get rejectedBy => throw _privateConstructorUsedError;
-  String? get postedBy => throw _privateConstructorUsedError;
-  DateTime? get approvedAt => throw _privateConstructorUsedError;
-  DateTime? get rejectedAt => throw _privateConstructorUsedError;
-  DateTime? get postedAt => throw _privateConstructorUsedError;
-  String? get rejectionReason => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get itemId;
+  String get locationId;
+  double get quantity;
+  double get value;
+  String get type; // 'increase', 'decrease'
+  String
+      get reason; // 'damage', 'theft', 'obsolete', 'found', 'correction', 'other'
+  String
+      get status; // 'draft', 'pending_approval', 'approved', 'rejected', 'posted'
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  String? get referenceNumber;
+  String? get notes;
+  String? get createdBy;
+  String? get approvedBy;
+  String? get rejectedBy;
+  String? get postedBy;
+  DateTime? get approvedAt;
+  DateTime? get rejectedAt;
+  DateTime? get postedAt;
+  String? get rejectionReason;
+  String? get lotNumber;
+  String? get serialNumber;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StockAdjustmentCopyWith<StockAdjustment> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StockAdjustmentCopyWith<$Res> {
-  factory $StockAdjustmentCopyWith(
-          StockAdjustment value, $Res Function(StockAdjustment) then) =
-      _$StockAdjustmentCopyWithImpl<$Res, StockAdjustment>;
-  @useResult
-  $Res call(
-      {String id,
-      String itemId,
-      String locationId,
-      double quantity,
-      double value,
-      String type,
-      String reason,
-      String status,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String? referenceNumber,
-      String? notes,
-      String? createdBy,
-      String? approvedBy,
-      String? rejectedBy,
-      String? postedBy,
-      DateTime? approvedAt,
-      DateTime? rejectedAt,
-      DateTime? postedAt,
-      String? rejectionReason,
-      String? lotNumber,
-      String? serialNumber,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$StockAdjustmentCopyWithImpl<$Res, $Val extends StockAdjustment>
-    implements $StockAdjustmentCopyWith<$Res> {
-  _$StockAdjustmentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of StockAdjustment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $StockAdjustmentCopyWith<StockAdjustment> get copyWith =>
+      _$StockAdjustmentCopyWithImpl<StockAdjustment>(
+          this as StockAdjustment, _$identity);
+
+  /// Serializes this StockAdjustment to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? itemId = null,
-    Object? locationId = null,
-    Object? quantity = null,
-    Object? value = null,
-    Object? type = null,
-    Object? reason = null,
-    Object? status = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? referenceNumber = freezed,
-    Object? notes = freezed,
-    Object? createdBy = freezed,
-    Object? approvedBy = freezed,
-    Object? rejectedBy = freezed,
-    Object? postedBy = freezed,
-    Object? approvedAt = freezed,
-    Object? rejectedAt = freezed,
-    Object? postedAt = freezed,
-    Object? rejectionReason = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as double,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      referenceNumber: freezed == referenceNumber
-          ? _value.referenceNumber
-          : referenceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdBy: freezed == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      approvedBy: freezed == approvedBy
-          ? _value.approvedBy
-          : approvedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectedBy: freezed == rejectedBy
-          ? _value.rejectedBy
-          : rejectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postedBy: freezed == postedBy
-          ? _value.postedBy
-          : postedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      approvedAt: freezed == approvedAt
-          ? _value.approvedAt
-          : approvedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
-          : rejectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      postedAt: freezed == postedAt
-          ? _value.postedAt
-          : postedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StockAdjustment &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.referenceNumber, referenceNumber) ||
+                other.referenceNumber == referenceNumber) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.approvedBy, approvedBy) ||
+                other.approvedBy == approvedBy) &&
+            (identical(other.rejectedBy, rejectedBy) ||
+                other.rejectedBy == rejectedBy) &&
+            (identical(other.postedBy, postedBy) ||
+                other.postedBy == postedBy) &&
+            (identical(other.approvedAt, approvedAt) ||
+                other.approvedAt == approvedAt) &&
+            (identical(other.rejectedAt, rejectedAt) ||
+                other.rejectedAt == rejectedAt) &&
+            (identical(other.postedAt, postedAt) ||
+                other.postedAt == postedAt) &&
+            (identical(other.rejectionReason, rejectionReason) ||
+                other.rejectionReason == rejectionReason) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        itemId,
+        locationId,
+        quantity,
+        value,
+        type,
+        reason,
+        status,
+        createdAt,
+        updatedAt,
+        referenceNumber,
+        notes,
+        createdBy,
+        approvedBy,
+        rejectedBy,
+        postedBy,
+        approvedAt,
+        rejectedAt,
+        postedAt,
+        rejectionReason,
+        lotNumber,
+        serialNumber,
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'StockAdjustment(id: $id, itemId: $itemId, locationId: $locationId, quantity: $quantity, value: $value, type: $type, reason: $reason, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, referenceNumber: $referenceNumber, notes: $notes, createdBy: $createdBy, approvedBy: $approvedBy, rejectedBy: $rejectedBy, postedBy: $postedBy, approvedAt: $approvedAt, rejectedAt: $rejectedAt, postedAt: $postedAt, rejectionReason: $rejectionReason, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$StockAdjustmentImplCopyWith<$Res>
-    implements $StockAdjustmentCopyWith<$Res> {
-  factory _$$StockAdjustmentImplCopyWith(_$StockAdjustmentImpl value,
-          $Res Function(_$StockAdjustmentImpl) then) =
-      __$$StockAdjustmentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $StockAdjustmentCopyWith<$Res> {
+  factory $StockAdjustmentCopyWith(
+          StockAdjustment value, $Res Function(StockAdjustment) _then) =
+      _$StockAdjustmentCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -254,13 +164,15 @@ abstract class _$$StockAdjustmentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$StockAdjustmentImplCopyWithImpl<$Res>
-    extends _$StockAdjustmentCopyWithImpl<$Res, _$StockAdjustmentImpl>
-    implements _$$StockAdjustmentImplCopyWith<$Res> {
-  __$$StockAdjustmentImplCopyWithImpl(
-      _$StockAdjustmentImpl _value, $Res Function(_$StockAdjustmentImpl) _then)
-      : super(_value, _then);
+class _$StockAdjustmentCopyWithImpl<$Res>
+    implements $StockAdjustmentCopyWith<$Res> {
+  _$StockAdjustmentCopyWithImpl(this._self, this._then);
 
+  final StockAdjustment _self;
+  final $Res Function(StockAdjustment) _then;
+
+  /// Create a copy of StockAdjustment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -288,107 +200,401 @@ class __$$StockAdjustmentImplCopyWithImpl<$Res>
     Object? serialNumber = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$StockAdjustmentImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as double,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       reason: null == reason
-          ? _value.reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       referenceNumber: freezed == referenceNumber
-          ? _value.referenceNumber
+          ? _self.referenceNumber
           : referenceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       createdBy: freezed == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
       approvedBy: freezed == approvedBy
-          ? _value.approvedBy
+          ? _self.approvedBy
           : approvedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       rejectedBy: freezed == rejectedBy
-          ? _value.rejectedBy
+          ? _self.rejectedBy
           : rejectedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       postedBy: freezed == postedBy
-          ? _value.postedBy
+          ? _self.postedBy
           : postedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       approvedAt: freezed == approvedAt
-          ? _value.approvedAt
+          ? _self.approvedAt
           : approvedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
+          ? _self.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       postedAt: freezed == postedAt
-          ? _value.postedAt
+          ? _self.postedAt
           : postedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
+          ? _self.rejectionReason
           : rejectionReason // ignore: cast_nullable_to_non_nullable
               as String?,
       lotNumber: freezed == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [StockAdjustment].
+extension StockAdjustmentPatterns on StockAdjustment {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StockAdjustment value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustment() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StockAdjustment value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustment():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StockAdjustment value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustment() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String itemId,
+            String locationId,
+            double quantity,
+            double value,
+            String type,
+            String reason,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? referenceNumber,
+            String? notes,
+            String? createdBy,
+            String? approvedBy,
+            String? rejectedBy,
+            String? postedBy,
+            DateTime? approvedAt,
+            DateTime? rejectedAt,
+            DateTime? postedAt,
+            String? rejectionReason,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustment() when $default != null:
+        return $default(
+            _that.id,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.value,
+            _that.type,
+            _that.reason,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.referenceNumber,
+            _that.notes,
+            _that.createdBy,
+            _that.approvedBy,
+            _that.rejectedBy,
+            _that.postedBy,
+            _that.approvedAt,
+            _that.rejectedAt,
+            _that.postedAt,
+            _that.rejectionReason,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String itemId,
+            String locationId,
+            double quantity,
+            double value,
+            String type,
+            String reason,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? referenceNumber,
+            String? notes,
+            String? createdBy,
+            String? approvedBy,
+            String? rejectedBy,
+            String? postedBy,
+            DateTime? approvedAt,
+            DateTime? rejectedAt,
+            DateTime? postedAt,
+            String? rejectionReason,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustment():
+        return $default(
+            _that.id,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.value,
+            _that.type,
+            _that.reason,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.referenceNumber,
+            _that.notes,
+            _that.createdBy,
+            _that.approvedBy,
+            _that.rejectedBy,
+            _that.postedBy,
+            _that.approvedAt,
+            _that.rejectedAt,
+            _that.postedAt,
+            _that.rejectionReason,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String itemId,
+            String locationId,
+            double quantity,
+            double value,
+            String type,
+            String reason,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? referenceNumber,
+            String? notes,
+            String? createdBy,
+            String? approvedBy,
+            String? rejectedBy,
+            String? postedBy,
+            DateTime? approvedAt,
+            DateTime? rejectedAt,
+            DateTime? postedAt,
+            String? rejectionReason,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustment() when $default != null:
+        return $default(
+            _that.id,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.value,
+            _that.type,
+            _that.reason,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.referenceNumber,
+            _that.notes,
+            _that.createdBy,
+            _that.approvedBy,
+            _that.rejectedBy,
+            _that.postedBy,
+            _that.approvedAt,
+            _that.rejectedAt,
+            _that.postedAt,
+            _that.rejectionReason,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$StockAdjustmentImpl implements _StockAdjustment {
-  const _$StockAdjustmentImpl(
+class _StockAdjustment implements StockAdjustment {
+  const _StockAdjustment(
       {required this.id,
       required this.itemId,
       required this.locationId,
@@ -413,9 +619,8 @@ class _$StockAdjustmentImpl implements _StockAdjustment {
       this.serialNumber,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$StockAdjustmentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StockAdjustmentImplFromJson(json);
+  factory _StockAdjustment.fromJson(Map<String, dynamic> json) =>
+      _$StockAdjustmentFromJson(json);
 
   @override
   final String id;
@@ -474,16 +679,26 @@ class _$StockAdjustmentImpl implements _StockAdjustment {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of StockAdjustment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StockAdjustment(id: $id, itemId: $itemId, locationId: $locationId, quantity: $quantity, value: $value, type: $type, reason: $reason, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, referenceNumber: $referenceNumber, notes: $notes, createdBy: $createdBy, approvedBy: $approvedBy, rejectedBy: $rejectedBy, postedBy: $postedBy, approvedAt: $approvedAt, rejectedAt: $rejectedAt, postedAt: $postedAt, rejectionReason: $rejectionReason, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StockAdjustmentCopyWith<_StockAdjustment> get copyWith =>
+      __$StockAdjustmentCopyWithImpl<_StockAdjustment>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StockAdjustmentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StockAdjustmentImpl &&
+            other is _StockAdjustment &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.locationId, locationId) ||
@@ -524,7 +739,7 @@ class _$StockAdjustmentImpl implements _StockAdjustment {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -553,321 +768,174 @@ class _$StockAdjustmentImpl implements _StockAdjustment {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StockAdjustmentImplCopyWith<_$StockAdjustmentImpl> get copyWith =>
-      __$$StockAdjustmentImplCopyWithImpl<_$StockAdjustmentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StockAdjustmentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StockAdjustment(id: $id, itemId: $itemId, locationId: $locationId, quantity: $quantity, value: $value, type: $type, reason: $reason, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, referenceNumber: $referenceNumber, notes: $notes, createdBy: $createdBy, approvedBy: $approvedBy, rejectedBy: $rejectedBy, postedBy: $postedBy, approvedAt: $approvedAt, rejectedAt: $rejectedAt, postedAt: $postedAt, rejectionReason: $rejectionReason, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
   }
 }
 
-abstract class _StockAdjustment implements StockAdjustment {
-  const factory _StockAdjustment(
-      {required final String id,
-      required final String itemId,
-      required final String locationId,
-      required final double quantity,
-      required final double value,
-      required final String type,
-      required final String reason,
-      required final String status,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final String? referenceNumber,
-      final String? notes,
-      final String? createdBy,
-      final String? approvedBy,
-      final String? rejectedBy,
-      final String? postedBy,
-      final DateTime? approvedAt,
-      final DateTime? rejectedAt,
-      final DateTime? postedAt,
-      final String? rejectionReason,
-      final String? lotNumber,
-      final String? serialNumber,
-      final Map<String, dynamic>? metadata}) = _$StockAdjustmentImpl;
-
-  factory _StockAdjustment.fromJson(Map<String, dynamic> json) =
-      _$StockAdjustmentImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get itemId;
-  @override
-  String get locationId;
-  @override
-  double get quantity;
-  @override
-  double get value;
-  @override
-  String get type;
-  @override // 'increase', 'decrease'
-  String get reason;
-  @override // 'damage', 'theft', 'obsolete', 'found', 'correction', 'other'
-  String get status;
-  @override // 'draft', 'pending_approval', 'approved', 'rejected', 'posted'
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  String? get referenceNumber;
-  @override
-  String? get notes;
-  @override
-  String? get createdBy;
-  @override
-  String? get approvedBy;
-  @override
-  String? get rejectedBy;
-  @override
-  String? get postedBy;
-  @override
-  DateTime? get approvedAt;
-  @override
-  DateTime? get rejectedAt;
-  @override
-  DateTime? get postedAt;
-  @override
-  String? get rejectionReason;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$StockAdjustmentImplCopyWith<_$StockAdjustmentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-StockAdjustmentItem _$StockAdjustmentItemFromJson(Map<String, dynamic> json) {
-  return _StockAdjustmentItem.fromJson(json);
-}
-
 /// @nodoc
-mixin _$StockAdjustmentItem {
-  String get id => throw _privateConstructorUsedError;
-  String get stockAdjustmentId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  double get unitCost => throw _privateConstructorUsedError;
-  double get totalValue => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StockAdjustmentItemCopyWith<StockAdjustmentItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StockAdjustmentItemCopyWith<$Res> {
-  factory $StockAdjustmentItemCopyWith(
-          StockAdjustmentItem value, $Res Function(StockAdjustmentItem) then) =
-      _$StockAdjustmentItemCopyWithImpl<$Res, StockAdjustmentItem>;
+abstract mixin class _$StockAdjustmentCopyWith<$Res>
+    implements $StockAdjustmentCopyWith<$Res> {
+  factory _$StockAdjustmentCopyWith(
+          _StockAdjustment value, $Res Function(_StockAdjustment) _then) =
+      __$StockAdjustmentCopyWithImpl;
+  @override
   @useResult
   $Res call(
       {String id,
-      String stockAdjustmentId,
       String itemId,
       String locationId,
       double quantity,
-      double unitCost,
-      double totalValue,
-      String? reason,
+      double value,
+      String type,
+      String reason,
+      String status,
+      DateTime createdAt,
+      DateTime updatedAt,
+      String? referenceNumber,
       String? notes,
+      String? createdBy,
+      String? approvedBy,
+      String? rejectedBy,
+      String? postedBy,
+      DateTime? approvedAt,
+      DateTime? rejectedAt,
+      DateTime? postedAt,
+      String? rejectionReason,
       String? lotNumber,
       String? serialNumber,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$StockAdjustmentItemCopyWithImpl<$Res, $Val extends StockAdjustmentItem>
-    implements $StockAdjustmentItemCopyWith<$Res> {
-  _$StockAdjustmentItemCopyWithImpl(this._value, this._then);
+class __$StockAdjustmentCopyWithImpl<$Res>
+    implements _$StockAdjustmentCopyWith<$Res> {
+  __$StockAdjustmentCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _StockAdjustment _self;
+  final $Res Function(_StockAdjustment) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of StockAdjustment
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? stockAdjustmentId = null,
     Object? itemId = null,
     Object? locationId = null,
     Object? quantity = null,
-    Object? unitCost = null,
-    Object? totalValue = null,
-    Object? reason = freezed,
+    Object? value = null,
+    Object? type = null,
+    Object? reason = null,
+    Object? status = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? referenceNumber = freezed,
     Object? notes = freezed,
+    Object? createdBy = freezed,
+    Object? approvedBy = freezed,
+    Object? rejectedBy = freezed,
+    Object? postedBy = freezed,
+    Object? approvedAt = freezed,
+    Object? rejectedAt = freezed,
+    Object? postedAt = freezed,
+    Object? rejectionReason = freezed,
     Object? lotNumber = freezed,
     Object? serialNumber = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_StockAdjustment(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      stockAdjustmentId: null == stockAdjustmentId
-          ? _value.stockAdjustmentId
-          : stockAdjustmentId // ignore: cast_nullable_to_non_nullable
-              as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
-      unitCost: null == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
               as double,
-      totalValue: null == totalValue
-          ? _value.totalValue
-          : totalValue // ignore: cast_nullable_to_non_nullable
-              as double,
-      reason: freezed == reason
-          ? _value.reason
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      reason: null == reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      referenceNumber: freezed == referenceNumber
+          ? _self.referenceNumber
+          : referenceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdBy: freezed == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      approvedBy: freezed == approvedBy
+          ? _self.approvedBy
+          : approvedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectedBy: freezed == rejectedBy
+          ? _self.rejectedBy
+          : rejectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postedBy: freezed == postedBy
+          ? _self.postedBy
+          : postedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      approvedAt: freezed == approvedAt
+          ? _self.approvedAt
+          : approvedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectedAt: freezed == rejectedAt
+          ? _self.rejectedAt
+          : rejectedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      postedAt: freezed == postedAt
+          ? _self.postedAt
+          : postedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
+              as String?,
       lotNumber: freezed == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$StockAdjustmentItemImplCopyWith<$Res>
-    implements $StockAdjustmentItemCopyWith<$Res> {
-  factory _$$StockAdjustmentItemImplCopyWith(_$StockAdjustmentItemImpl value,
-          $Res Function(_$StockAdjustmentItemImpl) then) =
-      __$$StockAdjustmentItemImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String stockAdjustmentId,
-      String itemId,
-      String locationId,
-      double quantity,
-      double unitCost,
-      double totalValue,
-      String? reason,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$StockAdjustmentItemImplCopyWithImpl<$Res>
-    extends _$StockAdjustmentItemCopyWithImpl<$Res, _$StockAdjustmentItemImpl>
-    implements _$$StockAdjustmentItemImplCopyWith<$Res> {
-  __$$StockAdjustmentItemImplCopyWithImpl(_$StockAdjustmentItemImpl _value,
-      $Res Function(_$StockAdjustmentItemImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? stockAdjustmentId = null,
-    Object? itemId = null,
-    Object? locationId = null,
-    Object? quantity = null,
-    Object? unitCost = null,
-    Object? totalValue = null,
-    Object? reason = freezed,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$StockAdjustmentItemImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      stockAdjustmentId: null == stockAdjustmentId
-          ? _value.stockAdjustmentId
-          : stockAdjustmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unitCost: null == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalValue: null == totalValue
-          ? _value.totalValue
-          : totalValue // ignore: cast_nullable_to_non_nullable
-              as double,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -875,9 +943,412 @@ class __$$StockAdjustmentItemImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$StockAdjustmentItem {
+  String get id;
+  String get stockAdjustmentId;
+  String get itemId;
+  String get locationId;
+  double get quantity;
+  double get unitCost;
+  double get totalValue;
+  String? get reason;
+  String? get notes;
+  String? get lotNumber;
+  String? get serialNumber;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of StockAdjustmentItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $StockAdjustmentItemCopyWith<StockAdjustmentItem> get copyWith =>
+      _$StockAdjustmentItemCopyWithImpl<StockAdjustmentItem>(
+          this as StockAdjustmentItem, _$identity);
+
+  /// Serializes this StockAdjustmentItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StockAdjustmentItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.stockAdjustmentId, stockAdjustmentId) ||
+                other.stockAdjustmentId == stockAdjustmentId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unitCost, unitCost) ||
+                other.unitCost == unitCost) &&
+            (identical(other.totalValue, totalValue) ||
+                other.totalValue == totalValue) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      stockAdjustmentId,
+      itemId,
+      locationId,
+      quantity,
+      unitCost,
+      totalValue,
+      reason,
+      notes,
+      lotNumber,
+      serialNumber,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'StockAdjustmentItem(id: $id, stockAdjustmentId: $stockAdjustmentId, itemId: $itemId, locationId: $locationId, quantity: $quantity, unitCost: $unitCost, totalValue: $totalValue, reason: $reason, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $StockAdjustmentItemCopyWith<$Res> {
+  factory $StockAdjustmentItemCopyWith(
+          StockAdjustmentItem value, $Res Function(StockAdjustmentItem) _then) =
+      _$StockAdjustmentItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String stockAdjustmentId,
+      String itemId,
+      String locationId,
+      double quantity,
+      double unitCost,
+      double totalValue,
+      String? reason,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$StockAdjustmentItemCopyWithImpl<$Res>
+    implements $StockAdjustmentItemCopyWith<$Res> {
+  _$StockAdjustmentItemCopyWithImpl(this._self, this._then);
+
+  final StockAdjustmentItem _self;
+  final $Res Function(StockAdjustmentItem) _then;
+
+  /// Create a copy of StockAdjustmentItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? stockAdjustmentId = null,
+    Object? itemId = null,
+    Object? locationId = null,
+    Object? quantity = null,
+    Object? unitCost = null,
+    Object? totalValue = null,
+    Object? reason = freezed,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      stockAdjustmentId: null == stockAdjustmentId
+          ? _self.stockAdjustmentId
+          : stockAdjustmentId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unitCost: null == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalValue: null == totalValue
+          ? _self.totalValue
+          : totalValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [StockAdjustmentItem].
+extension StockAdjustmentItemPatterns on StockAdjustmentItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StockAdjustmentItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StockAdjustmentItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StockAdjustmentItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String stockAdjustmentId,
+            String itemId,
+            String locationId,
+            double quantity,
+            double unitCost,
+            double totalValue,
+            String? reason,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.stockAdjustmentId,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.unitCost,
+            _that.totalValue,
+            _that.reason,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String stockAdjustmentId,
+            String itemId,
+            String locationId,
+            double quantity,
+            double unitCost,
+            double totalValue,
+            String? reason,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentItem():
+        return $default(
+            _that.id,
+            _that.stockAdjustmentId,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.unitCost,
+            _that.totalValue,
+            _that.reason,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String stockAdjustmentId,
+            String itemId,
+            String locationId,
+            double quantity,
+            double unitCost,
+            double totalValue,
+            String? reason,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.stockAdjustmentId,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.unitCost,
+            _that.totalValue,
+            _that.reason,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$StockAdjustmentItemImpl implements _StockAdjustmentItem {
-  const _$StockAdjustmentItemImpl(
+class _StockAdjustmentItem implements StockAdjustmentItem {
+  const _StockAdjustmentItem(
       {required this.id,
       required this.stockAdjustmentId,
       required this.itemId,
@@ -891,9 +1362,8 @@ class _$StockAdjustmentItemImpl implements _StockAdjustmentItem {
       this.serialNumber,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$StockAdjustmentItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StockAdjustmentItemImplFromJson(json);
+  factory _StockAdjustmentItem.fromJson(Map<String, dynamic> json) =>
+      _$StockAdjustmentItemFromJson(json);
 
   @override
   final String id;
@@ -927,16 +1397,27 @@ class _$StockAdjustmentItemImpl implements _StockAdjustmentItem {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of StockAdjustmentItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StockAdjustmentItem(id: $id, stockAdjustmentId: $stockAdjustmentId, itemId: $itemId, locationId: $locationId, quantity: $quantity, unitCost: $unitCost, totalValue: $totalValue, reason: $reason, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StockAdjustmentItemCopyWith<_StockAdjustmentItem> get copyWith =>
+      __$StockAdjustmentItemCopyWithImpl<_StockAdjustmentItem>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StockAdjustmentItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StockAdjustmentItemImpl &&
+            other is _StockAdjustmentItem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.stockAdjustmentId, stockAdjustmentId) ||
                 other.stockAdjustmentId == stockAdjustmentId) &&
@@ -958,7 +1439,7 @@ class _$StockAdjustmentItemImpl implements _StockAdjustmentItem {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -975,108 +1456,29 @@ class _$StockAdjustmentItemImpl implements _StockAdjustmentItem {
       serialNumber,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StockAdjustmentItemImplCopyWith<_$StockAdjustmentItemImpl> get copyWith =>
-      __$$StockAdjustmentItemImplCopyWithImpl<_$StockAdjustmentItemImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StockAdjustmentItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StockAdjustmentItem(id: $id, stockAdjustmentId: $stockAdjustmentId, itemId: $itemId, locationId: $locationId, quantity: $quantity, unitCost: $unitCost, totalValue: $totalValue, reason: $reason, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
   }
 }
 
-abstract class _StockAdjustmentItem implements StockAdjustmentItem {
-  const factory _StockAdjustmentItem(
-      {required final String id,
-      required final String stockAdjustmentId,
-      required final String itemId,
-      required final String locationId,
-      required final double quantity,
-      required final double unitCost,
-      required final double totalValue,
-      final String? reason,
-      final String? notes,
-      final String? lotNumber,
-      final String? serialNumber,
-      final Map<String, dynamic>? metadata}) = _$StockAdjustmentItemImpl;
-
-  factory _StockAdjustmentItem.fromJson(Map<String, dynamic> json) =
-      _$StockAdjustmentItemImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get stockAdjustmentId;
-  @override
-  String get itemId;
-  @override
-  String get locationId;
-  @override
-  double get quantity;
-  @override
-  double get unitCost;
-  @override
-  double get totalValue;
-  @override
-  String? get reason;
-  @override
-  String? get notes;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$StockAdjustmentItemImplCopyWith<_$StockAdjustmentItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CreateStockAdjustmentRequest _$CreateStockAdjustmentRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateStockAdjustmentRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateStockAdjustmentRequest {
-  String get itemId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  String get reason => throw _privateConstructorUsedError;
-  String? get referenceNumber => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateStockAdjustmentRequestCopyWith<CreateStockAdjustmentRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateStockAdjustmentRequestCopyWith<$Res> {
-  factory $CreateStockAdjustmentRequestCopyWith(
-          CreateStockAdjustmentRequest value,
-          $Res Function(CreateStockAdjustmentRequest) then) =
-      _$CreateStockAdjustmentRequestCopyWithImpl<$Res,
-          CreateStockAdjustmentRequest>;
+abstract mixin class _$StockAdjustmentItemCopyWith<$Res>
+    implements $StockAdjustmentItemCopyWith<$Res> {
+  factory _$StockAdjustmentItemCopyWith(_StockAdjustmentItem value,
+          $Res Function(_StockAdjustmentItem) _then) =
+      __$StockAdjustmentItemCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String itemId,
+      {String id,
+      String stockAdjustmentId,
+      String itemId,
       String locationId,
       double quantity,
-      String type,
-      String reason,
-      String? referenceNumber,
+      double unitCost,
+      double totalValue,
+      String? reason,
       String? notes,
       String? lotNumber,
       String? serialNumber,
@@ -1084,160 +1486,78 @@ abstract class $CreateStockAdjustmentRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateStockAdjustmentRequestCopyWithImpl<$Res,
-        $Val extends CreateStockAdjustmentRequest>
-    implements $CreateStockAdjustmentRequestCopyWith<$Res> {
-  _$CreateStockAdjustmentRequestCopyWithImpl(this._value, this._then);
+class __$StockAdjustmentItemCopyWithImpl<$Res>
+    implements _$StockAdjustmentItemCopyWith<$Res> {
+  __$StockAdjustmentItemCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _StockAdjustmentItem _self;
+  final $Res Function(_StockAdjustmentItem) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of StockAdjustmentItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
+    Object? id = null,
+    Object? stockAdjustmentId = null,
     Object? itemId = null,
     Object? locationId = null,
     Object? quantity = null,
-    Object? type = null,
-    Object? reason = null,
-    Object? referenceNumber = freezed,
+    Object? unitCost = null,
+    Object? totalValue = null,
+    Object? reason = freezed,
     Object? notes = freezed,
     Object? lotNumber = freezed,
     Object? serialNumber = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_StockAdjustmentItem(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      stockAdjustmentId: null == stockAdjustmentId
+          ? _self.stockAdjustmentId
+          : stockAdjustmentId // ignore: cast_nullable_to_non_nullable
+              as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      reason: null == reason
-          ? _value.reason
+      unitCost: null == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalValue: null == totalValue
+          ? _self.totalValue
+          : totalValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      reason: freezed == reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      referenceNumber: freezed == referenceNumber
-          ? _value.referenceNumber
-          : referenceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       lotNumber: freezed == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateStockAdjustmentRequestImplCopyWith<$Res>
-    implements $CreateStockAdjustmentRequestCopyWith<$Res> {
-  factory _$$CreateStockAdjustmentRequestImplCopyWith(
-          _$CreateStockAdjustmentRequestImpl value,
-          $Res Function(_$CreateStockAdjustmentRequestImpl) then) =
-      __$$CreateStockAdjustmentRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String itemId,
-      String locationId,
-      double quantity,
-      String type,
-      String reason,
-      String? referenceNumber,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$CreateStockAdjustmentRequestImplCopyWithImpl<$Res>
-    extends _$CreateStockAdjustmentRequestCopyWithImpl<$Res,
-        _$CreateStockAdjustmentRequestImpl>
-    implements _$$CreateStockAdjustmentRequestImplCopyWith<$Res> {
-  __$$CreateStockAdjustmentRequestImplCopyWithImpl(
-      _$CreateStockAdjustmentRequestImpl _value,
-      $Res Function(_$CreateStockAdjustmentRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? itemId = null,
-    Object? locationId = null,
-    Object? quantity = null,
-    Object? type = null,
-    Object? reason = null,
-    Object? referenceNumber = freezed,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$CreateStockAdjustmentRequestImpl(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      referenceNumber: freezed == referenceNumber
-          ? _value.referenceNumber
-          : referenceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1245,10 +1565,382 @@ class __$$CreateStockAdjustmentRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateStockAdjustmentRequest {
+  String get itemId;
+  String get locationId;
+  double get quantity;
+  String get type;
+  String get reason;
+  String? get referenceNumber;
+  String? get notes;
+  String? get lotNumber;
+  String? get serialNumber;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of CreateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateStockAdjustmentRequestCopyWith<CreateStockAdjustmentRequest>
+      get copyWith => _$CreateStockAdjustmentRequestCopyWithImpl<
+              CreateStockAdjustmentRequest>(
+          this as CreateStockAdjustmentRequest, _$identity);
+
+  /// Serializes this CreateStockAdjustmentRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateStockAdjustmentRequest &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.referenceNumber, referenceNumber) ||
+                other.referenceNumber == referenceNumber) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      locationId,
+      quantity,
+      type,
+      reason,
+      referenceNumber,
+      notes,
+      lotNumber,
+      serialNumber,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreateStockAdjustmentRequest(itemId: $itemId, locationId: $locationId, quantity: $quantity, type: $type, reason: $reason, referenceNumber: $referenceNumber, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateStockAdjustmentRequestCopyWith<$Res> {
+  factory $CreateStockAdjustmentRequestCopyWith(
+          CreateStockAdjustmentRequest value,
+          $Res Function(CreateStockAdjustmentRequest) _then) =
+      _$CreateStockAdjustmentRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String itemId,
+      String locationId,
+      double quantity,
+      String type,
+      String reason,
+      String? referenceNumber,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$CreateStockAdjustmentRequestCopyWithImpl<$Res>
+    implements $CreateStockAdjustmentRequestCopyWith<$Res> {
+  _$CreateStockAdjustmentRequestCopyWithImpl(this._self, this._then);
+
+  final CreateStockAdjustmentRequest _self;
+  final $Res Function(CreateStockAdjustmentRequest) _then;
+
+  /// Create a copy of CreateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? itemId = null,
+    Object? locationId = null,
+    Object? quantity = null,
+    Object? type = null,
+    Object? reason = null,
+    Object? referenceNumber = freezed,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      referenceNumber: freezed == referenceNumber
+          ? _self.referenceNumber
+          : referenceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateStockAdjustmentRequest].
+extension CreateStockAdjustmentRequestPatterns on CreateStockAdjustmentRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateStockAdjustmentRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateStockAdjustmentRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateStockAdjustmentRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateStockAdjustmentRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            String locationId,
+            double quantity,
+            String type,
+            String reason,
+            String? referenceNumber,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateStockAdjustmentRequest() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.type,
+            _that.reason,
+            _that.referenceNumber,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            String locationId,
+            double quantity,
+            String type,
+            String reason,
+            String? referenceNumber,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateStockAdjustmentRequest():
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.type,
+            _that.reason,
+            _that.referenceNumber,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String itemId,
+            String locationId,
+            double quantity,
+            String type,
+            String reason,
+            String? referenceNumber,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateStockAdjustmentRequest() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.type,
+            _that.reason,
+            _that.referenceNumber,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateStockAdjustmentRequestImpl
-    implements _CreateStockAdjustmentRequest {
-  const _$CreateStockAdjustmentRequestImpl(
+class _CreateStockAdjustmentRequest implements CreateStockAdjustmentRequest {
+  const _CreateStockAdjustmentRequest(
       {required this.itemId,
       required this.locationId,
       required this.quantity,
@@ -1260,10 +1952,8 @@ class _$CreateStockAdjustmentRequestImpl
       this.serialNumber,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$CreateStockAdjustmentRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreateStockAdjustmentRequestImplFromJson(json);
+  factory _CreateStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateStockAdjustmentRequestFromJson(json);
 
   @override
   final String itemId;
@@ -1293,16 +1983,27 @@ class _$CreateStockAdjustmentRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateStockAdjustmentRequest(itemId: $itemId, locationId: $locationId, quantity: $quantity, type: $type, reason: $reason, referenceNumber: $referenceNumber, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateStockAdjustmentRequestCopyWith<_CreateStockAdjustmentRequest>
+      get copyWith => __$CreateStockAdjustmentRequestCopyWithImpl<
+          _CreateStockAdjustmentRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateStockAdjustmentRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateStockAdjustmentRequestImpl &&
+            other is _CreateStockAdjustmentRequest &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
@@ -1320,7 +2021,7 @@ class _$CreateStockAdjustmentRequestImpl
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1335,99 +2036,27 @@ class _$CreateStockAdjustmentRequestImpl
       serialNumber,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateStockAdjustmentRequestImplCopyWith<
-          _$CreateStockAdjustmentRequestImpl>
-      get copyWith => __$$CreateStockAdjustmentRequestImplCopyWithImpl<
-          _$CreateStockAdjustmentRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateStockAdjustmentRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateStockAdjustmentRequest(itemId: $itemId, locationId: $locationId, quantity: $quantity, type: $type, reason: $reason, referenceNumber: $referenceNumber, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
   }
 }
 
-abstract class _CreateStockAdjustmentRequest
-    implements CreateStockAdjustmentRequest {
-  const factory _CreateStockAdjustmentRequest(
-          {required final String itemId,
-          required final String locationId,
-          required final double quantity,
-          required final String type,
-          required final String reason,
-          final String? referenceNumber,
-          final String? notes,
-          final String? lotNumber,
-          final String? serialNumber,
-          final Map<String, dynamic>? metadata}) =
-      _$CreateStockAdjustmentRequestImpl;
-
-  factory _CreateStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateStockAdjustmentRequestImpl.fromJson;
-
-  @override
-  String get itemId;
-  @override
-  String get locationId;
-  @override
-  double get quantity;
-  @override
-  String get type;
-  @override
-  String get reason;
-  @override
-  String? get referenceNumber;
-  @override
-  String? get notes;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateStockAdjustmentRequestImplCopyWith<
-          _$CreateStockAdjustmentRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateStockAdjustmentRequest _$UpdateStockAdjustmentRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateStockAdjustmentRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateStockAdjustmentRequest {
-  double? get quantity => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  String? get referenceNumber => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateStockAdjustmentRequestCopyWith<UpdateStockAdjustmentRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateStockAdjustmentRequestCopyWith<$Res> {
-  factory $UpdateStockAdjustmentRequestCopyWith(
-          UpdateStockAdjustmentRequest value,
-          $Res Function(UpdateStockAdjustmentRequest) then) =
-      _$UpdateStockAdjustmentRequestCopyWithImpl<$Res,
-          UpdateStockAdjustmentRequest>;
+abstract mixin class _$CreateStockAdjustmentRequestCopyWith<$Res>
+    implements $CreateStockAdjustmentRequestCopyWith<$Res> {
+  factory _$CreateStockAdjustmentRequestCopyWith(
+          _CreateStockAdjustmentRequest value,
+          $Res Function(_CreateStockAdjustmentRequest) _then) =
+      __$CreateStockAdjustmentRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {double? quantity,
-      String? reason,
+      {String itemId,
+      String locationId,
+      double quantity,
+      String type,
+      String reason,
       String? referenceNumber,
       String? notes,
       String? lotNumber,
@@ -1436,127 +2065,68 @@ abstract class $UpdateStockAdjustmentRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateStockAdjustmentRequestCopyWithImpl<$Res,
-        $Val extends UpdateStockAdjustmentRequest>
-    implements $UpdateStockAdjustmentRequestCopyWith<$Res> {
-  _$UpdateStockAdjustmentRequestCopyWithImpl(this._value, this._then);
+class __$CreateStockAdjustmentRequestCopyWithImpl<$Res>
+    implements _$CreateStockAdjustmentRequestCopyWith<$Res> {
+  __$CreateStockAdjustmentRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateStockAdjustmentRequest _self;
+  final $Res Function(_CreateStockAdjustmentRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? quantity = freezed,
-    Object? reason = freezed,
+    Object? itemId = null,
+    Object? locationId = null,
+    Object? quantity = null,
+    Object? type = null,
+    Object? reason = null,
     Object? referenceNumber = freezed,
     Object? notes = freezed,
     Object? lotNumber = freezed,
     Object? serialNumber = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      quantity: freezed == quantity
-          ? _value.quantity
+    return _then(_CreateStockAdjustmentRequest(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      reason: freezed == reason
-          ? _value.reason
+              as double,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      reason: null == reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       referenceNumber: freezed == referenceNumber
-          ? _value.referenceNumber
+          ? _self.referenceNumber
           : referenceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       lotNumber: freezed == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateStockAdjustmentRequestImplCopyWith<$Res>
-    implements $UpdateStockAdjustmentRequestCopyWith<$Res> {
-  factory _$$UpdateStockAdjustmentRequestImplCopyWith(
-          _$UpdateStockAdjustmentRequestImpl value,
-          $Res Function(_$UpdateStockAdjustmentRequestImpl) then) =
-      __$$UpdateStockAdjustmentRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {double? quantity,
-      String? reason,
-      String? referenceNumber,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$UpdateStockAdjustmentRequestImplCopyWithImpl<$Res>
-    extends _$UpdateStockAdjustmentRequestCopyWithImpl<$Res,
-        _$UpdateStockAdjustmentRequestImpl>
-    implements _$$UpdateStockAdjustmentRequestImplCopyWith<$Res> {
-  __$$UpdateStockAdjustmentRequestImplCopyWithImpl(
-      _$UpdateStockAdjustmentRequestImpl _value,
-      $Res Function(_$UpdateStockAdjustmentRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? quantity = freezed,
-    Object? reason = freezed,
-    Object? referenceNumber = freezed,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$UpdateStockAdjustmentRequestImpl(
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      referenceNumber: freezed == referenceNumber
-          ? _value.referenceNumber
-          : referenceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1564,10 +2134,318 @@ class __$$UpdateStockAdjustmentRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateStockAdjustmentRequest {
+  double? get quantity;
+  String? get reason;
+  String? get referenceNumber;
+  String? get notes;
+  String? get lotNumber;
+  String? get serialNumber;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of UpdateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateStockAdjustmentRequestCopyWith<UpdateStockAdjustmentRequest>
+      get copyWith => _$UpdateStockAdjustmentRequestCopyWithImpl<
+              UpdateStockAdjustmentRequest>(
+          this as UpdateStockAdjustmentRequest, _$identity);
+
+  /// Serializes this UpdateStockAdjustmentRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateStockAdjustmentRequest &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.referenceNumber, referenceNumber) ||
+                other.referenceNumber == referenceNumber) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      quantity,
+      reason,
+      referenceNumber,
+      notes,
+      lotNumber,
+      serialNumber,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdateStockAdjustmentRequest(quantity: $quantity, reason: $reason, referenceNumber: $referenceNumber, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateStockAdjustmentRequestCopyWith<$Res> {
+  factory $UpdateStockAdjustmentRequestCopyWith(
+          UpdateStockAdjustmentRequest value,
+          $Res Function(UpdateStockAdjustmentRequest) _then) =
+      _$UpdateStockAdjustmentRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {double? quantity,
+      String? reason,
+      String? referenceNumber,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$UpdateStockAdjustmentRequestCopyWithImpl<$Res>
+    implements $UpdateStockAdjustmentRequestCopyWith<$Res> {
+  _$UpdateStockAdjustmentRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateStockAdjustmentRequest _self;
+  final $Res Function(UpdateStockAdjustmentRequest) _then;
+
+  /// Create a copy of UpdateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quantity = freezed,
+    Object? reason = freezed,
+    Object? referenceNumber = freezed,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      quantity: freezed == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceNumber: freezed == referenceNumber
+          ? _self.referenceNumber
+          : referenceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateStockAdjustmentRequest].
+extension UpdateStockAdjustmentRequestPatterns on UpdateStockAdjustmentRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateStockAdjustmentRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateStockAdjustmentRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateStockAdjustmentRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateStockAdjustmentRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? quantity,
+            String? reason,
+            String? referenceNumber,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateStockAdjustmentRequest() when $default != null:
+        return $default(_that.quantity, _that.reason, _that.referenceNumber,
+            _that.notes, _that.lotNumber, _that.serialNumber, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? quantity,
+            String? reason,
+            String? referenceNumber,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateStockAdjustmentRequest():
+        return $default(_that.quantity, _that.reason, _that.referenceNumber,
+            _that.notes, _that.lotNumber, _that.serialNumber, _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? quantity,
+            String? reason,
+            String? referenceNumber,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateStockAdjustmentRequest() when $default != null:
+        return $default(_that.quantity, _that.reason, _that.referenceNumber,
+            _that.notes, _that.lotNumber, _that.serialNumber, _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateStockAdjustmentRequestImpl
-    implements _UpdateStockAdjustmentRequest {
-  const _$UpdateStockAdjustmentRequestImpl(
+class _UpdateStockAdjustmentRequest implements UpdateStockAdjustmentRequest {
+  const _UpdateStockAdjustmentRequest(
       {this.quantity,
       this.reason,
       this.referenceNumber,
@@ -1576,10 +2454,8 @@ class _$UpdateStockAdjustmentRequestImpl
       this.serialNumber,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$UpdateStockAdjustmentRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$UpdateStockAdjustmentRequestImplFromJson(json);
+  factory _UpdateStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateStockAdjustmentRequestFromJson(json);
 
   @override
   final double? quantity;
@@ -1603,16 +2479,27 @@ class _$UpdateStockAdjustmentRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateStockAdjustmentRequest(quantity: $quantity, reason: $reason, referenceNumber: $referenceNumber, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateStockAdjustmentRequestCopyWith<_UpdateStockAdjustmentRequest>
+      get copyWith => __$UpdateStockAdjustmentRequestCopyWithImpl<
+          _UpdateStockAdjustmentRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateStockAdjustmentRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateStockAdjustmentRequestImpl &&
+            other is _UpdateStockAdjustmentRequest &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
             (identical(other.reason, reason) || other.reason == reason) &&
@@ -1626,7 +2513,7 @@ class _$UpdateStockAdjustmentRequestImpl
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1638,228 +2525,183 @@ class _$UpdateStockAdjustmentRequestImpl
       serialNumber,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateStockAdjustmentRequestImplCopyWith<
-          _$UpdateStockAdjustmentRequestImpl>
-      get copyWith => __$$UpdateStockAdjustmentRequestImplCopyWithImpl<
-          _$UpdateStockAdjustmentRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateStockAdjustmentRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateStockAdjustmentRequest(quantity: $quantity, reason: $reason, referenceNumber: $referenceNumber, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
   }
 }
 
-abstract class _UpdateStockAdjustmentRequest
-    implements UpdateStockAdjustmentRequest {
-  const factory _UpdateStockAdjustmentRequest(
-          {final double? quantity,
-          final String? reason,
-          final String? referenceNumber,
-          final String? notes,
-          final String? lotNumber,
-          final String? serialNumber,
-          final Map<String, dynamic>? metadata}) =
-      _$UpdateStockAdjustmentRequestImpl;
-
-  factory _UpdateStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateStockAdjustmentRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateStockAdjustmentRequestCopyWith<$Res>
+    implements $UpdateStockAdjustmentRequestCopyWith<$Res> {
+  factory _$UpdateStockAdjustmentRequestCopyWith(
+          _UpdateStockAdjustmentRequest value,
+          $Res Function(_UpdateStockAdjustmentRequest) _then) =
+      __$UpdateStockAdjustmentRequestCopyWithImpl;
   @override
-  double? get quantity;
-  @override
-  String? get reason;
-  @override
-  String? get referenceNumber;
-  @override
-  String? get notes;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateStockAdjustmentRequestImplCopyWith<
-          _$UpdateStockAdjustmentRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {double? quantity,
+      String? reason,
+      String? referenceNumber,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber,
+      Map<String, dynamic>? metadata});
 }
 
-StockAdjustmentFilters _$StockAdjustmentFiltersFromJson(
-    Map<String, dynamic> json) {
-  return _StockAdjustmentFilters.fromJson(json);
+/// @nodoc
+class __$UpdateStockAdjustmentRequestCopyWithImpl<$Res>
+    implements _$UpdateStockAdjustmentRequestCopyWith<$Res> {
+  __$UpdateStockAdjustmentRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateStockAdjustmentRequest _self;
+  final $Res Function(_UpdateStockAdjustmentRequest) _then;
+
+  /// Create a copy of UpdateStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? quantity = freezed,
+    Object? reason = freezed,
+    Object? referenceNumber = freezed,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_UpdateStockAdjustmentRequest(
+      quantity: freezed == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceNumber: freezed == referenceNumber
+          ? _self.referenceNumber
+          : referenceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$StockAdjustmentFilters {
-  String? get itemId => throw _privateConstructorUsedError;
-  String? get locationId => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
-  String? get approvedBy => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  DateTime? get approvedAfter => throw _privateConstructorUsedError;
-  DateTime? get approvedBefore => throw _privateConstructorUsedError;
-  DateTime? get postedAfter => throw _privateConstructorUsedError;
-  DateTime? get postedBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get itemId;
+  String? get locationId;
+  String? get type;
+  String? get reason;
+  String? get status;
+  String? get createdBy;
+  String? get approvedBy;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  DateTime? get approvedAfter;
+  DateTime? get approvedBefore;
+  DateTime? get postedAfter;
+  DateTime? get postedBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StockAdjustmentFiltersCopyWith<StockAdjustmentFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StockAdjustmentFiltersCopyWith<$Res> {
-  factory $StockAdjustmentFiltersCopyWith(StockAdjustmentFilters value,
-          $Res Function(StockAdjustmentFilters) then) =
-      _$StockAdjustmentFiltersCopyWithImpl<$Res, StockAdjustmentFilters>;
-  @useResult
-  $Res call(
-      {String? itemId,
-      String? locationId,
-      String? type,
-      String? reason,
-      String? status,
-      String? createdBy,
-      String? approvedBy,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      DateTime? approvedAfter,
-      DateTime? approvedBefore,
-      DateTime? postedAfter,
-      DateTime? postedBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$StockAdjustmentFiltersCopyWithImpl<$Res,
-        $Val extends StockAdjustmentFilters>
-    implements $StockAdjustmentFiltersCopyWith<$Res> {
-  _$StockAdjustmentFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of StockAdjustmentFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $StockAdjustmentFiltersCopyWith<StockAdjustmentFilters> get copyWith =>
+      _$StockAdjustmentFiltersCopyWithImpl<StockAdjustmentFilters>(
+          this as StockAdjustmentFilters, _$identity);
+
+  /// Serializes this StockAdjustmentFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = freezed,
-    Object? locationId = freezed,
-    Object? type = freezed,
-    Object? reason = freezed,
-    Object? status = freezed,
-    Object? createdBy = freezed,
-    Object? approvedBy = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? approvedAfter = freezed,
-    Object? approvedBefore = freezed,
-    Object? postedAfter = freezed,
-    Object? postedBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: freezed == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdBy: freezed == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      approvedBy: freezed == approvedBy
-          ? _value.approvedBy
-          : approvedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      approvedAfter: freezed == approvedAfter
-          ? _value.approvedAfter
-          : approvedAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      approvedBefore: freezed == approvedBefore
-          ? _value.approvedBefore
-          : approvedBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      postedAfter: freezed == postedAfter
-          ? _value.postedAfter
-          : postedAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      postedBefore: freezed == postedBefore
-          ? _value.postedBefore
-          : postedBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StockAdjustmentFilters &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.approvedBy, approvedBy) ||
+                other.approvedBy == approvedBy) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            (identical(other.approvedAfter, approvedAfter) ||
+                other.approvedAfter == approvedAfter) &&
+            (identical(other.approvedBefore, approvedBefore) ||
+                other.approvedBefore == approvedBefore) &&
+            (identical(other.postedAfter, postedAfter) ||
+                other.postedAfter == postedAfter) &&
+            (identical(other.postedBefore, postedBefore) ||
+                other.postedBefore == postedBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      locationId,
+      type,
+      reason,
+      status,
+      createdBy,
+      approvedBy,
+      createdAfter,
+      createdBefore,
+      approvedAfter,
+      approvedBefore,
+      postedAfter,
+      postedBefore,
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'StockAdjustmentFilters(itemId: $itemId, locationId: $locationId, type: $type, reason: $reason, status: $status, createdBy: $createdBy, approvedBy: $approvedBy, createdAfter: $createdAfter, createdBefore: $createdBefore, approvedAfter: $approvedAfter, approvedBefore: $approvedBefore, postedAfter: $postedAfter, postedBefore: $postedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$StockAdjustmentFiltersImplCopyWith<$Res>
-    implements $StockAdjustmentFiltersCopyWith<$Res> {
-  factory _$$StockAdjustmentFiltersImplCopyWith(
-          _$StockAdjustmentFiltersImpl value,
-          $Res Function(_$StockAdjustmentFiltersImpl) then) =
-      __$$StockAdjustmentFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $StockAdjustmentFiltersCopyWith<$Res> {
+  factory $StockAdjustmentFiltersCopyWith(StockAdjustmentFilters value,
+          $Res Function(StockAdjustmentFilters) _then) =
+      _$StockAdjustmentFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? itemId,
@@ -1882,15 +2724,15 @@ abstract class _$$StockAdjustmentFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$StockAdjustmentFiltersImplCopyWithImpl<$Res>
-    extends _$StockAdjustmentFiltersCopyWithImpl<$Res,
-        _$StockAdjustmentFiltersImpl>
-    implements _$$StockAdjustmentFiltersImplCopyWith<$Res> {
-  __$$StockAdjustmentFiltersImplCopyWithImpl(
-      _$StockAdjustmentFiltersImpl _value,
-      $Res Function(_$StockAdjustmentFiltersImpl) _then)
-      : super(_value, _then);
+class _$StockAdjustmentFiltersCopyWithImpl<$Res>
+    implements $StockAdjustmentFiltersCopyWith<$Res> {
+  _$StockAdjustmentFiltersCopyWithImpl(this._self, this._then);
 
+  final StockAdjustmentFilters _self;
+  final $Res Function(StockAdjustmentFilters) _then;
+
+  /// Create a copy of StockAdjustmentFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1912,83 +2754,341 @@ class __$$StockAdjustmentFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$StockAdjustmentFiltersImpl(
+    return _then(_self.copyWith(
       itemId: freezed == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
       locationId: freezed == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
       reason: freezed == reason
-          ? _value.reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       createdBy: freezed == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
       approvedBy: freezed == approvedBy
-          ? _value.approvedBy
+          ? _self.approvedBy
           : approvedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAfter: freezed == createdAfter
-          ? _value.createdAfter
+          ? _self.createdAfter
           : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBefore: freezed == createdBefore
-          ? _value.createdBefore
+          ? _self.createdBefore
           : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       approvedAfter: freezed == approvedAfter
-          ? _value.approvedAfter
+          ? _self.approvedAfter
           : approvedAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       approvedBefore: freezed == approvedBefore
-          ? _value.approvedBefore
+          ? _self.approvedBefore
           : approvedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       postedAfter: freezed == postedAfter
-          ? _value.postedAfter
+          ? _self.postedAfter
           : postedAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       postedBefore: freezed == postedBefore
-          ? _value.postedBefore
+          ? _self.postedBefore
           : postedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [StockAdjustmentFilters].
+extension StockAdjustmentFiltersPatterns on StockAdjustmentFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_StockAdjustmentFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_StockAdjustmentFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_StockAdjustmentFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? itemId,
+            String? locationId,
+            String? type,
+            String? reason,
+            String? status,
+            String? createdBy,
+            String? approvedBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? approvedAfter,
+            DateTime? approvedBefore,
+            DateTime? postedAfter,
+            DateTime? postedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentFilters() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.type,
+            _that.reason,
+            _that.status,
+            _that.createdBy,
+            _that.approvedBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.approvedAfter,
+            _that.approvedBefore,
+            _that.postedAfter,
+            _that.postedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? itemId,
+            String? locationId,
+            String? type,
+            String? reason,
+            String? status,
+            String? createdBy,
+            String? approvedBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? approvedAfter,
+            DateTime? approvedBefore,
+            DateTime? postedAfter,
+            DateTime? postedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentFilters():
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.type,
+            _that.reason,
+            _that.status,
+            _that.createdBy,
+            _that.approvedBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.approvedAfter,
+            _that.approvedBefore,
+            _that.postedAfter,
+            _that.postedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? itemId,
+            String? locationId,
+            String? type,
+            String? reason,
+            String? status,
+            String? createdBy,
+            String? approvedBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? approvedAfter,
+            DateTime? approvedBefore,
+            DateTime? postedAfter,
+            DateTime? postedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _StockAdjustmentFilters() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.type,
+            _that.reason,
+            _that.status,
+            _that.createdBy,
+            _that.approvedBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.approvedAfter,
+            _that.approvedBefore,
+            _that.postedAfter,
+            _that.postedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$StockAdjustmentFiltersImpl extends _StockAdjustmentFilters {
-  const _$StockAdjustmentFiltersImpl(
+class _StockAdjustmentFilters extends StockAdjustmentFilters {
+  const _StockAdjustmentFilters(
       {this.itemId,
       this.locationId,
       this.type,
@@ -2007,9 +3107,8 @@ class _$StockAdjustmentFiltersImpl extends _StockAdjustmentFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$StockAdjustmentFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StockAdjustmentFiltersImplFromJson(json);
+  factory _StockAdjustmentFilters.fromJson(Map<String, dynamic> json) =>
+      _$StockAdjustmentFiltersFromJson(json);
 
   @override
   final String? itemId;
@@ -2046,16 +3145,27 @@ class _$StockAdjustmentFiltersImpl extends _StockAdjustmentFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of StockAdjustmentFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StockAdjustmentFilters(itemId: $itemId, locationId: $locationId, type: $type, reason: $reason, status: $status, createdBy: $createdBy, approvedBy: $approvedBy, createdAfter: $createdAfter, createdBefore: $createdBefore, approvedAfter: $approvedAfter, approvedBefore: $approvedBefore, postedAfter: $postedAfter, postedBefore: $postedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StockAdjustmentFiltersCopyWith<_StockAdjustmentFilters> get copyWith =>
+      __$StockAdjustmentFiltersCopyWithImpl<_StockAdjustmentFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StockAdjustmentFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StockAdjustmentFiltersImpl &&
+            other is _StockAdjustmentFilters &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
@@ -2085,7 +3195,7 @@ class _$StockAdjustmentFiltersImpl extends _StockAdjustmentFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2107,327 +3217,440 @@ class _$StockAdjustmentFiltersImpl extends _StockAdjustmentFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StockAdjustmentFiltersImplCopyWith<_$StockAdjustmentFiltersImpl>
-      get copyWith => __$$StockAdjustmentFiltersImplCopyWithImpl<
-          _$StockAdjustmentFiltersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StockAdjustmentFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StockAdjustmentFilters(itemId: $itemId, locationId: $locationId, type: $type, reason: $reason, status: $status, createdBy: $createdBy, approvedBy: $approvedBy, createdAfter: $createdAfter, createdBefore: $createdBefore, approvedAfter: $approvedAfter, approvedBefore: $approvedBefore, postedAfter: $postedAfter, postedBefore: $postedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _StockAdjustmentFilters extends StockAdjustmentFilters {
-  const factory _StockAdjustmentFilters(
-      {final String? itemId,
-      final String? locationId,
-      final String? type,
-      final String? reason,
-      final String? status,
-      final String? createdBy,
-      final String? approvedBy,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final DateTime? approvedAfter,
-      final DateTime? approvedBefore,
-      final DateTime? postedAfter,
-      final DateTime? postedBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$StockAdjustmentFiltersImpl;
-  const _StockAdjustmentFilters._() : super._();
-
-  factory _StockAdjustmentFilters.fromJson(Map<String, dynamic> json) =
-      _$StockAdjustmentFiltersImpl.fromJson;
-
-  @override
-  String? get itemId;
-  @override
-  String? get locationId;
-  @override
-  String? get type;
-  @override
-  String? get reason;
-  @override
-  String? get status;
-  @override
-  String? get createdBy;
-  @override
-  String? get approvedBy;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  DateTime? get approvedAfter;
-  @override
-  DateTime? get approvedBefore;
-  @override
-  DateTime? get postedAfter;
-  @override
-  DateTime? get postedBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$StockAdjustmentFiltersImplCopyWith<_$StockAdjustmentFiltersImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-ApproveStockAdjustmentRequest _$ApproveStockAdjustmentRequestFromJson(
-    Map<String, dynamic> json) {
-  return _ApproveStockAdjustmentRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$ApproveStockAdjustmentRequest {
-  String? get notes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ApproveStockAdjustmentRequestCopyWith<ApproveStockAdjustmentRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ApproveStockAdjustmentRequestCopyWith<$Res> {
-  factory $ApproveStockAdjustmentRequestCopyWith(
-          ApproveStockAdjustmentRequest value,
-          $Res Function(ApproveStockAdjustmentRequest) then) =
-      _$ApproveStockAdjustmentRequestCopyWithImpl<$Res,
-          ApproveStockAdjustmentRequest>;
+abstract mixin class _$StockAdjustmentFiltersCopyWith<$Res>
+    implements $StockAdjustmentFiltersCopyWith<$Res> {
+  factory _$StockAdjustmentFiltersCopyWith(_StockAdjustmentFilters value,
+          $Res Function(_StockAdjustmentFilters) _then) =
+      __$StockAdjustmentFiltersCopyWithImpl;
+  @override
   @useResult
-  $Res call({String? notes});
+  $Res call(
+      {String? itemId,
+      String? locationId,
+      String? type,
+      String? reason,
+      String? status,
+      String? createdBy,
+      String? approvedBy,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      DateTime? approvedAfter,
+      DateTime? approvedBefore,
+      DateTime? postedAfter,
+      DateTime? postedBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
 
 /// @nodoc
-class _$ApproveStockAdjustmentRequestCopyWithImpl<$Res,
-        $Val extends ApproveStockAdjustmentRequest>
-    implements $ApproveStockAdjustmentRequestCopyWith<$Res> {
-  _$ApproveStockAdjustmentRequestCopyWithImpl(this._value, this._then);
+class __$StockAdjustmentFiltersCopyWithImpl<$Res>
+    implements _$StockAdjustmentFiltersCopyWith<$Res> {
+  __$StockAdjustmentFiltersCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _StockAdjustmentFilters _self;
+  final $Res Function(_StockAdjustmentFilters) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of StockAdjustmentFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? notes = freezed,
+    Object? itemId = freezed,
+    Object? locationId = freezed,
+    Object? type = freezed,
+    Object? reason = freezed,
+    Object? status = freezed,
+    Object? createdBy = freezed,
+    Object? approvedBy = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? approvedAfter = freezed,
+    Object? approvedBefore = freezed,
+    Object? postedAfter = freezed,
+    Object? postedBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
   }) {
-    return _then(_value.copyWith(
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
+    return _then(_StockAdjustmentFilters(
+      itemId: freezed == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ApproveStockAdjustmentRequestImplCopyWith<$Res>
-    implements $ApproveStockAdjustmentRequestCopyWith<$Res> {
-  factory _$$ApproveStockAdjustmentRequestImplCopyWith(
-          _$ApproveStockAdjustmentRequestImpl value,
-          $Res Function(_$ApproveStockAdjustmentRequestImpl) then) =
-      __$$ApproveStockAdjustmentRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? notes});
-}
-
-/// @nodoc
-class __$$ApproveStockAdjustmentRequestImplCopyWithImpl<$Res>
-    extends _$ApproveStockAdjustmentRequestCopyWithImpl<$Res,
-        _$ApproveStockAdjustmentRequestImpl>
-    implements _$$ApproveStockAdjustmentRequestImplCopyWith<$Res> {
-  __$$ApproveStockAdjustmentRequestImplCopyWithImpl(
-      _$ApproveStockAdjustmentRequestImpl _value,
-      $Res Function(_$ApproveStockAdjustmentRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? notes = freezed,
-  }) {
-    return _then(_$ApproveStockAdjustmentRequestImpl(
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdBy: freezed == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      approvedBy: freezed == approvedBy
+          ? _self.approvedBy
+          : approvedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      approvedAfter: freezed == approvedAfter
+          ? _self.approvedAfter
+          : approvedAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      approvedBefore: freezed == approvedBefore
+          ? _self.approvedBefore
+          : approvedBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      postedAfter: freezed == postedAfter
+          ? _self.postedAfter
+          : postedAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      postedBefore: freezed == postedBefore
+          ? _self.postedBefore
+          : postedBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$ApproveStockAdjustmentRequestImpl
-    implements _ApproveStockAdjustmentRequest {
-  const _$ApproveStockAdjustmentRequestImpl({this.notes});
+mixin _$ApproveStockAdjustmentRequest {
+  String? get notes;
 
-  factory _$ApproveStockAdjustmentRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ApproveStockAdjustmentRequestImplFromJson(json);
+  /// Create a copy of ApproveStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ApproveStockAdjustmentRequestCopyWith<ApproveStockAdjustmentRequest>
+      get copyWith => _$ApproveStockAdjustmentRequestCopyWithImpl<
+              ApproveStockAdjustmentRequest>(
+          this as ApproveStockAdjustmentRequest, _$identity);
+
+  /// Serializes this ApproveStockAdjustmentRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
-  final String? notes;
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ApproveStockAdjustmentRequest &&
+            (identical(other.notes, notes) || other.notes == notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, notes);
 
   @override
   String toString() {
     return 'ApproveStockAdjustmentRequest(notes: $notes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ApproveStockAdjustmentRequestCopyWith<$Res> {
+  factory $ApproveStockAdjustmentRequestCopyWith(
+          ApproveStockAdjustmentRequest value,
+          $Res Function(ApproveStockAdjustmentRequest) _then) =
+      _$ApproveStockAdjustmentRequestCopyWithImpl;
+  @useResult
+  $Res call({String? notes});
+}
+
+/// @nodoc
+class _$ApproveStockAdjustmentRequestCopyWithImpl<$Res>
+    implements $ApproveStockAdjustmentRequestCopyWith<$Res> {
+  _$ApproveStockAdjustmentRequestCopyWithImpl(this._self, this._then);
+
+  final ApproveStockAdjustmentRequest _self;
+  final $Res Function(ApproveStockAdjustmentRequest) _then;
+
+  /// Create a copy of ApproveStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ApproveStockAdjustmentRequest].
+extension ApproveStockAdjustmentRequestPatterns
+    on ApproveStockAdjustmentRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ApproveStockAdjustmentRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ApproveStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ApproveStockAdjustmentRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ApproveStockAdjustmentRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ApproveStockAdjustmentRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ApproveStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? notes)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ApproveStockAdjustmentRequest() when $default != null:
+        return $default(_that.notes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? notes) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ApproveStockAdjustmentRequest():
+        return $default(_that.notes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? notes)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ApproveStockAdjustmentRequest() when $default != null:
+        return $default(_that.notes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ApproveStockAdjustmentRequest implements ApproveStockAdjustmentRequest {
+  const _ApproveStockAdjustmentRequest({this.notes});
+  factory _ApproveStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =>
+      _$ApproveStockAdjustmentRequestFromJson(json);
+
+  @override
+  final String? notes;
+
+  /// Create a copy of ApproveStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ApproveStockAdjustmentRequestCopyWith<_ApproveStockAdjustmentRequest>
+      get copyWith => __$ApproveStockAdjustmentRequestCopyWithImpl<
+          _ApproveStockAdjustmentRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ApproveStockAdjustmentRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ApproveStockAdjustmentRequestImpl &&
+            other is _ApproveStockAdjustmentRequest &&
             (identical(other.notes, notes) || other.notes == notes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, notes);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ApproveStockAdjustmentRequestImplCopyWith<
-          _$ApproveStockAdjustmentRequestImpl>
-      get copyWith => __$$ApproveStockAdjustmentRequestImplCopyWithImpl<
-          _$ApproveStockAdjustmentRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ApproveStockAdjustmentRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ApproveStockAdjustmentRequest
-    implements ApproveStockAdjustmentRequest {
-  const factory _ApproveStockAdjustmentRequest({final String? notes}) =
-      _$ApproveStockAdjustmentRequestImpl;
-
-  factory _ApproveStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =
-      _$ApproveStockAdjustmentRequestImpl.fromJson;
-
-  @override
-  String? get notes;
-  @override
-  @JsonKey(ignore: true)
-  _$$ApproveStockAdjustmentRequestImplCopyWith<
-          _$ApproveStockAdjustmentRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RejectStockAdjustmentRequest _$RejectStockAdjustmentRequestFromJson(
-    Map<String, dynamic> json) {
-  return _RejectStockAdjustmentRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RejectStockAdjustmentRequest {
-  String get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RejectStockAdjustmentRequestCopyWith<RejectStockAdjustmentRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RejectStockAdjustmentRequestCopyWith<$Res> {
-  factory $RejectStockAdjustmentRequestCopyWith(
-          RejectStockAdjustmentRequest value,
-          $Res Function(RejectStockAdjustmentRequest) then) =
-      _$RejectStockAdjustmentRequestCopyWithImpl<$Res,
-          RejectStockAdjustmentRequest>;
-  @useResult
-  $Res call({String reason, String? notes});
-}
-
-/// @nodoc
-class _$RejectStockAdjustmentRequestCopyWithImpl<$Res,
-        $Val extends RejectStockAdjustmentRequest>
-    implements $RejectStockAdjustmentRequestCopyWith<$Res> {
-  _$RejectStockAdjustmentRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? reason = null,
-    Object? notes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'ApproveStockAdjustmentRequest(notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$RejectStockAdjustmentRequestImplCopyWith<$Res>
-    implements $RejectStockAdjustmentRequestCopyWith<$Res> {
-  factory _$$RejectStockAdjustmentRequestImplCopyWith(
-          _$RejectStockAdjustmentRequestImpl value,
-          $Res Function(_$RejectStockAdjustmentRequestImpl) then) =
-      __$$RejectStockAdjustmentRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$ApproveStockAdjustmentRequestCopyWith<$Res>
+    implements $ApproveStockAdjustmentRequestCopyWith<$Res> {
+  factory _$ApproveStockAdjustmentRequestCopyWith(
+          _ApproveStockAdjustmentRequest value,
+          $Res Function(_ApproveStockAdjustmentRequest) _then) =
+      __$ApproveStockAdjustmentRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String reason, String? notes});
+  $Res call({String? notes});
 }
 
 /// @nodoc
-class __$$RejectStockAdjustmentRequestImplCopyWithImpl<$Res>
-    extends _$RejectStockAdjustmentRequestCopyWithImpl<$Res,
-        _$RejectStockAdjustmentRequestImpl>
-    implements _$$RejectStockAdjustmentRequestImplCopyWith<$Res> {
-  __$$RejectStockAdjustmentRequestImplCopyWithImpl(
-      _$RejectStockAdjustmentRequestImpl _value,
-      $Res Function(_$RejectStockAdjustmentRequestImpl) _then)
-      : super(_value, _then);
+class __$ApproveStockAdjustmentRequestCopyWithImpl<$Res>
+    implements _$ApproveStockAdjustmentRequestCopyWith<$Res> {
+  __$ApproveStockAdjustmentRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _ApproveStockAdjustmentRequest _self;
+  final $Res Function(_ApproveStockAdjustmentRequest) _then;
+
+  /// Create a copy of ApproveStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? reason = null,
     Object? notes = freezed,
   }) {
-    return _then(_$RejectStockAdjustmentRequestImpl(
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_ApproveStockAdjustmentRequest(
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -2435,70 +3658,319 @@ class __$$RejectStockAdjustmentRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$RejectStockAdjustmentRequestImpl
-    implements _RejectStockAdjustmentRequest {
-  const _$RejectStockAdjustmentRequestImpl({required this.reason, this.notes});
+mixin _$RejectStockAdjustmentRequest {
+  String get reason;
+  String? get notes;
 
-  factory _$RejectStockAdjustmentRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RejectStockAdjustmentRequestImplFromJson(json);
+  /// Create a copy of RejectStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RejectStockAdjustmentRequestCopyWith<RejectStockAdjustmentRequest>
+      get copyWith => _$RejectStockAdjustmentRequestCopyWithImpl<
+              RejectStockAdjustmentRequest>(
+          this as RejectStockAdjustmentRequest, _$identity);
+
+  /// Serializes this RejectStockAdjustmentRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RejectStockAdjustmentRequest &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reason, notes);
+
+  @override
+  String toString() {
+    return 'RejectStockAdjustmentRequest(reason: $reason, notes: $notes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RejectStockAdjustmentRequestCopyWith<$Res> {
+  factory $RejectStockAdjustmentRequestCopyWith(
+          RejectStockAdjustmentRequest value,
+          $Res Function(RejectStockAdjustmentRequest) _then) =
+      _$RejectStockAdjustmentRequestCopyWithImpl;
+  @useResult
+  $Res call({String reason, String? notes});
+}
+
+/// @nodoc
+class _$RejectStockAdjustmentRequestCopyWithImpl<$Res>
+    implements $RejectStockAdjustmentRequestCopyWith<$Res> {
+  _$RejectStockAdjustmentRequestCopyWithImpl(this._self, this._then);
+
+  final RejectStockAdjustmentRequest _self;
+  final $Res Function(RejectStockAdjustmentRequest) _then;
+
+  /// Create a copy of RejectStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reason = null,
+    Object? notes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [RejectStockAdjustmentRequest].
+extension RejectStockAdjustmentRequestPatterns on RejectStockAdjustmentRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_RejectStockAdjustmentRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RejectStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_RejectStockAdjustmentRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectStockAdjustmentRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_RejectStockAdjustmentRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectStockAdjustmentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String reason, String? notes)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RejectStockAdjustmentRequest() when $default != null:
+        return $default(_that.reason, _that.notes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String reason, String? notes) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectStockAdjustmentRequest():
+        return $default(_that.reason, _that.notes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String reason, String? notes)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectStockAdjustmentRequest() when $default != null:
+        return $default(_that.reason, _that.notes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _RejectStockAdjustmentRequest implements RejectStockAdjustmentRequest {
+  const _RejectStockAdjustmentRequest({required this.reason, this.notes});
+  factory _RejectStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =>
+      _$RejectStockAdjustmentRequestFromJson(json);
 
   @override
   final String reason;
   @override
   final String? notes;
 
+  /// Create a copy of RejectStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RejectStockAdjustmentRequest(reason: $reason, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RejectStockAdjustmentRequestCopyWith<_RejectStockAdjustmentRequest>
+      get copyWith => __$RejectStockAdjustmentRequestCopyWithImpl<
+          _RejectStockAdjustmentRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RejectStockAdjustmentRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RejectStockAdjustmentRequestImpl &&
+            other is _RejectStockAdjustmentRequest &&
             (identical(other.reason, reason) || other.reason == reason) &&
             (identical(other.notes, notes) || other.notes == notes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reason, notes);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RejectStockAdjustmentRequestImplCopyWith<
-          _$RejectStockAdjustmentRequestImpl>
-      get copyWith => __$$RejectStockAdjustmentRequestImplCopyWithImpl<
-          _$RejectStockAdjustmentRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RejectStockAdjustmentRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RejectStockAdjustmentRequest(reason: $reason, notes: $notes)';
   }
 }
 
-abstract class _RejectStockAdjustmentRequest
-    implements RejectStockAdjustmentRequest {
-  const factory _RejectStockAdjustmentRequest(
-      {required final String reason,
-      final String? notes}) = _$RejectStockAdjustmentRequestImpl;
-
-  factory _RejectStockAdjustmentRequest.fromJson(Map<String, dynamic> json) =
-      _$RejectStockAdjustmentRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RejectStockAdjustmentRequestCopyWith<$Res>
+    implements $RejectStockAdjustmentRequestCopyWith<$Res> {
+  factory _$RejectStockAdjustmentRequestCopyWith(
+          _RejectStockAdjustmentRequest value,
+          $Res Function(_RejectStockAdjustmentRequest) _then) =
+      __$RejectStockAdjustmentRequestCopyWithImpl;
   @override
-  String get reason;
-  @override
-  String? get notes;
-  @override
-  @JsonKey(ignore: true)
-  _$$RejectStockAdjustmentRequestImplCopyWith<
-          _$RejectStockAdjustmentRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String reason, String? notes});
 }
+
+/// @nodoc
+class __$RejectStockAdjustmentRequestCopyWithImpl<$Res>
+    implements _$RejectStockAdjustmentRequestCopyWith<$Res> {
+  __$RejectStockAdjustmentRequestCopyWithImpl(this._self, this._then);
+
+  final _RejectStockAdjustmentRequest _self;
+  final $Res Function(_RejectStockAdjustmentRequest) _then;
+
+  /// Create a copy of RejectStockAdjustmentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reason = null,
+    Object? notes = freezed,
+  }) {
+    return _then(_RejectStockAdjustmentRequest(
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,38 +9,74 @@ part of 'party_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CreatePartyRequest _$CreatePartyRequestFromJson(Map<String, dynamic> json) {
-  return _CreatePartyRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CreatePartyRequest {
-  String get name => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get taxId => throw _privateConstructorUsedError;
-  Address? get address => throw _privateConstructorUsedError;
-  ContactInfo? get contactInfo => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get name;
+  String get type;
+  String? get code;
+  String? get email;
+  String? get phone;
+  String? get taxId;
+  Address? get address;
+  ContactInfo? get contactInfo;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CreatePartyRequestCopyWith<CreatePartyRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$CreatePartyRequestCopyWithImpl<CreatePartyRequest>(
+          this as CreatePartyRequest, _$identity);
+
+  /// Serializes this CreatePartyRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreatePartyRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.taxId, taxId) || other.taxId == taxId) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.contactInfo, contactInfo) ||
+                other.contactInfo == contactInfo) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      type,
+      code,
+      email,
+      phone,
+      taxId,
+      address,
+      contactInfo,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreatePartyRequest(name: $name, type: $type, code: $code, email: $email, phone: $phone, taxId: $taxId, address: $address, contactInfo: $contactInfo, metadata: $metadata)';
+  }
 }
 
 /// @nodoc
-abstract class $CreatePartyRequestCopyWith<$Res> {
+abstract mixin class $CreatePartyRequestCopyWith<$Res> {
   factory $CreatePartyRequestCopyWith(
-          CreatePartyRequest value, $Res Function(CreatePartyRequest) then) =
-      _$CreatePartyRequestCopyWithImpl<$Res, CreatePartyRequest>;
+          CreatePartyRequest value, $Res Function(CreatePartyRequest) _then) =
+      _$CreatePartyRequestCopyWithImpl;
   @useResult
   $Res call(
       {String name,
@@ -58,15 +94,15 @@ abstract class $CreatePartyRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreatePartyRequestCopyWithImpl<$Res, $Val extends CreatePartyRequest>
+class _$CreatePartyRequestCopyWithImpl<$Res>
     implements $CreatePartyRequestCopyWith<$Res> {
-  _$CreatePartyRequestCopyWithImpl(this._value, this._then);
+  _$CreatePartyRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CreatePartyRequest _self;
+  final $Res Function(CreatePartyRequest) _then;
 
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,162 +116,289 @@ class _$CreatePartyRequestCopyWithImpl<$Res, $Val extends CreatePartyRequest>
     Object? contactInfo = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       code: freezed == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
       taxId: freezed == taxId
-          ? _value.taxId
+          ? _self.taxId
           : taxId // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address?,
       contactInfo: freezed == contactInfo
-          ? _value.contactInfo
+          ? _self.contactInfo
           : contactInfo // ignore: cast_nullable_to_non_nullable
               as ContactInfo?,
       metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AddressCopyWith<$Res>? get address {
-    if (_value.address == null) {
-      return null;
-    }
-
-    return $AddressCopyWith<$Res>(_value.address!, (value) {
-      return _then(_value.copyWith(address: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContactInfoCopyWith<$Res>? get contactInfo {
-    if (_value.contactInfo == null) {
-      return null;
-    }
-
-    return $ContactInfoCopyWith<$Res>(_value.contactInfo!, (value) {
-      return _then(_value.copyWith(contactInfo: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$CreatePartyRequestImplCopyWith<$Res>
-    implements $CreatePartyRequestCopyWith<$Res> {
-  factory _$$CreatePartyRequestImplCopyWith(_$CreatePartyRequestImpl value,
-          $Res Function(_$CreatePartyRequestImpl) then) =
-      __$$CreatePartyRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String name,
-      String type,
-      String? code,
-      String? email,
-      String? phone,
-      String? taxId,
-      Address? address,
-      ContactInfo? contactInfo,
-      Map<String, dynamic>? metadata});
-
-  @override
-  $AddressCopyWith<$Res>? get address;
-  @override
-  $ContactInfoCopyWith<$Res>? get contactInfo;
-}
-
-/// @nodoc
-class __$$CreatePartyRequestImplCopyWithImpl<$Res>
-    extends _$CreatePartyRequestCopyWithImpl<$Res, _$CreatePartyRequestImpl>
-    implements _$$CreatePartyRequestImplCopyWith<$Res> {
-  __$$CreatePartyRequestImplCopyWithImpl(_$CreatePartyRequestImpl _value,
-      $Res Function(_$CreatePartyRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? type = null,
-    Object? code = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? taxId = freezed,
-    Object? address = freezed,
-    Object? contactInfo = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$CreatePartyRequestImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: freezed == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as Address?,
-      contactInfo: freezed == contactInfo
-          ? _value.contactInfo
-          : contactInfo // ignore: cast_nullable_to_non_nullable
-              as ContactInfo?,
-      metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
+  }
+
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AddressCopyWith<$Res>? get address {
+    if (_self.address == null) {
+      return null;
+    }
+
+    return $AddressCopyWith<$Res>(_self.address!, (value) {
+      return _then(_self.copyWith(address: value));
+    });
+  }
+
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoCopyWith<$Res>? get contactInfo {
+    if (_self.contactInfo == null) {
+      return null;
+    }
+
+    return $ContactInfoCopyWith<$Res>(_self.contactInfo!, (value) {
+      return _then(_self.copyWith(contactInfo: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreatePartyRequest].
+extension CreatePartyRequestPatterns on CreatePartyRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreatePartyRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePartyRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreatePartyRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePartyRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreatePartyRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePartyRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String type,
+            String? code,
+            String? email,
+            String? phone,
+            String? taxId,
+            Address? address,
+            ContactInfo? contactInfo,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePartyRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.type,
+            _that.code,
+            _that.email,
+            _that.phone,
+            _that.taxId,
+            _that.address,
+            _that.contactInfo,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String type,
+            String? code,
+            String? email,
+            String? phone,
+            String? taxId,
+            Address? address,
+            ContactInfo? contactInfo,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePartyRequest():
+        return $default(
+            _that.name,
+            _that.type,
+            _that.code,
+            _that.email,
+            _that.phone,
+            _that.taxId,
+            _that.address,
+            _that.contactInfo,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            String type,
+            String? code,
+            String? email,
+            String? phone,
+            String? taxId,
+            Address? address,
+            ContactInfo? contactInfo,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePartyRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.type,
+            _that.code,
+            _that.email,
+            _that.phone,
+            _that.taxId,
+            _that.address,
+            _that.contactInfo,
+            _that.metadata);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CreatePartyRequestImpl implements _CreatePartyRequest {
-  const _$CreatePartyRequestImpl(
+class _CreatePartyRequest implements CreatePartyRequest {
+  const _CreatePartyRequest(
       {required this.name,
       required this.type,
       this.code,
@@ -246,9 +409,8 @@ class _$CreatePartyRequestImpl implements _CreatePartyRequest {
       this.contactInfo,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$CreatePartyRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreatePartyRequestImplFromJson(json);
+  factory _CreatePartyRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePartyRequestFromJson(json);
 
   @override
   final String name;
@@ -276,16 +438,26 @@ class _$CreatePartyRequestImpl implements _CreatePartyRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreatePartyRequest(name: $name, type: $type, code: $code, email: $email, phone: $phone, taxId: $taxId, address: $address, contactInfo: $contactInfo, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreatePartyRequestCopyWith<_CreatePartyRequest> get copyWith =>
+      __$CreatePartyRequestCopyWithImpl<_CreatePartyRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreatePartyRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreatePartyRequestImpl &&
+            other is _CreatePartyRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.code, code) || other.code == code) &&
@@ -298,7 +470,7 @@ class _$CreatePartyRequestImpl implements _CreatePartyRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -312,90 +484,211 @@ class _$CreatePartyRequestImpl implements _CreatePartyRequest {
       contactInfo,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreatePartyRequestImplCopyWith<_$CreatePartyRequestImpl> get copyWith =>
-      __$$CreatePartyRequestImplCopyWithImpl<_$CreatePartyRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreatePartyRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreatePartyRequest(name: $name, type: $type, code: $code, email: $email, phone: $phone, taxId: $taxId, address: $address, contactInfo: $contactInfo, metadata: $metadata)';
   }
 }
 
-abstract class _CreatePartyRequest implements CreatePartyRequest {
-  const factory _CreatePartyRequest(
-      {required final String name,
-      required final String type,
-      final String? code,
-      final String? email,
-      final String? phone,
-      final String? taxId,
-      final Address? address,
-      final ContactInfo? contactInfo,
-      final Map<String, dynamic>? metadata}) = _$CreatePartyRequestImpl;
+/// @nodoc
+abstract mixin class _$CreatePartyRequestCopyWith<$Res>
+    implements $CreatePartyRequestCopyWith<$Res> {
+  factory _$CreatePartyRequestCopyWith(
+          _CreatePartyRequest value, $Res Function(_CreatePartyRequest) _then) =
+      __$CreatePartyRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String name,
+      String type,
+      String? code,
+      String? email,
+      String? phone,
+      String? taxId,
+      Address? address,
+      ContactInfo? contactInfo,
+      Map<String, dynamic>? metadata});
 
-  factory _CreatePartyRequest.fromJson(Map<String, dynamic> json) =
-      _$CreatePartyRequestImpl.fromJson;
-
   @override
-  String get name;
+  $AddressCopyWith<$Res>? get address;
   @override
-  String get type;
-  @override
-  String? get code;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get taxId;
-  @override
-  Address? get address;
-  @override
-  ContactInfo? get contactInfo;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreatePartyRequestImplCopyWith<_$CreatePartyRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ContactInfoCopyWith<$Res>? get contactInfo;
 }
 
-Party _$PartyFromJson(Map<String, dynamic> json) {
-  return _Party.fromJson(json);
+/// @nodoc
+class __$CreatePartyRequestCopyWithImpl<$Res>
+    implements _$CreatePartyRequestCopyWith<$Res> {
+  __$CreatePartyRequestCopyWithImpl(this._self, this._then);
+
+  final _CreatePartyRequest _self;
+  final $Res Function(_CreatePartyRequest) _then;
+
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? type = null,
+    Object? code = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? taxId = freezed,
+    Object? address = freezed,
+    Object? contactInfo = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_CreatePartyRequest(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: freezed == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address?,
+      contactInfo: freezed == contactInfo
+          ? _self.contactInfo
+          : contactInfo // ignore: cast_nullable_to_non_nullable
+              as ContactInfo?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AddressCopyWith<$Res>? get address {
+    if (_self.address == null) {
+      return null;
+    }
+
+    return $AddressCopyWith<$Res>(_self.address!, (value) {
+      return _then(_self.copyWith(address: value));
+    });
+  }
+
+  /// Create a copy of CreatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoCopyWith<$Res>? get contactInfo {
+    if (_self.contactInfo == null) {
+      return null;
+    }
+
+    return $ContactInfoCopyWith<$Res>(_self.contactInfo!, (value) {
+      return _then(_self.copyWith(contactInfo: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$Party {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get taxId => throw _privateConstructorUsedError;
-  Address? get address => throw _privateConstructorUsedError;
-  ContactInfo? get contactInfo => throw _privateConstructorUsedError;
-  String? get organizationId => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get type;
+  DateTime get createdAt;
+  String? get code;
+  String? get email;
+  String? get phone;
+  String? get taxId;
+  Address? get address;
+  ContactInfo? get contactInfo;
+  String? get organizationId;
+  bool? get isActive;
+  DateTime? get updatedAt;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PartyCopyWith<Party> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PartyCopyWith<Party> get copyWith =>
+      _$PartyCopyWithImpl<Party>(this as Party, _$identity);
+
+  /// Serializes this Party to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Party &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.taxId, taxId) || other.taxId == taxId) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.contactInfo, contactInfo) ||
+                other.contactInfo == contactInfo) &&
+            (identical(other.organizationId, organizationId) ||
+                other.organizationId == organizationId) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      type,
+      createdAt,
+      code,
+      email,
+      phone,
+      taxId,
+      address,
+      contactInfo,
+      organizationId,
+      isActive,
+      updatedAt,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'Party(id: $id, name: $name, type: $type, createdAt: $createdAt, code: $code, email: $email, phone: $phone, taxId: $taxId, address: $address, contactInfo: $contactInfo, organizationId: $organizationId, isActive: $isActive, updatedAt: $updatedAt, metadata: $metadata)';
+  }
 }
 
 /// @nodoc
-abstract class $PartyCopyWith<$Res> {
-  factory $PartyCopyWith(Party value, $Res Function(Party) then) =
-      _$PartyCopyWithImpl<$Res, Party>;
+abstract mixin class $PartyCopyWith<$Res> {
+  factory $PartyCopyWith(Party value, $Res Function(Party) _then) =
+      _$PartyCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -418,15 +711,14 @@ abstract class $PartyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PartyCopyWithImpl<$Res, $Val extends Party>
-    implements $PartyCopyWith<$Res> {
-  _$PartyCopyWithImpl(this._value, this._then);
+class _$PartyCopyWithImpl<$Res> implements $PartyCopyWith<$Res> {
+  _$PartyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Party _self;
+  final $Res Function(Party) _then;
 
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -445,211 +737,339 @@ class _$PartyCopyWithImpl<$Res, $Val extends Party>
     Object? updatedAt = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       code: freezed == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
       taxId: freezed == taxId
-          ? _value.taxId
+          ? _self.taxId
           : taxId // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address?,
       contactInfo: freezed == contactInfo
-          ? _value.contactInfo
+          ? _self.contactInfo
           : contactInfo // ignore: cast_nullable_to_non_nullable
               as ContactInfo?,
       organizationId: freezed == organizationId
-          ? _value.organizationId
+          ? _self.organizationId
           : organizationId // ignore: cast_nullable_to_non_nullable
               as String?,
       isActive: freezed == isActive
-          ? _value.isActive
+          ? _self.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool?,
       updatedAt: freezed == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AddressCopyWith<$Res>? get address {
-    if (_value.address == null) {
-      return null;
-    }
-
-    return $AddressCopyWith<$Res>(_value.address!, (value) {
-      return _then(_value.copyWith(address: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContactInfoCopyWith<$Res>? get contactInfo {
-    if (_value.contactInfo == null) {
-      return null;
-    }
-
-    return $ContactInfoCopyWith<$Res>(_value.contactInfo!, (value) {
-      return _then(_value.copyWith(contactInfo: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$PartyImplCopyWith<$Res> implements $PartyCopyWith<$Res> {
-  factory _$$PartyImplCopyWith(
-          _$PartyImpl value, $Res Function(_$PartyImpl) then) =
-      __$$PartyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String type,
-      DateTime createdAt,
-      String? code,
-      String? email,
-      String? phone,
-      String? taxId,
-      Address? address,
-      ContactInfo? contactInfo,
-      String? organizationId,
-      bool? isActive,
-      DateTime? updatedAt,
-      Map<String, dynamic>? metadata});
-
-  @override
-  $AddressCopyWith<$Res>? get address;
-  @override
-  $ContactInfoCopyWith<$Res>? get contactInfo;
-}
-
-/// @nodoc
-class __$$PartyImplCopyWithImpl<$Res>
-    extends _$PartyCopyWithImpl<$Res, _$PartyImpl>
-    implements _$$PartyImplCopyWith<$Res> {
-  __$$PartyImplCopyWithImpl(
-      _$PartyImpl _value, $Res Function(_$PartyImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? type = null,
-    Object? createdAt = null,
-    Object? code = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? taxId = freezed,
-    Object? address = freezed,
-    Object? contactInfo = freezed,
-    Object? organizationId = freezed,
-    Object? isActive = freezed,
-    Object? updatedAt = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$PartyImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      code: freezed == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as Address?,
-      contactInfo: freezed == contactInfo
-          ? _value.contactInfo
-          : contactInfo // ignore: cast_nullable_to_non_nullable
-              as ContactInfo?,
-      organizationId: freezed == organizationId
-          ? _value.organizationId
-          : organizationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
+  }
+
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AddressCopyWith<$Res>? get address {
+    if (_self.address == null) {
+      return null;
+    }
+
+    return $AddressCopyWith<$Res>(_self.address!, (value) {
+      return _then(_self.copyWith(address: value));
+    });
+  }
+
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoCopyWith<$Res>? get contactInfo {
+    if (_self.contactInfo == null) {
+      return null;
+    }
+
+    return $ContactInfoCopyWith<$Res>(_self.contactInfo!, (value) {
+      return _then(_self.copyWith(contactInfo: value));
+    });
+  }
+}
+
+/// Adds pattern-matching-related methods to [Party].
+extension PartyPatterns on Party {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Party value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Party() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Party value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Party():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Party value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Party() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String type,
+            DateTime createdAt,
+            String? code,
+            String? email,
+            String? phone,
+            String? taxId,
+            Address? address,
+            ContactInfo? contactInfo,
+            String? organizationId,
+            bool? isActive,
+            DateTime? updatedAt,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Party() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.createdAt,
+            _that.code,
+            _that.email,
+            _that.phone,
+            _that.taxId,
+            _that.address,
+            _that.contactInfo,
+            _that.organizationId,
+            _that.isActive,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String type,
+            DateTime createdAt,
+            String? code,
+            String? email,
+            String? phone,
+            String? taxId,
+            Address? address,
+            ContactInfo? contactInfo,
+            String? organizationId,
+            bool? isActive,
+            DateTime? updatedAt,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Party():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.createdAt,
+            _that.code,
+            _that.email,
+            _that.phone,
+            _that.taxId,
+            _that.address,
+            _that.contactInfo,
+            _that.organizationId,
+            _that.isActive,
+            _that.updatedAt,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String type,
+            DateTime createdAt,
+            String? code,
+            String? email,
+            String? phone,
+            String? taxId,
+            Address? address,
+            ContactInfo? contactInfo,
+            String? organizationId,
+            bool? isActive,
+            DateTime? updatedAt,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Party() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.createdAt,
+            _that.code,
+            _that.email,
+            _that.phone,
+            _that.taxId,
+            _that.address,
+            _that.contactInfo,
+            _that.organizationId,
+            _that.isActive,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$PartyImpl implements _Party {
-  const _$PartyImpl(
+class _Party implements Party {
+  const _Party(
       {required this.id,
       required this.name,
       required this.type,
@@ -665,9 +1085,7 @@ class _$PartyImpl implements _Party {
       this.updatedAt,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$PartyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PartyImplFromJson(json);
+  factory _Party.fromJson(Map<String, dynamic> json) => _$PartyFromJson(json);
 
   @override
   final String id;
@@ -705,16 +1123,26 @@ class _$PartyImpl implements _Party {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Party(id: $id, name: $name, type: $type, createdAt: $createdAt, code: $code, email: $email, phone: $phone, taxId: $taxId, address: $address, contactInfo: $contactInfo, organizationId: $organizationId, isActive: $isActive, updatedAt: $updatedAt, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PartyCopyWith<_Party> get copyWith =>
+      __$PartyCopyWithImpl<_Party>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PartyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PartyImpl &&
+            other is _Party &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
@@ -736,7 +1164,7 @@ class _$PartyImpl implements _Party {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -755,156 +1183,211 @@ class _$PartyImpl implements _Party {
       updatedAt,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PartyImplCopyWith<_$PartyImpl> get copyWith =>
-      __$$PartyImplCopyWithImpl<_$PartyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PartyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Party(id: $id, name: $name, type: $type, createdAt: $createdAt, code: $code, email: $email, phone: $phone, taxId: $taxId, address: $address, contactInfo: $contactInfo, organizationId: $organizationId, isActive: $isActive, updatedAt: $updatedAt, metadata: $metadata)';
   }
 }
 
-abstract class _Party implements Party {
-  const factory _Party(
-      {required final String id,
-      required final String name,
-      required final String type,
-      required final DateTime createdAt,
-      final String? code,
-      final String? email,
-      final String? phone,
-      final String? taxId,
-      final Address? address,
-      final ContactInfo? contactInfo,
-      final String? organizationId,
-      final bool? isActive,
-      final DateTime? updatedAt,
-      final Map<String, dynamic>? metadata}) = _$PartyImpl;
+/// @nodoc
+abstract mixin class _$PartyCopyWith<$Res> implements $PartyCopyWith<$Res> {
+  factory _$PartyCopyWith(_Party value, $Res Function(_Party) _then) =
+      __$PartyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String type,
+      DateTime createdAt,
+      String? code,
+      String? email,
+      String? phone,
+      String? taxId,
+      Address? address,
+      ContactInfo? contactInfo,
+      String? organizationId,
+      bool? isActive,
+      DateTime? updatedAt,
+      Map<String, dynamic>? metadata});
 
-  factory _Party.fromJson(Map<String, dynamic> json) = _$PartyImpl.fromJson;
-
   @override
-  String get id;
+  $AddressCopyWith<$Res>? get address;
   @override
-  String get name;
-  @override
-  String get type;
-  @override
-  DateTime get createdAt;
-  @override
-  String? get code;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get taxId;
-  @override
-  Address? get address;
-  @override
-  ContactInfo? get contactInfo;
-  @override
-  String? get organizationId;
-  @override
-  bool? get isActive;
-  @override
-  DateTime? get updatedAt;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$PartyImplCopyWith<_$PartyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ContactInfoCopyWith<$Res>? get contactInfo;
 }
 
-UpdatePartyRequest _$UpdatePartyRequestFromJson(Map<String, dynamic> json) {
-  return _UpdatePartyRequest.fromJson(json);
+/// @nodoc
+class __$PartyCopyWithImpl<$Res> implements _$PartyCopyWith<$Res> {
+  __$PartyCopyWithImpl(this._self, this._then);
+
+  final _Party _self;
+  final $Res Function(_Party) _then;
+
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? type = null,
+    Object? createdAt = null,
+    Object? code = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? taxId = freezed,
+    Object? address = freezed,
+    Object? contactInfo = freezed,
+    Object? organizationId = freezed,
+    Object? isActive = freezed,
+    Object? updatedAt = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_Party(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      code: freezed == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address?,
+      contactInfo: freezed == contactInfo
+          ? _self.contactInfo
+          : contactInfo // ignore: cast_nullable_to_non_nullable
+              as ContactInfo?,
+      organizationId: freezed == organizationId
+          ? _self.organizationId
+          : organizationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isActive: freezed == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      updatedAt: freezed == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AddressCopyWith<$Res>? get address {
+    if (_self.address == null) {
+      return null;
+    }
+
+    return $AddressCopyWith<$Res>(_self.address!, (value) {
+      return _then(_self.copyWith(address: value));
+    });
+  }
+
+  /// Create a copy of Party
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoCopyWith<$Res>? get contactInfo {
+    if (_self.contactInfo == null) {
+      return null;
+    }
+
+    return $ContactInfoCopyWith<$Res>(_self.contactInfo!, (value) {
+      return _then(_self.copyWith(contactInfo: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$UpdatePartyRequest {
-  String? get name => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String? get name;
+  String? get description;
+  bool? get isActive;
+  Map<String, dynamic>? get attributes;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdatePartyRequestCopyWith<UpdatePartyRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdatePartyRequestCopyWith<$Res> {
-  factory $UpdatePartyRequestCopyWith(
-          UpdatePartyRequest value, $Res Function(UpdatePartyRequest) then) =
-      _$UpdatePartyRequestCopyWithImpl<$Res, UpdatePartyRequest>;
-  @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      bool? isActive,
-      Map<String, dynamic>? attributes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$UpdatePartyRequestCopyWithImpl<$Res, $Val extends UpdatePartyRequest>
-    implements $UpdatePartyRequestCopyWith<$Res> {
-  _$UpdatePartyRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of UpdatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $UpdatePartyRequestCopyWith<UpdatePartyRequest> get copyWith =>
+      _$UpdatePartyRequestCopyWithImpl<UpdatePartyRequest>(
+          this as UpdatePartyRequest, _$identity);
+
+  /// Serializes this UpdatePartyRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? isActive = freezed,
-    Object? attributes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdatePartyRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      description,
+      isActive,
+      const DeepCollectionEquality().hash(attributes),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdatePartyRequest(name: $name, description: $description, isActive: $isActive, attributes: $attributes, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdatePartyRequestImplCopyWith<$Res>
-    implements $UpdatePartyRequestCopyWith<$Res> {
-  factory _$$UpdatePartyRequestImplCopyWith(_$UpdatePartyRequestImpl value,
-          $Res Function(_$UpdatePartyRequestImpl) then) =
-      __$$UpdatePartyRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $UpdatePartyRequestCopyWith<$Res> {
+  factory $UpdatePartyRequestCopyWith(
+          UpdatePartyRequest value, $Res Function(UpdatePartyRequest) _then) =
+      _$UpdatePartyRequestCopyWithImpl;
   @useResult
   $Res call(
       {String? name,
@@ -915,13 +1398,15 @@ abstract class _$$UpdatePartyRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UpdatePartyRequestImplCopyWithImpl<$Res>
-    extends _$UpdatePartyRequestCopyWithImpl<$Res, _$UpdatePartyRequestImpl>
-    implements _$$UpdatePartyRequestImplCopyWith<$Res> {
-  __$$UpdatePartyRequestImplCopyWithImpl(_$UpdatePartyRequestImpl _value,
-      $Res Function(_$UpdatePartyRequestImpl) _then)
-      : super(_value, _then);
+class _$UpdatePartyRequestCopyWithImpl<$Res>
+    implements $UpdatePartyRequestCopyWith<$Res> {
+  _$UpdatePartyRequestCopyWithImpl(this._self, this._then);
 
+  final UpdatePartyRequest _self;
+  final $Res Function(UpdatePartyRequest) _then;
+
+  /// Create a copy of UpdatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -931,35 +1416,197 @@ class __$$UpdatePartyRequestImplCopyWithImpl<$Res>
     Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$UpdatePartyRequestImpl(
+    return _then(_self.copyWith(
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       isActive: freezed == isActive
-          ? _value.isActive
+          ? _self.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [UpdatePartyRequest].
+extension UpdatePartyRequestPatterns on UpdatePartyRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdatePartyRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePartyRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdatePartyRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePartyRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdatePartyRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePartyRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? name, String? description, bool? isActive,
+            Map<String, dynamic>? attributes, Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePartyRequest() when $default != null:
+        return $default(_that.name, _that.description, _that.isActive,
+            _that.attributes, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? name, String? description, bool? isActive,
+            Map<String, dynamic>? attributes, Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePartyRequest():
+        return $default(_that.name, _that.description, _that.isActive,
+            _that.attributes, _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? name, String? description, bool? isActive,
+            Map<String, dynamic>? attributes, Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePartyRequest() when $default != null:
+        return $default(_that.name, _that.description, _that.isActive,
+            _that.attributes, _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$UpdatePartyRequestImpl implements _UpdatePartyRequest {
-  const _$UpdatePartyRequestImpl(
+class _UpdatePartyRequest implements UpdatePartyRequest {
+  const _UpdatePartyRequest(
       {this.name,
       this.description,
       this.isActive,
@@ -967,9 +1614,8 @@ class _$UpdatePartyRequestImpl implements _UpdatePartyRequest {
       final Map<String, dynamic>? metadata})
       : _attributes = attributes,
         _metadata = metadata;
-
-  factory _$UpdatePartyRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdatePartyRequestImplFromJson(json);
+  factory _UpdatePartyRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdatePartyRequestFromJson(json);
 
   @override
   final String? name;
@@ -997,16 +1643,26 @@ class _$UpdatePartyRequestImpl implements _UpdatePartyRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdatePartyRequest(name: $name, description: $description, isActive: $isActive, attributes: $attributes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdatePartyRequestCopyWith<_UpdatePartyRequest> get copyWith =>
+      __$UpdatePartyRequestCopyWithImpl<_UpdatePartyRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdatePartyRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatePartyRequestImpl &&
+            other is _UpdatePartyRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -1017,7 +1673,7 @@ class _$UpdatePartyRequestImpl implements _UpdatePartyRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1027,44 +1683,70 @@ class _$UpdatePartyRequestImpl implements _UpdatePartyRequest {
       const DeepCollectionEquality().hash(_attributes),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdatePartyRequestImplCopyWith<_$UpdatePartyRequestImpl> get copyWith =>
-      __$$UpdatePartyRequestImplCopyWithImpl<_$UpdatePartyRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdatePartyRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdatePartyRequest(name: $name, description: $description, isActive: $isActive, attributes: $attributes, metadata: $metadata)';
   }
 }
 
-abstract class _UpdatePartyRequest implements UpdatePartyRequest {
-  const factory _UpdatePartyRequest(
-      {final String? name,
-      final String? description,
-      final bool? isActive,
-      final Map<String, dynamic>? attributes,
-      final Map<String, dynamic>? metadata}) = _$UpdatePartyRequestImpl;
-
-  factory _UpdatePartyRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdatePartyRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdatePartyRequestCopyWith<$Res>
+    implements $UpdatePartyRequestCopyWith<$Res> {
+  factory _$UpdatePartyRequestCopyWith(
+          _UpdatePartyRequest value, $Res Function(_UpdatePartyRequest) _then) =
+      __$UpdatePartyRequestCopyWithImpl;
   @override
-  String? get name;
-  @override
-  String? get description;
-  @override
-  bool? get isActive;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdatePartyRequestImplCopyWith<_$UpdatePartyRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? name,
+      String? description,
+      bool? isActive,
+      Map<String, dynamic>? attributes,
+      Map<String, dynamic>? metadata});
 }
+
+/// @nodoc
+class __$UpdatePartyRequestCopyWithImpl<$Res>
+    implements _$UpdatePartyRequestCopyWith<$Res> {
+  __$UpdatePartyRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdatePartyRequest _self;
+  final $Res Function(_UpdatePartyRequest) _then;
+
+  /// Create a copy of UpdatePartyRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? isActive = freezed,
+    Object? attributes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_UpdatePartyRequest(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isActive: freezed == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+// dart format on

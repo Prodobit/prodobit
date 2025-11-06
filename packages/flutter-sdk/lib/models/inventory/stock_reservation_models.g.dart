@@ -6,13 +6,12 @@ part of 'stock_reservation_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StockReservationImpl _$$StockReservationImplFromJson(
-        Map<String, dynamic> json) =>
+_StockReservation _$StockReservationFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$StockReservationImpl',
+      '_StockReservation',
       json,
       ($checkedConvert) {
-        final val = _$StockReservationImpl(
+        final val = _StockReservation(
           id: $checkedConvert('id', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
           locationId: $checkedConvert('locationId', (v) => v as String),
@@ -43,8 +42,7 @@ _$StockReservationImpl _$$StockReservationImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$StockReservationImplToJson(
-        _$StockReservationImpl instance) =>
+Map<String, dynamic> _$StockReservationToJson(_StockReservation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'itemId': instance.itemId,
@@ -65,33 +63,31 @@ Map<String, dynamic> _$$StockReservationImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateStockReservationRequestImpl
-    _$$CreateStockReservationRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreateStockReservationRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreateStockReservationRequestImpl(
-              itemId: $checkedConvert('itemId', (v) => v as String),
-              locationId: $checkedConvert('locationId', (v) => v as String),
-              quantity:
-                  $checkedConvert('quantity', (v) => (v as num).toDouble()),
-              purpose: $checkedConvert('purpose', (v) => v as String),
-              referenceId: $checkedConvert('referenceId', (v) => v as String?),
-              referenceType:
-                  $checkedConvert('referenceType', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              expiresAt: $checkedConvert('expiresAt',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreateStockReservationRequest _$CreateStockReservationRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreateStockReservationRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreateStockReservationRequest(
+          itemId: $checkedConvert('itemId', (v) => v as String),
+          locationId: $checkedConvert('locationId', (v) => v as String),
+          quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
+          purpose: $checkedConvert('purpose', (v) => v as String),
+          referenceId: $checkedConvert('referenceId', (v) => v as String?),
+          referenceType: $checkedConvert('referenceType', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          expiresAt: $checkedConvert('expiresAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreateStockReservationRequestImplToJson(
-        _$CreateStockReservationRequestImpl instance) =>
+Map<String, dynamic> _$CreateStockReservationRequestToJson(
+        _CreateStockReservationRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'locationId': instance.locationId,
@@ -104,27 +100,26 @@ Map<String, dynamic> _$$CreateStockReservationRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateStockReservationRequestImpl
-    _$$UpdateStockReservationRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$UpdateStockReservationRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$UpdateStockReservationRequestImpl(
-              quantity:
-                  $checkedConvert('quantity', (v) => (v as num?)?.toDouble()),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              expiresAt: $checkedConvert('expiresAt',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_UpdateStockReservationRequest _$UpdateStockReservationRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_UpdateStockReservationRequest',
+      json,
+      ($checkedConvert) {
+        final val = _UpdateStockReservationRequest(
+          quantity: $checkedConvert('quantity', (v) => (v as num?)?.toDouble()),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          expiresAt: $checkedConvert('expiresAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$UpdateStockReservationRequestImplToJson(
-        _$UpdateStockReservationRequestImpl instance) =>
+Map<String, dynamic> _$UpdateStockReservationRequestToJson(
+        _UpdateStockReservationRequest instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'notes': instance.notes,
@@ -132,13 +127,13 @@ Map<String, dynamic> _$$UpdateStockReservationRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$StockReservationFiltersImpl _$$StockReservationFiltersImplFromJson(
+_StockReservationFilters _$StockReservationFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$StockReservationFiltersImpl',
+      '_StockReservationFilters',
       json,
       ($checkedConvert) {
-        final val = _$StockReservationFiltersImpl(
+        final val = _StockReservationFilters(
           itemId: $checkedConvert('itemId', (v) => v as String?),
           locationId: $checkedConvert('locationId', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
@@ -162,8 +157,8 @@ _$StockReservationFiltersImpl _$$StockReservationFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$StockReservationFiltersImplToJson(
-        _$StockReservationFiltersImpl instance) =>
+Map<String, dynamic> _$StockReservationFiltersToJson(
+        _StockReservationFilters instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'locationId': instance.locationId,
@@ -181,23 +176,22 @@ Map<String, dynamic> _$$StockReservationFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$ConsumeStockReservationRequestImpl
-    _$$ConsumeStockReservationRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$ConsumeStockReservationRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$ConsumeStockReservationRequestImpl(
-              quantity:
-                  $checkedConvert('quantity', (v) => (v as num).toDouble()),
-              notes: $checkedConvert('notes', (v) => v as String?),
-            );
-            return val;
-          },
+_ConsumeStockReservationRequest _$ConsumeStockReservationRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_ConsumeStockReservationRequest',
+      json,
+      ($checkedConvert) {
+        final val = _ConsumeStockReservationRequest(
+          quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
+          notes: $checkedConvert('notes', (v) => v as String?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$ConsumeStockReservationRequestImplToJson(
-        _$ConsumeStockReservationRequestImpl instance) =>
+Map<String, dynamic> _$ConsumeStockReservationRequestToJson(
+        _ConsumeStockReservationRequest instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'notes': instance.notes,

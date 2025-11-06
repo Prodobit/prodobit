@@ -5,7 +5,7 @@ part 'stock_adjustment_models.g.dart';
 
 /// Stock adjustment model
 @freezed
-class StockAdjustment with _$StockAdjustment {
+sealed class StockAdjustment with _$StockAdjustment {
   const factory StockAdjustment({
     required String id,
     required String itemId,
@@ -38,7 +38,7 @@ class StockAdjustment with _$StockAdjustment {
 
 /// Stock adjustment item model
 @freezed
-class StockAdjustmentItem with _$StockAdjustmentItem {
+sealed class StockAdjustmentItem with _$StockAdjustmentItem {
   const factory StockAdjustmentItem({
     required String id,
     required String stockAdjustmentId,
@@ -60,7 +60,7 @@ class StockAdjustmentItem with _$StockAdjustmentItem {
 
 /// Create stock adjustment request
 @freezed
-class CreateStockAdjustmentRequest with _$CreateStockAdjustmentRequest {
+sealed class CreateStockAdjustmentRequest with _$CreateStockAdjustmentRequest {
   const factory CreateStockAdjustmentRequest({
     required String itemId,
     required String locationId,
@@ -80,7 +80,7 @@ class CreateStockAdjustmentRequest with _$CreateStockAdjustmentRequest {
 
 /// Update stock adjustment request
 @freezed
-class UpdateStockAdjustmentRequest with _$UpdateStockAdjustmentRequest {
+sealed class UpdateStockAdjustmentRequest with _$UpdateStockAdjustmentRequest {
   const factory UpdateStockAdjustmentRequest({
     double? quantity,
     String? reason,
@@ -97,7 +97,7 @@ class UpdateStockAdjustmentRequest with _$UpdateStockAdjustmentRequest {
 
 /// Stock adjustment filters
 @freezed
-class StockAdjustmentFilters with _$StockAdjustmentFilters {
+sealed class StockAdjustmentFilters with _$StockAdjustmentFilters {
   const factory StockAdjustmentFilters({
     String? itemId,
     String? locationId,
@@ -149,7 +149,7 @@ class StockAdjustmentFilters with _$StockAdjustmentFilters {
 
 /// Approve stock adjustment request
 @freezed
-class ApproveStockAdjustmentRequest with _$ApproveStockAdjustmentRequest {
+sealed class ApproveStockAdjustmentRequest with _$ApproveStockAdjustmentRequest {
   const factory ApproveStockAdjustmentRequest({
     String? notes,
   }) = _ApproveStockAdjustmentRequest;
@@ -160,7 +160,7 @@ class ApproveStockAdjustmentRequest with _$ApproveStockAdjustmentRequest {
 
 /// Reject stock adjustment request
 @freezed
-class RejectStockAdjustmentRequest with _$RejectStockAdjustmentRequest {
+sealed class RejectStockAdjustmentRequest with _$RejectStockAdjustmentRequest {
   const factory RejectStockAdjustmentRequest({
     required String reason,
     String? notes,

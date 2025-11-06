@@ -6,13 +6,12 @@ part of 'purchase_requisition_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PurchaseRequisitionImpl _$$PurchaseRequisitionImplFromJson(
-        Map<String, dynamic> json) =>
+_PurchaseRequisition _$PurchaseRequisitionFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PurchaseRequisitionImpl',
+      '_PurchaseRequisition',
       json,
       ($checkedConvert) {
-        final val = _$PurchaseRequisitionImpl(
+        final val = _PurchaseRequisition(
           id: $checkedConvert('id', (v) => v as String),
           requisitionNumber:
               $checkedConvert('requisitionNumber', (v) => v as String),
@@ -57,8 +56,8 @@ _$PurchaseRequisitionImpl _$$PurchaseRequisitionImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PurchaseRequisitionImplToJson(
-        _$PurchaseRequisitionImpl instance) =>
+Map<String, dynamic> _$PurchaseRequisitionToJson(
+        _PurchaseRequisition instance) =>
     <String, dynamic>{
       'id': instance.id,
       'requisitionNumber': instance.requisitionNumber,
@@ -88,13 +87,13 @@ Map<String, dynamic> _$$PurchaseRequisitionImplToJson(
       'metadata': instance.metadata,
     };
 
-_$PurchaseRequisitionLineItemImpl _$$PurchaseRequisitionLineItemImplFromJson(
+_PurchaseRequisitionLineItem _$PurchaseRequisitionLineItemFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PurchaseRequisitionLineItemImpl',
+      '_PurchaseRequisitionLineItem',
       json,
       ($checkedConvert) {
-        final val = _$PurchaseRequisitionLineItemImpl(
+        final val = _PurchaseRequisitionLineItem(
           id: $checkedConvert('id', (v) => v as String),
           purchaseRequisitionId:
               $checkedConvert('purchaseRequisitionId', (v) => v as String),
@@ -125,8 +124,8 @@ _$PurchaseRequisitionLineItemImpl _$$PurchaseRequisitionLineItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PurchaseRequisitionLineItemImplToJson(
-        _$PurchaseRequisitionLineItemImpl instance) =>
+Map<String, dynamic> _$PurchaseRequisitionLineItemToJson(
+        _PurchaseRequisitionLineItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'purchaseRequisitionId': instance.purchaseRequisitionId,
@@ -147,39 +146,37 @@ Map<String, dynamic> _$$PurchaseRequisitionLineItemImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreatePurchaseRequisitionRequestImpl
-    _$$CreatePurchaseRequisitionRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreatePurchaseRequisitionRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreatePurchaseRequisitionRequestImpl(
-              requiredDate: $checkedConvert(
-                  'requiredDate', (v) => DateTime.parse(v as String)),
-              priority: $checkedConvert('priority', (v) => v as String),
-              department: $checkedConvert('department', (v) => v as String?),
-              costCenter: $checkedConvert('costCenter', (v) => v as String?),
-              project: $checkedConvert('project', (v) => v as String?),
-              justification:
-                  $checkedConvert('justification', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              lineItems: $checkedConvert(
-                  'lineItems',
-                  (v) => (v as List<dynamic>?)
-                      ?.map((e) =>
-                          CreatePurchaseRequisitionLineItemRequest.fromJson(
-                              e as Map<String, dynamic>))
-                      .toList()),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreatePurchaseRequisitionRequest _$CreatePurchaseRequisitionRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreatePurchaseRequisitionRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreatePurchaseRequisitionRequest(
+          requiredDate: $checkedConvert(
+              'requiredDate', (v) => DateTime.parse(v as String)),
+          priority: $checkedConvert('priority', (v) => v as String),
+          department: $checkedConvert('department', (v) => v as String?),
+          costCenter: $checkedConvert('costCenter', (v) => v as String?),
+          project: $checkedConvert('project', (v) => v as String?),
+          justification: $checkedConvert('justification', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          lineItems: $checkedConvert(
+              'lineItems',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      CreatePurchaseRequisitionLineItemRequest.fromJson(
+                          e as Map<String, dynamic>))
+                  .toList()),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreatePurchaseRequisitionRequestImplToJson(
-        _$CreatePurchaseRequisitionRequestImpl instance) =>
+Map<String, dynamic> _$CreatePurchaseRequisitionRequestToJson(
+        _CreatePurchaseRequisitionRequest instance) =>
     <String, dynamic>{
       'requiredDate': instance.requiredDate.toIso8601String(),
       'priority': instance.priority,
@@ -192,14 +189,14 @@ Map<String, dynamic> _$$CreatePurchaseRequisitionRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreatePurchaseRequisitionLineItemRequestImpl
-    _$$CreatePurchaseRequisitionLineItemRequestImplFromJson(
+_CreatePurchaseRequisitionLineItemRequest
+    _$CreatePurchaseRequisitionLineItemRequestFromJson(
             Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$CreatePurchaseRequisitionLineItemRequestImpl',
+          '_CreatePurchaseRequisitionLineItemRequest',
           json,
           ($checkedConvert) {
-            final val = _$CreatePurchaseRequisitionLineItemRequestImpl(
+            final val = _CreatePurchaseRequisitionLineItemRequest(
               itemId: $checkedConvert('itemId', (v) => v as String),
               quantity:
                   $checkedConvert('quantity', (v) => (v as num).toDouble()),
@@ -226,8 +223,8 @@ _$CreatePurchaseRequisitionLineItemRequestImpl
           },
         );
 
-Map<String, dynamic> _$$CreatePurchaseRequisitionLineItemRequestImplToJson(
-        _$CreatePurchaseRequisitionLineItemRequestImpl instance) =>
+Map<String, dynamic> _$CreatePurchaseRequisitionLineItemRequestToJson(
+        _CreatePurchaseRequisitionLineItemRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -243,32 +240,30 @@ Map<String, dynamic> _$$CreatePurchaseRequisitionLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdatePurchaseRequisitionRequestImpl
-    _$$UpdatePurchaseRequisitionRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$UpdatePurchaseRequisitionRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$UpdatePurchaseRequisitionRequestImpl(
-              requiredDate: $checkedConvert('requiredDate',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              priority: $checkedConvert('priority', (v) => v as String?),
-              department: $checkedConvert('department', (v) => v as String?),
-              costCenter: $checkedConvert('costCenter', (v) => v as String?),
-              project: $checkedConvert('project', (v) => v as String?),
-              justification:
-                  $checkedConvert('justification', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_UpdatePurchaseRequisitionRequest _$UpdatePurchaseRequisitionRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_UpdatePurchaseRequisitionRequest',
+      json,
+      ($checkedConvert) {
+        final val = _UpdatePurchaseRequisitionRequest(
+          requiredDate: $checkedConvert('requiredDate',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          priority: $checkedConvert('priority', (v) => v as String?),
+          department: $checkedConvert('department', (v) => v as String?),
+          costCenter: $checkedConvert('costCenter', (v) => v as String?),
+          project: $checkedConvert('project', (v) => v as String?),
+          justification: $checkedConvert('justification', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$UpdatePurchaseRequisitionRequestImplToJson(
-        _$UpdatePurchaseRequisitionRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePurchaseRequisitionRequestToJson(
+        _UpdatePurchaseRequisitionRequest instance) =>
     <String, dynamic>{
       'requiredDate': instance.requiredDate?.toIso8601String(),
       'priority': instance.priority,
@@ -280,14 +275,14 @@ Map<String, dynamic> _$$UpdatePurchaseRequisitionRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdatePurchaseRequisitionLineItemRequestImpl
-    _$$UpdatePurchaseRequisitionLineItemRequestImplFromJson(
+_UpdatePurchaseRequisitionLineItemRequest
+    _$UpdatePurchaseRequisitionLineItemRequestFromJson(
             Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$UpdatePurchaseRequisitionLineItemRequestImpl',
+          '_UpdatePurchaseRequisitionLineItemRequest',
           json,
           ($checkedConvert) {
-            final val = _$UpdatePurchaseRequisitionLineItemRequestImpl(
+            final val = _UpdatePurchaseRequisitionLineItemRequest(
               quantity:
                   $checkedConvert('quantity', (v) => (v as num?)?.toDouble()),
               unit: $checkedConvert('unit', (v) => v as String?),
@@ -313,8 +308,8 @@ _$UpdatePurchaseRequisitionLineItemRequestImpl
           },
         );
 
-Map<String, dynamic> _$$UpdatePurchaseRequisitionLineItemRequestImplToJson(
-        _$UpdatePurchaseRequisitionLineItemRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePurchaseRequisitionLineItemRequestToJson(
+        _UpdatePurchaseRequisitionLineItemRequest instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'unit': instance.unit,
@@ -329,13 +324,13 @@ Map<String, dynamic> _$$UpdatePurchaseRequisitionLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$PurchaseRequisitionFiltersImpl _$$PurchaseRequisitionFiltersImplFromJson(
+_PurchaseRequisitionFilters _$PurchaseRequisitionFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PurchaseRequisitionFiltersImpl',
+      '_PurchaseRequisitionFilters',
       json,
       ($checkedConvert) {
-        final val = _$PurchaseRequisitionFiltersImpl(
+        final val = _PurchaseRequisitionFilters(
           requestedBy: $checkedConvert('requestedBy', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           priority: $checkedConvert('priority', (v) => v as String?),
@@ -361,8 +356,8 @@ _$PurchaseRequisitionFiltersImpl _$$PurchaseRequisitionFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PurchaseRequisitionFiltersImplToJson(
-        _$PurchaseRequisitionFiltersImpl instance) =>
+Map<String, dynamic> _$PurchaseRequisitionFiltersToJson(
+        _PurchaseRequisitionFilters instance) =>
     <String, dynamic>{
       'requestedBy': instance.requestedBy,
       'status': instance.status,
@@ -381,43 +376,41 @@ Map<String, dynamic> _$$PurchaseRequisitionFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$ApprovePurchaseRequisitionRequestImpl
-    _$$ApprovePurchaseRequisitionRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$ApprovePurchaseRequisitionRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$ApprovePurchaseRequisitionRequestImpl(
-              notes: $checkedConvert('notes', (v) => v as String?),
-            );
-            return val;
-          },
+_ApprovePurchaseRequisitionRequest _$ApprovePurchaseRequisitionRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_ApprovePurchaseRequisitionRequest',
+      json,
+      ($checkedConvert) {
+        final val = _ApprovePurchaseRequisitionRequest(
+          notes: $checkedConvert('notes', (v) => v as String?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$ApprovePurchaseRequisitionRequestImplToJson(
-        _$ApprovePurchaseRequisitionRequestImpl instance) =>
+Map<String, dynamic> _$ApprovePurchaseRequisitionRequestToJson(
+        _ApprovePurchaseRequisitionRequest instance) =>
     <String, dynamic>{
       'notes': instance.notes,
     };
 
-_$RejectPurchaseRequisitionRequestImpl
-    _$$RejectPurchaseRequisitionRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$RejectPurchaseRequisitionRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$RejectPurchaseRequisitionRequestImpl(
-              reason: $checkedConvert('reason', (v) => v as String),
-              notes: $checkedConvert('notes', (v) => v as String?),
-            );
-            return val;
-          },
+_RejectPurchaseRequisitionRequest _$RejectPurchaseRequisitionRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_RejectPurchaseRequisitionRequest',
+      json,
+      ($checkedConvert) {
+        final val = _RejectPurchaseRequisitionRequest(
+          reason: $checkedConvert('reason', (v) => v as String),
+          notes: $checkedConvert('notes', (v) => v as String?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$RejectPurchaseRequisitionRequestImplToJson(
-        _$RejectPurchaseRequisitionRequestImpl instance) =>
+Map<String, dynamic> _$RejectPurchaseRequisitionRequestToJson(
+        _RejectPurchaseRequisitionRequest instance) =>
     <String, dynamic>{
       'reason': instance.reason,
       'notes': instance.notes,

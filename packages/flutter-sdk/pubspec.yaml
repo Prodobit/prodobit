@@ -1,6 +1,6 @@
 name: prodobit_flutter_sdk
 description: Flutter SDK for Prodobit framework - Build manufacturing and business applications with modern Flutter patterns
-version: 0.14.16
+version: 0.15.0
 homepage: https://github.com/prodobit/prodobit
 repository: https://github.com/prodobit/prodobit
 issue_tracker: https://github.com/prodobit/prodobit/issues
@@ -20,15 +20,15 @@ dependencies:
   
   # JSON Serialization
   json_annotation: ^4.9.0
-  freezed_annotation: ^2.4.1
-  
+  freezed_annotation: ^3.1.0
+
   # State Management (Modern Riverpod)
-  flutter_riverpod: ^2.5.1
-  riverpod_annotation: ^2.3.5
+  flutter_riverpod: ^3.0.3
+  riverpod_annotation: ^3.0.3
   
   # Storage & Caching
   shared_preferences: ^2.2.3
-  flutter_secure_storage: ^9.0.0
+  flutter_secure_storage: ^10.0.0-beta.4
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   
@@ -42,10 +42,10 @@ dependencies:
   meta: ^1.12.0
   
   # Reactive Programming
-  rxdart: ^0.27.7
+  rxdart: ^0.28.0
   
   # File Handling
-  mime: ^1.0.5
+  mime: ^2.0.0
   http_parser: ^4.0.2
 
   # Offline Caching (Optional - currently disabled)
@@ -56,17 +56,17 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+
   # Code Generation
   build_runner: ^2.4.9
   json_serializable: ^6.8.0
-  freezed: ^2.5.2
-  retrofit_generator: ^8.1.0
-  riverpod_generator: ^2.4.0
+  freezed: ^3.2.3
+  retrofit_generator: ^10.0.0
+  riverpod_generator: ^3.0.3
   
   # Analysis & Linting
-  flutter_lints: ^4.0.0
-  very_good_analysis: ^6.0.0
+  flutter_lints: ^6.0.0
+  very_good_analysis: ^10.0.0
   
   # Testing
   mockito: ^5.4.4

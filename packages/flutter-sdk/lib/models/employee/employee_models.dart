@@ -5,7 +5,7 @@ part 'employee_models.g.dart';
 
 /// Employee model
 @freezed
-class Employee with _$Employee {
+sealed class Employee with _$Employee {
   const factory Employee({
     required String id,
     required String tenantId,
@@ -41,7 +41,7 @@ class Employee with _$Employee {
 
 /// Create employee request
 @freezed
-class CreateEmployeeRequest with _$CreateEmployeeRequest {
+sealed class CreateEmployeeRequest with _$CreateEmployeeRequest {
   const factory CreateEmployeeRequest({
     required String userId,
     required String employeeId,
@@ -71,7 +71,7 @@ class CreateEmployeeRequest with _$CreateEmployeeRequest {
 
 /// Update employee request
 @freezed
-class UpdateEmployeeRequest with _$UpdateEmployeeRequest {
+sealed class UpdateEmployeeRequest with _$UpdateEmployeeRequest {
   const factory UpdateEmployeeRequest({
     String? firstName,
     String? lastName,
@@ -101,7 +101,7 @@ class UpdateEmployeeRequest with _$UpdateEmployeeRequest {
 
 /// Employee filters
 @freezed
-class EmployeeFilters with _$EmployeeFilters {
+sealed class EmployeeFilters with _$EmployeeFilters {
   const factory EmployeeFilters({
     String? status,
     String? department,

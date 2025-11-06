@@ -53,7 +53,7 @@ class CalibrationService {
   Future<CalibrationPlan> createCalibrationPlan(
       CreateCalibrationPlanRequest request) async {
     final response = await _apiClient.post<Map<String, dynamic>>(
-      '/api/v1/calibration',
+      '/api/v1/calibration/plans',
       data: request.toJson(),
     );
 
@@ -75,7 +75,7 @@ class CalibrationService {
 
   /// Delete calibration plan
   Future<void> deleteCalibrationPlan(String planId) async {
-    await _apiClient.delete('/api/v1/calibration/$planId');
+    await _apiClient.delete('/api/v1/calibration/plans/$planId');
   }
 
   /// Delete calibration record
@@ -86,7 +86,7 @@ class CalibrationService {
   /// Get calibration plan by ID
   Future<CalibrationPlan> getCalibrationPlan(String planId) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
-      '/api/v1/calibration/$planId',
+      '/api/v1/calibration/plans/$planId',
     );
 
     final data = response['data'] as Map<String, dynamic>;
@@ -100,7 +100,7 @@ class CalibrationService {
     QueryParams? query,
   }) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
-      '/api/v1/calibration',
+      '/api/v1/calibration/plans',
       queryParameters: query?.toQueryMap(),
     );
 
@@ -114,7 +114,7 @@ class CalibrationService {
   Future<List<CalibrationPlan>> getCalibrationPlansByAssetId(
       String assetId) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
-      '/api/v1/assets/$assetId/calibration-plans',
+      '/api/v1/calibration/plans/asset/$assetId',
     );
 
     final data = response['data'] as List<dynamic>;
@@ -152,7 +152,7 @@ class CalibrationService {
   Future<List<CalibrationRecord>> getCalibrationRecordsByAssetId(
       String assetId) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
-      '/api/v1/assets/$assetId/calibration-records',
+      '/api/v1/calibration/records/asset/$assetId',
     );
 
     final data = response['data'] as List<dynamic>;
@@ -165,7 +165,7 @@ class CalibrationService {
   Future<List<CalibrationRecord>> getCalibrationRecordsByPlanId(
       String planId) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
-      '/api/v1/calibration/$planId/records',
+      '/api/v1/calibration/records/plan/$planId',
     );
 
     final data = response['data'] as List<dynamic>;
@@ -180,7 +180,7 @@ class CalibrationService {
     UpdateCalibrationPlanRequest request,
   ) async {
     final response = await _apiClient.put<Map<String, dynamic>>(
-      '/api/v1/calibration/$planId',
+      '/api/v1/calibration/plans/$planId',
       data: request.toJson(),
     );
 

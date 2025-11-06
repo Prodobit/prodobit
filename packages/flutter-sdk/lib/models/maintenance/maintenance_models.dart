@@ -4,7 +4,7 @@ part 'maintenance_models.freezed.dart';
 part 'maintenance_models.g.dart';
 
 @freezed
-class MaintenancePlan with _$MaintenancePlan {
+sealed class MaintenancePlan with _$MaintenancePlan {
   const factory MaintenancePlan({
     required String id,
     required String tenantId,
@@ -50,7 +50,7 @@ class MaintenancePlan with _$MaintenancePlan {
 }
 
 @freezed
-class MaintenanceRecord with _$MaintenanceRecord {
+sealed class MaintenanceRecord with _$MaintenanceRecord {
   const factory MaintenanceRecord({
     required String id,
     required String tenantId,
@@ -78,7 +78,7 @@ class MaintenanceRecord with _$MaintenanceRecord {
 }
 
 @freezed
-class CreateMaintenancePlanRequest with _$CreateMaintenancePlanRequest {
+sealed class CreateMaintenancePlanRequest with _$CreateMaintenancePlanRequest {
   const factory CreateMaintenancePlanRequest({
     required String assetId,
     required String name,
@@ -112,7 +112,7 @@ class CreateMaintenancePlanRequest with _$CreateMaintenancePlanRequest {
 }
 
 @freezed
-class UpdateMaintenancePlanRequest with _$UpdateMaintenancePlanRequest {
+sealed class UpdateMaintenancePlanRequest with _$UpdateMaintenancePlanRequest {
   const factory UpdateMaintenancePlanRequest({
     String? name,
     String? description,
@@ -147,7 +147,7 @@ class UpdateMaintenancePlanRequest with _$UpdateMaintenancePlanRequest {
 }
 
 @freezed
-class CreateMaintenanceRecordRequest with _$CreateMaintenanceRecordRequest {
+sealed class CreateMaintenanceRecordRequest with _$CreateMaintenanceRecordRequest {
   const factory CreateMaintenanceRecordRequest({
     required String maintenancePlanId,
     required DateTime scheduledDate,
@@ -159,7 +159,7 @@ class CreateMaintenanceRecordRequest with _$CreateMaintenanceRecordRequest {
 }
 
 @freezed
-class UpdateMaintenanceRecordRequest with _$UpdateMaintenanceRecordRequest {
+sealed class UpdateMaintenanceRecordRequest with _$UpdateMaintenanceRecordRequest {
   const factory UpdateMaintenanceRecordRequest({
     String? status,
     DateTime? completedDate,

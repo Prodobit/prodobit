@@ -5,7 +5,7 @@ part 'tenant_models.g.dart';
 
 /// Tenant model
 @freezed
-class Tenant with _$Tenant {
+sealed class Tenant with _$Tenant {
   const factory Tenant({
     required String id,
     required String name,
@@ -31,7 +31,7 @@ class Tenant with _$Tenant {
 
 /// Tenant member model
 @freezed
-class TenantMember with _$TenantMember {
+sealed class TenantMember with _$TenantMember {
   const factory TenantMember({
     required String id,
     required String tenantId,
@@ -56,7 +56,7 @@ class TenantMember with _$TenantMember {
 
 /// Tenant role model
 @freezed
-class TenantRole with _$TenantRole {
+sealed class TenantRole with _$TenantRole {
   const factory TenantRole({
     required String id,
     required String tenantId,
@@ -76,7 +76,7 @@ class TenantRole with _$TenantRole {
 
 /// Tenant invitation model
 @freezed
-class TenantInvitation with _$TenantInvitation {
+sealed class TenantInvitation with _$TenantInvitation {
   const factory TenantInvitation({
     required String id,
     required String tenantId,
@@ -102,7 +102,7 @@ class TenantInvitation with _$TenantInvitation {
 
 /// Create tenant request
 @freezed
-class CreateTenantRequest with _$CreateTenantRequest {
+sealed class CreateTenantRequest with _$CreateTenantRequest {
   const factory CreateTenantRequest({
     required String name,
     required String slug,
@@ -124,7 +124,7 @@ class CreateTenantRequest with _$CreateTenantRequest {
 
 /// Update tenant request
 @freezed
-class UpdateTenantRequest with _$UpdateTenantRequest {
+sealed class UpdateTenantRequest with _$UpdateTenantRequest {
   const factory UpdateTenantRequest({
     String? name,
     String? description,
@@ -146,7 +146,7 @@ class UpdateTenantRequest with _$UpdateTenantRequest {
 
 /// Create invitation request
 @freezed
-class CreateInvitationRequest with _$CreateInvitationRequest {
+sealed class CreateInvitationRequest with _$CreateInvitationRequest {
   const factory CreateInvitationRequest({
     required String email,
     required String role,
@@ -162,7 +162,7 @@ class CreateInvitationRequest with _$CreateInvitationRequest {
 
 /// Update membership request
 @freezed
-class UpdateMembershipRequest with _$UpdateMembershipRequest {
+sealed class UpdateMembershipRequest with _$UpdateMembershipRequest {
   const factory UpdateMembershipRequest({
     String? role,
     String? status,
@@ -176,7 +176,7 @@ class UpdateMembershipRequest with _$UpdateMembershipRequest {
 
 /// Tenant filters
 @freezed
-class TenantFilters with _$TenantFilters {
+sealed class TenantFilters with _$TenantFilters {
   const factory TenantFilters({
     String? status,
     String? name,
@@ -212,7 +212,7 @@ class TenantFilters with _$TenantFilters {
 
 /// Tenant member filters
 @freezed
-class TenantMemberFilters with _$TenantMemberFilters {
+sealed class TenantMemberFilters with _$TenantMemberFilters {
   const factory TenantMemberFilters({
     String? role,
     String? status,
@@ -248,7 +248,7 @@ class TenantMemberFilters with _$TenantMemberFilters {
 
 /// Tenant invitation filters
 @freezed
-class TenantInvitationFilters with _$TenantInvitationFilters {
+sealed class TenantInvitationFilters with _$TenantInvitationFilters {
   const factory TenantInvitationFilters({
     String? status,
     String? role,

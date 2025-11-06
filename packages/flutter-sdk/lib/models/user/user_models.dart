@@ -5,7 +5,7 @@ part 'user_models.g.dart';
 
 /// User model
 @freezed
-class User with _$User {
+sealed class User with _$User {
   const factory User({
     required String id,
     required String email,
@@ -27,7 +27,7 @@ class User with _$User {
 
 /// User profile update request
 @freezed
-class UserUpdateRequest with _$UserUpdateRequest {
+sealed class UserUpdateRequest with _$UserUpdateRequest {
   const factory UserUpdateRequest({
     String? firstName,
     String? lastName,

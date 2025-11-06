@@ -6,11 +6,11 @@ part of 'tenant_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TenantImpl _$$TenantImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$TenantImpl',
+_Tenant _$TenantFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Tenant',
       json,
       ($checkedConvert) {
-        final val = _$TenantImpl(
+        final val = _Tenant(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           slug: $checkedConvert('slug', (v) => v as String),
@@ -37,8 +37,7 @@ _$TenantImpl _$$TenantImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$TenantImplToJson(_$TenantImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$TenantToJson(_Tenant instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'slug': instance.slug,
@@ -58,12 +57,12 @@ Map<String, dynamic> _$$TenantImplToJson(_$TenantImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$TenantMemberImpl _$$TenantMemberImplFromJson(Map<String, dynamic> json) =>
+_TenantMember _$TenantMemberFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TenantMemberImpl',
+      '_TenantMember',
       json,
       ($checkedConvert) {
-        final val = _$TenantMemberImpl(
+        final val = _TenantMember(
           id: $checkedConvert('id', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String),
           userId: $checkedConvert('userId', (v) => v as String),
@@ -93,7 +92,7 @@ _$TenantMemberImpl _$$TenantMemberImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$TenantMemberImplToJson(_$TenantMemberImpl instance) =>
+Map<String, dynamic> _$TenantMemberToJson(_TenantMember instance) =>
     <String, dynamic>{
       'id': instance.id,
       'tenantId': instance.tenantId,
@@ -112,12 +111,11 @@ Map<String, dynamic> _$$TenantMemberImplToJson(_$TenantMemberImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$TenantRoleImpl _$$TenantRoleImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$TenantRoleImpl',
+_TenantRole _$TenantRoleFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_TenantRole',
       json,
       ($checkedConvert) {
-        final val = _$TenantRoleImpl(
+        final val = _TenantRole(
           id: $checkedConvert('id', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
@@ -137,7 +135,7 @@ _$TenantRoleImpl _$$TenantRoleImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$TenantRoleImplToJson(_$TenantRoleImpl instance) =>
+Map<String, dynamic> _$TenantRoleToJson(_TenantRole instance) =>
     <String, dynamic>{
       'id': instance.id,
       'tenantId': instance.tenantId,
@@ -151,13 +149,12 @@ Map<String, dynamic> _$$TenantRoleImplToJson(_$TenantRoleImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$TenantInvitationImpl _$$TenantInvitationImplFromJson(
-        Map<String, dynamic> json) =>
+_TenantInvitation _$TenantInvitationFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TenantInvitationImpl',
+      '_TenantInvitation',
       json,
       ($checkedConvert) {
-        final val = _$TenantInvitationImpl(
+        final val = _TenantInvitation(
           id: $checkedConvert('id', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String),
           email: $checkedConvert('email', (v) => v as String),
@@ -186,8 +183,7 @@ _$TenantInvitationImpl _$$TenantInvitationImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$TenantInvitationImplToJson(
-        _$TenantInvitationImpl instance) =>
+Map<String, dynamic> _$TenantInvitationToJson(_TenantInvitation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'tenantId': instance.tenantId,
@@ -207,13 +203,12 @@ Map<String, dynamic> _$$TenantInvitationImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateTenantRequestImpl _$$CreateTenantRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreateTenantRequest _$CreateTenantRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateTenantRequestImpl',
+      '_CreateTenantRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateTenantRequestImpl(
+        final val = _CreateTenantRequest(
           name: $checkedConvert('name', (v) => v as String),
           slug: $checkedConvert('slug', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String?),
@@ -233,8 +228,8 @@ _$CreateTenantRequestImpl _$$CreateTenantRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateTenantRequestImplToJson(
-        _$CreateTenantRequestImpl instance) =>
+Map<String, dynamic> _$CreateTenantRequestToJson(
+        _CreateTenantRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'slug': instance.slug,
@@ -250,13 +245,12 @@ Map<String, dynamic> _$$CreateTenantRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateTenantRequestImpl _$$UpdateTenantRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UpdateTenantRequest _$UpdateTenantRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateTenantRequestImpl',
+      '_UpdateTenantRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateTenantRequestImpl(
+        final val = _UpdateTenantRequest(
           name: $checkedConvert('name', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           domain: $checkedConvert('domain', (v) => v as String?),
@@ -276,8 +270,8 @@ _$UpdateTenantRequestImpl _$$UpdateTenantRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateTenantRequestImplToJson(
-        _$UpdateTenantRequestImpl instance) =>
+Map<String, dynamic> _$UpdateTenantRequestToJson(
+        _UpdateTenantRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
@@ -293,13 +287,13 @@ Map<String, dynamic> _$$UpdateTenantRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateInvitationRequestImpl _$$CreateInvitationRequestImplFromJson(
+_CreateInvitationRequest _$CreateInvitationRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateInvitationRequestImpl',
+      '_CreateInvitationRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateInvitationRequestImpl(
+        final val = _CreateInvitationRequest(
           email: $checkedConvert('email', (v) => v as String),
           role: $checkedConvert('role', (v) => v as String),
           firstName: $checkedConvert('firstName', (v) => v as String?),
@@ -313,8 +307,8 @@ _$CreateInvitationRequestImpl _$$CreateInvitationRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateInvitationRequestImplToJson(
-        _$CreateInvitationRequestImpl instance) =>
+Map<String, dynamic> _$CreateInvitationRequestToJson(
+        _CreateInvitationRequest instance) =>
     <String, dynamic>{
       'email': instance.email,
       'role': instance.role,
@@ -324,13 +318,13 @@ Map<String, dynamic> _$$CreateInvitationRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateMembershipRequestImpl _$$UpdateMembershipRequestImplFromJson(
+_UpdateMembershipRequest _$UpdateMembershipRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateMembershipRequestImpl',
+      '_UpdateMembershipRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateMembershipRequestImpl(
+        final val = _UpdateMembershipRequest(
           role: $checkedConvert('role', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           permissions: $checkedConvert('permissions',
@@ -342,8 +336,8 @@ _$UpdateMembershipRequestImpl _$$UpdateMembershipRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateMembershipRequestImplToJson(
-        _$UpdateMembershipRequestImpl instance) =>
+Map<String, dynamic> _$UpdateMembershipRequestToJson(
+        _UpdateMembershipRequest instance) =>
     <String, dynamic>{
       'role': instance.role,
       'status': instance.status,
@@ -351,12 +345,12 @@ Map<String, dynamic> _$$UpdateMembershipRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$TenantFiltersImpl _$$TenantFiltersImplFromJson(Map<String, dynamic> json) =>
+_TenantFilters _$TenantFiltersFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TenantFiltersImpl',
+      '_TenantFilters',
       json,
       ($checkedConvert) {
-        final val = _$TenantFiltersImpl(
+        final val = _TenantFilters(
           status: $checkedConvert('status', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
           domain: $checkedConvert('domain', (v) => v as String?),
@@ -373,7 +367,7 @@ _$TenantFiltersImpl _$$TenantFiltersImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$TenantFiltersImplToJson(_$TenantFiltersImpl instance) =>
+Map<String, dynamic> _$TenantFiltersToJson(_TenantFilters instance) =>
     <String, dynamic>{
       'status': instance.status,
       'name': instance.name,
@@ -386,13 +380,12 @@ Map<String, dynamic> _$$TenantFiltersImplToJson(_$TenantFiltersImpl instance) =>
       'sortOrder': instance.sortOrder,
     };
 
-_$TenantMemberFiltersImpl _$$TenantMemberFiltersImplFromJson(
-        Map<String, dynamic> json) =>
+_TenantMemberFilters _$TenantMemberFiltersFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TenantMemberFiltersImpl',
+      '_TenantMemberFilters',
       json,
       ($checkedConvert) {
-        final val = _$TenantMemberFiltersImpl(
+        final val = _TenantMemberFilters(
           role: $checkedConvert('role', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           userId: $checkedConvert('userId', (v) => v as String?),
@@ -409,8 +402,8 @@ _$TenantMemberFiltersImpl _$$TenantMemberFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$TenantMemberFiltersImplToJson(
-        _$TenantMemberFiltersImpl instance) =>
+Map<String, dynamic> _$TenantMemberFiltersToJson(
+        _TenantMemberFilters instance) =>
     <String, dynamic>{
       'role': instance.role,
       'status': instance.status,
@@ -423,13 +416,13 @@ Map<String, dynamic> _$$TenantMemberFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$TenantInvitationFiltersImpl _$$TenantInvitationFiltersImplFromJson(
+_TenantInvitationFilters _$TenantInvitationFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TenantInvitationFiltersImpl',
+      '_TenantInvitationFilters',
       json,
       ($checkedConvert) {
-        final val = _$TenantInvitationFiltersImpl(
+        final val = _TenantInvitationFilters(
           status: $checkedConvert('status', (v) => v as String?),
           role: $checkedConvert('role', (v) => v as String?),
           email: $checkedConvert('email', (v) => v as String?),
@@ -451,8 +444,8 @@ _$TenantInvitationFiltersImpl _$$TenantInvitationFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$TenantInvitationFiltersImplToJson(
-        _$TenantInvitationFiltersImpl instance) =>
+Map<String, dynamic> _$TenantInvitationFiltersToJson(
+        _TenantInvitationFilters instance) =>
     <String, dynamic>{
       'status': instance.status,
       'role': instance.role,

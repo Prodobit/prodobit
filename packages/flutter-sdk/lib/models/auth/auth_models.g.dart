@@ -6,13 +6,12 @@ part of 'auth_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LoginOTPResponseImpl _$$LoginOTPResponseImplFromJson(
-        Map<String, dynamic> json) =>
+_LoginOTPResponse _$LoginOTPResponseFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LoginOTPResponseImpl',
+      '_LoginOTPResponse',
       json,
       ($checkedConvert) {
-        final val = _$LoginOTPResponseImpl(
+        final val = _LoginOTPResponse(
           success: $checkedConvert('success', (v) => v as bool),
           data: $checkedConvert(
               'data',
@@ -25,21 +24,19 @@ _$LoginOTPResponseImpl _$$LoginOTPResponseImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$LoginOTPResponseImplToJson(
-        _$LoginOTPResponseImpl instance) =>
+Map<String, dynamic> _$LoginOTPResponseToJson(_LoginOTPResponse instance) =>
     <String, dynamic>{
       'success': instance.success,
       'data': instance.data?.toJson(),
       'message': instance.message,
     };
 
-_$LoginResponseDataImpl _$$LoginResponseDataImplFromJson(
-        Map<String, dynamic> json) =>
+_LoginResponseData _$LoginResponseDataFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LoginResponseDataImpl',
+      '_LoginResponseData',
       json,
       ($checkedConvert) {
-        final val = _$LoginResponseDataImpl(
+        final val = _LoginResponseData(
           user: $checkedConvert(
               'user', (v) => UserData.fromJson(v as Map<String, dynamic>)),
           session: $checkedConvert('session',
@@ -59,8 +56,7 @@ _$LoginResponseDataImpl _$$LoginResponseDataImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$LoginResponseDataImplToJson(
-        _$LoginResponseDataImpl instance) =>
+Map<String, dynamic> _$LoginResponseDataToJson(_LoginResponseData instance) =>
     <String, dynamic>{
       'user': instance.user.toJson(),
       'session': instance.session.toJson(),
@@ -71,12 +67,12 @@ Map<String, dynamic> _$$LoginResponseDataImplToJson(
           instance.tenantMemberships?.map((e) => e.toJson()).toList(),
     };
 
-_$AuthMethodDataImpl _$$AuthMethodDataImplFromJson(Map<String, dynamic> json) =>
+_AuthMethodData _$AuthMethodDataFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthMethodDataImpl',
+      '_AuthMethodData',
       json,
       ($checkedConvert) {
-        final val = _$AuthMethodDataImpl(
+        final val = _AuthMethodData(
           id: $checkedConvert('id', (v) => v as String),
           provider: $checkedConvert('provider', (v) => v as String),
           providerId: $checkedConvert('providerId', (v) => v as String),
@@ -88,8 +84,7 @@ _$AuthMethodDataImpl _$$AuthMethodDataImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$AuthMethodDataImplToJson(
-        _$AuthMethodDataImpl instance) =>
+Map<String, dynamic> _$AuthMethodDataToJson(_AuthMethodData instance) =>
     <String, dynamic>{
       'id': instance.id,
       'provider': instance.provider,
@@ -98,13 +93,12 @@ Map<String, dynamic> _$$AuthMethodDataImplToJson(
       'metadata': instance.metadata,
     };
 
-_$OrganizationInfoImpl _$$OrganizationInfoImplFromJson(
-        Map<String, dynamic> json) =>
+_OrganizationInfo _$OrganizationInfoFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$OrganizationInfoImpl',
+      '_OrganizationInfo',
       json,
       ($checkedConvert) {
-        final val = _$OrganizationInfoImpl(
+        final val = _OrganizationInfo(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           plan: $checkedConvert('plan', (v) => v as String),
@@ -118,8 +112,7 @@ _$OrganizationInfoImpl _$$OrganizationInfoImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$OrganizationInfoImplToJson(
-        _$OrganizationInfoImpl instance) =>
+Map<String, dynamic> _$OrganizationInfoToJson(_OrganizationInfo instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -130,12 +123,11 @@ Map<String, dynamic> _$$OrganizationInfoImplToJson(
       'settings': instance.settings,
     };
 
-_$OTPRequestImpl _$$OTPRequestImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$OTPRequestImpl',
+_OTPRequest _$OTPRequestFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_OTPRequest',
       json,
       ($checkedConvert) {
-        final val = _$OTPRequestImpl(
+        final val = _OTPRequest(
           email: $checkedConvert('email', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String?),
         );
@@ -143,18 +135,17 @@ _$OTPRequestImpl _$$OTPRequestImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$OTPRequestImplToJson(_$OTPRequestImpl instance) =>
+Map<String, dynamic> _$OTPRequestToJson(_OTPRequest instance) =>
     <String, dynamic>{
       'email': instance.email,
       'tenantId': instance.tenantId,
     };
 
-_$OTPResponseImpl _$$OTPResponseImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$OTPResponseImpl',
+_OTPResponse _$OTPResponseFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_OTPResponse',
       json,
       ($checkedConvert) {
-        final val = _$OTPResponseImpl(
+        final val = _OTPResponse(
           success: $checkedConvert('success', (v) => v as bool),
           message: $checkedConvert('message', (v) => v as String),
           expiresAt: $checkedConvert('expiresAt', (v) => v as String?),
@@ -179,7 +170,7 @@ _$OTPResponseImpl _$$OTPResponseImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$OTPResponseImplToJson(_$OTPResponseImpl instance) =>
+Map<String, dynamic> _$OTPResponseToJson(_OTPResponse instance) =>
     <String, dynamic>{
       'success': instance.success,
       'message': instance.message,
@@ -193,31 +184,29 @@ Map<String, dynamic> _$$OTPResponseImplToJson(_$OTPResponseImpl instance) =>
       'tenants': instance.tenants?.map((e) => e.toJson()).toList(),
     };
 
-_$RefreshTokenRequestImpl _$$RefreshTokenRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_RefreshTokenRequest _$RefreshTokenRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$RefreshTokenRequestImpl',
+      '_RefreshTokenRequest',
       json,
       ($checkedConvert) {
-        final val = _$RefreshTokenRequestImpl(
+        final val = _RefreshTokenRequest(
           refreshToken: $checkedConvert('refreshToken', (v) => v as String),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$RefreshTokenRequestImplToJson(
-        _$RefreshTokenRequestImpl instance) =>
+Map<String, dynamic> _$RefreshTokenRequestToJson(
+        _RefreshTokenRequest instance) =>
     <String, dynamic>{
       'refreshToken': instance.refreshToken,
     };
 
-_$SessionDataImpl _$$SessionDataImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$SessionDataImpl',
+_SessionData _$SessionDataFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_SessionData',
       json,
       ($checkedConvert) {
-        final val = _$SessionDataImpl(
+        final val = _SessionData(
           accessToken: $checkedConvert('accessToken', (v) => v as String),
           expiresAt: $checkedConvert('expiresAt', (v) => v as String),
           csrfToken: $checkedConvert('csrfToken', (v) => v as String),
@@ -226,19 +215,18 @@ _$SessionDataImpl _$$SessionDataImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$SessionDataImplToJson(_$SessionDataImpl instance) =>
+Map<String, dynamic> _$SessionDataToJson(_SessionData instance) =>
     <String, dynamic>{
       'accessToken': instance.accessToken,
       'expiresAt': instance.expiresAt,
       'csrfToken': instance.csrfToken,
     };
 
-_$TenantInfoImpl _$$TenantInfoImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$TenantInfoImpl',
+_TenantInfo _$TenantInfoFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_TenantInfo',
       json,
       ($checkedConvert) {
-        final val = _$TenantInfoImpl(
+        final val = _TenantInfo(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           role: $checkedConvert('role', (v) => v as String),
@@ -247,20 +235,19 @@ _$TenantInfoImpl _$$TenantInfoImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$TenantInfoImplToJson(_$TenantInfoImpl instance) =>
+Map<String, dynamic> _$TenantInfoToJson(_TenantInfo instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'role': instance.role,
     };
 
-_$TenantMembershipImpl _$$TenantMembershipImplFromJson(
-        Map<String, dynamic> json) =>
+_TenantMembership _$TenantMembershipFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$TenantMembershipImpl',
+      '_TenantMembership',
       json,
       ($checkedConvert) {
-        final val = _$TenantMembershipImpl(
+        final val = _TenantMembership(
           id: $checkedConvert('id', (v) => v as String),
           userId: $checkedConvert('userId', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String),
@@ -292,8 +279,7 @@ _$TenantMembershipImpl _$$TenantMembershipImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$TenantMembershipImplToJson(
-        _$TenantMembershipImpl instance) =>
+Map<String, dynamic> _$TenantMembershipToJson(_TenantMembership instance) =>
     <String, dynamic>{
       'id': instance.id,
       'userId': instance.userId,
@@ -318,12 +304,11 @@ Map<String, dynamic> _$$TenantMembershipImplToJson(
       'deletedAt': instance.deletedAt,
     };
 
-_$UserDataImpl _$$UserDataImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$UserDataImpl',
+_UserData _$UserDataFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_UserData',
       json,
       ($checkedConvert) {
-        final val = _$UserDataImpl(
+        final val = _UserData(
           id: $checkedConvert('id', (v) => v as String),
           twoFactorEnabled:
               $checkedConvert('twoFactorEnabled', (v) => v as bool),
@@ -339,8 +324,7 @@ _$UserDataImpl _$$UserDataImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$UserDataImplToJson(_$UserDataImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserDataToJson(_UserData instance) => <String, dynamic>{
       'id': instance.id,
       'twoFactorEnabled': instance.twoFactorEnabled,
       'status': instance.status,
@@ -351,12 +335,11 @@ Map<String, dynamic> _$$UserDataImplToJson(_$UserDataImpl instance) =>
       'deletedAt': instance.deletedAt,
     };
 
-_$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$UserProfileImpl',
+_UserProfile _$UserProfileFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_UserProfile',
       json,
       ($checkedConvert) {
-        final val = _$UserProfileImpl(
+        final val = _UserProfile(
           id: $checkedConvert('id', (v) => v as String),
           email: $checkedConvert('email', (v) => v as String),
           firstName: $checkedConvert('firstName', (v) => v as String),
@@ -376,7 +359,7 @@ _$UserProfileImpl _$$UserProfileImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
+Map<String, dynamic> _$UserProfileToJson(_UserProfile instance) =>
     <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
@@ -390,13 +373,12 @@ Map<String, dynamic> _$$UserProfileImplToJson(_$UserProfileImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$VerifyOTPRequestImpl _$$VerifyOTPRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_VerifyOTPRequest _$VerifyOTPRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$VerifyOTPRequestImpl',
+      '_VerifyOTPRequest',
       json,
       ($checkedConvert) {
-        final val = _$VerifyOTPRequestImpl(
+        final val = _VerifyOTPRequest(
           email: $checkedConvert('email', (v) => v as String),
           code: $checkedConvert('code', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String?),
@@ -405,8 +387,7 @@ _$VerifyOTPRequestImpl _$$VerifyOTPRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$VerifyOTPRequestImplToJson(
-        _$VerifyOTPRequestImpl instance) =>
+Map<String, dynamic> _$VerifyOTPRequestToJson(_VerifyOTPRequest instance) =>
     <String, dynamic>{
       'email': instance.email,
       'code': instance.code,

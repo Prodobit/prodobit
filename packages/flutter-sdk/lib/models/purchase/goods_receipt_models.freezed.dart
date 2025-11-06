@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,242 +9,148 @@ part of 'goods_receipt_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GoodsReceipt _$GoodsReceiptFromJson(Map<String, dynamic> json) {
-  return _GoodsReceipt.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GoodsReceipt {
-  String get id => throw _privateConstructorUsedError;
-  String get receiptNumber => throw _privateConstructorUsedError;
-  String get purchaseOrderId => throw _privateConstructorUsedError;
-  String get supplierId => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'draft', 'received', 'inspected', 'accepted', 'rejected', 'posted'
-  DateTime get receiptDate => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  DateTime? get inspectedAt => throw _privateConstructorUsedError;
-  DateTime? get acceptedAt => throw _privateConstructorUsedError;
-  DateTime? get rejectedAt => throw _privateConstructorUsedError;
-  DateTime? get postedAt => throw _privateConstructorUsedError;
-  String? get receivedBy => throw _privateConstructorUsedError;
-  String? get inspectedBy => throw _privateConstructorUsedError;
-  String? get acceptedBy => throw _privateConstructorUsedError;
-  String? get rejectedBy => throw _privateConstructorUsedError;
-  String? get postedBy => throw _privateConstructorUsedError;
-  String? get deliveryNote => throw _privateConstructorUsedError;
-  String? get invoiceNumber => throw _privateConstructorUsedError;
-  String? get transportCompany => throw _privateConstructorUsedError;
-  String? get vehicleNumber => throw _privateConstructorUsedError;
-  String? get driverName => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get inspectionNotes => throw _privateConstructorUsedError;
-  String? get rejectionReason => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get receiptNumber;
+  String get purchaseOrderId;
+  String get supplierId;
+  String
+      get status; // 'draft', 'received', 'inspected', 'accepted', 'rejected', 'posted'
+  DateTime get receiptDate;
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  DateTime? get inspectedAt;
+  DateTime? get acceptedAt;
+  DateTime? get rejectedAt;
+  DateTime? get postedAt;
+  String? get receivedBy;
+  String? get inspectedBy;
+  String? get acceptedBy;
+  String? get rejectedBy;
+  String? get postedBy;
+  String? get deliveryNote;
+  String? get invoiceNumber;
+  String? get transportCompany;
+  String? get vehicleNumber;
+  String? get driverName;
+  String? get notes;
+  String? get inspectionNotes;
+  String? get rejectionReason;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $GoodsReceiptCopyWith<GoodsReceipt> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GoodsReceiptCopyWith<$Res> {
-  factory $GoodsReceiptCopyWith(
-          GoodsReceipt value, $Res Function(GoodsReceipt) then) =
-      _$GoodsReceiptCopyWithImpl<$Res, GoodsReceipt>;
-  @useResult
-  $Res call(
-      {String id,
-      String receiptNumber,
-      String purchaseOrderId,
-      String supplierId,
-      String status,
-      DateTime receiptDate,
-      DateTime createdAt,
-      DateTime updatedAt,
-      DateTime? inspectedAt,
-      DateTime? acceptedAt,
-      DateTime? rejectedAt,
-      DateTime? postedAt,
-      String? receivedBy,
-      String? inspectedBy,
-      String? acceptedBy,
-      String? rejectedBy,
-      String? postedBy,
-      String? deliveryNote,
-      String? invoiceNumber,
-      String? transportCompany,
-      String? vehicleNumber,
-      String? driverName,
-      String? notes,
-      String? inspectionNotes,
-      String? rejectionReason,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$GoodsReceiptCopyWithImpl<$Res, $Val extends GoodsReceipt>
-    implements $GoodsReceiptCopyWith<$Res> {
-  _$GoodsReceiptCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of GoodsReceipt
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $GoodsReceiptCopyWith<GoodsReceipt> get copyWith =>
+      _$GoodsReceiptCopyWithImpl<GoodsReceipt>(
+          this as GoodsReceipt, _$identity);
+
+  /// Serializes this GoodsReceipt to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? receiptNumber = null,
-    Object? purchaseOrderId = null,
-    Object? supplierId = null,
-    Object? status = null,
-    Object? receiptDate = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? inspectedAt = freezed,
-    Object? acceptedAt = freezed,
-    Object? rejectedAt = freezed,
-    Object? postedAt = freezed,
-    Object? receivedBy = freezed,
-    Object? inspectedBy = freezed,
-    Object? acceptedBy = freezed,
-    Object? rejectedBy = freezed,
-    Object? postedBy = freezed,
-    Object? deliveryNote = freezed,
-    Object? invoiceNumber = freezed,
-    Object? transportCompany = freezed,
-    Object? vehicleNumber = freezed,
-    Object? driverName = freezed,
-    Object? notes = freezed,
-    Object? inspectionNotes = freezed,
-    Object? rejectionReason = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      receiptNumber: null == receiptNumber
-          ? _value.receiptNumber
-          : receiptNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      purchaseOrderId: null == purchaseOrderId
-          ? _value.purchaseOrderId
-          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
-              as String,
-      supplierId: null == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      receiptDate: null == receiptDate
-          ? _value.receiptDate
-          : receiptDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      inspectedAt: freezed == inspectedAt
-          ? _value.inspectedAt
-          : inspectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      acceptedAt: freezed == acceptedAt
-          ? _value.acceptedAt
-          : acceptedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
-          : rejectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      postedAt: freezed == postedAt
-          ? _value.postedAt
-          : postedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      receivedBy: freezed == receivedBy
-          ? _value.receivedBy
-          : receivedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectedBy: freezed == inspectedBy
-          ? _value.inspectedBy
-          : inspectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      acceptedBy: freezed == acceptedBy
-          ? _value.acceptedBy
-          : acceptedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectedBy: freezed == rejectedBy
-          ? _value.rejectedBy
-          : rejectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postedBy: freezed == postedBy
-          ? _value.postedBy
-          : postedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deliveryNote: freezed == deliveryNote
-          ? _value.deliveryNote
-          : deliveryNote // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invoiceNumber: freezed == invoiceNumber
-          ? _value.invoiceNumber
-          : invoiceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transportCompany: freezed == transportCompany
-          ? _value.transportCompany
-          : transportCompany // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleNumber: freezed == vehicleNumber
-          ? _value.vehicleNumber
-          : vehicleNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driverName: freezed == driverName
-          ? _value.driverName
-          : driverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
-          : inspectionNotes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GoodsReceipt &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.receiptNumber, receiptNumber) ||
+                other.receiptNumber == receiptNumber) &&
+            (identical(other.purchaseOrderId, purchaseOrderId) ||
+                other.purchaseOrderId == purchaseOrderId) &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.receiptDate, receiptDate) ||
+                other.receiptDate == receiptDate) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.inspectedAt, inspectedAt) ||
+                other.inspectedAt == inspectedAt) &&
+            (identical(other.acceptedAt, acceptedAt) ||
+                other.acceptedAt == acceptedAt) &&
+            (identical(other.rejectedAt, rejectedAt) ||
+                other.rejectedAt == rejectedAt) &&
+            (identical(other.postedAt, postedAt) ||
+                other.postedAt == postedAt) &&
+            (identical(other.receivedBy, receivedBy) ||
+                other.receivedBy == receivedBy) &&
+            (identical(other.inspectedBy, inspectedBy) ||
+                other.inspectedBy == inspectedBy) &&
+            (identical(other.acceptedBy, acceptedBy) ||
+                other.acceptedBy == acceptedBy) &&
+            (identical(other.rejectedBy, rejectedBy) ||
+                other.rejectedBy == rejectedBy) &&
+            (identical(other.postedBy, postedBy) ||
+                other.postedBy == postedBy) &&
+            (identical(other.deliveryNote, deliveryNote) ||
+                other.deliveryNote == deliveryNote) &&
+            (identical(other.invoiceNumber, invoiceNumber) ||
+                other.invoiceNumber == invoiceNumber) &&
+            (identical(other.transportCompany, transportCompany) ||
+                other.transportCompany == transportCompany) &&
+            (identical(other.vehicleNumber, vehicleNumber) ||
+                other.vehicleNumber == vehicleNumber) &&
+            (identical(other.driverName, driverName) ||
+                other.driverName == driverName) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.inspectionNotes, inspectionNotes) ||
+                other.inspectionNotes == inspectionNotes) &&
+            (identical(other.rejectionReason, rejectionReason) ||
+                other.rejectionReason == rejectionReason) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        receiptNumber,
+        purchaseOrderId,
+        supplierId,
+        status,
+        receiptDate,
+        createdAt,
+        updatedAt,
+        inspectedAt,
+        acceptedAt,
+        rejectedAt,
+        postedAt,
+        receivedBy,
+        inspectedBy,
+        acceptedBy,
+        rejectedBy,
+        postedBy,
+        deliveryNote,
+        invoiceNumber,
+        transportCompany,
+        vehicleNumber,
+        driverName,
+        notes,
+        inspectionNotes,
+        rejectionReason,
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'GoodsReceipt(id: $id, receiptNumber: $receiptNumber, purchaseOrderId: $purchaseOrderId, supplierId: $supplierId, status: $status, receiptDate: $receiptDate, createdAt: $createdAt, updatedAt: $updatedAt, inspectedAt: $inspectedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, postedAt: $postedAt, receivedBy: $receivedBy, inspectedBy: $inspectedBy, acceptedBy: $acceptedBy, rejectedBy: $rejectedBy, postedBy: $postedBy, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$GoodsReceiptImplCopyWith<$Res>
-    implements $GoodsReceiptCopyWith<$Res> {
-  factory _$$GoodsReceiptImplCopyWith(
-          _$GoodsReceiptImpl value, $Res Function(_$GoodsReceiptImpl) then) =
-      __$$GoodsReceiptImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GoodsReceiptCopyWith<$Res> {
+  factory $GoodsReceiptCopyWith(
+          GoodsReceipt value, $Res Function(GoodsReceipt) _then) =
+      _$GoodsReceiptCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -276,13 +182,14 @@ abstract class _$$GoodsReceiptImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GoodsReceiptImplCopyWithImpl<$Res>
-    extends _$GoodsReceiptCopyWithImpl<$Res, _$GoodsReceiptImpl>
-    implements _$$GoodsReceiptImplCopyWith<$Res> {
-  __$$GoodsReceiptImplCopyWithImpl(
-      _$GoodsReceiptImpl _value, $Res Function(_$GoodsReceiptImpl) _then)
-      : super(_value, _then);
+class _$GoodsReceiptCopyWithImpl<$Res> implements $GoodsReceiptCopyWith<$Res> {
+  _$GoodsReceiptCopyWithImpl(this._self, this._then);
 
+  final GoodsReceipt _self;
+  final $Res Function(GoodsReceipt) _then;
+
+  /// Create a copy of GoodsReceipt
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -313,119 +220,431 @@ class __$$GoodsReceiptImplCopyWithImpl<$Res>
     Object? rejectionReason = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$GoodsReceiptImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       receiptNumber: null == receiptNumber
-          ? _value.receiptNumber
+          ? _self.receiptNumber
           : receiptNumber // ignore: cast_nullable_to_non_nullable
               as String,
       purchaseOrderId: null == purchaseOrderId
-          ? _value.purchaseOrderId
+          ? _self.purchaseOrderId
           : purchaseOrderId // ignore: cast_nullable_to_non_nullable
               as String,
       supplierId: null == supplierId
-          ? _value.supplierId
+          ? _self.supplierId
           : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       receiptDate: null == receiptDate
-          ? _value.receiptDate
+          ? _self.receiptDate
           : receiptDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       inspectedAt: freezed == inspectedAt
-          ? _value.inspectedAt
+          ? _self.inspectedAt
           : inspectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       acceptedAt: freezed == acceptedAt
-          ? _value.acceptedAt
+          ? _self.acceptedAt
           : acceptedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
+          ? _self.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       postedAt: freezed == postedAt
-          ? _value.postedAt
+          ? _self.postedAt
           : postedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       receivedBy: freezed == receivedBy
-          ? _value.receivedBy
+          ? _self.receivedBy
           : receivedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       inspectedBy: freezed == inspectedBy
-          ? _value.inspectedBy
+          ? _self.inspectedBy
           : inspectedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       acceptedBy: freezed == acceptedBy
-          ? _value.acceptedBy
+          ? _self.acceptedBy
           : acceptedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       rejectedBy: freezed == rejectedBy
-          ? _value.rejectedBy
+          ? _self.rejectedBy
           : rejectedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       postedBy: freezed == postedBy
-          ? _value.postedBy
+          ? _self.postedBy
           : postedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       deliveryNote: freezed == deliveryNote
-          ? _value.deliveryNote
+          ? _self.deliveryNote
           : deliveryNote // ignore: cast_nullable_to_non_nullable
               as String?,
       invoiceNumber: freezed == invoiceNumber
-          ? _value.invoiceNumber
+          ? _self.invoiceNumber
           : invoiceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       transportCompany: freezed == transportCompany
-          ? _value.transportCompany
+          ? _self.transportCompany
           : transportCompany // ignore: cast_nullable_to_non_nullable
               as String?,
       vehicleNumber: freezed == vehicleNumber
-          ? _value.vehicleNumber
+          ? _self.vehicleNumber
           : vehicleNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       driverName: freezed == driverName
-          ? _value.driverName
+          ? _self.driverName
           : driverName // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
+          ? _self.inspectionNotes
           : inspectionNotes // ignore: cast_nullable_to_non_nullable
               as String?,
       rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
+          ? _self.rejectionReason
           : rejectionReason // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [GoodsReceipt].
+extension GoodsReceiptPatterns on GoodsReceipt {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_GoodsReceipt value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceipt() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_GoodsReceipt value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceipt():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_GoodsReceipt value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceipt() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String receiptNumber,
+            String purchaseOrderId,
+            String supplierId,
+            String status,
+            DateTime receiptDate,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? inspectedAt,
+            DateTime? acceptedAt,
+            DateTime? rejectedAt,
+            DateTime? postedAt,
+            String? receivedBy,
+            String? inspectedBy,
+            String? acceptedBy,
+            String? rejectedBy,
+            String? postedBy,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceipt() when $default != null:
+        return $default(
+            _that.id,
+            _that.receiptNumber,
+            _that.purchaseOrderId,
+            _that.supplierId,
+            _that.status,
+            _that.receiptDate,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.inspectedAt,
+            _that.acceptedAt,
+            _that.rejectedAt,
+            _that.postedAt,
+            _that.receivedBy,
+            _that.inspectedBy,
+            _that.acceptedBy,
+            _that.rejectedBy,
+            _that.postedBy,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String receiptNumber,
+            String purchaseOrderId,
+            String supplierId,
+            String status,
+            DateTime receiptDate,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? inspectedAt,
+            DateTime? acceptedAt,
+            DateTime? rejectedAt,
+            DateTime? postedAt,
+            String? receivedBy,
+            String? inspectedBy,
+            String? acceptedBy,
+            String? rejectedBy,
+            String? postedBy,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceipt():
+        return $default(
+            _that.id,
+            _that.receiptNumber,
+            _that.purchaseOrderId,
+            _that.supplierId,
+            _that.status,
+            _that.receiptDate,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.inspectedAt,
+            _that.acceptedAt,
+            _that.rejectedAt,
+            _that.postedAt,
+            _that.receivedBy,
+            _that.inspectedBy,
+            _that.acceptedBy,
+            _that.rejectedBy,
+            _that.postedBy,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String receiptNumber,
+            String purchaseOrderId,
+            String supplierId,
+            String status,
+            DateTime receiptDate,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? inspectedAt,
+            DateTime? acceptedAt,
+            DateTime? rejectedAt,
+            DateTime? postedAt,
+            String? receivedBy,
+            String? inspectedBy,
+            String? acceptedBy,
+            String? rejectedBy,
+            String? postedBy,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceipt() when $default != null:
+        return $default(
+            _that.id,
+            _that.receiptNumber,
+            _that.purchaseOrderId,
+            _that.supplierId,
+            _that.status,
+            _that.receiptDate,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.inspectedAt,
+            _that.acceptedAt,
+            _that.rejectedAt,
+            _that.postedAt,
+            _that.receivedBy,
+            _that.inspectedBy,
+            _that.acceptedBy,
+            _that.rejectedBy,
+            _that.postedBy,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$GoodsReceiptImpl implements _GoodsReceipt {
-  const _$GoodsReceiptImpl(
+class _GoodsReceipt implements GoodsReceipt {
+  const _GoodsReceipt(
       {required this.id,
       required this.receiptNumber,
       required this.purchaseOrderId,
@@ -453,9 +672,8 @@ class _$GoodsReceiptImpl implements _GoodsReceipt {
       this.rejectionReason,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$GoodsReceiptImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GoodsReceiptImplFromJson(json);
+  factory _GoodsReceipt.fromJson(Map<String, dynamic> json) =>
+      _$GoodsReceiptFromJson(json);
 
   @override
   final String id;
@@ -518,16 +736,26 @@ class _$GoodsReceiptImpl implements _GoodsReceipt {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of GoodsReceipt
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GoodsReceipt(id: $id, receiptNumber: $receiptNumber, purchaseOrderId: $purchaseOrderId, supplierId: $supplierId, status: $status, receiptDate: $receiptDate, createdAt: $createdAt, updatedAt: $updatedAt, inspectedAt: $inspectedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, postedAt: $postedAt, receivedBy: $receivedBy, inspectedBy: $inspectedBy, acceptedBy: $acceptedBy, rejectedBy: $rejectedBy, postedBy: $postedBy, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GoodsReceiptCopyWith<_GoodsReceipt> get copyWith =>
+      __$GoodsReceiptCopyWithImpl<_GoodsReceipt>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GoodsReceiptToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoodsReceiptImpl &&
+            other is _GoodsReceipt &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.receiptNumber, receiptNumber) ||
                 other.receiptNumber == receiptNumber) &&
@@ -578,7 +806,7 @@ class _$GoodsReceiptImpl implements _GoodsReceipt {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -610,463 +838,192 @@ class _$GoodsReceiptImpl implements _GoodsReceipt {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GoodsReceiptImplCopyWith<_$GoodsReceiptImpl> get copyWith =>
-      __$$GoodsReceiptImplCopyWithImpl<_$GoodsReceiptImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GoodsReceiptImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _GoodsReceipt implements GoodsReceipt {
-  const factory _GoodsReceipt(
-      {required final String id,
-      required final String receiptNumber,
-      required final String purchaseOrderId,
-      required final String supplierId,
-      required final String status,
-      required final DateTime receiptDate,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final DateTime? inspectedAt,
-      final DateTime? acceptedAt,
-      final DateTime? rejectedAt,
-      final DateTime? postedAt,
-      final String? receivedBy,
-      final String? inspectedBy,
-      final String? acceptedBy,
-      final String? rejectedBy,
-      final String? postedBy,
-      final String? deliveryNote,
-      final String? invoiceNumber,
-      final String? transportCompany,
-      final String? vehicleNumber,
-      final String? driverName,
-      final String? notes,
-      final String? inspectionNotes,
-      final String? rejectionReason,
-      final Map<String, dynamic>? metadata}) = _$GoodsReceiptImpl;
-
-  factory _GoodsReceipt.fromJson(Map<String, dynamic> json) =
-      _$GoodsReceiptImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get receiptNumber;
-  @override
-  String get purchaseOrderId;
-  @override
-  String get supplierId;
-  @override
-  String get status;
-  @override // 'draft', 'received', 'inspected', 'accepted', 'rejected', 'posted'
-  DateTime get receiptDate;
-  @override
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  DateTime? get inspectedAt;
-  @override
-  DateTime? get acceptedAt;
-  @override
-  DateTime? get rejectedAt;
-  @override
-  DateTime? get postedAt;
-  @override
-  String? get receivedBy;
-  @override
-  String? get inspectedBy;
-  @override
-  String? get acceptedBy;
-  @override
-  String? get rejectedBy;
-  @override
-  String? get postedBy;
-  @override
-  String? get deliveryNote;
-  @override
-  String? get invoiceNumber;
-  @override
-  String? get transportCompany;
-  @override
-  String? get vehicleNumber;
-  @override
-  String? get driverName;
-  @override
-  String? get notes;
-  @override
-  String? get inspectionNotes;
-  @override
-  String? get rejectionReason;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$GoodsReceiptImplCopyWith<_$GoodsReceiptImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-GoodsReceiptLineItem _$GoodsReceiptLineItemFromJson(Map<String, dynamic> json) {
-  return _GoodsReceiptLineItem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$GoodsReceiptLineItem {
-  String get id => throw _privateConstructorUsedError;
-  String get goodsReceiptId => throw _privateConstructorUsedError;
-  String get purchaseOrderLineItemId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  double get orderedQuantity => throw _privateConstructorUsedError;
-  double get receivedQuantity => throw _privateConstructorUsedError;
-  double get acceptedQuantity => throw _privateConstructorUsedError;
-  double get rejectedQuantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'pending', 'received', 'inspected', 'accepted', 'rejected'
-  int? get sequence => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  DateTime? get expiryDate => throw _privateConstructorUsedError;
-  String? get condition =>
-      throw _privateConstructorUsedError; // 'good', 'damaged', 'expired', 'defective'
-  String? get notes => throw _privateConstructorUsedError;
-  String? get inspectionNotes => throw _privateConstructorUsedError;
-  String? get rejectionReason => throw _privateConstructorUsedError;
-  String? get storageLocation => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get qualityMetrics =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $GoodsReceiptLineItemCopyWith<GoodsReceiptLineItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GoodsReceiptLineItemCopyWith<$Res> {
-  factory $GoodsReceiptLineItemCopyWith(GoodsReceiptLineItem value,
-          $Res Function(GoodsReceiptLineItem) then) =
-      _$GoodsReceiptLineItemCopyWithImpl<$Res, GoodsReceiptLineItem>;
-  @useResult
-  $Res call(
-      {String id,
-      String goodsReceiptId,
-      String purchaseOrderLineItemId,
-      String itemId,
-      double orderedQuantity,
-      double receivedQuantity,
-      double acceptedQuantity,
-      double rejectedQuantity,
-      String unit,
-      String status,
-      int? sequence,
-      String? lotNumber,
-      String? serialNumber,
-      DateTime? expiryDate,
-      String? condition,
-      String? notes,
-      String? inspectionNotes,
-      String? rejectionReason,
-      String? storageLocation,
-      Map<String, dynamic>? qualityMetrics,
-      Map<String, dynamic>? attributes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$GoodsReceiptLineItemCopyWithImpl<$Res,
-        $Val extends GoodsReceiptLineItem>
-    implements $GoodsReceiptLineItemCopyWith<$Res> {
-  _$GoodsReceiptLineItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? goodsReceiptId = null,
-    Object? purchaseOrderLineItemId = null,
-    Object? itemId = null,
-    Object? orderedQuantity = null,
-    Object? receivedQuantity = null,
-    Object? acceptedQuantity = null,
-    Object? rejectedQuantity = null,
-    Object? unit = null,
-    Object? status = null,
-    Object? sequence = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? expiryDate = freezed,
-    Object? condition = freezed,
-    Object? notes = freezed,
-    Object? inspectionNotes = freezed,
-    Object? rejectionReason = freezed,
-    Object? storageLocation = freezed,
-    Object? qualityMetrics = freezed,
-    Object? attributes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      goodsReceiptId: null == goodsReceiptId
-          ? _value.goodsReceiptId
-          : goodsReceiptId // ignore: cast_nullable_to_non_nullable
-              as String,
-      purchaseOrderLineItemId: null == purchaseOrderLineItemId
-          ? _value.purchaseOrderLineItemId
-          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      orderedQuantity: null == orderedQuantity
-          ? _value.orderedQuantity
-          : orderedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      receivedQuantity: null == receivedQuantity
-          ? _value.receivedQuantity
-          : receivedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      acceptedQuantity: null == acceptedQuantity
-          ? _value.acceptedQuantity
-          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      rejectedQuantity: null == rejectedQuantity
-          ? _value.rejectedQuantity
-          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      condition: freezed == condition
-          ? _value.condition
-          : condition // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
-          : inspectionNotes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      storageLocation: freezed == storageLocation
-          ? _value.storageLocation
-          : storageLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value.qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'GoodsReceipt(id: $id, receiptNumber: $receiptNumber, purchaseOrderId: $purchaseOrderId, supplierId: $supplierId, status: $status, receiptDate: $receiptDate, createdAt: $createdAt, updatedAt: $updatedAt, inspectedAt: $inspectedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, postedAt: $postedAt, receivedBy: $receivedBy, inspectedBy: $inspectedBy, acceptedBy: $acceptedBy, rejectedBy: $rejectedBy, postedBy: $postedBy, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$GoodsReceiptLineItemImplCopyWith<$Res>
-    implements $GoodsReceiptLineItemCopyWith<$Res> {
-  factory _$$GoodsReceiptLineItemImplCopyWith(_$GoodsReceiptLineItemImpl value,
-          $Res Function(_$GoodsReceiptLineItemImpl) then) =
-      __$$GoodsReceiptLineItemImplCopyWithImpl<$Res>;
+abstract mixin class _$GoodsReceiptCopyWith<$Res>
+    implements $GoodsReceiptCopyWith<$Res> {
+  factory _$GoodsReceiptCopyWith(
+          _GoodsReceipt value, $Res Function(_GoodsReceipt) _then) =
+      __$GoodsReceiptCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
-      String goodsReceiptId,
-      String purchaseOrderLineItemId,
-      String itemId,
-      double orderedQuantity,
-      double receivedQuantity,
-      double acceptedQuantity,
-      double rejectedQuantity,
-      String unit,
+      String receiptNumber,
+      String purchaseOrderId,
+      String supplierId,
       String status,
-      int? sequence,
-      String? lotNumber,
-      String? serialNumber,
-      DateTime? expiryDate,
-      String? condition,
+      DateTime receiptDate,
+      DateTime createdAt,
+      DateTime updatedAt,
+      DateTime? inspectedAt,
+      DateTime? acceptedAt,
+      DateTime? rejectedAt,
+      DateTime? postedAt,
+      String? receivedBy,
+      String? inspectedBy,
+      String? acceptedBy,
+      String? rejectedBy,
+      String? postedBy,
+      String? deliveryNote,
+      String? invoiceNumber,
+      String? transportCompany,
+      String? vehicleNumber,
+      String? driverName,
       String? notes,
       String? inspectionNotes,
       String? rejectionReason,
-      String? storageLocation,
-      Map<String, dynamic>? qualityMetrics,
-      Map<String, dynamic>? attributes,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$GoodsReceiptLineItemImplCopyWithImpl<$Res>
-    extends _$GoodsReceiptLineItemCopyWithImpl<$Res, _$GoodsReceiptLineItemImpl>
-    implements _$$GoodsReceiptLineItemImplCopyWith<$Res> {
-  __$$GoodsReceiptLineItemImplCopyWithImpl(_$GoodsReceiptLineItemImpl _value,
-      $Res Function(_$GoodsReceiptLineItemImpl) _then)
-      : super(_value, _then);
+class __$GoodsReceiptCopyWithImpl<$Res>
+    implements _$GoodsReceiptCopyWith<$Res> {
+  __$GoodsReceiptCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _GoodsReceipt _self;
+  final $Res Function(_GoodsReceipt) _then;
+
+  /// Create a copy of GoodsReceipt
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? goodsReceiptId = null,
-    Object? purchaseOrderLineItemId = null,
-    Object? itemId = null,
-    Object? orderedQuantity = null,
-    Object? receivedQuantity = null,
-    Object? acceptedQuantity = null,
-    Object? rejectedQuantity = null,
-    Object? unit = null,
+    Object? receiptNumber = null,
+    Object? purchaseOrderId = null,
+    Object? supplierId = null,
     Object? status = null,
-    Object? sequence = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? expiryDate = freezed,
-    Object? condition = freezed,
+    Object? receiptDate = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? inspectedAt = freezed,
+    Object? acceptedAt = freezed,
+    Object? rejectedAt = freezed,
+    Object? postedAt = freezed,
+    Object? receivedBy = freezed,
+    Object? inspectedBy = freezed,
+    Object? acceptedBy = freezed,
+    Object? rejectedBy = freezed,
+    Object? postedBy = freezed,
+    Object? deliveryNote = freezed,
+    Object? invoiceNumber = freezed,
+    Object? transportCompany = freezed,
+    Object? vehicleNumber = freezed,
+    Object? driverName = freezed,
     Object? notes = freezed,
     Object? inspectionNotes = freezed,
     Object? rejectionReason = freezed,
-    Object? storageLocation = freezed,
-    Object? qualityMetrics = freezed,
-    Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$GoodsReceiptLineItemImpl(
+    return _then(_GoodsReceipt(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      goodsReceiptId: null == goodsReceiptId
-          ? _value.goodsReceiptId
-          : goodsReceiptId // ignore: cast_nullable_to_non_nullable
+      receiptNumber: null == receiptNumber
+          ? _self.receiptNumber
+          : receiptNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      purchaseOrderLineItemId: null == purchaseOrderLineItemId
-          ? _value.purchaseOrderLineItemId
-          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
+      purchaseOrderId: null == purchaseOrderId
+          ? _self.purchaseOrderId
+          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
               as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      orderedQuantity: null == orderedQuantity
-          ? _value.orderedQuantity
-          : orderedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      receivedQuantity: null == receivedQuantity
-          ? _value.receivedQuantity
-          : receivedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      acceptedQuantity: null == acceptedQuantity
-          ? _value.acceptedQuantity
-          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      rejectedQuantity: null == rejectedQuantity
-          ? _value.rejectedQuantity
-          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
+      supplierId: null == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
+      receiptDate: null == receiptDate
+          ? _self.receiptDate
+          : receiptDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      inspectedAt: freezed == inspectedAt
+          ? _self.inspectedAt
+          : inspectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      condition: freezed == condition
-          ? _value.condition
-          : condition // ignore: cast_nullable_to_non_nullable
+      acceptedAt: freezed == acceptedAt
+          ? _self.acceptedAt
+          : acceptedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectedAt: freezed == rejectedAt
+          ? _self.rejectedAt
+          : rejectedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      postedAt: freezed == postedAt
+          ? _self.postedAt
+          : postedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      receivedBy: freezed == receivedBy
+          ? _self.receivedBy
+          : receivedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectedBy: freezed == inspectedBy
+          ? _self.inspectedBy
+          : inspectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      acceptedBy: freezed == acceptedBy
+          ? _self.acceptedBy
+          : acceptedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectedBy: freezed == rejectedBy
+          ? _self.rejectedBy
+          : rejectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postedBy: freezed == postedBy
+          ? _self.postedBy
+          : postedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deliveryNote: freezed == deliveryNote
+          ? _self.deliveryNote
+          : deliveryNote // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invoiceNumber: freezed == invoiceNumber
+          ? _self.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportCompany: freezed == transportCompany
+          ? _self.transportCompany
+          : transportCompany // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleNumber: freezed == vehicleNumber
+          ? _self.vehicleNumber
+          : vehicleNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driverName: freezed == driverName
+          ? _self.driverName
+          : driverName // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
+          ? _self.inspectionNotes
           : inspectionNotes // ignore: cast_nullable_to_non_nullable
               as String?,
       rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
+          ? _self.rejectionReason
           : rejectionReason // ignore: cast_nullable_to_non_nullable
               as String?,
-      storageLocation: freezed == storageLocation
-          ? _value.storageLocation
-          : storageLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value._qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      attributes: freezed == attributes
-          ? _value._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1074,9 +1031,574 @@ class __$$GoodsReceiptLineItemImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$GoodsReceiptLineItem {
+  String get id;
+  String get goodsReceiptId;
+  String get purchaseOrderLineItemId;
+  String get itemId;
+  double get orderedQuantity;
+  double get receivedQuantity;
+  double get acceptedQuantity;
+  double get rejectedQuantity;
+  String get unit;
+  String
+      get status; // 'pending', 'received', 'inspected', 'accepted', 'rejected'
+  int? get sequence;
+  String? get lotNumber;
+  String? get serialNumber;
+  DateTime? get expiryDate;
+  String? get condition; // 'good', 'damaged', 'expired', 'defective'
+  String? get notes;
+  String? get inspectionNotes;
+  String? get rejectionReason;
+  String? get storageLocation;
+  Map<String, dynamic>? get qualityMetrics;
+  Map<String, dynamic>? get attributes;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of GoodsReceiptLineItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $GoodsReceiptLineItemCopyWith<GoodsReceiptLineItem> get copyWith =>
+      _$GoodsReceiptLineItemCopyWithImpl<GoodsReceiptLineItem>(
+          this as GoodsReceiptLineItem, _$identity);
+
+  /// Serializes this GoodsReceiptLineItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GoodsReceiptLineItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.goodsReceiptId, goodsReceiptId) ||
+                other.goodsReceiptId == goodsReceiptId) &&
+            (identical(
+                    other.purchaseOrderLineItemId, purchaseOrderLineItemId) ||
+                other.purchaseOrderLineItemId == purchaseOrderLineItemId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.orderedQuantity, orderedQuantity) ||
+                other.orderedQuantity == orderedQuantity) &&
+            (identical(other.receivedQuantity, receivedQuantity) ||
+                other.receivedQuantity == receivedQuantity) &&
+            (identical(other.acceptedQuantity, acceptedQuantity) ||
+                other.acceptedQuantity == acceptedQuantity) &&
+            (identical(other.rejectedQuantity, rejectedQuantity) ||
+                other.rejectedQuantity == rejectedQuantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            (identical(other.condition, condition) ||
+                other.condition == condition) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.inspectionNotes, inspectionNotes) ||
+                other.inspectionNotes == inspectionNotes) &&
+            (identical(other.rejectionReason, rejectionReason) ||
+                other.rejectionReason == rejectionReason) &&
+            (identical(other.storageLocation, storageLocation) ||
+                other.storageLocation == storageLocation) &&
+            const DeepCollectionEquality()
+                .equals(other.qualityMetrics, qualityMetrics) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        goodsReceiptId,
+        purchaseOrderLineItemId,
+        itemId,
+        orderedQuantity,
+        receivedQuantity,
+        acceptedQuantity,
+        rejectedQuantity,
+        unit,
+        status,
+        sequence,
+        lotNumber,
+        serialNumber,
+        expiryDate,
+        condition,
+        notes,
+        inspectionNotes,
+        rejectionReason,
+        storageLocation,
+        const DeepCollectionEquality().hash(qualityMetrics),
+        const DeepCollectionEquality().hash(attributes),
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'GoodsReceiptLineItem(id: $id, goodsReceiptId: $goodsReceiptId, purchaseOrderLineItemId: $purchaseOrderLineItemId, itemId: $itemId, orderedQuantity: $orderedQuantity, receivedQuantity: $receivedQuantity, acceptedQuantity: $acceptedQuantity, rejectedQuantity: $rejectedQuantity, unit: $unit, status: $status, sequence: $sequence, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $GoodsReceiptLineItemCopyWith<$Res> {
+  factory $GoodsReceiptLineItemCopyWith(GoodsReceiptLineItem value,
+          $Res Function(GoodsReceiptLineItem) _then) =
+      _$GoodsReceiptLineItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String goodsReceiptId,
+      String purchaseOrderLineItemId,
+      String itemId,
+      double orderedQuantity,
+      double receivedQuantity,
+      double acceptedQuantity,
+      double rejectedQuantity,
+      String unit,
+      String status,
+      int? sequence,
+      String? lotNumber,
+      String? serialNumber,
+      DateTime? expiryDate,
+      String? condition,
+      String? notes,
+      String? inspectionNotes,
+      String? rejectionReason,
+      String? storageLocation,
+      Map<String, dynamic>? qualityMetrics,
+      Map<String, dynamic>? attributes,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$GoodsReceiptLineItemCopyWithImpl<$Res>
+    implements $GoodsReceiptLineItemCopyWith<$Res> {
+  _$GoodsReceiptLineItemCopyWithImpl(this._self, this._then);
+
+  final GoodsReceiptLineItem _self;
+  final $Res Function(GoodsReceiptLineItem) _then;
+
+  /// Create a copy of GoodsReceiptLineItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? goodsReceiptId = null,
+    Object? purchaseOrderLineItemId = null,
+    Object? itemId = null,
+    Object? orderedQuantity = null,
+    Object? receivedQuantity = null,
+    Object? acceptedQuantity = null,
+    Object? rejectedQuantity = null,
+    Object? unit = null,
+    Object? status = null,
+    Object? sequence = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? expiryDate = freezed,
+    Object? condition = freezed,
+    Object? notes = freezed,
+    Object? inspectionNotes = freezed,
+    Object? rejectionReason = freezed,
+    Object? storageLocation = freezed,
+    Object? qualityMetrics = freezed,
+    Object? attributes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      goodsReceiptId: null == goodsReceiptId
+          ? _self.goodsReceiptId
+          : goodsReceiptId // ignore: cast_nullable_to_non_nullable
+              as String,
+      purchaseOrderLineItemId: null == purchaseOrderLineItemId
+          ? _self.purchaseOrderLineItemId
+          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      orderedQuantity: null == orderedQuantity
+          ? _self.orderedQuantity
+          : orderedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      receivedQuantity: null == receivedQuantity
+          ? _self.receivedQuantity
+          : receivedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      acceptedQuantity: null == acceptedQuantity
+          ? _self.acceptedQuantity
+          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      rejectedQuantity: null == rejectedQuantity
+          ? _self.rejectedQuantity
+          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      condition: freezed == condition
+          ? _self.condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectionNotes: freezed == inspectionNotes
+          ? _self.inspectionNotes
+          : inspectionNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      storageLocation: freezed == storageLocation
+          ? _self.storageLocation
+          : storageLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self.qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [GoodsReceiptLineItem].
+extension GoodsReceiptLineItemPatterns on GoodsReceiptLineItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_GoodsReceiptLineItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptLineItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_GoodsReceiptLineItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptLineItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_GoodsReceiptLineItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptLineItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String goodsReceiptId,
+            String purchaseOrderLineItemId,
+            String itemId,
+            double orderedQuantity,
+            double receivedQuantity,
+            double acceptedQuantity,
+            double rejectedQuantity,
+            String unit,
+            String status,
+            int? sequence,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptLineItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.goodsReceiptId,
+            _that.purchaseOrderLineItemId,
+            _that.itemId,
+            _that.orderedQuantity,
+            _that.receivedQuantity,
+            _that.acceptedQuantity,
+            _that.rejectedQuantity,
+            _that.unit,
+            _that.status,
+            _that.sequence,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String goodsReceiptId,
+            String purchaseOrderLineItemId,
+            String itemId,
+            double orderedQuantity,
+            double receivedQuantity,
+            double acceptedQuantity,
+            double rejectedQuantity,
+            String unit,
+            String status,
+            int? sequence,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptLineItem():
+        return $default(
+            _that.id,
+            _that.goodsReceiptId,
+            _that.purchaseOrderLineItemId,
+            _that.itemId,
+            _that.orderedQuantity,
+            _that.receivedQuantity,
+            _that.acceptedQuantity,
+            _that.rejectedQuantity,
+            _that.unit,
+            _that.status,
+            _that.sequence,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String goodsReceiptId,
+            String purchaseOrderLineItemId,
+            String itemId,
+            double orderedQuantity,
+            double receivedQuantity,
+            double acceptedQuantity,
+            double rejectedQuantity,
+            String unit,
+            String status,
+            int? sequence,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptLineItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.goodsReceiptId,
+            _that.purchaseOrderLineItemId,
+            _that.itemId,
+            _that.orderedQuantity,
+            _that.receivedQuantity,
+            _that.acceptedQuantity,
+            _that.rejectedQuantity,
+            _that.unit,
+            _that.status,
+            _that.sequence,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$GoodsReceiptLineItemImpl implements _GoodsReceiptLineItem {
-  const _$GoodsReceiptLineItemImpl(
+class _GoodsReceiptLineItem implements GoodsReceiptLineItem {
+  const _GoodsReceiptLineItem(
       {required this.id,
       required this.goodsReceiptId,
       required this.purchaseOrderLineItemId,
@@ -1102,9 +1624,8 @@ class _$GoodsReceiptLineItemImpl implements _GoodsReceiptLineItem {
       : _qualityMetrics = qualityMetrics,
         _attributes = attributes,
         _metadata = metadata;
-
-  factory _$GoodsReceiptLineItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GoodsReceiptLineItemImplFromJson(json);
+  factory _GoodsReceiptLineItem.fromJson(Map<String, dynamic> json) =>
+      _$GoodsReceiptLineItemFromJson(json);
 
   @override
   final String id;
@@ -1176,16 +1697,27 @@ class _$GoodsReceiptLineItemImpl implements _GoodsReceiptLineItem {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of GoodsReceiptLineItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GoodsReceiptLineItem(id: $id, goodsReceiptId: $goodsReceiptId, purchaseOrderLineItemId: $purchaseOrderLineItemId, itemId: $itemId, orderedQuantity: $orderedQuantity, receivedQuantity: $receivedQuantity, acceptedQuantity: $acceptedQuantity, rejectedQuantity: $rejectedQuantity, unit: $unit, status: $status, sequence: $sequence, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GoodsReceiptLineItemCopyWith<_GoodsReceiptLineItem> get copyWith =>
+      __$GoodsReceiptLineItemCopyWithImpl<_GoodsReceiptLineItem>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GoodsReceiptLineItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoodsReceiptLineItemImpl &&
+            other is _GoodsReceiptLineItem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.goodsReceiptId, goodsReceiptId) ||
                 other.goodsReceiptId == goodsReceiptId) &&
@@ -1227,7 +1759,7 @@ class _$GoodsReceiptLineItemImpl implements _GoodsReceiptLineItem {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1255,299 +1787,168 @@ class _$GoodsReceiptLineItemImpl implements _GoodsReceiptLineItem {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GoodsReceiptLineItemImplCopyWith<_$GoodsReceiptLineItemImpl>
-      get copyWith =>
-          __$$GoodsReceiptLineItemImplCopyWithImpl<_$GoodsReceiptLineItemImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GoodsReceiptLineItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GoodsReceiptLineItem(id: $id, goodsReceiptId: $goodsReceiptId, purchaseOrderLineItemId: $purchaseOrderLineItemId, itemId: $itemId, orderedQuantity: $orderedQuantity, receivedQuantity: $receivedQuantity, acceptedQuantity: $acceptedQuantity, rejectedQuantity: $rejectedQuantity, unit: $unit, status: $status, sequence: $sequence, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes, metadata: $metadata)';
   }
 }
 
-abstract class _GoodsReceiptLineItem implements GoodsReceiptLineItem {
-  const factory _GoodsReceiptLineItem(
-      {required final String id,
-      required final String goodsReceiptId,
-      required final String purchaseOrderLineItemId,
-      required final String itemId,
-      required final double orderedQuantity,
-      required final double receivedQuantity,
-      required final double acceptedQuantity,
-      required final double rejectedQuantity,
-      required final String unit,
-      required final String status,
-      final int? sequence,
-      final String? lotNumber,
-      final String? serialNumber,
-      final DateTime? expiryDate,
-      final String? condition,
-      final String? notes,
-      final String? inspectionNotes,
-      final String? rejectionReason,
-      final String? storageLocation,
-      final Map<String, dynamic>? qualityMetrics,
-      final Map<String, dynamic>? attributes,
-      final Map<String, dynamic>? metadata}) = _$GoodsReceiptLineItemImpl;
-
-  factory _GoodsReceiptLineItem.fromJson(Map<String, dynamic> json) =
-      _$GoodsReceiptLineItemImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get goodsReceiptId;
-  @override
-  String get purchaseOrderLineItemId;
-  @override
-  String get itemId;
-  @override
-  double get orderedQuantity;
-  @override
-  double get receivedQuantity;
-  @override
-  double get acceptedQuantity;
-  @override
-  double get rejectedQuantity;
-  @override
-  String get unit;
-  @override
-  String get status;
-  @override // 'pending', 'received', 'inspected', 'accepted', 'rejected'
-  int? get sequence;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  DateTime? get expiryDate;
-  @override
-  String? get condition;
-  @override // 'good', 'damaged', 'expired', 'defective'
-  String? get notes;
-  @override
-  String? get inspectionNotes;
-  @override
-  String? get rejectionReason;
-  @override
-  String? get storageLocation;
-  @override
-  Map<String, dynamic>? get qualityMetrics;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$GoodsReceiptLineItemImplCopyWith<_$GoodsReceiptLineItemImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateGoodsReceiptRequest _$CreateGoodsReceiptRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateGoodsReceiptRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateGoodsReceiptRequest {
-  String get purchaseOrderId => throw _privateConstructorUsedError;
-  DateTime get receiptDate => throw _privateConstructorUsedError;
-  String? get deliveryNote => throw _privateConstructorUsedError;
-  String? get invoiceNumber => throw _privateConstructorUsedError;
-  String? get transportCompany => throw _privateConstructorUsedError;
-  String? get vehicleNumber => throw _privateConstructorUsedError;
-  String? get driverName => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  List<CreateGoodsReceiptLineItemRequest>? get lineItems =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateGoodsReceiptRequestCopyWith<CreateGoodsReceiptRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateGoodsReceiptRequestCopyWith<$Res> {
-  factory $CreateGoodsReceiptRequestCopyWith(CreateGoodsReceiptRequest value,
-          $Res Function(CreateGoodsReceiptRequest) then) =
-      _$CreateGoodsReceiptRequestCopyWithImpl<$Res, CreateGoodsReceiptRequest>;
+abstract mixin class _$GoodsReceiptLineItemCopyWith<$Res>
+    implements $GoodsReceiptLineItemCopyWith<$Res> {
+  factory _$GoodsReceiptLineItemCopyWith(_GoodsReceiptLineItem value,
+          $Res Function(_GoodsReceiptLineItem) _then) =
+      __$GoodsReceiptLineItemCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String purchaseOrderId,
-      DateTime receiptDate,
-      String? deliveryNote,
-      String? invoiceNumber,
-      String? transportCompany,
-      String? vehicleNumber,
-      String? driverName,
+      {String id,
+      String goodsReceiptId,
+      String purchaseOrderLineItemId,
+      String itemId,
+      double orderedQuantity,
+      double receivedQuantity,
+      double acceptedQuantity,
+      double rejectedQuantity,
+      String unit,
+      String status,
+      int? sequence,
+      String? lotNumber,
+      String? serialNumber,
+      DateTime? expiryDate,
+      String? condition,
       String? notes,
-      List<CreateGoodsReceiptLineItemRequest>? lineItems,
+      String? inspectionNotes,
+      String? rejectionReason,
+      String? storageLocation,
+      Map<String, dynamic>? qualityMetrics,
+      Map<String, dynamic>? attributes,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$CreateGoodsReceiptRequestCopyWithImpl<$Res,
-        $Val extends CreateGoodsReceiptRequest>
-    implements $CreateGoodsReceiptRequestCopyWith<$Res> {
-  _$CreateGoodsReceiptRequestCopyWithImpl(this._value, this._then);
+class __$GoodsReceiptLineItemCopyWithImpl<$Res>
+    implements _$GoodsReceiptLineItemCopyWith<$Res> {
+  __$GoodsReceiptLineItemCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _GoodsReceiptLineItem _self;
+  final $Res Function(_GoodsReceiptLineItem) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of GoodsReceiptLineItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? purchaseOrderId = null,
-    Object? receiptDate = null,
-    Object? deliveryNote = freezed,
-    Object? invoiceNumber = freezed,
-    Object? transportCompany = freezed,
-    Object? vehicleNumber = freezed,
-    Object? driverName = freezed,
+    Object? id = null,
+    Object? goodsReceiptId = null,
+    Object? purchaseOrderLineItemId = null,
+    Object? itemId = null,
+    Object? orderedQuantity = null,
+    Object? receivedQuantity = null,
+    Object? acceptedQuantity = null,
+    Object? rejectedQuantity = null,
+    Object? unit = null,
+    Object? status = null,
+    Object? sequence = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? expiryDate = freezed,
+    Object? condition = freezed,
     Object? notes = freezed,
-    Object? lineItems = freezed,
+    Object? inspectionNotes = freezed,
+    Object? rejectionReason = freezed,
+    Object? storageLocation = freezed,
+    Object? qualityMetrics = freezed,
+    Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      purchaseOrderId: null == purchaseOrderId
-          ? _value.purchaseOrderId
-          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
+    return _then(_GoodsReceiptLineItem(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      receiptDate: null == receiptDate
-          ? _value.receiptDate
-          : receiptDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      deliveryNote: freezed == deliveryNote
-          ? _value.deliveryNote
-          : deliveryNote // ignore: cast_nullable_to_non_nullable
+      goodsReceiptId: null == goodsReceiptId
+          ? _self.goodsReceiptId
+          : goodsReceiptId // ignore: cast_nullable_to_non_nullable
+              as String,
+      purchaseOrderLineItemId: null == purchaseOrderLineItemId
+          ? _self.purchaseOrderLineItemId
+          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      orderedQuantity: null == orderedQuantity
+          ? _self.orderedQuantity
+          : orderedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      receivedQuantity: null == receivedQuantity
+          ? _self.receivedQuantity
+          : receivedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      acceptedQuantity: null == acceptedQuantity
+          ? _self.acceptedQuantity
+          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      rejectedQuantity: null == rejectedQuantity
+          ? _self.rejectedQuantity
+          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      invoiceNumber: freezed == invoiceNumber
-          ? _value.invoiceNumber
-          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      transportCompany: freezed == transportCompany
-          ? _value.transportCompany
-          : transportCompany // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleNumber: freezed == vehicleNumber
-          ? _value.vehicleNumber
-          : vehicleNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driverName: freezed == driverName
-          ? _value.driverName
-          : driverName // ignore: cast_nullable_to_non_nullable
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      condition: freezed == condition
+          ? _self.condition
+          : condition // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      lineItems: freezed == lineItems
-          ? _value.lineItems
-          : lineItems // ignore: cast_nullable_to_non_nullable
-              as List<CreateGoodsReceiptLineItemRequest>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      inspectionNotes: freezed == inspectionNotes
+          ? _self.inspectionNotes
+          : inspectionNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      storageLocation: freezed == storageLocation
+          ? _self.storageLocation
+          : storageLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self._qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateGoodsReceiptRequestImplCopyWith<$Res>
-    implements $CreateGoodsReceiptRequestCopyWith<$Res> {
-  factory _$$CreateGoodsReceiptRequestImplCopyWith(
-          _$CreateGoodsReceiptRequestImpl value,
-          $Res Function(_$CreateGoodsReceiptRequestImpl) then) =
-      __$$CreateGoodsReceiptRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String purchaseOrderId,
-      DateTime receiptDate,
-      String? deliveryNote,
-      String? invoiceNumber,
-      String? transportCompany,
-      String? vehicleNumber,
-      String? driverName,
-      String? notes,
-      List<CreateGoodsReceiptLineItemRequest>? lineItems,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$CreateGoodsReceiptRequestImplCopyWithImpl<$Res>
-    extends _$CreateGoodsReceiptRequestCopyWithImpl<$Res,
-        _$CreateGoodsReceiptRequestImpl>
-    implements _$$CreateGoodsReceiptRequestImplCopyWith<$Res> {
-  __$$CreateGoodsReceiptRequestImplCopyWithImpl(
-      _$CreateGoodsReceiptRequestImpl _value,
-      $Res Function(_$CreateGoodsReceiptRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? purchaseOrderId = null,
-    Object? receiptDate = null,
-    Object? deliveryNote = freezed,
-    Object? invoiceNumber = freezed,
-    Object? transportCompany = freezed,
-    Object? vehicleNumber = freezed,
-    Object? driverName = freezed,
-    Object? notes = freezed,
-    Object? lineItems = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$CreateGoodsReceiptRequestImpl(
-      purchaseOrderId: null == purchaseOrderId
-          ? _value.purchaseOrderId
-          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
-              as String,
-      receiptDate: null == receiptDate
-          ? _value.receiptDate
-          : receiptDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      deliveryNote: freezed == deliveryNote
-          ? _value.deliveryNote
-          : deliveryNote // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invoiceNumber: freezed == invoiceNumber
-          ? _value.invoiceNumber
-          : invoiceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transportCompany: freezed == transportCompany
-          ? _value.transportCompany
-          : transportCompany // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleNumber: freezed == vehicleNumber
-          ? _value.vehicleNumber
-          : vehicleNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driverName: freezed == driverName
-          ? _value.driverName
-          : driverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lineItems: freezed == lineItems
-          ? _value._lineItems
-          : lineItems // ignore: cast_nullable_to_non_nullable
-              as List<CreateGoodsReceiptLineItemRequest>?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1555,9 +1956,382 @@ class __$$CreateGoodsReceiptRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateGoodsReceiptRequest {
+  String get purchaseOrderId;
+  DateTime get receiptDate;
+  String? get deliveryNote;
+  String? get invoiceNumber;
+  String? get transportCompany;
+  String? get vehicleNumber;
+  String? get driverName;
+  String? get notes;
+  List<CreateGoodsReceiptLineItemRequest>? get lineItems;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of CreateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateGoodsReceiptRequestCopyWith<CreateGoodsReceiptRequest> get copyWith =>
+      _$CreateGoodsReceiptRequestCopyWithImpl<CreateGoodsReceiptRequest>(
+          this as CreateGoodsReceiptRequest, _$identity);
+
+  /// Serializes this CreateGoodsReceiptRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateGoodsReceiptRequest &&
+            (identical(other.purchaseOrderId, purchaseOrderId) ||
+                other.purchaseOrderId == purchaseOrderId) &&
+            (identical(other.receiptDate, receiptDate) ||
+                other.receiptDate == receiptDate) &&
+            (identical(other.deliveryNote, deliveryNote) ||
+                other.deliveryNote == deliveryNote) &&
+            (identical(other.invoiceNumber, invoiceNumber) ||
+                other.invoiceNumber == invoiceNumber) &&
+            (identical(other.transportCompany, transportCompany) ||
+                other.transportCompany == transportCompany) &&
+            (identical(other.vehicleNumber, vehicleNumber) ||
+                other.vehicleNumber == vehicleNumber) &&
+            (identical(other.driverName, driverName) ||
+                other.driverName == driverName) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.lineItems, lineItems) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      purchaseOrderId,
+      receiptDate,
+      deliveryNote,
+      invoiceNumber,
+      transportCompany,
+      vehicleNumber,
+      driverName,
+      notes,
+      const DeepCollectionEquality().hash(lineItems),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreateGoodsReceiptRequest(purchaseOrderId: $purchaseOrderId, receiptDate: $receiptDate, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, lineItems: $lineItems, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateGoodsReceiptRequestCopyWith<$Res> {
+  factory $CreateGoodsReceiptRequestCopyWith(CreateGoodsReceiptRequest value,
+          $Res Function(CreateGoodsReceiptRequest) _then) =
+      _$CreateGoodsReceiptRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String purchaseOrderId,
+      DateTime receiptDate,
+      String? deliveryNote,
+      String? invoiceNumber,
+      String? transportCompany,
+      String? vehicleNumber,
+      String? driverName,
+      String? notes,
+      List<CreateGoodsReceiptLineItemRequest>? lineItems,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$CreateGoodsReceiptRequestCopyWithImpl<$Res>
+    implements $CreateGoodsReceiptRequestCopyWith<$Res> {
+  _$CreateGoodsReceiptRequestCopyWithImpl(this._self, this._then);
+
+  final CreateGoodsReceiptRequest _self;
+  final $Res Function(CreateGoodsReceiptRequest) _then;
+
+  /// Create a copy of CreateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? purchaseOrderId = null,
+    Object? receiptDate = null,
+    Object? deliveryNote = freezed,
+    Object? invoiceNumber = freezed,
+    Object? transportCompany = freezed,
+    Object? vehicleNumber = freezed,
+    Object? driverName = freezed,
+    Object? notes = freezed,
+    Object? lineItems = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      purchaseOrderId: null == purchaseOrderId
+          ? _self.purchaseOrderId
+          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      receiptDate: null == receiptDate
+          ? _self.receiptDate
+          : receiptDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      deliveryNote: freezed == deliveryNote
+          ? _self.deliveryNote
+          : deliveryNote // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invoiceNumber: freezed == invoiceNumber
+          ? _self.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportCompany: freezed == transportCompany
+          ? _self.transportCompany
+          : transportCompany // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleNumber: freezed == vehicleNumber
+          ? _self.vehicleNumber
+          : vehicleNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driverName: freezed == driverName
+          ? _self.driverName
+          : driverName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lineItems: freezed == lineItems
+          ? _self.lineItems
+          : lineItems // ignore: cast_nullable_to_non_nullable
+              as List<CreateGoodsReceiptLineItemRequest>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateGoodsReceiptRequest].
+extension CreateGoodsReceiptRequestPatterns on CreateGoodsReceiptRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateGoodsReceiptRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateGoodsReceiptRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateGoodsReceiptRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String purchaseOrderId,
+            DateTime receiptDate,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            List<CreateGoodsReceiptLineItemRequest>? lineItems,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptRequest() when $default != null:
+        return $default(
+            _that.purchaseOrderId,
+            _that.receiptDate,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.lineItems,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String purchaseOrderId,
+            DateTime receiptDate,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            List<CreateGoodsReceiptLineItemRequest>? lineItems,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptRequest():
+        return $default(
+            _that.purchaseOrderId,
+            _that.receiptDate,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.lineItems,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String purchaseOrderId,
+            DateTime receiptDate,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            List<CreateGoodsReceiptLineItemRequest>? lineItems,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptRequest() when $default != null:
+        return $default(
+            _that.purchaseOrderId,
+            _that.receiptDate,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.lineItems,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateGoodsReceiptRequestImpl implements _CreateGoodsReceiptRequest {
-  const _$CreateGoodsReceiptRequestImpl(
+class _CreateGoodsReceiptRequest implements CreateGoodsReceiptRequest {
+  const _CreateGoodsReceiptRequest(
       {required this.purchaseOrderId,
       required this.receiptDate,
       this.deliveryNote,
@@ -1570,9 +2344,8 @@ class _$CreateGoodsReceiptRequestImpl implements _CreateGoodsReceiptRequest {
       final Map<String, dynamic>? metadata})
       : _lineItems = lineItems,
         _metadata = metadata;
-
-  factory _$CreateGoodsReceiptRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateGoodsReceiptRequestImplFromJson(json);
+  factory _CreateGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateGoodsReceiptRequestFromJson(json);
 
   @override
   final String purchaseOrderId;
@@ -1610,16 +2383,28 @@ class _$CreateGoodsReceiptRequestImpl implements _CreateGoodsReceiptRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateGoodsReceiptRequest(purchaseOrderId: $purchaseOrderId, receiptDate: $receiptDate, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, lineItems: $lineItems, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateGoodsReceiptRequestCopyWith<_CreateGoodsReceiptRequest>
+      get copyWith =>
+          __$CreateGoodsReceiptRequestCopyWithImpl<_CreateGoodsReceiptRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateGoodsReceiptRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateGoodsReceiptRequestImpl &&
+            other is _CreateGoodsReceiptRequest &&
             (identical(other.purchaseOrderId, purchaseOrderId) ||
                 other.purchaseOrderId == purchaseOrderId) &&
             (identical(other.receiptDate, receiptDate) ||
@@ -1640,7 +2425,7 @@ class _$CreateGoodsReceiptRequestImpl implements _CreateGoodsReceiptRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1655,275 +2440,486 @@ class _$CreateGoodsReceiptRequestImpl implements _CreateGoodsReceiptRequest {
       const DeepCollectionEquality().hash(_lineItems),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateGoodsReceiptRequestImplCopyWith<_$CreateGoodsReceiptRequestImpl>
-      get copyWith => __$$CreateGoodsReceiptRequestImplCopyWithImpl<
-          _$CreateGoodsReceiptRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateGoodsReceiptRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreateGoodsReceiptRequest implements CreateGoodsReceiptRequest {
-  const factory _CreateGoodsReceiptRequest(
-      {required final String purchaseOrderId,
-      required final DateTime receiptDate,
-      final String? deliveryNote,
-      final String? invoiceNumber,
-      final String? transportCompany,
-      final String? vehicleNumber,
-      final String? driverName,
-      final String? notes,
-      final List<CreateGoodsReceiptLineItemRequest>? lineItems,
-      final Map<String, dynamic>? metadata}) = _$CreateGoodsReceiptRequestImpl;
-
-  factory _CreateGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateGoodsReceiptRequestImpl.fromJson;
-
-  @override
-  String get purchaseOrderId;
-  @override
-  DateTime get receiptDate;
-  @override
-  String? get deliveryNote;
-  @override
-  String? get invoiceNumber;
-  @override
-  String? get transportCompany;
-  @override
-  String? get vehicleNumber;
-  @override
-  String? get driverName;
-  @override
-  String? get notes;
-  @override
-  List<CreateGoodsReceiptLineItemRequest>? get lineItems;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateGoodsReceiptRequestImplCopyWith<_$CreateGoodsReceiptRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateGoodsReceiptLineItemRequest _$CreateGoodsReceiptLineItemRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateGoodsReceiptLineItemRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreateGoodsReceiptLineItemRequest {
-  String get purchaseOrderLineItemId => throw _privateConstructorUsedError;
-  double get receivedQuantity => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  DateTime? get expiryDate => throw _privateConstructorUsedError;
-  String? get condition => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get storageLocation => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get qualityMetrics =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateGoodsReceiptLineItemRequestCopyWith<CreateGoodsReceiptLineItemRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
-  factory $CreateGoodsReceiptLineItemRequestCopyWith(
-          CreateGoodsReceiptLineItemRequest value,
-          $Res Function(CreateGoodsReceiptLineItemRequest) then) =
-      _$CreateGoodsReceiptLineItemRequestCopyWithImpl<$Res,
-          CreateGoodsReceiptLineItemRequest>;
-  @useResult
-  $Res call(
-      {String purchaseOrderLineItemId,
-      double receivedQuantity,
-      String? lotNumber,
-      String? serialNumber,
-      DateTime? expiryDate,
-      String? condition,
-      String? notes,
-      String? storageLocation,
-      Map<String, dynamic>? qualityMetrics,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreateGoodsReceiptLineItemRequestCopyWithImpl<$Res,
-        $Val extends CreateGoodsReceiptLineItemRequest>
-    implements $CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
-  _$CreateGoodsReceiptLineItemRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? purchaseOrderLineItemId = null,
-    Object? receivedQuantity = null,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? expiryDate = freezed,
-    Object? condition = freezed,
-    Object? notes = freezed,
-    Object? storageLocation = freezed,
-    Object? qualityMetrics = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      purchaseOrderLineItemId: null == purchaseOrderLineItemId
-          ? _value.purchaseOrderLineItemId
-          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      receivedQuantity: null == receivedQuantity
-          ? _value.receivedQuantity
-          : receivedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      condition: freezed == condition
-          ? _value.condition
-          : condition // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      storageLocation: freezed == storageLocation
-          ? _value.storageLocation
-          : storageLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value.qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreateGoodsReceiptRequest(purchaseOrderId: $purchaseOrderId, receiptDate: $receiptDate, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, lineItems: $lineItems, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateGoodsReceiptLineItemRequestImplCopyWith<$Res>
-    implements $CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
-  factory _$$CreateGoodsReceiptLineItemRequestImplCopyWith(
-          _$CreateGoodsReceiptLineItemRequestImpl value,
-          $Res Function(_$CreateGoodsReceiptLineItemRequestImpl) then) =
-      __$$CreateGoodsReceiptLineItemRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreateGoodsReceiptRequestCopyWith<$Res>
+    implements $CreateGoodsReceiptRequestCopyWith<$Res> {
+  factory _$CreateGoodsReceiptRequestCopyWith(_CreateGoodsReceiptRequest value,
+          $Res Function(_CreateGoodsReceiptRequest) _then) =
+      __$CreateGoodsReceiptRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String purchaseOrderLineItemId,
-      double receivedQuantity,
-      String? lotNumber,
-      String? serialNumber,
-      DateTime? expiryDate,
-      String? condition,
+      {String purchaseOrderId,
+      DateTime receiptDate,
+      String? deliveryNote,
+      String? invoiceNumber,
+      String? transportCompany,
+      String? vehicleNumber,
+      String? driverName,
       String? notes,
-      String? storageLocation,
-      Map<String, dynamic>? qualityMetrics,
-      Map<String, dynamic>? attributes});
+      List<CreateGoodsReceiptLineItemRequest>? lineItems,
+      Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$CreateGoodsReceiptLineItemRequestImplCopyWithImpl<$Res>
-    extends _$CreateGoodsReceiptLineItemRequestCopyWithImpl<$Res,
-        _$CreateGoodsReceiptLineItemRequestImpl>
-    implements _$$CreateGoodsReceiptLineItemRequestImplCopyWith<$Res> {
-  __$$CreateGoodsReceiptLineItemRequestImplCopyWithImpl(
-      _$CreateGoodsReceiptLineItemRequestImpl _value,
-      $Res Function(_$CreateGoodsReceiptLineItemRequestImpl) _then)
-      : super(_value, _then);
+class __$CreateGoodsReceiptRequestCopyWithImpl<$Res>
+    implements _$CreateGoodsReceiptRequestCopyWith<$Res> {
+  __$CreateGoodsReceiptRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreateGoodsReceiptRequest _self;
+  final $Res Function(_CreateGoodsReceiptRequest) _then;
+
+  /// Create a copy of CreateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? purchaseOrderLineItemId = null,
-    Object? receivedQuantity = null,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? expiryDate = freezed,
-    Object? condition = freezed,
+    Object? purchaseOrderId = null,
+    Object? receiptDate = null,
+    Object? deliveryNote = freezed,
+    Object? invoiceNumber = freezed,
+    Object? transportCompany = freezed,
+    Object? vehicleNumber = freezed,
+    Object? driverName = freezed,
     Object? notes = freezed,
-    Object? storageLocation = freezed,
-    Object? qualityMetrics = freezed,
-    Object? attributes = freezed,
+    Object? lineItems = freezed,
+    Object? metadata = freezed,
   }) {
-    return _then(_$CreateGoodsReceiptLineItemRequestImpl(
-      purchaseOrderLineItemId: null == purchaseOrderLineItemId
-          ? _value.purchaseOrderLineItemId
-          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
+    return _then(_CreateGoodsReceiptRequest(
+      purchaseOrderId: null == purchaseOrderId
+          ? _self.purchaseOrderId
+          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
               as String,
-      receivedQuantity: null == receivedQuantity
-          ? _value.receivedQuantity
-          : receivedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
+      receiptDate: null == receiptDate
+          ? _self.receiptDate
+          : receiptDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      deliveryNote: freezed == deliveryNote
+          ? _self.deliveryNote
+          : deliveryNote // ignore: cast_nullable_to_non_nullable
               as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
+      invoiceNumber: freezed == invoiceNumber
+          ? _self.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      condition: freezed == condition
-          ? _value.condition
-          : condition // ignore: cast_nullable_to_non_nullable
+      transportCompany: freezed == transportCompany
+          ? _self.transportCompany
+          : transportCompany // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleNumber: freezed == vehicleNumber
+          ? _self.vehicleNumber
+          : vehicleNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driverName: freezed == driverName
+          ? _self.driverName
+          : driverName // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      storageLocation: freezed == storageLocation
-          ? _value.storageLocation
-          : storageLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value._qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      attributes: freezed == attributes
-          ? _value._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
+      lineItems: freezed == lineItems
+          ? _self._lineItems
+          : lineItems // ignore: cast_nullable_to_non_nullable
+              as List<CreateGoodsReceiptLineItemRequest>?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$CreateGoodsReceiptLineItemRequest {
+  String get purchaseOrderLineItemId;
+  double get receivedQuantity;
+  String? get lotNumber;
+  String? get serialNumber;
+  DateTime? get expiryDate;
+  String? get condition;
+  String? get notes;
+  String? get storageLocation;
+  Map<String, dynamic>? get qualityMetrics;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateGoodsReceiptLineItemRequestCopyWith<CreateGoodsReceiptLineItemRequest>
+      get copyWith => _$CreateGoodsReceiptLineItemRequestCopyWithImpl<
+              CreateGoodsReceiptLineItemRequest>(
+          this as CreateGoodsReceiptLineItemRequest, _$identity);
+
+  /// Serializes this CreateGoodsReceiptLineItemRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateGoodsReceiptLineItemRequest &&
+            (identical(
+                    other.purchaseOrderLineItemId, purchaseOrderLineItemId) ||
+                other.purchaseOrderLineItemId == purchaseOrderLineItemId) &&
+            (identical(other.receivedQuantity, receivedQuantity) ||
+                other.receivedQuantity == receivedQuantity) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            (identical(other.condition, condition) ||
+                other.condition == condition) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.storageLocation, storageLocation) ||
+                other.storageLocation == storageLocation) &&
+            const DeepCollectionEquality()
+                .equals(other.qualityMetrics, qualityMetrics) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      purchaseOrderLineItemId,
+      receivedQuantity,
+      lotNumber,
+      serialNumber,
+      expiryDate,
+      condition,
+      notes,
+      storageLocation,
+      const DeepCollectionEquality().hash(qualityMetrics),
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreateGoodsReceiptLineItemRequest(purchaseOrderLineItemId: $purchaseOrderLineItemId, receivedQuantity: $receivedQuantity, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  factory $CreateGoodsReceiptLineItemRequestCopyWith(
+          CreateGoodsReceiptLineItemRequest value,
+          $Res Function(CreateGoodsReceiptLineItemRequest) _then) =
+      _$CreateGoodsReceiptLineItemRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String purchaseOrderLineItemId,
+      double receivedQuantity,
+      String? lotNumber,
+      String? serialNumber,
+      DateTime? expiryDate,
+      String? condition,
+      String? notes,
+      String? storageLocation,
+      Map<String, dynamic>? qualityMetrics,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreateGoodsReceiptLineItemRequestCopyWithImpl<$Res>
+    implements $CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  _$CreateGoodsReceiptLineItemRequestCopyWithImpl(this._self, this._then);
+
+  final CreateGoodsReceiptLineItemRequest _self;
+  final $Res Function(CreateGoodsReceiptLineItemRequest) _then;
+
+  /// Create a copy of CreateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? purchaseOrderLineItemId = null,
+    Object? receivedQuantity = null,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? expiryDate = freezed,
+    Object? condition = freezed,
+    Object? notes = freezed,
+    Object? storageLocation = freezed,
+    Object? qualityMetrics = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      purchaseOrderLineItemId: null == purchaseOrderLineItemId
+          ? _self.purchaseOrderLineItemId
+          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      receivedQuantity: null == receivedQuantity
+          ? _self.receivedQuantity
+          : receivedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      condition: freezed == condition
+          ? _self.condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      storageLocation: freezed == storageLocation
+          ? _self.storageLocation
+          : storageLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self.qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateGoodsReceiptLineItemRequest].
+extension CreateGoodsReceiptLineItemRequestPatterns
+    on CreateGoodsReceiptLineItemRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateGoodsReceiptLineItemRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateGoodsReceiptLineItemRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptLineItemRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateGoodsReceiptLineItemRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String purchaseOrderLineItemId,
+            double receivedQuantity,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(
+            _that.purchaseOrderLineItemId,
+            _that.receivedQuantity,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String purchaseOrderLineItemId,
+            double receivedQuantity,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptLineItemRequest():
+        return $default(
+            _that.purchaseOrderLineItemId,
+            _that.receivedQuantity,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String purchaseOrderLineItemId,
+            double receivedQuantity,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(
+            _that.purchaseOrderLineItemId,
+            _that.receivedQuantity,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateGoodsReceiptLineItemRequestImpl
-    implements _CreateGoodsReceiptLineItemRequest {
-  const _$CreateGoodsReceiptLineItemRequestImpl(
+class _CreateGoodsReceiptLineItemRequest
+    implements CreateGoodsReceiptLineItemRequest {
+  const _CreateGoodsReceiptLineItemRequest(
       {required this.purchaseOrderLineItemId,
       required this.receivedQuantity,
       this.lotNumber,
@@ -1936,10 +2932,9 @@ class _$CreateGoodsReceiptLineItemRequestImpl
       final Map<String, dynamic>? attributes})
       : _qualityMetrics = qualityMetrics,
         _attributes = attributes;
-
-  factory _$CreateGoodsReceiptLineItemRequestImpl.fromJson(
+  factory _CreateGoodsReceiptLineItemRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$CreateGoodsReceiptLineItemRequestImplFromJson(json);
+      _$CreateGoodsReceiptLineItemRequestFromJson(json);
 
   @override
   final String purchaseOrderLineItemId;
@@ -1977,16 +2972,28 @@ class _$CreateGoodsReceiptLineItemRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateGoodsReceiptLineItemRequest(purchaseOrderLineItemId: $purchaseOrderLineItemId, receivedQuantity: $receivedQuantity, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateGoodsReceiptLineItemRequestCopyWith<
+          _CreateGoodsReceiptLineItemRequest>
+      get copyWith => __$CreateGoodsReceiptLineItemRequestCopyWithImpl<
+          _CreateGoodsReceiptLineItemRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateGoodsReceiptLineItemRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateGoodsReceiptLineItemRequestImpl &&
+            other is _CreateGoodsReceiptLineItemRequest &&
             (identical(
                     other.purchaseOrderLineItemId, purchaseOrderLineItemId) ||
                 other.purchaseOrderLineItemId == purchaseOrderLineItemId) &&
@@ -2009,7 +3016,7 @@ class _$CreateGoodsReceiptLineItemRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2024,250 +3031,449 @@ class _$CreateGoodsReceiptLineItemRequestImpl
       const DeepCollectionEquality().hash(_qualityMetrics),
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateGoodsReceiptLineItemRequestImplCopyWith<
-          _$CreateGoodsReceiptLineItemRequestImpl>
-      get copyWith => __$$CreateGoodsReceiptLineItemRequestImplCopyWithImpl<
-          _$CreateGoodsReceiptLineItemRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateGoodsReceiptLineItemRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateGoodsReceiptLineItemRequest(purchaseOrderLineItemId: $purchaseOrderLineItemId, receivedQuantity: $receivedQuantity, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes)';
   }
 }
 
-abstract class _CreateGoodsReceiptLineItemRequest
-    implements CreateGoodsReceiptLineItemRequest {
-  const factory _CreateGoodsReceiptLineItemRequest(
-          {required final String purchaseOrderLineItemId,
-          required final double receivedQuantity,
-          final String? lotNumber,
-          final String? serialNumber,
-          final DateTime? expiryDate,
-          final String? condition,
-          final String? notes,
-          final String? storageLocation,
-          final Map<String, dynamic>? qualityMetrics,
-          final Map<String, dynamic>? attributes}) =
-      _$CreateGoodsReceiptLineItemRequestImpl;
-
-  factory _CreateGoodsReceiptLineItemRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$CreateGoodsReceiptLineItemRequestImpl.fromJson;
-
-  @override
-  String get purchaseOrderLineItemId;
-  @override
-  double get receivedQuantity;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  DateTime? get expiryDate;
-  @override
-  String? get condition;
-  @override
-  String? get notes;
-  @override
-  String? get storageLocation;
-  @override
-  Map<String, dynamic>? get qualityMetrics;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateGoodsReceiptLineItemRequestImplCopyWith<
-          _$CreateGoodsReceiptLineItemRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateGoodsReceiptRequest _$UpdateGoodsReceiptRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateGoodsReceiptRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateGoodsReceiptRequest {
-  DateTime? get receiptDate => throw _privateConstructorUsedError;
-  String? get deliveryNote => throw _privateConstructorUsedError;
-  String? get invoiceNumber => throw _privateConstructorUsedError;
-  String? get transportCompany => throw _privateConstructorUsedError;
-  String? get vehicleNumber => throw _privateConstructorUsedError;
-  String? get driverName => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateGoodsReceiptRequestCopyWith<UpdateGoodsReceiptRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateGoodsReceiptRequestCopyWith<$Res> {
-  factory $UpdateGoodsReceiptRequestCopyWith(UpdateGoodsReceiptRequest value,
-          $Res Function(UpdateGoodsReceiptRequest) then) =
-      _$UpdateGoodsReceiptRequestCopyWithImpl<$Res, UpdateGoodsReceiptRequest>;
+abstract mixin class _$CreateGoodsReceiptLineItemRequestCopyWith<$Res>
+    implements $CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  factory _$CreateGoodsReceiptLineItemRequestCopyWith(
+          _CreateGoodsReceiptLineItemRequest value,
+          $Res Function(_CreateGoodsReceiptLineItemRequest) _then) =
+      __$CreateGoodsReceiptLineItemRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {DateTime? receiptDate,
-      String? deliveryNote,
-      String? invoiceNumber,
-      String? transportCompany,
-      String? vehicleNumber,
-      String? driverName,
+      {String purchaseOrderLineItemId,
+      double receivedQuantity,
+      String? lotNumber,
+      String? serialNumber,
+      DateTime? expiryDate,
+      String? condition,
       String? notes,
-      Map<String, dynamic>? metadata});
+      String? storageLocation,
+      Map<String, dynamic>? qualityMetrics,
+      Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class _$UpdateGoodsReceiptRequestCopyWithImpl<$Res,
-        $Val extends UpdateGoodsReceiptRequest>
-    implements $UpdateGoodsReceiptRequestCopyWith<$Res> {
-  _$UpdateGoodsReceiptRequestCopyWithImpl(this._value, this._then);
+class __$CreateGoodsReceiptLineItemRequestCopyWithImpl<$Res>
+    implements _$CreateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  __$CreateGoodsReceiptLineItemRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateGoodsReceiptLineItemRequest _self;
+  final $Res Function(_CreateGoodsReceiptLineItemRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? receiptDate = freezed,
-    Object? deliveryNote = freezed,
-    Object? invoiceNumber = freezed,
-    Object? transportCompany = freezed,
-    Object? vehicleNumber = freezed,
-    Object? driverName = freezed,
+    Object? purchaseOrderLineItemId = null,
+    Object? receivedQuantity = null,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? expiryDate = freezed,
+    Object? condition = freezed,
     Object? notes = freezed,
-    Object? metadata = freezed,
+    Object? storageLocation = freezed,
+    Object? qualityMetrics = freezed,
+    Object? attributes = freezed,
   }) {
-    return _then(_value.copyWith(
-      receiptDate: freezed == receiptDate
-          ? _value.receiptDate
-          : receiptDate // ignore: cast_nullable_to_non_nullable
+    return _then(_CreateGoodsReceiptLineItemRequest(
+      purchaseOrderLineItemId: null == purchaseOrderLineItemId
+          ? _self.purchaseOrderLineItemId
+          : purchaseOrderLineItemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      receivedQuantity: null == receivedQuantity
+          ? _self.receivedQuantity
+          : receivedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      deliveryNote: freezed == deliveryNote
-          ? _value.deliveryNote
-          : deliveryNote // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invoiceNumber: freezed == invoiceNumber
-          ? _value.invoiceNumber
-          : invoiceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transportCompany: freezed == transportCompany
-          ? _value.transportCompany
-          : transportCompany // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleNumber: freezed == vehicleNumber
-          ? _value.vehicleNumber
-          : vehicleNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driverName: freezed == driverName
-          ? _value.driverName
-          : driverName // ignore: cast_nullable_to_non_nullable
+      condition: freezed == condition
+          ? _self.condition
+          : condition // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      storageLocation: freezed == storageLocation
+          ? _self.storageLocation
+          : storageLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self._qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateGoodsReceiptRequestImplCopyWith<$Res>
-    implements $UpdateGoodsReceiptRequestCopyWith<$Res> {
-  factory _$$UpdateGoodsReceiptRequestImplCopyWith(
-          _$UpdateGoodsReceiptRequestImpl value,
-          $Res Function(_$UpdateGoodsReceiptRequestImpl) then) =
-      __$$UpdateGoodsReceiptRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {DateTime? receiptDate,
-      String? deliveryNote,
-      String? invoiceNumber,
-      String? transportCompany,
-      String? vehicleNumber,
-      String? driverName,
-      String? notes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$UpdateGoodsReceiptRequestImplCopyWithImpl<$Res>
-    extends _$UpdateGoodsReceiptRequestCopyWithImpl<$Res,
-        _$UpdateGoodsReceiptRequestImpl>
-    implements _$$UpdateGoodsReceiptRequestImplCopyWith<$Res> {
-  __$$UpdateGoodsReceiptRequestImplCopyWithImpl(
-      _$UpdateGoodsReceiptRequestImpl _value,
-      $Res Function(_$UpdateGoodsReceiptRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? receiptDate = freezed,
-    Object? deliveryNote = freezed,
-    Object? invoiceNumber = freezed,
-    Object? transportCompany = freezed,
-    Object? vehicleNumber = freezed,
-    Object? driverName = freezed,
-    Object? notes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$UpdateGoodsReceiptRequestImpl(
-      receiptDate: freezed == receiptDate
-          ? _value.receiptDate
-          : receiptDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      deliveryNote: freezed == deliveryNote
-          ? _value.deliveryNote
-          : deliveryNote // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invoiceNumber: freezed == invoiceNumber
-          ? _value.invoiceNumber
-          : invoiceNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transportCompany: freezed == transportCompany
-          ? _value.transportCompany
-          : transportCompany // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vehicleNumber: freezed == vehicleNumber
-          ? _value.vehicleNumber
-          : vehicleNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      driverName: freezed == driverName
-          ? _value.driverName
-          : driverName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$UpdateGoodsReceiptRequest {
+  DateTime? get receiptDate;
+  String? get deliveryNote;
+  String? get invoiceNumber;
+  String? get transportCompany;
+  String? get vehicleNumber;
+  String? get driverName;
+  String? get notes;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of UpdateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateGoodsReceiptRequestCopyWith<UpdateGoodsReceiptRequest> get copyWith =>
+      _$UpdateGoodsReceiptRequestCopyWithImpl<UpdateGoodsReceiptRequest>(
+          this as UpdateGoodsReceiptRequest, _$identity);
+
+  /// Serializes this UpdateGoodsReceiptRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateGoodsReceiptRequest &&
+            (identical(other.receiptDate, receiptDate) ||
+                other.receiptDate == receiptDate) &&
+            (identical(other.deliveryNote, deliveryNote) ||
+                other.deliveryNote == deliveryNote) &&
+            (identical(other.invoiceNumber, invoiceNumber) ||
+                other.invoiceNumber == invoiceNumber) &&
+            (identical(other.transportCompany, transportCompany) ||
+                other.transportCompany == transportCompany) &&
+            (identical(other.vehicleNumber, vehicleNumber) ||
+                other.vehicleNumber == vehicleNumber) &&
+            (identical(other.driverName, driverName) ||
+                other.driverName == driverName) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      receiptDate,
+      deliveryNote,
+      invoiceNumber,
+      transportCompany,
+      vehicleNumber,
+      driverName,
+      notes,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdateGoodsReceiptRequest(receiptDate: $receiptDate, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateGoodsReceiptRequestCopyWith<$Res> {
+  factory $UpdateGoodsReceiptRequestCopyWith(UpdateGoodsReceiptRequest value,
+          $Res Function(UpdateGoodsReceiptRequest) _then) =
+      _$UpdateGoodsReceiptRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {DateTime? receiptDate,
+      String? deliveryNote,
+      String? invoiceNumber,
+      String? transportCompany,
+      String? vehicleNumber,
+      String? driverName,
+      String? notes,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$UpdateGoodsReceiptRequestCopyWithImpl<$Res>
+    implements $UpdateGoodsReceiptRequestCopyWith<$Res> {
+  _$UpdateGoodsReceiptRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateGoodsReceiptRequest _self;
+  final $Res Function(UpdateGoodsReceiptRequest) _then;
+
+  /// Create a copy of UpdateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? receiptDate = freezed,
+    Object? deliveryNote = freezed,
+    Object? invoiceNumber = freezed,
+    Object? transportCompany = freezed,
+    Object? vehicleNumber = freezed,
+    Object? driverName = freezed,
+    Object? notes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      receiptDate: freezed == receiptDate
+          ? _self.receiptDate
+          : receiptDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliveryNote: freezed == deliveryNote
+          ? _self.deliveryNote
+          : deliveryNote // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invoiceNumber: freezed == invoiceNumber
+          ? _self.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportCompany: freezed == transportCompany
+          ? _self.transportCompany
+          : transportCompany // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleNumber: freezed == vehicleNumber
+          ? _self.vehicleNumber
+          : vehicleNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driverName: freezed == driverName
+          ? _self.driverName
+          : driverName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateGoodsReceiptRequest].
+extension UpdateGoodsReceiptRequestPatterns on UpdateGoodsReceiptRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateGoodsReceiptRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateGoodsReceiptRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateGoodsReceiptRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            DateTime? receiptDate,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptRequest() when $default != null:
+        return $default(
+            _that.receiptDate,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            DateTime? receiptDate,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptRequest():
+        return $default(
+            _that.receiptDate,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            DateTime? receiptDate,
+            String? deliveryNote,
+            String? invoiceNumber,
+            String? transportCompany,
+            String? vehicleNumber,
+            String? driverName,
+            String? notes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptRequest() when $default != null:
+        return $default(
+            _that.receiptDate,
+            _that.deliveryNote,
+            _that.invoiceNumber,
+            _that.transportCompany,
+            _that.vehicleNumber,
+            _that.driverName,
+            _that.notes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateGoodsReceiptRequestImpl implements _UpdateGoodsReceiptRequest {
-  const _$UpdateGoodsReceiptRequestImpl(
+class _UpdateGoodsReceiptRequest implements UpdateGoodsReceiptRequest {
+  const _UpdateGoodsReceiptRequest(
       {this.receiptDate,
       this.deliveryNote,
       this.invoiceNumber,
@@ -2277,9 +3483,8 @@ class _$UpdateGoodsReceiptRequestImpl implements _UpdateGoodsReceiptRequest {
       this.notes,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$UpdateGoodsReceiptRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateGoodsReceiptRequestImplFromJson(json);
+  factory _UpdateGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateGoodsReceiptRequestFromJson(json);
 
   @override
   final DateTime? receiptDate;
@@ -2305,16 +3510,28 @@ class _$UpdateGoodsReceiptRequestImpl implements _UpdateGoodsReceiptRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateGoodsReceiptRequest(receiptDate: $receiptDate, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateGoodsReceiptRequestCopyWith<_UpdateGoodsReceiptRequest>
+      get copyWith =>
+          __$UpdateGoodsReceiptRequestCopyWithImpl<_UpdateGoodsReceiptRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateGoodsReceiptRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateGoodsReceiptRequestImpl &&
+            other is _UpdateGoodsReceiptRequest &&
             (identical(other.receiptDate, receiptDate) ||
                 other.receiptDate == receiptDate) &&
             (identical(other.deliveryNote, deliveryNote) ||
@@ -2331,7 +3548,7 @@ class _$UpdateGoodsReceiptRequestImpl implements _UpdateGoodsReceiptRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2344,308 +3561,521 @@ class _$UpdateGoodsReceiptRequestImpl implements _UpdateGoodsReceiptRequest {
       notes,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateGoodsReceiptRequestImplCopyWith<_$UpdateGoodsReceiptRequestImpl>
-      get copyWith => __$$UpdateGoodsReceiptRequestImplCopyWithImpl<
-          _$UpdateGoodsReceiptRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateGoodsReceiptRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _UpdateGoodsReceiptRequest implements UpdateGoodsReceiptRequest {
-  const factory _UpdateGoodsReceiptRequest(
-      {final DateTime? receiptDate,
-      final String? deliveryNote,
-      final String? invoiceNumber,
-      final String? transportCompany,
-      final String? vehicleNumber,
-      final String? driverName,
-      final String? notes,
-      final Map<String, dynamic>? metadata}) = _$UpdateGoodsReceiptRequestImpl;
-
-  factory _UpdateGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateGoodsReceiptRequestImpl.fromJson;
-
-  @override
-  DateTime? get receiptDate;
-  @override
-  String? get deliveryNote;
-  @override
-  String? get invoiceNumber;
-  @override
-  String? get transportCompany;
-  @override
-  String? get vehicleNumber;
-  @override
-  String? get driverName;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateGoodsReceiptRequestImplCopyWith<_$UpdateGoodsReceiptRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateGoodsReceiptLineItemRequest _$UpdateGoodsReceiptLineItemRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateGoodsReceiptLineItemRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UpdateGoodsReceiptLineItemRequest {
-  double? get receivedQuantity => throw _privateConstructorUsedError;
-  double? get acceptedQuantity => throw _privateConstructorUsedError;
-  double? get rejectedQuantity => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  DateTime? get expiryDate => throw _privateConstructorUsedError;
-  String? get condition => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get inspectionNotes => throw _privateConstructorUsedError;
-  String? get rejectionReason => throw _privateConstructorUsedError;
-  String? get storageLocation => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get qualityMetrics =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateGoodsReceiptLineItemRequestCopyWith<UpdateGoodsReceiptLineItemRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
-  factory $UpdateGoodsReceiptLineItemRequestCopyWith(
-          UpdateGoodsReceiptLineItemRequest value,
-          $Res Function(UpdateGoodsReceiptLineItemRequest) then) =
-      _$UpdateGoodsReceiptLineItemRequestCopyWithImpl<$Res,
-          UpdateGoodsReceiptLineItemRequest>;
-  @useResult
-  $Res call(
-      {double? receivedQuantity,
-      double? acceptedQuantity,
-      double? rejectedQuantity,
-      String? lotNumber,
-      String? serialNumber,
-      DateTime? expiryDate,
-      String? condition,
-      String? notes,
-      String? inspectionNotes,
-      String? rejectionReason,
-      String? storageLocation,
-      Map<String, dynamic>? qualityMetrics,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$UpdateGoodsReceiptLineItemRequestCopyWithImpl<$Res,
-        $Val extends UpdateGoodsReceiptLineItemRequest>
-    implements $UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
-  _$UpdateGoodsReceiptLineItemRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? receivedQuantity = freezed,
-    Object? acceptedQuantity = freezed,
-    Object? rejectedQuantity = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? expiryDate = freezed,
-    Object? condition = freezed,
-    Object? notes = freezed,
-    Object? inspectionNotes = freezed,
-    Object? rejectionReason = freezed,
-    Object? storageLocation = freezed,
-    Object? qualityMetrics = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      receivedQuantity: freezed == receivedQuantity
-          ? _value.receivedQuantity
-          : receivedQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      acceptedQuantity: freezed == acceptedQuantity
-          ? _value.acceptedQuantity
-          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      rejectedQuantity: freezed == rejectedQuantity
-          ? _value.rejectedQuantity
-          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      condition: freezed == condition
-          ? _value.condition
-          : condition // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
-          : inspectionNotes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      storageLocation: freezed == storageLocation
-          ? _value.storageLocation
-          : storageLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value.qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'UpdateGoodsReceiptRequest(receiptDate: $receiptDate, deliveryNote: $deliveryNote, invoiceNumber: $invoiceNumber, transportCompany: $transportCompany, vehicleNumber: $vehicleNumber, driverName: $driverName, notes: $notes, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdateGoodsReceiptLineItemRequestImplCopyWith<$Res>
-    implements $UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
-  factory _$$UpdateGoodsReceiptLineItemRequestImplCopyWith(
-          _$UpdateGoodsReceiptLineItemRequestImpl value,
-          $Res Function(_$UpdateGoodsReceiptLineItemRequestImpl) then) =
-      __$$UpdateGoodsReceiptLineItemRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$UpdateGoodsReceiptRequestCopyWith<$Res>
+    implements $UpdateGoodsReceiptRequestCopyWith<$Res> {
+  factory _$UpdateGoodsReceiptRequestCopyWith(_UpdateGoodsReceiptRequest value,
+          $Res Function(_UpdateGoodsReceiptRequest) _then) =
+      __$UpdateGoodsReceiptRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {double? receivedQuantity,
-      double? acceptedQuantity,
-      double? rejectedQuantity,
-      String? lotNumber,
-      String? serialNumber,
-      DateTime? expiryDate,
-      String? condition,
+      {DateTime? receiptDate,
+      String? deliveryNote,
+      String? invoiceNumber,
+      String? transportCompany,
+      String? vehicleNumber,
+      String? driverName,
       String? notes,
-      String? inspectionNotes,
-      String? rejectionReason,
-      String? storageLocation,
-      Map<String, dynamic>? qualityMetrics,
-      Map<String, dynamic>? attributes});
+      Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$UpdateGoodsReceiptLineItemRequestImplCopyWithImpl<$Res>
-    extends _$UpdateGoodsReceiptLineItemRequestCopyWithImpl<$Res,
-        _$UpdateGoodsReceiptLineItemRequestImpl>
-    implements _$$UpdateGoodsReceiptLineItemRequestImplCopyWith<$Res> {
-  __$$UpdateGoodsReceiptLineItemRequestImplCopyWithImpl(
-      _$UpdateGoodsReceiptLineItemRequestImpl _value,
-      $Res Function(_$UpdateGoodsReceiptLineItemRequestImpl) _then)
-      : super(_value, _then);
+class __$UpdateGoodsReceiptRequestCopyWithImpl<$Res>
+    implements _$UpdateGoodsReceiptRequestCopyWith<$Res> {
+  __$UpdateGoodsReceiptRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _UpdateGoodsReceiptRequest _self;
+  final $Res Function(_UpdateGoodsReceiptRequest) _then;
+
+  /// Create a copy of UpdateGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? receivedQuantity = freezed,
-    Object? acceptedQuantity = freezed,
-    Object? rejectedQuantity = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? expiryDate = freezed,
-    Object? condition = freezed,
+    Object? receiptDate = freezed,
+    Object? deliveryNote = freezed,
+    Object? invoiceNumber = freezed,
+    Object? transportCompany = freezed,
+    Object? vehicleNumber = freezed,
+    Object? driverName = freezed,
     Object? notes = freezed,
-    Object? inspectionNotes = freezed,
-    Object? rejectionReason = freezed,
-    Object? storageLocation = freezed,
-    Object? qualityMetrics = freezed,
-    Object? attributes = freezed,
+    Object? metadata = freezed,
   }) {
-    return _then(_$UpdateGoodsReceiptLineItemRequestImpl(
-      receivedQuantity: freezed == receivedQuantity
-          ? _value.receivedQuantity
-          : receivedQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      acceptedQuantity: freezed == acceptedQuantity
-          ? _value.acceptedQuantity
-          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      rejectedQuantity: freezed == rejectedQuantity
-          ? _value.rejectedQuantity
-          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
+    return _then(_UpdateGoodsReceiptRequest(
+      receiptDate: freezed == receiptDate
+          ? _self.receiptDate
+          : receiptDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      condition: freezed == condition
-          ? _value.condition
-          : condition // ignore: cast_nullable_to_non_nullable
+      deliveryNote: freezed == deliveryNote
+          ? _self.deliveryNote
+          : deliveryNote // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invoiceNumber: freezed == invoiceNumber
+          ? _self.invoiceNumber
+          : invoiceNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportCompany: freezed == transportCompany
+          ? _self.transportCompany
+          : transportCompany // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vehicleNumber: freezed == vehicleNumber
+          ? _self.vehicleNumber
+          : vehicleNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driverName: freezed == driverName
+          ? _self.driverName
+          : driverName // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
-          : inspectionNotes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      storageLocation: freezed == storageLocation
-          ? _value.storageLocation
-          : storageLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value._qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      attributes: freezed == attributes
-          ? _value._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$UpdateGoodsReceiptLineItemRequest {
+  double? get receivedQuantity;
+  double? get acceptedQuantity;
+  double? get rejectedQuantity;
+  String? get lotNumber;
+  String? get serialNumber;
+  DateTime? get expiryDate;
+  String? get condition;
+  String? get notes;
+  String? get inspectionNotes;
+  String? get rejectionReason;
+  String? get storageLocation;
+  Map<String, dynamic>? get qualityMetrics;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of UpdateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateGoodsReceiptLineItemRequestCopyWith<UpdateGoodsReceiptLineItemRequest>
+      get copyWith => _$UpdateGoodsReceiptLineItemRequestCopyWithImpl<
+              UpdateGoodsReceiptLineItemRequest>(
+          this as UpdateGoodsReceiptLineItemRequest, _$identity);
+
+  /// Serializes this UpdateGoodsReceiptLineItemRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateGoodsReceiptLineItemRequest &&
+            (identical(other.receivedQuantity, receivedQuantity) ||
+                other.receivedQuantity == receivedQuantity) &&
+            (identical(other.acceptedQuantity, acceptedQuantity) ||
+                other.acceptedQuantity == acceptedQuantity) &&
+            (identical(other.rejectedQuantity, rejectedQuantity) ||
+                other.rejectedQuantity == rejectedQuantity) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            (identical(other.condition, condition) ||
+                other.condition == condition) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.inspectionNotes, inspectionNotes) ||
+                other.inspectionNotes == inspectionNotes) &&
+            (identical(other.rejectionReason, rejectionReason) ||
+                other.rejectionReason == rejectionReason) &&
+            (identical(other.storageLocation, storageLocation) ||
+                other.storageLocation == storageLocation) &&
+            const DeepCollectionEquality()
+                .equals(other.qualityMetrics, qualityMetrics) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      receivedQuantity,
+      acceptedQuantity,
+      rejectedQuantity,
+      lotNumber,
+      serialNumber,
+      expiryDate,
+      condition,
+      notes,
+      inspectionNotes,
+      rejectionReason,
+      storageLocation,
+      const DeepCollectionEquality().hash(qualityMetrics),
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'UpdateGoodsReceiptLineItemRequest(receivedQuantity: $receivedQuantity, acceptedQuantity: $acceptedQuantity, rejectedQuantity: $rejectedQuantity, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  factory $UpdateGoodsReceiptLineItemRequestCopyWith(
+          UpdateGoodsReceiptLineItemRequest value,
+          $Res Function(UpdateGoodsReceiptLineItemRequest) _then) =
+      _$UpdateGoodsReceiptLineItemRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {double? receivedQuantity,
+      double? acceptedQuantity,
+      double? rejectedQuantity,
+      String? lotNumber,
+      String? serialNumber,
+      DateTime? expiryDate,
+      String? condition,
+      String? notes,
+      String? inspectionNotes,
+      String? rejectionReason,
+      String? storageLocation,
+      Map<String, dynamic>? qualityMetrics,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$UpdateGoodsReceiptLineItemRequestCopyWithImpl<$Res>
+    implements $UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  _$UpdateGoodsReceiptLineItemRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateGoodsReceiptLineItemRequest _self;
+  final $Res Function(UpdateGoodsReceiptLineItemRequest) _then;
+
+  /// Create a copy of UpdateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? receivedQuantity = freezed,
+    Object? acceptedQuantity = freezed,
+    Object? rejectedQuantity = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? expiryDate = freezed,
+    Object? condition = freezed,
+    Object? notes = freezed,
+    Object? inspectionNotes = freezed,
+    Object? rejectionReason = freezed,
+    Object? storageLocation = freezed,
+    Object? qualityMetrics = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      receivedQuantity: freezed == receivedQuantity
+          ? _self.receivedQuantity
+          : receivedQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      acceptedQuantity: freezed == acceptedQuantity
+          ? _self.acceptedQuantity
+          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      rejectedQuantity: freezed == rejectedQuantity
+          ? _self.rejectedQuantity
+          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      condition: freezed == condition
+          ? _self.condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectionNotes: freezed == inspectionNotes
+          ? _self.inspectionNotes
+          : inspectionNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      storageLocation: freezed == storageLocation
+          ? _self.storageLocation
+          : storageLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self.qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateGoodsReceiptLineItemRequest].
+extension UpdateGoodsReceiptLineItemRequestPatterns
+    on UpdateGoodsReceiptLineItemRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateGoodsReceiptLineItemRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateGoodsReceiptLineItemRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptLineItemRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateGoodsReceiptLineItemRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? receivedQuantity,
+            double? acceptedQuantity,
+            double? rejectedQuantity,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(
+            _that.receivedQuantity,
+            _that.acceptedQuantity,
+            _that.rejectedQuantity,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? receivedQuantity,
+            double? acceptedQuantity,
+            double? rejectedQuantity,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptLineItemRequest():
+        return $default(
+            _that.receivedQuantity,
+            _that.acceptedQuantity,
+            _that.rejectedQuantity,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? receivedQuantity,
+            double? acceptedQuantity,
+            double? rejectedQuantity,
+            String? lotNumber,
+            String? serialNumber,
+            DateTime? expiryDate,
+            String? condition,
+            String? notes,
+            String? inspectionNotes,
+            String? rejectionReason,
+            String? storageLocation,
+            Map<String, dynamic>? qualityMetrics,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateGoodsReceiptLineItemRequest() when $default != null:
+        return $default(
+            _that.receivedQuantity,
+            _that.acceptedQuantity,
+            _that.rejectedQuantity,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.expiryDate,
+            _that.condition,
+            _that.notes,
+            _that.inspectionNotes,
+            _that.rejectionReason,
+            _that.storageLocation,
+            _that.qualityMetrics,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateGoodsReceiptLineItemRequestImpl
-    implements _UpdateGoodsReceiptLineItemRequest {
-  const _$UpdateGoodsReceiptLineItemRequestImpl(
+class _UpdateGoodsReceiptLineItemRequest
+    implements UpdateGoodsReceiptLineItemRequest {
+  const _UpdateGoodsReceiptLineItemRequest(
       {this.receivedQuantity,
       this.acceptedQuantity,
       this.rejectedQuantity,
@@ -2661,10 +4091,9 @@ class _$UpdateGoodsReceiptLineItemRequestImpl
       final Map<String, dynamic>? attributes})
       : _qualityMetrics = qualityMetrics,
         _attributes = attributes;
-
-  factory _$UpdateGoodsReceiptLineItemRequestImpl.fromJson(
+  factory _UpdateGoodsReceiptLineItemRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$UpdateGoodsReceiptLineItemRequestImplFromJson(json);
+      _$UpdateGoodsReceiptLineItemRequestFromJson(json);
 
   @override
   final double? receivedQuantity;
@@ -2708,16 +4137,28 @@ class _$UpdateGoodsReceiptLineItemRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateGoodsReceiptLineItemRequest(receivedQuantity: $receivedQuantity, acceptedQuantity: $acceptedQuantity, rejectedQuantity: $rejectedQuantity, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateGoodsReceiptLineItemRequestCopyWith<
+          _UpdateGoodsReceiptLineItemRequest>
+      get copyWith => __$UpdateGoodsReceiptLineItemRequestCopyWithImpl<
+          _UpdateGoodsReceiptLineItemRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateGoodsReceiptLineItemRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateGoodsReceiptLineItemRequestImpl &&
+            other is _UpdateGoodsReceiptLineItemRequest &&
             (identical(other.receivedQuantity, receivedQuantity) ||
                 other.receivedQuantity == receivedQuantity) &&
             (identical(other.acceptedQuantity, acceptedQuantity) ||
@@ -2745,7 +4186,7 @@ class _$UpdateGoodsReceiptLineItemRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2763,216 +4204,205 @@ class _$UpdateGoodsReceiptLineItemRequestImpl
       const DeepCollectionEquality().hash(_qualityMetrics),
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateGoodsReceiptLineItemRequestImplCopyWith<
-          _$UpdateGoodsReceiptLineItemRequestImpl>
-      get copyWith => __$$UpdateGoodsReceiptLineItemRequestImplCopyWithImpl<
-          _$UpdateGoodsReceiptLineItemRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateGoodsReceiptLineItemRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateGoodsReceiptLineItemRequest(receivedQuantity: $receivedQuantity, acceptedQuantity: $acceptedQuantity, rejectedQuantity: $rejectedQuantity, lotNumber: $lotNumber, serialNumber: $serialNumber, expiryDate: $expiryDate, condition: $condition, notes: $notes, inspectionNotes: $inspectionNotes, rejectionReason: $rejectionReason, storageLocation: $storageLocation, qualityMetrics: $qualityMetrics, attributes: $attributes)';
   }
 }
 
-abstract class _UpdateGoodsReceiptLineItemRequest
-    implements UpdateGoodsReceiptLineItemRequest {
-  const factory _UpdateGoodsReceiptLineItemRequest(
-          {final double? receivedQuantity,
-          final double? acceptedQuantity,
-          final double? rejectedQuantity,
-          final String? lotNumber,
-          final String? serialNumber,
-          final DateTime? expiryDate,
-          final String? condition,
-          final String? notes,
-          final String? inspectionNotes,
-          final String? rejectionReason,
-          final String? storageLocation,
-          final Map<String, dynamic>? qualityMetrics,
-          final Map<String, dynamic>? attributes}) =
-      _$UpdateGoodsReceiptLineItemRequestImpl;
-
-  factory _UpdateGoodsReceiptLineItemRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$UpdateGoodsReceiptLineItemRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateGoodsReceiptLineItemRequestCopyWith<$Res>
+    implements $UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  factory _$UpdateGoodsReceiptLineItemRequestCopyWith(
+          _UpdateGoodsReceiptLineItemRequest value,
+          $Res Function(_UpdateGoodsReceiptLineItemRequest) _then) =
+      __$UpdateGoodsReceiptLineItemRequestCopyWithImpl;
   @override
-  double? get receivedQuantity;
-  @override
-  double? get acceptedQuantity;
-  @override
-  double? get rejectedQuantity;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  DateTime? get expiryDate;
-  @override
-  String? get condition;
-  @override
-  String? get notes;
-  @override
-  String? get inspectionNotes;
-  @override
-  String? get rejectionReason;
-  @override
-  String? get storageLocation;
-  @override
-  Map<String, dynamic>? get qualityMetrics;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateGoodsReceiptLineItemRequestImplCopyWith<
-          _$UpdateGoodsReceiptLineItemRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {double? receivedQuantity,
+      double? acceptedQuantity,
+      double? rejectedQuantity,
+      String? lotNumber,
+      String? serialNumber,
+      DateTime? expiryDate,
+      String? condition,
+      String? notes,
+      String? inspectionNotes,
+      String? rejectionReason,
+      String? storageLocation,
+      Map<String, dynamic>? qualityMetrics,
+      Map<String, dynamic>? attributes});
 }
 
-GoodsReceiptFilters _$GoodsReceiptFiltersFromJson(Map<String, dynamic> json) {
-  return _GoodsReceiptFilters.fromJson(json);
+/// @nodoc
+class __$UpdateGoodsReceiptLineItemRequestCopyWithImpl<$Res>
+    implements _$UpdateGoodsReceiptLineItemRequestCopyWith<$Res> {
+  __$UpdateGoodsReceiptLineItemRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateGoodsReceiptLineItemRequest _self;
+  final $Res Function(_UpdateGoodsReceiptLineItemRequest) _then;
+
+  /// Create a copy of UpdateGoodsReceiptLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? receivedQuantity = freezed,
+    Object? acceptedQuantity = freezed,
+    Object? rejectedQuantity = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? expiryDate = freezed,
+    Object? condition = freezed,
+    Object? notes = freezed,
+    Object? inspectionNotes = freezed,
+    Object? rejectionReason = freezed,
+    Object? storageLocation = freezed,
+    Object? qualityMetrics = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_UpdateGoodsReceiptLineItemRequest(
+      receivedQuantity: freezed == receivedQuantity
+          ? _self.receivedQuantity
+          : receivedQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      acceptedQuantity: freezed == acceptedQuantity
+          ? _self.acceptedQuantity
+          : acceptedQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      rejectedQuantity: freezed == rejectedQuantity
+          ? _self.rejectedQuantity
+          : rejectedQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      condition: freezed == condition
+          ? _self.condition
+          : condition // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectionNotes: freezed == inspectionNotes
+          ? _self.inspectionNotes
+          : inspectionNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      storageLocation: freezed == storageLocation
+          ? _self.storageLocation
+          : storageLocation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self._qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$GoodsReceiptFilters {
-  String? get purchaseOrderId => throw _privateConstructorUsedError;
-  String? get supplierId => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get receivedBy => throw _privateConstructorUsedError;
-  DateTime? get receiptDateAfter => throw _privateConstructorUsedError;
-  DateTime? get receiptDateBefore => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  List<String>? get itemIds => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get purchaseOrderId;
+  String? get supplierId;
+  String? get status;
+  String? get receivedBy;
+  DateTime? get receiptDateAfter;
+  DateTime? get receiptDateBefore;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  List<String>? get itemIds;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $GoodsReceiptFiltersCopyWith<GoodsReceiptFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GoodsReceiptFiltersCopyWith<$Res> {
-  factory $GoodsReceiptFiltersCopyWith(
-          GoodsReceiptFilters value, $Res Function(GoodsReceiptFilters) then) =
-      _$GoodsReceiptFiltersCopyWithImpl<$Res, GoodsReceiptFilters>;
-  @useResult
-  $Res call(
-      {String? purchaseOrderId,
-      String? supplierId,
-      String? status,
-      String? receivedBy,
-      DateTime? receiptDateAfter,
-      DateTime? receiptDateBefore,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      List<String>? itemIds,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$GoodsReceiptFiltersCopyWithImpl<$Res, $Val extends GoodsReceiptFilters>
-    implements $GoodsReceiptFiltersCopyWith<$Res> {
-  _$GoodsReceiptFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of GoodsReceiptFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $GoodsReceiptFiltersCopyWith<GoodsReceiptFilters> get copyWith =>
+      _$GoodsReceiptFiltersCopyWithImpl<GoodsReceiptFilters>(
+          this as GoodsReceiptFilters, _$identity);
+
+  /// Serializes this GoodsReceiptFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? purchaseOrderId = freezed,
-    Object? supplierId = freezed,
-    Object? status = freezed,
-    Object? receivedBy = freezed,
-    Object? receiptDateAfter = freezed,
-    Object? receiptDateBefore = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? itemIds = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      purchaseOrderId: freezed == purchaseOrderId
-          ? _value.purchaseOrderId
-          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierId: freezed == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivedBy: freezed == receivedBy
-          ? _value.receivedBy
-          : receivedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receiptDateAfter: freezed == receiptDateAfter
-          ? _value.receiptDateAfter
-          : receiptDateAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      receiptDateBefore: freezed == receiptDateBefore
-          ? _value.receiptDateBefore
-          : receiptDateBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      itemIds: freezed == itemIds
-          ? _value.itemIds
-          : itemIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GoodsReceiptFilters &&
+            (identical(other.purchaseOrderId, purchaseOrderId) ||
+                other.purchaseOrderId == purchaseOrderId) &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.receivedBy, receivedBy) ||
+                other.receivedBy == receivedBy) &&
+            (identical(other.receiptDateAfter, receiptDateAfter) ||
+                other.receiptDateAfter == receiptDateAfter) &&
+            (identical(other.receiptDateBefore, receiptDateBefore) ||
+                other.receiptDateBefore == receiptDateBefore) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            const DeepCollectionEquality().equals(other.itemIds, itemIds) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      purchaseOrderId,
+      supplierId,
+      status,
+      receivedBy,
+      receiptDateAfter,
+      receiptDateBefore,
+      createdAfter,
+      createdBefore,
+      const DeepCollectionEquality().hash(itemIds),
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'GoodsReceiptFilters(purchaseOrderId: $purchaseOrderId, supplierId: $supplierId, status: $status, receivedBy: $receivedBy, receiptDateAfter: $receiptDateAfter, receiptDateBefore: $receiptDateBefore, createdAfter: $createdAfter, createdBefore: $createdBefore, itemIds: $itemIds, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$GoodsReceiptFiltersImplCopyWith<$Res>
-    implements $GoodsReceiptFiltersCopyWith<$Res> {
-  factory _$$GoodsReceiptFiltersImplCopyWith(_$GoodsReceiptFiltersImpl value,
-          $Res Function(_$GoodsReceiptFiltersImpl) then) =
-      __$$GoodsReceiptFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GoodsReceiptFiltersCopyWith<$Res> {
+  factory $GoodsReceiptFiltersCopyWith(
+          GoodsReceiptFilters value, $Res Function(GoodsReceiptFilters) _then) =
+      _$GoodsReceiptFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? purchaseOrderId,
@@ -2991,13 +4421,15 @@ abstract class _$$GoodsReceiptFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GoodsReceiptFiltersImplCopyWithImpl<$Res>
-    extends _$GoodsReceiptFiltersCopyWithImpl<$Res, _$GoodsReceiptFiltersImpl>
-    implements _$$GoodsReceiptFiltersImplCopyWith<$Res> {
-  __$$GoodsReceiptFiltersImplCopyWithImpl(_$GoodsReceiptFiltersImpl _value,
-      $Res Function(_$GoodsReceiptFiltersImpl) _then)
-      : super(_value, _then);
+class _$GoodsReceiptFiltersCopyWithImpl<$Res>
+    implements $GoodsReceiptFiltersCopyWith<$Res> {
+  _$GoodsReceiptFiltersCopyWithImpl(this._self, this._then);
 
+  final GoodsReceiptFilters _self;
+  final $Res Function(GoodsReceiptFilters) _then;
+
+  /// Create a copy of GoodsReceiptFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3015,67 +4447,301 @@ class __$$GoodsReceiptFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$GoodsReceiptFiltersImpl(
+    return _then(_self.copyWith(
       purchaseOrderId: freezed == purchaseOrderId
-          ? _value.purchaseOrderId
+          ? _self.purchaseOrderId
           : purchaseOrderId // ignore: cast_nullable_to_non_nullable
               as String?,
       supplierId: freezed == supplierId
-          ? _value.supplierId
+          ? _self.supplierId
           : supplierId // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       receivedBy: freezed == receivedBy
-          ? _value.receivedBy
+          ? _self.receivedBy
           : receivedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       receiptDateAfter: freezed == receiptDateAfter
-          ? _value.receiptDateAfter
+          ? _self.receiptDateAfter
           : receiptDateAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       receiptDateBefore: freezed == receiptDateBefore
-          ? _value.receiptDateBefore
+          ? _self.receiptDateBefore
           : receiptDateBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdAfter: freezed == createdAfter
-          ? _value.createdAfter
+          ? _self.createdAfter
           : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBefore: freezed == createdBefore
-          ? _value.createdBefore
+          ? _self.createdBefore
           : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       itemIds: freezed == itemIds
-          ? _value._itemIds
+          ? _self.itemIds
           : itemIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [GoodsReceiptFilters].
+extension GoodsReceiptFiltersPatterns on GoodsReceiptFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_GoodsReceiptFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_GoodsReceiptFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_GoodsReceiptFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? purchaseOrderId,
+            String? supplierId,
+            String? status,
+            String? receivedBy,
+            DateTime? receiptDateAfter,
+            DateTime? receiptDateBefore,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            List<String>? itemIds,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptFilters() when $default != null:
+        return $default(
+            _that.purchaseOrderId,
+            _that.supplierId,
+            _that.status,
+            _that.receivedBy,
+            _that.receiptDateAfter,
+            _that.receiptDateBefore,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.itemIds,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? purchaseOrderId,
+            String? supplierId,
+            String? status,
+            String? receivedBy,
+            DateTime? receiptDateAfter,
+            DateTime? receiptDateBefore,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            List<String>? itemIds,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptFilters():
+        return $default(
+            _that.purchaseOrderId,
+            _that.supplierId,
+            _that.status,
+            _that.receivedBy,
+            _that.receiptDateAfter,
+            _that.receiptDateBefore,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.itemIds,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? purchaseOrderId,
+            String? supplierId,
+            String? status,
+            String? receivedBy,
+            DateTime? receiptDateAfter,
+            DateTime? receiptDateBefore,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            List<String>? itemIds,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _GoodsReceiptFilters() when $default != null:
+        return $default(
+            _that.purchaseOrderId,
+            _that.supplierId,
+            _that.status,
+            _that.receivedBy,
+            _that.receiptDateAfter,
+            _that.receiptDateBefore,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.itemIds,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$GoodsReceiptFiltersImpl extends _GoodsReceiptFilters {
-  const _$GoodsReceiptFiltersImpl(
+class _GoodsReceiptFilters extends GoodsReceiptFilters {
+  const _GoodsReceiptFilters(
       {this.purchaseOrderId,
       this.supplierId,
       this.status,
@@ -3091,9 +4757,8 @@ class _$GoodsReceiptFiltersImpl extends _GoodsReceiptFilters {
       this.sortOrder})
       : _itemIds = itemIds,
         super._();
-
-  factory _$GoodsReceiptFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GoodsReceiptFiltersImplFromJson(json);
+  factory _GoodsReceiptFilters.fromJson(Map<String, dynamic> json) =>
+      _$GoodsReceiptFiltersFromJson(json);
 
   @override
   final String? purchaseOrderId;
@@ -3130,16 +4795,27 @@ class _$GoodsReceiptFiltersImpl extends _GoodsReceiptFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of GoodsReceiptFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GoodsReceiptFilters(purchaseOrderId: $purchaseOrderId, supplierId: $supplierId, status: $status, receivedBy: $receivedBy, receiptDateAfter: $receiptDateAfter, receiptDateBefore: $receiptDateBefore, createdAfter: $createdAfter, createdBefore: $createdBefore, itemIds: $itemIds, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GoodsReceiptFiltersCopyWith<_GoodsReceiptFilters> get copyWith =>
+      __$GoodsReceiptFiltersCopyWithImpl<_GoodsReceiptFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GoodsReceiptFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GoodsReceiptFiltersImpl &&
+            other is _GoodsReceiptFilters &&
             (identical(other.purchaseOrderId, purchaseOrderId) ||
                 other.purchaseOrderId == purchaseOrderId) &&
             (identical(other.supplierId, supplierId) ||
@@ -3163,7 +4839,7 @@ class _$GoodsReceiptFiltersImpl extends _GoodsReceiptFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3181,181 +4857,364 @@ class _$GoodsReceiptFiltersImpl extends _GoodsReceiptFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GoodsReceiptFiltersImplCopyWith<_$GoodsReceiptFiltersImpl> get copyWith =>
-      __$$GoodsReceiptFiltersImplCopyWithImpl<_$GoodsReceiptFiltersImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GoodsReceiptFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GoodsReceiptFilters(purchaseOrderId: $purchaseOrderId, supplierId: $supplierId, status: $status, receivedBy: $receivedBy, receiptDateAfter: $receiptDateAfter, receiptDateBefore: $receiptDateBefore, createdAfter: $createdAfter, createdBefore: $createdBefore, itemIds: $itemIds, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _GoodsReceiptFilters extends GoodsReceiptFilters {
-  const factory _GoodsReceiptFilters(
-      {final String? purchaseOrderId,
-      final String? supplierId,
-      final String? status,
-      final String? receivedBy,
-      final DateTime? receiptDateAfter,
-      final DateTime? receiptDateBefore,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final List<String>? itemIds,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$GoodsReceiptFiltersImpl;
-  const _GoodsReceiptFilters._() : super._();
-
-  factory _GoodsReceiptFilters.fromJson(Map<String, dynamic> json) =
-      _$GoodsReceiptFiltersImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GoodsReceiptFiltersCopyWith<$Res>
+    implements $GoodsReceiptFiltersCopyWith<$Res> {
+  factory _$GoodsReceiptFiltersCopyWith(_GoodsReceiptFilters value,
+          $Res Function(_GoodsReceiptFilters) _then) =
+      __$GoodsReceiptFiltersCopyWithImpl;
   @override
-  String? get purchaseOrderId;
-  @override
-  String? get supplierId;
-  @override
-  String? get status;
-  @override
-  String? get receivedBy;
-  @override
-  DateTime? get receiptDateAfter;
-  @override
-  DateTime? get receiptDateBefore;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  List<String>? get itemIds;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$GoodsReceiptFiltersImplCopyWith<_$GoodsReceiptFiltersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? purchaseOrderId,
+      String? supplierId,
+      String? status,
+      String? receivedBy,
+      DateTime? receiptDateAfter,
+      DateTime? receiptDateBefore,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      List<String>? itemIds,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
 
-InspectGoodsReceiptRequest _$InspectGoodsReceiptRequestFromJson(
-    Map<String, dynamic> json) {
-  return _InspectGoodsReceiptRequest.fromJson(json);
+/// @nodoc
+class __$GoodsReceiptFiltersCopyWithImpl<$Res>
+    implements _$GoodsReceiptFiltersCopyWith<$Res> {
+  __$GoodsReceiptFiltersCopyWithImpl(this._self, this._then);
+
+  final _GoodsReceiptFilters _self;
+  final $Res Function(_GoodsReceiptFilters) _then;
+
+  /// Create a copy of GoodsReceiptFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? purchaseOrderId = freezed,
+    Object? supplierId = freezed,
+    Object? status = freezed,
+    Object? receivedBy = freezed,
+    Object? receiptDateAfter = freezed,
+    Object? receiptDateBefore = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? itemIds = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_GoodsReceiptFilters(
+      purchaseOrderId: freezed == purchaseOrderId
+          ? _self.purchaseOrderId
+          : purchaseOrderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      supplierId: freezed == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receivedBy: freezed == receivedBy
+          ? _self.receivedBy
+          : receivedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receiptDateAfter: freezed == receiptDateAfter
+          ? _self.receiptDateAfter
+          : receiptDateAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      receiptDateBefore: freezed == receiptDateBefore
+          ? _self.receiptDateBefore
+          : receiptDateBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      itemIds: freezed == itemIds
+          ? _self._itemIds
+          : itemIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$InspectGoodsReceiptRequest {
-  String? get inspectionNotes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get qualityMetrics =>
-      throw _privateConstructorUsedError;
+  String? get inspectionNotes;
+  Map<String, dynamic>? get qualityMetrics;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InspectGoodsReceiptRequestCopyWith<InspectGoodsReceiptRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InspectGoodsReceiptRequestCopyWith<$Res> {
-  factory $InspectGoodsReceiptRequestCopyWith(InspectGoodsReceiptRequest value,
-          $Res Function(InspectGoodsReceiptRequest) then) =
-      _$InspectGoodsReceiptRequestCopyWithImpl<$Res,
-          InspectGoodsReceiptRequest>;
-  @useResult
-  $Res call({String? inspectionNotes, Map<String, dynamic>? qualityMetrics});
-}
-
-/// @nodoc
-class _$InspectGoodsReceiptRequestCopyWithImpl<$Res,
-        $Val extends InspectGoodsReceiptRequest>
-    implements $InspectGoodsReceiptRequestCopyWith<$Res> {
-  _$InspectGoodsReceiptRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of InspectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $InspectGoodsReceiptRequestCopyWith<InspectGoodsReceiptRequest>
+      get copyWith =>
+          _$InspectGoodsReceiptRequestCopyWithImpl<InspectGoodsReceiptRequest>(
+              this as InspectGoodsReceiptRequest, _$identity);
+
+  /// Serializes this InspectGoodsReceiptRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? inspectionNotes = freezed,
-    Object? qualityMetrics = freezed,
-  }) {
-    return _then(_value.copyWith(
-      inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
-          : inspectionNotes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qualityMetrics: freezed == qualityMetrics
-          ? _value.qualityMetrics
-          : qualityMetrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is InspectGoodsReceiptRequest &&
+            (identical(other.inspectionNotes, inspectionNotes) ||
+                other.inspectionNotes == inspectionNotes) &&
+            const DeepCollectionEquality()
+                .equals(other.qualityMetrics, qualityMetrics));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, inspectionNotes,
+      const DeepCollectionEquality().hash(qualityMetrics));
+
+  @override
+  String toString() {
+    return 'InspectGoodsReceiptRequest(inspectionNotes: $inspectionNotes, qualityMetrics: $qualityMetrics)';
   }
 }
 
 /// @nodoc
-abstract class _$$InspectGoodsReceiptRequestImplCopyWith<$Res>
-    implements $InspectGoodsReceiptRequestCopyWith<$Res> {
-  factory _$$InspectGoodsReceiptRequestImplCopyWith(
-          _$InspectGoodsReceiptRequestImpl value,
-          $Res Function(_$InspectGoodsReceiptRequestImpl) then) =
-      __$$InspectGoodsReceiptRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $InspectGoodsReceiptRequestCopyWith<$Res> {
+  factory $InspectGoodsReceiptRequestCopyWith(InspectGoodsReceiptRequest value,
+          $Res Function(InspectGoodsReceiptRequest) _then) =
+      _$InspectGoodsReceiptRequestCopyWithImpl;
   @useResult
   $Res call({String? inspectionNotes, Map<String, dynamic>? qualityMetrics});
 }
 
 /// @nodoc
-class __$$InspectGoodsReceiptRequestImplCopyWithImpl<$Res>
-    extends _$InspectGoodsReceiptRequestCopyWithImpl<$Res,
-        _$InspectGoodsReceiptRequestImpl>
-    implements _$$InspectGoodsReceiptRequestImplCopyWith<$Res> {
-  __$$InspectGoodsReceiptRequestImplCopyWithImpl(
-      _$InspectGoodsReceiptRequestImpl _value,
-      $Res Function(_$InspectGoodsReceiptRequestImpl) _then)
-      : super(_value, _then);
+class _$InspectGoodsReceiptRequestCopyWithImpl<$Res>
+    implements $InspectGoodsReceiptRequestCopyWith<$Res> {
+  _$InspectGoodsReceiptRequestCopyWithImpl(this._self, this._then);
 
+  final InspectGoodsReceiptRequest _self;
+  final $Res Function(InspectGoodsReceiptRequest) _then;
+
+  /// Create a copy of InspectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? inspectionNotes = freezed,
     Object? qualityMetrics = freezed,
   }) {
-    return _then(_$InspectGoodsReceiptRequestImpl(
+    return _then(_self.copyWith(
       inspectionNotes: freezed == inspectionNotes
-          ? _value.inspectionNotes
+          ? _self.inspectionNotes
           : inspectionNotes // ignore: cast_nullable_to_non_nullable
               as String?,
       qualityMetrics: freezed == qualityMetrics
-          ? _value._qualityMetrics
+          ? _self.qualityMetrics
           : qualityMetrics // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [InspectGoodsReceiptRequest].
+extension InspectGoodsReceiptRequestPatterns on InspectGoodsReceiptRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_InspectGoodsReceiptRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _InspectGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_InspectGoodsReceiptRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InspectGoodsReceiptRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_InspectGoodsReceiptRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InspectGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? inspectionNotes, Map<String, dynamic>? qualityMetrics)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _InspectGoodsReceiptRequest() when $default != null:
+        return $default(_that.inspectionNotes, _that.qualityMetrics);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? inspectionNotes, Map<String, dynamic>? qualityMetrics)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InspectGoodsReceiptRequest():
+        return $default(_that.inspectionNotes, _that.qualityMetrics);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? inspectionNotes, Map<String, dynamic>? qualityMetrics)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InspectGoodsReceiptRequest() when $default != null:
+        return $default(_that.inspectionNotes, _that.qualityMetrics);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$InspectGoodsReceiptRequestImpl implements _InspectGoodsReceiptRequest {
-  const _$InspectGoodsReceiptRequestImpl(
+class _InspectGoodsReceiptRequest implements InspectGoodsReceiptRequest {
+  const _InspectGoodsReceiptRequest(
       {this.inspectionNotes, final Map<String, dynamic>? qualityMetrics})
       : _qualityMetrics = qualityMetrics;
-
-  factory _$InspectGoodsReceiptRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$InspectGoodsReceiptRequestImplFromJson(json);
+  factory _InspectGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =>
+      _$InspectGoodsReceiptRequestFromJson(json);
 
   @override
   final String? inspectionNotes;
@@ -3369,295 +5228,378 @@ class _$InspectGoodsReceiptRequestImpl implements _InspectGoodsReceiptRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of InspectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'InspectGoodsReceiptRequest(inspectionNotes: $inspectionNotes, qualityMetrics: $qualityMetrics)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InspectGoodsReceiptRequestCopyWith<_InspectGoodsReceiptRequest>
+      get copyWith => __$InspectGoodsReceiptRequestCopyWithImpl<
+          _InspectGoodsReceiptRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InspectGoodsReceiptRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InspectGoodsReceiptRequestImpl &&
+            other is _InspectGoodsReceiptRequest &&
             (identical(other.inspectionNotes, inspectionNotes) ||
                 other.inspectionNotes == inspectionNotes) &&
             const DeepCollectionEquality()
                 .equals(other._qualityMetrics, _qualityMetrics));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, inspectionNotes,
       const DeepCollectionEquality().hash(_qualityMetrics));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$InspectGoodsReceiptRequestImplCopyWith<_$InspectGoodsReceiptRequestImpl>
-      get copyWith => __$$InspectGoodsReceiptRequestImplCopyWithImpl<
-          _$InspectGoodsReceiptRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InspectGoodsReceiptRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'InspectGoodsReceiptRequest(inspectionNotes: $inspectionNotes, qualityMetrics: $qualityMetrics)';
   }
 }
 
-abstract class _InspectGoodsReceiptRequest
-    implements InspectGoodsReceiptRequest {
-  const factory _InspectGoodsReceiptRequest(
-          {final String? inspectionNotes,
-          final Map<String, dynamic>? qualityMetrics}) =
-      _$InspectGoodsReceiptRequestImpl;
-
-  factory _InspectGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =
-      _$InspectGoodsReceiptRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$InspectGoodsReceiptRequestCopyWith<$Res>
+    implements $InspectGoodsReceiptRequestCopyWith<$Res> {
+  factory _$InspectGoodsReceiptRequestCopyWith(
+          _InspectGoodsReceiptRequest value,
+          $Res Function(_InspectGoodsReceiptRequest) _then) =
+      __$InspectGoodsReceiptRequestCopyWithImpl;
   @override
-  String? get inspectionNotes;
-  @override
-  Map<String, dynamic>? get qualityMetrics;
-  @override
-  @JsonKey(ignore: true)
-  _$$InspectGoodsReceiptRequestImplCopyWith<_$InspectGoodsReceiptRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String? inspectionNotes, Map<String, dynamic>? qualityMetrics});
 }
 
-AcceptGoodsReceiptRequest _$AcceptGoodsReceiptRequestFromJson(
-    Map<String, dynamic> json) {
-  return _AcceptGoodsReceiptRequest.fromJson(json);
+/// @nodoc
+class __$InspectGoodsReceiptRequestCopyWithImpl<$Res>
+    implements _$InspectGoodsReceiptRequestCopyWith<$Res> {
+  __$InspectGoodsReceiptRequestCopyWithImpl(this._self, this._then);
+
+  final _InspectGoodsReceiptRequest _self;
+  final $Res Function(_InspectGoodsReceiptRequest) _then;
+
+  /// Create a copy of InspectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? inspectionNotes = freezed,
+    Object? qualityMetrics = freezed,
+  }) {
+    return _then(_InspectGoodsReceiptRequest(
+      inspectionNotes: freezed == inspectionNotes
+          ? _self.inspectionNotes
+          : inspectionNotes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qualityMetrics: freezed == qualityMetrics
+          ? _self._qualityMetrics
+          : qualityMetrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$AcceptGoodsReceiptRequest {
-  String? get notes => throw _privateConstructorUsedError;
+  String? get notes;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AcceptGoodsReceiptRequestCopyWith<AcceptGoodsReceiptRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AcceptGoodsReceiptRequestCopyWith<$Res> {
-  factory $AcceptGoodsReceiptRequestCopyWith(AcceptGoodsReceiptRequest value,
-          $Res Function(AcceptGoodsReceiptRequest) then) =
-      _$AcceptGoodsReceiptRequestCopyWithImpl<$Res, AcceptGoodsReceiptRequest>;
-  @useResult
-  $Res call({String? notes});
-}
-
-/// @nodoc
-class _$AcceptGoodsReceiptRequestCopyWithImpl<$Res,
-        $Val extends AcceptGoodsReceiptRequest>
-    implements $AcceptGoodsReceiptRequestCopyWith<$Res> {
-  _$AcceptGoodsReceiptRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of AcceptGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $AcceptGoodsReceiptRequestCopyWith<AcceptGoodsReceiptRequest> get copyWith =>
+      _$AcceptGoodsReceiptRequestCopyWithImpl<AcceptGoodsReceiptRequest>(
+          this as AcceptGoodsReceiptRequest, _$identity);
+
+  /// Serializes this AcceptGoodsReceiptRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? notes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AcceptGoodsReceiptRequest &&
+            (identical(other.notes, notes) || other.notes == notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, notes);
+
+  @override
+  String toString() {
+    return 'AcceptGoodsReceiptRequest(notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$AcceptGoodsReceiptRequestImplCopyWith<$Res>
-    implements $AcceptGoodsReceiptRequestCopyWith<$Res> {
-  factory _$$AcceptGoodsReceiptRequestImplCopyWith(
-          _$AcceptGoodsReceiptRequestImpl value,
-          $Res Function(_$AcceptGoodsReceiptRequestImpl) then) =
-      __$$AcceptGoodsReceiptRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AcceptGoodsReceiptRequestCopyWith<$Res> {
+  factory $AcceptGoodsReceiptRequestCopyWith(AcceptGoodsReceiptRequest value,
+          $Res Function(AcceptGoodsReceiptRequest) _then) =
+      _$AcceptGoodsReceiptRequestCopyWithImpl;
   @useResult
   $Res call({String? notes});
 }
 
 /// @nodoc
-class __$$AcceptGoodsReceiptRequestImplCopyWithImpl<$Res>
-    extends _$AcceptGoodsReceiptRequestCopyWithImpl<$Res,
-        _$AcceptGoodsReceiptRequestImpl>
-    implements _$$AcceptGoodsReceiptRequestImplCopyWith<$Res> {
-  __$$AcceptGoodsReceiptRequestImplCopyWithImpl(
-      _$AcceptGoodsReceiptRequestImpl _value,
-      $Res Function(_$AcceptGoodsReceiptRequestImpl) _then)
-      : super(_value, _then);
+class _$AcceptGoodsReceiptRequestCopyWithImpl<$Res>
+    implements $AcceptGoodsReceiptRequestCopyWith<$Res> {
+  _$AcceptGoodsReceiptRequestCopyWithImpl(this._self, this._then);
 
+  final AcceptGoodsReceiptRequest _self;
+  final $Res Function(AcceptGoodsReceiptRequest) _then;
+
+  /// Create a copy of AcceptGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? notes = freezed,
   }) {
-    return _then(_$AcceptGoodsReceiptRequestImpl(
+    return _then(_self.copyWith(
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [AcceptGoodsReceiptRequest].
+extension AcceptGoodsReceiptRequestPatterns on AcceptGoodsReceiptRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AcceptGoodsReceiptRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AcceptGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AcceptGoodsReceiptRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AcceptGoodsReceiptRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AcceptGoodsReceiptRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AcceptGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? notes)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AcceptGoodsReceiptRequest() when $default != null:
+        return $default(_that.notes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? notes) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AcceptGoodsReceiptRequest():
+        return $default(_that.notes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? notes)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AcceptGoodsReceiptRequest() when $default != null:
+        return $default(_that.notes);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$AcceptGoodsReceiptRequestImpl implements _AcceptGoodsReceiptRequest {
-  const _$AcceptGoodsReceiptRequestImpl({this.notes});
-
-  factory _$AcceptGoodsReceiptRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AcceptGoodsReceiptRequestImplFromJson(json);
+class _AcceptGoodsReceiptRequest implements AcceptGoodsReceiptRequest {
+  const _AcceptGoodsReceiptRequest({this.notes});
+  factory _AcceptGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =>
+      _$AcceptGoodsReceiptRequestFromJson(json);
 
   @override
   final String? notes;
 
+  /// Create a copy of AcceptGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AcceptGoodsReceiptRequest(notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AcceptGoodsReceiptRequestCopyWith<_AcceptGoodsReceiptRequest>
+      get copyWith =>
+          __$AcceptGoodsReceiptRequestCopyWithImpl<_AcceptGoodsReceiptRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AcceptGoodsReceiptRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AcceptGoodsReceiptRequestImpl &&
+            other is _AcceptGoodsReceiptRequest &&
             (identical(other.notes, notes) || other.notes == notes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, notes);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AcceptGoodsReceiptRequestImplCopyWith<_$AcceptGoodsReceiptRequestImpl>
-      get copyWith => __$$AcceptGoodsReceiptRequestImplCopyWithImpl<
-          _$AcceptGoodsReceiptRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AcceptGoodsReceiptRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _AcceptGoodsReceiptRequest implements AcceptGoodsReceiptRequest {
-  const factory _AcceptGoodsReceiptRequest({final String? notes}) =
-      _$AcceptGoodsReceiptRequestImpl;
-
-  factory _AcceptGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =
-      _$AcceptGoodsReceiptRequestImpl.fromJson;
-
-  @override
-  String? get notes;
-  @override
-  @JsonKey(ignore: true)
-  _$$AcceptGoodsReceiptRequestImplCopyWith<_$AcceptGoodsReceiptRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RejectGoodsReceiptRequest _$RejectGoodsReceiptRequestFromJson(
-    Map<String, dynamic> json) {
-  return _RejectGoodsReceiptRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RejectGoodsReceiptRequest {
-  String get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RejectGoodsReceiptRequestCopyWith<RejectGoodsReceiptRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RejectGoodsReceiptRequestCopyWith<$Res> {
-  factory $RejectGoodsReceiptRequestCopyWith(RejectGoodsReceiptRequest value,
-          $Res Function(RejectGoodsReceiptRequest) then) =
-      _$RejectGoodsReceiptRequestCopyWithImpl<$Res, RejectGoodsReceiptRequest>;
-  @useResult
-  $Res call({String reason, String? notes});
-}
-
-/// @nodoc
-class _$RejectGoodsReceiptRequestCopyWithImpl<$Res,
-        $Val extends RejectGoodsReceiptRequest>
-    implements $RejectGoodsReceiptRequestCopyWith<$Res> {
-  _$RejectGoodsReceiptRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? reason = null,
-    Object? notes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'AcceptGoodsReceiptRequest(notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$RejectGoodsReceiptRequestImplCopyWith<$Res>
-    implements $RejectGoodsReceiptRequestCopyWith<$Res> {
-  factory _$$RejectGoodsReceiptRequestImplCopyWith(
-          _$RejectGoodsReceiptRequestImpl value,
-          $Res Function(_$RejectGoodsReceiptRequestImpl) then) =
-      __$$RejectGoodsReceiptRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$AcceptGoodsReceiptRequestCopyWith<$Res>
+    implements $AcceptGoodsReceiptRequestCopyWith<$Res> {
+  factory _$AcceptGoodsReceiptRequestCopyWith(_AcceptGoodsReceiptRequest value,
+          $Res Function(_AcceptGoodsReceiptRequest) _then) =
+      __$AcceptGoodsReceiptRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String reason, String? notes});
+  $Res call({String? notes});
 }
 
 /// @nodoc
-class __$$RejectGoodsReceiptRequestImplCopyWithImpl<$Res>
-    extends _$RejectGoodsReceiptRequestCopyWithImpl<$Res,
-        _$RejectGoodsReceiptRequestImpl>
-    implements _$$RejectGoodsReceiptRequestImplCopyWith<$Res> {
-  __$$RejectGoodsReceiptRequestImplCopyWithImpl(
-      _$RejectGoodsReceiptRequestImpl _value,
-      $Res Function(_$RejectGoodsReceiptRequestImpl) _then)
-      : super(_value, _then);
+class __$AcceptGoodsReceiptRequestCopyWithImpl<$Res>
+    implements _$AcceptGoodsReceiptRequestCopyWith<$Res> {
+  __$AcceptGoodsReceiptRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _AcceptGoodsReceiptRequest _self;
+  final $Res Function(_AcceptGoodsReceiptRequest) _then;
+
+  /// Create a copy of AcceptGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? reason = null,
     Object? notes = freezed,
   }) {
-    return _then(_$RejectGoodsReceiptRequestImpl(
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_AcceptGoodsReceiptRequest(
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3665,65 +5607,317 @@ class __$$RejectGoodsReceiptRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$RejectGoodsReceiptRequestImpl implements _RejectGoodsReceiptRequest {
-  const _$RejectGoodsReceiptRequestImpl({required this.reason, this.notes});
+mixin _$RejectGoodsReceiptRequest {
+  String get reason;
+  String? get notes;
 
-  factory _$RejectGoodsReceiptRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RejectGoodsReceiptRequestImplFromJson(json);
+  /// Create a copy of RejectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RejectGoodsReceiptRequestCopyWith<RejectGoodsReceiptRequest> get copyWith =>
+      _$RejectGoodsReceiptRequestCopyWithImpl<RejectGoodsReceiptRequest>(
+          this as RejectGoodsReceiptRequest, _$identity);
+
+  /// Serializes this RejectGoodsReceiptRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RejectGoodsReceiptRequest &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reason, notes);
+
+  @override
+  String toString() {
+    return 'RejectGoodsReceiptRequest(reason: $reason, notes: $notes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RejectGoodsReceiptRequestCopyWith<$Res> {
+  factory $RejectGoodsReceiptRequestCopyWith(RejectGoodsReceiptRequest value,
+          $Res Function(RejectGoodsReceiptRequest) _then) =
+      _$RejectGoodsReceiptRequestCopyWithImpl;
+  @useResult
+  $Res call({String reason, String? notes});
+}
+
+/// @nodoc
+class _$RejectGoodsReceiptRequestCopyWithImpl<$Res>
+    implements $RejectGoodsReceiptRequestCopyWith<$Res> {
+  _$RejectGoodsReceiptRequestCopyWithImpl(this._self, this._then);
+
+  final RejectGoodsReceiptRequest _self;
+  final $Res Function(RejectGoodsReceiptRequest) _then;
+
+  /// Create a copy of RejectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reason = null,
+    Object? notes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [RejectGoodsReceiptRequest].
+extension RejectGoodsReceiptRequestPatterns on RejectGoodsReceiptRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_RejectGoodsReceiptRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RejectGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_RejectGoodsReceiptRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectGoodsReceiptRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_RejectGoodsReceiptRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectGoodsReceiptRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String reason, String? notes)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RejectGoodsReceiptRequest() when $default != null:
+        return $default(_that.reason, _that.notes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String reason, String? notes) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectGoodsReceiptRequest():
+        return $default(_that.reason, _that.notes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String reason, String? notes)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RejectGoodsReceiptRequest() when $default != null:
+        return $default(_that.reason, _that.notes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _RejectGoodsReceiptRequest implements RejectGoodsReceiptRequest {
+  const _RejectGoodsReceiptRequest({required this.reason, this.notes});
+  factory _RejectGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =>
+      _$RejectGoodsReceiptRequestFromJson(json);
 
   @override
   final String reason;
   @override
   final String? notes;
 
+  /// Create a copy of RejectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RejectGoodsReceiptRequest(reason: $reason, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RejectGoodsReceiptRequestCopyWith<_RejectGoodsReceiptRequest>
+      get copyWith =>
+          __$RejectGoodsReceiptRequestCopyWithImpl<_RejectGoodsReceiptRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RejectGoodsReceiptRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RejectGoodsReceiptRequestImpl &&
+            other is _RejectGoodsReceiptRequest &&
             (identical(other.reason, reason) || other.reason == reason) &&
             (identical(other.notes, notes) || other.notes == notes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reason, notes);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RejectGoodsReceiptRequestImplCopyWith<_$RejectGoodsReceiptRequestImpl>
-      get copyWith => __$$RejectGoodsReceiptRequestImplCopyWithImpl<
-          _$RejectGoodsReceiptRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RejectGoodsReceiptRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RejectGoodsReceiptRequest(reason: $reason, notes: $notes)';
   }
 }
 
-abstract class _RejectGoodsReceiptRequest implements RejectGoodsReceiptRequest {
-  const factory _RejectGoodsReceiptRequest(
-      {required final String reason,
-      final String? notes}) = _$RejectGoodsReceiptRequestImpl;
-
-  factory _RejectGoodsReceiptRequest.fromJson(Map<String, dynamic> json) =
-      _$RejectGoodsReceiptRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RejectGoodsReceiptRequestCopyWith<$Res>
+    implements $RejectGoodsReceiptRequestCopyWith<$Res> {
+  factory _$RejectGoodsReceiptRequestCopyWith(_RejectGoodsReceiptRequest value,
+          $Res Function(_RejectGoodsReceiptRequest) _then) =
+      __$RejectGoodsReceiptRequestCopyWithImpl;
   @override
-  String get reason;
-  @override
-  String? get notes;
-  @override
-  @JsonKey(ignore: true)
-  _$$RejectGoodsReceiptRequestImplCopyWith<_$RejectGoodsReceiptRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String reason, String? notes});
 }
+
+/// @nodoc
+class __$RejectGoodsReceiptRequestCopyWithImpl<$Res>
+    implements _$RejectGoodsReceiptRequestCopyWith<$Res> {
+  __$RejectGoodsReceiptRequestCopyWithImpl(this._self, this._then);
+
+  final _RejectGoodsReceiptRequest _self;
+  final $Res Function(_RejectGoodsReceiptRequest) _then;
+
+  /// Create a copy of RejectGoodsReceiptRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reason = null,
+    Object? notes = freezed,
+  }) {
+    return _then(_RejectGoodsReceiptRequest(
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

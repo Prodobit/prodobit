@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,176 +9,103 @@ part of 'tenant_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Tenant _$TenantFromJson(Map<String, dynamic> json) {
-  return _Tenant.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Tenant {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'active', 'suspended', 'inactive'
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get domain => throw _privateConstructorUsedError;
-  String? get logoUrl => throw _privateConstructorUsedError;
-  String? get contactEmail => throw _privateConstructorUsedError;
-  String? get contactPhone => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  String? get timezone => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
-  String? get language => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get settings => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get slug;
+  String get status; // 'active', 'suspended', 'inactive'
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  String? get description;
+  String? get domain;
+  String? get logoUrl;
+  String? get contactEmail;
+  String? get contactPhone;
+  String? get address;
+  String? get timezone;
+  String? get currency;
+  String? get language;
+  Map<String, dynamic>? get settings;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantCopyWith<Tenant> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantCopyWith<$Res> {
-  factory $TenantCopyWith(Tenant value, $Res Function(Tenant) then) =
-      _$TenantCopyWithImpl<$Res, Tenant>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String slug,
-      String status,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String? description,
-      String? domain,
-      String? logoUrl,
-      String? contactEmail,
-      String? contactPhone,
-      String? address,
-      String? timezone,
-      String? currency,
-      String? language,
-      Map<String, dynamic>? settings,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$TenantCopyWithImpl<$Res, $Val extends Tenant>
-    implements $TenantCopyWith<$Res> {
-  _$TenantCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Tenant
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $TenantCopyWith<Tenant> get copyWith =>
+      _$TenantCopyWithImpl<Tenant>(this as Tenant, _$identity);
+
+  /// Serializes this Tenant to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? slug = null,
-    Object? status = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? description = freezed,
-    Object? domain = freezed,
-    Object? logoUrl = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? address = freezed,
-    Object? timezone = freezed,
-    Object? currency = freezed,
-    Object? language = freezed,
-    Object? settings = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _value.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-      logoUrl: freezed == logoUrl
-          ? _value.logoUrl
-          : logoUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settings: freezed == settings
-          ? _value.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Tenant &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.domain, domain) || other.domain == domain) &&
+            (identical(other.logoUrl, logoUrl) || other.logoUrl == logoUrl) &&
+            (identical(other.contactEmail, contactEmail) ||
+                other.contactEmail == contactEmail) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            const DeepCollectionEquality().equals(other.settings, settings) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      slug,
+      status,
+      createdAt,
+      updatedAt,
+      description,
+      domain,
+      logoUrl,
+      contactEmail,
+      contactPhone,
+      address,
+      timezone,
+      currency,
+      language,
+      const DeepCollectionEquality().hash(settings),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'Tenant(id: $id, name: $name, slug: $slug, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, domain: $domain, logoUrl: $logoUrl, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, settings: $settings, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$TenantImplCopyWith<$Res> implements $TenantCopyWith<$Res> {
-  factory _$$TenantImplCopyWith(
-          _$TenantImpl value, $Res Function(_$TenantImpl) then) =
-      __$$TenantImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TenantCopyWith<$Res> {
+  factory $TenantCopyWith(Tenant value, $Res Function(Tenant) _then) =
+      _$TenantCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -201,13 +128,14 @@ abstract class _$$TenantImplCopyWith<$Res> implements $TenantCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TenantImplCopyWithImpl<$Res>
-    extends _$TenantCopyWithImpl<$Res, _$TenantImpl>
-    implements _$$TenantImplCopyWith<$Res> {
-  __$$TenantImplCopyWithImpl(
-      _$TenantImpl _value, $Res Function(_$TenantImpl) _then)
-      : super(_value, _then);
+class _$TenantCopyWithImpl<$Res> implements $TenantCopyWith<$Res> {
+  _$TenantCopyWithImpl(this._self, this._then);
 
+  final Tenant _self;
+  final $Res Function(Tenant) _then;
+
+  /// Create a copy of Tenant
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -229,83 +157,341 @@ class __$$TenantImplCopyWithImpl<$Res>
     Object? settings = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$TenantImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       slug: null == slug
-          ? _value.slug
+          ? _self.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       domain: freezed == domain
-          ? _value.domain
+          ? _self.domain
           : domain // ignore: cast_nullable_to_non_nullable
               as String?,
       logoUrl: freezed == logoUrl
-          ? _value.logoUrl
+          ? _self.logoUrl
           : logoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       contactEmail: freezed == contactEmail
-          ? _value.contactEmail
+          ? _self.contactEmail
           : contactEmail // ignore: cast_nullable_to_non_nullable
               as String?,
       contactPhone: freezed == contactPhone
-          ? _value.contactPhone
+          ? _self.contactPhone
           : contactPhone // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
       timezone: freezed == timezone
-          ? _value.timezone
+          ? _self.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       currency: freezed == currency
-          ? _value.currency
+          ? _self.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String?,
       language: freezed == language
-          ? _value.language
+          ? _self.language
           : language // ignore: cast_nullable_to_non_nullable
               as String?,
       settings: freezed == settings
-          ? _value._settings
+          ? _self.settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Tenant].
+extension TenantPatterns on Tenant {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Tenant value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Tenant() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Tenant value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Tenant():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Tenant value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Tenant() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String slug,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? description,
+            String? domain,
+            String? logoUrl,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Tenant() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.slug,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.description,
+            _that.domain,
+            _that.logoUrl,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.settings,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String slug,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? description,
+            String? domain,
+            String? logoUrl,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Tenant():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.slug,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.description,
+            _that.domain,
+            _that.logoUrl,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.settings,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String slug,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? description,
+            String? domain,
+            String? logoUrl,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Tenant() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.slug,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.description,
+            _that.domain,
+            _that.logoUrl,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.settings,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$TenantImpl implements _Tenant {
-  const _$TenantImpl(
+class _Tenant implements Tenant {
+  const _Tenant(
       {required this.id,
       required this.name,
       required this.slug,
@@ -325,9 +511,7 @@ class _$TenantImpl implements _Tenant {
       final Map<String, dynamic>? metadata})
       : _settings = settings,
         _metadata = metadata;
-
-  factory _$TenantImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantImplFromJson(json);
+  factory _Tenant.fromJson(Map<String, dynamic> json) => _$TenantFromJson(json);
 
   @override
   final String id;
@@ -380,16 +564,26 @@ class _$TenantImpl implements _Tenant {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of Tenant
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Tenant(id: $id, name: $name, slug: $slug, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, domain: $domain, logoUrl: $logoUrl, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, settings: $settings, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantCopyWith<_Tenant> get copyWith =>
+      __$TenantCopyWithImpl<_Tenant>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantImpl &&
+            other is _Tenant &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
@@ -417,7 +611,7 @@ class _$TenantImpl implements _Tenant {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -439,342 +633,135 @@ class _$TenantImpl implements _Tenant {
       const DeepCollectionEquality().hash(_settings),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantImplCopyWith<_$TenantImpl> get copyWith =>
-      __$$TenantImplCopyWithImpl<_$TenantImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Tenant(id: $id, name: $name, slug: $slug, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, domain: $domain, logoUrl: $logoUrl, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, settings: $settings, metadata: $metadata)';
   }
 }
 
-abstract class _Tenant implements Tenant {
-  const factory _Tenant(
-      {required final String id,
-      required final String name,
-      required final String slug,
-      required final String status,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final String? description,
-      final String? domain,
-      final String? logoUrl,
-      final String? contactEmail,
-      final String? contactPhone,
-      final String? address,
-      final String? timezone,
-      final String? currency,
-      final String? language,
-      final Map<String, dynamic>? settings,
-      final Map<String, dynamic>? metadata}) = _$TenantImpl;
-
-  factory _Tenant.fromJson(Map<String, dynamic> json) = _$TenantImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get slug;
-  @override
-  String get status;
-  @override // 'active', 'suspended', 'inactive'
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  String? get description;
-  @override
-  String? get domain;
-  @override
-  String? get logoUrl;
-  @override
-  String? get contactEmail;
-  @override
-  String? get contactPhone;
-  @override
-  String? get address;
-  @override
-  String? get timezone;
-  @override
-  String? get currency;
-  @override
-  String? get language;
-  @override
-  Map<String, dynamic>? get settings;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantImplCopyWith<_$TenantImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TenantMember _$TenantMemberFromJson(Map<String, dynamic> json) {
-  return _TenantMember.fromJson(json);
-}
-
 /// @nodoc
-mixin _$TenantMember {
-  String get id => throw _privateConstructorUsedError;
-  String get tenantId => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-  String get role =>
-      throw _privateConstructorUsedError; // 'owner', 'admin', 'manager', 'user', 'viewer'
-  String get status =>
-      throw _privateConstructorUsedError; // 'active', 'invited', 'suspended'
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  DateTime? get invitedAt => throw _privateConstructorUsedError;
-  DateTime? get joinedAt => throw _privateConstructorUsedError;
-  DateTime? get suspendedAt => throw _privateConstructorUsedError;
-  String? get invitedBy => throw _privateConstructorUsedError;
-  String? get invitationToken => throw _privateConstructorUsedError;
-  DateTime? get invitationExpiresAt => throw _privateConstructorUsedError;
-  List<String>? get permissions => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantMemberCopyWith<TenantMember> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantMemberCopyWith<$Res> {
-  factory $TenantMemberCopyWith(
-          TenantMember value, $Res Function(TenantMember) then) =
-      _$TenantMemberCopyWithImpl<$Res, TenantMember>;
+abstract mixin class _$TenantCopyWith<$Res> implements $TenantCopyWith<$Res> {
+  factory _$TenantCopyWith(_Tenant value, $Res Function(_Tenant) _then) =
+      __$TenantCopyWithImpl;
+  @override
   @useResult
   $Res call(
       {String id,
-      String tenantId,
-      String userId,
-      String role,
+      String name,
+      String slug,
       String status,
       DateTime createdAt,
       DateTime updatedAt,
-      DateTime? invitedAt,
-      DateTime? joinedAt,
-      DateTime? suspendedAt,
-      String? invitedBy,
-      String? invitationToken,
-      DateTime? invitationExpiresAt,
-      List<String>? permissions,
+      String? description,
+      String? domain,
+      String? logoUrl,
+      String? contactEmail,
+      String? contactPhone,
+      String? address,
+      String? timezone,
+      String? currency,
+      String? language,
+      Map<String, dynamic>? settings,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$TenantMemberCopyWithImpl<$Res, $Val extends TenantMember>
-    implements $TenantMemberCopyWith<$Res> {
-  _$TenantMemberCopyWithImpl(this._value, this._then);
+class __$TenantCopyWithImpl<$Res> implements _$TenantCopyWith<$Res> {
+  __$TenantCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _Tenant _self;
+  final $Res Function(_Tenant) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of Tenant
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? tenantId = null,
-    Object? userId = null,
-    Object? role = null,
+    Object? name = null,
+    Object? slug = null,
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
-    Object? invitedAt = freezed,
-    Object? joinedAt = freezed,
-    Object? suspendedAt = freezed,
-    Object? invitedBy = freezed,
-    Object? invitationToken = freezed,
-    Object? invitationExpiresAt = freezed,
-    Object? permissions = freezed,
+    Object? description = freezed,
+    Object? domain = freezed,
+    Object? logoUrl = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? address = freezed,
+    Object? timezone = freezed,
+    Object? currency = freezed,
+    Object? language = freezed,
+    Object? settings = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_Tenant(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      tenantId: null == tenantId
-          ? _value.tenantId
-          : tenantId // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
+      slug: null == slug
+          ? _self.slug
+          : slug // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      invitedAt: freezed == invitedAt
-          ? _value.invitedAt
-          : invitedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      joinedAt: freezed == joinedAt
-          ? _value.joinedAt
-          : joinedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      suspendedAt: freezed == suspendedAt
-          ? _value.suspendedAt
-          : suspendedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      invitedBy: freezed == invitedBy
-          ? _value.invitedBy
-          : invitedBy // ignore: cast_nullable_to_non_nullable
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      invitationToken: freezed == invitationToken
-          ? _value.invitationToken
-          : invitationToken // ignore: cast_nullable_to_non_nullable
+      domain: freezed == domain
+          ? _self.domain
+          : domain // ignore: cast_nullable_to_non_nullable
               as String?,
-      invitationExpiresAt: freezed == invitationExpiresAt
-          ? _value.invitationExpiresAt
-          : invitationExpiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      permissions: freezed == permissions
-          ? _value.permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      logoUrl: freezed == logoUrl
+          ? _self.logoUrl
+          : logoUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: freezed == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String?,
+      settings: freezed == settings
+          ? _self._settings
+          : settings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TenantMemberImplCopyWith<$Res>
-    implements $TenantMemberCopyWith<$Res> {
-  factory _$$TenantMemberImplCopyWith(
-          _$TenantMemberImpl value, $Res Function(_$TenantMemberImpl) then) =
-      __$$TenantMemberImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String tenantId,
-      String userId,
-      String role,
-      String status,
-      DateTime createdAt,
-      DateTime updatedAt,
-      DateTime? invitedAt,
-      DateTime? joinedAt,
-      DateTime? suspendedAt,
-      String? invitedBy,
-      String? invitationToken,
-      DateTime? invitationExpiresAt,
-      List<String>? permissions,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$TenantMemberImplCopyWithImpl<$Res>
-    extends _$TenantMemberCopyWithImpl<$Res, _$TenantMemberImpl>
-    implements _$$TenantMemberImplCopyWith<$Res> {
-  __$$TenantMemberImplCopyWithImpl(
-      _$TenantMemberImpl _value, $Res Function(_$TenantMemberImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? tenantId = null,
-    Object? userId = null,
-    Object? role = null,
-    Object? status = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? invitedAt = freezed,
-    Object? joinedAt = freezed,
-    Object? suspendedAt = freezed,
-    Object? invitedBy = freezed,
-    Object? invitationToken = freezed,
-    Object? invitationExpiresAt = freezed,
-    Object? permissions = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$TenantMemberImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      tenantId: null == tenantId
-          ? _value.tenantId
-          : tenantId // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      invitedAt: freezed == invitedAt
-          ? _value.invitedAt
-          : invitedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      joinedAt: freezed == joinedAt
-          ? _value.joinedAt
-          : joinedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      suspendedAt: freezed == suspendedAt
-          ? _value.suspendedAt
-          : suspendedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      invitedBy: freezed == invitedBy
-          ? _value.invitedBy
-          : invitedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invitationToken: freezed == invitationToken
-          ? _value.invitationToken
-          : invitationToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invitationExpiresAt: freezed == invitationExpiresAt
-          ? _value.invitationExpiresAt
-          : invitationExpiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      permissions: freezed == permissions
-          ? _value._permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -782,9 +769,459 @@ class __$$TenantMemberImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$TenantMember {
+  String get id;
+  String get tenantId;
+  String get userId;
+  String get role; // 'owner', 'admin', 'manager', 'user', 'viewer'
+  String get status; // 'active', 'invited', 'suspended'
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  DateTime? get invitedAt;
+  DateTime? get joinedAt;
+  DateTime? get suspendedAt;
+  String? get invitedBy;
+  String? get invitationToken;
+  DateTime? get invitationExpiresAt;
+  List<String>? get permissions;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of TenantMember
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TenantMemberCopyWith<TenantMember> get copyWith =>
+      _$TenantMemberCopyWithImpl<TenantMember>(
+          this as TenantMember, _$identity);
+
+  /// Serializes this TenantMember to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TenantMember &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.tenantId, tenantId) ||
+                other.tenantId == tenantId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.invitedAt, invitedAt) ||
+                other.invitedAt == invitedAt) &&
+            (identical(other.joinedAt, joinedAt) ||
+                other.joinedAt == joinedAt) &&
+            (identical(other.suspendedAt, suspendedAt) ||
+                other.suspendedAt == suspendedAt) &&
+            (identical(other.invitedBy, invitedBy) ||
+                other.invitedBy == invitedBy) &&
+            (identical(other.invitationToken, invitationToken) ||
+                other.invitationToken == invitationToken) &&
+            (identical(other.invitationExpiresAt, invitationExpiresAt) ||
+                other.invitationExpiresAt == invitationExpiresAt) &&
+            const DeepCollectionEquality()
+                .equals(other.permissions, permissions) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      tenantId,
+      userId,
+      role,
+      status,
+      createdAt,
+      updatedAt,
+      invitedAt,
+      joinedAt,
+      suspendedAt,
+      invitedBy,
+      invitationToken,
+      invitationExpiresAt,
+      const DeepCollectionEquality().hash(permissions),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'TenantMember(id: $id, tenantId: $tenantId, userId: $userId, role: $role, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, invitedAt: $invitedAt, joinedAt: $joinedAt, suspendedAt: $suspendedAt, invitedBy: $invitedBy, invitationToken: $invitationToken, invitationExpiresAt: $invitationExpiresAt, permissions: $permissions, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TenantMemberCopyWith<$Res> {
+  factory $TenantMemberCopyWith(
+          TenantMember value, $Res Function(TenantMember) _then) =
+      _$TenantMemberCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String tenantId,
+      String userId,
+      String role,
+      String status,
+      DateTime createdAt,
+      DateTime updatedAt,
+      DateTime? invitedAt,
+      DateTime? joinedAt,
+      DateTime? suspendedAt,
+      String? invitedBy,
+      String? invitationToken,
+      DateTime? invitationExpiresAt,
+      List<String>? permissions,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$TenantMemberCopyWithImpl<$Res> implements $TenantMemberCopyWith<$Res> {
+  _$TenantMemberCopyWithImpl(this._self, this._then);
+
+  final TenantMember _self;
+  final $Res Function(TenantMember) _then;
+
+  /// Create a copy of TenantMember
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? tenantId = null,
+    Object? userId = null,
+    Object? role = null,
+    Object? status = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? invitedAt = freezed,
+    Object? joinedAt = freezed,
+    Object? suspendedAt = freezed,
+    Object? invitedBy = freezed,
+    Object? invitationToken = freezed,
+    Object? invitationExpiresAt = freezed,
+    Object? permissions = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      tenantId: null == tenantId
+          ? _self.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      invitedAt: freezed == invitedAt
+          ? _self.invitedAt
+          : invitedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      joinedAt: freezed == joinedAt
+          ? _self.joinedAt
+          : joinedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      suspendedAt: freezed == suspendedAt
+          ? _self.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      invitedBy: freezed == invitedBy
+          ? _self.invitedBy
+          : invitedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitationToken: freezed == invitationToken
+          ? _self.invitationToken
+          : invitationToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitationExpiresAt: freezed == invitationExpiresAt
+          ? _self.invitationExpiresAt
+          : invitationExpiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      permissions: freezed == permissions
+          ? _self.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenantMember].
+extension TenantMemberPatterns on TenantMember {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenantMember value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMember() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenantMember value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMember():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenantMember value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMember() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String userId,
+            String role,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? invitedAt,
+            DateTime? joinedAt,
+            DateTime? suspendedAt,
+            String? invitedBy,
+            String? invitationToken,
+            DateTime? invitationExpiresAt,
+            List<String>? permissions,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMember() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.userId,
+            _that.role,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.invitedAt,
+            _that.joinedAt,
+            _that.suspendedAt,
+            _that.invitedBy,
+            _that.invitationToken,
+            _that.invitationExpiresAt,
+            _that.permissions,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String userId,
+            String role,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? invitedAt,
+            DateTime? joinedAt,
+            DateTime? suspendedAt,
+            String? invitedBy,
+            String? invitationToken,
+            DateTime? invitationExpiresAt,
+            List<String>? permissions,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMember():
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.userId,
+            _that.role,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.invitedAt,
+            _that.joinedAt,
+            _that.suspendedAt,
+            _that.invitedBy,
+            _that.invitationToken,
+            _that.invitationExpiresAt,
+            _that.permissions,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String tenantId,
+            String userId,
+            String role,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? invitedAt,
+            DateTime? joinedAt,
+            DateTime? suspendedAt,
+            String? invitedBy,
+            String? invitationToken,
+            DateTime? invitationExpiresAt,
+            List<String>? permissions,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMember() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.userId,
+            _that.role,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.invitedAt,
+            _that.joinedAt,
+            _that.suspendedAt,
+            _that.invitedBy,
+            _that.invitationToken,
+            _that.invitationExpiresAt,
+            _that.permissions,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$TenantMemberImpl implements _TenantMember {
-  const _$TenantMemberImpl(
+class _TenantMember implements TenantMember {
+  const _TenantMember(
       {required this.id,
       required this.tenantId,
       required this.userId,
@@ -802,9 +1239,8 @@ class _$TenantMemberImpl implements _TenantMember {
       final Map<String, dynamic>? metadata})
       : _permissions = permissions,
         _metadata = metadata;
-
-  factory _$TenantMemberImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantMemberImplFromJson(json);
+  factory _TenantMember.fromJson(Map<String, dynamic> json) =>
+      _$TenantMemberFromJson(json);
 
   @override
   final String id;
@@ -854,16 +1290,26 @@ class _$TenantMemberImpl implements _TenantMember {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of TenantMember
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TenantMember(id: $id, tenantId: $tenantId, userId: $userId, role: $role, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, invitedAt: $invitedAt, joinedAt: $joinedAt, suspendedAt: $suspendedAt, invitedBy: $invitedBy, invitationToken: $invitationToken, invitationExpiresAt: $invitationExpiresAt, permissions: $permissions, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantMemberCopyWith<_TenantMember> get copyWith =>
+      __$TenantMemberCopyWithImpl<_TenantMember>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantMemberToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantMemberImpl &&
+            other is _TenantMember &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.tenantId, tenantId) ||
                 other.tenantId == tenantId) &&
@@ -891,7 +1337,7 @@ class _$TenantMemberImpl implements _TenantMember {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -911,270 +1357,126 @@ class _$TenantMemberImpl implements _TenantMember {
       const DeepCollectionEquality().hash(_permissions),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantMemberImplCopyWith<_$TenantMemberImpl> get copyWith =>
-      __$$TenantMemberImplCopyWithImpl<_$TenantMemberImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantMemberImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TenantMember implements TenantMember {
-  const factory _TenantMember(
-      {required final String id,
-      required final String tenantId,
-      required final String userId,
-      required final String role,
-      required final String status,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final DateTime? invitedAt,
-      final DateTime? joinedAt,
-      final DateTime? suspendedAt,
-      final String? invitedBy,
-      final String? invitationToken,
-      final DateTime? invitationExpiresAt,
-      final List<String>? permissions,
-      final Map<String, dynamic>? metadata}) = _$TenantMemberImpl;
-
-  factory _TenantMember.fromJson(Map<String, dynamic> json) =
-      _$TenantMemberImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get tenantId;
-  @override
-  String get userId;
-  @override
-  String get role;
-  @override // 'owner', 'admin', 'manager', 'user', 'viewer'
-  String get status;
-  @override // 'active', 'invited', 'suspended'
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  DateTime? get invitedAt;
-  @override
-  DateTime? get joinedAt;
-  @override
-  DateTime? get suspendedAt;
-  @override
-  String? get invitedBy;
-  @override
-  String? get invitationToken;
-  @override
-  DateTime? get invitationExpiresAt;
-  @override
-  List<String>? get permissions;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantMemberImplCopyWith<_$TenantMemberImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TenantRole _$TenantRoleFromJson(Map<String, dynamic> json) {
-  return _TenantRole.fromJson(json);
-}
-
-/// @nodoc
-mixin _$TenantRole {
-  String get id => throw _privateConstructorUsedError;
-  String get tenantId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get displayName => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  List<String> get permissions => throw _privateConstructorUsedError;
-  bool get isDefault => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantRoleCopyWith<TenantRole> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantRoleCopyWith<$Res> {
-  factory $TenantRoleCopyWith(
-          TenantRole value, $Res Function(TenantRole) then) =
-      _$TenantRoleCopyWithImpl<$Res, TenantRole>;
-  @useResult
-  $Res call(
-      {String id,
-      String tenantId,
-      String name,
-      String displayName,
-      String description,
-      List<String> permissions,
-      bool isDefault,
-      DateTime createdAt,
-      DateTime updatedAt,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$TenantRoleCopyWithImpl<$Res, $Val extends TenantRole>
-    implements $TenantRoleCopyWith<$Res> {
-  _$TenantRoleCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? tenantId = null,
-    Object? name = null,
-    Object? displayName = null,
-    Object? description = null,
-    Object? permissions = null,
-    Object? isDefault = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      tenantId: null == tenantId
-          ? _value.tenantId
-          : tenantId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      displayName: null == displayName
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      permissions: null == permissions
-          ? _value.permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'TenantMember(id: $id, tenantId: $tenantId, userId: $userId, role: $role, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, invitedAt: $invitedAt, joinedAt: $joinedAt, suspendedAt: $suspendedAt, invitedBy: $invitedBy, invitationToken: $invitationToken, invitationExpiresAt: $invitationExpiresAt, permissions: $permissions, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$TenantRoleImplCopyWith<$Res>
-    implements $TenantRoleCopyWith<$Res> {
-  factory _$$TenantRoleImplCopyWith(
-          _$TenantRoleImpl value, $Res Function(_$TenantRoleImpl) then) =
-      __$$TenantRoleImplCopyWithImpl<$Res>;
+abstract mixin class _$TenantMemberCopyWith<$Res>
+    implements $TenantMemberCopyWith<$Res> {
+  factory _$TenantMemberCopyWith(
+          _TenantMember value, $Res Function(_TenantMember) _then) =
+      __$TenantMemberCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       String tenantId,
-      String name,
-      String displayName,
-      String description,
-      List<String> permissions,
-      bool isDefault,
+      String userId,
+      String role,
+      String status,
       DateTime createdAt,
       DateTime updatedAt,
+      DateTime? invitedAt,
+      DateTime? joinedAt,
+      DateTime? suspendedAt,
+      String? invitedBy,
+      String? invitationToken,
+      DateTime? invitationExpiresAt,
+      List<String>? permissions,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$TenantRoleImplCopyWithImpl<$Res>
-    extends _$TenantRoleCopyWithImpl<$Res, _$TenantRoleImpl>
-    implements _$$TenantRoleImplCopyWith<$Res> {
-  __$$TenantRoleImplCopyWithImpl(
-      _$TenantRoleImpl _value, $Res Function(_$TenantRoleImpl) _then)
-      : super(_value, _then);
+class __$TenantMemberCopyWithImpl<$Res>
+    implements _$TenantMemberCopyWith<$Res> {
+  __$TenantMemberCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _TenantMember _self;
+  final $Res Function(_TenantMember) _then;
+
+  /// Create a copy of TenantMember
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? tenantId = null,
-    Object? name = null,
-    Object? displayName = null,
-    Object? description = null,
-    Object? permissions = null,
-    Object? isDefault = null,
+    Object? userId = null,
+    Object? role = null,
+    Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? invitedAt = freezed,
+    Object? joinedAt = freezed,
+    Object? suspendedAt = freezed,
+    Object? invitedBy = freezed,
+    Object? invitationToken = freezed,
+    Object? invitationExpiresAt = freezed,
+    Object? permissions = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$TenantRoleImpl(
+    return _then(_TenantMember(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       tenantId: null == tenantId
-          ? _value.tenantId
+          ? _self.tenantId
           : tenantId // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      displayName: null == displayName
-          ? _value.displayName
-          : displayName // ignore: cast_nullable_to_non_nullable
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String,
-      permissions: null == permissions
-          ? _value._permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      isDefault: null == isDefault
-          ? _value.isDefault
-          : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      invitedAt: freezed == invitedAt
+          ? _self.invitedAt
+          : invitedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      joinedAt: freezed == joinedAt
+          ? _self.joinedAt
+          : joinedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      suspendedAt: freezed == suspendedAt
+          ? _self.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      invitedBy: freezed == invitedBy
+          ? _self.invitedBy
+          : invitedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitationToken: freezed == invitationToken
+          ? _self.invitationToken
+          : invitationToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitationExpiresAt: freezed == invitationExpiresAt
+          ? _self.invitationExpiresAt
+          : invitationExpiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      permissions: freezed == permissions
+          ? _self._permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1182,9 +1484,380 @@ class __$$TenantRoleImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$TenantRole {
+  String get id;
+  String get tenantId;
+  String get name;
+  String get displayName;
+  String get description;
+  List<String> get permissions;
+  bool get isDefault;
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of TenantRole
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TenantRoleCopyWith<TenantRole> get copyWith =>
+      _$TenantRoleCopyWithImpl<TenantRole>(this as TenantRole, _$identity);
+
+  /// Serializes this TenantRole to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TenantRole &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.tenantId, tenantId) ||
+                other.tenantId == tenantId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality()
+                .equals(other.permissions, permissions) &&
+            (identical(other.isDefault, isDefault) ||
+                other.isDefault == isDefault) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      tenantId,
+      name,
+      displayName,
+      description,
+      const DeepCollectionEquality().hash(permissions),
+      isDefault,
+      createdAt,
+      updatedAt,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'TenantRole(id: $id, tenantId: $tenantId, name: $name, displayName: $displayName, description: $description, permissions: $permissions, isDefault: $isDefault, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TenantRoleCopyWith<$Res> {
+  factory $TenantRoleCopyWith(
+          TenantRole value, $Res Function(TenantRole) _then) =
+      _$TenantRoleCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String tenantId,
+      String name,
+      String displayName,
+      String description,
+      List<String> permissions,
+      bool isDefault,
+      DateTime createdAt,
+      DateTime updatedAt,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$TenantRoleCopyWithImpl<$Res> implements $TenantRoleCopyWith<$Res> {
+  _$TenantRoleCopyWithImpl(this._self, this._then);
+
+  final TenantRole _self;
+  final $Res Function(TenantRole) _then;
+
+  /// Create a copy of TenantRole
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? tenantId = null,
+    Object? name = null,
+    Object? displayName = null,
+    Object? description = null,
+    Object? permissions = null,
+    Object? isDefault = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      tenantId: null == tenantId
+          ? _self.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      displayName: null == displayName
+          ? _self.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      permissions: null == permissions
+          ? _self.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      isDefault: null == isDefault
+          ? _self.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenantRole].
+extension TenantRolePatterns on TenantRole {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenantRole value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantRole() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenantRole value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantRole():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenantRole value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantRole() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String name,
+            String displayName,
+            String description,
+            List<String> permissions,
+            bool isDefault,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantRole() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.name,
+            _that.displayName,
+            _that.description,
+            _that.permissions,
+            _that.isDefault,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String name,
+            String displayName,
+            String description,
+            List<String> permissions,
+            bool isDefault,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantRole():
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.name,
+            _that.displayName,
+            _that.description,
+            _that.permissions,
+            _that.isDefault,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String tenantId,
+            String name,
+            String displayName,
+            String description,
+            List<String> permissions,
+            bool isDefault,
+            DateTime createdAt,
+            DateTime updatedAt,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantRole() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.name,
+            _that.displayName,
+            _that.description,
+            _that.permissions,
+            _that.isDefault,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$TenantRoleImpl implements _TenantRole {
-  const _$TenantRoleImpl(
+class _TenantRole implements TenantRole {
+  const _TenantRole(
       {required this.id,
       required this.tenantId,
       required this.name,
@@ -1197,9 +1870,8 @@ class _$TenantRoleImpl implements _TenantRole {
       final Map<String, dynamic>? metadata})
       : _permissions = permissions,
         _metadata = metadata;
-
-  factory _$TenantRoleImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantRoleImplFromJson(json);
+  factory _TenantRole.fromJson(Map<String, dynamic> json) =>
+      _$TenantRoleFromJson(json);
 
   @override
   final String id;
@@ -1235,16 +1907,26 @@ class _$TenantRoleImpl implements _TenantRole {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of TenantRole
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TenantRole(id: $id, tenantId: $tenantId, name: $name, displayName: $displayName, description: $description, permissions: $permissions, isDefault: $isDefault, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantRoleCopyWith<_TenantRole> get copyWith =>
+      __$TenantRoleCopyWithImpl<_TenantRole>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantRoleToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantRoleImpl &&
+            other is _TenantRole &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.tenantId, tenantId) ||
                 other.tenantId == tenantId) &&
@@ -1264,7 +1946,7 @@ class _$TenantRoleImpl implements _TenantRole {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1279,334 +1961,95 @@ class _$TenantRoleImpl implements _TenantRole {
       updatedAt,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantRoleImplCopyWith<_$TenantRoleImpl> get copyWith =>
-      __$$TenantRoleImplCopyWithImpl<_$TenantRoleImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantRoleImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TenantRole implements TenantRole {
-  const factory _TenantRole(
-      {required final String id,
-      required final String tenantId,
-      required final String name,
-      required final String displayName,
-      required final String description,
-      required final List<String> permissions,
-      required final bool isDefault,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final Map<String, dynamic>? metadata}) = _$TenantRoleImpl;
-
-  factory _TenantRole.fromJson(Map<String, dynamic> json) =
-      _$TenantRoleImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get tenantId;
-  @override
-  String get name;
-  @override
-  String get displayName;
-  @override
-  String get description;
-  @override
-  List<String> get permissions;
-  @override
-  bool get isDefault;
-  @override
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantRoleImplCopyWith<_$TenantRoleImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TenantInvitation _$TenantInvitationFromJson(Map<String, dynamic> json) {
-  return _TenantInvitation.fromJson(json);
-}
-
-/// @nodoc
-mixin _$TenantInvitation {
-  String get id => throw _privateConstructorUsedError;
-  String get tenantId => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get role => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'pending', 'accepted', 'rejected', 'expired'
-  String get token => throw _privateConstructorUsedError;
-  DateTime get expiresAt => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  String? get invitedBy => throw _privateConstructorUsedError;
-  String? get firstName => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
-  DateTime? get acceptedAt => throw _privateConstructorUsedError;
-  DateTime? get rejectedAt => throw _privateConstructorUsedError;
-  String? get rejectionReason => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantInvitationCopyWith<TenantInvitation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantInvitationCopyWith<$Res> {
-  factory $TenantInvitationCopyWith(
-          TenantInvitation value, $Res Function(TenantInvitation) then) =
-      _$TenantInvitationCopyWithImpl<$Res, TenantInvitation>;
-  @useResult
-  $Res call(
-      {String id,
-      String tenantId,
-      String email,
-      String role,
-      String status,
-      String token,
-      DateTime expiresAt,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String? invitedBy,
-      String? firstName,
-      String? lastName,
-      DateTime? acceptedAt,
-      DateTime? rejectedAt,
-      String? rejectionReason,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$TenantInvitationCopyWithImpl<$Res, $Val extends TenantInvitation>
-    implements $TenantInvitationCopyWith<$Res> {
-  _$TenantInvitationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? tenantId = null,
-    Object? email = null,
-    Object? role = null,
-    Object? status = null,
-    Object? token = null,
-    Object? expiresAt = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? invitedBy = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? acceptedAt = freezed,
-    Object? rejectedAt = freezed,
-    Object? rejectionReason = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      tenantId: null == tenantId
-          ? _value.tenantId
-          : tenantId // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      invitedBy: freezed == invitedBy
-          ? _value.invitedBy
-          : invitedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      acceptedAt: freezed == acceptedAt
-          ? _value.acceptedAt
-          : acceptedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
-          : rejectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'TenantRole(id: $id, tenantId: $tenantId, name: $name, displayName: $displayName, description: $description, permissions: $permissions, isDefault: $isDefault, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$TenantInvitationImplCopyWith<$Res>
-    implements $TenantInvitationCopyWith<$Res> {
-  factory _$$TenantInvitationImplCopyWith(_$TenantInvitationImpl value,
-          $Res Function(_$TenantInvitationImpl) then) =
-      __$$TenantInvitationImplCopyWithImpl<$Res>;
+abstract mixin class _$TenantRoleCopyWith<$Res>
+    implements $TenantRoleCopyWith<$Res> {
+  factory _$TenantRoleCopyWith(
+          _TenantRole value, $Res Function(_TenantRole) _then) =
+      __$TenantRoleCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       String tenantId,
-      String email,
-      String role,
-      String status,
-      String token,
-      DateTime expiresAt,
+      String name,
+      String displayName,
+      String description,
+      List<String> permissions,
+      bool isDefault,
       DateTime createdAt,
       DateTime updatedAt,
-      String? invitedBy,
-      String? firstName,
-      String? lastName,
-      DateTime? acceptedAt,
-      DateTime? rejectedAt,
-      String? rejectionReason,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$TenantInvitationImplCopyWithImpl<$Res>
-    extends _$TenantInvitationCopyWithImpl<$Res, _$TenantInvitationImpl>
-    implements _$$TenantInvitationImplCopyWith<$Res> {
-  __$$TenantInvitationImplCopyWithImpl(_$TenantInvitationImpl _value,
-      $Res Function(_$TenantInvitationImpl) _then)
-      : super(_value, _then);
+class __$TenantRoleCopyWithImpl<$Res> implements _$TenantRoleCopyWith<$Res> {
+  __$TenantRoleCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _TenantRole _self;
+  final $Res Function(_TenantRole) _then;
+
+  /// Create a copy of TenantRole
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? tenantId = null,
-    Object? email = null,
-    Object? role = null,
-    Object? status = null,
-    Object? token = null,
-    Object? expiresAt = null,
+    Object? name = null,
+    Object? displayName = null,
+    Object? description = null,
+    Object? permissions = null,
+    Object? isDefault = null,
     Object? createdAt = null,
     Object? updatedAt = null,
-    Object? invitedBy = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? acceptedAt = freezed,
-    Object? rejectedAt = freezed,
-    Object? rejectionReason = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$TenantInvitationImpl(
+    return _then(_TenantRole(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       tenantId: null == tenantId
-          ? _value.tenantId
+          ? _self.tenantId
           : tenantId // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
+      displayName: null == displayName
+          ? _self.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      permissions: null == permissions
+          ? _self._permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      isDefault: null == isDefault
+          ? _self.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      invitedBy: freezed == invitedBy
-          ? _value.invitedBy
-          : invitedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      acceptedAt: freezed == acceptedAt
-          ? _value.acceptedAt
-          : acceptedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
-          : rejectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectionReason: freezed == rejectionReason
-          ? _value.rejectionReason
-          : rejectionReason // ignore: cast_nullable_to_non_nullable
-              as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1614,9 +2057,475 @@ class __$$TenantInvitationImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$TenantInvitation {
+  String get id;
+  String get tenantId;
+  String get email;
+  String get role;
+  String get status; // 'pending', 'accepted', 'rejected', 'expired'
+  String get token;
+  DateTime get expiresAt;
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  String? get invitedBy;
+  String? get firstName;
+  String? get lastName;
+  DateTime? get acceptedAt;
+  DateTime? get rejectedAt;
+  String? get rejectionReason;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of TenantInvitation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TenantInvitationCopyWith<TenantInvitation> get copyWith =>
+      _$TenantInvitationCopyWithImpl<TenantInvitation>(
+          this as TenantInvitation, _$identity);
+
+  /// Serializes this TenantInvitation to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TenantInvitation &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.tenantId, tenantId) ||
+                other.tenantId == tenantId) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.invitedBy, invitedBy) ||
+                other.invitedBy == invitedBy) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.acceptedAt, acceptedAt) ||
+                other.acceptedAt == acceptedAt) &&
+            (identical(other.rejectedAt, rejectedAt) ||
+                other.rejectedAt == rejectedAt) &&
+            (identical(other.rejectionReason, rejectionReason) ||
+                other.rejectionReason == rejectionReason) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      tenantId,
+      email,
+      role,
+      status,
+      token,
+      expiresAt,
+      createdAt,
+      updatedAt,
+      invitedBy,
+      firstName,
+      lastName,
+      acceptedAt,
+      rejectedAt,
+      rejectionReason,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'TenantInvitation(id: $id, tenantId: $tenantId, email: $email, role: $role, status: $status, token: $token, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, invitedBy: $invitedBy, firstName: $firstName, lastName: $lastName, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, rejectionReason: $rejectionReason, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TenantInvitationCopyWith<$Res> {
+  factory $TenantInvitationCopyWith(
+          TenantInvitation value, $Res Function(TenantInvitation) _then) =
+      _$TenantInvitationCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String tenantId,
+      String email,
+      String role,
+      String status,
+      String token,
+      DateTime expiresAt,
+      DateTime createdAt,
+      DateTime updatedAt,
+      String? invitedBy,
+      String? firstName,
+      String? lastName,
+      DateTime? acceptedAt,
+      DateTime? rejectedAt,
+      String? rejectionReason,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$TenantInvitationCopyWithImpl<$Res>
+    implements $TenantInvitationCopyWith<$Res> {
+  _$TenantInvitationCopyWithImpl(this._self, this._then);
+
+  final TenantInvitation _self;
+  final $Res Function(TenantInvitation) _then;
+
+  /// Create a copy of TenantInvitation
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? tenantId = null,
+    Object? email = null,
+    Object? role = null,
+    Object? status = null,
+    Object? token = null,
+    Object? expiresAt = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? invitedBy = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? acceptedAt = freezed,
+    Object? rejectedAt = freezed,
+    Object? rejectionReason = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      tenantId: null == tenantId
+          ? _self.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: null == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      expiresAt: null == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      invitedBy: freezed == invitedBy
+          ? _self.invitedBy
+          : invitedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstName: freezed == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      acceptedAt: freezed == acceptedAt
+          ? _self.acceptedAt
+          : acceptedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectedAt: freezed == rejectedAt
+          ? _self.rejectedAt
+          : rejectedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenantInvitation].
+extension TenantInvitationPatterns on TenantInvitation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenantInvitation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenantInvitation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitation():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenantInvitation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String email,
+            String role,
+            String status,
+            String token,
+            DateTime expiresAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? invitedBy,
+            String? firstName,
+            String? lastName,
+            DateTime? acceptedAt,
+            DateTime? rejectedAt,
+            String? rejectionReason,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitation() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.email,
+            _that.role,
+            _that.status,
+            _that.token,
+            _that.expiresAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.invitedBy,
+            _that.firstName,
+            _that.lastName,
+            _that.acceptedAt,
+            _that.rejectedAt,
+            _that.rejectionReason,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String email,
+            String role,
+            String status,
+            String token,
+            DateTime expiresAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? invitedBy,
+            String? firstName,
+            String? lastName,
+            DateTime? acceptedAt,
+            DateTime? rejectedAt,
+            String? rejectionReason,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitation():
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.email,
+            _that.role,
+            _that.status,
+            _that.token,
+            _that.expiresAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.invitedBy,
+            _that.firstName,
+            _that.lastName,
+            _that.acceptedAt,
+            _that.rejectedAt,
+            _that.rejectionReason,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String tenantId,
+            String email,
+            String role,
+            String status,
+            String token,
+            DateTime expiresAt,
+            DateTime createdAt,
+            DateTime updatedAt,
+            String? invitedBy,
+            String? firstName,
+            String? lastName,
+            DateTime? acceptedAt,
+            DateTime? rejectedAt,
+            String? rejectionReason,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitation() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.email,
+            _that.role,
+            _that.status,
+            _that.token,
+            _that.expiresAt,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.invitedBy,
+            _that.firstName,
+            _that.lastName,
+            _that.acceptedAt,
+            _that.rejectedAt,
+            _that.rejectionReason,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$TenantInvitationImpl implements _TenantInvitation {
-  const _$TenantInvitationImpl(
+class _TenantInvitation implements TenantInvitation {
+  const _TenantInvitation(
       {required this.id,
       required this.tenantId,
       required this.email,
@@ -1634,9 +2543,8 @@ class _$TenantInvitationImpl implements _TenantInvitation {
       this.rejectionReason,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$TenantInvitationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantInvitationImplFromJson(json);
+  factory _TenantInvitation.fromJson(Map<String, dynamic> json) =>
+      _$TenantInvitationFromJson(json);
 
   @override
   final String id;
@@ -1679,16 +2587,26 @@ class _$TenantInvitationImpl implements _TenantInvitation {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of TenantInvitation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TenantInvitation(id: $id, tenantId: $tenantId, email: $email, role: $role, status: $status, token: $token, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, invitedBy: $invitedBy, firstName: $firstName, lastName: $lastName, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, rejectionReason: $rejectionReason, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantInvitationCopyWith<_TenantInvitation> get copyWith =>
+      __$TenantInvitationCopyWithImpl<_TenantInvitation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantInvitationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantInvitationImpl &&
+            other is _TenantInvitation &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.tenantId, tenantId) ||
                 other.tenantId == tenantId) &&
@@ -1717,7 +2635,7 @@ class _$TenantInvitationImpl implements _TenantInvitation {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1738,300 +2656,132 @@ class _$TenantInvitationImpl implements _TenantInvitation {
       rejectionReason,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantInvitationImplCopyWith<_$TenantInvitationImpl> get copyWith =>
-      __$$TenantInvitationImplCopyWithImpl<_$TenantInvitationImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantInvitationImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TenantInvitation implements TenantInvitation {
-  const factory _TenantInvitation(
-      {required final String id,
-      required final String tenantId,
-      required final String email,
-      required final String role,
-      required final String status,
-      required final String token,
-      required final DateTime expiresAt,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final String? invitedBy,
-      final String? firstName,
-      final String? lastName,
-      final DateTime? acceptedAt,
-      final DateTime? rejectedAt,
-      final String? rejectionReason,
-      final Map<String, dynamic>? metadata}) = _$TenantInvitationImpl;
-
-  factory _TenantInvitation.fromJson(Map<String, dynamic> json) =
-      _$TenantInvitationImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get tenantId;
-  @override
-  String get email;
-  @override
-  String get role;
-  @override
-  String get status;
-  @override // 'pending', 'accepted', 'rejected', 'expired'
-  String get token;
-  @override
-  DateTime get expiresAt;
-  @override
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  String? get invitedBy;
-  @override
-  String? get firstName;
-  @override
-  String? get lastName;
-  @override
-  DateTime? get acceptedAt;
-  @override
-  DateTime? get rejectedAt;
-  @override
-  String? get rejectionReason;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantInvitationImplCopyWith<_$TenantInvitationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CreateTenantRequest _$CreateTenantRequestFromJson(Map<String, dynamic> json) {
-  return _CreateTenantRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreateTenantRequest {
-  String get name => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get domain => throw _privateConstructorUsedError;
-  String? get contactEmail => throw _privateConstructorUsedError;
-  String? get contactPhone => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  String? get timezone => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
-  String? get language => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get settings => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateTenantRequestCopyWith<CreateTenantRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateTenantRequestCopyWith<$Res> {
-  factory $CreateTenantRequestCopyWith(
-          CreateTenantRequest value, $Res Function(CreateTenantRequest) then) =
-      _$CreateTenantRequestCopyWithImpl<$Res, CreateTenantRequest>;
-  @useResult
-  $Res call(
-      {String name,
-      String slug,
-      String? description,
-      String? domain,
-      String? contactEmail,
-      String? contactPhone,
-      String? address,
-      String? timezone,
-      String? currency,
-      String? language,
-      Map<String, dynamic>? settings,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$CreateTenantRequestCopyWithImpl<$Res, $Val extends CreateTenantRequest>
-    implements $CreateTenantRequestCopyWith<$Res> {
-  _$CreateTenantRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? slug = null,
-    Object? description = freezed,
-    Object? domain = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? address = freezed,
-    Object? timezone = freezed,
-    Object? currency = freezed,
-    Object? language = freezed,
-    Object? settings = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _value.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settings: freezed == settings
-          ? _value.settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'TenantInvitation(id: $id, tenantId: $tenantId, email: $email, role: $role, status: $status, token: $token, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, invitedBy: $invitedBy, firstName: $firstName, lastName: $lastName, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, rejectionReason: $rejectionReason, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateTenantRequestImplCopyWith<$Res>
-    implements $CreateTenantRequestCopyWith<$Res> {
-  factory _$$CreateTenantRequestImplCopyWith(_$CreateTenantRequestImpl value,
-          $Res Function(_$CreateTenantRequestImpl) then) =
-      __$$CreateTenantRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$TenantInvitationCopyWith<$Res>
+    implements $TenantInvitationCopyWith<$Res> {
+  factory _$TenantInvitationCopyWith(
+          _TenantInvitation value, $Res Function(_TenantInvitation) _then) =
+      __$TenantInvitationCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String name,
-      String slug,
-      String? description,
-      String? domain,
-      String? contactEmail,
-      String? contactPhone,
-      String? address,
-      String? timezone,
-      String? currency,
-      String? language,
-      Map<String, dynamic>? settings,
+      {String id,
+      String tenantId,
+      String email,
+      String role,
+      String status,
+      String token,
+      DateTime expiresAt,
+      DateTime createdAt,
+      DateTime updatedAt,
+      String? invitedBy,
+      String? firstName,
+      String? lastName,
+      DateTime? acceptedAt,
+      DateTime? rejectedAt,
+      String? rejectionReason,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$CreateTenantRequestImplCopyWithImpl<$Res>
-    extends _$CreateTenantRequestCopyWithImpl<$Res, _$CreateTenantRequestImpl>
-    implements _$$CreateTenantRequestImplCopyWith<$Res> {
-  __$$CreateTenantRequestImplCopyWithImpl(_$CreateTenantRequestImpl _value,
-      $Res Function(_$CreateTenantRequestImpl) _then)
-      : super(_value, _then);
+class __$TenantInvitationCopyWithImpl<$Res>
+    implements _$TenantInvitationCopyWith<$Res> {
+  __$TenantInvitationCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _TenantInvitation _self;
+  final $Res Function(_TenantInvitation) _then;
+
+  /// Create a copy of TenantInvitation
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
-    Object? slug = null,
-    Object? description = freezed,
-    Object? domain = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? address = freezed,
-    Object? timezone = freezed,
-    Object? currency = freezed,
-    Object? language = freezed,
-    Object? settings = freezed,
+    Object? id = null,
+    Object? tenantId = null,
+    Object? email = null,
+    Object? role = null,
+    Object? status = null,
+    Object? token = null,
+    Object? expiresAt = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? invitedBy = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? acceptedAt = freezed,
+    Object? rejectedAt = freezed,
+    Object? rejectionReason = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$CreateTenantRequestImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+    return _then(_TenantInvitation(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      slug: null == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
+      tenantId: null == tenantId
+          ? _self.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
               as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: null == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      expiresAt: null == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      invitedBy: freezed == invitedBy
+          ? _self.invitedBy
+          : invitedBy // ignore: cast_nullable_to_non_nullable
               as String?,
-      domain: freezed == domain
-          ? _value.domain
-          : domain // ignore: cast_nullable_to_non_nullable
+      firstName: freezed == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
+      lastName: freezed == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
+      acceptedAt: freezed == acceptedAt
+          ? _self.acceptedAt
+          : acceptedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectedAt: freezed == rejectedAt
+          ? _self.rejectedAt
+          : rejectedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectionReason: freezed == rejectionReason
+          ? _self.rejectionReason
+          : rejectionReason // ignore: cast_nullable_to_non_nullable
               as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settings: freezed == settings
-          ? _value._settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -2039,9 +2789,411 @@ class __$$CreateTenantRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateTenantRequest {
+  String get name;
+  String get slug;
+  String? get description;
+  String? get domain;
+  String? get contactEmail;
+  String? get contactPhone;
+  String? get address;
+  String? get timezone;
+  String? get currency;
+  String? get language;
+  Map<String, dynamic>? get settings;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of CreateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateTenantRequestCopyWith<CreateTenantRequest> get copyWith =>
+      _$CreateTenantRequestCopyWithImpl<CreateTenantRequest>(
+          this as CreateTenantRequest, _$identity);
+
+  /// Serializes this CreateTenantRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateTenantRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.domain, domain) || other.domain == domain) &&
+            (identical(other.contactEmail, contactEmail) ||
+                other.contactEmail == contactEmail) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            const DeepCollectionEquality().equals(other.settings, settings) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      slug,
+      description,
+      domain,
+      contactEmail,
+      contactPhone,
+      address,
+      timezone,
+      currency,
+      language,
+      const DeepCollectionEquality().hash(settings),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreateTenantRequest(name: $name, slug: $slug, description: $description, domain: $domain, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, settings: $settings, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateTenantRequestCopyWith<$Res> {
+  factory $CreateTenantRequestCopyWith(
+          CreateTenantRequest value, $Res Function(CreateTenantRequest) _then) =
+      _$CreateTenantRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String name,
+      String slug,
+      String? description,
+      String? domain,
+      String? contactEmail,
+      String? contactPhone,
+      String? address,
+      String? timezone,
+      String? currency,
+      String? language,
+      Map<String, dynamic>? settings,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$CreateTenantRequestCopyWithImpl<$Res>
+    implements $CreateTenantRequestCopyWith<$Res> {
+  _$CreateTenantRequestCopyWithImpl(this._self, this._then);
+
+  final CreateTenantRequest _self;
+  final $Res Function(CreateTenantRequest) _then;
+
+  /// Create a copy of CreateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? slug = null,
+    Object? description = freezed,
+    Object? domain = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? address = freezed,
+    Object? timezone = freezed,
+    Object? currency = freezed,
+    Object? language = freezed,
+    Object? settings = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _self.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      domain: freezed == domain
+          ? _self.domain
+          : domain // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: freezed == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String?,
+      settings: freezed == settings
+          ? _self.settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateTenantRequest].
+extension CreateTenantRequestPatterns on CreateTenantRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateTenantRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateTenantRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateTenantRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateTenantRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateTenantRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateTenantRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String slug,
+            String? description,
+            String? domain,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateTenantRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.slug,
+            _that.description,
+            _that.domain,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.settings,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String slug,
+            String? description,
+            String? domain,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateTenantRequest():
+        return $default(
+            _that.name,
+            _that.slug,
+            _that.description,
+            _that.domain,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.settings,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            String slug,
+            String? description,
+            String? domain,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateTenantRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.slug,
+            _that.description,
+            _that.domain,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.settings,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateTenantRequestImpl implements _CreateTenantRequest {
-  const _$CreateTenantRequestImpl(
+class _CreateTenantRequest implements CreateTenantRequest {
+  const _CreateTenantRequest(
       {required this.name,
       required this.slug,
       this.description,
@@ -2056,9 +3208,8 @@ class _$CreateTenantRequestImpl implements _CreateTenantRequest {
       final Map<String, dynamic>? metadata})
       : _settings = settings,
         _metadata = metadata;
-
-  factory _$CreateTenantRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateTenantRequestImplFromJson(json);
+  factory _CreateTenantRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateTenantRequestFromJson(json);
 
   @override
   final String name;
@@ -2100,16 +3251,27 @@ class _$CreateTenantRequestImpl implements _CreateTenantRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateTenantRequest(name: $name, slug: $slug, description: $description, domain: $domain, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, settings: $settings, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateTenantRequestCopyWith<_CreateTenantRequest> get copyWith =>
+      __$CreateTenantRequestCopyWithImpl<_CreateTenantRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateTenantRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateTenantRequestImpl &&
+            other is _CreateTenantRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.description, description) ||
@@ -2130,7 +3292,7 @@ class _$CreateTenantRequestImpl implements _CreateTenantRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2147,102 +3309,23 @@ class _$CreateTenantRequestImpl implements _CreateTenantRequest {
       const DeepCollectionEquality().hash(_settings),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateTenantRequestImplCopyWith<_$CreateTenantRequestImpl> get copyWith =>
-      __$$CreateTenantRequestImplCopyWithImpl<_$CreateTenantRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateTenantRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateTenantRequest(name: $name, slug: $slug, description: $description, domain: $domain, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, settings: $settings, metadata: $metadata)';
   }
 }
 
-abstract class _CreateTenantRequest implements CreateTenantRequest {
-  const factory _CreateTenantRequest(
-      {required final String name,
-      required final String slug,
-      final String? description,
-      final String? domain,
-      final String? contactEmail,
-      final String? contactPhone,
-      final String? address,
-      final String? timezone,
-      final String? currency,
-      final String? language,
-      final Map<String, dynamic>? settings,
-      final Map<String, dynamic>? metadata}) = _$CreateTenantRequestImpl;
-
-  factory _CreateTenantRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateTenantRequestImpl.fromJson;
-
-  @override
-  String get name;
-  @override
-  String get slug;
-  @override
-  String? get description;
-  @override
-  String? get domain;
-  @override
-  String? get contactEmail;
-  @override
-  String? get contactPhone;
-  @override
-  String? get address;
-  @override
-  String? get timezone;
-  @override
-  String? get currency;
-  @override
-  String? get language;
-  @override
-  Map<String, dynamic>? get settings;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateTenantRequestImplCopyWith<_$CreateTenantRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-UpdateTenantRequest _$UpdateTenantRequestFromJson(Map<String, dynamic> json) {
-  return _UpdateTenantRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateTenantRequest {
-  String? get name => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get domain => throw _privateConstructorUsedError;
-  String? get contactEmail => throw _privateConstructorUsedError;
-  String? get contactPhone => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  String? get timezone => throw _privateConstructorUsedError;
-  String? get currency => throw _privateConstructorUsedError;
-  String? get language => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get settings => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateTenantRequestCopyWith<UpdateTenantRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateTenantRequestCopyWith<$Res> {
-  factory $UpdateTenantRequestCopyWith(
-          UpdateTenantRequest value, $Res Function(UpdateTenantRequest) then) =
-      _$UpdateTenantRequestCopyWithImpl<$Res, UpdateTenantRequest>;
+abstract mixin class _$CreateTenantRequestCopyWith<$Res>
+    implements $CreateTenantRequestCopyWith<$Res> {
+  factory _$CreateTenantRequestCopyWith(_CreateTenantRequest value,
+          $Res Function(_CreateTenantRequest) _then) =
+      __$CreateTenantRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? name,
+      {String name,
+      String slug,
       String? description,
       String? domain,
       String? contactEmail,
@@ -2251,25 +3334,25 @@ abstract class $UpdateTenantRequestCopyWith<$Res> {
       String? timezone,
       String? currency,
       String? language,
-      String? status,
       Map<String, dynamic>? settings,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$UpdateTenantRequestCopyWithImpl<$Res, $Val extends UpdateTenantRequest>
-    implements $UpdateTenantRequestCopyWith<$Res> {
-  _$UpdateTenantRequestCopyWithImpl(this._value, this._then);
+class __$CreateTenantRequestCopyWithImpl<$Res>
+    implements _$CreateTenantRequestCopyWith<$Res> {
+  __$CreateTenantRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateTenantRequest _self;
+  final $Res Function(_CreateTenantRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
+    Object? slug = null,
     Object? description = freezed,
     Object? domain = freezed,
     Object? contactEmail = freezed,
@@ -2278,157 +3361,56 @@ class _$UpdateTenantRequestCopyWithImpl<$Res, $Val extends UpdateTenantRequest>
     Object? timezone = freezed,
     Object? currency = freezed,
     Object? language = freezed,
-    Object? status = freezed,
     Object? settings = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
+    return _then(_CreateTenantRequest(
+      name: null == name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      slug: null == slug
+          ? _self.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       domain: freezed == domain
-          ? _value.domain
+          ? _self.domain
           : domain // ignore: cast_nullable_to_non_nullable
               as String?,
       contactEmail: freezed == contactEmail
-          ? _value.contactEmail
+          ? _self.contactEmail
           : contactEmail // ignore: cast_nullable_to_non_nullable
               as String?,
       contactPhone: freezed == contactPhone
-          ? _value.contactPhone
+          ? _self.contactPhone
           : contactPhone // ignore: cast_nullable_to_non_nullable
               as String?,
       address: freezed == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String?,
       timezone: freezed == timezone
-          ? _value.timezone
+          ? _self.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       currency: freezed == currency
-          ? _value.currency
+          ? _self.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String?,
       language: freezed == language
-          ? _value.language
+          ? _self.language
           : language // ignore: cast_nullable_to_non_nullable
               as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
       settings: freezed == settings
-          ? _value.settings
+          ? _self._settings
           : settings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateTenantRequestImplCopyWith<$Res>
-    implements $UpdateTenantRequestCopyWith<$Res> {
-  factory _$$UpdateTenantRequestImplCopyWith(_$UpdateTenantRequestImpl value,
-          $Res Function(_$UpdateTenantRequestImpl) then) =
-      __$$UpdateTenantRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? name,
-      String? description,
-      String? domain,
-      String? contactEmail,
-      String? contactPhone,
-      String? address,
-      String? timezone,
-      String? currency,
-      String? language,
-      String? status,
-      Map<String, dynamic>? settings,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$UpdateTenantRequestImplCopyWithImpl<$Res>
-    extends _$UpdateTenantRequestCopyWithImpl<$Res, _$UpdateTenantRequestImpl>
-    implements _$$UpdateTenantRequestImplCopyWith<$Res> {
-  __$$UpdateTenantRequestImplCopyWithImpl(_$UpdateTenantRequestImpl _value,
-      $Res Function(_$UpdateTenantRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? domain = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? address = freezed,
-    Object? timezone = freezed,
-    Object? currency = freezed,
-    Object? language = freezed,
-    Object? status = freezed,
-    Object? settings = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$UpdateTenantRequestImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _value.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settings: freezed == settings
-          ? _value._settings
-          : settings // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -2436,9 +3418,411 @@ class __$$UpdateTenantRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateTenantRequest {
+  String? get name;
+  String? get description;
+  String? get domain;
+  String? get contactEmail;
+  String? get contactPhone;
+  String? get address;
+  String? get timezone;
+  String? get currency;
+  String? get language;
+  String? get status;
+  Map<String, dynamic>? get settings;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of UpdateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateTenantRequestCopyWith<UpdateTenantRequest> get copyWith =>
+      _$UpdateTenantRequestCopyWithImpl<UpdateTenantRequest>(
+          this as UpdateTenantRequest, _$identity);
+
+  /// Serializes this UpdateTenantRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateTenantRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.domain, domain) || other.domain == domain) &&
+            (identical(other.contactEmail, contactEmail) ||
+                other.contactEmail == contactEmail) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other.settings, settings) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      description,
+      domain,
+      contactEmail,
+      contactPhone,
+      address,
+      timezone,
+      currency,
+      language,
+      status,
+      const DeepCollectionEquality().hash(settings),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdateTenantRequest(name: $name, description: $description, domain: $domain, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, status: $status, settings: $settings, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateTenantRequestCopyWith<$Res> {
+  factory $UpdateTenantRequestCopyWith(
+          UpdateTenantRequest value, $Res Function(UpdateTenantRequest) _then) =
+      _$UpdateTenantRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? name,
+      String? description,
+      String? domain,
+      String? contactEmail,
+      String? contactPhone,
+      String? address,
+      String? timezone,
+      String? currency,
+      String? language,
+      String? status,
+      Map<String, dynamic>? settings,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$UpdateTenantRequestCopyWithImpl<$Res>
+    implements $UpdateTenantRequestCopyWith<$Res> {
+  _$UpdateTenantRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateTenantRequest _self;
+  final $Res Function(UpdateTenantRequest) _then;
+
+  /// Create a copy of UpdateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? domain = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? address = freezed,
+    Object? timezone = freezed,
+    Object? currency = freezed,
+    Object? language = freezed,
+    Object? status = freezed,
+    Object? settings = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      domain: freezed == domain
+          ? _self.domain
+          : domain // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: freezed == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      settings: freezed == settings
+          ? _self.settings
+          : settings // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateTenantRequest].
+extension UpdateTenantRequestPatterns on UpdateTenantRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateTenantRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateTenantRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateTenantRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateTenantRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateTenantRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateTenantRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? name,
+            String? description,
+            String? domain,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            String? status,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateTenantRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.description,
+            _that.domain,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.status,
+            _that.settings,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? name,
+            String? description,
+            String? domain,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            String? status,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateTenantRequest():
+        return $default(
+            _that.name,
+            _that.description,
+            _that.domain,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.status,
+            _that.settings,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? name,
+            String? description,
+            String? domain,
+            String? contactEmail,
+            String? contactPhone,
+            String? address,
+            String? timezone,
+            String? currency,
+            String? language,
+            String? status,
+            Map<String, dynamic>? settings,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateTenantRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.description,
+            _that.domain,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.address,
+            _that.timezone,
+            _that.currency,
+            _that.language,
+            _that.status,
+            _that.settings,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateTenantRequestImpl implements _UpdateTenantRequest {
-  const _$UpdateTenantRequestImpl(
+class _UpdateTenantRequest implements UpdateTenantRequest {
+  const _UpdateTenantRequest(
       {this.name,
       this.description,
       this.domain,
@@ -2453,9 +3837,8 @@ class _$UpdateTenantRequestImpl implements _UpdateTenantRequest {
       final Map<String, dynamic>? metadata})
       : _settings = settings,
         _metadata = metadata;
-
-  factory _$UpdateTenantRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateTenantRequestImplFromJson(json);
+  factory _UpdateTenantRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateTenantRequestFromJson(json);
 
   @override
   final String? name;
@@ -2497,16 +3880,27 @@ class _$UpdateTenantRequestImpl implements _UpdateTenantRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateTenantRequest(name: $name, description: $description, domain: $domain, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, status: $status, settings: $settings, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateTenantRequestCopyWith<_UpdateTenantRequest> get copyWith =>
+      __$UpdateTenantRequestCopyWithImpl<_UpdateTenantRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateTenantRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateTenantRequestImpl &&
+            other is _UpdateTenantRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -2527,7 +3921,7 @@ class _$UpdateTenantRequestImpl implements _UpdateTenantRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2544,215 +3938,108 @@ class _$UpdateTenantRequestImpl implements _UpdateTenantRequest {
       const DeepCollectionEquality().hash(_settings),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateTenantRequestImplCopyWith<_$UpdateTenantRequestImpl> get copyWith =>
-      __$$UpdateTenantRequestImplCopyWithImpl<_$UpdateTenantRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateTenantRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateTenantRequest(name: $name, description: $description, domain: $domain, contactEmail: $contactEmail, contactPhone: $contactPhone, address: $address, timezone: $timezone, currency: $currency, language: $language, status: $status, settings: $settings, metadata: $metadata)';
   }
 }
 
-abstract class _UpdateTenantRequest implements UpdateTenantRequest {
-  const factory _UpdateTenantRequest(
-      {final String? name,
-      final String? description,
-      final String? domain,
-      final String? contactEmail,
-      final String? contactPhone,
-      final String? address,
-      final String? timezone,
-      final String? currency,
-      final String? language,
-      final String? status,
-      final Map<String, dynamic>? settings,
-      final Map<String, dynamic>? metadata}) = _$UpdateTenantRequestImpl;
-
-  factory _UpdateTenantRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateTenantRequestImpl.fromJson;
-
-  @override
-  String? get name;
-  @override
-  String? get description;
-  @override
-  String? get domain;
-  @override
-  String? get contactEmail;
-  @override
-  String? get contactPhone;
-  @override
-  String? get address;
-  @override
-  String? get timezone;
-  @override
-  String? get currency;
-  @override
-  String? get language;
-  @override
-  String? get status;
-  @override
-  Map<String, dynamic>? get settings;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateTenantRequestImplCopyWith<_$UpdateTenantRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CreateInvitationRequest _$CreateInvitationRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateInvitationRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateInvitationRequest {
-  String get email => throw _privateConstructorUsedError;
-  String get role => throw _privateConstructorUsedError;
-  String? get firstName => throw _privateConstructorUsedError;
-  String? get lastName => throw _privateConstructorUsedError;
-  DateTime? get expiresAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateInvitationRequestCopyWith<CreateInvitationRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateInvitationRequestCopyWith<$Res> {
-  factory $CreateInvitationRequestCopyWith(CreateInvitationRequest value,
-          $Res Function(CreateInvitationRequest) then) =
-      _$CreateInvitationRequestCopyWithImpl<$Res, CreateInvitationRequest>;
+abstract mixin class _$UpdateTenantRequestCopyWith<$Res>
+    implements $UpdateTenantRequestCopyWith<$Res> {
+  factory _$UpdateTenantRequestCopyWith(_UpdateTenantRequest value,
+          $Res Function(_UpdateTenantRequest) _then) =
+      __$UpdateTenantRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String email,
-      String role,
-      String? firstName,
-      String? lastName,
-      DateTime? expiresAt,
+      {String? name,
+      String? description,
+      String? domain,
+      String? contactEmail,
+      String? contactPhone,
+      String? address,
+      String? timezone,
+      String? currency,
+      String? language,
+      String? status,
+      Map<String, dynamic>? settings,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$CreateInvitationRequestCopyWithImpl<$Res,
-        $Val extends CreateInvitationRequest>
-    implements $CreateInvitationRequestCopyWith<$Res> {
-  _$CreateInvitationRequestCopyWithImpl(this._value, this._then);
+class __$UpdateTenantRequestCopyWithImpl<$Res>
+    implements _$UpdateTenantRequestCopyWith<$Res> {
+  __$UpdateTenantRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _UpdateTenantRequest _self;
+  final $Res Function(_UpdateTenantRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of UpdateTenantRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? email = null,
-    Object? role = null,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? expiresAt = freezed,
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? domain = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? address = freezed,
+    Object? timezone = freezed,
+    Object? currency = freezed,
+    Object? language = freezed,
+    Object? status = freezed,
+    Object? settings = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+    return _then(_UpdateTenantRequest(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      expiresAt: freezed == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      domain: freezed == domain
+          ? _self.domain
+          : domain // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: freezed == language
+          ? _self.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      settings: freezed == settings
+          ? _self._settings
+          : settings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateInvitationRequestImplCopyWith<$Res>
-    implements $CreateInvitationRequestCopyWith<$Res> {
-  factory _$$CreateInvitationRequestImplCopyWith(
-          _$CreateInvitationRequestImpl value,
-          $Res Function(_$CreateInvitationRequestImpl) then) =
-      __$$CreateInvitationRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String email,
-      String role,
-      String? firstName,
-      String? lastName,
-      DateTime? expiresAt,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$CreateInvitationRequestImplCopyWithImpl<$Res>
-    extends _$CreateInvitationRequestCopyWithImpl<$Res,
-        _$CreateInvitationRequestImpl>
-    implements _$$CreateInvitationRequestImplCopyWith<$Res> {
-  __$$CreateInvitationRequestImplCopyWithImpl(
-      _$CreateInvitationRequestImpl _value,
-      $Res Function(_$CreateInvitationRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-    Object? role = null,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? expiresAt = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$CreateInvitationRequestImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiresAt: freezed == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -2760,9 +4047,297 @@ class __$$CreateInvitationRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateInvitationRequest {
+  String get email;
+  String get role;
+  String? get firstName;
+  String? get lastName;
+  DateTime? get expiresAt;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of CreateInvitationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateInvitationRequestCopyWith<CreateInvitationRequest> get copyWith =>
+      _$CreateInvitationRequestCopyWithImpl<CreateInvitationRequest>(
+          this as CreateInvitationRequest, _$identity);
+
+  /// Serializes this CreateInvitationRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateInvitationRequest &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, email, role, firstName, lastName,
+      expiresAt, const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreateInvitationRequest(email: $email, role: $role, firstName: $firstName, lastName: $lastName, expiresAt: $expiresAt, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateInvitationRequestCopyWith<$Res> {
+  factory $CreateInvitationRequestCopyWith(CreateInvitationRequest value,
+          $Res Function(CreateInvitationRequest) _then) =
+      _$CreateInvitationRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String email,
+      String role,
+      String? firstName,
+      String? lastName,
+      DateTime? expiresAt,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$CreateInvitationRequestCopyWithImpl<$Res>
+    implements $CreateInvitationRequestCopyWith<$Res> {
+  _$CreateInvitationRequestCopyWithImpl(this._self, this._then);
+
+  final CreateInvitationRequest _self;
+  final $Res Function(CreateInvitationRequest) _then;
+
+  /// Create a copy of CreateInvitationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? role = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? expiresAt = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: freezed == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiresAt: freezed == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateInvitationRequest].
+extension CreateInvitationRequestPatterns on CreateInvitationRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateInvitationRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateInvitationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateInvitationRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateInvitationRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateInvitationRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateInvitationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String email,
+            String role,
+            String? firstName,
+            String? lastName,
+            DateTime? expiresAt,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateInvitationRequest() when $default != null:
+        return $default(_that.email, _that.role, _that.firstName,
+            _that.lastName, _that.expiresAt, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String email,
+            String role,
+            String? firstName,
+            String? lastName,
+            DateTime? expiresAt,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateInvitationRequest():
+        return $default(_that.email, _that.role, _that.firstName,
+            _that.lastName, _that.expiresAt, _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String email,
+            String role,
+            String? firstName,
+            String? lastName,
+            DateTime? expiresAt,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateInvitationRequest() when $default != null:
+        return $default(_that.email, _that.role, _that.firstName,
+            _that.lastName, _that.expiresAt, _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateInvitationRequestImpl implements _CreateInvitationRequest {
-  const _$CreateInvitationRequestImpl(
+class _CreateInvitationRequest implements CreateInvitationRequest {
+  const _CreateInvitationRequest(
       {required this.email,
       required this.role,
       this.firstName,
@@ -2770,9 +4345,8 @@ class _$CreateInvitationRequestImpl implements _CreateInvitationRequest {
       this.expiresAt,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$CreateInvitationRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateInvitationRequestImplFromJson(json);
+  factory _CreateInvitationRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateInvitationRequestFromJson(json);
 
   @override
   final String email;
@@ -2794,16 +4368,27 @@ class _$CreateInvitationRequestImpl implements _CreateInvitationRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateInvitationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateInvitationRequest(email: $email, role: $role, firstName: $firstName, lastName: $lastName, expiresAt: $expiresAt, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateInvitationRequestCopyWith<_CreateInvitationRequest> get copyWith =>
+      __$CreateInvitationRequestCopyWithImpl<_CreateInvitationRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateInvitationRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateInvitationRequestImpl &&
+            other is _CreateInvitationRequest &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.firstName, firstName) ||
@@ -2815,176 +4400,77 @@ class _$CreateInvitationRequestImpl implements _CreateInvitationRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, email, role, firstName, lastName,
       expiresAt, const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateInvitationRequestImplCopyWith<_$CreateInvitationRequestImpl>
-      get copyWith => __$$CreateInvitationRequestImplCopyWithImpl<
-          _$CreateInvitationRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateInvitationRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreateInvitationRequest implements CreateInvitationRequest {
-  const factory _CreateInvitationRequest(
-      {required final String email,
-      required final String role,
-      final String? firstName,
-      final String? lastName,
-      final DateTime? expiresAt,
-      final Map<String, dynamic>? metadata}) = _$CreateInvitationRequestImpl;
-
-  factory _CreateInvitationRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateInvitationRequestImpl.fromJson;
-
-  @override
-  String get email;
-  @override
-  String get role;
-  @override
-  String? get firstName;
-  @override
-  String? get lastName;
-  @override
-  DateTime? get expiresAt;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateInvitationRequestImplCopyWith<_$CreateInvitationRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateMembershipRequest _$UpdateMembershipRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateMembershipRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UpdateMembershipRequest {
-  String? get role => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  List<String>? get permissions => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateMembershipRequestCopyWith<UpdateMembershipRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateMembershipRequestCopyWith<$Res> {
-  factory $UpdateMembershipRequestCopyWith(UpdateMembershipRequest value,
-          $Res Function(UpdateMembershipRequest) then) =
-      _$UpdateMembershipRequestCopyWithImpl<$Res, UpdateMembershipRequest>;
-  @useResult
-  $Res call(
-      {String? role,
-      String? status,
-      List<String>? permissions,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$UpdateMembershipRequestCopyWithImpl<$Res,
-        $Val extends UpdateMembershipRequest>
-    implements $UpdateMembershipRequestCopyWith<$Res> {
-  _$UpdateMembershipRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? role = freezed,
-    Object? status = freezed,
-    Object? permissions = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      role: freezed == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      permissions: freezed == permissions
-          ? _value.permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreateInvitationRequest(email: $email, role: $role, firstName: $firstName, lastName: $lastName, expiresAt: $expiresAt, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdateMembershipRequestImplCopyWith<$Res>
-    implements $UpdateMembershipRequestCopyWith<$Res> {
-  factory _$$UpdateMembershipRequestImplCopyWith(
-          _$UpdateMembershipRequestImpl value,
-          $Res Function(_$UpdateMembershipRequestImpl) then) =
-      __$$UpdateMembershipRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreateInvitationRequestCopyWith<$Res>
+    implements $CreateInvitationRequestCopyWith<$Res> {
+  factory _$CreateInvitationRequestCopyWith(_CreateInvitationRequest value,
+          $Res Function(_CreateInvitationRequest) _then) =
+      __$CreateInvitationRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String? role,
-      String? status,
-      List<String>? permissions,
+      {String email,
+      String role,
+      String? firstName,
+      String? lastName,
+      DateTime? expiresAt,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$UpdateMembershipRequestImplCopyWithImpl<$Res>
-    extends _$UpdateMembershipRequestCopyWithImpl<$Res,
-        _$UpdateMembershipRequestImpl>
-    implements _$$UpdateMembershipRequestImplCopyWith<$Res> {
-  __$$UpdateMembershipRequestImplCopyWithImpl(
-      _$UpdateMembershipRequestImpl _value,
-      $Res Function(_$UpdateMembershipRequestImpl) _then)
-      : super(_value, _then);
+class __$CreateInvitationRequestCopyWithImpl<$Res>
+    implements _$CreateInvitationRequestCopyWith<$Res> {
+  __$CreateInvitationRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreateInvitationRequest _self;
+  final $Res Function(_CreateInvitationRequest) _then;
+
+  /// Create a copy of CreateInvitationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? role = freezed,
-    Object? status = freezed,
-    Object? permissions = freezed,
+    Object? email = null,
+    Object? role = null,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? expiresAt = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$UpdateMembershipRequestImpl(
-      role: freezed == role
-          ? _value.role
+    return _then(_CreateInvitationRequest(
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _self.role
           : role // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: freezed == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      lastName: freezed == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
-      permissions: freezed == permissions
-          ? _value._permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      expiresAt: freezed == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -2992,18 +4478,276 @@ class __$$UpdateMembershipRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateMembershipRequest {
+  String? get role;
+  String? get status;
+  List<String>? get permissions;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of UpdateMembershipRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateMembershipRequestCopyWith<UpdateMembershipRequest> get copyWith =>
+      _$UpdateMembershipRequestCopyWithImpl<UpdateMembershipRequest>(
+          this as UpdateMembershipRequest, _$identity);
+
+  /// Serializes this UpdateMembershipRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateMembershipRequest &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality()
+                .equals(other.permissions, permissions) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      role,
+      status,
+      const DeepCollectionEquality().hash(permissions),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdateMembershipRequest(role: $role, status: $status, permissions: $permissions, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateMembershipRequestCopyWith<$Res> {
+  factory $UpdateMembershipRequestCopyWith(UpdateMembershipRequest value,
+          $Res Function(UpdateMembershipRequest) _then) =
+      _$UpdateMembershipRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? role,
+      String? status,
+      List<String>? permissions,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$UpdateMembershipRequestCopyWithImpl<$Res>
+    implements $UpdateMembershipRequestCopyWith<$Res> {
+  _$UpdateMembershipRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateMembershipRequest _self;
+  final $Res Function(UpdateMembershipRequest) _then;
+
+  /// Create a copy of UpdateMembershipRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? role = freezed,
+    Object? status = freezed,
+    Object? permissions = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      permissions: freezed == permissions
+          ? _self.permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateMembershipRequest].
+extension UpdateMembershipRequestPatterns on UpdateMembershipRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateMembershipRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateMembershipRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateMembershipRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateMembershipRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateMembershipRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateMembershipRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? role, String? status, List<String>? permissions,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateMembershipRequest() when $default != null:
+        return $default(
+            _that.role, _that.status, _that.permissions, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? role, String? status, List<String>? permissions,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateMembershipRequest():
+        return $default(
+            _that.role, _that.status, _that.permissions, _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? role, String? status, List<String>? permissions,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateMembershipRequest() when $default != null:
+        return $default(
+            _that.role, _that.status, _that.permissions, _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateMembershipRequestImpl implements _UpdateMembershipRequest {
-  const _$UpdateMembershipRequestImpl(
+class _UpdateMembershipRequest implements UpdateMembershipRequest {
+  const _UpdateMembershipRequest(
       {this.role,
       this.status,
       final List<String>? permissions,
       final Map<String, dynamic>? metadata})
       : _permissions = permissions,
         _metadata = metadata;
-
-  factory _$UpdateMembershipRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateMembershipRequestImplFromJson(json);
+  factory _UpdateMembershipRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateMembershipRequestFromJson(json);
 
   @override
   final String? role;
@@ -3029,16 +4773,27 @@ class _$UpdateMembershipRequestImpl implements _UpdateMembershipRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateMembershipRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateMembershipRequest(role: $role, status: $status, permissions: $permissions, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateMembershipRequestCopyWith<_UpdateMembershipRequest> get copyWith =>
+      __$UpdateMembershipRequestCopyWithImpl<_UpdateMembershipRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateMembershipRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateMembershipRequestImpl &&
+            other is _UpdateMembershipRequest &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality()
@@ -3046,7 +4801,7 @@ class _$UpdateMembershipRequestImpl implements _UpdateMembershipRequest {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3055,156 +4810,124 @@ class _$UpdateMembershipRequestImpl implements _UpdateMembershipRequest {
       const DeepCollectionEquality().hash(_permissions),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateMembershipRequestImplCopyWith<_$UpdateMembershipRequestImpl>
-      get copyWith => __$$UpdateMembershipRequestImplCopyWithImpl<
-          _$UpdateMembershipRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateMembershipRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateMembershipRequest(role: $role, status: $status, permissions: $permissions, metadata: $metadata)';
   }
 }
 
-abstract class _UpdateMembershipRequest implements UpdateMembershipRequest {
-  const factory _UpdateMembershipRequest(
-      {final String? role,
-      final String? status,
-      final List<String>? permissions,
-      final Map<String, dynamic>? metadata}) = _$UpdateMembershipRequestImpl;
-
-  factory _UpdateMembershipRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateMembershipRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateMembershipRequestCopyWith<$Res>
+    implements $UpdateMembershipRequestCopyWith<$Res> {
+  factory _$UpdateMembershipRequestCopyWith(_UpdateMembershipRequest value,
+          $Res Function(_UpdateMembershipRequest) _then) =
+      __$UpdateMembershipRequestCopyWithImpl;
   @override
-  String? get role;
-  @override
-  String? get status;
-  @override
-  List<String>? get permissions;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateMembershipRequestImplCopyWith<_$UpdateMembershipRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? role,
+      String? status,
+      List<String>? permissions,
+      Map<String, dynamic>? metadata});
 }
 
-TenantFilters _$TenantFiltersFromJson(Map<String, dynamic> json) {
-  return _TenantFilters.fromJson(json);
+/// @nodoc
+class __$UpdateMembershipRequestCopyWithImpl<$Res>
+    implements _$UpdateMembershipRequestCopyWith<$Res> {
+  __$UpdateMembershipRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateMembershipRequest _self;
+  final $Res Function(_UpdateMembershipRequest) _then;
+
+  /// Create a copy of UpdateMembershipRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? role = freezed,
+    Object? status = freezed,
+    Object? permissions = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_UpdateMembershipRequest(
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      permissions: freezed == permissions
+          ? _self._permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$TenantFilters {
-  String? get status => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get domain => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get status;
+  String? get name;
+  String? get domain;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantFiltersCopyWith<TenantFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantFiltersCopyWith<$Res> {
-  factory $TenantFiltersCopyWith(
-          TenantFilters value, $Res Function(TenantFilters) then) =
-      _$TenantFiltersCopyWithImpl<$Res, TenantFilters>;
-  @useResult
-  $Res call(
-      {String? status,
-      String? name,
-      String? domain,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$TenantFiltersCopyWithImpl<$Res, $Val extends TenantFilters>
-    implements $TenantFiltersCopyWith<$Res> {
-  _$TenantFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of TenantFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $TenantFiltersCopyWith<TenantFilters> get copyWith =>
+      _$TenantFiltersCopyWithImpl<TenantFilters>(
+          this as TenantFilters, _$identity);
+
+  /// Serializes this TenantFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? status = freezed,
-    Object? name = freezed,
-    Object? domain = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      domain: freezed == domain
-          ? _value.domain
-          : domain // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TenantFilters &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.domain, domain) || other.domain == domain) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, status, name, domain,
+      createdAfter, createdBefore, page, limit, sortBy, sortOrder);
+
+  @override
+  String toString() {
+    return 'TenantFilters(status: $status, name: $name, domain: $domain, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$TenantFiltersImplCopyWith<$Res>
-    implements $TenantFiltersCopyWith<$Res> {
-  factory _$$TenantFiltersImplCopyWith(
-          _$TenantFiltersImpl value, $Res Function(_$TenantFiltersImpl) then) =
-      __$$TenantFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TenantFiltersCopyWith<$Res> {
+  factory $TenantFiltersCopyWith(
+          TenantFilters value, $Res Function(TenantFilters) _then) =
+      _$TenantFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? status,
@@ -3219,13 +4942,15 @@ abstract class _$$TenantFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TenantFiltersImplCopyWithImpl<$Res>
-    extends _$TenantFiltersCopyWithImpl<$Res, _$TenantFiltersImpl>
-    implements _$$TenantFiltersImplCopyWith<$Res> {
-  __$$TenantFiltersImplCopyWithImpl(
-      _$TenantFiltersImpl _value, $Res Function(_$TenantFiltersImpl) _then)
-      : super(_value, _then);
+class _$TenantFiltersCopyWithImpl<$Res>
+    implements $TenantFiltersCopyWith<$Res> {
+  _$TenantFiltersCopyWithImpl(this._self, this._then);
 
+  final TenantFilters _self;
+  final $Res Function(TenantFilters) _then;
+
+  /// Create a copy of TenantFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3239,51 +4964,261 @@ class __$$TenantFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$TenantFiltersImpl(
+    return _then(_self.copyWith(
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       domain: freezed == domain
-          ? _value.domain
+          ? _self.domain
           : domain // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAfter: freezed == createdAfter
-          ? _value.createdAfter
+          ? _self.createdAfter
           : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBefore: freezed == createdBefore
-          ? _value.createdBefore
+          ? _self.createdBefore
           : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [TenantFilters].
+extension TenantFiltersPatterns on TenantFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenantFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenantFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenantFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? status,
+            String? name,
+            String? domain,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantFilters() when $default != null:
+        return $default(
+            _that.status,
+            _that.name,
+            _that.domain,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? status,
+            String? name,
+            String? domain,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantFilters():
+        return $default(
+            _that.status,
+            _that.name,
+            _that.domain,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? status,
+            String? name,
+            String? domain,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantFilters() when $default != null:
+        return $default(
+            _that.status,
+            _that.name,
+            _that.domain,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$TenantFiltersImpl extends _TenantFilters {
-  const _$TenantFiltersImpl(
+class _TenantFilters extends TenantFilters {
+  const _TenantFilters(
       {this.status,
       this.name,
       this.domain,
@@ -3294,9 +5229,8 @@ class _$TenantFiltersImpl extends _TenantFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$TenantFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantFiltersImplFromJson(json);
+  factory _TenantFilters.fromJson(Map<String, dynamic> json) =>
+      _$TenantFiltersFromJson(json);
 
   @override
   final String? status;
@@ -3317,16 +5251,26 @@ class _$TenantFiltersImpl extends _TenantFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of TenantFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TenantFilters(status: $status, name: $name, domain: $domain, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantFiltersCopyWith<_TenantFilters> get copyWith =>
+      __$TenantFiltersCopyWithImpl<_TenantFilters>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantFiltersImpl &&
+            other is _TenantFilters &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.domain, domain) || other.domain == domain) &&
@@ -3341,99 +5285,31 @@ class _$TenantFiltersImpl extends _TenantFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, name, domain,
       createdAfter, createdBefore, page, limit, sortBy, sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantFiltersImplCopyWith<_$TenantFiltersImpl> get copyWith =>
-      __$$TenantFiltersImplCopyWithImpl<_$TenantFiltersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TenantFilters(status: $status, name: $name, domain: $domain, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _TenantFilters extends TenantFilters {
-  const factory _TenantFilters(
-      {final String? status,
-      final String? name,
-      final String? domain,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$TenantFiltersImpl;
-  const _TenantFilters._() : super._();
-
-  factory _TenantFilters.fromJson(Map<String, dynamic> json) =
-      _$TenantFiltersImpl.fromJson;
-
-  @override
-  String? get status;
-  @override
-  String? get name;
-  @override
-  String? get domain;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantFiltersImplCopyWith<_$TenantFiltersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TenantMemberFilters _$TenantMemberFiltersFromJson(Map<String, dynamic> json) {
-  return _TenantMemberFilters.fromJson(json);
-}
-
 /// @nodoc
-mixin _$TenantMemberFilters {
-  String? get role => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get userId => throw _privateConstructorUsedError;
-  DateTime? get joinedAfter => throw _privateConstructorUsedError;
-  DateTime? get joinedBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantMemberFiltersCopyWith<TenantMemberFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantMemberFiltersCopyWith<$Res> {
-  factory $TenantMemberFiltersCopyWith(
-          TenantMemberFilters value, $Res Function(TenantMemberFilters) then) =
-      _$TenantMemberFiltersCopyWithImpl<$Res, TenantMemberFilters>;
+abstract mixin class _$TenantFiltersCopyWith<$Res>
+    implements $TenantFiltersCopyWith<$Res> {
+  factory _$TenantFiltersCopyWith(
+          _TenantFilters value, $Res Function(_TenantFilters) _then) =
+      __$TenantFiltersCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? role,
-      String? status,
-      String? userId,
-      DateTime? joinedAfter,
-      DateTime? joinedBefore,
+      {String? status,
+      String? name,
+      String? domain,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
       int? page,
       int? limit,
       String? sortBy,
@@ -3441,145 +5317,63 @@ abstract class $TenantMemberFiltersCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TenantMemberFiltersCopyWithImpl<$Res, $Val extends TenantMemberFilters>
-    implements $TenantMemberFiltersCopyWith<$Res> {
-  _$TenantMemberFiltersCopyWithImpl(this._value, this._then);
+class __$TenantFiltersCopyWithImpl<$Res>
+    implements _$TenantFiltersCopyWith<$Res> {
+  __$TenantFiltersCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _TenantFilters _self;
+  final $Res Function(_TenantFilters) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of TenantFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? role = freezed,
     Object? status = freezed,
-    Object? userId = freezed,
-    Object? joinedAfter = freezed,
-    Object? joinedBefore = freezed,
+    Object? name = freezed,
+    Object? domain = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
     Object? page = freezed,
     Object? limit = freezed,
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_value.copyWith(
-      role: freezed == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_TenantFilters(
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      joinedAfter: freezed == joinedAfter
-          ? _value.joinedAfter
-          : joinedAfter // ignore: cast_nullable_to_non_nullable
+      domain: freezed == domain
+          ? _self.domain
+          : domain // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      joinedBefore: freezed == joinedBefore
-          ? _value.joinedBefore
-          : joinedBefore // ignore: cast_nullable_to_non_nullable
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TenantMemberFiltersImplCopyWith<$Res>
-    implements $TenantMemberFiltersCopyWith<$Res> {
-  factory _$$TenantMemberFiltersImplCopyWith(_$TenantMemberFiltersImpl value,
-          $Res Function(_$TenantMemberFiltersImpl) then) =
-      __$$TenantMemberFiltersImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? role,
-      String? status,
-      String? userId,
-      DateTime? joinedAfter,
-      DateTime? joinedBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class __$$TenantMemberFiltersImplCopyWithImpl<$Res>
-    extends _$TenantMemberFiltersCopyWithImpl<$Res, _$TenantMemberFiltersImpl>
-    implements _$$TenantMemberFiltersImplCopyWith<$Res> {
-  __$$TenantMemberFiltersImplCopyWithImpl(_$TenantMemberFiltersImpl _value,
-      $Res Function(_$TenantMemberFiltersImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? role = freezed,
-    Object? status = freezed,
-    Object? userId = freezed,
-    Object? joinedAfter = freezed,
-    Object? joinedBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_$TenantMemberFiltersImpl(
-      role: freezed == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      joinedAfter: freezed == joinedAfter
-          ? _value.joinedAfter
-          : joinedAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      joinedBefore: freezed == joinedBefore
-          ? _value.joinedBefore
-          : joinedBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3587,9 +5381,354 @@ class __$$TenantMemberFiltersImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$TenantMemberFilters {
+  String? get role;
+  String? get status;
+  String? get userId;
+  DateTime? get joinedAfter;
+  DateTime? get joinedBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
+
+  /// Create a copy of TenantMemberFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TenantMemberFiltersCopyWith<TenantMemberFilters> get copyWith =>
+      _$TenantMemberFiltersCopyWithImpl<TenantMemberFilters>(
+          this as TenantMemberFilters, _$identity);
+
+  /// Serializes this TenantMemberFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TenantMemberFilters &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.joinedAfter, joinedAfter) ||
+                other.joinedAfter == joinedAfter) &&
+            (identical(other.joinedBefore, joinedBefore) ||
+                other.joinedBefore == joinedBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, role, status, userId,
+      joinedAfter, joinedBefore, page, limit, sortBy, sortOrder);
+
+  @override
+  String toString() {
+    return 'TenantMemberFilters(role: $role, status: $status, userId: $userId, joinedAfter: $joinedAfter, joinedBefore: $joinedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TenantMemberFiltersCopyWith<$Res> {
+  factory $TenantMemberFiltersCopyWith(
+          TenantMemberFilters value, $Res Function(TenantMemberFilters) _then) =
+      _$TenantMemberFiltersCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? role,
+      String? status,
+      String? userId,
+      DateTime? joinedAfter,
+      DateTime? joinedBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
+}
+
+/// @nodoc
+class _$TenantMemberFiltersCopyWithImpl<$Res>
+    implements $TenantMemberFiltersCopyWith<$Res> {
+  _$TenantMemberFiltersCopyWithImpl(this._self, this._then);
+
+  final TenantMemberFilters _self;
+  final $Res Function(TenantMemberFilters) _then;
+
+  /// Create a copy of TenantMemberFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? role = freezed,
+    Object? status = freezed,
+    Object? userId = freezed,
+    Object? joinedAfter = freezed,
+    Object? joinedBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_self.copyWith(
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      joinedAfter: freezed == joinedAfter
+          ? _self.joinedAfter
+          : joinedAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      joinedBefore: freezed == joinedBefore
+          ? _self.joinedBefore
+          : joinedBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenantMemberFilters].
+extension TenantMemberFiltersPatterns on TenantMemberFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenantMemberFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMemberFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenantMemberFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMemberFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenantMemberFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMemberFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? role,
+            String? status,
+            String? userId,
+            DateTime? joinedAfter,
+            DateTime? joinedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMemberFilters() when $default != null:
+        return $default(
+            _that.role,
+            _that.status,
+            _that.userId,
+            _that.joinedAfter,
+            _that.joinedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? role,
+            String? status,
+            String? userId,
+            DateTime? joinedAfter,
+            DateTime? joinedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMemberFilters():
+        return $default(
+            _that.role,
+            _that.status,
+            _that.userId,
+            _that.joinedAfter,
+            _that.joinedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? role,
+            String? status,
+            String? userId,
+            DateTime? joinedAfter,
+            DateTime? joinedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantMemberFilters() when $default != null:
+        return $default(
+            _that.role,
+            _that.status,
+            _that.userId,
+            _that.joinedAfter,
+            _that.joinedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$TenantMemberFiltersImpl extends _TenantMemberFilters {
-  const _$TenantMemberFiltersImpl(
+class _TenantMemberFilters extends TenantMemberFilters {
+  const _TenantMemberFilters(
       {this.role,
       this.status,
       this.userId,
@@ -3600,9 +5739,8 @@ class _$TenantMemberFiltersImpl extends _TenantMemberFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$TenantMemberFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantMemberFiltersImplFromJson(json);
+  factory _TenantMemberFilters.fromJson(Map<String, dynamic> json) =>
+      _$TenantMemberFiltersFromJson(json);
 
   @override
   final String? role;
@@ -3623,16 +5761,27 @@ class _$TenantMemberFiltersImpl extends _TenantMemberFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of TenantMemberFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TenantMemberFilters(role: $role, status: $status, userId: $userId, joinedAfter: $joinedAfter, joinedBefore: $joinedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantMemberFiltersCopyWith<_TenantMemberFilters> get copyWith =>
+      __$TenantMemberFiltersCopyWithImpl<_TenantMemberFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantMemberFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantMemberFiltersImpl &&
+            other is _TenantMemberFilters &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.userId, userId) || other.userId == userId) &&
@@ -3647,107 +5796,31 @@ class _$TenantMemberFiltersImpl extends _TenantMemberFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, role, status, userId,
       joinedAfter, joinedBefore, page, limit, sortBy, sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantMemberFiltersImplCopyWith<_$TenantMemberFiltersImpl> get copyWith =>
-      __$$TenantMemberFiltersImplCopyWithImpl<_$TenantMemberFiltersImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantMemberFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TenantMemberFilters(role: $role, status: $status, userId: $userId, joinedAfter: $joinedAfter, joinedBefore: $joinedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _TenantMemberFilters extends TenantMemberFilters {
-  const factory _TenantMemberFilters(
-      {final String? role,
-      final String? status,
-      final String? userId,
-      final DateTime? joinedAfter,
-      final DateTime? joinedBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$TenantMemberFiltersImpl;
-  const _TenantMemberFilters._() : super._();
-
-  factory _TenantMemberFilters.fromJson(Map<String, dynamic> json) =
-      _$TenantMemberFiltersImpl.fromJson;
-
-  @override
-  String? get role;
-  @override
-  String? get status;
-  @override
-  String? get userId;
-  @override
-  DateTime? get joinedAfter;
-  @override
-  DateTime? get joinedBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantMemberFiltersImplCopyWith<_$TenantMemberFiltersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TenantInvitationFilters _$TenantInvitationFiltersFromJson(
-    Map<String, dynamic> json) {
-  return _TenantInvitationFilters.fromJson(json);
-}
-
 /// @nodoc
-mixin _$TenantInvitationFilters {
-  String? get status => throw _privateConstructorUsedError;
-  String? get role => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get invitedBy => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  DateTime? get expiresAfter => throw _privateConstructorUsedError;
-  DateTime? get expiresBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenantInvitationFiltersCopyWith<TenantInvitationFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenantInvitationFiltersCopyWith<$Res> {
-  factory $TenantInvitationFiltersCopyWith(TenantInvitationFilters value,
-          $Res Function(TenantInvitationFilters) then) =
-      _$TenantInvitationFiltersCopyWithImpl<$Res, TenantInvitationFilters>;
+abstract mixin class _$TenantMemberFiltersCopyWith<$Res>
+    implements $TenantMemberFiltersCopyWith<$Res> {
+  factory _$TenantMemberFiltersCopyWith(_TenantMemberFilters value,
+          $Res Function(_TenantMemberFilters) _then) =
+      __$TenantMemberFiltersCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? status,
-      String? role,
-      String? email,
-      String? invitedBy,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      DateTime? expiresAfter,
-      DateTime? expiresBefore,
+      {String? role,
+      String? status,
+      String? userId,
+      DateTime? joinedAfter,
+      DateTime? joinedBefore,
       int? page,
       int? limit,
       String? sortBy,
@@ -3755,182 +5828,63 @@ abstract class $TenantInvitationFiltersCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TenantInvitationFiltersCopyWithImpl<$Res,
-        $Val extends TenantInvitationFilters>
-    implements $TenantInvitationFiltersCopyWith<$Res> {
-  _$TenantInvitationFiltersCopyWithImpl(this._value, this._then);
+class __$TenantMemberFiltersCopyWithImpl<$Res>
+    implements _$TenantMemberFiltersCopyWith<$Res> {
+  __$TenantMemberFiltersCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _TenantMemberFilters _self;
+  final $Res Function(_TenantMemberFilters) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of TenantMemberFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? status = freezed,
     Object? role = freezed,
-    Object? email = freezed,
-    Object? invitedBy = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? expiresAfter = freezed,
-    Object? expiresBefore = freezed,
+    Object? status = freezed,
+    Object? userId = freezed,
+    Object? joinedAfter = freezed,
+    Object? joinedBefore = freezed,
     Object? page = freezed,
     Object? limit = freezed,
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_value.copyWith(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_TenantMemberFilters(
       role: freezed == role
-          ? _value.role
+          ? _self.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String?,
-      invitedBy: freezed == invitedBy
-          ? _value.invitedBy
-          : invitedBy // ignore: cast_nullable_to_non_nullable
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
+      joinedAfter: freezed == joinedAfter
+          ? _self.joinedAfter
+          : joinedAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresAfter: freezed == expiresAfter
-          ? _value.expiresAfter
-          : expiresAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresBefore: freezed == expiresBefore
-          ? _value.expiresBefore
-          : expiresBefore // ignore: cast_nullable_to_non_nullable
+      joinedBefore: freezed == joinedBefore
+          ? _self.joinedBefore
+          : joinedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TenantInvitationFiltersImplCopyWith<$Res>
-    implements $TenantInvitationFiltersCopyWith<$Res> {
-  factory _$$TenantInvitationFiltersImplCopyWith(
-          _$TenantInvitationFiltersImpl value,
-          $Res Function(_$TenantInvitationFiltersImpl) then) =
-      __$$TenantInvitationFiltersImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? status,
-      String? role,
-      String? email,
-      String? invitedBy,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      DateTime? expiresAfter,
-      DateTime? expiresBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class __$$TenantInvitationFiltersImplCopyWithImpl<$Res>
-    extends _$TenantInvitationFiltersCopyWithImpl<$Res,
-        _$TenantInvitationFiltersImpl>
-    implements _$$TenantInvitationFiltersImplCopyWith<$Res> {
-  __$$TenantInvitationFiltersImplCopyWithImpl(
-      _$TenantInvitationFiltersImpl _value,
-      $Res Function(_$TenantInvitationFiltersImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = freezed,
-    Object? role = freezed,
-    Object? email = freezed,
-    Object? invitedBy = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? expiresAfter = freezed,
-    Object? expiresBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_$TenantInvitationFiltersImpl(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      role: freezed == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      invitedBy: freezed == invitedBy
-          ? _value.invitedBy
-          : invitedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresAfter: freezed == expiresAfter
-          ? _value.expiresAfter
-          : expiresAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresBefore: freezed == expiresBefore
-          ? _value.expiresBefore
-          : expiresBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3938,9 +5892,411 @@ class __$$TenantInvitationFiltersImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$TenantInvitationFilters {
+  String? get status;
+  String? get role;
+  String? get email;
+  String? get invitedBy;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  DateTime? get expiresAfter;
+  DateTime? get expiresBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
+
+  /// Create a copy of TenantInvitationFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TenantInvitationFiltersCopyWith<TenantInvitationFilters> get copyWith =>
+      _$TenantInvitationFiltersCopyWithImpl<TenantInvitationFilters>(
+          this as TenantInvitationFilters, _$identity);
+
+  /// Serializes this TenantInvitationFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TenantInvitationFilters &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.invitedBy, invitedBy) ||
+                other.invitedBy == invitedBy) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            (identical(other.expiresAfter, expiresAfter) ||
+                other.expiresAfter == expiresAfter) &&
+            (identical(other.expiresBefore, expiresBefore) ||
+                other.expiresBefore == expiresBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      status,
+      role,
+      email,
+      invitedBy,
+      createdAfter,
+      createdBefore,
+      expiresAfter,
+      expiresBefore,
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'TenantInvitationFilters(status: $status, role: $role, email: $email, invitedBy: $invitedBy, createdAfter: $createdAfter, createdBefore: $createdBefore, expiresAfter: $expiresAfter, expiresBefore: $expiresBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TenantInvitationFiltersCopyWith<$Res> {
+  factory $TenantInvitationFiltersCopyWith(TenantInvitationFilters value,
+          $Res Function(TenantInvitationFilters) _then) =
+      _$TenantInvitationFiltersCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? status,
+      String? role,
+      String? email,
+      String? invitedBy,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      DateTime? expiresAfter,
+      DateTime? expiresBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
+}
+
+/// @nodoc
+class _$TenantInvitationFiltersCopyWithImpl<$Res>
+    implements $TenantInvitationFiltersCopyWith<$Res> {
+  _$TenantInvitationFiltersCopyWithImpl(this._self, this._then);
+
+  final TenantInvitationFilters _self;
+  final $Res Function(TenantInvitationFilters) _then;
+
+  /// Create a copy of TenantInvitationFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? role = freezed,
+    Object? email = freezed,
+    Object? invitedBy = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? expiresAfter = freezed,
+    Object? expiresBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_self.copyWith(
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitedBy: freezed == invitedBy
+          ? _self.invitedBy
+          : invitedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresAfter: freezed == expiresAfter
+          ? _self.expiresAfter
+          : expiresAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresBefore: freezed == expiresBefore
+          ? _self.expiresBefore
+          : expiresBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [TenantInvitationFilters].
+extension TenantInvitationFiltersPatterns on TenantInvitationFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_TenantInvitationFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitationFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_TenantInvitationFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitationFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_TenantInvitationFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitationFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? status,
+            String? role,
+            String? email,
+            String? invitedBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? expiresAfter,
+            DateTime? expiresBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitationFilters() when $default != null:
+        return $default(
+            _that.status,
+            _that.role,
+            _that.email,
+            _that.invitedBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.expiresAfter,
+            _that.expiresBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? status,
+            String? role,
+            String? email,
+            String? invitedBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? expiresAfter,
+            DateTime? expiresBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitationFilters():
+        return $default(
+            _that.status,
+            _that.role,
+            _that.email,
+            _that.invitedBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.expiresAfter,
+            _that.expiresBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? status,
+            String? role,
+            String? email,
+            String? invitedBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? expiresAfter,
+            DateTime? expiresBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _TenantInvitationFilters() when $default != null:
+        return $default(
+            _that.status,
+            _that.role,
+            _that.email,
+            _that.invitedBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.expiresAfter,
+            _that.expiresBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$TenantInvitationFiltersImpl extends _TenantInvitationFilters {
-  const _$TenantInvitationFiltersImpl(
+class _TenantInvitationFilters extends TenantInvitationFilters {
+  const _TenantInvitationFilters(
       {this.status,
       this.role,
       this.email,
@@ -3954,9 +6310,8 @@ class _$TenantInvitationFiltersImpl extends _TenantInvitationFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$TenantInvitationFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenantInvitationFiltersImplFromJson(json);
+  factory _TenantInvitationFilters.fromJson(Map<String, dynamic> json) =>
+      _$TenantInvitationFiltersFromJson(json);
 
   @override
   final String? status;
@@ -3983,16 +6338,27 @@ class _$TenantInvitationFiltersImpl extends _TenantInvitationFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of TenantInvitationFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TenantInvitationFilters(status: $status, role: $role, email: $email, invitedBy: $invitedBy, createdAfter: $createdAfter, createdBefore: $createdBefore, expiresAfter: $expiresAfter, expiresBefore: $expiresBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenantInvitationFiltersCopyWith<_TenantInvitationFilters> get copyWith =>
+      __$TenantInvitationFiltersCopyWithImpl<_TenantInvitationFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenantInvitationFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenantInvitationFiltersImpl &&
+            other is _TenantInvitationFilters &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.role, role) || other.role == role) &&
             (identical(other.email, email) || other.email == email) &&
@@ -4013,7 +6379,7 @@ class _$TenantInvitationFiltersImpl extends _TenantInvitationFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -4030,66 +6396,112 @@ class _$TenantInvitationFiltersImpl extends _TenantInvitationFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TenantInvitationFiltersImplCopyWith<_$TenantInvitationFiltersImpl>
-      get copyWith => __$$TenantInvitationFiltersImplCopyWithImpl<
-          _$TenantInvitationFiltersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenantInvitationFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TenantInvitationFilters(status: $status, role: $role, email: $email, invitedBy: $invitedBy, createdAfter: $createdAfter, createdBefore: $createdBefore, expiresAfter: $expiresAfter, expiresBefore: $expiresBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _TenantInvitationFilters extends TenantInvitationFilters {
-  const factory _TenantInvitationFilters(
-      {final String? status,
-      final String? role,
-      final String? email,
-      final String? invitedBy,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final DateTime? expiresAfter,
-      final DateTime? expiresBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$TenantInvitationFiltersImpl;
-  const _TenantInvitationFilters._() : super._();
-
-  factory _TenantInvitationFilters.fromJson(Map<String, dynamic> json) =
-      _$TenantInvitationFiltersImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$TenantInvitationFiltersCopyWith<$Res>
+    implements $TenantInvitationFiltersCopyWith<$Res> {
+  factory _$TenantInvitationFiltersCopyWith(_TenantInvitationFilters value,
+          $Res Function(_TenantInvitationFilters) _then) =
+      __$TenantInvitationFiltersCopyWithImpl;
   @override
-  String? get status;
-  @override
-  String? get role;
-  @override
-  String? get email;
-  @override
-  String? get invitedBy;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  DateTime? get expiresAfter;
-  @override
-  DateTime? get expiresBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenantInvitationFiltersImplCopyWith<_$TenantInvitationFiltersImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? status,
+      String? role,
+      String? email,
+      String? invitedBy,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      DateTime? expiresAfter,
+      DateTime? expiresBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
+
+/// @nodoc
+class __$TenantInvitationFiltersCopyWithImpl<$Res>
+    implements _$TenantInvitationFiltersCopyWith<$Res> {
+  __$TenantInvitationFiltersCopyWithImpl(this._self, this._then);
+
+  final _TenantInvitationFilters _self;
+  final $Res Function(_TenantInvitationFilters) _then;
+
+  /// Create a copy of TenantInvitationFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = freezed,
+    Object? role = freezed,
+    Object? email = freezed,
+    Object? invitedBy = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? expiresAfter = freezed,
+    Object? expiresBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_TenantInvitationFilters(
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      role: freezed == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      invitedBy: freezed == invitedBy
+          ? _self.invitedBy
+          : invitedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresAfter: freezed == expiresAfter
+          ? _self.expiresAfter
+          : expiresAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresBefore: freezed == expiresBefore
+          ? _self.expiresBefore
+          : expiresBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

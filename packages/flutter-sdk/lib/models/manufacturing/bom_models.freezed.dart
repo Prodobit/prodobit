@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,171 +9,104 @@ part of 'bom_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-BomComponent _$BomComponentFromJson(Map<String, dynamic> json) {
-  return _BomComponent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BomComponent {
-  String get id => throw _privateConstructorUsedError;
-  String get bomId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  double get unitCost => throw _privateConstructorUsedError;
-  double get totalCost => throw _privateConstructorUsedError;
-  int get sequence => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get specification => throw _privateConstructorUsedError;
-  bool? get isOptional => throw _privateConstructorUsedError;
-  String? get alternativeItemId => throw _privateConstructorUsedError;
-  double? get wastagePercentage => throw _privateConstructorUsedError;
-  double? get leadTime => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get bomId;
+  String get itemId;
+  double get quantity;
+  String get unit;
+  double get unitCost;
+  double get totalCost;
+  int get sequence;
+  String? get notes;
+  String? get specification;
+  bool? get isOptional;
+  String? get alternativeItemId;
+  double? get wastagePercentage;
+  double? get leadTime;
+  Map<String, dynamic>? get attributes;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BomComponentCopyWith<BomComponent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BomComponentCopyWith<$Res> {
-  factory $BomComponentCopyWith(
-          BomComponent value, $Res Function(BomComponent) then) =
-      _$BomComponentCopyWithImpl<$Res, BomComponent>;
-  @useResult
-  $Res call(
-      {String id,
-      String bomId,
-      String itemId,
-      double quantity,
-      String unit,
-      double unitCost,
-      double totalCost,
-      int sequence,
-      String? notes,
-      String? specification,
-      bool? isOptional,
-      String? alternativeItemId,
-      double? wastagePercentage,
-      double? leadTime,
-      Map<String, dynamic>? attributes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$BomComponentCopyWithImpl<$Res, $Val extends BomComponent>
-    implements $BomComponentCopyWith<$Res> {
-  _$BomComponentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BomComponent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BomComponentCopyWith<BomComponent> get copyWith =>
+      _$BomComponentCopyWithImpl<BomComponent>(
+          this as BomComponent, _$identity);
+
+  /// Serializes this BomComponent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? bomId = null,
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitCost = null,
-    Object? totalCost = null,
-    Object? sequence = null,
-    Object? notes = freezed,
-    Object? specification = freezed,
-    Object? isOptional = freezed,
-    Object? alternativeItemId = freezed,
-    Object? wastagePercentage = freezed,
-    Object? leadTime = freezed,
-    Object? attributes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      bomId: null == bomId
-          ? _value.bomId
-          : bomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitCost: null == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalCost: null == totalCost
-          ? _value.totalCost
-          : totalCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      sequence: null == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isOptional: freezed == isOptional
-          ? _value.isOptional
-          : isOptional // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      alternativeItemId: freezed == alternativeItemId
-          ? _value.alternativeItemId
-          : alternativeItemId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
-          : wastagePercentage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      leadTime: freezed == leadTime
-          ? _value.leadTime
-          : leadTime // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BomComponent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.bomId, bomId) || other.bomId == bomId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitCost, unitCost) ||
+                other.unitCost == unitCost) &&
+            (identical(other.totalCost, totalCost) ||
+                other.totalCost == totalCost) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.specification, specification) ||
+                other.specification == specification) &&
+            (identical(other.isOptional, isOptional) ||
+                other.isOptional == isOptional) &&
+            (identical(other.alternativeItemId, alternativeItemId) ||
+                other.alternativeItemId == alternativeItemId) &&
+            (identical(other.wastagePercentage, wastagePercentage) ||
+                other.wastagePercentage == wastagePercentage) &&
+            (identical(other.leadTime, leadTime) ||
+                other.leadTime == leadTime) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      bomId,
+      itemId,
+      quantity,
+      unit,
+      unitCost,
+      totalCost,
+      sequence,
+      notes,
+      specification,
+      isOptional,
+      alternativeItemId,
+      wastagePercentage,
+      leadTime,
+      const DeepCollectionEquality().hash(attributes),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'BomComponent(id: $id, bomId: $bomId, itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, totalCost: $totalCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$BomComponentImplCopyWith<$Res>
-    implements $BomComponentCopyWith<$Res> {
-  factory _$$BomComponentImplCopyWith(
-          _$BomComponentImpl value, $Res Function(_$BomComponentImpl) then) =
-      __$$BomComponentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BomComponentCopyWith<$Res> {
+  factory $BomComponentCopyWith(
+          BomComponent value, $Res Function(BomComponent) _then) =
+      _$BomComponentCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -195,13 +128,14 @@ abstract class _$$BomComponentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BomComponentImplCopyWithImpl<$Res>
-    extends _$BomComponentCopyWithImpl<$Res, _$BomComponentImpl>
-    implements _$$BomComponentImplCopyWith<$Res> {
-  __$$BomComponentImplCopyWithImpl(
-      _$BomComponentImpl _value, $Res Function(_$BomComponentImpl) _then)
-      : super(_value, _then);
+class _$BomComponentCopyWithImpl<$Res> implements $BomComponentCopyWith<$Res> {
+  _$BomComponentCopyWithImpl(this._self, this._then);
 
+  final BomComponent _self;
+  final $Res Function(BomComponent) _then;
+
+  /// Create a copy of BomComponent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -222,79 +156,331 @@ class __$$BomComponentImplCopyWithImpl<$Res>
     Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$BomComponentImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       bomId: null == bomId
-          ? _value.bomId
+          ? _self.bomId
           : bomId // ignore: cast_nullable_to_non_nullable
               as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       unit: null == unit
-          ? _value.unit
+          ? _self.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
       unitCost: null == unitCost
-          ? _value.unitCost
+          ? _self.unitCost
           : unitCost // ignore: cast_nullable_to_non_nullable
               as double,
       totalCost: null == totalCost
-          ? _value.totalCost
+          ? _self.totalCost
           : totalCost // ignore: cast_nullable_to_non_nullable
               as double,
       sequence: null == sequence
-          ? _value.sequence
+          ? _self.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
               as int,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       specification: freezed == specification
-          ? _value.specification
+          ? _self.specification
           : specification // ignore: cast_nullable_to_non_nullable
               as String?,
       isOptional: freezed == isOptional
-          ? _value.isOptional
+          ? _self.isOptional
           : isOptional // ignore: cast_nullable_to_non_nullable
               as bool?,
       alternativeItemId: freezed == alternativeItemId
-          ? _value.alternativeItemId
+          ? _self.alternativeItemId
           : alternativeItemId // ignore: cast_nullable_to_non_nullable
               as String?,
       wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
+          ? _self.wastagePercentage
           : wastagePercentage // ignore: cast_nullable_to_non_nullable
               as double?,
       leadTime: freezed == leadTime
-          ? _value.leadTime
+          ? _self.leadTime
           : leadTime // ignore: cast_nullable_to_non_nullable
               as double?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [BomComponent].
+extension BomComponentPatterns on BomComponent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BomComponent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomComponent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BomComponent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomComponent():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BomComponent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomComponent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String bomId,
+            String itemId,
+            double quantity,
+            String unit,
+            double unitCost,
+            double totalCost,
+            int sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomComponent() when $default != null:
+        return $default(
+            _that.id,
+            _that.bomId,
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.totalCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String bomId,
+            String itemId,
+            double quantity,
+            String unit,
+            double unitCost,
+            double totalCost,
+            int sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomComponent():
+        return $default(
+            _that.id,
+            _that.bomId,
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.totalCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String bomId,
+            String itemId,
+            double quantity,
+            String unit,
+            double unitCost,
+            double totalCost,
+            int sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomComponent() when $default != null:
+        return $default(
+            _that.id,
+            _that.bomId,
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.totalCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$BomComponentImpl implements _BomComponent {
-  const _$BomComponentImpl(
+class _BomComponent implements BomComponent {
+  const _BomComponent(
       {required this.id,
       required this.bomId,
       required this.itemId,
@@ -313,9 +499,8 @@ class _$BomComponentImpl implements _BomComponent {
       final Map<String, dynamic>? metadata})
       : _attributes = attributes,
         _metadata = metadata;
-
-  factory _$BomComponentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BomComponentImplFromJson(json);
+  factory _BomComponent.fromJson(Map<String, dynamic> json) =>
+      _$BomComponentFromJson(json);
 
   @override
   final String id;
@@ -365,16 +550,26 @@ class _$BomComponentImpl implements _BomComponent {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of BomComponent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BomComponent(id: $id, bomId: $bomId, itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, totalCost: $totalCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BomComponentCopyWith<_BomComponent> get copyWith =>
+      __$BomComponentCopyWithImpl<_BomComponent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BomComponentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BomComponentImpl &&
+            other is _BomComponent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.bomId, bomId) || other.bomId == bomId) &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
@@ -403,7 +598,7 @@ class _$BomComponentImpl implements _BomComponent {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -424,146 +619,60 @@ class _$BomComponentImpl implements _BomComponent {
       const DeepCollectionEquality().hash(_attributes),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BomComponentImplCopyWith<_$BomComponentImpl> get copyWith =>
-      __$$BomComponentImplCopyWithImpl<_$BomComponentImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BomComponentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BomComponent(id: $id, bomId: $bomId, itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, totalCost: $totalCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes, metadata: $metadata)';
   }
 }
 
-abstract class _BomComponent implements BomComponent {
-  const factory _BomComponent(
-      {required final String id,
-      required final String bomId,
-      required final String itemId,
-      required final double quantity,
-      required final String unit,
-      required final double unitCost,
-      required final double totalCost,
-      required final int sequence,
-      final String? notes,
-      final String? specification,
-      final bool? isOptional,
-      final String? alternativeItemId,
-      final double? wastagePercentage,
-      final double? leadTime,
-      final Map<String, dynamic>? attributes,
-      final Map<String, dynamic>? metadata}) = _$BomComponentImpl;
-
-  factory _BomComponent.fromJson(Map<String, dynamic> json) =
-      _$BomComponentImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get bomId;
-  @override
-  String get itemId;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  double get unitCost;
-  @override
-  double get totalCost;
-  @override
-  int get sequence;
-  @override
-  String? get notes;
-  @override
-  String? get specification;
-  @override
-  bool? get isOptional;
-  @override
-  String? get alternativeItemId;
-  @override
-  double? get wastagePercentage;
-  @override
-  double? get leadTime;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$BomComponentImplCopyWith<_$BomComponentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CreateBomComponentRequest _$CreateBomComponentRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateBomComponentRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateBomComponentRequest {
-  String get itemId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  double get unitCost => throw _privateConstructorUsedError;
-  int? get sequence => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get specification => throw _privateConstructorUsedError;
-  bool? get isOptional => throw _privateConstructorUsedError;
-  String? get alternativeItemId => throw _privateConstructorUsedError;
-  double? get wastagePercentage => throw _privateConstructorUsedError;
-  double? get leadTime => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateBomComponentRequestCopyWith<CreateBomComponentRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateBomComponentRequestCopyWith<$Res> {
-  factory $CreateBomComponentRequestCopyWith(CreateBomComponentRequest value,
-          $Res Function(CreateBomComponentRequest) then) =
-      _$CreateBomComponentRequestCopyWithImpl<$Res, CreateBomComponentRequest>;
+abstract mixin class _$BomComponentCopyWith<$Res>
+    implements $BomComponentCopyWith<$Res> {
+  factory _$BomComponentCopyWith(
+          _BomComponent value, $Res Function(_BomComponent) _then) =
+      __$BomComponentCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String itemId,
+      {String id,
+      String bomId,
+      String itemId,
       double quantity,
       String unit,
       double unitCost,
-      int? sequence,
+      double totalCost,
+      int sequence,
       String? notes,
       String? specification,
       bool? isOptional,
       String? alternativeItemId,
       double? wastagePercentage,
       double? leadTime,
-      Map<String, dynamic>? attributes});
+      Map<String, dynamic>? attributes,
+      Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$CreateBomComponentRequestCopyWithImpl<$Res,
-        $Val extends CreateBomComponentRequest>
-    implements $CreateBomComponentRequestCopyWith<$Res> {
-  _$CreateBomComponentRequestCopyWithImpl(this._value, this._then);
+class __$BomComponentCopyWithImpl<$Res>
+    implements _$BomComponentCopyWith<$Res> {
+  __$BomComponentCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _BomComponent _self;
+  final $Res Function(_BomComponent) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of BomComponent
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
+    Object? id = null,
+    Object? bomId = null,
     Object? itemId = null,
     Object? quantity = null,
     Object? unit = null,
     Object? unitCost = null,
-    Object? sequence = freezed,
+    Object? totalCost = null,
+    Object? sequence = null,
     Object? notes = freezed,
     Object? specification = freezed,
     Object? isOptional = freezed,
@@ -571,167 +680,486 @@ class _$CreateBomComponentRequestCopyWithImpl<$Res,
     Object? wastagePercentage = freezed,
     Object? leadTime = freezed,
     Object? attributes = freezed,
+    Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_BomComponent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      bomId: null == bomId
+          ? _self.bomId
+          : bomId // ignore: cast_nullable_to_non_nullable
+              as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       unit: null == unit
-          ? _value.unit
+          ? _self.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
       unitCost: null == unitCost
-          ? _value.unitCost
+          ? _self.unitCost
           : unitCost // ignore: cast_nullable_to_non_nullable
               as double,
-      sequence: freezed == sequence
-          ? _value.sequence
+      totalCost: null == totalCost
+          ? _self.totalCost
+          : totalCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      sequence: null == sequence
+          ? _self.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       specification: freezed == specification
-          ? _value.specification
+          ? _self.specification
           : specification // ignore: cast_nullable_to_non_nullable
               as String?,
       isOptional: freezed == isOptional
-          ? _value.isOptional
+          ? _self.isOptional
           : isOptional // ignore: cast_nullable_to_non_nullable
               as bool?,
       alternativeItemId: freezed == alternativeItemId
-          ? _value.alternativeItemId
+          ? _self.alternativeItemId
           : alternativeItemId // ignore: cast_nullable_to_non_nullable
               as String?,
       wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
+          ? _self.wastagePercentage
           : wastagePercentage // ignore: cast_nullable_to_non_nullable
               as double?,
       leadTime: freezed == leadTime
-          ? _value.leadTime
+          ? _self.leadTime
           : leadTime // ignore: cast_nullable_to_non_nullable
               as double?,
       attributes: freezed == attributes
-          ? _value.attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateBomComponentRequestImplCopyWith<$Res>
-    implements $CreateBomComponentRequestCopyWith<$Res> {
-  factory _$$CreateBomComponentRequestImplCopyWith(
-          _$CreateBomComponentRequestImpl value,
-          $Res Function(_$CreateBomComponentRequestImpl) then) =
-      __$$CreateBomComponentRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String itemId,
-      double quantity,
-      String unit,
-      double unitCost,
-      int? sequence,
-      String? notes,
-      String? specification,
-      bool? isOptional,
-      String? alternativeItemId,
-      double? wastagePercentage,
-      double? leadTime,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class __$$CreateBomComponentRequestImplCopyWithImpl<$Res>
-    extends _$CreateBomComponentRequestCopyWithImpl<$Res,
-        _$CreateBomComponentRequestImpl>
-    implements _$$CreateBomComponentRequestImplCopyWith<$Res> {
-  __$$CreateBomComponentRequestImplCopyWithImpl(
-      _$CreateBomComponentRequestImpl _value,
-      $Res Function(_$CreateBomComponentRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitCost = null,
-    Object? sequence = freezed,
-    Object? notes = freezed,
-    Object? specification = freezed,
-    Object? isOptional = freezed,
-    Object? alternativeItemId = freezed,
-    Object? wastagePercentage = freezed,
-    Object? leadTime = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_$CreateBomComponentRequestImpl(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitCost: null == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isOptional: freezed == isOptional
-          ? _value.isOptional
-          : isOptional // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      alternativeItemId: freezed == alternativeItemId
-          ? _value.alternativeItemId
-          : alternativeItemId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
-          : wastagePercentage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      leadTime: freezed == leadTime
-          ? _value.leadTime
-          : leadTime // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$CreateBomComponentRequest {
+  String get itemId;
+  double get quantity;
+  String get unit;
+  double get unitCost;
+  int? get sequence;
+  String? get notes;
+  String? get specification;
+  bool? get isOptional;
+  String? get alternativeItemId;
+  double? get wastagePercentage;
+  double? get leadTime;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateBomComponentRequestCopyWith<CreateBomComponentRequest> get copyWith =>
+      _$CreateBomComponentRequestCopyWithImpl<CreateBomComponentRequest>(
+          this as CreateBomComponentRequest, _$identity);
+
+  /// Serializes this CreateBomComponentRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateBomComponentRequest &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitCost, unitCost) ||
+                other.unitCost == unitCost) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.specification, specification) ||
+                other.specification == specification) &&
+            (identical(other.isOptional, isOptional) ||
+                other.isOptional == isOptional) &&
+            (identical(other.alternativeItemId, alternativeItemId) ||
+                other.alternativeItemId == alternativeItemId) &&
+            (identical(other.wastagePercentage, wastagePercentage) ||
+                other.wastagePercentage == wastagePercentage) &&
+            (identical(other.leadTime, leadTime) ||
+                other.leadTime == leadTime) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      quantity,
+      unit,
+      unitCost,
+      sequence,
+      notes,
+      specification,
+      isOptional,
+      alternativeItemId,
+      wastagePercentage,
+      leadTime,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreateBomComponentRequest(itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateBomComponentRequestCopyWith<$Res> {
+  factory $CreateBomComponentRequestCopyWith(CreateBomComponentRequest value,
+          $Res Function(CreateBomComponentRequest) _then) =
+      _$CreateBomComponentRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String itemId,
+      double quantity,
+      String unit,
+      double unitCost,
+      int? sequence,
+      String? notes,
+      String? specification,
+      bool? isOptional,
+      String? alternativeItemId,
+      double? wastagePercentage,
+      double? leadTime,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreateBomComponentRequestCopyWithImpl<$Res>
+    implements $CreateBomComponentRequestCopyWith<$Res> {
+  _$CreateBomComponentRequestCopyWithImpl(this._self, this._then);
+
+  final CreateBomComponentRequest _self;
+  final $Res Function(CreateBomComponentRequest) _then;
+
+  /// Create a copy of CreateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitCost = null,
+    Object? sequence = freezed,
+    Object? notes = freezed,
+    Object? specification = freezed,
+    Object? isOptional = freezed,
+    Object? alternativeItemId = freezed,
+    Object? wastagePercentage = freezed,
+    Object? leadTime = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitCost: null == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isOptional: freezed == isOptional
+          ? _self.isOptional
+          : isOptional // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      alternativeItemId: freezed == alternativeItemId
+          ? _self.alternativeItemId
+          : alternativeItemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      wastagePercentage: freezed == wastagePercentage
+          ? _self.wastagePercentage
+          : wastagePercentage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      leadTime: freezed == leadTime
+          ? _self.leadTime
+          : leadTime // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateBomComponentRequest].
+extension CreateBomComponentRequestPatterns on CreateBomComponentRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateBomComponentRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomComponentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateBomComponentRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomComponentRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateBomComponentRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomComponentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            double quantity,
+            String unit,
+            double unitCost,
+            int? sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomComponentRequest() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            double quantity,
+            String unit,
+            double unitCost,
+            int? sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomComponentRequest():
+        return $default(
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String itemId,
+            double quantity,
+            String unit,
+            double unitCost,
+            int? sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomComponentRequest() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateBomComponentRequestImpl implements _CreateBomComponentRequest {
-  const _$CreateBomComponentRequestImpl(
+class _CreateBomComponentRequest implements CreateBomComponentRequest {
+  const _CreateBomComponentRequest(
       {required this.itemId,
       required this.quantity,
       required this.unit,
@@ -745,9 +1173,8 @@ class _$CreateBomComponentRequestImpl implements _CreateBomComponentRequest {
       this.leadTime,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$CreateBomComponentRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateBomComponentRequestImplFromJson(json);
+  factory _CreateBomComponentRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateBomComponentRequestFromJson(json);
 
   @override
   final String itemId;
@@ -781,16 +1208,28 @@ class _$CreateBomComponentRequestImpl implements _CreateBomComponentRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateBomComponentRequest(itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateBomComponentRequestCopyWith<_CreateBomComponentRequest>
+      get copyWith =>
+          __$CreateBomComponentRequestCopyWithImpl<_CreateBomComponentRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateBomComponentRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateBomComponentRequestImpl &&
+            other is _CreateBomComponentRequest &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
@@ -814,7 +1253,7 @@ class _$CreateBomComponentRequestImpl implements _CreateBomComponentRequest {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -831,105 +1270,25 @@ class _$CreateBomComponentRequestImpl implements _CreateBomComponentRequest {
       leadTime,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateBomComponentRequestImplCopyWith<_$CreateBomComponentRequestImpl>
-      get copyWith => __$$CreateBomComponentRequestImplCopyWithImpl<
-          _$CreateBomComponentRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateBomComponentRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateBomComponentRequest(itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes)';
   }
 }
 
-abstract class _CreateBomComponentRequest implements CreateBomComponentRequest {
-  const factory _CreateBomComponentRequest(
-          {required final String itemId,
-          required final double quantity,
-          required final String unit,
-          required final double unitCost,
-          final int? sequence,
-          final String? notes,
-          final String? specification,
-          final bool? isOptional,
-          final String? alternativeItemId,
-          final double? wastagePercentage,
-          final double? leadTime,
-          final Map<String, dynamic>? attributes}) =
-      _$CreateBomComponentRequestImpl;
-
-  factory _CreateBomComponentRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateBomComponentRequestImpl.fromJson;
-
-  @override
-  String get itemId;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  double get unitCost;
-  @override
-  int? get sequence;
-  @override
-  String? get notes;
-  @override
-  String? get specification;
-  @override
-  bool? get isOptional;
-  @override
-  String? get alternativeItemId;
-  @override
-  double? get wastagePercentage;
-  @override
-  double? get leadTime;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateBomComponentRequestImplCopyWith<_$CreateBomComponentRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateBomComponentRequest _$UpdateBomComponentRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateBomComponentRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateBomComponentRequest {
-  double? get quantity => throw _privateConstructorUsedError;
-  String? get unit => throw _privateConstructorUsedError;
-  double? get unitCost => throw _privateConstructorUsedError;
-  int? get sequence => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get specification => throw _privateConstructorUsedError;
-  bool? get isOptional => throw _privateConstructorUsedError;
-  String? get alternativeItemId => throw _privateConstructorUsedError;
-  double? get wastagePercentage => throw _privateConstructorUsedError;
-  double? get leadTime => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateBomComponentRequestCopyWith<UpdateBomComponentRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateBomComponentRequestCopyWith<$Res> {
-  factory $UpdateBomComponentRequestCopyWith(UpdateBomComponentRequest value,
-          $Res Function(UpdateBomComponentRequest) then) =
-      _$UpdateBomComponentRequestCopyWithImpl<$Res, UpdateBomComponentRequest>;
+abstract mixin class _$CreateBomComponentRequestCopyWith<$Res>
+    implements $CreateBomComponentRequestCopyWith<$Res> {
+  factory _$CreateBomComponentRequestCopyWith(_CreateBomComponentRequest value,
+          $Res Function(_CreateBomComponentRequest) _then) =
+      __$CreateBomComponentRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {double? quantity,
-      String? unit,
-      double? unitCost,
+      {String itemId,
+      double quantity,
+      String unit,
+      double unitCost,
       int? sequence,
       String? notes,
       String? specification,
@@ -941,22 +1300,22 @@ abstract class $UpdateBomComponentRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateBomComponentRequestCopyWithImpl<$Res,
-        $Val extends UpdateBomComponentRequest>
-    implements $UpdateBomComponentRequestCopyWith<$Res> {
-  _$UpdateBomComponentRequestCopyWithImpl(this._value, this._then);
+class __$CreateBomComponentRequestCopyWithImpl<$Res>
+    implements _$CreateBomComponentRequestCopyWith<$Res> {
+  __$CreateBomComponentRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateBomComponentRequest _self;
+  final $Res Function(_CreateBomComponentRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? quantity = freezed,
-    Object? unit = freezed,
-    Object? unitCost = freezed,
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitCost = null,
     Object? sequence = freezed,
     Object? notes = freezed,
     Object? specification = freezed,
@@ -966,146 +1325,53 @@ class _$UpdateBomComponentRequestCopyWithImpl<$Res,
     Object? leadTime = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_value.copyWith(
-      quantity: freezed == quantity
-          ? _value.quantity
+    return _then(_CreateBomComponentRequest(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unit: freezed == unit
-          ? _value.unit
+              as double,
+      unit: null == unit
+          ? _self.unit
           : unit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      unitCost: freezed == unitCost
-          ? _value.unitCost
+              as String,
+      unitCost: null == unitCost
+          ? _self.unitCost
           : unitCost // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       sequence: freezed == sequence
-          ? _value.sequence
+          ? _self.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
               as int?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       specification: freezed == specification
-          ? _value.specification
+          ? _self.specification
           : specification // ignore: cast_nullable_to_non_nullable
               as String?,
       isOptional: freezed == isOptional
-          ? _value.isOptional
+          ? _self.isOptional
           : isOptional // ignore: cast_nullable_to_non_nullable
               as bool?,
       alternativeItemId: freezed == alternativeItemId
-          ? _value.alternativeItemId
+          ? _self.alternativeItemId
           : alternativeItemId // ignore: cast_nullable_to_non_nullable
               as String?,
       wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
+          ? _self.wastagePercentage
           : wastagePercentage // ignore: cast_nullable_to_non_nullable
               as double?,
       leadTime: freezed == leadTime
-          ? _value.leadTime
+          ? _self.leadTime
           : leadTime // ignore: cast_nullable_to_non_nullable
               as double?,
       attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateBomComponentRequestImplCopyWith<$Res>
-    implements $UpdateBomComponentRequestCopyWith<$Res> {
-  factory _$$UpdateBomComponentRequestImplCopyWith(
-          _$UpdateBomComponentRequestImpl value,
-          $Res Function(_$UpdateBomComponentRequestImpl) then) =
-      __$$UpdateBomComponentRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {double? quantity,
-      String? unit,
-      double? unitCost,
-      int? sequence,
-      String? notes,
-      String? specification,
-      bool? isOptional,
-      String? alternativeItemId,
-      double? wastagePercentage,
-      double? leadTime,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class __$$UpdateBomComponentRequestImplCopyWithImpl<$Res>
-    extends _$UpdateBomComponentRequestCopyWithImpl<$Res,
-        _$UpdateBomComponentRequestImpl>
-    implements _$$UpdateBomComponentRequestImplCopyWith<$Res> {
-  __$$UpdateBomComponentRequestImplCopyWithImpl(
-      _$UpdateBomComponentRequestImpl _value,
-      $Res Function(_$UpdateBomComponentRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? quantity = freezed,
-    Object? unit = freezed,
-    Object? unitCost = freezed,
-    Object? sequence = freezed,
-    Object? notes = freezed,
-    Object? specification = freezed,
-    Object? isOptional = freezed,
-    Object? alternativeItemId = freezed,
-    Object? wastagePercentage = freezed,
-    Object? leadTime = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_$UpdateBomComponentRequestImpl(
-      quantity: freezed == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unit: freezed == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      unitCost: freezed == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isOptional: freezed == isOptional
-          ? _value.isOptional
-          : isOptional // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      alternativeItemId: freezed == alternativeItemId
-          ? _value.alternativeItemId
-          : alternativeItemId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
-          : wastagePercentage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      leadTime: freezed == leadTime
-          ? _value.leadTime
-          : leadTime // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1113,9 +1379,399 @@ class __$$UpdateBomComponentRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateBomComponentRequest {
+  double? get quantity;
+  String? get unit;
+  double? get unitCost;
+  int? get sequence;
+  String? get notes;
+  String? get specification;
+  bool? get isOptional;
+  String? get alternativeItemId;
+  double? get wastagePercentage;
+  double? get leadTime;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of UpdateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateBomComponentRequestCopyWith<UpdateBomComponentRequest> get copyWith =>
+      _$UpdateBomComponentRequestCopyWithImpl<UpdateBomComponentRequest>(
+          this as UpdateBomComponentRequest, _$identity);
+
+  /// Serializes this UpdateBomComponentRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateBomComponentRequest &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitCost, unitCost) ||
+                other.unitCost == unitCost) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.specification, specification) ||
+                other.specification == specification) &&
+            (identical(other.isOptional, isOptional) ||
+                other.isOptional == isOptional) &&
+            (identical(other.alternativeItemId, alternativeItemId) ||
+                other.alternativeItemId == alternativeItemId) &&
+            (identical(other.wastagePercentage, wastagePercentage) ||
+                other.wastagePercentage == wastagePercentage) &&
+            (identical(other.leadTime, leadTime) ||
+                other.leadTime == leadTime) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      quantity,
+      unit,
+      unitCost,
+      sequence,
+      notes,
+      specification,
+      isOptional,
+      alternativeItemId,
+      wastagePercentage,
+      leadTime,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'UpdateBomComponentRequest(quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateBomComponentRequestCopyWith<$Res> {
+  factory $UpdateBomComponentRequestCopyWith(UpdateBomComponentRequest value,
+          $Res Function(UpdateBomComponentRequest) _then) =
+      _$UpdateBomComponentRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {double? quantity,
+      String? unit,
+      double? unitCost,
+      int? sequence,
+      String? notes,
+      String? specification,
+      bool? isOptional,
+      String? alternativeItemId,
+      double? wastagePercentage,
+      double? leadTime,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$UpdateBomComponentRequestCopyWithImpl<$Res>
+    implements $UpdateBomComponentRequestCopyWith<$Res> {
+  _$UpdateBomComponentRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateBomComponentRequest _self;
+  final $Res Function(UpdateBomComponentRequest) _then;
+
+  /// Create a copy of UpdateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quantity = freezed,
+    Object? unit = freezed,
+    Object? unitCost = freezed,
+    Object? sequence = freezed,
+    Object? notes = freezed,
+    Object? specification = freezed,
+    Object? isOptional = freezed,
+    Object? alternativeItemId = freezed,
+    Object? wastagePercentage = freezed,
+    Object? leadTime = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      quantity: freezed == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      unit: freezed == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      unitCost: freezed == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isOptional: freezed == isOptional
+          ? _self.isOptional
+          : isOptional // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      alternativeItemId: freezed == alternativeItemId
+          ? _self.alternativeItemId
+          : alternativeItemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      wastagePercentage: freezed == wastagePercentage
+          ? _self.wastagePercentage
+          : wastagePercentage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      leadTime: freezed == leadTime
+          ? _self.leadTime
+          : leadTime // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateBomComponentRequest].
+extension UpdateBomComponentRequestPatterns on UpdateBomComponentRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateBomComponentRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateBomComponentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateBomComponentRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateBomComponentRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateBomComponentRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateBomComponentRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            double? quantity,
+            String? unit,
+            double? unitCost,
+            int? sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateBomComponentRequest() when $default != null:
+        return $default(
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            double? quantity,
+            String? unit,
+            double? unitCost,
+            int? sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateBomComponentRequest():
+        return $default(
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            double? quantity,
+            String? unit,
+            double? unitCost,
+            int? sequence,
+            String? notes,
+            String? specification,
+            bool? isOptional,
+            String? alternativeItemId,
+            double? wastagePercentage,
+            double? leadTime,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateBomComponentRequest() when $default != null:
+        return $default(
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.sequence,
+            _that.notes,
+            _that.specification,
+            _that.isOptional,
+            _that.alternativeItemId,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateBomComponentRequestImpl implements _UpdateBomComponentRequest {
-  const _$UpdateBomComponentRequestImpl(
+class _UpdateBomComponentRequest implements UpdateBomComponentRequest {
+  const _UpdateBomComponentRequest(
       {this.quantity,
       this.unit,
       this.unitCost,
@@ -1128,9 +1784,8 @@ class _$UpdateBomComponentRequestImpl implements _UpdateBomComponentRequest {
       this.leadTime,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$UpdateBomComponentRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateBomComponentRequestImplFromJson(json);
+  factory _UpdateBomComponentRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateBomComponentRequestFromJson(json);
 
   @override
   final double? quantity;
@@ -1162,16 +1817,28 @@ class _$UpdateBomComponentRequestImpl implements _UpdateBomComponentRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateBomComponentRequest(quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateBomComponentRequestCopyWith<_UpdateBomComponentRequest>
+      get copyWith =>
+          __$UpdateBomComponentRequestCopyWithImpl<_UpdateBomComponentRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateBomComponentRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateBomComponentRequestImpl &&
+            other is _UpdateBomComponentRequest &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
             (identical(other.unit, unit) || other.unit == unit) &&
@@ -1194,7 +1861,7 @@ class _$UpdateBomComponentRequestImpl implements _UpdateBomComponentRequest {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1210,220 +1877,200 @@ class _$UpdateBomComponentRequestImpl implements _UpdateBomComponentRequest {
       leadTime,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateBomComponentRequestImplCopyWith<_$UpdateBomComponentRequestImpl>
-      get copyWith => __$$UpdateBomComponentRequestImplCopyWithImpl<
-          _$UpdateBomComponentRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateBomComponentRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateBomComponentRequest(quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence, notes: $notes, specification: $specification, isOptional: $isOptional, alternativeItemId: $alternativeItemId, wastagePercentage: $wastagePercentage, leadTime: $leadTime, attributes: $attributes)';
   }
 }
 
-abstract class _UpdateBomComponentRequest implements UpdateBomComponentRequest {
-  const factory _UpdateBomComponentRequest(
-          {final double? quantity,
-          final String? unit,
-          final double? unitCost,
-          final int? sequence,
-          final String? notes,
-          final String? specification,
-          final bool? isOptional,
-          final String? alternativeItemId,
-          final double? wastagePercentage,
-          final double? leadTime,
-          final Map<String, dynamic>? attributes}) =
-      _$UpdateBomComponentRequestImpl;
-
-  factory _UpdateBomComponentRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateBomComponentRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateBomComponentRequestCopyWith<$Res>
+    implements $UpdateBomComponentRequestCopyWith<$Res> {
+  factory _$UpdateBomComponentRequestCopyWith(_UpdateBomComponentRequest value,
+          $Res Function(_UpdateBomComponentRequest) _then) =
+      __$UpdateBomComponentRequestCopyWithImpl;
   @override
-  double? get quantity;
-  @override
-  String? get unit;
-  @override
-  double? get unitCost;
-  @override
-  int? get sequence;
-  @override
-  String? get notes;
-  @override
-  String? get specification;
-  @override
-  bool? get isOptional;
-  @override
-  String? get alternativeItemId;
-  @override
-  double? get wastagePercentage;
-  @override
-  double? get leadTime;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateBomComponentRequestImplCopyWith<_$UpdateBomComponentRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {double? quantity,
+      String? unit,
+      double? unitCost,
+      int? sequence,
+      String? notes,
+      String? specification,
+      bool? isOptional,
+      String? alternativeItemId,
+      double? wastagePercentage,
+      double? leadTime,
+      Map<String, dynamic>? attributes});
 }
 
-BomExplosionItem _$BomExplosionItemFromJson(Map<String, dynamic> json) {
-  return _BomExplosionItem.fromJson(json);
+/// @nodoc
+class __$UpdateBomComponentRequestCopyWithImpl<$Res>
+    implements _$UpdateBomComponentRequestCopyWith<$Res> {
+  __$UpdateBomComponentRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateBomComponentRequest _self;
+  final $Res Function(_UpdateBomComponentRequest) _then;
+
+  /// Create a copy of UpdateBomComponentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? quantity = freezed,
+    Object? unit = freezed,
+    Object? unitCost = freezed,
+    Object? sequence = freezed,
+    Object? notes = freezed,
+    Object? specification = freezed,
+    Object? isOptional = freezed,
+    Object? alternativeItemId = freezed,
+    Object? wastagePercentage = freezed,
+    Object? leadTime = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_UpdateBomComponentRequest(
+      quantity: freezed == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      unit: freezed == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      unitCost: freezed == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isOptional: freezed == isOptional
+          ? _self.isOptional
+          : isOptional // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      alternativeItemId: freezed == alternativeItemId
+          ? _self.alternativeItemId
+          : alternativeItemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      wastagePercentage: freezed == wastagePercentage
+          ? _self.wastagePercentage
+          : wastagePercentage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      leadTime: freezed == leadTime
+          ? _self.leadTime
+          : leadTime // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$BomExplosionItem {
-  String get itemId => throw _privateConstructorUsedError;
-  String get itemName => throw _privateConstructorUsedError;
-  String get itemCode => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  double get unitCost => throw _privateConstructorUsedError;
-  double get totalCost => throw _privateConstructorUsedError;
-  int get level => throw _privateConstructorUsedError;
-  String? get parentItemId => throw _privateConstructorUsedError;
-  String? get bomId => throw _privateConstructorUsedError;
-  String? get componentId => throw _privateConstructorUsedError;
-  bool? get isOptional => throw _privateConstructorUsedError;
-  double? get wastagePercentage => throw _privateConstructorUsedError;
-  double? get leadTime => throw _privateConstructorUsedError;
-  List<BomExplosionItem>? get children => throw _privateConstructorUsedError;
+  String get itemId;
+  String get itemName;
+  String get itemCode;
+  double get quantity;
+  String get unit;
+  double get unitCost;
+  double get totalCost;
+  int get level;
+  String? get parentItemId;
+  String? get bomId;
+  String? get componentId;
+  bool? get isOptional;
+  double? get wastagePercentage;
+  double? get leadTime;
+  List<BomExplosionItem>? get children;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BomExplosionItemCopyWith<BomExplosionItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BomExplosionItemCopyWith<$Res> {
-  factory $BomExplosionItemCopyWith(
-          BomExplosionItem value, $Res Function(BomExplosionItem) then) =
-      _$BomExplosionItemCopyWithImpl<$Res, BomExplosionItem>;
-  @useResult
-  $Res call(
-      {String itemId,
-      String itemName,
-      String itemCode,
-      double quantity,
-      String unit,
-      double unitCost,
-      double totalCost,
-      int level,
-      String? parentItemId,
-      String? bomId,
-      String? componentId,
-      bool? isOptional,
-      double? wastagePercentage,
-      double? leadTime,
-      List<BomExplosionItem>? children});
-}
-
-/// @nodoc
-class _$BomExplosionItemCopyWithImpl<$Res, $Val extends BomExplosionItem>
-    implements $BomExplosionItemCopyWith<$Res> {
-  _$BomExplosionItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BomExplosionItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BomExplosionItemCopyWith<BomExplosionItem> get copyWith =>
+      _$BomExplosionItemCopyWithImpl<BomExplosionItem>(
+          this as BomExplosionItem, _$identity);
+
+  /// Serializes this BomExplosionItem to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = null,
-    Object? itemName = null,
-    Object? itemCode = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitCost = null,
-    Object? totalCost = null,
-    Object? level = null,
-    Object? parentItemId = freezed,
-    Object? bomId = freezed,
-    Object? componentId = freezed,
-    Object? isOptional = freezed,
-    Object? wastagePercentage = freezed,
-    Object? leadTime = freezed,
-    Object? children = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemName: null == itemName
-          ? _value.itemName
-          : itemName // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemCode: null == itemCode
-          ? _value.itemCode
-          : itemCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitCost: null == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalCost: null == totalCost
-          ? _value.totalCost
-          : totalCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      level: null == level
-          ? _value.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int,
-      parentItemId: freezed == parentItemId
-          ? _value.parentItemId
-          : parentItemId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      bomId: freezed == bomId
-          ? _value.bomId
-          : bomId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      componentId: freezed == componentId
-          ? _value.componentId
-          : componentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isOptional: freezed == isOptional
-          ? _value.isOptional
-          : isOptional // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
-          : wastagePercentage // ignore: cast_nullable_to_non_nullable
-              as double?,
-      leadTime: freezed == leadTime
-          ? _value.leadTime
-          : leadTime // ignore: cast_nullable_to_non_nullable
-              as double?,
-      children: freezed == children
-          ? _value.children
-          : children // ignore: cast_nullable_to_non_nullable
-              as List<BomExplosionItem>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BomExplosionItem &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.itemName, itemName) ||
+                other.itemName == itemName) &&
+            (identical(other.itemCode, itemCode) ||
+                other.itemCode == itemCode) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitCost, unitCost) ||
+                other.unitCost == unitCost) &&
+            (identical(other.totalCost, totalCost) ||
+                other.totalCost == totalCost) &&
+            (identical(other.level, level) || other.level == level) &&
+            (identical(other.parentItemId, parentItemId) ||
+                other.parentItemId == parentItemId) &&
+            (identical(other.bomId, bomId) || other.bomId == bomId) &&
+            (identical(other.componentId, componentId) ||
+                other.componentId == componentId) &&
+            (identical(other.isOptional, isOptional) ||
+                other.isOptional == isOptional) &&
+            (identical(other.wastagePercentage, wastagePercentage) ||
+                other.wastagePercentage == wastagePercentage) &&
+            (identical(other.leadTime, leadTime) ||
+                other.leadTime == leadTime) &&
+            const DeepCollectionEquality().equals(other.children, children));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      itemName,
+      itemCode,
+      quantity,
+      unit,
+      unitCost,
+      totalCost,
+      level,
+      parentItemId,
+      bomId,
+      componentId,
+      isOptional,
+      wastagePercentage,
+      leadTime,
+      const DeepCollectionEquality().hash(children));
+
+  @override
+  String toString() {
+    return 'BomExplosionItem(itemId: $itemId, itemName: $itemName, itemCode: $itemCode, quantity: $quantity, unit: $unit, unitCost: $unitCost, totalCost: $totalCost, level: $level, parentItemId: $parentItemId, bomId: $bomId, componentId: $componentId, isOptional: $isOptional, wastagePercentage: $wastagePercentage, leadTime: $leadTime, children: $children)';
   }
 }
 
 /// @nodoc
-abstract class _$$BomExplosionItemImplCopyWith<$Res>
-    implements $BomExplosionItemCopyWith<$Res> {
-  factory _$$BomExplosionItemImplCopyWith(_$BomExplosionItemImpl value,
-          $Res Function(_$BomExplosionItemImpl) then) =
-      __$$BomExplosionItemImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BomExplosionItemCopyWith<$Res> {
+  factory $BomExplosionItemCopyWith(
+          BomExplosionItem value, $Res Function(BomExplosionItem) _then) =
+      _$BomExplosionItemCopyWithImpl;
   @useResult
   $Res call(
       {String itemId,
@@ -1444,13 +2091,15 @@ abstract class _$$BomExplosionItemImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BomExplosionItemImplCopyWithImpl<$Res>
-    extends _$BomExplosionItemCopyWithImpl<$Res, _$BomExplosionItemImpl>
-    implements _$$BomExplosionItemImplCopyWith<$Res> {
-  __$$BomExplosionItemImplCopyWithImpl(_$BomExplosionItemImpl _value,
-      $Res Function(_$BomExplosionItemImpl) _then)
-      : super(_value, _then);
+class _$BomExplosionItemCopyWithImpl<$Res>
+    implements $BomExplosionItemCopyWith<$Res> {
+  _$BomExplosionItemCopyWithImpl(this._self, this._then);
 
+  final BomExplosionItem _self;
+  final $Res Function(BomExplosionItem) _then;
+
+  /// Create a copy of BomExplosionItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1470,75 +2119,321 @@ class __$$BomExplosionItemImplCopyWithImpl<$Res>
     Object? leadTime = freezed,
     Object? children = freezed,
   }) {
-    return _then(_$BomExplosionItemImpl(
+    return _then(_self.copyWith(
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       itemName: null == itemName
-          ? _value.itemName
+          ? _self.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String,
       itemCode: null == itemCode
-          ? _value.itemCode
+          ? _self.itemCode
           : itemCode // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       unit: null == unit
-          ? _value.unit
+          ? _self.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
       unitCost: null == unitCost
-          ? _value.unitCost
+          ? _self.unitCost
           : unitCost // ignore: cast_nullable_to_non_nullable
               as double,
       totalCost: null == totalCost
-          ? _value.totalCost
+          ? _self.totalCost
           : totalCost // ignore: cast_nullable_to_non_nullable
               as double,
       level: null == level
-          ? _value.level
+          ? _self.level
           : level // ignore: cast_nullable_to_non_nullable
               as int,
       parentItemId: freezed == parentItemId
-          ? _value.parentItemId
+          ? _self.parentItemId
           : parentItemId // ignore: cast_nullable_to_non_nullable
               as String?,
       bomId: freezed == bomId
-          ? _value.bomId
+          ? _self.bomId
           : bomId // ignore: cast_nullable_to_non_nullable
               as String?,
       componentId: freezed == componentId
-          ? _value.componentId
+          ? _self.componentId
           : componentId // ignore: cast_nullable_to_non_nullable
               as String?,
       isOptional: freezed == isOptional
-          ? _value.isOptional
+          ? _self.isOptional
           : isOptional // ignore: cast_nullable_to_non_nullable
               as bool?,
       wastagePercentage: freezed == wastagePercentage
-          ? _value.wastagePercentage
+          ? _self.wastagePercentage
           : wastagePercentage // ignore: cast_nullable_to_non_nullable
               as double?,
       leadTime: freezed == leadTime
-          ? _value.leadTime
+          ? _self.leadTime
           : leadTime // ignore: cast_nullable_to_non_nullable
               as double?,
       children: freezed == children
-          ? _value._children
+          ? _self.children
           : children // ignore: cast_nullable_to_non_nullable
               as List<BomExplosionItem>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [BomExplosionItem].
+extension BomExplosionItemPatterns on BomExplosionItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BomExplosionItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomExplosionItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BomExplosionItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomExplosionItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BomExplosionItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomExplosionItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            String itemName,
+            String itemCode,
+            double quantity,
+            String unit,
+            double unitCost,
+            double totalCost,
+            int level,
+            String? parentItemId,
+            String? bomId,
+            String? componentId,
+            bool? isOptional,
+            double? wastagePercentage,
+            double? leadTime,
+            List<BomExplosionItem>? children)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomExplosionItem() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.itemName,
+            _that.itemCode,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.totalCost,
+            _that.level,
+            _that.parentItemId,
+            _that.bomId,
+            _that.componentId,
+            _that.isOptional,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.children);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            String itemName,
+            String itemCode,
+            double quantity,
+            String unit,
+            double unitCost,
+            double totalCost,
+            int level,
+            String? parentItemId,
+            String? bomId,
+            String? componentId,
+            bool? isOptional,
+            double? wastagePercentage,
+            double? leadTime,
+            List<BomExplosionItem>? children)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomExplosionItem():
+        return $default(
+            _that.itemId,
+            _that.itemName,
+            _that.itemCode,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.totalCost,
+            _that.level,
+            _that.parentItemId,
+            _that.bomId,
+            _that.componentId,
+            _that.isOptional,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.children);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String itemId,
+            String itemName,
+            String itemCode,
+            double quantity,
+            String unit,
+            double unitCost,
+            double totalCost,
+            int level,
+            String? parentItemId,
+            String? bomId,
+            String? componentId,
+            bool? isOptional,
+            double? wastagePercentage,
+            double? leadTime,
+            List<BomExplosionItem>? children)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomExplosionItem() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.itemName,
+            _that.itemCode,
+            _that.quantity,
+            _that.unit,
+            _that.unitCost,
+            _that.totalCost,
+            _that.level,
+            _that.parentItemId,
+            _that.bomId,
+            _that.componentId,
+            _that.isOptional,
+            _that.wastagePercentage,
+            _that.leadTime,
+            _that.children);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$BomExplosionItemImpl implements _BomExplosionItem {
-  const _$BomExplosionItemImpl(
+class _BomExplosionItem implements BomExplosionItem {
+  const _BomExplosionItem(
       {required this.itemId,
       required this.itemName,
       required this.itemCode,
@@ -1555,9 +2450,8 @@ class _$BomExplosionItemImpl implements _BomExplosionItem {
       this.leadTime,
       final List<BomExplosionItem>? children})
       : _children = children;
-
-  factory _$BomExplosionItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BomExplosionItemImplFromJson(json);
+  factory _BomExplosionItem.fromJson(Map<String, dynamic> json) =>
+      _$BomExplosionItemFromJson(json);
 
   @override
   final String itemId;
@@ -1597,16 +2491,26 @@ class _$BomExplosionItemImpl implements _BomExplosionItem {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of BomExplosionItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BomExplosionItem(itemId: $itemId, itemName: $itemName, itemCode: $itemCode, quantity: $quantity, unit: $unit, unitCost: $unitCost, totalCost: $totalCost, level: $level, parentItemId: $parentItemId, bomId: $bomId, componentId: $componentId, isOptional: $isOptional, wastagePercentage: $wastagePercentage, leadTime: $leadTime, children: $children)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BomExplosionItemCopyWith<_BomExplosionItem> get copyWith =>
+      __$BomExplosionItemCopyWithImpl<_BomExplosionItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BomExplosionItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BomExplosionItemImpl &&
+            other is _BomExplosionItem &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.itemName, itemName) ||
                 other.itemName == itemName) &&
@@ -1634,7 +2538,7 @@ class _$BomExplosionItemImpl implements _BomExplosionItem {
             const DeepCollectionEquality().equals(other._children, _children));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1654,175 +2558,194 @@ class _$BomExplosionItemImpl implements _BomExplosionItem {
       leadTime,
       const DeepCollectionEquality().hash(_children));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BomExplosionItemImplCopyWith<_$BomExplosionItemImpl> get copyWith =>
-      __$$BomExplosionItemImplCopyWithImpl<_$BomExplosionItemImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BomExplosionItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BomExplosionItem(itemId: $itemId, itemName: $itemName, itemCode: $itemCode, quantity: $quantity, unit: $unit, unitCost: $unitCost, totalCost: $totalCost, level: $level, parentItemId: $parentItemId, bomId: $bomId, componentId: $componentId, isOptional: $isOptional, wastagePercentage: $wastagePercentage, leadTime: $leadTime, children: $children)';
   }
 }
 
-abstract class _BomExplosionItem implements BomExplosionItem {
-  const factory _BomExplosionItem(
-      {required final String itemId,
-      required final String itemName,
-      required final String itemCode,
-      required final double quantity,
-      required final String unit,
-      required final double unitCost,
-      required final double totalCost,
-      required final int level,
-      final String? parentItemId,
-      final String? bomId,
-      final String? componentId,
-      final bool? isOptional,
-      final double? wastagePercentage,
-      final double? leadTime,
-      final List<BomExplosionItem>? children}) = _$BomExplosionItemImpl;
-
-  factory _BomExplosionItem.fromJson(Map<String, dynamic> json) =
-      _$BomExplosionItemImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BomExplosionItemCopyWith<$Res>
+    implements $BomExplosionItemCopyWith<$Res> {
+  factory _$BomExplosionItemCopyWith(
+          _BomExplosionItem value, $Res Function(_BomExplosionItem) _then) =
+      __$BomExplosionItemCopyWithImpl;
   @override
-  String get itemId;
-  @override
-  String get itemName;
-  @override
-  String get itemCode;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  double get unitCost;
-  @override
-  double get totalCost;
-  @override
-  int get level;
-  @override
-  String? get parentItemId;
-  @override
-  String? get bomId;
-  @override
-  String? get componentId;
-  @override
-  bool? get isOptional;
-  @override
-  double? get wastagePercentage;
-  @override
-  double? get leadTime;
-  @override
-  List<BomExplosionItem>? get children;
-  @override
-  @JsonKey(ignore: true)
-  _$$BomExplosionItemImplCopyWith<_$BomExplosionItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String itemId,
+      String itemName,
+      String itemCode,
+      double quantity,
+      String unit,
+      double unitCost,
+      double totalCost,
+      int level,
+      String? parentItemId,
+      String? bomId,
+      String? componentId,
+      bool? isOptional,
+      double? wastagePercentage,
+      double? leadTime,
+      List<BomExplosionItem>? children});
 }
 
-BomStats _$BomStatsFromJson(Map<String, dynamic> json) {
-  return _BomStats.fromJson(json);
+/// @nodoc
+class __$BomExplosionItemCopyWithImpl<$Res>
+    implements _$BomExplosionItemCopyWith<$Res> {
+  __$BomExplosionItemCopyWithImpl(this._self, this._then);
+
+  final _BomExplosionItem _self;
+  final $Res Function(_BomExplosionItem) _then;
+
+  /// Create a copy of BomExplosionItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? itemId = null,
+    Object? itemName = null,
+    Object? itemCode = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitCost = null,
+    Object? totalCost = null,
+    Object? level = null,
+    Object? parentItemId = freezed,
+    Object? bomId = freezed,
+    Object? componentId = freezed,
+    Object? isOptional = freezed,
+    Object? wastagePercentage = freezed,
+    Object? leadTime = freezed,
+    Object? children = freezed,
+  }) {
+    return _then(_BomExplosionItem(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemName: null == itemName
+          ? _self.itemName
+          : itemName // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemCode: null == itemCode
+          ? _self.itemCode
+          : itemCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitCost: null == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalCost: null == totalCost
+          ? _self.totalCost
+          : totalCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
+      parentItemId: freezed == parentItemId
+          ? _self.parentItemId
+          : parentItemId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      bomId: freezed == bomId
+          ? _self.bomId
+          : bomId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      componentId: freezed == componentId
+          ? _self.componentId
+          : componentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isOptional: freezed == isOptional
+          ? _self.isOptional
+          : isOptional // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      wastagePercentage: freezed == wastagePercentage
+          ? _self.wastagePercentage
+          : wastagePercentage // ignore: cast_nullable_to_non_nullable
+              as double?,
+      leadTime: freezed == leadTime
+          ? _self.leadTime
+          : leadTime // ignore: cast_nullable_to_non_nullable
+              as double?,
+      children: freezed == children
+          ? _self._children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<BomExplosionItem>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$BomStats {
-  String get bomId => throw _privateConstructorUsedError;
-  int get totalComponents => throw _privateConstructorUsedError;
-  double get totalCost => throw _privateConstructorUsedError;
-  double get totalLeadTime => throw _privateConstructorUsedError;
-  int get maxLevels => throw _privateConstructorUsedError;
-  Map<String, int>? get componentsByCategory =>
-      throw _privateConstructorUsedError;
-  Map<String, double>? get costByCategory => throw _privateConstructorUsedError;
+  String get bomId;
+  int get totalComponents;
+  double get totalCost;
+  double get totalLeadTime;
+  int get maxLevels;
+  Map<String, int>? get componentsByCategory;
+  Map<String, double>? get costByCategory;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BomStatsCopyWith<BomStats> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BomStatsCopyWith<$Res> {
-  factory $BomStatsCopyWith(BomStats value, $Res Function(BomStats) then) =
-      _$BomStatsCopyWithImpl<$Res, BomStats>;
-  @useResult
-  $Res call(
-      {String bomId,
-      int totalComponents,
-      double totalCost,
-      double totalLeadTime,
-      int maxLevels,
-      Map<String, int>? componentsByCategory,
-      Map<String, double>? costByCategory});
-}
-
-/// @nodoc
-class _$BomStatsCopyWithImpl<$Res, $Val extends BomStats>
-    implements $BomStatsCopyWith<$Res> {
-  _$BomStatsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BomStats
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BomStatsCopyWith<BomStats> get copyWith =>
+      _$BomStatsCopyWithImpl<BomStats>(this as BomStats, _$identity);
+
+  /// Serializes this BomStats to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? bomId = null,
-    Object? totalComponents = null,
-    Object? totalCost = null,
-    Object? totalLeadTime = null,
-    Object? maxLevels = null,
-    Object? componentsByCategory = freezed,
-    Object? costByCategory = freezed,
-  }) {
-    return _then(_value.copyWith(
-      bomId: null == bomId
-          ? _value.bomId
-          : bomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      totalComponents: null == totalComponents
-          ? _value.totalComponents
-          : totalComponents // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalCost: null == totalCost
-          ? _value.totalCost
-          : totalCost // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalLeadTime: null == totalLeadTime
-          ? _value.totalLeadTime
-          : totalLeadTime // ignore: cast_nullable_to_non_nullable
-              as double,
-      maxLevels: null == maxLevels
-          ? _value.maxLevels
-          : maxLevels // ignore: cast_nullable_to_non_nullable
-              as int,
-      componentsByCategory: freezed == componentsByCategory
-          ? _value.componentsByCategory
-          : componentsByCategory // ignore: cast_nullable_to_non_nullable
-              as Map<String, int>?,
-      costByCategory: freezed == costByCategory
-          ? _value.costByCategory
-          : costByCategory // ignore: cast_nullable_to_non_nullable
-              as Map<String, double>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BomStats &&
+            (identical(other.bomId, bomId) || other.bomId == bomId) &&
+            (identical(other.totalComponents, totalComponents) ||
+                other.totalComponents == totalComponents) &&
+            (identical(other.totalCost, totalCost) ||
+                other.totalCost == totalCost) &&
+            (identical(other.totalLeadTime, totalLeadTime) ||
+                other.totalLeadTime == totalLeadTime) &&
+            (identical(other.maxLevels, maxLevels) ||
+                other.maxLevels == maxLevels) &&
+            const DeepCollectionEquality()
+                .equals(other.componentsByCategory, componentsByCategory) &&
+            const DeepCollectionEquality()
+                .equals(other.costByCategory, costByCategory));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      bomId,
+      totalComponents,
+      totalCost,
+      totalLeadTime,
+      maxLevels,
+      const DeepCollectionEquality().hash(componentsByCategory),
+      const DeepCollectionEquality().hash(costByCategory));
+
+  @override
+  String toString() {
+    return 'BomStats(bomId: $bomId, totalComponents: $totalComponents, totalCost: $totalCost, totalLeadTime: $totalLeadTime, maxLevels: $maxLevels, componentsByCategory: $componentsByCategory, costByCategory: $costByCategory)';
   }
 }
 
 /// @nodoc
-abstract class _$$BomStatsImplCopyWith<$Res>
-    implements $BomStatsCopyWith<$Res> {
-  factory _$$BomStatsImplCopyWith(
-          _$BomStatsImpl value, $Res Function(_$BomStatsImpl) then) =
-      __$$BomStatsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BomStatsCopyWith<$Res> {
+  factory $BomStatsCopyWith(BomStats value, $Res Function(BomStats) _then) =
+      _$BomStatsCopyWithImpl;
   @useResult
   $Res call(
       {String bomId,
@@ -1835,13 +2758,14 @@ abstract class _$$BomStatsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BomStatsImplCopyWithImpl<$Res>
-    extends _$BomStatsCopyWithImpl<$Res, _$BomStatsImpl>
-    implements _$$BomStatsImplCopyWith<$Res> {
-  __$$BomStatsImplCopyWithImpl(
-      _$BomStatsImpl _value, $Res Function(_$BomStatsImpl) _then)
-      : super(_value, _then);
+class _$BomStatsCopyWithImpl<$Res> implements $BomStatsCopyWith<$Res> {
+  _$BomStatsCopyWithImpl(this._self, this._then);
 
+  final BomStats _self;
+  final $Res Function(BomStats) _then;
+
+  /// Create a copy of BomStats
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1853,43 +2777,241 @@ class __$$BomStatsImplCopyWithImpl<$Res>
     Object? componentsByCategory = freezed,
     Object? costByCategory = freezed,
   }) {
-    return _then(_$BomStatsImpl(
+    return _then(_self.copyWith(
       bomId: null == bomId
-          ? _value.bomId
+          ? _self.bomId
           : bomId // ignore: cast_nullable_to_non_nullable
               as String,
       totalComponents: null == totalComponents
-          ? _value.totalComponents
+          ? _self.totalComponents
           : totalComponents // ignore: cast_nullable_to_non_nullable
               as int,
       totalCost: null == totalCost
-          ? _value.totalCost
+          ? _self.totalCost
           : totalCost // ignore: cast_nullable_to_non_nullable
               as double,
       totalLeadTime: null == totalLeadTime
-          ? _value.totalLeadTime
+          ? _self.totalLeadTime
           : totalLeadTime // ignore: cast_nullable_to_non_nullable
               as double,
       maxLevels: null == maxLevels
-          ? _value.maxLevels
+          ? _self.maxLevels
           : maxLevels // ignore: cast_nullable_to_non_nullable
               as int,
       componentsByCategory: freezed == componentsByCategory
-          ? _value._componentsByCategory
+          ? _self.componentsByCategory
           : componentsByCategory // ignore: cast_nullable_to_non_nullable
               as Map<String, int>?,
       costByCategory: freezed == costByCategory
-          ? _value._costByCategory
+          ? _self.costByCategory
           : costByCategory // ignore: cast_nullable_to_non_nullable
               as Map<String, double>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [BomStats].
+extension BomStatsPatterns on BomStats {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BomStats value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomStats() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BomStats value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomStats():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BomStats value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomStats() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String bomId,
+            int totalComponents,
+            double totalCost,
+            double totalLeadTime,
+            int maxLevels,
+            Map<String, int>? componentsByCategory,
+            Map<String, double>? costByCategory)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomStats() when $default != null:
+        return $default(
+            _that.bomId,
+            _that.totalComponents,
+            _that.totalCost,
+            _that.totalLeadTime,
+            _that.maxLevels,
+            _that.componentsByCategory,
+            _that.costByCategory);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String bomId,
+            int totalComponents,
+            double totalCost,
+            double totalLeadTime,
+            int maxLevels,
+            Map<String, int>? componentsByCategory,
+            Map<String, double>? costByCategory)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomStats():
+        return $default(
+            _that.bomId,
+            _that.totalComponents,
+            _that.totalCost,
+            _that.totalLeadTime,
+            _that.maxLevels,
+            _that.componentsByCategory,
+            _that.costByCategory);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String bomId,
+            int totalComponents,
+            double totalCost,
+            double totalLeadTime,
+            int maxLevels,
+            Map<String, int>? componentsByCategory,
+            Map<String, double>? costByCategory)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomStats() when $default != null:
+        return $default(
+            _that.bomId,
+            _that.totalComponents,
+            _that.totalCost,
+            _that.totalLeadTime,
+            _that.maxLevels,
+            _that.componentsByCategory,
+            _that.costByCategory);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$BomStatsImpl implements _BomStats {
-  const _$BomStatsImpl(
+class _BomStats implements BomStats {
+  const _BomStats(
       {required this.bomId,
       required this.totalComponents,
       required this.totalCost,
@@ -1899,9 +3021,8 @@ class _$BomStatsImpl implements _BomStats {
       final Map<String, double>? costByCategory})
       : _componentsByCategory = componentsByCategory,
         _costByCategory = costByCategory;
-
-  factory _$BomStatsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BomStatsImplFromJson(json);
+  factory _BomStats.fromJson(Map<String, dynamic> json) =>
+      _$BomStatsFromJson(json);
 
   @override
   final String bomId;
@@ -1934,16 +3055,26 @@ class _$BomStatsImpl implements _BomStats {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of BomStats
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BomStats(bomId: $bomId, totalComponents: $totalComponents, totalCost: $totalCost, totalLeadTime: $totalLeadTime, maxLevels: $maxLevels, componentsByCategory: $componentsByCategory, costByCategory: $costByCategory)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BomStatsCopyWith<_BomStats> get copyWith =>
+      __$BomStatsCopyWithImpl<_BomStats>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BomStatsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BomStatsImpl &&
+            other is _BomStats &&
             (identical(other.bomId, bomId) || other.bomId == bomId) &&
             (identical(other.totalComponents, totalComponents) ||
                 other.totalComponents == totalComponents) &&
@@ -1959,7 +3090,7 @@ class _$BomStatsImpl implements _BomStats {
                 .equals(other._costByCategory, _costByCategory));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1971,136 +3102,137 @@ class _$BomStatsImpl implements _BomStats {
       const DeepCollectionEquality().hash(_componentsByCategory),
       const DeepCollectionEquality().hash(_costByCategory));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BomStatsImplCopyWith<_$BomStatsImpl> get copyWith =>
-      __$$BomStatsImplCopyWithImpl<_$BomStatsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BomStatsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BomStats(bomId: $bomId, totalComponents: $totalComponents, totalCost: $totalCost, totalLeadTime: $totalLeadTime, maxLevels: $maxLevels, componentsByCategory: $componentsByCategory, costByCategory: $costByCategory)';
   }
 }
 
-abstract class _BomStats implements BomStats {
-  const factory _BomStats(
-      {required final String bomId,
-      required final int totalComponents,
-      required final double totalCost,
-      required final double totalLeadTime,
-      required final int maxLevels,
-      final Map<String, int>? componentsByCategory,
-      final Map<String, double>? costByCategory}) = _$BomStatsImpl;
-
-  factory _BomStats.fromJson(Map<String, dynamic> json) =
-      _$BomStatsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BomStatsCopyWith<$Res>
+    implements $BomStatsCopyWith<$Res> {
+  factory _$BomStatsCopyWith(_BomStats value, $Res Function(_BomStats) _then) =
+      __$BomStatsCopyWithImpl;
   @override
-  String get bomId;
-  @override
-  int get totalComponents;
-  @override
-  double get totalCost;
-  @override
-  double get totalLeadTime;
-  @override
-  int get maxLevels;
-  @override
-  Map<String, int>? get componentsByCategory;
-  @override
-  Map<String, double>? get costByCategory;
-  @override
-  @JsonKey(ignore: true)
-  _$$BomStatsImplCopyWith<_$BomStatsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String bomId,
+      int totalComponents,
+      double totalCost,
+      double totalLeadTime,
+      int maxLevels,
+      Map<String, int>? componentsByCategory,
+      Map<String, double>? costByCategory});
 }
 
-BomLeadTimeAnalysis _$BomLeadTimeAnalysisFromJson(Map<String, dynamic> json) {
-  return _BomLeadTimeAnalysis.fromJson(json);
+/// @nodoc
+class __$BomStatsCopyWithImpl<$Res> implements _$BomStatsCopyWith<$Res> {
+  __$BomStatsCopyWithImpl(this._self, this._then);
+
+  final _BomStats _self;
+  final $Res Function(_BomStats) _then;
+
+  /// Create a copy of BomStats
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? bomId = null,
+    Object? totalComponents = null,
+    Object? totalCost = null,
+    Object? totalLeadTime = null,
+    Object? maxLevels = null,
+    Object? componentsByCategory = freezed,
+    Object? costByCategory = freezed,
+  }) {
+    return _then(_BomStats(
+      bomId: null == bomId
+          ? _self.bomId
+          : bomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      totalComponents: null == totalComponents
+          ? _self.totalComponents
+          : totalComponents // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalCost: null == totalCost
+          ? _self.totalCost
+          : totalCost // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalLeadTime: null == totalLeadTime
+          ? _self.totalLeadTime
+          : totalLeadTime // ignore: cast_nullable_to_non_nullable
+              as double,
+      maxLevels: null == maxLevels
+          ? _self.maxLevels
+          : maxLevels // ignore: cast_nullable_to_non_nullable
+              as int,
+      componentsByCategory: freezed == componentsByCategory
+          ? _self._componentsByCategory
+          : componentsByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<String, int>?,
+      costByCategory: freezed == costByCategory
+          ? _self._costByCategory
+          : costByCategory // ignore: cast_nullable_to_non_nullable
+              as Map<String, double>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$BomLeadTimeAnalysis {
-  String get bomId => throw _privateConstructorUsedError;
-  double get totalLeadTime => throw _privateConstructorUsedError;
-  double get criticalPath => throw _privateConstructorUsedError;
-  List<BomLeadTimeItem> get items => throw _privateConstructorUsedError;
-  List<String>? get criticalPathItems => throw _privateConstructorUsedError;
+  String get bomId;
+  double get totalLeadTime;
+  double get criticalPath;
+  List<BomLeadTimeItem> get items;
+  List<String>? get criticalPathItems;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BomLeadTimeAnalysisCopyWith<BomLeadTimeAnalysis> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BomLeadTimeAnalysisCopyWith<$Res> {
-  factory $BomLeadTimeAnalysisCopyWith(
-          BomLeadTimeAnalysis value, $Res Function(BomLeadTimeAnalysis) then) =
-      _$BomLeadTimeAnalysisCopyWithImpl<$Res, BomLeadTimeAnalysis>;
-  @useResult
-  $Res call(
-      {String bomId,
-      double totalLeadTime,
-      double criticalPath,
-      List<BomLeadTimeItem> items,
-      List<String>? criticalPathItems});
-}
-
-/// @nodoc
-class _$BomLeadTimeAnalysisCopyWithImpl<$Res, $Val extends BomLeadTimeAnalysis>
-    implements $BomLeadTimeAnalysisCopyWith<$Res> {
-  _$BomLeadTimeAnalysisCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BomLeadTimeAnalysis
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BomLeadTimeAnalysisCopyWith<BomLeadTimeAnalysis> get copyWith =>
+      _$BomLeadTimeAnalysisCopyWithImpl<BomLeadTimeAnalysis>(
+          this as BomLeadTimeAnalysis, _$identity);
+
+  /// Serializes this BomLeadTimeAnalysis to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? bomId = null,
-    Object? totalLeadTime = null,
-    Object? criticalPath = null,
-    Object? items = null,
-    Object? criticalPathItems = freezed,
-  }) {
-    return _then(_value.copyWith(
-      bomId: null == bomId
-          ? _value.bomId
-          : bomId // ignore: cast_nullable_to_non_nullable
-              as String,
-      totalLeadTime: null == totalLeadTime
-          ? _value.totalLeadTime
-          : totalLeadTime // ignore: cast_nullable_to_non_nullable
-              as double,
-      criticalPath: null == criticalPath
-          ? _value.criticalPath
-          : criticalPath // ignore: cast_nullable_to_non_nullable
-              as double,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<BomLeadTimeItem>,
-      criticalPathItems: freezed == criticalPathItems
-          ? _value.criticalPathItems
-          : criticalPathItems // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BomLeadTimeAnalysis &&
+            (identical(other.bomId, bomId) || other.bomId == bomId) &&
+            (identical(other.totalLeadTime, totalLeadTime) ||
+                other.totalLeadTime == totalLeadTime) &&
+            (identical(other.criticalPath, criticalPath) ||
+                other.criticalPath == criticalPath) &&
+            const DeepCollectionEquality().equals(other.items, items) &&
+            const DeepCollectionEquality()
+                .equals(other.criticalPathItems, criticalPathItems));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      bomId,
+      totalLeadTime,
+      criticalPath,
+      const DeepCollectionEquality().hash(items),
+      const DeepCollectionEquality().hash(criticalPathItems));
+
+  @override
+  String toString() {
+    return 'BomLeadTimeAnalysis(bomId: $bomId, totalLeadTime: $totalLeadTime, criticalPath: $criticalPath, items: $items, criticalPathItems: $criticalPathItems)';
   }
 }
 
 /// @nodoc
-abstract class _$$BomLeadTimeAnalysisImplCopyWith<$Res>
-    implements $BomLeadTimeAnalysisCopyWith<$Res> {
-  factory _$$BomLeadTimeAnalysisImplCopyWith(_$BomLeadTimeAnalysisImpl value,
-          $Res Function(_$BomLeadTimeAnalysisImpl) then) =
-      __$$BomLeadTimeAnalysisImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BomLeadTimeAnalysisCopyWith<$Res> {
+  factory $BomLeadTimeAnalysisCopyWith(
+          BomLeadTimeAnalysis value, $Res Function(BomLeadTimeAnalysis) _then) =
+      _$BomLeadTimeAnalysisCopyWithImpl;
   @useResult
   $Res call(
       {String bomId,
@@ -2111,13 +3243,15 @@ abstract class _$$BomLeadTimeAnalysisImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BomLeadTimeAnalysisImplCopyWithImpl<$Res>
-    extends _$BomLeadTimeAnalysisCopyWithImpl<$Res, _$BomLeadTimeAnalysisImpl>
-    implements _$$BomLeadTimeAnalysisImplCopyWith<$Res> {
-  __$$BomLeadTimeAnalysisImplCopyWithImpl(_$BomLeadTimeAnalysisImpl _value,
-      $Res Function(_$BomLeadTimeAnalysisImpl) _then)
-      : super(_value, _then);
+class _$BomLeadTimeAnalysisCopyWithImpl<$Res>
+    implements $BomLeadTimeAnalysisCopyWith<$Res> {
+  _$BomLeadTimeAnalysisCopyWithImpl(this._self, this._then);
 
+  final BomLeadTimeAnalysis _self;
+  final $Res Function(BomLeadTimeAnalysis) _then;
+
+  /// Create a copy of BomLeadTimeAnalysis
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2127,35 +3261,197 @@ class __$$BomLeadTimeAnalysisImplCopyWithImpl<$Res>
     Object? items = null,
     Object? criticalPathItems = freezed,
   }) {
-    return _then(_$BomLeadTimeAnalysisImpl(
+    return _then(_self.copyWith(
       bomId: null == bomId
-          ? _value.bomId
+          ? _self.bomId
           : bomId // ignore: cast_nullable_to_non_nullable
               as String,
       totalLeadTime: null == totalLeadTime
-          ? _value.totalLeadTime
+          ? _self.totalLeadTime
           : totalLeadTime // ignore: cast_nullable_to_non_nullable
               as double,
       criticalPath: null == criticalPath
-          ? _value.criticalPath
+          ? _self.criticalPath
           : criticalPath // ignore: cast_nullable_to_non_nullable
               as double,
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<BomLeadTimeItem>,
       criticalPathItems: freezed == criticalPathItems
-          ? _value._criticalPathItems
+          ? _self.criticalPathItems
           : criticalPathItems // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [BomLeadTimeAnalysis].
+extension BomLeadTimeAnalysisPatterns on BomLeadTimeAnalysis {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BomLeadTimeAnalysis value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeAnalysis() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BomLeadTimeAnalysis value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeAnalysis():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BomLeadTimeAnalysis value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeAnalysis() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String bomId, double totalLeadTime, double criticalPath,
+            List<BomLeadTimeItem> items, List<String>? criticalPathItems)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeAnalysis() when $default != null:
+        return $default(_that.bomId, _that.totalLeadTime, _that.criticalPath,
+            _that.items, _that.criticalPathItems);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String bomId, double totalLeadTime, double criticalPath,
+            List<BomLeadTimeItem> items, List<String>? criticalPathItems)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeAnalysis():
+        return $default(_that.bomId, _that.totalLeadTime, _that.criticalPath,
+            _that.items, _that.criticalPathItems);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String bomId, double totalLeadTime, double criticalPath,
+            List<BomLeadTimeItem> items, List<String>? criticalPathItems)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeAnalysis() when $default != null:
+        return $default(_that.bomId, _that.totalLeadTime, _that.criticalPath,
+            _that.items, _that.criticalPathItems);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$BomLeadTimeAnalysisImpl implements _BomLeadTimeAnalysis {
-  const _$BomLeadTimeAnalysisImpl(
+class _BomLeadTimeAnalysis implements BomLeadTimeAnalysis {
+  const _BomLeadTimeAnalysis(
       {required this.bomId,
       required this.totalLeadTime,
       required this.criticalPath,
@@ -2163,9 +3459,8 @@ class _$BomLeadTimeAnalysisImpl implements _BomLeadTimeAnalysis {
       final List<String>? criticalPathItems})
       : _items = items,
         _criticalPathItems = criticalPathItems;
-
-  factory _$BomLeadTimeAnalysisImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BomLeadTimeAnalysisImplFromJson(json);
+  factory _BomLeadTimeAnalysis.fromJson(Map<String, dynamic> json) =>
+      _$BomLeadTimeAnalysisFromJson(json);
 
   @override
   final String bomId;
@@ -2192,16 +3487,27 @@ class _$BomLeadTimeAnalysisImpl implements _BomLeadTimeAnalysis {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of BomLeadTimeAnalysis
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BomLeadTimeAnalysis(bomId: $bomId, totalLeadTime: $totalLeadTime, criticalPath: $criticalPath, items: $items, criticalPathItems: $criticalPathItems)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BomLeadTimeAnalysisCopyWith<_BomLeadTimeAnalysis> get copyWith =>
+      __$BomLeadTimeAnalysisCopyWithImpl<_BomLeadTimeAnalysis>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BomLeadTimeAnalysisToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BomLeadTimeAnalysisImpl &&
+            other is _BomLeadTimeAnalysis &&
             (identical(other.bomId, bomId) || other.bomId == bomId) &&
             (identical(other.totalLeadTime, totalLeadTime) ||
                 other.totalLeadTime == totalLeadTime) &&
@@ -2212,7 +3518,7 @@ class _$BomLeadTimeAnalysisImpl implements _BomLeadTimeAnalysis {
                 .equals(other._criticalPathItems, _criticalPathItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2222,131 +3528,122 @@ class _$BomLeadTimeAnalysisImpl implements _BomLeadTimeAnalysis {
       const DeepCollectionEquality().hash(_items),
       const DeepCollectionEquality().hash(_criticalPathItems));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BomLeadTimeAnalysisImplCopyWith<_$BomLeadTimeAnalysisImpl> get copyWith =>
-      __$$BomLeadTimeAnalysisImplCopyWithImpl<_$BomLeadTimeAnalysisImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BomLeadTimeAnalysisImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BomLeadTimeAnalysis(bomId: $bomId, totalLeadTime: $totalLeadTime, criticalPath: $criticalPath, items: $items, criticalPathItems: $criticalPathItems)';
   }
 }
 
-abstract class _BomLeadTimeAnalysis implements BomLeadTimeAnalysis {
-  const factory _BomLeadTimeAnalysis(
-      {required final String bomId,
-      required final double totalLeadTime,
-      required final double criticalPath,
-      required final List<BomLeadTimeItem> items,
-      final List<String>? criticalPathItems}) = _$BomLeadTimeAnalysisImpl;
-
-  factory _BomLeadTimeAnalysis.fromJson(Map<String, dynamic> json) =
-      _$BomLeadTimeAnalysisImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BomLeadTimeAnalysisCopyWith<$Res>
+    implements $BomLeadTimeAnalysisCopyWith<$Res> {
+  factory _$BomLeadTimeAnalysisCopyWith(_BomLeadTimeAnalysis value,
+          $Res Function(_BomLeadTimeAnalysis) _then) =
+      __$BomLeadTimeAnalysisCopyWithImpl;
   @override
-  String get bomId;
-  @override
-  double get totalLeadTime;
-  @override
-  double get criticalPath;
-  @override
-  List<BomLeadTimeItem> get items;
-  @override
-  List<String>? get criticalPathItems;
-  @override
-  @JsonKey(ignore: true)
-  _$$BomLeadTimeAnalysisImplCopyWith<_$BomLeadTimeAnalysisImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String bomId,
+      double totalLeadTime,
+      double criticalPath,
+      List<BomLeadTimeItem> items,
+      List<String>? criticalPathItems});
 }
 
-BomLeadTimeItem _$BomLeadTimeItemFromJson(Map<String, dynamic> json) {
-  return _BomLeadTimeItem.fromJson(json);
+/// @nodoc
+class __$BomLeadTimeAnalysisCopyWithImpl<$Res>
+    implements _$BomLeadTimeAnalysisCopyWith<$Res> {
+  __$BomLeadTimeAnalysisCopyWithImpl(this._self, this._then);
+
+  final _BomLeadTimeAnalysis _self;
+  final $Res Function(_BomLeadTimeAnalysis) _then;
+
+  /// Create a copy of BomLeadTimeAnalysis
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? bomId = null,
+    Object? totalLeadTime = null,
+    Object? criticalPath = null,
+    Object? items = null,
+    Object? criticalPathItems = freezed,
+  }) {
+    return _then(_BomLeadTimeAnalysis(
+      bomId: null == bomId
+          ? _self.bomId
+          : bomId // ignore: cast_nullable_to_non_nullable
+              as String,
+      totalLeadTime: null == totalLeadTime
+          ? _self.totalLeadTime
+          : totalLeadTime // ignore: cast_nullable_to_non_nullable
+              as double,
+      criticalPath: null == criticalPath
+          ? _self.criticalPath
+          : criticalPath // ignore: cast_nullable_to_non_nullable
+              as double,
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<BomLeadTimeItem>,
+      criticalPathItems: freezed == criticalPathItems
+          ? _self._criticalPathItems
+          : criticalPathItems // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$BomLeadTimeItem {
-  String get itemId => throw _privateConstructorUsedError;
-  String get itemName => throw _privateConstructorUsedError;
-  double get leadTime => throw _privateConstructorUsedError;
-  bool get isCritical => throw _privateConstructorUsedError;
-  int get level => throw _privateConstructorUsedError;
+  String get itemId;
+  String get itemName;
+  double get leadTime;
+  bool get isCritical;
+  int get level;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BomLeadTimeItemCopyWith<BomLeadTimeItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BomLeadTimeItemCopyWith<$Res> {
-  factory $BomLeadTimeItemCopyWith(
-          BomLeadTimeItem value, $Res Function(BomLeadTimeItem) then) =
-      _$BomLeadTimeItemCopyWithImpl<$Res, BomLeadTimeItem>;
-  @useResult
-  $Res call(
-      {String itemId,
-      String itemName,
-      double leadTime,
-      bool isCritical,
-      int level});
-}
-
-/// @nodoc
-class _$BomLeadTimeItemCopyWithImpl<$Res, $Val extends BomLeadTimeItem>
-    implements $BomLeadTimeItemCopyWith<$Res> {
-  _$BomLeadTimeItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BomLeadTimeItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BomLeadTimeItemCopyWith<BomLeadTimeItem> get copyWith =>
+      _$BomLeadTimeItemCopyWithImpl<BomLeadTimeItem>(
+          this as BomLeadTimeItem, _$identity);
+
+  /// Serializes this BomLeadTimeItem to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = null,
-    Object? itemName = null,
-    Object? leadTime = null,
-    Object? isCritical = null,
-    Object? level = null,
-  }) {
-    return _then(_value.copyWith(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemName: null == itemName
-          ? _value.itemName
-          : itemName // ignore: cast_nullable_to_non_nullable
-              as String,
-      leadTime: null == leadTime
-          ? _value.leadTime
-          : leadTime // ignore: cast_nullable_to_non_nullable
-              as double,
-      isCritical: null == isCritical
-          ? _value.isCritical
-          : isCritical // ignore: cast_nullable_to_non_nullable
-              as bool,
-      level: null == level
-          ? _value.level
-          : level // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BomLeadTimeItem &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.itemName, itemName) ||
+                other.itemName == itemName) &&
+            (identical(other.leadTime, leadTime) ||
+                other.leadTime == leadTime) &&
+            (identical(other.isCritical, isCritical) ||
+                other.isCritical == isCritical) &&
+            (identical(other.level, level) || other.level == level));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, itemId, itemName, leadTime, isCritical, level);
+
+  @override
+  String toString() {
+    return 'BomLeadTimeItem(itemId: $itemId, itemName: $itemName, leadTime: $leadTime, isCritical: $isCritical, level: $level)';
   }
 }
 
 /// @nodoc
-abstract class _$$BomLeadTimeItemImplCopyWith<$Res>
-    implements $BomLeadTimeItemCopyWith<$Res> {
-  factory _$$BomLeadTimeItemImplCopyWith(_$BomLeadTimeItemImpl value,
-          $Res Function(_$BomLeadTimeItemImpl) then) =
-      __$$BomLeadTimeItemImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BomLeadTimeItemCopyWith<$Res> {
+  factory $BomLeadTimeItemCopyWith(
+          BomLeadTimeItem value, $Res Function(BomLeadTimeItem) _then) =
+      _$BomLeadTimeItemCopyWithImpl;
   @useResult
   $Res call(
       {String itemId,
@@ -2357,13 +3654,15 @@ abstract class _$$BomLeadTimeItemImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BomLeadTimeItemImplCopyWithImpl<$Res>
-    extends _$BomLeadTimeItemCopyWithImpl<$Res, _$BomLeadTimeItemImpl>
-    implements _$$BomLeadTimeItemImplCopyWith<$Res> {
-  __$$BomLeadTimeItemImplCopyWithImpl(
-      _$BomLeadTimeItemImpl _value, $Res Function(_$BomLeadTimeItemImpl) _then)
-      : super(_value, _then);
+class _$BomLeadTimeItemCopyWithImpl<$Res>
+    implements $BomLeadTimeItemCopyWith<$Res> {
+  _$BomLeadTimeItemCopyWithImpl(this._self, this._then);
 
+  final BomLeadTimeItem _self;
+  final $Res Function(BomLeadTimeItem) _then;
+
+  /// Create a copy of BomLeadTimeItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2373,43 +3672,204 @@ class __$$BomLeadTimeItemImplCopyWithImpl<$Res>
     Object? isCritical = null,
     Object? level = null,
   }) {
-    return _then(_$BomLeadTimeItemImpl(
+    return _then(_self.copyWith(
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       itemName: null == itemName
-          ? _value.itemName
+          ? _self.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String,
       leadTime: null == leadTime
-          ? _value.leadTime
+          ? _self.leadTime
           : leadTime // ignore: cast_nullable_to_non_nullable
               as double,
       isCritical: null == isCritical
-          ? _value.isCritical
+          ? _self.isCritical
           : isCritical // ignore: cast_nullable_to_non_nullable
               as bool,
       level: null == level
-          ? _value.level
+          ? _self.level
           : level // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [BomLeadTimeItem].
+extension BomLeadTimeItemPatterns on BomLeadTimeItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BomLeadTimeItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BomLeadTimeItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BomLeadTimeItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String itemId, String itemName, double leadTime,
+            bool isCritical, int level)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeItem() when $default != null:
+        return $default(_that.itemId, _that.itemName, _that.leadTime,
+            _that.isCritical, _that.level);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String itemId, String itemName, double leadTime,
+            bool isCritical, int level)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeItem():
+        return $default(_that.itemId, _that.itemName, _that.leadTime,
+            _that.isCritical, _that.level);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String itemId, String itemName, double leadTime,
+            bool isCritical, int level)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomLeadTimeItem() when $default != null:
+        return $default(_that.itemId, _that.itemName, _that.leadTime,
+            _that.isCritical, _that.level);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$BomLeadTimeItemImpl implements _BomLeadTimeItem {
-  const _$BomLeadTimeItemImpl(
+class _BomLeadTimeItem implements BomLeadTimeItem {
+  const _BomLeadTimeItem(
       {required this.itemId,
       required this.itemName,
       required this.leadTime,
       required this.isCritical,
       required this.level});
-
-  factory _$BomLeadTimeItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BomLeadTimeItemImplFromJson(json);
+  factory _BomLeadTimeItem.fromJson(Map<String, dynamic> json) =>
+      _$BomLeadTimeItemFromJson(json);
 
   @override
   final String itemId;
@@ -2422,16 +3882,26 @@ class _$BomLeadTimeItemImpl implements _BomLeadTimeItem {
   @override
   final int level;
 
+  /// Create a copy of BomLeadTimeItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BomLeadTimeItem(itemId: $itemId, itemName: $itemName, leadTime: $leadTime, isCritical: $isCritical, level: $level)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BomLeadTimeItemCopyWith<_BomLeadTimeItem> get copyWith =>
+      __$BomLeadTimeItemCopyWithImpl<_BomLeadTimeItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BomLeadTimeItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BomLeadTimeItemImpl &&
+            other is _BomLeadTimeItem &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.itemName, itemName) ||
                 other.itemName == itemName) &&
@@ -2442,136 +3912,127 @@ class _$BomLeadTimeItemImpl implements _BomLeadTimeItem {
             (identical(other.level, level) || other.level == level));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, itemId, itemName, leadTime, isCritical, level);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BomLeadTimeItemImplCopyWith<_$BomLeadTimeItemImpl> get copyWith =>
-      __$$BomLeadTimeItemImplCopyWithImpl<_$BomLeadTimeItemImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BomLeadTimeItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BomLeadTimeItem(itemId: $itemId, itemName: $itemName, leadTime: $leadTime, isCritical: $isCritical, level: $level)';
   }
 }
 
-abstract class _BomLeadTimeItem implements BomLeadTimeItem {
-  const factory _BomLeadTimeItem(
-      {required final String itemId,
-      required final String itemName,
-      required final double leadTime,
-      required final bool isCritical,
-      required final int level}) = _$BomLeadTimeItemImpl;
-
-  factory _BomLeadTimeItem.fromJson(Map<String, dynamic> json) =
-      _$BomLeadTimeItemImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BomLeadTimeItemCopyWith<$Res>
+    implements $BomLeadTimeItemCopyWith<$Res> {
+  factory _$BomLeadTimeItemCopyWith(
+          _BomLeadTimeItem value, $Res Function(_BomLeadTimeItem) _then) =
+      __$BomLeadTimeItemCopyWithImpl;
   @override
-  String get itemId;
-  @override
-  String get itemName;
-  @override
-  double get leadTime;
-  @override
-  bool get isCritical;
-  @override
-  int get level;
-  @override
-  @JsonKey(ignore: true)
-  _$$BomLeadTimeItemImplCopyWith<_$BomLeadTimeItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String itemId,
+      String itemName,
+      double leadTime,
+      bool isCritical,
+      int level});
 }
 
-CloneBomRequest _$CloneBomRequestFromJson(Map<String, dynamic> json) {
-  return _CloneBomRequest.fromJson(json);
+/// @nodoc
+class __$BomLeadTimeItemCopyWithImpl<$Res>
+    implements _$BomLeadTimeItemCopyWith<$Res> {
+  __$BomLeadTimeItemCopyWithImpl(this._self, this._then);
+
+  final _BomLeadTimeItem _self;
+  final $Res Function(_BomLeadTimeItem) _then;
+
+  /// Create a copy of BomLeadTimeItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? itemId = null,
+    Object? itemName = null,
+    Object? leadTime = null,
+    Object? isCritical = null,
+    Object? level = null,
+  }) {
+    return _then(_BomLeadTimeItem(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemName: null == itemName
+          ? _self.itemName
+          : itemName // ignore: cast_nullable_to_non_nullable
+              as String,
+      leadTime: null == leadTime
+          ? _self.leadTime
+          : leadTime // ignore: cast_nullable_to_non_nullable
+              as double,
+      isCritical: null == isCritical
+          ? _self.isCritical
+          : isCritical // ignore: cast_nullable_to_non_nullable
+              as bool,
+      level: null == level
+          ? _self.level
+          : level // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$CloneBomRequest {
-  String get name => throw _privateConstructorUsedError;
-  String get version => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  bool? get includeComponents => throw _privateConstructorUsedError;
-  bool? get updateReferences => throw _privateConstructorUsedError;
+  String get name;
+  String get version;
+  String? get description;
+  bool? get includeComponents;
+  bool? get updateReferences;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CloneBomRequestCopyWith<CloneBomRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CloneBomRequestCopyWith<$Res> {
-  factory $CloneBomRequestCopyWith(
-          CloneBomRequest value, $Res Function(CloneBomRequest) then) =
-      _$CloneBomRequestCopyWithImpl<$Res, CloneBomRequest>;
-  @useResult
-  $Res call(
-      {String name,
-      String version,
-      String? description,
-      bool? includeComponents,
-      bool? updateReferences});
-}
-
-/// @nodoc
-class _$CloneBomRequestCopyWithImpl<$Res, $Val extends CloneBomRequest>
-    implements $CloneBomRequestCopyWith<$Res> {
-  _$CloneBomRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of CloneBomRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CloneBomRequestCopyWith<CloneBomRequest> get copyWith =>
+      _$CloneBomRequestCopyWithImpl<CloneBomRequest>(
+          this as CloneBomRequest, _$identity);
+
+  /// Serializes this CloneBomRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = null,
-    Object? version = null,
-    Object? description = freezed,
-    Object? includeComponents = freezed,
-    Object? updateReferences = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      includeComponents: freezed == includeComponents
-          ? _value.includeComponents
-          : includeComponents // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      updateReferences: freezed == updateReferences
-          ? _value.updateReferences
-          : updateReferences // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloneBomRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.includeComponents, includeComponents) ||
+                other.includeComponents == includeComponents) &&
+            (identical(other.updateReferences, updateReferences) ||
+                other.updateReferences == updateReferences));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, version, description,
+      includeComponents, updateReferences);
+
+  @override
+  String toString() {
+    return 'CloneBomRequest(name: $name, version: $version, description: $description, includeComponents: $includeComponents, updateReferences: $updateReferences)';
   }
 }
 
 /// @nodoc
-abstract class _$$CloneBomRequestImplCopyWith<$Res>
-    implements $CloneBomRequestCopyWith<$Res> {
-  factory _$$CloneBomRequestImplCopyWith(_$CloneBomRequestImpl value,
-          $Res Function(_$CloneBomRequestImpl) then) =
-      __$$CloneBomRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CloneBomRequestCopyWith<$Res> {
+  factory $CloneBomRequestCopyWith(
+          CloneBomRequest value, $Res Function(CloneBomRequest) _then) =
+      _$CloneBomRequestCopyWithImpl;
   @useResult
   $Res call(
       {String name,
@@ -2582,13 +4043,15 @@ abstract class _$$CloneBomRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CloneBomRequestImplCopyWithImpl<$Res>
-    extends _$CloneBomRequestCopyWithImpl<$Res, _$CloneBomRequestImpl>
-    implements _$$CloneBomRequestImplCopyWith<$Res> {
-  __$$CloneBomRequestImplCopyWithImpl(
-      _$CloneBomRequestImpl _value, $Res Function(_$CloneBomRequestImpl) _then)
-      : super(_value, _then);
+class _$CloneBomRequestCopyWithImpl<$Res>
+    implements $CloneBomRequestCopyWith<$Res> {
+  _$CloneBomRequestCopyWithImpl(this._self, this._then);
 
+  final CloneBomRequest _self;
+  final $Res Function(CloneBomRequest) _then;
+
+  /// Create a copy of CloneBomRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2598,43 +4061,204 @@ class __$$CloneBomRequestImplCopyWithImpl<$Res>
     Object? includeComponents = freezed,
     Object? updateReferences = freezed,
   }) {
-    return _then(_$CloneBomRequestImpl(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       includeComponents: freezed == includeComponents
-          ? _value.includeComponents
+          ? _self.includeComponents
           : includeComponents // ignore: cast_nullable_to_non_nullable
               as bool?,
       updateReferences: freezed == updateReferences
-          ? _value.updateReferences
+          ? _self.updateReferences
           : updateReferences // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [CloneBomRequest].
+extension CloneBomRequestPatterns on CloneBomRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CloneBomRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CloneBomRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CloneBomRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CloneBomRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CloneBomRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CloneBomRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String name, String version, String? description,
+            bool? includeComponents, bool? updateReferences)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CloneBomRequest() when $default != null:
+        return $default(_that.name, _that.version, _that.description,
+            _that.includeComponents, _that.updateReferences);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String name, String version, String? description,
+            bool? includeComponents, bool? updateReferences)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CloneBomRequest():
+        return $default(_that.name, _that.version, _that.description,
+            _that.includeComponents, _that.updateReferences);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String name, String version, String? description,
+            bool? includeComponents, bool? updateReferences)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CloneBomRequest() when $default != null:
+        return $default(_that.name, _that.version, _that.description,
+            _that.includeComponents, _that.updateReferences);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CloneBomRequestImpl implements _CloneBomRequest {
-  const _$CloneBomRequestImpl(
+class _CloneBomRequest implements CloneBomRequest {
+  const _CloneBomRequest(
       {required this.name,
       required this.version,
       this.description,
       this.includeComponents,
       this.updateReferences});
-
-  factory _$CloneBomRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CloneBomRequestImplFromJson(json);
+  factory _CloneBomRequest.fromJson(Map<String, dynamic> json) =>
+      _$CloneBomRequestFromJson(json);
 
   @override
   final String name;
@@ -2647,16 +4271,26 @@ class _$CloneBomRequestImpl implements _CloneBomRequest {
   @override
   final bool? updateReferences;
 
+  /// Create a copy of CloneBomRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CloneBomRequest(name: $name, version: $version, description: $description, includeComponents: $includeComponents, updateReferences: $updateReferences)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CloneBomRequestCopyWith<_CloneBomRequest> get copyWith =>
+      __$CloneBomRequestCopyWithImpl<_CloneBomRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CloneBomRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CloneBomRequestImpl &&
+            other is _CloneBomRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.version, version) || other.version == version) &&
             (identical(other.description, description) ||
@@ -2667,139 +4301,126 @@ class _$CloneBomRequestImpl implements _CloneBomRequest {
                 other.updateReferences == updateReferences));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, version, description,
       includeComponents, updateReferences);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CloneBomRequestImplCopyWith<_$CloneBomRequestImpl> get copyWith =>
-      __$$CloneBomRequestImplCopyWithImpl<_$CloneBomRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CloneBomRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CloneBomRequest(name: $name, version: $version, description: $description, includeComponents: $includeComponents, updateReferences: $updateReferences)';
   }
 }
 
-abstract class _CloneBomRequest implements CloneBomRequest {
-  const factory _CloneBomRequest(
-      {required final String name,
-      required final String version,
-      final String? description,
-      final bool? includeComponents,
-      final bool? updateReferences}) = _$CloneBomRequestImpl;
-
-  factory _CloneBomRequest.fromJson(Map<String, dynamic> json) =
-      _$CloneBomRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$CloneBomRequestCopyWith<$Res>
+    implements $CloneBomRequestCopyWith<$Res> {
+  factory _$CloneBomRequestCopyWith(
+          _CloneBomRequest value, $Res Function(_CloneBomRequest) _then) =
+      __$CloneBomRequestCopyWithImpl;
   @override
-  String get name;
-  @override
-  String get version;
-  @override
-  String? get description;
-  @override
-  bool? get includeComponents;
-  @override
-  bool? get updateReferences;
-  @override
-  @JsonKey(ignore: true)
-  _$$CloneBomRequestImplCopyWith<_$CloneBomRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String name,
+      String version,
+      String? description,
+      bool? includeComponents,
+      bool? updateReferences});
 }
 
-CreateBomQuickRequest _$CreateBomQuickRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateBomQuickRequest.fromJson(json);
+/// @nodoc
+class __$CloneBomRequestCopyWithImpl<$Res>
+    implements _$CloneBomRequestCopyWith<$Res> {
+  __$CloneBomRequestCopyWithImpl(this._self, this._then);
+
+  final _CloneBomRequest _self;
+  final $Res Function(_CloneBomRequest) _then;
+
+  /// Create a copy of CloneBomRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? version = null,
+    Object? description = freezed,
+    Object? includeComponents = freezed,
+    Object? updateReferences = freezed,
+  }) {
+    return _then(_CloneBomRequest(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      includeComponents: freezed == includeComponents
+          ? _self.includeComponents
+          : includeComponents // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      updateReferences: freezed == updateReferences
+          ? _self.updateReferences
+          : updateReferences // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$CreateBomQuickRequest {
-  String get itemId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get version => throw _privateConstructorUsedError;
-  List<BomQuickComponent> get components => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
+  String get itemId;
+  String get name;
+  String get version;
+  List<BomQuickComponent> get components;
+  String? get description;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateBomQuickRequestCopyWith<CreateBomQuickRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateBomQuickRequestCopyWith<$Res> {
-  factory $CreateBomQuickRequestCopyWith(CreateBomQuickRequest value,
-          $Res Function(CreateBomQuickRequest) then) =
-      _$CreateBomQuickRequestCopyWithImpl<$Res, CreateBomQuickRequest>;
-  @useResult
-  $Res call(
-      {String itemId,
-      String name,
-      String version,
-      List<BomQuickComponent> components,
-      String? description});
-}
-
-/// @nodoc
-class _$CreateBomQuickRequestCopyWithImpl<$Res,
-        $Val extends CreateBomQuickRequest>
-    implements $CreateBomQuickRequestCopyWith<$Res> {
-  _$CreateBomQuickRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of CreateBomQuickRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CreateBomQuickRequestCopyWith<CreateBomQuickRequest> get copyWith =>
+      _$CreateBomQuickRequestCopyWithImpl<CreateBomQuickRequest>(
+          this as CreateBomQuickRequest, _$identity);
+
+  /// Serializes this CreateBomQuickRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = null,
-    Object? name = null,
-    Object? version = null,
-    Object? components = null,
-    Object? description = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-      components: null == components
-          ? _value.components
-          : components // ignore: cast_nullable_to_non_nullable
-              as List<BomQuickComponent>,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateBomQuickRequest &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.version, version) || other.version == version) &&
+            const DeepCollectionEquality()
+                .equals(other.components, components) &&
+            (identical(other.description, description) ||
+                other.description == description));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, itemId, name, version,
+      const DeepCollectionEquality().hash(components), description);
+
+  @override
+  String toString() {
+    return 'CreateBomQuickRequest(itemId: $itemId, name: $name, version: $version, components: $components, description: $description)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateBomQuickRequestImplCopyWith<$Res>
-    implements $CreateBomQuickRequestCopyWith<$Res> {
-  factory _$$CreateBomQuickRequestImplCopyWith(
-          _$CreateBomQuickRequestImpl value,
-          $Res Function(_$CreateBomQuickRequestImpl) then) =
-      __$$CreateBomQuickRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CreateBomQuickRequestCopyWith<$Res> {
+  factory $CreateBomQuickRequestCopyWith(CreateBomQuickRequest value,
+          $Res Function(CreateBomQuickRequest) _then) =
+      _$CreateBomQuickRequestCopyWithImpl;
   @useResult
   $Res call(
       {String itemId,
@@ -2810,14 +4431,15 @@ abstract class _$$CreateBomQuickRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateBomQuickRequestImplCopyWithImpl<$Res>
-    extends _$CreateBomQuickRequestCopyWithImpl<$Res,
-        _$CreateBomQuickRequestImpl>
-    implements _$$CreateBomQuickRequestImplCopyWith<$Res> {
-  __$$CreateBomQuickRequestImplCopyWithImpl(_$CreateBomQuickRequestImpl _value,
-      $Res Function(_$CreateBomQuickRequestImpl) _then)
-      : super(_value, _then);
+class _$CreateBomQuickRequestCopyWithImpl<$Res>
+    implements $CreateBomQuickRequestCopyWith<$Res> {
+  _$CreateBomQuickRequestCopyWithImpl(this._self, this._then);
 
+  final CreateBomQuickRequest _self;
+  final $Res Function(CreateBomQuickRequest) _then;
+
+  /// Create a copy of CreateBomQuickRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2827,44 +4449,205 @@ class __$$CreateBomQuickRequestImplCopyWithImpl<$Res>
     Object? components = null,
     Object? description = freezed,
   }) {
-    return _then(_$CreateBomQuickRequestImpl(
+    return _then(_self.copyWith(
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
       components: null == components
-          ? _value._components
+          ? _self.components
           : components // ignore: cast_nullable_to_non_nullable
               as List<BomQuickComponent>,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [CreateBomQuickRequest].
+extension CreateBomQuickRequestPatterns on CreateBomQuickRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateBomQuickRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomQuickRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateBomQuickRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomQuickRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateBomQuickRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomQuickRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String itemId, String name, String version,
+            List<BomQuickComponent> components, String? description)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomQuickRequest() when $default != null:
+        return $default(_that.itemId, _that.name, _that.version,
+            _that.components, _that.description);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String itemId, String name, String version,
+            List<BomQuickComponent> components, String? description)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomQuickRequest():
+        return $default(_that.itemId, _that.name, _that.version,
+            _that.components, _that.description);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String itemId, String name, String version,
+            List<BomQuickComponent> components, String? description)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateBomQuickRequest() when $default != null:
+        return $default(_that.itemId, _that.name, _that.version,
+            _that.components, _that.description);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CreateBomQuickRequestImpl implements _CreateBomQuickRequest {
-  const _$CreateBomQuickRequestImpl(
+class _CreateBomQuickRequest implements CreateBomQuickRequest {
+  const _CreateBomQuickRequest(
       {required this.itemId,
       required this.name,
       required this.version,
       required final List<BomQuickComponent> components,
       this.description})
       : _components = components;
-
-  factory _$CreateBomQuickRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateBomQuickRequestImplFromJson(json);
+  factory _CreateBomQuickRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateBomQuickRequestFromJson(json);
 
   @override
   final String itemId;
@@ -2883,16 +4666,27 @@ class _$CreateBomQuickRequestImpl implements _CreateBomQuickRequest {
   @override
   final String? description;
 
+  /// Create a copy of CreateBomQuickRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateBomQuickRequest(itemId: $itemId, name: $name, version: $version, components: $components, description: $description)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateBomQuickRequestCopyWith<_CreateBomQuickRequest> get copyWith =>
+      __$CreateBomQuickRequestCopyWithImpl<_CreateBomQuickRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateBomQuickRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateBomQuickRequestImpl &&
+            other is _CreateBomQuickRequest &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.version, version) || other.version == version) &&
@@ -2902,136 +4696,127 @@ class _$CreateBomQuickRequestImpl implements _CreateBomQuickRequest {
                 other.description == description));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, itemId, name, version,
       const DeepCollectionEquality().hash(_components), description);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateBomQuickRequestImplCopyWith<_$CreateBomQuickRequestImpl>
-      get copyWith => __$$CreateBomQuickRequestImplCopyWithImpl<
-          _$CreateBomQuickRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateBomQuickRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateBomQuickRequest(itemId: $itemId, name: $name, version: $version, components: $components, description: $description)';
   }
 }
 
-abstract class _CreateBomQuickRequest implements CreateBomQuickRequest {
-  const factory _CreateBomQuickRequest(
-      {required final String itemId,
-      required final String name,
-      required final String version,
-      required final List<BomQuickComponent> components,
-      final String? description}) = _$CreateBomQuickRequestImpl;
-
-  factory _CreateBomQuickRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateBomQuickRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$CreateBomQuickRequestCopyWith<$Res>
+    implements $CreateBomQuickRequestCopyWith<$Res> {
+  factory _$CreateBomQuickRequestCopyWith(_CreateBomQuickRequest value,
+          $Res Function(_CreateBomQuickRequest) _then) =
+      __$CreateBomQuickRequestCopyWithImpl;
   @override
-  String get itemId;
-  @override
-  String get name;
-  @override
-  String get version;
-  @override
-  List<BomQuickComponent> get components;
-  @override
-  String? get description;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateBomQuickRequestImplCopyWith<_$CreateBomQuickRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String itemId,
+      String name,
+      String version,
+      List<BomQuickComponent> components,
+      String? description});
 }
 
-BomQuickComponent _$BomQuickComponentFromJson(Map<String, dynamic> json) {
-  return _BomQuickComponent.fromJson(json);
+/// @nodoc
+class __$CreateBomQuickRequestCopyWithImpl<$Res>
+    implements _$CreateBomQuickRequestCopyWith<$Res> {
+  __$CreateBomQuickRequestCopyWithImpl(this._self, this._then);
+
+  final _CreateBomQuickRequest _self;
+  final $Res Function(_CreateBomQuickRequest) _then;
+
+  /// Create a copy of CreateBomQuickRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? itemId = null,
+    Object? name = null,
+    Object? version = null,
+    Object? components = null,
+    Object? description = freezed,
+  }) {
+    return _then(_CreateBomQuickRequest(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      components: null == components
+          ? _self._components
+          : components // ignore: cast_nullable_to_non_nullable
+              as List<BomQuickComponent>,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$BomQuickComponent {
-  String get itemId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  double? get unitCost => throw _privateConstructorUsedError;
-  int? get sequence => throw _privateConstructorUsedError;
+  String get itemId;
+  double get quantity;
+  String get unit;
+  double? get unitCost;
+  int? get sequence;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BomQuickComponentCopyWith<BomQuickComponent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BomQuickComponentCopyWith<$Res> {
-  factory $BomQuickComponentCopyWith(
-          BomQuickComponent value, $Res Function(BomQuickComponent) then) =
-      _$BomQuickComponentCopyWithImpl<$Res, BomQuickComponent>;
-  @useResult
-  $Res call(
-      {String itemId,
-      double quantity,
-      String unit,
-      double? unitCost,
-      int? sequence});
-}
-
-/// @nodoc
-class _$BomQuickComponentCopyWithImpl<$Res, $Val extends BomQuickComponent>
-    implements $BomQuickComponentCopyWith<$Res> {
-  _$BomQuickComponentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of BomQuickComponent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $BomQuickComponentCopyWith<BomQuickComponent> get copyWith =>
+      _$BomQuickComponentCopyWithImpl<BomQuickComponent>(
+          this as BomQuickComponent, _$identity);
+
+  /// Serializes this BomQuickComponent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitCost = freezed,
-    Object? sequence = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitCost: freezed == unitCost
-          ? _value.unitCost
-          : unitCost // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BomQuickComponent &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitCost, unitCost) ||
+                other.unitCost == unitCost) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, itemId, quantity, unit, unitCost, sequence);
+
+  @override
+  String toString() {
+    return 'BomQuickComponent(itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence)';
   }
 }
 
 /// @nodoc
-abstract class _$$BomQuickComponentImplCopyWith<$Res>
-    implements $BomQuickComponentCopyWith<$Res> {
-  factory _$$BomQuickComponentImplCopyWith(_$BomQuickComponentImpl value,
-          $Res Function(_$BomQuickComponentImpl) then) =
-      __$$BomQuickComponentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BomQuickComponentCopyWith<$Res> {
+  factory $BomQuickComponentCopyWith(
+          BomQuickComponent value, $Res Function(BomQuickComponent) _then) =
+      _$BomQuickComponentCopyWithImpl;
   @useResult
   $Res call(
       {String itemId,
@@ -3042,13 +4827,15 @@ abstract class _$$BomQuickComponentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BomQuickComponentImplCopyWithImpl<$Res>
-    extends _$BomQuickComponentCopyWithImpl<$Res, _$BomQuickComponentImpl>
-    implements _$$BomQuickComponentImplCopyWith<$Res> {
-  __$$BomQuickComponentImplCopyWithImpl(_$BomQuickComponentImpl _value,
-      $Res Function(_$BomQuickComponentImpl) _then)
-      : super(_value, _then);
+class _$BomQuickComponentCopyWithImpl<$Res>
+    implements $BomQuickComponentCopyWith<$Res> {
+  _$BomQuickComponentCopyWithImpl(this._self, this._then);
 
+  final BomQuickComponent _self;
+  final $Res Function(BomQuickComponent) _then;
+
+  /// Create a copy of BomQuickComponent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3058,43 +4845,204 @@ class __$$BomQuickComponentImplCopyWithImpl<$Res>
     Object? unitCost = freezed,
     Object? sequence = freezed,
   }) {
-    return _then(_$BomQuickComponentImpl(
+    return _then(_self.copyWith(
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       unit: null == unit
-          ? _value.unit
+          ? _self.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
       unitCost: freezed == unitCost
-          ? _value.unitCost
+          ? _self.unitCost
           : unitCost // ignore: cast_nullable_to_non_nullable
               as double?,
       sequence: freezed == sequence
-          ? _value.sequence
+          ? _self.sequence
           : sequence // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [BomQuickComponent].
+extension BomQuickComponentPatterns on BomQuickComponent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_BomQuickComponent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomQuickComponent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_BomQuickComponent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomQuickComponent():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_BomQuickComponent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomQuickComponent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String itemId, double quantity, String unit,
+            double? unitCost, int? sequence)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _BomQuickComponent() when $default != null:
+        return $default(_that.itemId, _that.quantity, _that.unit,
+            _that.unitCost, _that.sequence);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String itemId, double quantity, String unit,
+            double? unitCost, int? sequence)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomQuickComponent():
+        return $default(_that.itemId, _that.quantity, _that.unit,
+            _that.unitCost, _that.sequence);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String itemId, double quantity, String unit,
+            double? unitCost, int? sequence)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _BomQuickComponent() when $default != null:
+        return $default(_that.itemId, _that.quantity, _that.unit,
+            _that.unitCost, _that.sequence);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$BomQuickComponentImpl implements _BomQuickComponent {
-  const _$BomQuickComponentImpl(
+class _BomQuickComponent implements BomQuickComponent {
+  const _BomQuickComponent(
       {required this.itemId,
       required this.quantity,
       required this.unit,
       this.unitCost,
       this.sequence});
-
-  factory _$BomQuickComponentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BomQuickComponentImplFromJson(json);
+  factory _BomQuickComponent.fromJson(Map<String, dynamic> json) =>
+      _$BomQuickComponentFromJson(json);
 
   @override
   final String itemId;
@@ -3107,16 +5055,26 @@ class _$BomQuickComponentImpl implements _BomQuickComponent {
   @override
   final int? sequence;
 
+  /// Create a copy of BomQuickComponent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BomQuickComponent(itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BomQuickComponentCopyWith<_BomQuickComponent> get copyWith =>
+      __$BomQuickComponentCopyWithImpl<_BomQuickComponent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BomQuickComponentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BomQuickComponentImpl &&
+            other is _BomQuickComponent &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
@@ -3127,49 +5085,75 @@ class _$BomQuickComponentImpl implements _BomQuickComponent {
                 other.sequence == sequence));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, itemId, quantity, unit, unitCost, sequence);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BomQuickComponentImplCopyWith<_$BomQuickComponentImpl> get copyWith =>
-      __$$BomQuickComponentImplCopyWithImpl<_$BomQuickComponentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BomQuickComponentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BomQuickComponent(itemId: $itemId, quantity: $quantity, unit: $unit, unitCost: $unitCost, sequence: $sequence)';
   }
 }
 
-abstract class _BomQuickComponent implements BomQuickComponent {
-  const factory _BomQuickComponent(
-      {required final String itemId,
-      required final double quantity,
-      required final String unit,
-      final double? unitCost,
-      final int? sequence}) = _$BomQuickComponentImpl;
-
-  factory _BomQuickComponent.fromJson(Map<String, dynamic> json) =
-      _$BomQuickComponentImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BomQuickComponentCopyWith<$Res>
+    implements $BomQuickComponentCopyWith<$Res> {
+  factory _$BomQuickComponentCopyWith(
+          _BomQuickComponent value, $Res Function(_BomQuickComponent) _then) =
+      __$BomQuickComponentCopyWithImpl;
   @override
-  String get itemId;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  double? get unitCost;
-  @override
-  int? get sequence;
-  @override
-  @JsonKey(ignore: true)
-  _$$BomQuickComponentImplCopyWith<_$BomQuickComponentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String itemId,
+      double quantity,
+      String unit,
+      double? unitCost,
+      int? sequence});
 }
+
+/// @nodoc
+class __$BomQuickComponentCopyWithImpl<$Res>
+    implements _$BomQuickComponentCopyWith<$Res> {
+  __$BomQuickComponentCopyWithImpl(this._self, this._then);
+
+  final _BomQuickComponent _self;
+  final $Res Function(_BomQuickComponent) _then;
+
+  /// Create a copy of BomQuickComponent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitCost = freezed,
+    Object? sequence = freezed,
+  }) {
+    return _then(_BomQuickComponent(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitCost: freezed == unitCost
+          ? _self.unitCost
+          : unitCost // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+// dart format on

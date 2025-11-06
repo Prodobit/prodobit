@@ -5,7 +5,7 @@ part 'supplier_quotation_models.g.dart';
 
 /// Supplier quotation model
 @freezed
-class SupplierQuotation with _$SupplierQuotation {
+sealed class SupplierQuotation with _$SupplierQuotation {
   const factory SupplierQuotation({
     required String id,
     required String quotationNumber,
@@ -42,7 +42,7 @@ class SupplierQuotation with _$SupplierQuotation {
 
 /// Supplier quotation line item model
 @freezed
-class SupplierQuotationLineItem with _$SupplierQuotationLineItem {
+sealed class SupplierQuotationLineItem with _$SupplierQuotationLineItem {
   const factory SupplierQuotationLineItem({
     required String id,
     required String supplierQuotationId,
@@ -73,7 +73,7 @@ class SupplierQuotationLineItem with _$SupplierQuotationLineItem {
 
 /// Create supplier quotation request
 @freezed
-class CreateSupplierQuotationRequest with _$CreateSupplierQuotationRequest {
+sealed class CreateSupplierQuotationRequest with _$CreateSupplierQuotationRequest {
   const factory CreateSupplierQuotationRequest({
     required String supplierId,
     required DateTime quotationDate,
@@ -97,7 +97,7 @@ class CreateSupplierQuotationRequest with _$CreateSupplierQuotationRequest {
 
 /// Create supplier quotation line item request
 @freezed
-class CreateSupplierQuotationLineItemRequest with _$CreateSupplierQuotationLineItemRequest {
+sealed class CreateSupplierQuotationLineItemRequest with _$CreateSupplierQuotationLineItemRequest {
   const factory CreateSupplierQuotationLineItemRequest({
     required String itemId,
     required double quantity,
@@ -122,7 +122,7 @@ class CreateSupplierQuotationLineItemRequest with _$CreateSupplierQuotationLineI
 
 /// Update supplier quotation request
 @freezed
-class UpdateSupplierQuotationRequest with _$UpdateSupplierQuotationRequest {
+sealed class UpdateSupplierQuotationRequest with _$UpdateSupplierQuotationRequest {
   const factory UpdateSupplierQuotationRequest({
     DateTime? quotationDate,
     DateTime? validUntil,
@@ -143,7 +143,7 @@ class UpdateSupplierQuotationRequest with _$UpdateSupplierQuotationRequest {
 
 /// Supplier quotation filters
 @freezed
-class SupplierQuotationFilters with _$SupplierQuotationFilters {
+sealed class SupplierQuotationFilters with _$SupplierQuotationFilters {
   const factory SupplierQuotationFilters({
     String? supplierId,
     String? status,
@@ -189,7 +189,7 @@ class SupplierQuotationFilters with _$SupplierQuotationFilters {
 
 /// Quotation comparison model
 @freezed
-class QuotationComparison with _$QuotationComparison {
+sealed class QuotationComparison with _$QuotationComparison {
   const factory QuotationComparison({
     required String itemId,
     required String itemName,
@@ -206,7 +206,7 @@ class QuotationComparison with _$QuotationComparison {
 
 /// Quotation comparison entry
 @freezed
-class QuotationComparisonEntry with _$QuotationComparisonEntry {
+sealed class QuotationComparisonEntry with _$QuotationComparisonEntry {
   const factory QuotationComparisonEntry({
     required String quotationId,
     required String supplierId,

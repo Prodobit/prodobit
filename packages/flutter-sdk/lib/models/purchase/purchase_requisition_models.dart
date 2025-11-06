@@ -5,7 +5,7 @@ part 'purchase_requisition_models.g.dart';
 
 /// Purchase requisition model
 @freezed
-class PurchaseRequisition with _$PurchaseRequisition {
+sealed class PurchaseRequisition with _$PurchaseRequisition {
   const factory PurchaseRequisition({
     required String id,
     required String requisitionNumber,
@@ -41,7 +41,7 @@ class PurchaseRequisition with _$PurchaseRequisition {
 
 /// Purchase requisition line item model
 @freezed
-class PurchaseRequisitionLineItem with _$PurchaseRequisitionLineItem {
+sealed class PurchaseRequisitionLineItem with _$PurchaseRequisitionLineItem {
   const factory PurchaseRequisitionLineItem({
     required String id,
     required String purchaseRequisitionId,
@@ -68,7 +68,7 @@ class PurchaseRequisitionLineItem with _$PurchaseRequisitionLineItem {
 
 /// Create purchase requisition request
 @freezed
-class CreatePurchaseRequisitionRequest with _$CreatePurchaseRequisitionRequest {
+sealed class CreatePurchaseRequisitionRequest with _$CreatePurchaseRequisitionRequest {
   const factory CreatePurchaseRequisitionRequest({
     required DateTime requiredDate,
     required String priority,
@@ -87,7 +87,7 @@ class CreatePurchaseRequisitionRequest with _$CreatePurchaseRequisitionRequest {
 
 /// Create purchase requisition line item request
 @freezed
-class CreatePurchaseRequisitionLineItemRequest with _$CreatePurchaseRequisitionLineItemRequest {
+sealed class CreatePurchaseRequisitionLineItemRequest with _$CreatePurchaseRequisitionLineItemRequest {
   const factory CreatePurchaseRequisitionLineItemRequest({
     required String itemId,
     required double quantity,
@@ -109,7 +109,7 @@ class CreatePurchaseRequisitionLineItemRequest with _$CreatePurchaseRequisitionL
 
 /// Update purchase requisition request
 @freezed
-class UpdatePurchaseRequisitionRequest with _$UpdatePurchaseRequisitionRequest {
+sealed class UpdatePurchaseRequisitionRequest with _$UpdatePurchaseRequisitionRequest {
   const factory UpdatePurchaseRequisitionRequest({
     DateTime? requiredDate,
     String? priority,
@@ -127,7 +127,7 @@ class UpdatePurchaseRequisitionRequest with _$UpdatePurchaseRequisitionRequest {
 
 /// Update purchase requisition line item request
 @freezed
-class UpdatePurchaseRequisitionLineItemRequest with _$UpdatePurchaseRequisitionLineItemRequest {
+sealed class UpdatePurchaseRequisitionLineItemRequest with _$UpdatePurchaseRequisitionLineItemRequest {
   const factory UpdatePurchaseRequisitionLineItemRequest({
     double? quantity,
     String? unit,
@@ -148,7 +148,7 @@ class UpdatePurchaseRequisitionLineItemRequest with _$UpdatePurchaseRequisitionL
 
 /// Purchase requisition filters
 @freezed
-class PurchaseRequisitionFilters with _$PurchaseRequisitionFilters {
+sealed class PurchaseRequisitionFilters with _$PurchaseRequisitionFilters {
   const factory PurchaseRequisitionFilters({
     String? requestedBy,
     String? status,
@@ -196,7 +196,7 @@ class PurchaseRequisitionFilters with _$PurchaseRequisitionFilters {
 
 /// Approve/Reject purchase requisition request
 @freezed
-class ApprovePurchaseRequisitionRequest with _$ApprovePurchaseRequisitionRequest {
+sealed class ApprovePurchaseRequisitionRequest with _$ApprovePurchaseRequisitionRequest {
   const factory ApprovePurchaseRequisitionRequest({
     String? notes,
   }) = _ApprovePurchaseRequisitionRequest;
@@ -207,7 +207,7 @@ class ApprovePurchaseRequisitionRequest with _$ApprovePurchaseRequisitionRequest
 
 /// Reject purchase requisition request
 @freezed
-class RejectPurchaseRequisitionRequest with _$RejectPurchaseRequisitionRequest {
+sealed class RejectPurchaseRequisitionRequest with _$RejectPurchaseRequisitionRequest {
   const factory RejectPurchaseRequisitionRequest({
     required String reason,
     String? notes,

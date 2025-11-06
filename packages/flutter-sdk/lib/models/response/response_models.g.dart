@@ -6,12 +6,12 @@ part of 'response_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AuthResponseImpl _$$AuthResponseImplFromJson(Map<String, dynamic> json) =>
+_AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AuthResponseImpl',
+      '_AuthResponse',
       json,
       ($checkedConvert) {
-        final val = _$AuthResponseImpl(
+        final val = _AuthResponse(
           accessToken: $checkedConvert('accessToken', (v) => v as String),
           refreshToken: $checkedConvert('refreshToken', (v) => v as String),
           tokenType: $checkedConvert('tokenType', (v) => v as String),
@@ -25,7 +25,7 @@ _$AuthResponseImpl _$$AuthResponseImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$AuthResponseImplToJson(_$AuthResponseImpl instance) =>
+Map<String, dynamic> _$AuthResponseToJson(_AuthResponse instance) =>
     <String, dynamic>{
       'accessToken': instance.accessToken,
       'refreshToken': instance.refreshToken,
@@ -35,13 +35,13 @@ Map<String, dynamic> _$$AuthResponseImplToJson(_$AuthResponseImpl instance) =>
       'organizationName': instance.organizationName,
     };
 
-_$PasswordResetResponseImpl _$$PasswordResetResponseImplFromJson(
+_PasswordResetResponse _$PasswordResetResponseFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PasswordResetResponseImpl',
+      '_PasswordResetResponse',
       json,
       ($checkedConvert) {
-        final val = _$PasswordResetResponseImpl(
+        final val = _PasswordResetResponse(
           message: $checkedConvert('message', (v) => v as String),
           success: $checkedConvert('success', (v) => v as bool),
         );
@@ -49,20 +49,19 @@ _$PasswordResetResponseImpl _$$PasswordResetResponseImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PasswordResetResponseImplToJson(
-        _$PasswordResetResponseImpl instance) =>
+Map<String, dynamic> _$PasswordResetResponseToJson(
+        _PasswordResetResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'success': instance.success,
     };
 
-_$SuccessResponseImpl _$$SuccessResponseImplFromJson(
-        Map<String, dynamic> json) =>
+_SuccessResponse _$SuccessResponseFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SuccessResponseImpl',
+      '_SuccessResponse',
       json,
       ($checkedConvert) {
-        final val = _$SuccessResponseImpl(
+        final val = _SuccessResponse(
           message: $checkedConvert('message', (v) => v as String),
           success: $checkedConvert('success', (v) => v as bool),
           data: $checkedConvert('data', (v) => v as Map<String, dynamic>?),
@@ -71,8 +70,7 @@ _$SuccessResponseImpl _$$SuccessResponseImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$SuccessResponseImplToJson(
-        _$SuccessResponseImpl instance) =>
+Map<String, dynamic> _$SuccessResponseToJson(_SuccessResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'success': instance.success,

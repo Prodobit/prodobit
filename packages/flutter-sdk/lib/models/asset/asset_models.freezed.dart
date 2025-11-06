@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,155 +9,95 @@ part of 'asset_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Asset _$AssetFromJson(Map<String, dynamic> json) {
-  return _Asset.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Asset {
-  String get id => throw _privateConstructorUsedError;
-  String get tenantId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'active', 'inactive', 'maintenance', 'retired'
-  DateTime get insertedAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  String? get parentAssetId => throw _privateConstructorUsedError;
-  String? get assetTypeId => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  String? get qrCode => throw _privateConstructorUsedError;
-  String? get imageUrl => throw _privateConstructorUsedError;
-  DateTime? get deletedAt => throw _privateConstructorUsedError;
+  String get id;
+  String get tenantId;
+  String get locationId;
+  String get name;
+  String get code;
+  String get status; // 'active', 'inactive', 'maintenance', 'retired'
+  DateTime get insertedAt;
+  DateTime get updatedAt;
+  String? get parentAssetId;
+  String? get assetTypeId;
+  String? get serialNumber;
+  String? get qrCode;
+  String? get imageUrl;
+  DateTime? get deletedAt;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AssetCopyWith<$Res> {
-  factory $AssetCopyWith(Asset value, $Res Function(Asset) then) =
-      _$AssetCopyWithImpl<$Res, Asset>;
-  @useResult
-  $Res call(
-      {String id,
-      String tenantId,
-      String locationId,
-      String name,
-      String code,
-      String status,
-      DateTime insertedAt,
-      DateTime updatedAt,
-      String? parentAssetId,
-      String? assetTypeId,
-      String? serialNumber,
-      String? qrCode,
-      String? imageUrl,
-      DateTime? deletedAt});
-}
-
-/// @nodoc
-class _$AssetCopyWithImpl<$Res, $Val extends Asset>
-    implements $AssetCopyWith<$Res> {
-  _$AssetCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $AssetCopyWith<Asset> get copyWith =>
+      _$AssetCopyWithImpl<Asset>(this as Asset, _$identity);
+
+  /// Serializes this Asset to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? tenantId = null,
-    Object? locationId = null,
-    Object? name = null,
-    Object? code = null,
-    Object? status = null,
-    Object? insertedAt = null,
-    Object? updatedAt = null,
-    Object? parentAssetId = freezed,
-    Object? assetTypeId = freezed,
-    Object? serialNumber = freezed,
-    Object? qrCode = freezed,
-    Object? imageUrl = freezed,
-    Object? deletedAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      tenantId: null == tenantId
-          ? _value.tenantId
-          : tenantId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      insertedAt: null == insertedAt
-          ? _value.insertedAt
-          : insertedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      parentAssetId: freezed == parentAssetId
-          ? _value.parentAssetId
-          : parentAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetTypeId: freezed == assetTypeId
-          ? _value.assetTypeId
-          : assetTypeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qrCode: freezed == qrCode
-          ? _value.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deletedAt: freezed == deletedAt
-          ? _value.deletedAt
-          : deletedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Asset &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.tenantId, tenantId) ||
+                other.tenantId == tenantId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.insertedAt, insertedAt) ||
+                other.insertedAt == insertedAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.parentAssetId, parentAssetId) ||
+                other.parentAssetId == parentAssetId) &&
+            (identical(other.assetTypeId, assetTypeId) ||
+                other.assetTypeId == assetTypeId) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
+            (identical(other.deletedAt, deletedAt) ||
+                other.deletedAt == deletedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      tenantId,
+      locationId,
+      name,
+      code,
+      status,
+      insertedAt,
+      updatedAt,
+      parentAssetId,
+      assetTypeId,
+      serialNumber,
+      qrCode,
+      imageUrl,
+      deletedAt);
+
+  @override
+  String toString() {
+    return 'Asset(id: $id, tenantId: $tenantId, locationId: $locationId, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl, deletedAt: $deletedAt)';
   }
 }
 
 /// @nodoc
-abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
-  factory _$$AssetImplCopyWith(
-          _$AssetImpl value, $Res Function(_$AssetImpl) then) =
-      __$$AssetImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AssetCopyWith<$Res> {
+  factory $AssetCopyWith(Asset value, $Res Function(Asset) _then) =
+      _$AssetCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -177,13 +117,14 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AssetImplCopyWithImpl<$Res>
-    extends _$AssetCopyWithImpl<$Res, _$AssetImpl>
-    implements _$$AssetImplCopyWith<$Res> {
-  __$$AssetImplCopyWithImpl(
-      _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
-      : super(_value, _then);
+class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
+  _$AssetCopyWithImpl(this._self, this._then);
 
+  final Asset _self;
+  final $Res Function(Asset) _then;
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -202,71 +143,311 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? imageUrl = freezed,
     Object? deletedAt = freezed,
   }) {
-    return _then(_$AssetImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       tenantId: null == tenantId
-          ? _value.tenantId
+          ? _self.tenantId
           : tenantId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       insertedAt: null == insertedAt
-          ? _value.insertedAt
+          ? _self.insertedAt
           : insertedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       parentAssetId: freezed == parentAssetId
-          ? _value.parentAssetId
+          ? _self.parentAssetId
           : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       assetTypeId: freezed == assetTypeId
-          ? _value.assetTypeId
+          ? _self.assetTypeId
           : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       qrCode: freezed == qrCode
-          ? _value.qrCode
+          ? _self.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
       imageUrl: freezed == imageUrl
-          ? _value.imageUrl
+          ? _self.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       deletedAt: freezed == deletedAt
-          ? _value.deletedAt
+          ? _self.deletedAt
           : deletedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Asset].
+extension AssetPatterns on Asset {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Asset value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Asset() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Asset value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Asset():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Asset value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Asset() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String locationId,
+            String name,
+            String code,
+            String status,
+            DateTime insertedAt,
+            DateTime updatedAt,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl,
+            DateTime? deletedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Asset() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.status,
+            _that.insertedAt,
+            _that.updatedAt,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl,
+            _that.deletedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String tenantId,
+            String locationId,
+            String name,
+            String code,
+            String status,
+            DateTime insertedAt,
+            DateTime updatedAt,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl,
+            DateTime? deletedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Asset():
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.status,
+            _that.insertedAt,
+            _that.updatedAt,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl,
+            _that.deletedAt);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String tenantId,
+            String locationId,
+            String name,
+            String code,
+            String status,
+            DateTime insertedAt,
+            DateTime updatedAt,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl,
+            DateTime? deletedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Asset() when $default != null:
+        return $default(
+            _that.id,
+            _that.tenantId,
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.status,
+            _that.insertedAt,
+            _that.updatedAt,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl,
+            _that.deletedAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$AssetImpl implements _Asset {
-  const _$AssetImpl(
+class _Asset implements Asset {
+  const _Asset(
       {required this.id,
       required this.tenantId,
       required this.locationId,
@@ -281,9 +462,7 @@ class _$AssetImpl implements _Asset {
       this.qrCode,
       this.imageUrl,
       this.deletedAt});
-
-  factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetImplFromJson(json);
+  factory _Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
   @override
   final String id;
@@ -315,16 +494,26 @@ class _$AssetImpl implements _Asset {
   @override
   final DateTime? deletedAt;
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Asset(id: $id, tenantId: $tenantId, locationId: $locationId, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl, deletedAt: $deletedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AssetCopyWith<_Asset> get copyWith =>
+      __$AssetCopyWithImpl<_Asset>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AssetToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AssetImpl &&
+            other is _Asset &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.tenantId, tenantId) ||
                 other.tenantId == tenantId) &&
@@ -350,7 +539,7 @@ class _$AssetImpl implements _Asset {
                 other.deletedAt == deletedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -369,177 +558,181 @@ class _$AssetImpl implements _Asset {
       imageUrl,
       deletedAt);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AssetImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Asset(id: $id, tenantId: $tenantId, locationId: $locationId, name: $name, code: $code, status: $status, insertedAt: $insertedAt, updatedAt: $updatedAt, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl, deletedAt: $deletedAt)';
   }
 }
 
-abstract class _Asset implements Asset {
-  const factory _Asset(
-      {required final String id,
-      required final String tenantId,
-      required final String locationId,
-      required final String name,
-      required final String code,
-      required final String status,
-      required final DateTime insertedAt,
-      required final DateTime updatedAt,
-      final String? parentAssetId,
-      final String? assetTypeId,
-      final String? serialNumber,
-      final String? qrCode,
-      final String? imageUrl,
-      final DateTime? deletedAt}) = _$AssetImpl;
-
-  factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
+  factory _$AssetCopyWith(_Asset value, $Res Function(_Asset) _then) =
+      __$AssetCopyWithImpl;
   @override
-  String get id;
-  @override
-  String get tenantId;
-  @override
-  String get locationId;
-  @override
-  String get name;
-  @override
-  String get code;
-  @override
-  String get status;
-  @override // 'active', 'inactive', 'maintenance', 'retired'
-  DateTime get insertedAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  String? get parentAssetId;
-  @override
-  String? get assetTypeId;
-  @override
-  String? get serialNumber;
-  @override
-  String? get qrCode;
-  @override
-  String? get imageUrl;
-  @override
-  DateTime? get deletedAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      String tenantId,
+      String locationId,
+      String name,
+      String code,
+      String status,
+      DateTime insertedAt,
+      DateTime updatedAt,
+      String? parentAssetId,
+      String? assetTypeId,
+      String? serialNumber,
+      String? qrCode,
+      String? imageUrl,
+      DateTime? deletedAt});
 }
 
-CreateAssetRequest _$CreateAssetRequestFromJson(Map<String, dynamic> json) {
-  return _CreateAssetRequest.fromJson(json);
+/// @nodoc
+class __$AssetCopyWithImpl<$Res> implements _$AssetCopyWith<$Res> {
+  __$AssetCopyWithImpl(this._self, this._then);
+
+  final _Asset _self;
+  final $Res Function(_Asset) _then;
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? tenantId = null,
+    Object? locationId = null,
+    Object? name = null,
+    Object? code = null,
+    Object? status = null,
+    Object? insertedAt = null,
+    Object? updatedAt = null,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
+    Object? serialNumber = freezed,
+    Object? qrCode = freezed,
+    Object? imageUrl = freezed,
+    Object? deletedAt = freezed,
+  }) {
+    return _then(_Asset(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      tenantId: null == tenantId
+          ? _self.tenantId
+          : tenantId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      insertedAt: null == insertedAt
+          ? _self.insertedAt
+          : insertedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      parentAssetId: freezed == parentAssetId
+          ? _self.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetTypeId: freezed == assetTypeId
+          ? _self.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qrCode: freezed == qrCode
+          ? _self.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageUrl: freezed == imageUrl
+          ? _self.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deletedAt: freezed == deletedAt
+          ? _self.deletedAt
+          : deletedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$CreateAssetRequest {
-  String get locationId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
-  String? get parentAssetId => throw _privateConstructorUsedError;
-  String? get assetTypeId => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  String? get qrCode => throw _privateConstructorUsedError;
-  String? get imageUrl => throw _privateConstructorUsedError;
+  String get locationId;
+  String get name;
+  String get code;
+  String? get parentAssetId;
+  String? get assetTypeId;
+  String? get serialNumber;
+  String? get qrCode;
+  String? get imageUrl;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateAssetRequestCopyWith<CreateAssetRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateAssetRequestCopyWith<$Res> {
-  factory $CreateAssetRequestCopyWith(
-          CreateAssetRequest value, $Res Function(CreateAssetRequest) then) =
-      _$CreateAssetRequestCopyWithImpl<$Res, CreateAssetRequest>;
-  @useResult
-  $Res call(
-      {String locationId,
-      String name,
-      String code,
-      String? parentAssetId,
-      String? assetTypeId,
-      String? serialNumber,
-      String? qrCode,
-      String? imageUrl});
-}
-
-/// @nodoc
-class _$CreateAssetRequestCopyWithImpl<$Res, $Val extends CreateAssetRequest>
-    implements $CreateAssetRequestCopyWith<$Res> {
-  _$CreateAssetRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of CreateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CreateAssetRequestCopyWith<CreateAssetRequest> get copyWith =>
+      _$CreateAssetRequestCopyWithImpl<CreateAssetRequest>(
+          this as CreateAssetRequest, _$identity);
+
+  /// Serializes this CreateAssetRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? locationId = null,
-    Object? name = null,
-    Object? code = null,
-    Object? parentAssetId = freezed,
-    Object? assetTypeId = freezed,
-    Object? serialNumber = freezed,
-    Object? qrCode = freezed,
-    Object? imageUrl = freezed,
-  }) {
-    return _then(_value.copyWith(
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      parentAssetId: freezed == parentAssetId
-          ? _value.parentAssetId
-          : parentAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetTypeId: freezed == assetTypeId
-          ? _value.assetTypeId
-          : assetTypeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qrCode: freezed == qrCode
-          ? _value.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateAssetRequest &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.parentAssetId, parentAssetId) ||
+                other.parentAssetId == parentAssetId) &&
+            (identical(other.assetTypeId, assetTypeId) ||
+                other.assetTypeId == assetTypeId) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, locationId, name, code,
+      parentAssetId, assetTypeId, serialNumber, qrCode, imageUrl);
+
+  @override
+  String toString() {
+    return 'CreateAssetRequest(locationId: $locationId, name: $name, code: $code, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateAssetRequestImplCopyWith<$Res>
-    implements $CreateAssetRequestCopyWith<$Res> {
-  factory _$$CreateAssetRequestImplCopyWith(_$CreateAssetRequestImpl value,
-          $Res Function(_$CreateAssetRequestImpl) then) =
-      __$$CreateAssetRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CreateAssetRequestCopyWith<$Res> {
+  factory $CreateAssetRequestCopyWith(
+          CreateAssetRequest value, $Res Function(CreateAssetRequest) _then) =
+      _$CreateAssetRequestCopyWithImpl;
   @useResult
   $Res call(
       {String locationId,
@@ -553,13 +746,15 @@ abstract class _$$CreateAssetRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateAssetRequestImplCopyWithImpl<$Res>
-    extends _$CreateAssetRequestCopyWithImpl<$Res, _$CreateAssetRequestImpl>
-    implements _$$CreateAssetRequestImplCopyWith<$Res> {
-  __$$CreateAssetRequestImplCopyWithImpl(_$CreateAssetRequestImpl _value,
-      $Res Function(_$CreateAssetRequestImpl) _then)
-      : super(_value, _then);
+class _$CreateAssetRequestCopyWithImpl<$Res>
+    implements $CreateAssetRequestCopyWith<$Res> {
+  _$CreateAssetRequestCopyWithImpl(this._self, this._then);
 
+  final CreateAssetRequest _self;
+  final $Res Function(CreateAssetRequest) _then;
+
+  /// Create a copy of CreateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -572,47 +767,251 @@ class __$$CreateAssetRequestImplCopyWithImpl<$Res>
     Object? qrCode = freezed,
     Object? imageUrl = freezed,
   }) {
-    return _then(_$CreateAssetRequestImpl(
+    return _then(_self.copyWith(
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       parentAssetId: freezed == parentAssetId
-          ? _value.parentAssetId
+          ? _self.parentAssetId
           : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       assetTypeId: freezed == assetTypeId
-          ? _value.assetTypeId
+          ? _self.assetTypeId
           : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       qrCode: freezed == qrCode
-          ? _value.qrCode
+          ? _self.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
       imageUrl: freezed == imageUrl
-          ? _value.imageUrl
+          ? _self.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [CreateAssetRequest].
+extension CreateAssetRequestPatterns on CreateAssetRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateAssetRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAssetRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateAssetRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAssetRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateAssetRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAssetRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String locationId,
+            String name,
+            String code,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAssetRequest() when $default != null:
+        return $default(
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String locationId,
+            String name,
+            String code,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAssetRequest():
+        return $default(
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String locationId,
+            String name,
+            String code,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAssetRequest() when $default != null:
+        return $default(
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CreateAssetRequestImpl implements _CreateAssetRequest {
-  const _$CreateAssetRequestImpl(
+class _CreateAssetRequest implements CreateAssetRequest {
+  const _CreateAssetRequest(
       {required this.locationId,
       required this.name,
       required this.code,
@@ -621,9 +1020,8 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
       this.serialNumber,
       this.qrCode,
       this.imageUrl});
-
-  factory _$CreateAssetRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateAssetRequestImplFromJson(json);
+  factory _CreateAssetRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateAssetRequestFromJson(json);
 
   @override
   final String locationId;
@@ -642,16 +1040,26 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
   @override
   final String? imageUrl;
 
+  /// Create a copy of CreateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateAssetRequest(locationId: $locationId, name: $name, code: $code, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateAssetRequestCopyWith<_CreateAssetRequest> get copyWith =>
+      __$CreateAssetRequestCopyWithImpl<_CreateAssetRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateAssetRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateAssetRequestImpl &&
+            other is _CreateAssetRequest &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -667,95 +1075,29 @@ class _$CreateAssetRequestImpl implements _CreateAssetRequest {
                 other.imageUrl == imageUrl));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, locationId, name, code,
       parentAssetId, assetTypeId, serialNumber, qrCode, imageUrl);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateAssetRequestImplCopyWith<_$CreateAssetRequestImpl> get copyWith =>
-      __$$CreateAssetRequestImplCopyWithImpl<_$CreateAssetRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateAssetRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateAssetRequest(locationId: $locationId, name: $name, code: $code, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
   }
 }
 
-abstract class _CreateAssetRequest implements CreateAssetRequest {
-  const factory _CreateAssetRequest(
-      {required final String locationId,
-      required final String name,
-      required final String code,
-      final String? parentAssetId,
-      final String? assetTypeId,
-      final String? serialNumber,
-      final String? qrCode,
-      final String? imageUrl}) = _$CreateAssetRequestImpl;
-
-  factory _CreateAssetRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateAssetRequestImpl.fromJson;
-
-  @override
-  String get locationId;
-  @override
-  String get name;
-  @override
-  String get code;
-  @override
-  String? get parentAssetId;
-  @override
-  String? get assetTypeId;
-  @override
-  String? get serialNumber;
-  @override
-  String? get qrCode;
-  @override
-  String? get imageUrl;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateAssetRequestImplCopyWith<_$CreateAssetRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-UpdateAssetRequest _$UpdateAssetRequestFromJson(Map<String, dynamic> json) {
-  return _UpdateAssetRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateAssetRequest {
-  String? get locationId => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get parentAssetId => throw _privateConstructorUsedError;
-  String? get assetTypeId => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  String? get qrCode => throw _privateConstructorUsedError;
-  String? get imageUrl => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateAssetRequestCopyWith<UpdateAssetRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateAssetRequestCopyWith<$Res> {
-  factory $UpdateAssetRequestCopyWith(
-          UpdateAssetRequest value, $Res Function(UpdateAssetRequest) then) =
-      _$UpdateAssetRequestCopyWithImpl<$Res, UpdateAssetRequest>;
+abstract mixin class _$CreateAssetRequestCopyWith<$Res>
+    implements $CreateAssetRequestCopyWith<$Res> {
+  factory _$CreateAssetRequestCopyWith(
+          _CreateAssetRequest value, $Res Function(_CreateAssetRequest) _then) =
+      __$CreateAssetRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? locationId,
-      String? name,
-      String? code,
-      String? status,
+      {String locationId,
+      String name,
+      String code,
       String? parentAssetId,
       String? assetTypeId,
       String? serialNumber,
@@ -764,145 +1106,58 @@ abstract class $UpdateAssetRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateAssetRequestCopyWithImpl<$Res, $Val extends UpdateAssetRequest>
-    implements $UpdateAssetRequestCopyWith<$Res> {
-  _$UpdateAssetRequestCopyWithImpl(this._value, this._then);
+class __$CreateAssetRequestCopyWithImpl<$Res>
+    implements _$CreateAssetRequestCopyWith<$Res> {
+  __$CreateAssetRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateAssetRequest _self;
+  final $Res Function(_CreateAssetRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? locationId = freezed,
-    Object? name = freezed,
-    Object? code = freezed,
-    Object? status = freezed,
+    Object? locationId = null,
+    Object? name = null,
+    Object? code = null,
     Object? parentAssetId = freezed,
     Object? assetTypeId = freezed,
     Object? serialNumber = freezed,
     Object? qrCode = freezed,
     Object? imageUrl = freezed,
   }) {
-    return _then(_value.copyWith(
-      locationId: freezed == locationId
-          ? _value.locationId
+    return _then(_CreateAssetRequest(
+      locationId: null == locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
+              as String,
+      name: null == name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      code: freezed == code
-          ? _value.code
+              as String,
+      code: null == code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parentAssetId: freezed == parentAssetId
-          ? _value.parentAssetId
+          ? _self.parentAssetId
           : parentAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
       assetTypeId: freezed == assetTypeId
-          ? _value.assetTypeId
+          ? _self.assetTypeId
           : assetTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       qrCode: freezed == qrCode
-          ? _value.qrCode
+          ? _self.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
       imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateAssetRequestImplCopyWith<$Res>
-    implements $UpdateAssetRequestCopyWith<$Res> {
-  factory _$$UpdateAssetRequestImplCopyWith(_$UpdateAssetRequestImpl value,
-          $Res Function(_$UpdateAssetRequestImpl) then) =
-      __$$UpdateAssetRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? locationId,
-      String? name,
-      String? code,
-      String? status,
-      String? parentAssetId,
-      String? assetTypeId,
-      String? serialNumber,
-      String? qrCode,
-      String? imageUrl});
-}
-
-/// @nodoc
-class __$$UpdateAssetRequestImplCopyWithImpl<$Res>
-    extends _$UpdateAssetRequestCopyWithImpl<$Res, _$UpdateAssetRequestImpl>
-    implements _$$UpdateAssetRequestImplCopyWith<$Res> {
-  __$$UpdateAssetRequestImplCopyWithImpl(_$UpdateAssetRequestImpl _value,
-      $Res Function(_$UpdateAssetRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? locationId = freezed,
-    Object? name = freezed,
-    Object? code = freezed,
-    Object? status = freezed,
-    Object? parentAssetId = freezed,
-    Object? assetTypeId = freezed,
-    Object? serialNumber = freezed,
-    Object? qrCode = freezed,
-    Object? imageUrl = freezed,
-  }) {
-    return _then(_$UpdateAssetRequestImpl(
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      code: freezed == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parentAssetId: freezed == parentAssetId
-          ? _value.parentAssetId
-          : parentAssetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetTypeId: freezed == assetTypeId
-          ? _value.assetTypeId
-          : assetTypeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      qrCode: freezed == qrCode
-          ? _value.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
+          ? _self.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -910,9 +1165,356 @@ class __$$UpdateAssetRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateAssetRequest {
+  String? get locationId;
+  String? get name;
+  String? get code;
+  String? get status;
+  String? get parentAssetId;
+  String? get assetTypeId;
+  String? get serialNumber;
+  String? get qrCode;
+  String? get imageUrl;
+
+  /// Create a copy of UpdateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateAssetRequestCopyWith<UpdateAssetRequest> get copyWith =>
+      _$UpdateAssetRequestCopyWithImpl<UpdateAssetRequest>(
+          this as UpdateAssetRequest, _$identity);
+
+  /// Serializes this UpdateAssetRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateAssetRequest &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.parentAssetId, parentAssetId) ||
+                other.parentAssetId == parentAssetId) &&
+            (identical(other.assetTypeId, assetTypeId) ||
+                other.assetTypeId == assetTypeId) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, locationId, name, code, status,
+      parentAssetId, assetTypeId, serialNumber, qrCode, imageUrl);
+
+  @override
+  String toString() {
+    return 'UpdateAssetRequest(locationId: $locationId, name: $name, code: $code, status: $status, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateAssetRequestCopyWith<$Res> {
+  factory $UpdateAssetRequestCopyWith(
+          UpdateAssetRequest value, $Res Function(UpdateAssetRequest) _then) =
+      _$UpdateAssetRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? locationId,
+      String? name,
+      String? code,
+      String? status,
+      String? parentAssetId,
+      String? assetTypeId,
+      String? serialNumber,
+      String? qrCode,
+      String? imageUrl});
+}
+
+/// @nodoc
+class _$UpdateAssetRequestCopyWithImpl<$Res>
+    implements $UpdateAssetRequestCopyWith<$Res> {
+  _$UpdateAssetRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateAssetRequest _self;
+  final $Res Function(UpdateAssetRequest) _then;
+
+  /// Create a copy of UpdateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locationId = freezed,
+    Object? name = freezed,
+    Object? code = freezed,
+    Object? status = freezed,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
+    Object? serialNumber = freezed,
+    Object? qrCode = freezed,
+    Object? imageUrl = freezed,
+  }) {
+    return _then(_self.copyWith(
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: freezed == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentAssetId: freezed == parentAssetId
+          ? _self.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetTypeId: freezed == assetTypeId
+          ? _self.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qrCode: freezed == qrCode
+          ? _self.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageUrl: freezed == imageUrl
+          ? _self.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateAssetRequest].
+extension UpdateAssetRequestPatterns on UpdateAssetRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateAssetRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAssetRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateAssetRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAssetRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateAssetRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAssetRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? locationId,
+            String? name,
+            String? code,
+            String? status,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAssetRequest() when $default != null:
+        return $default(
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.status,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? locationId,
+            String? name,
+            String? code,
+            String? status,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAssetRequest():
+        return $default(
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.status,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? locationId,
+            String? name,
+            String? code,
+            String? status,
+            String? parentAssetId,
+            String? assetTypeId,
+            String? serialNumber,
+            String? qrCode,
+            String? imageUrl)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAssetRequest() when $default != null:
+        return $default(
+            _that.locationId,
+            _that.name,
+            _that.code,
+            _that.status,
+            _that.parentAssetId,
+            _that.assetTypeId,
+            _that.serialNumber,
+            _that.qrCode,
+            _that.imageUrl);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
-  const _$UpdateAssetRequestImpl(
+class _UpdateAssetRequest implements UpdateAssetRequest {
+  const _UpdateAssetRequest(
       {this.locationId,
       this.name,
       this.code,
@@ -922,9 +1524,8 @@ class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
       this.serialNumber,
       this.qrCode,
       this.imageUrl});
-
-  factory _$UpdateAssetRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateAssetRequestImplFromJson(json);
+  factory _UpdateAssetRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateAssetRequestFromJson(json);
 
   @override
   final String? locationId;
@@ -945,16 +1546,26 @@ class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
   @override
   final String? imageUrl;
 
+  /// Create a copy of UpdateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateAssetRequest(locationId: $locationId, name: $name, code: $code, status: $status, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateAssetRequestCopyWith<_UpdateAssetRequest> get copyWith =>
+      __$UpdateAssetRequestCopyWithImpl<_UpdateAssetRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateAssetRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateAssetRequestImpl &&
+            other is _UpdateAssetRequest &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -971,61 +1582,99 @@ class _$UpdateAssetRequestImpl implements _UpdateAssetRequest {
                 other.imageUrl == imageUrl));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, locationId, name, code, status,
       parentAssetId, assetTypeId, serialNumber, qrCode, imageUrl);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateAssetRequestImplCopyWith<_$UpdateAssetRequestImpl> get copyWith =>
-      __$$UpdateAssetRequestImplCopyWithImpl<_$UpdateAssetRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateAssetRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateAssetRequest(locationId: $locationId, name: $name, code: $code, status: $status, parentAssetId: $parentAssetId, assetTypeId: $assetTypeId, serialNumber: $serialNumber, qrCode: $qrCode, imageUrl: $imageUrl)';
   }
 }
 
-abstract class _UpdateAssetRequest implements UpdateAssetRequest {
-  const factory _UpdateAssetRequest(
-      {final String? locationId,
-      final String? name,
-      final String? code,
-      final String? status,
-      final String? parentAssetId,
-      final String? assetTypeId,
-      final String? serialNumber,
-      final String? qrCode,
-      final String? imageUrl}) = _$UpdateAssetRequestImpl;
-
-  factory _UpdateAssetRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateAssetRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateAssetRequestCopyWith<$Res>
+    implements $UpdateAssetRequestCopyWith<$Res> {
+  factory _$UpdateAssetRequestCopyWith(
+          _UpdateAssetRequest value, $Res Function(_UpdateAssetRequest) _then) =
+      __$UpdateAssetRequestCopyWithImpl;
   @override
-  String? get locationId;
-  @override
-  String? get name;
-  @override
-  String? get code;
-  @override
-  String? get status;
-  @override
-  String? get parentAssetId;
-  @override
-  String? get assetTypeId;
-  @override
-  String? get serialNumber;
-  @override
-  String? get qrCode;
-  @override
-  String? get imageUrl;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateAssetRequestImplCopyWith<_$UpdateAssetRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? locationId,
+      String? name,
+      String? code,
+      String? status,
+      String? parentAssetId,
+      String? assetTypeId,
+      String? serialNumber,
+      String? qrCode,
+      String? imageUrl});
 }
+
+/// @nodoc
+class __$UpdateAssetRequestCopyWithImpl<$Res>
+    implements _$UpdateAssetRequestCopyWith<$Res> {
+  __$UpdateAssetRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateAssetRequest _self;
+  final $Res Function(_UpdateAssetRequest) _then;
+
+  /// Create a copy of UpdateAssetRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? locationId = freezed,
+    Object? name = freezed,
+    Object? code = freezed,
+    Object? status = freezed,
+    Object? parentAssetId = freezed,
+    Object? assetTypeId = freezed,
+    Object? serialNumber = freezed,
+    Object? qrCode = freezed,
+    Object? imageUrl = freezed,
+  }) {
+    return _then(_UpdateAssetRequest(
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      code: freezed == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentAssetId: freezed == parentAssetId
+          ? _self.parentAssetId
+          : parentAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetTypeId: freezed == assetTypeId
+          ? _self.assetTypeId
+          : assetTypeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      qrCode: freezed == qrCode
+          ? _self.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageUrl: freezed == imageUrl
+          ? _self.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

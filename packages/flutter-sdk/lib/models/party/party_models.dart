@@ -6,7 +6,7 @@ part 'party_models.g.dart';
 
 /// Party creation request
 @freezed
-class CreatePartyRequest with _$CreatePartyRequest {
+sealed class CreatePartyRequest with _$CreatePartyRequest {
   const factory CreatePartyRequest({
     required String name,
     required String type,
@@ -25,7 +25,7 @@ class CreatePartyRequest with _$CreatePartyRequest {
 
 /// Party (customer/supplier) model
 @freezed
-class Party with _$Party {
+sealed class Party with _$Party {
   const factory Party({
     required String id,
     required String name,
@@ -48,7 +48,7 @@ class Party with _$Party {
 
 /// Update party request
 @freezed
-class UpdatePartyRequest with _$UpdatePartyRequest {
+sealed class UpdatePartyRequest with _$UpdatePartyRequest {
   const factory UpdatePartyRequest({
     String? name,
     String? description,

@@ -6,13 +6,12 @@ part of 'contact_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ContactMechanismImpl _$$ContactMechanismImplFromJson(
-        Map<String, dynamic> json) =>
+_ContactMechanism _$ContactMechanismFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ContactMechanismImpl',
+      '_ContactMechanism',
       json,
       ($checkedConvert) {
-        final val = _$ContactMechanismImpl(
+        final val = _ContactMechanism(
           id: $checkedConvert('id', (v) => v as String),
           partyId: $checkedConvert('partyId', (v) => v as String),
           type: $checkedConvert('type', (v) => v as String),
@@ -34,8 +33,7 @@ _$ContactMechanismImpl _$$ContactMechanismImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$ContactMechanismImplToJson(
-        _$ContactMechanismImpl instance) =>
+Map<String, dynamic> _$ContactMechanismToJson(_ContactMechanism instance) =>
     <String, dynamic>{
       'id': instance.id,
       'partyId': instance.partyId,
@@ -52,12 +50,12 @@ Map<String, dynamic> _$$ContactMechanismImplToJson(
       'metadata': instance.metadata,
     };
 
-_$PartyAddressImpl _$$PartyAddressImplFromJson(Map<String, dynamic> json) =>
+_PartyAddress _$PartyAddressFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PartyAddressImpl',
+      '_PartyAddress',
       json,
       ($checkedConvert) {
-        final val = _$PartyAddressImpl(
+        final val = _PartyAddress(
           id: $checkedConvert('id', (v) => v as String),
           partyId: $checkedConvert('partyId', (v) => v as String),
           type: $checkedConvert('type', (v) => v as String),
@@ -87,7 +85,7 @@ _$PartyAddressImpl _$$PartyAddressImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$PartyAddressImplToJson(_$PartyAddressImpl instance) =>
+Map<String, dynamic> _$PartyAddressToJson(_PartyAddress instance) =>
     <String, dynamic>{
       'id': instance.id,
       'partyId': instance.partyId,
@@ -111,31 +109,31 @@ Map<String, dynamic> _$$PartyAddressImplToJson(_$PartyAddressImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$CreateContactMechanismRequestImpl
-    _$$CreateContactMechanismRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreateContactMechanismRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreateContactMechanismRequestImpl(
-              type: $checkedConvert('type', (v) => v as String),
-              value: $checkedConvert('value', (v) => v as String),
-              isPrimary: $checkedConvert('isPrimary', (v) => v as bool?),
-              label: $checkedConvert('label', (v) => v as String?),
-              extension: $checkedConvert('extension', (v) => v as String?),
-              countryCode: $checkedConvert('countryCode', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              validFrom: $checkedConvert('validFrom',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              validTo: $checkedConvert('validTo',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-            );
-            return val;
-          },
+_CreateContactMechanismRequest _$CreateContactMechanismRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreateContactMechanismRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreateContactMechanismRequest(
+          type: $checkedConvert('type', (v) => v as String),
+          value: $checkedConvert('value', (v) => v as String),
+          isPrimary: $checkedConvert('isPrimary', (v) => v as bool?),
+          label: $checkedConvert('label', (v) => v as String?),
+          extension: $checkedConvert('extension', (v) => v as String?),
+          countryCode: $checkedConvert('countryCode', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          validFrom: $checkedConvert('validFrom',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          validTo: $checkedConvert(
+              'validTo', (v) => v == null ? null : DateTime.parse(v as String)),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreateContactMechanismRequestImplToJson(
-        _$CreateContactMechanismRequestImpl instance) =>
+Map<String, dynamic> _$CreateContactMechanismRequestToJson(
+        _CreateContactMechanismRequest instance) =>
     <String, dynamic>{
       'type': instance.type,
       'value': instance.value,
@@ -148,31 +146,31 @@ Map<String, dynamic> _$$CreateContactMechanismRequestImplToJson(
       'validTo': instance.validTo?.toIso8601String(),
     };
 
-_$UpdateContactMechanismRequestImpl
-    _$$UpdateContactMechanismRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$UpdateContactMechanismRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$UpdateContactMechanismRequestImpl(
-              value: $checkedConvert('value', (v) => v as String?),
-              isPrimary: $checkedConvert('isPrimary', (v) => v as bool?),
-              isActive: $checkedConvert('isActive', (v) => v as bool?),
-              label: $checkedConvert('label', (v) => v as String?),
-              extension: $checkedConvert('extension', (v) => v as String?),
-              countryCode: $checkedConvert('countryCode', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              validFrom: $checkedConvert('validFrom',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              validTo: $checkedConvert('validTo',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-            );
-            return val;
-          },
+_UpdateContactMechanismRequest _$UpdateContactMechanismRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_UpdateContactMechanismRequest',
+      json,
+      ($checkedConvert) {
+        final val = _UpdateContactMechanismRequest(
+          value: $checkedConvert('value', (v) => v as String?),
+          isPrimary: $checkedConvert('isPrimary', (v) => v as bool?),
+          isActive: $checkedConvert('isActive', (v) => v as bool?),
+          label: $checkedConvert('label', (v) => v as String?),
+          extension: $checkedConvert('extension', (v) => v as String?),
+          countryCode: $checkedConvert('countryCode', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          validFrom: $checkedConvert('validFrom',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          validTo: $checkedConvert(
+              'validTo', (v) => v == null ? null : DateTime.parse(v as String)),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$UpdateContactMechanismRequestImplToJson(
-        _$UpdateContactMechanismRequestImpl instance) =>
+Map<String, dynamic> _$UpdateContactMechanismRequestToJson(
+        _UpdateContactMechanismRequest instance) =>
     <String, dynamic>{
       'value': instance.value,
       'isPrimary': instance.isPrimary,
@@ -185,13 +183,13 @@ Map<String, dynamic> _$$UpdateContactMechanismRequestImplToJson(
       'validTo': instance.validTo?.toIso8601String(),
     };
 
-_$CreateAddressRequestImpl _$$CreateAddressRequestImplFromJson(
+_CreateAddressRequest _$CreateAddressRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateAddressRequestImpl',
+      '_CreateAddressRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateAddressRequestImpl(
+        final val = _CreateAddressRequest(
           type: $checkedConvert('type', (v) => v as String),
           addressLine1: $checkedConvert('addressLine1', (v) => v as String),
           addressLine2: $checkedConvert('addressLine2', (v) => v as String?),
@@ -216,8 +214,8 @@ _$CreateAddressRequestImpl _$$CreateAddressRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateAddressRequestImplToJson(
-        _$CreateAddressRequestImpl instance) =>
+Map<String, dynamic> _$CreateAddressRequestToJson(
+        _CreateAddressRequest instance) =>
     <String, dynamic>{
       'type': instance.type,
       'addressLine1': instance.addressLine1,
@@ -237,13 +235,13 @@ Map<String, dynamic> _$$CreateAddressRequestImplToJson(
       'validTo': instance.validTo?.toIso8601String(),
     };
 
-_$UpdateAddressRequestImpl _$$UpdateAddressRequestImplFromJson(
+_UpdateAddressRequest _$UpdateAddressRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateAddressRequestImpl',
+      '_UpdateAddressRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateAddressRequestImpl(
+        final val = _UpdateAddressRequest(
           addressLine1: $checkedConvert('addressLine1', (v) => v as String?),
           addressLine2: $checkedConvert('addressLine2', (v) => v as String?),
           addressLine3: $checkedConvert('addressLine3', (v) => v as String?),
@@ -268,8 +266,8 @@ _$UpdateAddressRequestImpl _$$UpdateAddressRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateAddressRequestImplToJson(
-        _$UpdateAddressRequestImpl instance) =>
+Map<String, dynamic> _$UpdateAddressRequestToJson(
+        _UpdateAddressRequest instance) =>
     <String, dynamic>{
       'addressLine1': instance.addressLine1,
       'addressLine2': instance.addressLine2,

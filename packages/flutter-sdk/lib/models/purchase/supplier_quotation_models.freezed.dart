@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,249 +9,150 @@ part of 'supplier_quotation_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SupplierQuotation _$SupplierQuotationFromJson(Map<String, dynamic> json) {
-  return _SupplierQuotation.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SupplierQuotation {
-  String get id => throw _privateConstructorUsedError;
-  String get quotationNumber => throw _privateConstructorUsedError;
-  String get supplierId => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'draft', 'sent', 'received', 'selected', 'rejected', 'expired'
-  DateTime get quotationDate => throw _privateConstructorUsedError;
-  DateTime get validUntil => throw _privateConstructorUsedError;
-  double get totalAmount => throw _privateConstructorUsedError;
-  double get taxAmount => throw _privateConstructorUsedError;
-  double get netAmount => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  DateTime? get sentAt => throw _privateConstructorUsedError;
-  DateTime? get receivedAt => throw _privateConstructorUsedError;
-  DateTime? get selectedAt => throw _privateConstructorUsedError;
-  DateTime? get rejectedAt => throw _privateConstructorUsedError;
-  String? get rfqId => throw _privateConstructorUsedError;
-  String? get selectedBy => throw _privateConstructorUsedError;
-  String? get rejectedBy => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get termsAndConditions => throw _privateConstructorUsedError;
-  String? get paymentTerms => throw _privateConstructorUsedError;
-  String? get deliveryTerms => throw _privateConstructorUsedError;
-  String? get supplierReference => throw _privateConstructorUsedError;
-  String? get contactPerson => throw _privateConstructorUsedError;
-  String? get contactEmail => throw _privateConstructorUsedError;
-  String? get contactPhone => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get quotationNumber;
+  String get supplierId;
+  String
+      get status; // 'draft', 'sent', 'received', 'selected', 'rejected', 'expired'
+  DateTime get quotationDate;
+  DateTime get validUntil;
+  double get totalAmount;
+  double get taxAmount;
+  double get netAmount;
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  DateTime? get sentAt;
+  DateTime? get receivedAt;
+  DateTime? get selectedAt;
+  DateTime? get rejectedAt;
+  String? get rfqId;
+  String? get selectedBy;
+  String? get rejectedBy;
+  String? get notes;
+  String? get termsAndConditions;
+  String? get paymentTerms;
+  String? get deliveryTerms;
+  String? get supplierReference;
+  String? get contactPerson;
+  String? get contactEmail;
+  String? get contactPhone;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SupplierQuotationCopyWith<SupplierQuotation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SupplierQuotationCopyWith<$Res> {
-  factory $SupplierQuotationCopyWith(
-          SupplierQuotation value, $Res Function(SupplierQuotation) then) =
-      _$SupplierQuotationCopyWithImpl<$Res, SupplierQuotation>;
-  @useResult
-  $Res call(
-      {String id,
-      String quotationNumber,
-      String supplierId,
-      String status,
-      DateTime quotationDate,
-      DateTime validUntil,
-      double totalAmount,
-      double taxAmount,
-      double netAmount,
-      DateTime createdAt,
-      DateTime updatedAt,
-      DateTime? sentAt,
-      DateTime? receivedAt,
-      DateTime? selectedAt,
-      DateTime? rejectedAt,
-      String? rfqId,
-      String? selectedBy,
-      String? rejectedBy,
-      String? notes,
-      String? termsAndConditions,
-      String? paymentTerms,
-      String? deliveryTerms,
-      String? supplierReference,
-      String? contactPerson,
-      String? contactEmail,
-      String? contactPhone,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$SupplierQuotationCopyWithImpl<$Res, $Val extends SupplierQuotation>
-    implements $SupplierQuotationCopyWith<$Res> {
-  _$SupplierQuotationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of SupplierQuotation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SupplierQuotationCopyWith<SupplierQuotation> get copyWith =>
+      _$SupplierQuotationCopyWithImpl<SupplierQuotation>(
+          this as SupplierQuotation, _$identity);
+
+  /// Serializes this SupplierQuotation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? quotationNumber = null,
-    Object? supplierId = null,
-    Object? status = null,
-    Object? quotationDate = null,
-    Object? validUntil = null,
-    Object? totalAmount = null,
-    Object? taxAmount = null,
-    Object? netAmount = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? sentAt = freezed,
-    Object? receivedAt = freezed,
-    Object? selectedAt = freezed,
-    Object? rejectedAt = freezed,
-    Object? rfqId = freezed,
-    Object? selectedBy = freezed,
-    Object? rejectedBy = freezed,
-    Object? notes = freezed,
-    Object? termsAndConditions = freezed,
-    Object? paymentTerms = freezed,
-    Object? deliveryTerms = freezed,
-    Object? supplierReference = freezed,
-    Object? contactPerson = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      quotationNumber: null == quotationNumber
-          ? _value.quotationNumber
-          : quotationNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      supplierId: null == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      quotationDate: null == quotationDate
-          ? _value.quotationDate
-          : quotationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      validUntil: null == validUntil
-          ? _value.validUntil
-          : validUntil // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      totalAmount: null == totalAmount
-          ? _value.totalAmount
-          : totalAmount // ignore: cast_nullable_to_non_nullable
-              as double,
-      taxAmount: null == taxAmount
-          ? _value.taxAmount
-          : taxAmount // ignore: cast_nullable_to_non_nullable
-              as double,
-      netAmount: null == netAmount
-          ? _value.netAmount
-          : netAmount // ignore: cast_nullable_to_non_nullable
-              as double,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      sentAt: freezed == sentAt
-          ? _value.sentAt
-          : sentAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      receivedAt: freezed == receivedAt
-          ? _value.receivedAt
-          : receivedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      selectedAt: freezed == selectedAt
-          ? _value.selectedAt
-          : selectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
-          : rejectedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      rfqId: freezed == rfqId
-          ? _value.rfqId
-          : rfqId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      selectedBy: freezed == selectedBy
-          ? _value.selectedBy
-          : selectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rejectedBy: freezed == rejectedBy
-          ? _value.rejectedBy
-          : rejectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      termsAndConditions: freezed == termsAndConditions
-          ? _value.termsAndConditions
-          : termsAndConditions // ignore: cast_nullable_to_non_nullable
-              as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deliveryTerms: freezed == deliveryTerms
-          ? _value.deliveryTerms
-          : deliveryTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierReference: freezed == supplierReference
-          ? _value.supplierReference
-          : supplierReference // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPerson: freezed == contactPerson
-          ? _value.contactPerson
-          : contactPerson // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SupplierQuotation &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.quotationNumber, quotationNumber) ||
+                other.quotationNumber == quotationNumber) &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.quotationDate, quotationDate) ||
+                other.quotationDate == quotationDate) &&
+            (identical(other.validUntil, validUntil) ||
+                other.validUntil == validUntil) &&
+            (identical(other.totalAmount, totalAmount) ||
+                other.totalAmount == totalAmount) &&
+            (identical(other.taxAmount, taxAmount) ||
+                other.taxAmount == taxAmount) &&
+            (identical(other.netAmount, netAmount) ||
+                other.netAmount == netAmount) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.sentAt, sentAt) || other.sentAt == sentAt) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt) &&
+            (identical(other.selectedAt, selectedAt) ||
+                other.selectedAt == selectedAt) &&
+            (identical(other.rejectedAt, rejectedAt) ||
+                other.rejectedAt == rejectedAt) &&
+            (identical(other.rfqId, rfqId) || other.rfqId == rfqId) &&
+            (identical(other.selectedBy, selectedBy) ||
+                other.selectedBy == selectedBy) &&
+            (identical(other.rejectedBy, rejectedBy) ||
+                other.rejectedBy == rejectedBy) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.termsAndConditions, termsAndConditions) ||
+                other.termsAndConditions == termsAndConditions) &&
+            (identical(other.paymentTerms, paymentTerms) ||
+                other.paymentTerms == paymentTerms) &&
+            (identical(other.deliveryTerms, deliveryTerms) ||
+                other.deliveryTerms == deliveryTerms) &&
+            (identical(other.supplierReference, supplierReference) ||
+                other.supplierReference == supplierReference) &&
+            (identical(other.contactPerson, contactPerson) ||
+                other.contactPerson == contactPerson) &&
+            (identical(other.contactEmail, contactEmail) ||
+                other.contactEmail == contactEmail) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        quotationNumber,
+        supplierId,
+        status,
+        quotationDate,
+        validUntil,
+        totalAmount,
+        taxAmount,
+        netAmount,
+        createdAt,
+        updatedAt,
+        sentAt,
+        receivedAt,
+        selectedAt,
+        rejectedAt,
+        rfqId,
+        selectedBy,
+        rejectedBy,
+        notes,
+        termsAndConditions,
+        paymentTerms,
+        deliveryTerms,
+        supplierReference,
+        contactPerson,
+        contactEmail,
+        contactPhone,
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'SupplierQuotation(id: $id, quotationNumber: $quotationNumber, supplierId: $supplierId, status: $status, quotationDate: $quotationDate, validUntil: $validUntil, totalAmount: $totalAmount, taxAmount: $taxAmount, netAmount: $netAmount, createdAt: $createdAt, updatedAt: $updatedAt, sentAt: $sentAt, receivedAt: $receivedAt, selectedAt: $selectedAt, rejectedAt: $rejectedAt, rfqId: $rfqId, selectedBy: $selectedBy, rejectedBy: $rejectedBy, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$SupplierQuotationImplCopyWith<$Res>
-    implements $SupplierQuotationCopyWith<$Res> {
-  factory _$$SupplierQuotationImplCopyWith(_$SupplierQuotationImpl value,
-          $Res Function(_$SupplierQuotationImpl) then) =
-      __$$SupplierQuotationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SupplierQuotationCopyWith<$Res> {
+  factory $SupplierQuotationCopyWith(
+          SupplierQuotation value, $Res Function(SupplierQuotation) _then) =
+      _$SupplierQuotationCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -284,13 +185,15 @@ abstract class _$$SupplierQuotationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SupplierQuotationImplCopyWithImpl<$Res>
-    extends _$SupplierQuotationCopyWithImpl<$Res, _$SupplierQuotationImpl>
-    implements _$$SupplierQuotationImplCopyWith<$Res> {
-  __$$SupplierQuotationImplCopyWithImpl(_$SupplierQuotationImpl _value,
-      $Res Function(_$SupplierQuotationImpl) _then)
-      : super(_value, _then);
+class _$SupplierQuotationCopyWithImpl<$Res>
+    implements $SupplierQuotationCopyWith<$Res> {
+  _$SupplierQuotationCopyWithImpl(this._self, this._then);
 
+  final SupplierQuotation _self;
+  final $Res Function(SupplierQuotation) _then;
+
+  /// Create a copy of SupplierQuotation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -322,123 +225,441 @@ class __$$SupplierQuotationImplCopyWithImpl<$Res>
     Object? contactPhone = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$SupplierQuotationImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       quotationNumber: null == quotationNumber
-          ? _value.quotationNumber
+          ? _self.quotationNumber
           : quotationNumber // ignore: cast_nullable_to_non_nullable
               as String,
       supplierId: null == supplierId
-          ? _value.supplierId
+          ? _self.supplierId
           : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       quotationDate: null == quotationDate
-          ? _value.quotationDate
+          ? _self.quotationDate
           : quotationDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       validUntil: null == validUntil
-          ? _value.validUntil
+          ? _self.validUntil
           : validUntil // ignore: cast_nullable_to_non_nullable
               as DateTime,
       totalAmount: null == totalAmount
-          ? _value.totalAmount
+          ? _self.totalAmount
           : totalAmount // ignore: cast_nullable_to_non_nullable
               as double,
       taxAmount: null == taxAmount
-          ? _value.taxAmount
+          ? _self.taxAmount
           : taxAmount // ignore: cast_nullable_to_non_nullable
               as double,
       netAmount: null == netAmount
-          ? _value.netAmount
+          ? _self.netAmount
           : netAmount // ignore: cast_nullable_to_non_nullable
               as double,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       sentAt: freezed == sentAt
-          ? _value.sentAt
+          ? _self.sentAt
           : sentAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       receivedAt: freezed == receivedAt
-          ? _value.receivedAt
+          ? _self.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       selectedAt: freezed == selectedAt
-          ? _value.selectedAt
+          ? _self.selectedAt
           : selectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       rejectedAt: freezed == rejectedAt
-          ? _value.rejectedAt
+          ? _self.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       rfqId: freezed == rfqId
-          ? _value.rfqId
+          ? _self.rfqId
           : rfqId // ignore: cast_nullable_to_non_nullable
               as String?,
       selectedBy: freezed == selectedBy
-          ? _value.selectedBy
+          ? _self.selectedBy
           : selectedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       rejectedBy: freezed == rejectedBy
-          ? _value.rejectedBy
+          ? _self.rejectedBy
           : rejectedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       termsAndConditions: freezed == termsAndConditions
-          ? _value.termsAndConditions
+          ? _self.termsAndConditions
           : termsAndConditions // ignore: cast_nullable_to_non_nullable
               as String?,
       paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
+          ? _self.paymentTerms
           : paymentTerms // ignore: cast_nullable_to_non_nullable
               as String?,
       deliveryTerms: freezed == deliveryTerms
-          ? _value.deliveryTerms
+          ? _self.deliveryTerms
           : deliveryTerms // ignore: cast_nullable_to_non_nullable
               as String?,
       supplierReference: freezed == supplierReference
-          ? _value.supplierReference
+          ? _self.supplierReference
           : supplierReference // ignore: cast_nullable_to_non_nullable
               as String?,
       contactPerson: freezed == contactPerson
-          ? _value.contactPerson
+          ? _self.contactPerson
           : contactPerson // ignore: cast_nullable_to_non_nullable
               as String?,
       contactEmail: freezed == contactEmail
-          ? _value.contactEmail
+          ? _self.contactEmail
           : contactEmail // ignore: cast_nullable_to_non_nullable
               as String?,
       contactPhone: freezed == contactPhone
-          ? _value.contactPhone
+          ? _self.contactPhone
           : contactPhone // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [SupplierQuotation].
+extension SupplierQuotationPatterns on SupplierQuotation {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SupplierQuotation value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotation() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SupplierQuotation value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotation():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SupplierQuotation value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotation() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String quotationNumber,
+            String supplierId,
+            String status,
+            DateTime quotationDate,
+            DateTime validUntil,
+            double totalAmount,
+            double taxAmount,
+            double netAmount,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? sentAt,
+            DateTime? receivedAt,
+            DateTime? selectedAt,
+            DateTime? rejectedAt,
+            String? rfqId,
+            String? selectedBy,
+            String? rejectedBy,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotation() when $default != null:
+        return $default(
+            _that.id,
+            _that.quotationNumber,
+            _that.supplierId,
+            _that.status,
+            _that.quotationDate,
+            _that.validUntil,
+            _that.totalAmount,
+            _that.taxAmount,
+            _that.netAmount,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.sentAt,
+            _that.receivedAt,
+            _that.selectedAt,
+            _that.rejectedAt,
+            _that.rfqId,
+            _that.selectedBy,
+            _that.rejectedBy,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String quotationNumber,
+            String supplierId,
+            String status,
+            DateTime quotationDate,
+            DateTime validUntil,
+            double totalAmount,
+            double taxAmount,
+            double netAmount,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? sentAt,
+            DateTime? receivedAt,
+            DateTime? selectedAt,
+            DateTime? rejectedAt,
+            String? rfqId,
+            String? selectedBy,
+            String? rejectedBy,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotation():
+        return $default(
+            _that.id,
+            _that.quotationNumber,
+            _that.supplierId,
+            _that.status,
+            _that.quotationDate,
+            _that.validUntil,
+            _that.totalAmount,
+            _that.taxAmount,
+            _that.netAmount,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.sentAt,
+            _that.receivedAt,
+            _that.selectedAt,
+            _that.rejectedAt,
+            _that.rfqId,
+            _that.selectedBy,
+            _that.rejectedBy,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String quotationNumber,
+            String supplierId,
+            String status,
+            DateTime quotationDate,
+            DateTime validUntil,
+            double totalAmount,
+            double taxAmount,
+            double netAmount,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? sentAt,
+            DateTime? receivedAt,
+            DateTime? selectedAt,
+            DateTime? rejectedAt,
+            String? rfqId,
+            String? selectedBy,
+            String? rejectedBy,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotation() when $default != null:
+        return $default(
+            _that.id,
+            _that.quotationNumber,
+            _that.supplierId,
+            _that.status,
+            _that.quotationDate,
+            _that.validUntil,
+            _that.totalAmount,
+            _that.taxAmount,
+            _that.netAmount,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.sentAt,
+            _that.receivedAt,
+            _that.selectedAt,
+            _that.rejectedAt,
+            _that.rfqId,
+            _that.selectedBy,
+            _that.rejectedBy,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$SupplierQuotationImpl implements _SupplierQuotation {
-  const _$SupplierQuotationImpl(
+class _SupplierQuotation implements SupplierQuotation {
+  const _SupplierQuotation(
       {required this.id,
       required this.quotationNumber,
       required this.supplierId,
@@ -467,9 +688,8 @@ class _$SupplierQuotationImpl implements _SupplierQuotation {
       this.contactPhone,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$SupplierQuotationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SupplierQuotationImplFromJson(json);
+  factory _SupplierQuotation.fromJson(Map<String, dynamic> json) =>
+      _$SupplierQuotationFromJson(json);
 
   @override
   final String id;
@@ -534,16 +754,26 @@ class _$SupplierQuotationImpl implements _SupplierQuotation {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of SupplierQuotation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SupplierQuotation(id: $id, quotationNumber: $quotationNumber, supplierId: $supplierId, status: $status, quotationDate: $quotationDate, validUntil: $validUntil, totalAmount: $totalAmount, taxAmount: $taxAmount, netAmount: $netAmount, createdAt: $createdAt, updatedAt: $updatedAt, sentAt: $sentAt, receivedAt: $receivedAt, selectedAt: $selectedAt, rejectedAt: $rejectedAt, rfqId: $rfqId, selectedBy: $selectedBy, rejectedBy: $rejectedBy, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SupplierQuotationCopyWith<_SupplierQuotation> get copyWith =>
+      __$SupplierQuotationCopyWithImpl<_SupplierQuotation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SupplierQuotationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SupplierQuotationImpl &&
+            other is _SupplierQuotation &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quotationNumber, quotationNumber) ||
                 other.quotationNumber == quotationNumber) &&
@@ -594,7 +824,7 @@ class _$SupplierQuotationImpl implements _SupplierQuotation {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -627,457 +857,198 @@ class _$SupplierQuotationImpl implements _SupplierQuotation {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SupplierQuotationImplCopyWith<_$SupplierQuotationImpl> get copyWith =>
-      __$$SupplierQuotationImplCopyWithImpl<_$SupplierQuotationImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SupplierQuotationImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _SupplierQuotation implements SupplierQuotation {
-  const factory _SupplierQuotation(
-      {required final String id,
-      required final String quotationNumber,
-      required final String supplierId,
-      required final String status,
-      required final DateTime quotationDate,
-      required final DateTime validUntil,
-      required final double totalAmount,
-      required final double taxAmount,
-      required final double netAmount,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final DateTime? sentAt,
-      final DateTime? receivedAt,
-      final DateTime? selectedAt,
-      final DateTime? rejectedAt,
-      final String? rfqId,
-      final String? selectedBy,
-      final String? rejectedBy,
-      final String? notes,
-      final String? termsAndConditions,
-      final String? paymentTerms,
-      final String? deliveryTerms,
-      final String? supplierReference,
-      final String? contactPerson,
-      final String? contactEmail,
-      final String? contactPhone,
-      final Map<String, dynamic>? metadata}) = _$SupplierQuotationImpl;
-
-  factory _SupplierQuotation.fromJson(Map<String, dynamic> json) =
-      _$SupplierQuotationImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get quotationNumber;
-  @override
-  String get supplierId;
-  @override
-  String get status;
-  @override // 'draft', 'sent', 'received', 'selected', 'rejected', 'expired'
-  DateTime get quotationDate;
-  @override
-  DateTime get validUntil;
-  @override
-  double get totalAmount;
-  @override
-  double get taxAmount;
-  @override
-  double get netAmount;
-  @override
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  DateTime? get sentAt;
-  @override
-  DateTime? get receivedAt;
-  @override
-  DateTime? get selectedAt;
-  @override
-  DateTime? get rejectedAt;
-  @override
-  String? get rfqId;
-  @override
-  String? get selectedBy;
-  @override
-  String? get rejectedBy;
-  @override
-  String? get notes;
-  @override
-  String? get termsAndConditions;
-  @override
-  String? get paymentTerms;
-  @override
-  String? get deliveryTerms;
-  @override
-  String? get supplierReference;
-  @override
-  String? get contactPerson;
-  @override
-  String? get contactEmail;
-  @override
-  String? get contactPhone;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$SupplierQuotationImplCopyWith<_$SupplierQuotationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SupplierQuotationLineItem _$SupplierQuotationLineItemFromJson(
-    Map<String, dynamic> json) {
-  return _SupplierQuotationLineItem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$SupplierQuotationLineItem {
-  String get id => throw _privateConstructorUsedError;
-  String get supplierQuotationId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  double get unitPrice => throw _privateConstructorUsedError;
-  double get totalPrice => throw _privateConstructorUsedError;
-  double get discountAmount => throw _privateConstructorUsedError;
-  double get taxAmount => throw _privateConstructorUsedError;
-  double get netAmount => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'pending', 'quoted', 'selected', 'rejected'
-  int? get sequence => throw _privateConstructorUsedError;
-  int? get leadTimeDays => throw _privateConstructorUsedError;
-  DateTime? get deliveryDate => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get specification => throw _privateConstructorUsedError;
-  String? get brandModel => throw _privateConstructorUsedError;
-  String? get partNumber => throw _privateConstructorUsedError;
-  double? get moq =>
-      throw _privateConstructorUsedError; // Minimum Order Quantity
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SupplierQuotationLineItemCopyWith<SupplierQuotationLineItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SupplierQuotationLineItemCopyWith<$Res> {
-  factory $SupplierQuotationLineItemCopyWith(SupplierQuotationLineItem value,
-          $Res Function(SupplierQuotationLineItem) then) =
-      _$SupplierQuotationLineItemCopyWithImpl<$Res, SupplierQuotationLineItem>;
-  @useResult
-  $Res call(
-      {String id,
-      String supplierQuotationId,
-      String itemId,
-      double quantity,
-      String unit,
-      double unitPrice,
-      double totalPrice,
-      double discountAmount,
-      double taxAmount,
-      double netAmount,
-      String status,
-      int? sequence,
-      int? leadTimeDays,
-      DateTime? deliveryDate,
-      String? notes,
-      String? specification,
-      String? brandModel,
-      String? partNumber,
-      double? moq,
-      Map<String, dynamic>? attributes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$SupplierQuotationLineItemCopyWithImpl<$Res,
-        $Val extends SupplierQuotationLineItem>
-    implements $SupplierQuotationLineItemCopyWith<$Res> {
-  _$SupplierQuotationLineItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? supplierQuotationId = null,
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitPrice = null,
-    Object? totalPrice = null,
-    Object? discountAmount = null,
-    Object? taxAmount = null,
-    Object? netAmount = null,
-    Object? status = null,
-    Object? sequence = freezed,
-    Object? leadTimeDays = freezed,
-    Object? deliveryDate = freezed,
-    Object? notes = freezed,
-    Object? specification = freezed,
-    Object? brandModel = freezed,
-    Object? partNumber = freezed,
-    Object? moq = freezed,
-    Object? attributes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      supplierQuotationId: null == supplierQuotationId
-          ? _value.supplierQuotationId
-          : supplierQuotationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitPrice: null == unitPrice
-          ? _value.unitPrice
-          : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalPrice: null == totalPrice
-          ? _value.totalPrice
-          : totalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      discountAmount: null == discountAmount
-          ? _value.discountAmount
-          : discountAmount // ignore: cast_nullable_to_non_nullable
-              as double,
-      taxAmount: null == taxAmount
-          ? _value.taxAmount
-          : taxAmount // ignore: cast_nullable_to_non_nullable
-              as double,
-      netAmount: null == netAmount
-          ? _value.netAmount
-          : netAmount // ignore: cast_nullable_to_non_nullable
-              as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      leadTimeDays: freezed == leadTimeDays
-          ? _value.leadTimeDays
-          : leadTimeDays // ignore: cast_nullable_to_non_nullable
-              as int?,
-      deliveryDate: freezed == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brandModel: freezed == brandModel
-          ? _value.brandModel
-          : brandModel // ignore: cast_nullable_to_non_nullable
-              as String?,
-      partNumber: freezed == partNumber
-          ? _value.partNumber
-          : partNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      moq: freezed == moq
-          ? _value.moq
-          : moq // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'SupplierQuotation(id: $id, quotationNumber: $quotationNumber, supplierId: $supplierId, status: $status, quotationDate: $quotationDate, validUntil: $validUntil, totalAmount: $totalAmount, taxAmount: $taxAmount, netAmount: $netAmount, createdAt: $createdAt, updatedAt: $updatedAt, sentAt: $sentAt, receivedAt: $receivedAt, selectedAt: $selectedAt, rejectedAt: $rejectedAt, rfqId: $rfqId, selectedBy: $selectedBy, rejectedBy: $rejectedBy, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$SupplierQuotationLineItemImplCopyWith<$Res>
-    implements $SupplierQuotationLineItemCopyWith<$Res> {
-  factory _$$SupplierQuotationLineItemImplCopyWith(
-          _$SupplierQuotationLineItemImpl value,
-          $Res Function(_$SupplierQuotationLineItemImpl) then) =
-      __$$SupplierQuotationLineItemImplCopyWithImpl<$Res>;
+abstract mixin class _$SupplierQuotationCopyWith<$Res>
+    implements $SupplierQuotationCopyWith<$Res> {
+  factory _$SupplierQuotationCopyWith(
+          _SupplierQuotation value, $Res Function(_SupplierQuotation) _then) =
+      __$SupplierQuotationCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
-      String supplierQuotationId,
-      String itemId,
-      double quantity,
-      String unit,
-      double unitPrice,
-      double totalPrice,
-      double discountAmount,
+      String quotationNumber,
+      String supplierId,
+      String status,
+      DateTime quotationDate,
+      DateTime validUntil,
+      double totalAmount,
       double taxAmount,
       double netAmount,
-      String status,
-      int? sequence,
-      int? leadTimeDays,
-      DateTime? deliveryDate,
+      DateTime createdAt,
+      DateTime updatedAt,
+      DateTime? sentAt,
+      DateTime? receivedAt,
+      DateTime? selectedAt,
+      DateTime? rejectedAt,
+      String? rfqId,
+      String? selectedBy,
+      String? rejectedBy,
       String? notes,
-      String? specification,
-      String? brandModel,
-      String? partNumber,
-      double? moq,
-      Map<String, dynamic>? attributes,
+      String? termsAndConditions,
+      String? paymentTerms,
+      String? deliveryTerms,
+      String? supplierReference,
+      String? contactPerson,
+      String? contactEmail,
+      String? contactPhone,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$SupplierQuotationLineItemImplCopyWithImpl<$Res>
-    extends _$SupplierQuotationLineItemCopyWithImpl<$Res,
-        _$SupplierQuotationLineItemImpl>
-    implements _$$SupplierQuotationLineItemImplCopyWith<$Res> {
-  __$$SupplierQuotationLineItemImplCopyWithImpl(
-      _$SupplierQuotationLineItemImpl _value,
-      $Res Function(_$SupplierQuotationLineItemImpl) _then)
-      : super(_value, _then);
+class __$SupplierQuotationCopyWithImpl<$Res>
+    implements _$SupplierQuotationCopyWith<$Res> {
+  __$SupplierQuotationCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _SupplierQuotation _self;
+  final $Res Function(_SupplierQuotation) _then;
+
+  /// Create a copy of SupplierQuotation
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? supplierQuotationId = null,
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitPrice = null,
-    Object? totalPrice = null,
-    Object? discountAmount = null,
+    Object? quotationNumber = null,
+    Object? supplierId = null,
+    Object? status = null,
+    Object? quotationDate = null,
+    Object? validUntil = null,
+    Object? totalAmount = null,
     Object? taxAmount = null,
     Object? netAmount = null,
-    Object? status = null,
-    Object? sequence = freezed,
-    Object? leadTimeDays = freezed,
-    Object? deliveryDate = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? sentAt = freezed,
+    Object? receivedAt = freezed,
+    Object? selectedAt = freezed,
+    Object? rejectedAt = freezed,
+    Object? rfqId = freezed,
+    Object? selectedBy = freezed,
+    Object? rejectedBy = freezed,
     Object? notes = freezed,
-    Object? specification = freezed,
-    Object? brandModel = freezed,
-    Object? partNumber = freezed,
-    Object? moq = freezed,
-    Object? attributes = freezed,
+    Object? termsAndConditions = freezed,
+    Object? paymentTerms = freezed,
+    Object? deliveryTerms = freezed,
+    Object? supplierReference = freezed,
+    Object? contactPerson = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$SupplierQuotationLineItemImpl(
+    return _then(_SupplierQuotation(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      supplierQuotationId: null == supplierQuotationId
-          ? _value.supplierQuotationId
-          : supplierQuotationId // ignore: cast_nullable_to_non_nullable
+      quotationNumber: null == quotationNumber
+          ? _self.quotationNumber
+          : quotationNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
+      supplierId: null == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String,
-      unitPrice: null == unitPrice
-          ? _value.unitPrice
-          : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalPrice: null == totalPrice
-          ? _value.totalPrice
-          : totalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      discountAmount: null == discountAmount
-          ? _value.discountAmount
-          : discountAmount // ignore: cast_nullable_to_non_nullable
+      quotationDate: null == quotationDate
+          ? _self.quotationDate
+          : quotationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      validUntil: null == validUntil
+          ? _self.validUntil
+          : validUntil // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      totalAmount: null == totalAmount
+          ? _self.totalAmount
+          : totalAmount // ignore: cast_nullable_to_non_nullable
               as double,
       taxAmount: null == taxAmount
-          ? _value.taxAmount
+          ? _self.taxAmount
           : taxAmount // ignore: cast_nullable_to_non_nullable
               as double,
       netAmount: null == netAmount
-          ? _value.netAmount
+          ? _self.netAmount
           : netAmount // ignore: cast_nullable_to_non_nullable
               as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      leadTimeDays: freezed == leadTimeDays
-          ? _value.leadTimeDays
-          : leadTimeDays // ignore: cast_nullable_to_non_nullable
-              as int?,
-      deliveryDate: freezed == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      sentAt: freezed == sentAt
+          ? _self.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      receivedAt: freezed == receivedAt
+          ? _self.receivedAt
+          : receivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      selectedAt: freezed == selectedAt
+          ? _self.selectedAt
+          : selectedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rejectedAt: freezed == rejectedAt
+          ? _self.rejectedAt
+          : rejectedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      rfqId: freezed == rfqId
+          ? _self.rfqId
+          : rfqId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      selectedBy: freezed == selectedBy
+          ? _self.selectedBy
+          : selectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rejectedBy: freezed == rejectedBy
+          ? _self.rejectedBy
+          : rejectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
+      termsAndConditions: freezed == termsAndConditions
+          ? _self.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
               as String?,
-      brandModel: freezed == brandModel
-          ? _value.brandModel
-          : brandModel // ignore: cast_nullable_to_non_nullable
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
               as String?,
-      partNumber: freezed == partNumber
-          ? _value.partNumber
-          : partNumber // ignore: cast_nullable_to_non_nullable
+      deliveryTerms: freezed == deliveryTerms
+          ? _self.deliveryTerms
+          : deliveryTerms // ignore: cast_nullable_to_non_nullable
               as String?,
-      moq: freezed == moq
-          ? _value.moq
-          : moq // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+      supplierReference: freezed == supplierReference
+          ? _self.supplierReference
+          : supplierReference // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: freezed == contactPerson
+          ? _self.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1085,9 +1056,555 @@ class __$$SupplierQuotationLineItemImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$SupplierQuotationLineItem {
+  String get id;
+  String get supplierQuotationId;
+  String get itemId;
+  double get quantity;
+  String get unit;
+  double get unitPrice;
+  double get totalPrice;
+  double get discountAmount;
+  double get taxAmount;
+  double get netAmount;
+  String get status; // 'pending', 'quoted', 'selected', 'rejected'
+  int? get sequence;
+  int? get leadTimeDays;
+  DateTime? get deliveryDate;
+  String? get notes;
+  String? get specification;
+  String? get brandModel;
+  String? get partNumber;
+  double? get moq; // Minimum Order Quantity
+  Map<String, dynamic>? get attributes;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of SupplierQuotationLineItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SupplierQuotationLineItemCopyWith<SupplierQuotationLineItem> get copyWith =>
+      _$SupplierQuotationLineItemCopyWithImpl<SupplierQuotationLineItem>(
+          this as SupplierQuotationLineItem, _$identity);
+
+  /// Serializes this SupplierQuotationLineItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SupplierQuotationLineItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.supplierQuotationId, supplierQuotationId) ||
+                other.supplierQuotationId == supplierQuotationId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitPrice, unitPrice) ||
+                other.unitPrice == unitPrice) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice) &&
+            (identical(other.discountAmount, discountAmount) ||
+                other.discountAmount == discountAmount) &&
+            (identical(other.taxAmount, taxAmount) ||
+                other.taxAmount == taxAmount) &&
+            (identical(other.netAmount, netAmount) ||
+                other.netAmount == netAmount) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
+            (identical(other.leadTimeDays, leadTimeDays) ||
+                other.leadTimeDays == leadTimeDays) &&
+            (identical(other.deliveryDate, deliveryDate) ||
+                other.deliveryDate == deliveryDate) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.specification, specification) ||
+                other.specification == specification) &&
+            (identical(other.brandModel, brandModel) ||
+                other.brandModel == brandModel) &&
+            (identical(other.partNumber, partNumber) ||
+                other.partNumber == partNumber) &&
+            (identical(other.moq, moq) || other.moq == moq) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        supplierQuotationId,
+        itemId,
+        quantity,
+        unit,
+        unitPrice,
+        totalPrice,
+        discountAmount,
+        taxAmount,
+        netAmount,
+        status,
+        sequence,
+        leadTimeDays,
+        deliveryDate,
+        notes,
+        specification,
+        brandModel,
+        partNumber,
+        moq,
+        const DeepCollectionEquality().hash(attributes),
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'SupplierQuotationLineItem(id: $id, supplierQuotationId: $supplierQuotationId, itemId: $itemId, quantity: $quantity, unit: $unit, unitPrice: $unitPrice, totalPrice: $totalPrice, discountAmount: $discountAmount, taxAmount: $taxAmount, netAmount: $netAmount, status: $status, sequence: $sequence, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, notes: $notes, specification: $specification, brandModel: $brandModel, partNumber: $partNumber, moq: $moq, attributes: $attributes, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $SupplierQuotationLineItemCopyWith<$Res> {
+  factory $SupplierQuotationLineItemCopyWith(SupplierQuotationLineItem value,
+          $Res Function(SupplierQuotationLineItem) _then) =
+      _$SupplierQuotationLineItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String supplierQuotationId,
+      String itemId,
+      double quantity,
+      String unit,
+      double unitPrice,
+      double totalPrice,
+      double discountAmount,
+      double taxAmount,
+      double netAmount,
+      String status,
+      int? sequence,
+      int? leadTimeDays,
+      DateTime? deliveryDate,
+      String? notes,
+      String? specification,
+      String? brandModel,
+      String? partNumber,
+      double? moq,
+      Map<String, dynamic>? attributes,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$SupplierQuotationLineItemCopyWithImpl<$Res>
+    implements $SupplierQuotationLineItemCopyWith<$Res> {
+  _$SupplierQuotationLineItemCopyWithImpl(this._self, this._then);
+
+  final SupplierQuotationLineItem _self;
+  final $Res Function(SupplierQuotationLineItem) _then;
+
+  /// Create a copy of SupplierQuotationLineItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? supplierQuotationId = null,
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitPrice = null,
+    Object? totalPrice = null,
+    Object? discountAmount = null,
+    Object? taxAmount = null,
+    Object? netAmount = null,
+    Object? status = null,
+    Object? sequence = freezed,
+    Object? leadTimeDays = freezed,
+    Object? deliveryDate = freezed,
+    Object? notes = freezed,
+    Object? specification = freezed,
+    Object? brandModel = freezed,
+    Object? partNumber = freezed,
+    Object? moq = freezed,
+    Object? attributes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      supplierQuotationId: null == supplierQuotationId
+          ? _self.supplierQuotationId
+          : supplierQuotationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitPrice: null == unitPrice
+          ? _self.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalPrice: null == totalPrice
+          ? _self.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      discountAmount: null == discountAmount
+          ? _self.discountAmount
+          : discountAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      taxAmount: null == taxAmount
+          ? _self.taxAmount
+          : taxAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      netAmount: null == netAmount
+          ? _self.netAmount
+          : netAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      leadTimeDays: freezed == leadTimeDays
+          ? _self.leadTimeDays
+          : leadTimeDays // ignore: cast_nullable_to_non_nullable
+              as int?,
+      deliveryDate: freezed == deliveryDate
+          ? _self.deliveryDate
+          : deliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brandModel: freezed == brandModel
+          ? _self.brandModel
+          : brandModel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      partNumber: freezed == partNumber
+          ? _self.partNumber
+          : partNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      moq: freezed == moq
+          ? _self.moq
+          : moq // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [SupplierQuotationLineItem].
+extension SupplierQuotationLineItemPatterns on SupplierQuotationLineItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SupplierQuotationLineItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationLineItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SupplierQuotationLineItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationLineItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SupplierQuotationLineItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationLineItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String supplierQuotationId,
+            String itemId,
+            double quantity,
+            String unit,
+            double unitPrice,
+            double totalPrice,
+            double discountAmount,
+            double taxAmount,
+            double netAmount,
+            String status,
+            int? sequence,
+            int? leadTimeDays,
+            DateTime? deliveryDate,
+            String? notes,
+            String? specification,
+            String? brandModel,
+            String? partNumber,
+            double? moq,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationLineItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.supplierQuotationId,
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitPrice,
+            _that.totalPrice,
+            _that.discountAmount,
+            _that.taxAmount,
+            _that.netAmount,
+            _that.status,
+            _that.sequence,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.notes,
+            _that.specification,
+            _that.brandModel,
+            _that.partNumber,
+            _that.moq,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String supplierQuotationId,
+            String itemId,
+            double quantity,
+            String unit,
+            double unitPrice,
+            double totalPrice,
+            double discountAmount,
+            double taxAmount,
+            double netAmount,
+            String status,
+            int? sequence,
+            int? leadTimeDays,
+            DateTime? deliveryDate,
+            String? notes,
+            String? specification,
+            String? brandModel,
+            String? partNumber,
+            double? moq,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationLineItem():
+        return $default(
+            _that.id,
+            _that.supplierQuotationId,
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitPrice,
+            _that.totalPrice,
+            _that.discountAmount,
+            _that.taxAmount,
+            _that.netAmount,
+            _that.status,
+            _that.sequence,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.notes,
+            _that.specification,
+            _that.brandModel,
+            _that.partNumber,
+            _that.moq,
+            _that.attributes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String supplierQuotationId,
+            String itemId,
+            double quantity,
+            String unit,
+            double unitPrice,
+            double totalPrice,
+            double discountAmount,
+            double taxAmount,
+            double netAmount,
+            String status,
+            int? sequence,
+            int? leadTimeDays,
+            DateTime? deliveryDate,
+            String? notes,
+            String? specification,
+            String? brandModel,
+            String? partNumber,
+            double? moq,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationLineItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.supplierQuotationId,
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitPrice,
+            _that.totalPrice,
+            _that.discountAmount,
+            _that.taxAmount,
+            _that.netAmount,
+            _that.status,
+            _that.sequence,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.notes,
+            _that.specification,
+            _that.brandModel,
+            _that.partNumber,
+            _that.moq,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$SupplierQuotationLineItemImpl implements _SupplierQuotationLineItem {
-  const _$SupplierQuotationLineItemImpl(
+class _SupplierQuotationLineItem implements SupplierQuotationLineItem {
+  const _SupplierQuotationLineItem(
       {required this.id,
       required this.supplierQuotationId,
       required this.itemId,
@@ -1111,9 +1628,8 @@ class _$SupplierQuotationLineItemImpl implements _SupplierQuotationLineItem {
       final Map<String, dynamic>? metadata})
       : _attributes = attributes,
         _metadata = metadata;
-
-  factory _$SupplierQuotationLineItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SupplierQuotationLineItemImplFromJson(json);
+  factory _SupplierQuotationLineItem.fromJson(Map<String, dynamic> json) =>
+      _$SupplierQuotationLineItemFromJson(json);
 
   @override
   final String id;
@@ -1176,16 +1692,28 @@ class _$SupplierQuotationLineItemImpl implements _SupplierQuotationLineItem {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of SupplierQuotationLineItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SupplierQuotationLineItem(id: $id, supplierQuotationId: $supplierQuotationId, itemId: $itemId, quantity: $quantity, unit: $unit, unitPrice: $unitPrice, totalPrice: $totalPrice, discountAmount: $discountAmount, taxAmount: $taxAmount, netAmount: $netAmount, status: $status, sequence: $sequence, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, notes: $notes, specification: $specification, brandModel: $brandModel, partNumber: $partNumber, moq: $moq, attributes: $attributes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SupplierQuotationLineItemCopyWith<_SupplierQuotationLineItem>
+      get copyWith =>
+          __$SupplierQuotationLineItemCopyWithImpl<_SupplierQuotationLineItem>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SupplierQuotationLineItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SupplierQuotationLineItemImpl &&
+            other is _SupplierQuotationLineItem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.supplierQuotationId, supplierQuotationId) ||
                 other.supplierQuotationId == supplierQuotationId) &&
@@ -1223,7 +1751,7 @@ class _$SupplierQuotationLineItemImpl implements _SupplierQuotationLineItem {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1250,349 +1778,162 @@ class _$SupplierQuotationLineItemImpl implements _SupplierQuotationLineItem {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SupplierQuotationLineItemImplCopyWith<_$SupplierQuotationLineItemImpl>
-      get copyWith => __$$SupplierQuotationLineItemImplCopyWithImpl<
-          _$SupplierQuotationLineItemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SupplierQuotationLineItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SupplierQuotationLineItem(id: $id, supplierQuotationId: $supplierQuotationId, itemId: $itemId, quantity: $quantity, unit: $unit, unitPrice: $unitPrice, totalPrice: $totalPrice, discountAmount: $discountAmount, taxAmount: $taxAmount, netAmount: $netAmount, status: $status, sequence: $sequence, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, notes: $notes, specification: $specification, brandModel: $brandModel, partNumber: $partNumber, moq: $moq, attributes: $attributes, metadata: $metadata)';
   }
 }
 
-abstract class _SupplierQuotationLineItem implements SupplierQuotationLineItem {
-  const factory _SupplierQuotationLineItem(
-      {required final String id,
-      required final String supplierQuotationId,
-      required final String itemId,
-      required final double quantity,
-      required final String unit,
-      required final double unitPrice,
-      required final double totalPrice,
-      required final double discountAmount,
-      required final double taxAmount,
-      required final double netAmount,
-      required final String status,
-      final int? sequence,
-      final int? leadTimeDays,
-      final DateTime? deliveryDate,
-      final String? notes,
-      final String? specification,
-      final String? brandModel,
-      final String? partNumber,
-      final double? moq,
-      final Map<String, dynamic>? attributes,
-      final Map<String, dynamic>? metadata}) = _$SupplierQuotationLineItemImpl;
-
-  factory _SupplierQuotationLineItem.fromJson(Map<String, dynamic> json) =
-      _$SupplierQuotationLineItemImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get supplierQuotationId;
-  @override
-  String get itemId;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  double get unitPrice;
-  @override
-  double get totalPrice;
-  @override
-  double get discountAmount;
-  @override
-  double get taxAmount;
-  @override
-  double get netAmount;
-  @override
-  String get status;
-  @override // 'pending', 'quoted', 'selected', 'rejected'
-  int? get sequence;
-  @override
-  int? get leadTimeDays;
-  @override
-  DateTime? get deliveryDate;
-  @override
-  String? get notes;
-  @override
-  String? get specification;
-  @override
-  String? get brandModel;
-  @override
-  String? get partNumber;
-  @override
-  double? get moq;
-  @override // Minimum Order Quantity
-  Map<String, dynamic>? get attributes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$SupplierQuotationLineItemImplCopyWith<_$SupplierQuotationLineItemImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateSupplierQuotationRequest _$CreateSupplierQuotationRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateSupplierQuotationRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateSupplierQuotationRequest {
-  String get supplierId => throw _privateConstructorUsedError;
-  DateTime get quotationDate => throw _privateConstructorUsedError;
-  DateTime get validUntil => throw _privateConstructorUsedError;
-  String? get rfqId => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get termsAndConditions => throw _privateConstructorUsedError;
-  String? get paymentTerms => throw _privateConstructorUsedError;
-  String? get deliveryTerms => throw _privateConstructorUsedError;
-  String? get supplierReference => throw _privateConstructorUsedError;
-  String? get contactPerson => throw _privateConstructorUsedError;
-  String? get contactEmail => throw _privateConstructorUsedError;
-  String? get contactPhone => throw _privateConstructorUsedError;
-  List<CreateSupplierQuotationLineItemRequest>? get lineItems =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateSupplierQuotationRequestCopyWith<CreateSupplierQuotationRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateSupplierQuotationRequestCopyWith<$Res> {
-  factory $CreateSupplierQuotationRequestCopyWith(
-          CreateSupplierQuotationRequest value,
-          $Res Function(CreateSupplierQuotationRequest) then) =
-      _$CreateSupplierQuotationRequestCopyWithImpl<$Res,
-          CreateSupplierQuotationRequest>;
+abstract mixin class _$SupplierQuotationLineItemCopyWith<$Res>
+    implements $SupplierQuotationLineItemCopyWith<$Res> {
+  factory _$SupplierQuotationLineItemCopyWith(_SupplierQuotationLineItem value,
+          $Res Function(_SupplierQuotationLineItem) _then) =
+      __$SupplierQuotationLineItemCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String supplierId,
-      DateTime quotationDate,
-      DateTime validUntil,
-      String? rfqId,
+      {String id,
+      String supplierQuotationId,
+      String itemId,
+      double quantity,
+      String unit,
+      double unitPrice,
+      double totalPrice,
+      double discountAmount,
+      double taxAmount,
+      double netAmount,
+      String status,
+      int? sequence,
+      int? leadTimeDays,
+      DateTime? deliveryDate,
       String? notes,
-      String? termsAndConditions,
-      String? paymentTerms,
-      String? deliveryTerms,
-      String? supplierReference,
-      String? contactPerson,
-      String? contactEmail,
-      String? contactPhone,
-      List<CreateSupplierQuotationLineItemRequest>? lineItems,
+      String? specification,
+      String? brandModel,
+      String? partNumber,
+      double? moq,
+      Map<String, dynamic>? attributes,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$CreateSupplierQuotationRequestCopyWithImpl<$Res,
-        $Val extends CreateSupplierQuotationRequest>
-    implements $CreateSupplierQuotationRequestCopyWith<$Res> {
-  _$CreateSupplierQuotationRequestCopyWithImpl(this._value, this._then);
+class __$SupplierQuotationLineItemCopyWithImpl<$Res>
+    implements _$SupplierQuotationLineItemCopyWith<$Res> {
+  __$SupplierQuotationLineItemCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _SupplierQuotationLineItem _self;
+  final $Res Function(_SupplierQuotationLineItem) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of SupplierQuotationLineItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? supplierId = null,
-    Object? quotationDate = null,
-    Object? validUntil = null,
-    Object? rfqId = freezed,
+    Object? id = null,
+    Object? supplierQuotationId = null,
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitPrice = null,
+    Object? totalPrice = null,
+    Object? discountAmount = null,
+    Object? taxAmount = null,
+    Object? netAmount = null,
+    Object? status = null,
+    Object? sequence = freezed,
+    Object? leadTimeDays = freezed,
+    Object? deliveryDate = freezed,
     Object? notes = freezed,
-    Object? termsAndConditions = freezed,
-    Object? paymentTerms = freezed,
-    Object? deliveryTerms = freezed,
-    Object? supplierReference = freezed,
-    Object? contactPerson = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? lineItems = freezed,
+    Object? specification = freezed,
+    Object? brandModel = freezed,
+    Object? partNumber = freezed,
+    Object? moq = freezed,
+    Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      supplierId: null == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
+    return _then(_SupplierQuotationLineItem(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      quotationDate: null == quotationDate
-          ? _value.quotationDate
-          : quotationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      validUntil: null == validUntil
-          ? _value.validUntil
-          : validUntil // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      rfqId: freezed == rfqId
-          ? _value.rfqId
-          : rfqId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      supplierQuotationId: null == supplierQuotationId
+          ? _self.supplierQuotationId
+          : supplierQuotationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitPrice: null == unitPrice
+          ? _self.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalPrice: null == totalPrice
+          ? _self.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      discountAmount: null == discountAmount
+          ? _self.discountAmount
+          : discountAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      taxAmount: null == taxAmount
+          ? _self.taxAmount
+          : taxAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      netAmount: null == netAmount
+          ? _self.netAmount
+          : netAmount // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      leadTimeDays: freezed == leadTimeDays
+          ? _self.leadTimeDays
+          : leadTimeDays // ignore: cast_nullable_to_non_nullable
+              as int?,
+      deliveryDate: freezed == deliveryDate
+          ? _self.deliveryDate
+          : deliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      termsAndConditions: freezed == termsAndConditions
-          ? _value.termsAndConditions
-          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
+      brandModel: freezed == brandModel
+          ? _self.brandModel
+          : brandModel // ignore: cast_nullable_to_non_nullable
               as String?,
-      deliveryTerms: freezed == deliveryTerms
-          ? _value.deliveryTerms
-          : deliveryTerms // ignore: cast_nullable_to_non_nullable
+      partNumber: freezed == partNumber
+          ? _self.partNumber
+          : partNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      supplierReference: freezed == supplierReference
-          ? _value.supplierReference
-          : supplierReference // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPerson: freezed == contactPerson
-          ? _value.contactPerson
-          : contactPerson // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lineItems: freezed == lineItems
-          ? _value.lineItems
-          : lineItems // ignore: cast_nullable_to_non_nullable
-              as List<CreateSupplierQuotationLineItemRequest>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      moq: freezed == moq
+          ? _self.moq
+          : moq // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateSupplierQuotationRequestImplCopyWith<$Res>
-    implements $CreateSupplierQuotationRequestCopyWith<$Res> {
-  factory _$$CreateSupplierQuotationRequestImplCopyWith(
-          _$CreateSupplierQuotationRequestImpl value,
-          $Res Function(_$CreateSupplierQuotationRequestImpl) then) =
-      __$$CreateSupplierQuotationRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String supplierId,
-      DateTime quotationDate,
-      DateTime validUntil,
-      String? rfqId,
-      String? notes,
-      String? termsAndConditions,
-      String? paymentTerms,
-      String? deliveryTerms,
-      String? supplierReference,
-      String? contactPerson,
-      String? contactEmail,
-      String? contactPhone,
-      List<CreateSupplierQuotationLineItemRequest>? lineItems,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$CreateSupplierQuotationRequestImplCopyWithImpl<$Res>
-    extends _$CreateSupplierQuotationRequestCopyWithImpl<$Res,
-        _$CreateSupplierQuotationRequestImpl>
-    implements _$$CreateSupplierQuotationRequestImplCopyWith<$Res> {
-  __$$CreateSupplierQuotationRequestImplCopyWithImpl(
-      _$CreateSupplierQuotationRequestImpl _value,
-      $Res Function(_$CreateSupplierQuotationRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? supplierId = null,
-    Object? quotationDate = null,
-    Object? validUntil = null,
-    Object? rfqId = freezed,
-    Object? notes = freezed,
-    Object? termsAndConditions = freezed,
-    Object? paymentTerms = freezed,
-    Object? deliveryTerms = freezed,
-    Object? supplierReference = freezed,
-    Object? contactPerson = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? lineItems = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$CreateSupplierQuotationRequestImpl(
-      supplierId: null == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quotationDate: null == quotationDate
-          ? _value.quotationDate
-          : quotationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      validUntil: null == validUntil
-          ? _value.validUntil
-          : validUntil // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      rfqId: freezed == rfqId
-          ? _value.rfqId
-          : rfqId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      termsAndConditions: freezed == termsAndConditions
-          ? _value.termsAndConditions
-          : termsAndConditions // ignore: cast_nullable_to_non_nullable
-              as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deliveryTerms: freezed == deliveryTerms
-          ? _value.deliveryTerms
-          : deliveryTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierReference: freezed == supplierReference
-          ? _value.supplierReference
-          : supplierReference // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPerson: freezed == contactPerson
-          ? _value.contactPerson
-          : contactPerson // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lineItems: freezed == lineItems
-          ? _value._lineItems
-          : lineItems // ignore: cast_nullable_to_non_nullable
-              as List<CreateSupplierQuotationLineItemRequest>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1600,10 +1941,449 @@ class __$$CreateSupplierQuotationRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateSupplierQuotationRequest {
+  String get supplierId;
+  DateTime get quotationDate;
+  DateTime get validUntil;
+  String? get rfqId;
+  String? get notes;
+  String? get termsAndConditions;
+  String? get paymentTerms;
+  String? get deliveryTerms;
+  String? get supplierReference;
+  String? get contactPerson;
+  String? get contactEmail;
+  String? get contactPhone;
+  List<CreateSupplierQuotationLineItemRequest>? get lineItems;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of CreateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateSupplierQuotationRequestCopyWith<CreateSupplierQuotationRequest>
+      get copyWith => _$CreateSupplierQuotationRequestCopyWithImpl<
+              CreateSupplierQuotationRequest>(
+          this as CreateSupplierQuotationRequest, _$identity);
+
+  /// Serializes this CreateSupplierQuotationRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateSupplierQuotationRequest &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId) &&
+            (identical(other.quotationDate, quotationDate) ||
+                other.quotationDate == quotationDate) &&
+            (identical(other.validUntil, validUntil) ||
+                other.validUntil == validUntil) &&
+            (identical(other.rfqId, rfqId) || other.rfqId == rfqId) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.termsAndConditions, termsAndConditions) ||
+                other.termsAndConditions == termsAndConditions) &&
+            (identical(other.paymentTerms, paymentTerms) ||
+                other.paymentTerms == paymentTerms) &&
+            (identical(other.deliveryTerms, deliveryTerms) ||
+                other.deliveryTerms == deliveryTerms) &&
+            (identical(other.supplierReference, supplierReference) ||
+                other.supplierReference == supplierReference) &&
+            (identical(other.contactPerson, contactPerson) ||
+                other.contactPerson == contactPerson) &&
+            (identical(other.contactEmail, contactEmail) ||
+                other.contactEmail == contactEmail) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone) &&
+            const DeepCollectionEquality().equals(other.lineItems, lineItems) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      supplierId,
+      quotationDate,
+      validUntil,
+      rfqId,
+      notes,
+      termsAndConditions,
+      paymentTerms,
+      deliveryTerms,
+      supplierReference,
+      contactPerson,
+      contactEmail,
+      contactPhone,
+      const DeepCollectionEquality().hash(lineItems),
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreateSupplierQuotationRequest(supplierId: $supplierId, quotationDate: $quotationDate, validUntil: $validUntil, rfqId: $rfqId, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, lineItems: $lineItems, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateSupplierQuotationRequestCopyWith<$Res> {
+  factory $CreateSupplierQuotationRequestCopyWith(
+          CreateSupplierQuotationRequest value,
+          $Res Function(CreateSupplierQuotationRequest) _then) =
+      _$CreateSupplierQuotationRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String supplierId,
+      DateTime quotationDate,
+      DateTime validUntil,
+      String? rfqId,
+      String? notes,
+      String? termsAndConditions,
+      String? paymentTerms,
+      String? deliveryTerms,
+      String? supplierReference,
+      String? contactPerson,
+      String? contactEmail,
+      String? contactPhone,
+      List<CreateSupplierQuotationLineItemRequest>? lineItems,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$CreateSupplierQuotationRequestCopyWithImpl<$Res>
+    implements $CreateSupplierQuotationRequestCopyWith<$Res> {
+  _$CreateSupplierQuotationRequestCopyWithImpl(this._self, this._then);
+
+  final CreateSupplierQuotationRequest _self;
+  final $Res Function(CreateSupplierQuotationRequest) _then;
+
+  /// Create a copy of CreateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? supplierId = null,
+    Object? quotationDate = null,
+    Object? validUntil = null,
+    Object? rfqId = freezed,
+    Object? notes = freezed,
+    Object? termsAndConditions = freezed,
+    Object? paymentTerms = freezed,
+    Object? deliveryTerms = freezed,
+    Object? supplierReference = freezed,
+    Object? contactPerson = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? lineItems = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      supplierId: null == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quotationDate: null == quotationDate
+          ? _self.quotationDate
+          : quotationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      validUntil: null == validUntil
+          ? _self.validUntil
+          : validUntil // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      rfqId: freezed == rfqId
+          ? _self.rfqId
+          : rfqId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      termsAndConditions: freezed == termsAndConditions
+          ? _self.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deliveryTerms: freezed == deliveryTerms
+          ? _self.deliveryTerms
+          : deliveryTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      supplierReference: freezed == supplierReference
+          ? _self.supplierReference
+          : supplierReference // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: freezed == contactPerson
+          ? _self.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lineItems: freezed == lineItems
+          ? _self.lineItems
+          : lineItems // ignore: cast_nullable_to_non_nullable
+              as List<CreateSupplierQuotationLineItemRequest>?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateSupplierQuotationRequest].
+extension CreateSupplierQuotationRequestPatterns
+    on CreateSupplierQuotationRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateSupplierQuotationRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateSupplierQuotationRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateSupplierQuotationRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String supplierId,
+            DateTime quotationDate,
+            DateTime validUntil,
+            String? rfqId,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            List<CreateSupplierQuotationLineItemRequest>? lineItems,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationRequest() when $default != null:
+        return $default(
+            _that.supplierId,
+            _that.quotationDate,
+            _that.validUntil,
+            _that.rfqId,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.lineItems,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String supplierId,
+            DateTime quotationDate,
+            DateTime validUntil,
+            String? rfqId,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            List<CreateSupplierQuotationLineItemRequest>? lineItems,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationRequest():
+        return $default(
+            _that.supplierId,
+            _that.quotationDate,
+            _that.validUntil,
+            _that.rfqId,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.lineItems,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String supplierId,
+            DateTime quotationDate,
+            DateTime validUntil,
+            String? rfqId,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            List<CreateSupplierQuotationLineItemRequest>? lineItems,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationRequest() when $default != null:
+        return $default(
+            _that.supplierId,
+            _that.quotationDate,
+            _that.validUntil,
+            _that.rfqId,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.lineItems,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateSupplierQuotationRequestImpl
-    implements _CreateSupplierQuotationRequest {
-  const _$CreateSupplierQuotationRequestImpl(
+class _CreateSupplierQuotationRequest
+    implements CreateSupplierQuotationRequest {
+  const _CreateSupplierQuotationRequest(
       {required this.supplierId,
       required this.quotationDate,
       required this.validUntil,
@@ -1620,10 +2400,8 @@ class _$CreateSupplierQuotationRequestImpl
       final Map<String, dynamic>? metadata})
       : _lineItems = lineItems,
         _metadata = metadata;
-
-  factory _$CreateSupplierQuotationRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreateSupplierQuotationRequestImplFromJson(json);
+  factory _CreateSupplierQuotationRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateSupplierQuotationRequestFromJson(json);
 
   @override
   final String supplierId;
@@ -1669,16 +2447,27 @@ class _$CreateSupplierQuotationRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateSupplierQuotationRequest(supplierId: $supplierId, quotationDate: $quotationDate, validUntil: $validUntil, rfqId: $rfqId, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, lineItems: $lineItems, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateSupplierQuotationRequestCopyWith<_CreateSupplierQuotationRequest>
+      get copyWith => __$CreateSupplierQuotationRequestCopyWithImpl<
+          _CreateSupplierQuotationRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateSupplierQuotationRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateSupplierQuotationRequestImpl &&
+            other is _CreateSupplierQuotationRequest &&
             (identical(other.supplierId, supplierId) ||
                 other.supplierId == supplierId) &&
             (identical(other.quotationDate, quotationDate) ||
@@ -1706,7 +2495,7 @@ class _$CreateSupplierQuotationRequestImpl
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1725,357 +2514,588 @@ class _$CreateSupplierQuotationRequestImpl
       const DeepCollectionEquality().hash(_lineItems),
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateSupplierQuotationRequestImplCopyWith<
-          _$CreateSupplierQuotationRequestImpl>
-      get copyWith => __$$CreateSupplierQuotationRequestImplCopyWithImpl<
-          _$CreateSupplierQuotationRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateSupplierQuotationRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreateSupplierQuotationRequest
-    implements CreateSupplierQuotationRequest {
-  const factory _CreateSupplierQuotationRequest(
-          {required final String supplierId,
-          required final DateTime quotationDate,
-          required final DateTime validUntil,
-          final String? rfqId,
-          final String? notes,
-          final String? termsAndConditions,
-          final String? paymentTerms,
-          final String? deliveryTerms,
-          final String? supplierReference,
-          final String? contactPerson,
-          final String? contactEmail,
-          final String? contactPhone,
-          final List<CreateSupplierQuotationLineItemRequest>? lineItems,
-          final Map<String, dynamic>? metadata}) =
-      _$CreateSupplierQuotationRequestImpl;
-
-  factory _CreateSupplierQuotationRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateSupplierQuotationRequestImpl.fromJson;
-
-  @override
-  String get supplierId;
-  @override
-  DateTime get quotationDate;
-  @override
-  DateTime get validUntil;
-  @override
-  String? get rfqId;
-  @override
-  String? get notes;
-  @override
-  String? get termsAndConditions;
-  @override
-  String? get paymentTerms;
-  @override
-  String? get deliveryTerms;
-  @override
-  String? get supplierReference;
-  @override
-  String? get contactPerson;
-  @override
-  String? get contactEmail;
-  @override
-  String? get contactPhone;
-  @override
-  List<CreateSupplierQuotationLineItemRequest>? get lineItems;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateSupplierQuotationRequestImplCopyWith<
-          _$CreateSupplierQuotationRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateSupplierQuotationLineItemRequest
-    _$CreateSupplierQuotationLineItemRequestFromJson(
-        Map<String, dynamic> json) {
-  return _CreateSupplierQuotationLineItemRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreateSupplierQuotationLineItemRequest {
-  String get itemId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  double get unitPrice => throw _privateConstructorUsedError;
-  double? get discountAmount => throw _privateConstructorUsedError;
-  double? get taxAmount => throw _privateConstructorUsedError;
-  int? get sequence => throw _privateConstructorUsedError;
-  int? get leadTimeDays => throw _privateConstructorUsedError;
-  DateTime? get deliveryDate => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get specification => throw _privateConstructorUsedError;
-  String? get brandModel => throw _privateConstructorUsedError;
-  String? get partNumber => throw _privateConstructorUsedError;
-  double? get moq => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateSupplierQuotationLineItemRequestCopyWith<
-          CreateSupplierQuotationLineItemRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
-  factory $CreateSupplierQuotationLineItemRequestCopyWith(
-          CreateSupplierQuotationLineItemRequest value,
-          $Res Function(CreateSupplierQuotationLineItemRequest) then) =
-      _$CreateSupplierQuotationLineItemRequestCopyWithImpl<$Res,
-          CreateSupplierQuotationLineItemRequest>;
-  @useResult
-  $Res call(
-      {String itemId,
-      double quantity,
-      String unit,
-      double unitPrice,
-      double? discountAmount,
-      double? taxAmount,
-      int? sequence,
-      int? leadTimeDays,
-      DateTime? deliveryDate,
-      String? notes,
-      String? specification,
-      String? brandModel,
-      String? partNumber,
-      double? moq,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreateSupplierQuotationLineItemRequestCopyWithImpl<$Res,
-        $Val extends CreateSupplierQuotationLineItemRequest>
-    implements $CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
-  _$CreateSupplierQuotationLineItemRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitPrice = null,
-    Object? discountAmount = freezed,
-    Object? taxAmount = freezed,
-    Object? sequence = freezed,
-    Object? leadTimeDays = freezed,
-    Object? deliveryDate = freezed,
-    Object? notes = freezed,
-    Object? specification = freezed,
-    Object? brandModel = freezed,
-    Object? partNumber = freezed,
-    Object? moq = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitPrice: null == unitPrice
-          ? _value.unitPrice
-          : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      discountAmount: freezed == discountAmount
-          ? _value.discountAmount
-          : discountAmount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      taxAmount: freezed == taxAmount
-          ? _value.taxAmount
-          : taxAmount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      leadTimeDays: freezed == leadTimeDays
-          ? _value.leadTimeDays
-          : leadTimeDays // ignore: cast_nullable_to_non_nullable
-              as int?,
-      deliveryDate: freezed == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brandModel: freezed == brandModel
-          ? _value.brandModel
-          : brandModel // ignore: cast_nullable_to_non_nullable
-              as String?,
-      partNumber: freezed == partNumber
-          ? _value.partNumber
-          : partNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      moq: freezed == moq
-          ? _value.moq
-          : moq // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreateSupplierQuotationRequest(supplierId: $supplierId, quotationDate: $quotationDate, validUntil: $validUntil, rfqId: $rfqId, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, lineItems: $lineItems, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateSupplierQuotationLineItemRequestImplCopyWith<$Res>
-    implements $CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
-  factory _$$CreateSupplierQuotationLineItemRequestImplCopyWith(
-          _$CreateSupplierQuotationLineItemRequestImpl value,
-          $Res Function(_$CreateSupplierQuotationLineItemRequestImpl) then) =
-      __$$CreateSupplierQuotationLineItemRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreateSupplierQuotationRequestCopyWith<$Res>
+    implements $CreateSupplierQuotationRequestCopyWith<$Res> {
+  factory _$CreateSupplierQuotationRequestCopyWith(
+          _CreateSupplierQuotationRequest value,
+          $Res Function(_CreateSupplierQuotationRequest) _then) =
+      __$CreateSupplierQuotationRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String itemId,
-      double quantity,
-      String unit,
-      double unitPrice,
-      double? discountAmount,
-      double? taxAmount,
-      int? sequence,
-      int? leadTimeDays,
-      DateTime? deliveryDate,
+      {String supplierId,
+      DateTime quotationDate,
+      DateTime validUntil,
+      String? rfqId,
       String? notes,
-      String? specification,
-      String? brandModel,
-      String? partNumber,
-      double? moq,
-      Map<String, dynamic>? attributes});
+      String? termsAndConditions,
+      String? paymentTerms,
+      String? deliveryTerms,
+      String? supplierReference,
+      String? contactPerson,
+      String? contactEmail,
+      String? contactPhone,
+      List<CreateSupplierQuotationLineItemRequest>? lineItems,
+      Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$CreateSupplierQuotationLineItemRequestImplCopyWithImpl<$Res>
-    extends _$CreateSupplierQuotationLineItemRequestCopyWithImpl<$Res,
-        _$CreateSupplierQuotationLineItemRequestImpl>
-    implements _$$CreateSupplierQuotationLineItemRequestImplCopyWith<$Res> {
-  __$$CreateSupplierQuotationLineItemRequestImplCopyWithImpl(
-      _$CreateSupplierQuotationLineItemRequestImpl _value,
-      $Res Function(_$CreateSupplierQuotationLineItemRequestImpl) _then)
-      : super(_value, _then);
+class __$CreateSupplierQuotationRequestCopyWithImpl<$Res>
+    implements _$CreateSupplierQuotationRequestCopyWith<$Res> {
+  __$CreateSupplierQuotationRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreateSupplierQuotationRequest _self;
+  final $Res Function(_CreateSupplierQuotationRequest) _then;
+
+  /// Create a copy of CreateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? itemId = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? unitPrice = null,
-    Object? discountAmount = freezed,
-    Object? taxAmount = freezed,
-    Object? sequence = freezed,
-    Object? leadTimeDays = freezed,
-    Object? deliveryDate = freezed,
+    Object? supplierId = null,
+    Object? quotationDate = null,
+    Object? validUntil = null,
+    Object? rfqId = freezed,
     Object? notes = freezed,
-    Object? specification = freezed,
-    Object? brandModel = freezed,
-    Object? partNumber = freezed,
-    Object? moq = freezed,
-    Object? attributes = freezed,
+    Object? termsAndConditions = freezed,
+    Object? paymentTerms = freezed,
+    Object? deliveryTerms = freezed,
+    Object? supplierReference = freezed,
+    Object? contactPerson = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? lineItems = freezed,
+    Object? metadata = freezed,
   }) {
-    return _then(_$CreateSupplierQuotationLineItemRequestImpl(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
+    return _then(_CreateSupplierQuotationRequest(
+      supplierId: null == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
               as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitPrice: null == unitPrice
-          ? _value.unitPrice
-          : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      discountAmount: freezed == discountAmount
-          ? _value.discountAmount
-          : discountAmount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      taxAmount: freezed == taxAmount
-          ? _value.taxAmount
-          : taxAmount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sequence: freezed == sequence
-          ? _value.sequence
-          : sequence // ignore: cast_nullable_to_non_nullable
-              as int?,
-      leadTimeDays: freezed == leadTimeDays
-          ? _value.leadTimeDays
-          : leadTimeDays // ignore: cast_nullable_to_non_nullable
-              as int?,
-      deliveryDate: freezed == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+      quotationDate: null == quotationDate
+          ? _self.quotationDate
+          : quotationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      validUntil: null == validUntil
+          ? _self.validUntil
+          : validUntil // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      rfqId: freezed == rfqId
+          ? _self.rfqId
+          : rfqId // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      specification: freezed == specification
-          ? _value.specification
-          : specification // ignore: cast_nullable_to_non_nullable
+      termsAndConditions: freezed == termsAndConditions
+          ? _self.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
               as String?,
-      brandModel: freezed == brandModel
-          ? _value.brandModel
-          : brandModel // ignore: cast_nullable_to_non_nullable
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
               as String?,
-      partNumber: freezed == partNumber
-          ? _value.partNumber
-          : partNumber // ignore: cast_nullable_to_non_nullable
+      deliveryTerms: freezed == deliveryTerms
+          ? _self.deliveryTerms
+          : deliveryTerms // ignore: cast_nullable_to_non_nullable
               as String?,
-      moq: freezed == moq
-          ? _value.moq
-          : moq // ignore: cast_nullable_to_non_nullable
-              as double?,
-      attributes: freezed == attributes
-          ? _value._attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
+      supplierReference: freezed == supplierReference
+          ? _self.supplierReference
+          : supplierReference // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: freezed == contactPerson
+          ? _self.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lineItems: freezed == lineItems
+          ? _self._lineItems
+          : lineItems // ignore: cast_nullable_to_non_nullable
+              as List<CreateSupplierQuotationLineItemRequest>?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$CreateSupplierQuotationLineItemRequest {
+  String get itemId;
+  double get quantity;
+  String get unit;
+  double get unitPrice;
+  double? get discountAmount;
+  double? get taxAmount;
+  int? get sequence;
+  int? get leadTimeDays;
+  DateTime? get deliveryDate;
+  String? get notes;
+  String? get specification;
+  String? get brandModel;
+  String? get partNumber;
+  double? get moq;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreateSupplierQuotationLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateSupplierQuotationLineItemRequestCopyWith<
+          CreateSupplierQuotationLineItemRequest>
+      get copyWith => _$CreateSupplierQuotationLineItemRequestCopyWithImpl<
+              CreateSupplierQuotationLineItemRequest>(
+          this as CreateSupplierQuotationLineItemRequest, _$identity);
+
+  /// Serializes this CreateSupplierQuotationLineItemRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateSupplierQuotationLineItemRequest &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.unitPrice, unitPrice) ||
+                other.unitPrice == unitPrice) &&
+            (identical(other.discountAmount, discountAmount) ||
+                other.discountAmount == discountAmount) &&
+            (identical(other.taxAmount, taxAmount) ||
+                other.taxAmount == taxAmount) &&
+            (identical(other.sequence, sequence) ||
+                other.sequence == sequence) &&
+            (identical(other.leadTimeDays, leadTimeDays) ||
+                other.leadTimeDays == leadTimeDays) &&
+            (identical(other.deliveryDate, deliveryDate) ||
+                other.deliveryDate == deliveryDate) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.specification, specification) ||
+                other.specification == specification) &&
+            (identical(other.brandModel, brandModel) ||
+                other.brandModel == brandModel) &&
+            (identical(other.partNumber, partNumber) ||
+                other.partNumber == partNumber) &&
+            (identical(other.moq, moq) || other.moq == moq) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      quantity,
+      unit,
+      unitPrice,
+      discountAmount,
+      taxAmount,
+      sequence,
+      leadTimeDays,
+      deliveryDate,
+      notes,
+      specification,
+      brandModel,
+      partNumber,
+      moq,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreateSupplierQuotationLineItemRequest(itemId: $itemId, quantity: $quantity, unit: $unit, unitPrice: $unitPrice, discountAmount: $discountAmount, taxAmount: $taxAmount, sequence: $sequence, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, notes: $notes, specification: $specification, brandModel: $brandModel, partNumber: $partNumber, moq: $moq, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
+  factory $CreateSupplierQuotationLineItemRequestCopyWith(
+          CreateSupplierQuotationLineItemRequest value,
+          $Res Function(CreateSupplierQuotationLineItemRequest) _then) =
+      _$CreateSupplierQuotationLineItemRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String itemId,
+      double quantity,
+      String unit,
+      double unitPrice,
+      double? discountAmount,
+      double? taxAmount,
+      int? sequence,
+      int? leadTimeDays,
+      DateTime? deliveryDate,
+      String? notes,
+      String? specification,
+      String? brandModel,
+      String? partNumber,
+      double? moq,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreateSupplierQuotationLineItemRequestCopyWithImpl<$Res>
+    implements $CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
+  _$CreateSupplierQuotationLineItemRequestCopyWithImpl(this._self, this._then);
+
+  final CreateSupplierQuotationLineItemRequest _self;
+  final $Res Function(CreateSupplierQuotationLineItemRequest) _then;
+
+  /// Create a copy of CreateSupplierQuotationLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitPrice = null,
+    Object? discountAmount = freezed,
+    Object? taxAmount = freezed,
+    Object? sequence = freezed,
+    Object? leadTimeDays = freezed,
+    Object? deliveryDate = freezed,
+    Object? notes = freezed,
+    Object? specification = freezed,
+    Object? brandModel = freezed,
+    Object? partNumber = freezed,
+    Object? moq = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitPrice: null == unitPrice
+          ? _self.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      discountAmount: freezed == discountAmount
+          ? _self.discountAmount
+          : discountAmount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      taxAmount: freezed == taxAmount
+          ? _self.taxAmount
+          : taxAmount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      leadTimeDays: freezed == leadTimeDays
+          ? _self.leadTimeDays
+          : leadTimeDays // ignore: cast_nullable_to_non_nullable
+              as int?,
+      deliveryDate: freezed == deliveryDate
+          ? _self.deliveryDate
+          : deliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brandModel: freezed == brandModel
+          ? _self.brandModel
+          : brandModel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      partNumber: freezed == partNumber
+          ? _self.partNumber
+          : partNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      moq: freezed == moq
+          ? _self.moq
+          : moq // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateSupplierQuotationLineItemRequest].
+extension CreateSupplierQuotationLineItemRequestPatterns
+    on CreateSupplierQuotationLineItemRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateSupplierQuotationLineItemRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationLineItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateSupplierQuotationLineItemRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationLineItemRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateSupplierQuotationLineItemRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationLineItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            double quantity,
+            String unit,
+            double unitPrice,
+            double? discountAmount,
+            double? taxAmount,
+            int? sequence,
+            int? leadTimeDays,
+            DateTime? deliveryDate,
+            String? notes,
+            String? specification,
+            String? brandModel,
+            String? partNumber,
+            double? moq,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationLineItemRequest() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitPrice,
+            _that.discountAmount,
+            _that.taxAmount,
+            _that.sequence,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.notes,
+            _that.specification,
+            _that.brandModel,
+            _that.partNumber,
+            _that.moq,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            double quantity,
+            String unit,
+            double unitPrice,
+            double? discountAmount,
+            double? taxAmount,
+            int? sequence,
+            int? leadTimeDays,
+            DateTime? deliveryDate,
+            String? notes,
+            String? specification,
+            String? brandModel,
+            String? partNumber,
+            double? moq,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationLineItemRequest():
+        return $default(
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitPrice,
+            _that.discountAmount,
+            _that.taxAmount,
+            _that.sequence,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.notes,
+            _that.specification,
+            _that.brandModel,
+            _that.partNumber,
+            _that.moq,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String itemId,
+            double quantity,
+            String unit,
+            double unitPrice,
+            double? discountAmount,
+            double? taxAmount,
+            int? sequence,
+            int? leadTimeDays,
+            DateTime? deliveryDate,
+            String? notes,
+            String? specification,
+            String? brandModel,
+            String? partNumber,
+            double? moq,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateSupplierQuotationLineItemRequest() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.quantity,
+            _that.unit,
+            _that.unitPrice,
+            _that.discountAmount,
+            _that.taxAmount,
+            _that.sequence,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.notes,
+            _that.specification,
+            _that.brandModel,
+            _that.partNumber,
+            _that.moq,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateSupplierQuotationLineItemRequestImpl
-    implements _CreateSupplierQuotationLineItemRequest {
-  const _$CreateSupplierQuotationLineItemRequestImpl(
+class _CreateSupplierQuotationLineItemRequest
+    implements CreateSupplierQuotationLineItemRequest {
+  const _CreateSupplierQuotationLineItemRequest(
       {required this.itemId,
       required this.quantity,
       required this.unit,
@@ -2092,10 +3112,9 @@ class _$CreateSupplierQuotationLineItemRequestImpl
       this.moq,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$CreateSupplierQuotationLineItemRequestImpl.fromJson(
+  factory _CreateSupplierQuotationLineItemRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$CreateSupplierQuotationLineItemRequestImplFromJson(json);
+      _$CreateSupplierQuotationLineItemRequestFromJson(json);
 
   @override
   final String itemId;
@@ -2135,16 +3154,28 @@ class _$CreateSupplierQuotationLineItemRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateSupplierQuotationLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateSupplierQuotationLineItemRequest(itemId: $itemId, quantity: $quantity, unit: $unit, unitPrice: $unitPrice, discountAmount: $discountAmount, taxAmount: $taxAmount, sequence: $sequence, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, notes: $notes, specification: $specification, brandModel: $brandModel, partNumber: $partNumber, moq: $moq, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateSupplierQuotationLineItemRequestCopyWith<
+          _CreateSupplierQuotationLineItemRequest>
+      get copyWith => __$CreateSupplierQuotationLineItemRequestCopyWithImpl<
+          _CreateSupplierQuotationLineItemRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateSupplierQuotationLineItemRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateSupplierQuotationLineItemRequestImpl &&
+            other is _CreateSupplierQuotationLineItemRequest &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
@@ -2173,7 +3204,7 @@ class _$CreateSupplierQuotationLineItemRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2193,308 +3224,531 @@ class _$CreateSupplierQuotationLineItemRequestImpl
       moq,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateSupplierQuotationLineItemRequestImplCopyWith<
-          _$CreateSupplierQuotationLineItemRequestImpl>
-      get copyWith =>
-          __$$CreateSupplierQuotationLineItemRequestImplCopyWithImpl<
-              _$CreateSupplierQuotationLineItemRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateSupplierQuotationLineItemRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreateSupplierQuotationLineItemRequest
-    implements CreateSupplierQuotationLineItemRequest {
-  const factory _CreateSupplierQuotationLineItemRequest(
-          {required final String itemId,
-          required final double quantity,
-          required final String unit,
-          required final double unitPrice,
-          final double? discountAmount,
-          final double? taxAmount,
-          final int? sequence,
-          final int? leadTimeDays,
-          final DateTime? deliveryDate,
-          final String? notes,
-          final String? specification,
-          final String? brandModel,
-          final String? partNumber,
-          final double? moq,
-          final Map<String, dynamic>? attributes}) =
-      _$CreateSupplierQuotationLineItemRequestImpl;
-
-  factory _CreateSupplierQuotationLineItemRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$CreateSupplierQuotationLineItemRequestImpl.fromJson;
-
-  @override
-  String get itemId;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  double get unitPrice;
-  @override
-  double? get discountAmount;
-  @override
-  double? get taxAmount;
-  @override
-  int? get sequence;
-  @override
-  int? get leadTimeDays;
-  @override
-  DateTime? get deliveryDate;
-  @override
-  String? get notes;
-  @override
-  String? get specification;
-  @override
-  String? get brandModel;
-  @override
-  String? get partNumber;
-  @override
-  double? get moq;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateSupplierQuotationLineItemRequestImplCopyWith<
-          _$CreateSupplierQuotationLineItemRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateSupplierQuotationRequest _$UpdateSupplierQuotationRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateSupplierQuotationRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UpdateSupplierQuotationRequest {
-  DateTime? get quotationDate => throw _privateConstructorUsedError;
-  DateTime? get validUntil => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get termsAndConditions => throw _privateConstructorUsedError;
-  String? get paymentTerms => throw _privateConstructorUsedError;
-  String? get deliveryTerms => throw _privateConstructorUsedError;
-  String? get supplierReference => throw _privateConstructorUsedError;
-  String? get contactPerson => throw _privateConstructorUsedError;
-  String? get contactEmail => throw _privateConstructorUsedError;
-  String? get contactPhone => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateSupplierQuotationRequestCopyWith<UpdateSupplierQuotationRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateSupplierQuotationRequestCopyWith<$Res> {
-  factory $UpdateSupplierQuotationRequestCopyWith(
-          UpdateSupplierQuotationRequest value,
-          $Res Function(UpdateSupplierQuotationRequest) then) =
-      _$UpdateSupplierQuotationRequestCopyWithImpl<$Res,
-          UpdateSupplierQuotationRequest>;
-  @useResult
-  $Res call(
-      {DateTime? quotationDate,
-      DateTime? validUntil,
-      String? notes,
-      String? termsAndConditions,
-      String? paymentTerms,
-      String? deliveryTerms,
-      String? supplierReference,
-      String? contactPerson,
-      String? contactEmail,
-      String? contactPhone,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$UpdateSupplierQuotationRequestCopyWithImpl<$Res,
-        $Val extends UpdateSupplierQuotationRequest>
-    implements $UpdateSupplierQuotationRequestCopyWith<$Res> {
-  _$UpdateSupplierQuotationRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? quotationDate = freezed,
-    Object? validUntil = freezed,
-    Object? notes = freezed,
-    Object? termsAndConditions = freezed,
-    Object? paymentTerms = freezed,
-    Object? deliveryTerms = freezed,
-    Object? supplierReference = freezed,
-    Object? contactPerson = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      quotationDate: freezed == quotationDate
-          ? _value.quotationDate
-          : quotationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validUntil: freezed == validUntil
-          ? _value.validUntil
-          : validUntil // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      termsAndConditions: freezed == termsAndConditions
-          ? _value.termsAndConditions
-          : termsAndConditions // ignore: cast_nullable_to_non_nullable
-              as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deliveryTerms: freezed == deliveryTerms
-          ? _value.deliveryTerms
-          : deliveryTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierReference: freezed == supplierReference
-          ? _value.supplierReference
-          : supplierReference // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPerson: freezed == contactPerson
-          ? _value.contactPerson
-          : contactPerson // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreateSupplierQuotationLineItemRequest(itemId: $itemId, quantity: $quantity, unit: $unit, unitPrice: $unitPrice, discountAmount: $discountAmount, taxAmount: $taxAmount, sequence: $sequence, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, notes: $notes, specification: $specification, brandModel: $brandModel, partNumber: $partNumber, moq: $moq, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdateSupplierQuotationRequestImplCopyWith<$Res>
-    implements $UpdateSupplierQuotationRequestCopyWith<$Res> {
-  factory _$$UpdateSupplierQuotationRequestImplCopyWith(
-          _$UpdateSupplierQuotationRequestImpl value,
-          $Res Function(_$UpdateSupplierQuotationRequestImpl) then) =
-      __$$UpdateSupplierQuotationRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreateSupplierQuotationLineItemRequestCopyWith<$Res>
+    implements $CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
+  factory _$CreateSupplierQuotationLineItemRequestCopyWith(
+          _CreateSupplierQuotationLineItemRequest value,
+          $Res Function(_CreateSupplierQuotationLineItemRequest) _then) =
+      __$CreateSupplierQuotationLineItemRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {DateTime? quotationDate,
-      DateTime? validUntil,
+      {String itemId,
+      double quantity,
+      String unit,
+      double unitPrice,
+      double? discountAmount,
+      double? taxAmount,
+      int? sequence,
+      int? leadTimeDays,
+      DateTime? deliveryDate,
       String? notes,
-      String? termsAndConditions,
-      String? paymentTerms,
-      String? deliveryTerms,
-      String? supplierReference,
-      String? contactPerson,
-      String? contactEmail,
-      String? contactPhone,
-      Map<String, dynamic>? metadata});
+      String? specification,
+      String? brandModel,
+      String? partNumber,
+      double? moq,
+      Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class __$$UpdateSupplierQuotationRequestImplCopyWithImpl<$Res>
-    extends _$UpdateSupplierQuotationRequestCopyWithImpl<$Res,
-        _$UpdateSupplierQuotationRequestImpl>
-    implements _$$UpdateSupplierQuotationRequestImplCopyWith<$Res> {
-  __$$UpdateSupplierQuotationRequestImplCopyWithImpl(
-      _$UpdateSupplierQuotationRequestImpl _value,
-      $Res Function(_$UpdateSupplierQuotationRequestImpl) _then)
-      : super(_value, _then);
+class __$CreateSupplierQuotationLineItemRequestCopyWithImpl<$Res>
+    implements _$CreateSupplierQuotationLineItemRequestCopyWith<$Res> {
+  __$CreateSupplierQuotationLineItemRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreateSupplierQuotationLineItemRequest _self;
+  final $Res Function(_CreateSupplierQuotationLineItemRequest) _then;
+
+  /// Create a copy of CreateSupplierQuotationLineItemRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? quotationDate = freezed,
-    Object? validUntil = freezed,
+    Object? itemId = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? unitPrice = null,
+    Object? discountAmount = freezed,
+    Object? taxAmount = freezed,
+    Object? sequence = freezed,
+    Object? leadTimeDays = freezed,
+    Object? deliveryDate = freezed,
     Object? notes = freezed,
-    Object? termsAndConditions = freezed,
-    Object? paymentTerms = freezed,
-    Object? deliveryTerms = freezed,
-    Object? supplierReference = freezed,
-    Object? contactPerson = freezed,
-    Object? contactEmail = freezed,
-    Object? contactPhone = freezed,
-    Object? metadata = freezed,
+    Object? specification = freezed,
+    Object? brandModel = freezed,
+    Object? partNumber = freezed,
+    Object? moq = freezed,
+    Object? attributes = freezed,
   }) {
-    return _then(_$UpdateSupplierQuotationRequestImpl(
-      quotationDate: freezed == quotationDate
-          ? _value.quotationDate
-          : quotationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validUntil: freezed == validUntil
-          ? _value.validUntil
-          : validUntil // ignore: cast_nullable_to_non_nullable
+    return _then(_CreateSupplierQuotationLineItemRequest(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitPrice: null == unitPrice
+          ? _self.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      discountAmount: freezed == discountAmount
+          ? _self.discountAmount
+          : discountAmount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      taxAmount: freezed == taxAmount
+          ? _self.taxAmount
+          : taxAmount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sequence: freezed == sequence
+          ? _self.sequence
+          : sequence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      leadTimeDays: freezed == leadTimeDays
+          ? _self.leadTimeDays
+          : leadTimeDays // ignore: cast_nullable_to_non_nullable
+              as int?,
+      deliveryDate: freezed == deliveryDate
+          ? _self.deliveryDate
+          : deliveryDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      termsAndConditions: freezed == termsAndConditions
-          ? _value.termsAndConditions
-          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+      specification: freezed == specification
+          ? _self.specification
+          : specification // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
+      brandModel: freezed == brandModel
+          ? _self.brandModel
+          : brandModel // ignore: cast_nullable_to_non_nullable
               as String?,
-      deliveryTerms: freezed == deliveryTerms
-          ? _value.deliveryTerms
-          : deliveryTerms // ignore: cast_nullable_to_non_nullable
+      partNumber: freezed == partNumber
+          ? _self.partNumber
+          : partNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      supplierReference: freezed == supplierReference
-          ? _value.supplierReference
-          : supplierReference // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPerson: freezed == contactPerson
-          ? _value.contactPerson
-          : contactPerson // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactEmail: freezed == contactEmail
-          ? _value.contactEmail
-          : contactEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contactPhone: freezed == contactPhone
-          ? _value.contactPhone
-          : contactPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      moq: freezed == moq
+          ? _self.moq
+          : moq // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$UpdateSupplierQuotationRequest {
+  DateTime? get quotationDate;
+  DateTime? get validUntil;
+  String? get notes;
+  String? get termsAndConditions;
+  String? get paymentTerms;
+  String? get deliveryTerms;
+  String? get supplierReference;
+  String? get contactPerson;
+  String? get contactEmail;
+  String? get contactPhone;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of UpdateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateSupplierQuotationRequestCopyWith<UpdateSupplierQuotationRequest>
+      get copyWith => _$UpdateSupplierQuotationRequestCopyWithImpl<
+              UpdateSupplierQuotationRequest>(
+          this as UpdateSupplierQuotationRequest, _$identity);
+
+  /// Serializes this UpdateSupplierQuotationRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateSupplierQuotationRequest &&
+            (identical(other.quotationDate, quotationDate) ||
+                other.quotationDate == quotationDate) &&
+            (identical(other.validUntil, validUntil) ||
+                other.validUntil == validUntil) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.termsAndConditions, termsAndConditions) ||
+                other.termsAndConditions == termsAndConditions) &&
+            (identical(other.paymentTerms, paymentTerms) ||
+                other.paymentTerms == paymentTerms) &&
+            (identical(other.deliveryTerms, deliveryTerms) ||
+                other.deliveryTerms == deliveryTerms) &&
+            (identical(other.supplierReference, supplierReference) ||
+                other.supplierReference == supplierReference) &&
+            (identical(other.contactPerson, contactPerson) ||
+                other.contactPerson == contactPerson) &&
+            (identical(other.contactEmail, contactEmail) ||
+                other.contactEmail == contactEmail) &&
+            (identical(other.contactPhone, contactPhone) ||
+                other.contactPhone == contactPhone) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      quotationDate,
+      validUntil,
+      notes,
+      termsAndConditions,
+      paymentTerms,
+      deliveryTerms,
+      supplierReference,
+      contactPerson,
+      contactEmail,
+      contactPhone,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdateSupplierQuotationRequest(quotationDate: $quotationDate, validUntil: $validUntil, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateSupplierQuotationRequestCopyWith<$Res> {
+  factory $UpdateSupplierQuotationRequestCopyWith(
+          UpdateSupplierQuotationRequest value,
+          $Res Function(UpdateSupplierQuotationRequest) _then) =
+      _$UpdateSupplierQuotationRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {DateTime? quotationDate,
+      DateTime? validUntil,
+      String? notes,
+      String? termsAndConditions,
+      String? paymentTerms,
+      String? deliveryTerms,
+      String? supplierReference,
+      String? contactPerson,
+      String? contactEmail,
+      String? contactPhone,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$UpdateSupplierQuotationRequestCopyWithImpl<$Res>
+    implements $UpdateSupplierQuotationRequestCopyWith<$Res> {
+  _$UpdateSupplierQuotationRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateSupplierQuotationRequest _self;
+  final $Res Function(UpdateSupplierQuotationRequest) _then;
+
+  /// Create a copy of UpdateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quotationDate = freezed,
+    Object? validUntil = freezed,
+    Object? notes = freezed,
+    Object? termsAndConditions = freezed,
+    Object? paymentTerms = freezed,
+    Object? deliveryTerms = freezed,
+    Object? supplierReference = freezed,
+    Object? contactPerson = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      quotationDate: freezed == quotationDate
+          ? _self.quotationDate
+          : quotationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validUntil: freezed == validUntil
+          ? _self.validUntil
+          : validUntil // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      termsAndConditions: freezed == termsAndConditions
+          ? _self.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deliveryTerms: freezed == deliveryTerms
+          ? _self.deliveryTerms
+          : deliveryTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      supplierReference: freezed == supplierReference
+          ? _self.supplierReference
+          : supplierReference // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: freezed == contactPerson
+          ? _self.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateSupplierQuotationRequest].
+extension UpdateSupplierQuotationRequestPatterns
+    on UpdateSupplierQuotationRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateSupplierQuotationRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateSupplierQuotationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateSupplierQuotationRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateSupplierQuotationRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateSupplierQuotationRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateSupplierQuotationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            DateTime? quotationDate,
+            DateTime? validUntil,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateSupplierQuotationRequest() when $default != null:
+        return $default(
+            _that.quotationDate,
+            _that.validUntil,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            DateTime? quotationDate,
+            DateTime? validUntil,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateSupplierQuotationRequest():
+        return $default(
+            _that.quotationDate,
+            _that.validUntil,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            DateTime? quotationDate,
+            DateTime? validUntil,
+            String? notes,
+            String? termsAndConditions,
+            String? paymentTerms,
+            String? deliveryTerms,
+            String? supplierReference,
+            String? contactPerson,
+            String? contactEmail,
+            String? contactPhone,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateSupplierQuotationRequest() when $default != null:
+        return $default(
+            _that.quotationDate,
+            _that.validUntil,
+            _that.notes,
+            _that.termsAndConditions,
+            _that.paymentTerms,
+            _that.deliveryTerms,
+            _that.supplierReference,
+            _that.contactPerson,
+            _that.contactEmail,
+            _that.contactPhone,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateSupplierQuotationRequestImpl
-    implements _UpdateSupplierQuotationRequest {
-  const _$UpdateSupplierQuotationRequestImpl(
+class _UpdateSupplierQuotationRequest
+    implements UpdateSupplierQuotationRequest {
+  const _UpdateSupplierQuotationRequest(
       {this.quotationDate,
       this.validUntil,
       this.notes,
@@ -2507,10 +3761,8 @@ class _$UpdateSupplierQuotationRequestImpl
       this.contactPhone,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$UpdateSupplierQuotationRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$UpdateSupplierQuotationRequestImplFromJson(json);
+  factory _UpdateSupplierQuotationRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateSupplierQuotationRequestFromJson(json);
 
   @override
   final DateTime? quotationDate;
@@ -2542,16 +3794,27 @@ class _$UpdateSupplierQuotationRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateSupplierQuotationRequest(quotationDate: $quotationDate, validUntil: $validUntil, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateSupplierQuotationRequestCopyWith<_UpdateSupplierQuotationRequest>
+      get copyWith => __$UpdateSupplierQuotationRequestCopyWithImpl<
+          _UpdateSupplierQuotationRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateSupplierQuotationRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateSupplierQuotationRequestImpl &&
+            other is _UpdateSupplierQuotationRequest &&
             (identical(other.quotationDate, quotationDate) ||
                 other.quotationDate == quotationDate) &&
             (identical(other.validUntil, validUntil) ||
@@ -2574,7 +3837,7 @@ class _$UpdateSupplierQuotationRequestImpl
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2590,219 +3853,196 @@ class _$UpdateSupplierQuotationRequestImpl
       contactPhone,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateSupplierQuotationRequestImplCopyWith<
-          _$UpdateSupplierQuotationRequestImpl>
-      get copyWith => __$$UpdateSupplierQuotationRequestImplCopyWithImpl<
-          _$UpdateSupplierQuotationRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateSupplierQuotationRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateSupplierQuotationRequest(quotationDate: $quotationDate, validUntil: $validUntil, notes: $notes, termsAndConditions: $termsAndConditions, paymentTerms: $paymentTerms, deliveryTerms: $deliveryTerms, supplierReference: $supplierReference, contactPerson: $contactPerson, contactEmail: $contactEmail, contactPhone: $contactPhone, metadata: $metadata)';
   }
 }
 
-abstract class _UpdateSupplierQuotationRequest
-    implements UpdateSupplierQuotationRequest {
-  const factory _UpdateSupplierQuotationRequest(
-          {final DateTime? quotationDate,
-          final DateTime? validUntil,
-          final String? notes,
-          final String? termsAndConditions,
-          final String? paymentTerms,
-          final String? deliveryTerms,
-          final String? supplierReference,
-          final String? contactPerson,
-          final String? contactEmail,
-          final String? contactPhone,
-          final Map<String, dynamic>? metadata}) =
-      _$UpdateSupplierQuotationRequestImpl;
-
-  factory _UpdateSupplierQuotationRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateSupplierQuotationRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateSupplierQuotationRequestCopyWith<$Res>
+    implements $UpdateSupplierQuotationRequestCopyWith<$Res> {
+  factory _$UpdateSupplierQuotationRequestCopyWith(
+          _UpdateSupplierQuotationRequest value,
+          $Res Function(_UpdateSupplierQuotationRequest) _then) =
+      __$UpdateSupplierQuotationRequestCopyWithImpl;
   @override
-  DateTime? get quotationDate;
-  @override
-  DateTime? get validUntil;
-  @override
-  String? get notes;
-  @override
-  String? get termsAndConditions;
-  @override
-  String? get paymentTerms;
-  @override
-  String? get deliveryTerms;
-  @override
-  String? get supplierReference;
-  @override
-  String? get contactPerson;
-  @override
-  String? get contactEmail;
-  @override
-  String? get contactPhone;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateSupplierQuotationRequestImplCopyWith<
-          _$UpdateSupplierQuotationRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {DateTime? quotationDate,
+      DateTime? validUntil,
+      String? notes,
+      String? termsAndConditions,
+      String? paymentTerms,
+      String? deliveryTerms,
+      String? supplierReference,
+      String? contactPerson,
+      String? contactEmail,
+      String? contactPhone,
+      Map<String, dynamic>? metadata});
 }
 
-SupplierQuotationFilters _$SupplierQuotationFiltersFromJson(
-    Map<String, dynamic> json) {
-  return _SupplierQuotationFilters.fromJson(json);
+/// @nodoc
+class __$UpdateSupplierQuotationRequestCopyWithImpl<$Res>
+    implements _$UpdateSupplierQuotationRequestCopyWith<$Res> {
+  __$UpdateSupplierQuotationRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateSupplierQuotationRequest _self;
+  final $Res Function(_UpdateSupplierQuotationRequest) _then;
+
+  /// Create a copy of UpdateSupplierQuotationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? quotationDate = freezed,
+    Object? validUntil = freezed,
+    Object? notes = freezed,
+    Object? termsAndConditions = freezed,
+    Object? paymentTerms = freezed,
+    Object? deliveryTerms = freezed,
+    Object? supplierReference = freezed,
+    Object? contactPerson = freezed,
+    Object? contactEmail = freezed,
+    Object? contactPhone = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_UpdateSupplierQuotationRequest(
+      quotationDate: freezed == quotationDate
+          ? _self.quotationDate
+          : quotationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validUntil: freezed == validUntil
+          ? _self.validUntil
+          : validUntil // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      termsAndConditions: freezed == termsAndConditions
+          ? _self.termsAndConditions
+          : termsAndConditions // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deliveryTerms: freezed == deliveryTerms
+          ? _self.deliveryTerms
+          : deliveryTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      supplierReference: freezed == supplierReference
+          ? _self.supplierReference
+          : supplierReference // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: freezed == contactPerson
+          ? _self.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactEmail: freezed == contactEmail
+          ? _self.contactEmail
+          : contactEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhone: freezed == contactPhone
+          ? _self.contactPhone
+          : contactPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$SupplierQuotationFilters {
-  String? get supplierId => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get rfqId => throw _privateConstructorUsedError;
-  DateTime? get quotationDateAfter => throw _privateConstructorUsedError;
-  DateTime? get quotationDateBefore => throw _privateConstructorUsedError;
-  DateTime? get validUntilAfter => throw _privateConstructorUsedError;
-  DateTime? get validUntilBefore => throw _privateConstructorUsedError;
-  double? get totalAmountMin => throw _privateConstructorUsedError;
-  double? get totalAmountMax => throw _privateConstructorUsedError;
-  List<String>? get itemIds => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get supplierId;
+  String? get status;
+  String? get rfqId;
+  DateTime? get quotationDateAfter;
+  DateTime? get quotationDateBefore;
+  DateTime? get validUntilAfter;
+  DateTime? get validUntilBefore;
+  double? get totalAmountMin;
+  double? get totalAmountMax;
+  List<String>? get itemIds;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SupplierQuotationFiltersCopyWith<SupplierQuotationFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SupplierQuotationFiltersCopyWith<$Res> {
-  factory $SupplierQuotationFiltersCopyWith(SupplierQuotationFilters value,
-          $Res Function(SupplierQuotationFilters) then) =
-      _$SupplierQuotationFiltersCopyWithImpl<$Res, SupplierQuotationFilters>;
-  @useResult
-  $Res call(
-      {String? supplierId,
-      String? status,
-      String? rfqId,
-      DateTime? quotationDateAfter,
-      DateTime? quotationDateBefore,
-      DateTime? validUntilAfter,
-      DateTime? validUntilBefore,
-      double? totalAmountMin,
-      double? totalAmountMax,
-      List<String>? itemIds,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$SupplierQuotationFiltersCopyWithImpl<$Res,
-        $Val extends SupplierQuotationFilters>
-    implements $SupplierQuotationFiltersCopyWith<$Res> {
-  _$SupplierQuotationFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of SupplierQuotationFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SupplierQuotationFiltersCopyWith<SupplierQuotationFilters> get copyWith =>
+      _$SupplierQuotationFiltersCopyWithImpl<SupplierQuotationFilters>(
+          this as SupplierQuotationFilters, _$identity);
+
+  /// Serializes this SupplierQuotationFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? supplierId = freezed,
-    Object? status = freezed,
-    Object? rfqId = freezed,
-    Object? quotationDateAfter = freezed,
-    Object? quotationDateBefore = freezed,
-    Object? validUntilAfter = freezed,
-    Object? validUntilBefore = freezed,
-    Object? totalAmountMin = freezed,
-    Object? totalAmountMax = freezed,
-    Object? itemIds = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      supplierId: freezed == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rfqId: freezed == rfqId
-          ? _value.rfqId
-          : rfqId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quotationDateAfter: freezed == quotationDateAfter
-          ? _value.quotationDateAfter
-          : quotationDateAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      quotationDateBefore: freezed == quotationDateBefore
-          ? _value.quotationDateBefore
-          : quotationDateBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validUntilAfter: freezed == validUntilAfter
-          ? _value.validUntilAfter
-          : validUntilAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validUntilBefore: freezed == validUntilBefore
-          ? _value.validUntilBefore
-          : validUntilBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      totalAmountMin: freezed == totalAmountMin
-          ? _value.totalAmountMin
-          : totalAmountMin // ignore: cast_nullable_to_non_nullable
-              as double?,
-      totalAmountMax: freezed == totalAmountMax
-          ? _value.totalAmountMax
-          : totalAmountMax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      itemIds: freezed == itemIds
-          ? _value.itemIds
-          : itemIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SupplierQuotationFilters &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.rfqId, rfqId) || other.rfqId == rfqId) &&
+            (identical(other.quotationDateAfter, quotationDateAfter) ||
+                other.quotationDateAfter == quotationDateAfter) &&
+            (identical(other.quotationDateBefore, quotationDateBefore) ||
+                other.quotationDateBefore == quotationDateBefore) &&
+            (identical(other.validUntilAfter, validUntilAfter) ||
+                other.validUntilAfter == validUntilAfter) &&
+            (identical(other.validUntilBefore, validUntilBefore) ||
+                other.validUntilBefore == validUntilBefore) &&
+            (identical(other.totalAmountMin, totalAmountMin) ||
+                other.totalAmountMin == totalAmountMin) &&
+            (identical(other.totalAmountMax, totalAmountMax) ||
+                other.totalAmountMax == totalAmountMax) &&
+            const DeepCollectionEquality().equals(other.itemIds, itemIds) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      supplierId,
+      status,
+      rfqId,
+      quotationDateAfter,
+      quotationDateBefore,
+      validUntilAfter,
+      validUntilBefore,
+      totalAmountMin,
+      totalAmountMax,
+      const DeepCollectionEquality().hash(itemIds),
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'SupplierQuotationFilters(supplierId: $supplierId, status: $status, rfqId: $rfqId, quotationDateAfter: $quotationDateAfter, quotationDateBefore: $quotationDateBefore, validUntilAfter: $validUntilAfter, validUntilBefore: $validUntilBefore, totalAmountMin: $totalAmountMin, totalAmountMax: $totalAmountMax, itemIds: $itemIds, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$SupplierQuotationFiltersImplCopyWith<$Res>
-    implements $SupplierQuotationFiltersCopyWith<$Res> {
-  factory _$$SupplierQuotationFiltersImplCopyWith(
-          _$SupplierQuotationFiltersImpl value,
-          $Res Function(_$SupplierQuotationFiltersImpl) then) =
-      __$$SupplierQuotationFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SupplierQuotationFiltersCopyWith<$Res> {
+  factory $SupplierQuotationFiltersCopyWith(SupplierQuotationFilters value,
+          $Res Function(SupplierQuotationFilters) _then) =
+      _$SupplierQuotationFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? supplierId,
@@ -2822,15 +4062,15 @@ abstract class _$$SupplierQuotationFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SupplierQuotationFiltersImplCopyWithImpl<$Res>
-    extends _$SupplierQuotationFiltersCopyWithImpl<$Res,
-        _$SupplierQuotationFiltersImpl>
-    implements _$$SupplierQuotationFiltersImplCopyWith<$Res> {
-  __$$SupplierQuotationFiltersImplCopyWithImpl(
-      _$SupplierQuotationFiltersImpl _value,
-      $Res Function(_$SupplierQuotationFiltersImpl) _then)
-      : super(_value, _then);
+class _$SupplierQuotationFiltersCopyWithImpl<$Res>
+    implements $SupplierQuotationFiltersCopyWith<$Res> {
+  _$SupplierQuotationFiltersCopyWithImpl(this._self, this._then);
 
+  final SupplierQuotationFilters _self;
+  final $Res Function(SupplierQuotationFilters) _then;
+
+  /// Create a copy of SupplierQuotationFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2849,71 +4089,311 @@ class __$$SupplierQuotationFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$SupplierQuotationFiltersImpl(
+    return _then(_self.copyWith(
       supplierId: freezed == supplierId
-          ? _value.supplierId
+          ? _self.supplierId
           : supplierId // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       rfqId: freezed == rfqId
-          ? _value.rfqId
+          ? _self.rfqId
           : rfqId // ignore: cast_nullable_to_non_nullable
               as String?,
       quotationDateAfter: freezed == quotationDateAfter
-          ? _value.quotationDateAfter
+          ? _self.quotationDateAfter
           : quotationDateAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       quotationDateBefore: freezed == quotationDateBefore
-          ? _value.quotationDateBefore
+          ? _self.quotationDateBefore
           : quotationDateBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validUntilAfter: freezed == validUntilAfter
-          ? _value.validUntilAfter
+          ? _self.validUntilAfter
           : validUntilAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validUntilBefore: freezed == validUntilBefore
-          ? _value.validUntilBefore
+          ? _self.validUntilBefore
           : validUntilBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       totalAmountMin: freezed == totalAmountMin
-          ? _value.totalAmountMin
+          ? _self.totalAmountMin
           : totalAmountMin // ignore: cast_nullable_to_non_nullable
               as double?,
       totalAmountMax: freezed == totalAmountMax
-          ? _value.totalAmountMax
+          ? _self.totalAmountMax
           : totalAmountMax // ignore: cast_nullable_to_non_nullable
               as double?,
       itemIds: freezed == itemIds
-          ? _value._itemIds
+          ? _self.itemIds
           : itemIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [SupplierQuotationFilters].
+extension SupplierQuotationFiltersPatterns on SupplierQuotationFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SupplierQuotationFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SupplierQuotationFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SupplierQuotationFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? supplierId,
+            String? status,
+            String? rfqId,
+            DateTime? quotationDateAfter,
+            DateTime? quotationDateBefore,
+            DateTime? validUntilAfter,
+            DateTime? validUntilBefore,
+            double? totalAmountMin,
+            double? totalAmountMax,
+            List<String>? itemIds,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationFilters() when $default != null:
+        return $default(
+            _that.supplierId,
+            _that.status,
+            _that.rfqId,
+            _that.quotationDateAfter,
+            _that.quotationDateBefore,
+            _that.validUntilAfter,
+            _that.validUntilBefore,
+            _that.totalAmountMin,
+            _that.totalAmountMax,
+            _that.itemIds,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? supplierId,
+            String? status,
+            String? rfqId,
+            DateTime? quotationDateAfter,
+            DateTime? quotationDateBefore,
+            DateTime? validUntilAfter,
+            DateTime? validUntilBefore,
+            double? totalAmountMin,
+            double? totalAmountMax,
+            List<String>? itemIds,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationFilters():
+        return $default(
+            _that.supplierId,
+            _that.status,
+            _that.rfqId,
+            _that.quotationDateAfter,
+            _that.quotationDateBefore,
+            _that.validUntilAfter,
+            _that.validUntilBefore,
+            _that.totalAmountMin,
+            _that.totalAmountMax,
+            _that.itemIds,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? supplierId,
+            String? status,
+            String? rfqId,
+            DateTime? quotationDateAfter,
+            DateTime? quotationDateBefore,
+            DateTime? validUntilAfter,
+            DateTime? validUntilBefore,
+            double? totalAmountMin,
+            double? totalAmountMax,
+            List<String>? itemIds,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupplierQuotationFilters() when $default != null:
+        return $default(
+            _that.supplierId,
+            _that.status,
+            _that.rfqId,
+            _that.quotationDateAfter,
+            _that.quotationDateBefore,
+            _that.validUntilAfter,
+            _that.validUntilBefore,
+            _that.totalAmountMin,
+            _that.totalAmountMax,
+            _that.itemIds,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$SupplierQuotationFiltersImpl extends _SupplierQuotationFilters {
-  const _$SupplierQuotationFiltersImpl(
+class _SupplierQuotationFilters extends SupplierQuotationFilters {
+  const _SupplierQuotationFilters(
       {this.supplierId,
       this.status,
       this.rfqId,
@@ -2930,9 +4410,8 @@ class _$SupplierQuotationFiltersImpl extends _SupplierQuotationFilters {
       this.sortOrder})
       : _itemIds = itemIds,
         super._();
-
-  factory _$SupplierQuotationFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SupplierQuotationFiltersImplFromJson(json);
+  factory _SupplierQuotationFilters.fromJson(Map<String, dynamic> json) =>
+      _$SupplierQuotationFiltersFromJson(json);
 
   @override
   final String? supplierId;
@@ -2971,16 +4450,27 @@ class _$SupplierQuotationFiltersImpl extends _SupplierQuotationFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of SupplierQuotationFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SupplierQuotationFilters(supplierId: $supplierId, status: $status, rfqId: $rfqId, quotationDateAfter: $quotationDateAfter, quotationDateBefore: $quotationDateBefore, validUntilAfter: $validUntilAfter, validUntilBefore: $validUntilBefore, totalAmountMin: $totalAmountMin, totalAmountMax: $totalAmountMax, itemIds: $itemIds, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SupplierQuotationFiltersCopyWith<_SupplierQuotationFilters> get copyWith =>
+      __$SupplierQuotationFiltersCopyWithImpl<_SupplierQuotationFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SupplierQuotationFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SupplierQuotationFiltersImpl &&
+            other is _SupplierQuotationFilters &&
             (identical(other.supplierId, supplierId) ||
                 other.supplierId == supplierId) &&
             (identical(other.status, status) || other.status == status) &&
@@ -3005,7 +4495,7 @@ class _$SupplierQuotationFiltersImpl extends _SupplierQuotationFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3024,174 +4514,188 @@ class _$SupplierQuotationFiltersImpl extends _SupplierQuotationFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SupplierQuotationFiltersImplCopyWith<_$SupplierQuotationFiltersImpl>
-      get copyWith => __$$SupplierQuotationFiltersImplCopyWithImpl<
-          _$SupplierQuotationFiltersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SupplierQuotationFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SupplierQuotationFilters(supplierId: $supplierId, status: $status, rfqId: $rfqId, quotationDateAfter: $quotationDateAfter, quotationDateBefore: $quotationDateBefore, validUntilAfter: $validUntilAfter, validUntilBefore: $validUntilBefore, totalAmountMin: $totalAmountMin, totalAmountMax: $totalAmountMax, itemIds: $itemIds, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _SupplierQuotationFilters extends SupplierQuotationFilters {
-  const factory _SupplierQuotationFilters(
-      {final String? supplierId,
-      final String? status,
-      final String? rfqId,
-      final DateTime? quotationDateAfter,
-      final DateTime? quotationDateBefore,
-      final DateTime? validUntilAfter,
-      final DateTime? validUntilBefore,
-      final double? totalAmountMin,
-      final double? totalAmountMax,
-      final List<String>? itemIds,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$SupplierQuotationFiltersImpl;
-  const _SupplierQuotationFilters._() : super._();
-
-  factory _SupplierQuotationFilters.fromJson(Map<String, dynamic> json) =
-      _$SupplierQuotationFiltersImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SupplierQuotationFiltersCopyWith<$Res>
+    implements $SupplierQuotationFiltersCopyWith<$Res> {
+  factory _$SupplierQuotationFiltersCopyWith(_SupplierQuotationFilters value,
+          $Res Function(_SupplierQuotationFilters) _then) =
+      __$SupplierQuotationFiltersCopyWithImpl;
   @override
-  String? get supplierId;
-  @override
-  String? get status;
-  @override
-  String? get rfqId;
-  @override
-  DateTime? get quotationDateAfter;
-  @override
-  DateTime? get quotationDateBefore;
-  @override
-  DateTime? get validUntilAfter;
-  @override
-  DateTime? get validUntilBefore;
-  @override
-  double? get totalAmountMin;
-  @override
-  double? get totalAmountMax;
-  @override
-  List<String>? get itemIds;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$SupplierQuotationFiltersImplCopyWith<_$SupplierQuotationFiltersImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? supplierId,
+      String? status,
+      String? rfqId,
+      DateTime? quotationDateAfter,
+      DateTime? quotationDateBefore,
+      DateTime? validUntilAfter,
+      DateTime? validUntilBefore,
+      double? totalAmountMin,
+      double? totalAmountMax,
+      List<String>? itemIds,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
 
-QuotationComparison _$QuotationComparisonFromJson(Map<String, dynamic> json) {
-  return _QuotationComparison.fromJson(json);
+/// @nodoc
+class __$SupplierQuotationFiltersCopyWithImpl<$Res>
+    implements _$SupplierQuotationFiltersCopyWith<$Res> {
+  __$SupplierQuotationFiltersCopyWithImpl(this._self, this._then);
+
+  final _SupplierQuotationFilters _self;
+  final $Res Function(_SupplierQuotationFilters) _then;
+
+  /// Create a copy of SupplierQuotationFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? supplierId = freezed,
+    Object? status = freezed,
+    Object? rfqId = freezed,
+    Object? quotationDateAfter = freezed,
+    Object? quotationDateBefore = freezed,
+    Object? validUntilAfter = freezed,
+    Object? validUntilBefore = freezed,
+    Object? totalAmountMin = freezed,
+    Object? totalAmountMax = freezed,
+    Object? itemIds = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_SupplierQuotationFilters(
+      supplierId: freezed == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rfqId: freezed == rfqId
+          ? _self.rfqId
+          : rfqId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quotationDateAfter: freezed == quotationDateAfter
+          ? _self.quotationDateAfter
+          : quotationDateAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      quotationDateBefore: freezed == quotationDateBefore
+          ? _self.quotationDateBefore
+          : quotationDateBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validUntilAfter: freezed == validUntilAfter
+          ? _self.validUntilAfter
+          : validUntilAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validUntilBefore: freezed == validUntilBefore
+          ? _self.validUntilBefore
+          : validUntilBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      totalAmountMin: freezed == totalAmountMin
+          ? _self.totalAmountMin
+          : totalAmountMin // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalAmountMax: freezed == totalAmountMax
+          ? _self.totalAmountMax
+          : totalAmountMax // ignore: cast_nullable_to_non_nullable
+              as double?,
+      itemIds: freezed == itemIds
+          ? _self._itemIds
+          : itemIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$QuotationComparison {
-  String get itemId => throw _privateConstructorUsedError;
-  String get itemName => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
-  List<QuotationComparisonEntry> get quotations =>
-      throw _privateConstructorUsedError;
-  String? get recommendation => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get analysis => throw _privateConstructorUsedError;
+  String get itemId;
+  String get itemName;
+  double get quantity;
+  String get unit;
+  List<QuotationComparisonEntry> get quotations;
+  String? get recommendation;
+  Map<String, dynamic>? get analysis;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $QuotationComparisonCopyWith<QuotationComparison> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $QuotationComparisonCopyWith<$Res> {
-  factory $QuotationComparisonCopyWith(
-          QuotationComparison value, $Res Function(QuotationComparison) then) =
-      _$QuotationComparisonCopyWithImpl<$Res, QuotationComparison>;
-  @useResult
-  $Res call(
-      {String itemId,
-      String itemName,
-      double quantity,
-      String unit,
-      List<QuotationComparisonEntry> quotations,
-      String? recommendation,
-      Map<String, dynamic>? analysis});
-}
-
-/// @nodoc
-class _$QuotationComparisonCopyWithImpl<$Res, $Val extends QuotationComparison>
-    implements $QuotationComparisonCopyWith<$Res> {
-  _$QuotationComparisonCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of QuotationComparison
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $QuotationComparisonCopyWith<QuotationComparison> get copyWith =>
+      _$QuotationComparisonCopyWithImpl<QuotationComparison>(
+          this as QuotationComparison, _$identity);
+
+  /// Serializes this QuotationComparison to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = null,
-    Object? itemName = null,
-    Object? quantity = null,
-    Object? unit = null,
-    Object? quotations = null,
-    Object? recommendation = freezed,
-    Object? analysis = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemName: null == itemName
-          ? _value.itemName
-          : itemName // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      unit: null == unit
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String,
-      quotations: null == quotations
-          ? _value.quotations
-          : quotations // ignore: cast_nullable_to_non_nullable
-              as List<QuotationComparisonEntry>,
-      recommendation: freezed == recommendation
-          ? _value.recommendation
-          : recommendation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      analysis: freezed == analysis
-          ? _value.analysis
-          : analysis // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is QuotationComparison &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.itemName, itemName) ||
+                other.itemName == itemName) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            const DeepCollectionEquality()
+                .equals(other.quotations, quotations) &&
+            (identical(other.recommendation, recommendation) ||
+                other.recommendation == recommendation) &&
+            const DeepCollectionEquality().equals(other.analysis, analysis));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      itemName,
+      quantity,
+      unit,
+      const DeepCollectionEquality().hash(quotations),
+      recommendation,
+      const DeepCollectionEquality().hash(analysis));
+
+  @override
+  String toString() {
+    return 'QuotationComparison(itemId: $itemId, itemName: $itemName, quantity: $quantity, unit: $unit, quotations: $quotations, recommendation: $recommendation, analysis: $analysis)';
   }
 }
 
 /// @nodoc
-abstract class _$$QuotationComparisonImplCopyWith<$Res>
-    implements $QuotationComparisonCopyWith<$Res> {
-  factory _$$QuotationComparisonImplCopyWith(_$QuotationComparisonImpl value,
-          $Res Function(_$QuotationComparisonImpl) then) =
-      __$$QuotationComparisonImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $QuotationComparisonCopyWith<$Res> {
+  factory $QuotationComparisonCopyWith(
+          QuotationComparison value, $Res Function(QuotationComparison) _then) =
+      _$QuotationComparisonCopyWithImpl;
   @useResult
   $Res call(
       {String itemId,
@@ -3204,13 +4708,15 @@ abstract class _$$QuotationComparisonImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$QuotationComparisonImplCopyWithImpl<$Res>
-    extends _$QuotationComparisonCopyWithImpl<$Res, _$QuotationComparisonImpl>
-    implements _$$QuotationComparisonImplCopyWith<$Res> {
-  __$$QuotationComparisonImplCopyWithImpl(_$QuotationComparisonImpl _value,
-      $Res Function(_$QuotationComparisonImpl) _then)
-      : super(_value, _then);
+class _$QuotationComparisonCopyWithImpl<$Res>
+    implements $QuotationComparisonCopyWith<$Res> {
+  _$QuotationComparisonCopyWithImpl(this._self, this._then);
 
+  final QuotationComparison _self;
+  final $Res Function(QuotationComparison) _then;
+
+  /// Create a copy of QuotationComparison
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3222,43 +4728,223 @@ class __$$QuotationComparisonImplCopyWithImpl<$Res>
     Object? recommendation = freezed,
     Object? analysis = freezed,
   }) {
-    return _then(_$QuotationComparisonImpl(
+    return _then(_self.copyWith(
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       itemName: null == itemName
-          ? _value.itemName
+          ? _self.itemName
           : itemName // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       unit: null == unit
-          ? _value.unit
+          ? _self.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String,
       quotations: null == quotations
-          ? _value._quotations
+          ? _self.quotations
           : quotations // ignore: cast_nullable_to_non_nullable
               as List<QuotationComparisonEntry>,
       recommendation: freezed == recommendation
-          ? _value.recommendation
+          ? _self.recommendation
           : recommendation // ignore: cast_nullable_to_non_nullable
               as String?,
       analysis: freezed == analysis
-          ? _value._analysis
+          ? _self.analysis
           : analysis // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [QuotationComparison].
+extension QuotationComparisonPatterns on QuotationComparison {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_QuotationComparison value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparison() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_QuotationComparison value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparison():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_QuotationComparison value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparison() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            String itemName,
+            double quantity,
+            String unit,
+            List<QuotationComparisonEntry> quotations,
+            String? recommendation,
+            Map<String, dynamic>? analysis)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparison() when $default != null:
+        return $default(_that.itemId, _that.itemName, _that.quantity,
+            _that.unit, _that.quotations, _that.recommendation, _that.analysis);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String itemId,
+            String itemName,
+            double quantity,
+            String unit,
+            List<QuotationComparisonEntry> quotations,
+            String? recommendation,
+            Map<String, dynamic>? analysis)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparison():
+        return $default(_that.itemId, _that.itemName, _that.quantity,
+            _that.unit, _that.quotations, _that.recommendation, _that.analysis);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String itemId,
+            String itemName,
+            double quantity,
+            String unit,
+            List<QuotationComparisonEntry> quotations,
+            String? recommendation,
+            Map<String, dynamic>? analysis)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparison() when $default != null:
+        return $default(_that.itemId, _that.itemName, _that.quantity,
+            _that.unit, _that.quotations, _that.recommendation, _that.analysis);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$QuotationComparisonImpl implements _QuotationComparison {
-  const _$QuotationComparisonImpl(
+class _QuotationComparison implements QuotationComparison {
+  const _QuotationComparison(
       {required this.itemId,
       required this.itemName,
       required this.quantity,
@@ -3268,9 +4954,8 @@ class _$QuotationComparisonImpl implements _QuotationComparison {
       final Map<String, dynamic>? analysis})
       : _quotations = quotations,
         _analysis = analysis;
-
-  factory _$QuotationComparisonImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuotationComparisonImplFromJson(json);
+  factory _QuotationComparison.fromJson(Map<String, dynamic> json) =>
+      _$QuotationComparisonFromJson(json);
 
   @override
   final String itemId;
@@ -3300,16 +4985,27 @@ class _$QuotationComparisonImpl implements _QuotationComparison {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of QuotationComparison
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'QuotationComparison(itemId: $itemId, itemName: $itemName, quantity: $quantity, unit: $unit, quotations: $quotations, recommendation: $recommendation, analysis: $analysis)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$QuotationComparisonCopyWith<_QuotationComparison> get copyWith =>
+      __$QuotationComparisonCopyWithImpl<_QuotationComparison>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$QuotationComparisonToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuotationComparisonImpl &&
+            other is _QuotationComparison &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.itemName, itemName) ||
                 other.itemName == itemName) &&
@@ -3323,7 +5019,7 @@ class _$QuotationComparisonImpl implements _QuotationComparison {
             const DeepCollectionEquality().equals(other._analysis, _analysis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3335,275 +5031,477 @@ class _$QuotationComparisonImpl implements _QuotationComparison {
       recommendation,
       const DeepCollectionEquality().hash(_analysis));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$QuotationComparisonImplCopyWith<_$QuotationComparisonImpl> get copyWith =>
-      __$$QuotationComparisonImplCopyWithImpl<_$QuotationComparisonImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuotationComparisonImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _QuotationComparison implements QuotationComparison {
-  const factory _QuotationComparison(
-      {required final String itemId,
-      required final String itemName,
-      required final double quantity,
-      required final String unit,
-      required final List<QuotationComparisonEntry> quotations,
-      final String? recommendation,
-      final Map<String, dynamic>? analysis}) = _$QuotationComparisonImpl;
-
-  factory _QuotationComparison.fromJson(Map<String, dynamic> json) =
-      _$QuotationComparisonImpl.fromJson;
-
-  @override
-  String get itemId;
-  @override
-  String get itemName;
-  @override
-  double get quantity;
-  @override
-  String get unit;
-  @override
-  List<QuotationComparisonEntry> get quotations;
-  @override
-  String? get recommendation;
-  @override
-  Map<String, dynamic>? get analysis;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuotationComparisonImplCopyWith<_$QuotationComparisonImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-QuotationComparisonEntry _$QuotationComparisonEntryFromJson(
-    Map<String, dynamic> json) {
-  return _QuotationComparisonEntry.fromJson(json);
-}
-
-/// @nodoc
-mixin _$QuotationComparisonEntry {
-  String get quotationId => throw _privateConstructorUsedError;
-  String get supplierId => throw _privateConstructorUsedError;
-  String get supplierName => throw _privateConstructorUsedError;
-  double get unitPrice => throw _privateConstructorUsedError;
-  double get totalPrice => throw _privateConstructorUsedError;
-  int get leadTimeDays => throw _privateConstructorUsedError;
-  DateTime? get deliveryDate => throw _privateConstructorUsedError;
-  String? get brandModel => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  double? get score => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metrics => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $QuotationComparisonEntryCopyWith<QuotationComparisonEntry> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $QuotationComparisonEntryCopyWith<$Res> {
-  factory $QuotationComparisonEntryCopyWith(QuotationComparisonEntry value,
-          $Res Function(QuotationComparisonEntry) then) =
-      _$QuotationComparisonEntryCopyWithImpl<$Res, QuotationComparisonEntry>;
-  @useResult
-  $Res call(
-      {String quotationId,
-      String supplierId,
-      String supplierName,
-      double unitPrice,
-      double totalPrice,
-      int leadTimeDays,
-      DateTime? deliveryDate,
-      String? brandModel,
-      String? notes,
-      double? score,
-      Map<String, dynamic>? metrics});
-}
-
-/// @nodoc
-class _$QuotationComparisonEntryCopyWithImpl<$Res,
-        $Val extends QuotationComparisonEntry>
-    implements $QuotationComparisonEntryCopyWith<$Res> {
-  _$QuotationComparisonEntryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? quotationId = null,
-    Object? supplierId = null,
-    Object? supplierName = null,
-    Object? unitPrice = null,
-    Object? totalPrice = null,
-    Object? leadTimeDays = null,
-    Object? deliveryDate = freezed,
-    Object? brandModel = freezed,
-    Object? notes = freezed,
-    Object? score = freezed,
-    Object? metrics = freezed,
-  }) {
-    return _then(_value.copyWith(
-      quotationId: null == quotationId
-          ? _value.quotationId
-          : quotationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      supplierId: null == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
-              as String,
-      supplierName: null == supplierName
-          ? _value.supplierName
-          : supplierName // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitPrice: null == unitPrice
-          ? _value.unitPrice
-          : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      totalPrice: null == totalPrice
-          ? _value.totalPrice
-          : totalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      leadTimeDays: null == leadTimeDays
-          ? _value.leadTimeDays
-          : leadTimeDays // ignore: cast_nullable_to_non_nullable
-              as int,
-      deliveryDate: freezed == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      brandModel: freezed == brandModel
-          ? _value.brandModel
-          : brandModel // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      score: freezed == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as double?,
-      metrics: freezed == metrics
-          ? _value.metrics
-          : metrics // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'QuotationComparison(itemId: $itemId, itemName: $itemName, quantity: $quantity, unit: $unit, quotations: $quotations, recommendation: $recommendation, analysis: $analysis)';
   }
 }
 
 /// @nodoc
-abstract class _$$QuotationComparisonEntryImplCopyWith<$Res>
-    implements $QuotationComparisonEntryCopyWith<$Res> {
-  factory _$$QuotationComparisonEntryImplCopyWith(
-          _$QuotationComparisonEntryImpl value,
-          $Res Function(_$QuotationComparisonEntryImpl) then) =
-      __$$QuotationComparisonEntryImplCopyWithImpl<$Res>;
+abstract mixin class _$QuotationComparisonCopyWith<$Res>
+    implements $QuotationComparisonCopyWith<$Res> {
+  factory _$QuotationComparisonCopyWith(_QuotationComparison value,
+          $Res Function(_QuotationComparison) _then) =
+      __$QuotationComparisonCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String quotationId,
-      String supplierId,
-      String supplierName,
-      double unitPrice,
-      double totalPrice,
-      int leadTimeDays,
-      DateTime? deliveryDate,
-      String? brandModel,
-      String? notes,
-      double? score,
-      Map<String, dynamic>? metrics});
+      {String itemId,
+      String itemName,
+      double quantity,
+      String unit,
+      List<QuotationComparisonEntry> quotations,
+      String? recommendation,
+      Map<String, dynamic>? analysis});
 }
 
 /// @nodoc
-class __$$QuotationComparisonEntryImplCopyWithImpl<$Res>
-    extends _$QuotationComparisonEntryCopyWithImpl<$Res,
-        _$QuotationComparisonEntryImpl>
-    implements _$$QuotationComparisonEntryImplCopyWith<$Res> {
-  __$$QuotationComparisonEntryImplCopyWithImpl(
-      _$QuotationComparisonEntryImpl _value,
-      $Res Function(_$QuotationComparisonEntryImpl) _then)
-      : super(_value, _then);
+class __$QuotationComparisonCopyWithImpl<$Res>
+    implements _$QuotationComparisonCopyWith<$Res> {
+  __$QuotationComparisonCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _QuotationComparison _self;
+  final $Res Function(_QuotationComparison) _then;
+
+  /// Create a copy of QuotationComparison
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? quotationId = null,
-    Object? supplierId = null,
-    Object? supplierName = null,
-    Object? unitPrice = null,
-    Object? totalPrice = null,
-    Object? leadTimeDays = null,
-    Object? deliveryDate = freezed,
-    Object? brandModel = freezed,
-    Object? notes = freezed,
-    Object? score = freezed,
-    Object? metrics = freezed,
+    Object? itemId = null,
+    Object? itemName = null,
+    Object? quantity = null,
+    Object? unit = null,
+    Object? quotations = null,
+    Object? recommendation = freezed,
+    Object? analysis = freezed,
   }) {
-    return _then(_$QuotationComparisonEntryImpl(
-      quotationId: null == quotationId
-          ? _value.quotationId
-          : quotationId // ignore: cast_nullable_to_non_nullable
+    return _then(_QuotationComparison(
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String,
-      supplierId: null == supplierId
-          ? _value.supplierId
-          : supplierId // ignore: cast_nullable_to_non_nullable
+      itemName: null == itemName
+          ? _self.itemName
+          : itemName // ignore: cast_nullable_to_non_nullable
               as String,
-      supplierName: null == supplierName
-          ? _value.supplierName
-          : supplierName // ignore: cast_nullable_to_non_nullable
-              as String,
-      unitPrice: null == unitPrice
-          ? _value.unitPrice
-          : unitPrice // ignore: cast_nullable_to_non_nullable
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
               as double,
-      totalPrice: null == totalPrice
-          ? _value.totalPrice
-          : totalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      leadTimeDays: null == leadTimeDays
-          ? _value.leadTimeDays
-          : leadTimeDays // ignore: cast_nullable_to_non_nullable
-              as int,
-      deliveryDate: freezed == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      brandModel: freezed == brandModel
-          ? _value.brandModel
-          : brandModel // ignore: cast_nullable_to_non_nullable
+      unit: null == unit
+          ? _self.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+      quotations: null == quotations
+          ? _self._quotations
+          : quotations // ignore: cast_nullable_to_non_nullable
+              as List<QuotationComparisonEntry>,
+      recommendation: freezed == recommendation
+          ? _self.recommendation
+          : recommendation // ignore: cast_nullable_to_non_nullable
               as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      score: freezed == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as double?,
-      metrics: freezed == metrics
-          ? _value._metrics
-          : metrics // ignore: cast_nullable_to_non_nullable
+      analysis: freezed == analysis
+          ? _self._analysis
+          : analysis // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$QuotationComparisonEntry {
+  String get quotationId;
+  String get supplierId;
+  String get supplierName;
+  double get unitPrice;
+  double get totalPrice;
+  int get leadTimeDays;
+  DateTime? get deliveryDate;
+  String? get brandModel;
+  String? get notes;
+  double? get score;
+  Map<String, dynamic>? get metrics;
+
+  /// Create a copy of QuotationComparisonEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $QuotationComparisonEntryCopyWith<QuotationComparisonEntry> get copyWith =>
+      _$QuotationComparisonEntryCopyWithImpl<QuotationComparisonEntry>(
+          this as QuotationComparisonEntry, _$identity);
+
+  /// Serializes this QuotationComparisonEntry to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is QuotationComparisonEntry &&
+            (identical(other.quotationId, quotationId) ||
+                other.quotationId == quotationId) &&
+            (identical(other.supplierId, supplierId) ||
+                other.supplierId == supplierId) &&
+            (identical(other.supplierName, supplierName) ||
+                other.supplierName == supplierName) &&
+            (identical(other.unitPrice, unitPrice) ||
+                other.unitPrice == unitPrice) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice) &&
+            (identical(other.leadTimeDays, leadTimeDays) ||
+                other.leadTimeDays == leadTimeDays) &&
+            (identical(other.deliveryDate, deliveryDate) ||
+                other.deliveryDate == deliveryDate) &&
+            (identical(other.brandModel, brandModel) ||
+                other.brandModel == brandModel) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.score, score) || other.score == score) &&
+            const DeepCollectionEquality().equals(other.metrics, metrics));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      quotationId,
+      supplierId,
+      supplierName,
+      unitPrice,
+      totalPrice,
+      leadTimeDays,
+      deliveryDate,
+      brandModel,
+      notes,
+      score,
+      const DeepCollectionEquality().hash(metrics));
+
+  @override
+  String toString() {
+    return 'QuotationComparisonEntry(quotationId: $quotationId, supplierId: $supplierId, supplierName: $supplierName, unitPrice: $unitPrice, totalPrice: $totalPrice, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, brandModel: $brandModel, notes: $notes, score: $score, metrics: $metrics)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $QuotationComparisonEntryCopyWith<$Res> {
+  factory $QuotationComparisonEntryCopyWith(QuotationComparisonEntry value,
+          $Res Function(QuotationComparisonEntry) _then) =
+      _$QuotationComparisonEntryCopyWithImpl;
+  @useResult
+  $Res call(
+      {String quotationId,
+      String supplierId,
+      String supplierName,
+      double unitPrice,
+      double totalPrice,
+      int leadTimeDays,
+      DateTime? deliveryDate,
+      String? brandModel,
+      String? notes,
+      double? score,
+      Map<String, dynamic>? metrics});
+}
+
+/// @nodoc
+class _$QuotationComparisonEntryCopyWithImpl<$Res>
+    implements $QuotationComparisonEntryCopyWith<$Res> {
+  _$QuotationComparisonEntryCopyWithImpl(this._self, this._then);
+
+  final QuotationComparisonEntry _self;
+  final $Res Function(QuotationComparisonEntry) _then;
+
+  /// Create a copy of QuotationComparisonEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quotationId = null,
+    Object? supplierId = null,
+    Object? supplierName = null,
+    Object? unitPrice = null,
+    Object? totalPrice = null,
+    Object? leadTimeDays = null,
+    Object? deliveryDate = freezed,
+    Object? brandModel = freezed,
+    Object? notes = freezed,
+    Object? score = freezed,
+    Object? metrics = freezed,
+  }) {
+    return _then(_self.copyWith(
+      quotationId: null == quotationId
+          ? _self.quotationId
+          : quotationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      supplierId: null == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
+              as String,
+      supplierName: null == supplierName
+          ? _self.supplierName
+          : supplierName // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitPrice: null == unitPrice
+          ? _self.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalPrice: null == totalPrice
+          ? _self.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      leadTimeDays: null == leadTimeDays
+          ? _self.leadTimeDays
+          : leadTimeDays // ignore: cast_nullable_to_non_nullable
+              as int,
+      deliveryDate: freezed == deliveryDate
+          ? _self.deliveryDate
+          : deliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      brandModel: freezed == brandModel
+          ? _self.brandModel
+          : brandModel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      score: freezed == score
+          ? _self.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as double?,
+      metrics: freezed == metrics
+          ? _self.metrics
+          : metrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [QuotationComparisonEntry].
+extension QuotationComparisonEntryPatterns on QuotationComparisonEntry {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_QuotationComparisonEntry value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparisonEntry() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_QuotationComparisonEntry value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparisonEntry():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_QuotationComparisonEntry value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparisonEntry() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String quotationId,
+            String supplierId,
+            String supplierName,
+            double unitPrice,
+            double totalPrice,
+            int leadTimeDays,
+            DateTime? deliveryDate,
+            String? brandModel,
+            String? notes,
+            double? score,
+            Map<String, dynamic>? metrics)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparisonEntry() when $default != null:
+        return $default(
+            _that.quotationId,
+            _that.supplierId,
+            _that.supplierName,
+            _that.unitPrice,
+            _that.totalPrice,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.brandModel,
+            _that.notes,
+            _that.score,
+            _that.metrics);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String quotationId,
+            String supplierId,
+            String supplierName,
+            double unitPrice,
+            double totalPrice,
+            int leadTimeDays,
+            DateTime? deliveryDate,
+            String? brandModel,
+            String? notes,
+            double? score,
+            Map<String, dynamic>? metrics)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparisonEntry():
+        return $default(
+            _that.quotationId,
+            _that.supplierId,
+            _that.supplierName,
+            _that.unitPrice,
+            _that.totalPrice,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.brandModel,
+            _that.notes,
+            _that.score,
+            _that.metrics);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String quotationId,
+            String supplierId,
+            String supplierName,
+            double unitPrice,
+            double totalPrice,
+            int leadTimeDays,
+            DateTime? deliveryDate,
+            String? brandModel,
+            String? notes,
+            double? score,
+            Map<String, dynamic>? metrics)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuotationComparisonEntry() when $default != null:
+        return $default(
+            _that.quotationId,
+            _that.supplierId,
+            _that.supplierName,
+            _that.unitPrice,
+            _that.totalPrice,
+            _that.leadTimeDays,
+            _that.deliveryDate,
+            _that.brandModel,
+            _that.notes,
+            _that.score,
+            _that.metrics);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$QuotationComparisonEntryImpl implements _QuotationComparisonEntry {
-  const _$QuotationComparisonEntryImpl(
+class _QuotationComparisonEntry implements QuotationComparisonEntry {
+  const _QuotationComparisonEntry(
       {required this.quotationId,
       required this.supplierId,
       required this.supplierName,
@@ -3616,9 +5514,8 @@ class _$QuotationComparisonEntryImpl implements _QuotationComparisonEntry {
       this.score,
       final Map<String, dynamic>? metrics})
       : _metrics = metrics;
-
-  factory _$QuotationComparisonEntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuotationComparisonEntryImplFromJson(json);
+  factory _QuotationComparisonEntry.fromJson(Map<String, dynamic> json) =>
+      _$QuotationComparisonEntryFromJson(json);
 
   @override
   final String quotationId;
@@ -3650,16 +5547,27 @@ class _$QuotationComparisonEntryImpl implements _QuotationComparisonEntry {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of QuotationComparisonEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'QuotationComparisonEntry(quotationId: $quotationId, supplierId: $supplierId, supplierName: $supplierName, unitPrice: $unitPrice, totalPrice: $totalPrice, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, brandModel: $brandModel, notes: $notes, score: $score, metrics: $metrics)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$QuotationComparisonEntryCopyWith<_QuotationComparisonEntry> get copyWith =>
+      __$QuotationComparisonEntryCopyWithImpl<_QuotationComparisonEntry>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$QuotationComparisonEntryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuotationComparisonEntryImpl &&
+            other is _QuotationComparisonEntry &&
             (identical(other.quotationId, quotationId) ||
                 other.quotationId == quotationId) &&
             (identical(other.supplierId, supplierId) ||
@@ -3681,7 +5589,7 @@ class _$QuotationComparisonEntryImpl implements _QuotationComparisonEntry {
             const DeepCollectionEquality().equals(other._metrics, _metrics));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3697,62 +5605,106 @@ class _$QuotationComparisonEntryImpl implements _QuotationComparisonEntry {
       score,
       const DeepCollectionEquality().hash(_metrics));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$QuotationComparisonEntryImplCopyWith<_$QuotationComparisonEntryImpl>
-      get copyWith => __$$QuotationComparisonEntryImplCopyWithImpl<
-          _$QuotationComparisonEntryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuotationComparisonEntryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'QuotationComparisonEntry(quotationId: $quotationId, supplierId: $supplierId, supplierName: $supplierName, unitPrice: $unitPrice, totalPrice: $totalPrice, leadTimeDays: $leadTimeDays, deliveryDate: $deliveryDate, brandModel: $brandModel, notes: $notes, score: $score, metrics: $metrics)';
   }
 }
 
-abstract class _QuotationComparisonEntry implements QuotationComparisonEntry {
-  const factory _QuotationComparisonEntry(
-      {required final String quotationId,
-      required final String supplierId,
-      required final String supplierName,
-      required final double unitPrice,
-      required final double totalPrice,
-      required final int leadTimeDays,
-      final DateTime? deliveryDate,
-      final String? brandModel,
-      final String? notes,
-      final double? score,
-      final Map<String, dynamic>? metrics}) = _$QuotationComparisonEntryImpl;
-
-  factory _QuotationComparisonEntry.fromJson(Map<String, dynamic> json) =
-      _$QuotationComparisonEntryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$QuotationComparisonEntryCopyWith<$Res>
+    implements $QuotationComparisonEntryCopyWith<$Res> {
+  factory _$QuotationComparisonEntryCopyWith(_QuotationComparisonEntry value,
+          $Res Function(_QuotationComparisonEntry) _then) =
+      __$QuotationComparisonEntryCopyWithImpl;
   @override
-  String get quotationId;
-  @override
-  String get supplierId;
-  @override
-  String get supplierName;
-  @override
-  double get unitPrice;
-  @override
-  double get totalPrice;
-  @override
-  int get leadTimeDays;
-  @override
-  DateTime? get deliveryDate;
-  @override
-  String? get brandModel;
-  @override
-  String? get notes;
-  @override
-  double? get score;
-  @override
-  Map<String, dynamic>? get metrics;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuotationComparisonEntryImplCopyWith<_$QuotationComparisonEntryImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String quotationId,
+      String supplierId,
+      String supplierName,
+      double unitPrice,
+      double totalPrice,
+      int leadTimeDays,
+      DateTime? deliveryDate,
+      String? brandModel,
+      String? notes,
+      double? score,
+      Map<String, dynamic>? metrics});
 }
+
+/// @nodoc
+class __$QuotationComparisonEntryCopyWithImpl<$Res>
+    implements _$QuotationComparisonEntryCopyWith<$Res> {
+  __$QuotationComparisonEntryCopyWithImpl(this._self, this._then);
+
+  final _QuotationComparisonEntry _self;
+  final $Res Function(_QuotationComparisonEntry) _then;
+
+  /// Create a copy of QuotationComparisonEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? quotationId = null,
+    Object? supplierId = null,
+    Object? supplierName = null,
+    Object? unitPrice = null,
+    Object? totalPrice = null,
+    Object? leadTimeDays = null,
+    Object? deliveryDate = freezed,
+    Object? brandModel = freezed,
+    Object? notes = freezed,
+    Object? score = freezed,
+    Object? metrics = freezed,
+  }) {
+    return _then(_QuotationComparisonEntry(
+      quotationId: null == quotationId
+          ? _self.quotationId
+          : quotationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      supplierId: null == supplierId
+          ? _self.supplierId
+          : supplierId // ignore: cast_nullable_to_non_nullable
+              as String,
+      supplierName: null == supplierName
+          ? _self.supplierName
+          : supplierName // ignore: cast_nullable_to_non_nullable
+              as String,
+      unitPrice: null == unitPrice
+          ? _self.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      totalPrice: null == totalPrice
+          ? _self.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      leadTimeDays: null == leadTimeDays
+          ? _self.leadTimeDays
+          : leadTimeDays // ignore: cast_nullable_to_non_nullable
+              as int,
+      deliveryDate: freezed == deliveryDate
+          ? _self.deliveryDate
+          : deliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      brandModel: freezed == brandModel
+          ? _self.brandModel
+          : brandModel // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      score: freezed == score
+          ? _self.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as double?,
+      metrics: freezed == metrics
+          ? _self._metrics
+          : metrics // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+// dart format on

@@ -5,7 +5,7 @@ part 'manufacturing_models.g.dart';
 
 /// BOM model
 @freezed
-class Bom with _$Bom {
+sealed class Bom with _$Bom {
   const factory Bom({
     required String id,
     required String itemId,
@@ -27,7 +27,7 @@ class Bom with _$Bom {
 
 /// Create BOM request
 @freezed
-class CreateBomRequest with _$CreateBomRequest {
+sealed class CreateBomRequest with _$CreateBomRequest {
   const factory CreateBomRequest({
     required String itemId,
     required String name,
@@ -44,7 +44,7 @@ class CreateBomRequest with _$CreateBomRequest {
 
 /// Update BOM request
 @freezed
-class UpdateBomRequest with _$UpdateBomRequest {
+sealed class UpdateBomRequest with _$UpdateBomRequest {
   const factory UpdateBomRequest({
     String? name,
     String? version,
@@ -61,7 +61,7 @@ class UpdateBomRequest with _$UpdateBomRequest {
 
 /// Work order model
 @freezed
-class WorkOrder with _$WorkOrder {
+sealed class WorkOrder with _$WorkOrder {
   const factory WorkOrder({
     required String id,
     required String workOrderNumber,
@@ -85,7 +85,7 @@ class WorkOrder with _$WorkOrder {
 
 /// Production order material creation request
 @freezed
-class CreateProductionOrderMaterialRequest
+sealed class CreateProductionOrderMaterialRequest
     with _$CreateProductionOrderMaterialRequest {
   const factory CreateProductionOrderMaterialRequest({
     required String itemId,
@@ -100,7 +100,7 @@ class CreateProductionOrderMaterialRequest
 
 /// Production order creation request
 @freezed
-class CreateProductionOrderRequest with _$CreateProductionOrderRequest {
+sealed class CreateProductionOrderRequest with _$CreateProductionOrderRequest {
   const factory CreateProductionOrderRequest({
     required String itemId,
     required double quantity,
@@ -116,7 +116,7 @@ class CreateProductionOrderRequest with _$CreateProductionOrderRequest {
 
 /// Production order model
 @freezed
-class ProductionOrder with _$ProductionOrder {
+sealed class ProductionOrder with _$ProductionOrder {
   const factory ProductionOrder({
     required String id,
     required String orderNumber,
@@ -139,7 +139,7 @@ class ProductionOrder with _$ProductionOrder {
 
 /// Production order material model
 @freezed
-class ProductionOrderMaterial with _$ProductionOrderMaterial {
+sealed class ProductionOrderMaterial with _$ProductionOrderMaterial {
   const factory ProductionOrderMaterial({
     required String id,
     required String itemId,

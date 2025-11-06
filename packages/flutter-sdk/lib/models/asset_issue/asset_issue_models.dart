@@ -4,7 +4,7 @@ part 'asset_issue_models.freezed.dart';
 part 'asset_issue_models.g.dart';
 
 @freezed
-class AssetIssue with _$AssetIssue {
+sealed class AssetIssue with _$AssetIssue {
   const factory AssetIssue({
     required String id,
     required String tenantId,
@@ -42,7 +42,7 @@ class AssetIssue with _$AssetIssue {
 }
 
 @freezed
-class CreateAssetIssueRequest with _$CreateAssetIssueRequest {
+sealed class CreateAssetIssueRequest with _$CreateAssetIssueRequest {
   const factory CreateAssetIssueRequest({
     required String assetId,
     required String title,
@@ -63,7 +63,7 @@ class CreateAssetIssueRequest with _$CreateAssetIssueRequest {
 }
 
 @freezed
-class UpdateAssetIssueRequest with _$UpdateAssetIssueRequest {
+sealed class UpdateAssetIssueRequest with _$UpdateAssetIssueRequest {
   const factory UpdateAssetIssueRequest({
     String? title,
     String? description,

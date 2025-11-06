@@ -4,7 +4,7 @@ part 'task_models.freezed.dart';
 part 'task_models.g.dart';
 
 @freezed
-class Task with _$Task {
+sealed class Task with _$Task {
   const factory Task({
     required String id,
     required String tenantId,
@@ -50,7 +50,7 @@ class Task with _$Task {
 }
 
 @freezed
-class TaskDependency with _$TaskDependency {
+sealed class TaskDependency with _$TaskDependency {
   const factory TaskDependency({
     required String id,
     required String tenantId,
@@ -66,7 +66,7 @@ class TaskDependency with _$TaskDependency {
 }
 
 @freezed
-class CreateTaskRequest with _$CreateTaskRequest {
+sealed class CreateTaskRequest with _$CreateTaskRequest {
   const factory CreateTaskRequest({
     required String title,
     String? description,
@@ -98,7 +98,7 @@ class CreateTaskRequest with _$CreateTaskRequest {
 }
 
 @freezed
-class UpdateTaskRequest with _$UpdateTaskRequest {
+sealed class UpdateTaskRequest with _$UpdateTaskRequest {
   const factory UpdateTaskRequest({
     String? title,
     String? description,
@@ -137,7 +137,7 @@ class UpdateTaskRequest with _$UpdateTaskRequest {
 }
 
 @freezed
-class CreateTaskDependencyRequest with _$CreateTaskDependencyRequest {
+sealed class CreateTaskDependencyRequest with _$CreateTaskDependencyRequest {
   const factory CreateTaskDependencyRequest({
     required String taskId,
     required String dependsOnTaskId,

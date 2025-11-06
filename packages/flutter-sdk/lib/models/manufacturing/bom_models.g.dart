@@ -6,12 +6,12 @@ part of 'bom_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BomComponentImpl _$$BomComponentImplFromJson(Map<String, dynamic> json) =>
+_BomComponent _$BomComponentFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BomComponentImpl',
+      '_BomComponent',
       json,
       ($checkedConvert) {
-        final val = _$BomComponentImpl(
+        final val = _BomComponent(
           id: $checkedConvert('id', (v) => v as String),
           bomId: $checkedConvert('bomId', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
@@ -37,7 +37,7 @@ _$BomComponentImpl _$$BomComponentImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$BomComponentImplToJson(_$BomComponentImpl instance) =>
+Map<String, dynamic> _$BomComponentToJson(_BomComponent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'bomId': instance.bomId,
@@ -57,13 +57,13 @@ Map<String, dynamic> _$$BomComponentImplToJson(_$BomComponentImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$CreateBomComponentRequestImpl _$$CreateBomComponentRequestImplFromJson(
+_CreateBomComponentRequest _$CreateBomComponentRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateBomComponentRequestImpl',
+      '_CreateBomComponentRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateBomComponentRequestImpl(
+        final val = _CreateBomComponentRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
           unit: $checkedConvert('unit', (v) => v as String),
@@ -84,8 +84,8 @@ _$CreateBomComponentRequestImpl _$$CreateBomComponentRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateBomComponentRequestImplToJson(
-        _$CreateBomComponentRequestImpl instance) =>
+Map<String, dynamic> _$CreateBomComponentRequestToJson(
+        _CreateBomComponentRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -101,13 +101,13 @@ Map<String, dynamic> _$$CreateBomComponentRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdateBomComponentRequestImpl _$$UpdateBomComponentRequestImplFromJson(
+_UpdateBomComponentRequest _$UpdateBomComponentRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateBomComponentRequestImpl',
+      '_UpdateBomComponentRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateBomComponentRequestImpl(
+        final val = _UpdateBomComponentRequest(
           quantity: $checkedConvert('quantity', (v) => (v as num?)?.toDouble()),
           unit: $checkedConvert('unit', (v) => v as String?),
           unitCost: $checkedConvert('unitCost', (v) => (v as num?)?.toDouble()),
@@ -127,8 +127,8 @@ _$UpdateBomComponentRequestImpl _$$UpdateBomComponentRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateBomComponentRequestImplToJson(
-        _$UpdateBomComponentRequestImpl instance) =>
+Map<String, dynamic> _$UpdateBomComponentRequestToJson(
+        _UpdateBomComponentRequest instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'unit': instance.unit,
@@ -143,13 +143,12 @@ Map<String, dynamic> _$$UpdateBomComponentRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$BomExplosionItemImpl _$$BomExplosionItemImplFromJson(
-        Map<String, dynamic> json) =>
+_BomExplosionItem _$BomExplosionItemFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BomExplosionItemImpl',
+      '_BomExplosionItem',
       json,
       ($checkedConvert) {
-        final val = _$BomExplosionItemImpl(
+        final val = _BomExplosionItem(
           itemId: $checkedConvert('itemId', (v) => v as String),
           itemName: $checkedConvert('itemName', (v) => v as String),
           itemCode: $checkedConvert('itemCode', (v) => v as String),
@@ -176,8 +175,7 @@ _$BomExplosionItemImpl _$$BomExplosionItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$BomExplosionItemImplToJson(
-        _$BomExplosionItemImpl instance) =>
+Map<String, dynamic> _$BomExplosionItemToJson(_BomExplosionItem instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'itemName': instance.itemName,
@@ -196,12 +194,11 @@ Map<String, dynamic> _$$BomExplosionItemImplToJson(
       'children': instance.children?.map((e) => e.toJson()).toList(),
     };
 
-_$BomStatsImpl _$$BomStatsImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$BomStatsImpl',
+_BomStats _$BomStatsFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_BomStats',
       json,
       ($checkedConvert) {
-        final val = _$BomStatsImpl(
+        final val = _BomStats(
           bomId: $checkedConvert('bomId', (v) => v as String),
           totalComponents:
               $checkedConvert('totalComponents', (v) => (v as num).toInt()),
@@ -224,8 +221,7 @@ _$BomStatsImpl _$$BomStatsImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$BomStatsImplToJson(_$BomStatsImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$BomStatsToJson(_BomStats instance) => <String, dynamic>{
       'bomId': instance.bomId,
       'totalComponents': instance.totalComponents,
       'totalCost': instance.totalCost,
@@ -235,13 +231,12 @@ Map<String, dynamic> _$$BomStatsImplToJson(_$BomStatsImpl instance) =>
       'costByCategory': instance.costByCategory,
     };
 
-_$BomLeadTimeAnalysisImpl _$$BomLeadTimeAnalysisImplFromJson(
-        Map<String, dynamic> json) =>
+_BomLeadTimeAnalysis _$BomLeadTimeAnalysisFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BomLeadTimeAnalysisImpl',
+      '_BomLeadTimeAnalysis',
       json,
       ($checkedConvert) {
-        final val = _$BomLeadTimeAnalysisImpl(
+        final val = _BomLeadTimeAnalysis(
           bomId: $checkedConvert('bomId', (v) => v as String),
           totalLeadTime:
               $checkedConvert('totalLeadTime', (v) => (v as num).toDouble()),
@@ -260,8 +255,8 @@ _$BomLeadTimeAnalysisImpl _$$BomLeadTimeAnalysisImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$BomLeadTimeAnalysisImplToJson(
-        _$BomLeadTimeAnalysisImpl instance) =>
+Map<String, dynamic> _$BomLeadTimeAnalysisToJson(
+        _BomLeadTimeAnalysis instance) =>
     <String, dynamic>{
       'bomId': instance.bomId,
       'totalLeadTime': instance.totalLeadTime,
@@ -270,13 +265,12 @@ Map<String, dynamic> _$$BomLeadTimeAnalysisImplToJson(
       'criticalPathItems': instance.criticalPathItems,
     };
 
-_$BomLeadTimeItemImpl _$$BomLeadTimeItemImplFromJson(
-        Map<String, dynamic> json) =>
+_BomLeadTimeItem _$BomLeadTimeItemFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BomLeadTimeItemImpl',
+      '_BomLeadTimeItem',
       json,
       ($checkedConvert) {
-        final val = _$BomLeadTimeItemImpl(
+        final val = _BomLeadTimeItem(
           itemId: $checkedConvert('itemId', (v) => v as String),
           itemName: $checkedConvert('itemName', (v) => v as String),
           leadTime: $checkedConvert('leadTime', (v) => (v as num).toDouble()),
@@ -287,8 +281,7 @@ _$BomLeadTimeItemImpl _$$BomLeadTimeItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$BomLeadTimeItemImplToJson(
-        _$BomLeadTimeItemImpl instance) =>
+Map<String, dynamic> _$BomLeadTimeItemToJson(_BomLeadTimeItem instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'itemName': instance.itemName,
@@ -297,13 +290,12 @@ Map<String, dynamic> _$$BomLeadTimeItemImplToJson(
       'level': instance.level,
     };
 
-_$CloneBomRequestImpl _$$CloneBomRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CloneBomRequest _$CloneBomRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CloneBomRequestImpl',
+      '_CloneBomRequest',
       json,
       ($checkedConvert) {
-        final val = _$CloneBomRequestImpl(
+        final val = _CloneBomRequest(
           name: $checkedConvert('name', (v) => v as String),
           version: $checkedConvert('version', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String?),
@@ -316,8 +308,7 @@ _$CloneBomRequestImpl _$$CloneBomRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CloneBomRequestImplToJson(
-        _$CloneBomRequestImpl instance) =>
+Map<String, dynamic> _$CloneBomRequestToJson(_CloneBomRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'version': instance.version,
@@ -326,13 +317,13 @@ Map<String, dynamic> _$$CloneBomRequestImplToJson(
       'updateReferences': instance.updateReferences,
     };
 
-_$CreateBomQuickRequestImpl _$$CreateBomQuickRequestImplFromJson(
+_CreateBomQuickRequest _$CreateBomQuickRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateBomQuickRequestImpl',
+      '_CreateBomQuickRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateBomQuickRequestImpl(
+        final val = _CreateBomQuickRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           version: $checkedConvert('version', (v) => v as String),
@@ -348,8 +339,8 @@ _$CreateBomQuickRequestImpl _$$CreateBomQuickRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateBomQuickRequestImplToJson(
-        _$CreateBomQuickRequestImpl instance) =>
+Map<String, dynamic> _$CreateBomQuickRequestToJson(
+        _CreateBomQuickRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'name': instance.name,
@@ -358,13 +349,12 @@ Map<String, dynamic> _$$CreateBomQuickRequestImplToJson(
       'description': instance.description,
     };
 
-_$BomQuickComponentImpl _$$BomQuickComponentImplFromJson(
-        Map<String, dynamic> json) =>
+_BomQuickComponent _$BomQuickComponentFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$BomQuickComponentImpl',
+      '_BomQuickComponent',
       json,
       ($checkedConvert) {
-        final val = _$BomQuickComponentImpl(
+        final val = _BomQuickComponent(
           itemId: $checkedConvert('itemId', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
           unit: $checkedConvert('unit', (v) => v as String),
@@ -375,8 +365,7 @@ _$BomQuickComponentImpl _$$BomQuickComponentImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$BomQuickComponentImplToJson(
-        _$BomQuickComponentImpl instance) =>
+Map<String, dynamic> _$BomQuickComponentToJson(_BomQuickComponent instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,

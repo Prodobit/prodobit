@@ -6,12 +6,11 @@ part of 'common_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$AddressImpl',
+_Address _$AddressFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Address',
       json,
       ($checkedConvert) {
-        final val = _$AddressImpl(
+        final val = _Address(
           street: $checkedConvert('street', (v) => v as String?),
           city: $checkedConvert('city', (v) => v as String?),
           state: $checkedConvert('state', (v) => v as String?),
@@ -25,8 +24,7 @@ _$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AddressToJson(_Address instance) => <String, dynamic>{
       'street': instance.street,
       'city': instance.city,
       'state': instance.state,
@@ -36,15 +34,15 @@ Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
       'longitude': instance.longitude,
     };
 
-_$ApiResponseImpl<T> _$$ApiResponseImplFromJson<T>(
+_ApiResponse<T> _$ApiResponseFromJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
 ) =>
     $checkedCreate(
-      r'_$ApiResponseImpl',
+      '_ApiResponse',
       json,
       ($checkedConvert) {
-        final val = _$ApiResponseImpl<T>(
+        final val = _ApiResponse<T>(
           success: $checkedConvert('success', (v) => v as bool),
           data: $checkedConvert(
               'data', (v) => _$nullableGenericFromJson(v, fromJsonT)),
@@ -58,8 +56,8 @@ _$ApiResponseImpl<T> _$$ApiResponseImplFromJson<T>(
       },
     );
 
-Map<String, dynamic> _$$ApiResponseImplToJson<T>(
-  _$ApiResponseImpl<T> instance,
+Map<String, dynamic> _$ApiResponseToJson<T>(
+  _ApiResponse<T> instance,
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
@@ -83,12 +81,11 @@ Object? _$nullableGenericToJson<T>(
 ) =>
     input == null ? null : toJson(input);
 
-_$AuditInfoImpl _$$AuditInfoImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$AuditInfoImpl',
+_AuditInfo _$AuditInfoFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_AuditInfo',
       json,
       ($checkedConvert) {
-        final val = _$AuditInfoImpl(
+        final val = _AuditInfo(
           createdAt:
               $checkedConvert('createdAt', (v) => DateTime.parse(v as String)),
           createdBy: $checkedConvert('createdBy', (v) => v as String),
@@ -101,7 +98,7 @@ _$AuditInfoImpl _$$AuditInfoImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$AuditInfoImplToJson(_$AuditInfoImpl instance) =>
+Map<String, dynamic> _$AuditInfoToJson(_AuditInfo instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'createdBy': instance.createdBy,
@@ -110,12 +107,11 @@ Map<String, dynamic> _$$AuditInfoImplToJson(_$AuditInfoImpl instance) =>
       'version': instance.version,
     };
 
-_$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$ContactInfoImpl',
+_ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_ContactInfo',
       json,
       ($checkedConvert) {
-        final val = _$ContactInfoImpl(
+        final val = _ContactInfo(
           email: $checkedConvert('email', (v) => v as String?),
           phone: $checkedConvert('phone', (v) => v as String?),
           mobile: $checkedConvert('mobile', (v) => v as String?),
@@ -126,7 +122,7 @@ _$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$ContactInfoImplToJson(_$ContactInfoImpl instance) =>
+Map<String, dynamic> _$ContactInfoToJson(_ContactInfo instance) =>
     <String, dynamic>{
       'email': instance.email,
       'phone': instance.phone,
@@ -135,13 +131,12 @@ Map<String, dynamic> _$$ContactInfoImplToJson(_$ContactInfoImpl instance) =>
       'website': instance.website,
     };
 
-_$FileUploadResponseImpl _$$FileUploadResponseImplFromJson(
-        Map<String, dynamic> json) =>
+_FileUploadResponse _$FileUploadResponseFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$FileUploadResponseImpl',
+      '_FileUploadResponse',
       json,
       ($checkedConvert) {
-        final val = _$FileUploadResponseImpl(
+        final val = _FileUploadResponse(
           id: $checkedConvert('id', (v) => v as String),
           filename: $checkedConvert('filename', (v) => v as String),
           originalName: $checkedConvert('originalName', (v) => v as String),
@@ -155,8 +150,7 @@ _$FileUploadResponseImpl _$$FileUploadResponseImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$FileUploadResponseImplToJson(
-        _$FileUploadResponseImpl instance) =>
+Map<String, dynamic> _$FileUploadResponseToJson(_FileUploadResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'filename': instance.filename,
@@ -167,11 +161,11 @@ Map<String, dynamic> _$$FileUploadResponseImplToJson(
       'metadata': instance.metadata,
     };
 
-_$MoneyImpl _$$MoneyImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$MoneyImpl',
+_Money _$MoneyFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Money',
       json,
       ($checkedConvert) {
-        final val = _$MoneyImpl(
+        final val = _Money(
           amount: $checkedConvert('amount', (v) => (v as num).toDouble()),
           currency: $checkedConvert('currency', (v) => v as String? ?? 'USD'),
         );
@@ -179,21 +173,20 @@ _$MoneyImpl _$$MoneyImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$MoneyImplToJson(_$MoneyImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$MoneyToJson(_Money instance) => <String, dynamic>{
       'amount': instance.amount,
       'currency': instance.currency,
     };
 
-_$PaginatedResponseImpl<T> _$$PaginatedResponseImplFromJson<T>(
+_PaginatedResponse<T> _$PaginatedResponseFromJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
 ) =>
     $checkedCreate(
-      r'_$PaginatedResponseImpl',
+      '_PaginatedResponse',
       json,
       ($checkedConvert) {
-        final val = _$PaginatedResponseImpl<T>(
+        final val = _PaginatedResponse<T>(
           data: $checkedConvert(
               'data', (v) => (v as List<dynamic>).map(fromJsonT).toList()),
           pagination: $checkedConvert('pagination',
@@ -203,8 +196,8 @@ _$PaginatedResponseImpl<T> _$$PaginatedResponseImplFromJson<T>(
       },
     );
 
-Map<String, dynamic> _$$PaginatedResponseImplToJson<T>(
-  _$PaginatedResponseImpl<T> instance,
+Map<String, dynamic> _$PaginatedResponseToJson<T>(
+  _PaginatedResponse<T> instance,
   Object? Function(T value) toJsonT,
 ) =>
     <String, dynamic>{
@@ -212,12 +205,12 @@ Map<String, dynamic> _$$PaginatedResponseImplToJson<T>(
       'pagination': instance.pagination.toJson(),
     };
 
-_$PaginationMetaImpl _$$PaginationMetaImplFromJson(Map<String, dynamic> json) =>
+_PaginationMeta _$PaginationMetaFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PaginationMetaImpl',
+      '_PaginationMeta',
       json,
       ($checkedConvert) {
-        final val = _$PaginationMetaImpl(
+        final val = _PaginationMeta(
           total: $checkedConvert('total', (v) => (v as num).toInt()),
           page: $checkedConvert('page', (v) => (v as num).toInt()),
           perPage: $checkedConvert('perPage', (v) => (v as num).toInt()),
@@ -229,8 +222,7 @@ _$PaginationMetaImpl _$$PaginationMetaImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$PaginationMetaImplToJson(
-        _$PaginationMetaImpl instance) =>
+Map<String, dynamic> _$PaginationMetaToJson(_PaginationMeta instance) =>
     <String, dynamic>{
       'total': instance.total,
       'page': instance.page,
@@ -240,12 +232,11 @@ Map<String, dynamic> _$$PaginationMetaImplToJson(
       'hasPrev': instance.hasPrev,
     };
 
-_$QueryParamsImpl _$$QueryParamsImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$QueryParamsImpl',
+_QueryParams _$QueryParamsFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_QueryParams',
       json,
       ($checkedConvert) {
-        final val = _$QueryParamsImpl(
+        final val = _QueryParams(
           page: $checkedConvert('page', (v) => (v as num?)?.toInt() ?? 1),
           limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 20),
           search: $checkedConvert('search', (v) => v as String?),
@@ -261,7 +252,7 @@ _$QueryParamsImpl _$$QueryParamsImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$QueryParamsImplToJson(_$QueryParamsImpl instance) =>
+Map<String, dynamic> _$QueryParamsToJson(_QueryParams instance) =>
     <String, dynamic>{
       'page': instance.page,
       'limit': instance.limit,

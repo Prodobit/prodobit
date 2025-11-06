@@ -6,13 +6,12 @@ part of 'supplier_quotation_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SupplierQuotationImpl _$$SupplierQuotationImplFromJson(
-        Map<String, dynamic> json) =>
+_SupplierQuotation _$SupplierQuotationFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SupplierQuotationImpl',
+      '_SupplierQuotation',
       json,
       ($checkedConvert) {
-        final val = _$SupplierQuotationImpl(
+        final val = _SupplierQuotation(
           id: $checkedConvert('id', (v) => v as String),
           quotationNumber:
               $checkedConvert('quotationNumber', (v) => v as String),
@@ -58,8 +57,7 @@ _$SupplierQuotationImpl _$$SupplierQuotationImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$SupplierQuotationImplToJson(
-        _$SupplierQuotationImpl instance) =>
+Map<String, dynamic> _$SupplierQuotationToJson(_SupplierQuotation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'quotationNumber': instance.quotationNumber,
@@ -90,13 +88,13 @@ Map<String, dynamic> _$$SupplierQuotationImplToJson(
       'metadata': instance.metadata,
     };
 
-_$SupplierQuotationLineItemImpl _$$SupplierQuotationLineItemImplFromJson(
+_SupplierQuotationLineItem _$SupplierQuotationLineItemFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SupplierQuotationLineItemImpl',
+      '_SupplierQuotationLineItem',
       json,
       ($checkedConvert) {
-        final val = _$SupplierQuotationLineItemImpl(
+        final val = _SupplierQuotationLineItem(
           id: $checkedConvert('id', (v) => v as String),
           supplierQuotationId:
               $checkedConvert('supplierQuotationId', (v) => v as String),
@@ -130,8 +128,8 @@ _$SupplierQuotationLineItemImpl _$$SupplierQuotationLineItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$SupplierQuotationLineItemImplToJson(
-        _$SupplierQuotationLineItemImpl instance) =>
+Map<String, dynamic> _$SupplierQuotationLineItemToJson(
+        _SupplierQuotationLineItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'supplierQuotationId': instance.supplierQuotationId,
@@ -156,50 +154,44 @@ Map<String, dynamic> _$$SupplierQuotationLineItemImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateSupplierQuotationRequestImpl
-    _$$CreateSupplierQuotationRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreateSupplierQuotationRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreateSupplierQuotationRequestImpl(
-              supplierId: $checkedConvert('supplierId', (v) => v as String),
-              quotationDate: $checkedConvert(
-                  'quotationDate', (v) => DateTime.parse(v as String)),
-              validUntil: $checkedConvert(
-                  'validUntil', (v) => DateTime.parse(v as String)),
-              rfqId: $checkedConvert('rfqId', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              termsAndConditions:
-                  $checkedConvert('termsAndConditions', (v) => v as String?),
-              paymentTerms:
-                  $checkedConvert('paymentTerms', (v) => v as String?),
-              deliveryTerms:
-                  $checkedConvert('deliveryTerms', (v) => v as String?),
-              supplierReference:
-                  $checkedConvert('supplierReference', (v) => v as String?),
-              contactPerson:
-                  $checkedConvert('contactPerson', (v) => v as String?),
-              contactEmail:
-                  $checkedConvert('contactEmail', (v) => v as String?),
-              contactPhone:
-                  $checkedConvert('contactPhone', (v) => v as String?),
-              lineItems: $checkedConvert(
-                  'lineItems',
-                  (v) => (v as List<dynamic>?)
-                      ?.map((e) =>
-                          CreateSupplierQuotationLineItemRequest.fromJson(
-                              e as Map<String, dynamic>))
-                      .toList()),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreateSupplierQuotationRequest _$CreateSupplierQuotationRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreateSupplierQuotationRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreateSupplierQuotationRequest(
+          supplierId: $checkedConvert('supplierId', (v) => v as String),
+          quotationDate: $checkedConvert(
+              'quotationDate', (v) => DateTime.parse(v as String)),
+          validUntil:
+              $checkedConvert('validUntil', (v) => DateTime.parse(v as String)),
+          rfqId: $checkedConvert('rfqId', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          termsAndConditions:
+              $checkedConvert('termsAndConditions', (v) => v as String?),
+          paymentTerms: $checkedConvert('paymentTerms', (v) => v as String?),
+          deliveryTerms: $checkedConvert('deliveryTerms', (v) => v as String?),
+          supplierReference:
+              $checkedConvert('supplierReference', (v) => v as String?),
+          contactPerson: $checkedConvert('contactPerson', (v) => v as String?),
+          contactEmail: $checkedConvert('contactEmail', (v) => v as String?),
+          contactPhone: $checkedConvert('contactPhone', (v) => v as String?),
+          lineItems: $checkedConvert(
+              'lineItems',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => CreateSupplierQuotationLineItemRequest.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreateSupplierQuotationRequestImplToJson(
-        _$CreateSupplierQuotationRequestImpl instance) =>
+Map<String, dynamic> _$CreateSupplierQuotationRequestToJson(
+        _CreateSupplierQuotationRequest instance) =>
     <String, dynamic>{
       'supplierId': instance.supplierId,
       'quotationDate': instance.quotationDate.toIso8601String(),
@@ -217,14 +209,14 @@ Map<String, dynamic> _$$CreateSupplierQuotationRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateSupplierQuotationLineItemRequestImpl
-    _$$CreateSupplierQuotationLineItemRequestImplFromJson(
+_CreateSupplierQuotationLineItemRequest
+    _$CreateSupplierQuotationLineItemRequestFromJson(
             Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$CreateSupplierQuotationLineItemRequestImpl',
+          '_CreateSupplierQuotationLineItemRequest',
           json,
           ($checkedConvert) {
-            final val = _$CreateSupplierQuotationLineItemRequestImpl(
+            final val = _CreateSupplierQuotationLineItemRequest(
               itemId: $checkedConvert('itemId', (v) => v as String),
               quantity:
                   $checkedConvert('quantity', (v) => (v as num).toDouble()),
@@ -254,8 +246,8 @@ _$CreateSupplierQuotationLineItemRequestImpl
           },
         );
 
-Map<String, dynamic> _$$CreateSupplierQuotationLineItemRequestImplToJson(
-        _$CreateSupplierQuotationLineItemRequestImpl instance) =>
+Map<String, dynamic> _$CreateSupplierQuotationLineItemRequestToJson(
+        _CreateSupplierQuotationLineItemRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -274,41 +266,36 @@ Map<String, dynamic> _$$CreateSupplierQuotationLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdateSupplierQuotationRequestImpl
-    _$$UpdateSupplierQuotationRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$UpdateSupplierQuotationRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$UpdateSupplierQuotationRequestImpl(
-              quotationDate: $checkedConvert('quotationDate',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              validUntil: $checkedConvert('validUntil',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              termsAndConditions:
-                  $checkedConvert('termsAndConditions', (v) => v as String?),
-              paymentTerms:
-                  $checkedConvert('paymentTerms', (v) => v as String?),
-              deliveryTerms:
-                  $checkedConvert('deliveryTerms', (v) => v as String?),
-              supplierReference:
-                  $checkedConvert('supplierReference', (v) => v as String?),
-              contactPerson:
-                  $checkedConvert('contactPerson', (v) => v as String?),
-              contactEmail:
-                  $checkedConvert('contactEmail', (v) => v as String?),
-              contactPhone:
-                  $checkedConvert('contactPhone', (v) => v as String?),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_UpdateSupplierQuotationRequest _$UpdateSupplierQuotationRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_UpdateSupplierQuotationRequest',
+      json,
+      ($checkedConvert) {
+        final val = _UpdateSupplierQuotationRequest(
+          quotationDate: $checkedConvert('quotationDate',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          validUntil: $checkedConvert('validUntil',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          termsAndConditions:
+              $checkedConvert('termsAndConditions', (v) => v as String?),
+          paymentTerms: $checkedConvert('paymentTerms', (v) => v as String?),
+          deliveryTerms: $checkedConvert('deliveryTerms', (v) => v as String?),
+          supplierReference:
+              $checkedConvert('supplierReference', (v) => v as String?),
+          contactPerson: $checkedConvert('contactPerson', (v) => v as String?),
+          contactEmail: $checkedConvert('contactEmail', (v) => v as String?),
+          contactPhone: $checkedConvert('contactPhone', (v) => v as String?),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$UpdateSupplierQuotationRequestImplToJson(
-        _$UpdateSupplierQuotationRequestImpl instance) =>
+Map<String, dynamic> _$UpdateSupplierQuotationRequestToJson(
+        _UpdateSupplierQuotationRequest instance) =>
     <String, dynamic>{
       'quotationDate': instance.quotationDate?.toIso8601String(),
       'validUntil': instance.validUntil?.toIso8601String(),
@@ -323,13 +310,13 @@ Map<String, dynamic> _$$UpdateSupplierQuotationRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$SupplierQuotationFiltersImpl _$$SupplierQuotationFiltersImplFromJson(
+_SupplierQuotationFilters _$SupplierQuotationFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SupplierQuotationFiltersImpl',
+      '_SupplierQuotationFilters',
       json,
       ($checkedConvert) {
-        final val = _$SupplierQuotationFiltersImpl(
+        final val = _SupplierQuotationFilters(
           supplierId: $checkedConvert('supplierId', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           rfqId: $checkedConvert('rfqId', (v) => v as String?),
@@ -356,8 +343,8 @@ _$SupplierQuotationFiltersImpl _$$SupplierQuotationFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$SupplierQuotationFiltersImplToJson(
-        _$SupplierQuotationFiltersImpl instance) =>
+Map<String, dynamic> _$SupplierQuotationFiltersToJson(
+        _SupplierQuotationFilters instance) =>
     <String, dynamic>{
       'supplierId': instance.supplierId,
       'status': instance.status,
@@ -375,13 +362,12 @@ Map<String, dynamic> _$$SupplierQuotationFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$QuotationComparisonImpl _$$QuotationComparisonImplFromJson(
-        Map<String, dynamic> json) =>
+_QuotationComparison _$QuotationComparisonFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$QuotationComparisonImpl',
+      '_QuotationComparison',
       json,
       ($checkedConvert) {
-        final val = _$QuotationComparisonImpl(
+        final val = _QuotationComparison(
           itemId: $checkedConvert('itemId', (v) => v as String),
           itemName: $checkedConvert('itemName', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
@@ -401,8 +387,8 @@ _$QuotationComparisonImpl _$$QuotationComparisonImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$QuotationComparisonImplToJson(
-        _$QuotationComparisonImpl instance) =>
+Map<String, dynamic> _$QuotationComparisonToJson(
+        _QuotationComparison instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'itemName': instance.itemName,
@@ -413,13 +399,13 @@ Map<String, dynamic> _$$QuotationComparisonImplToJson(
       'analysis': instance.analysis,
     };
 
-_$QuotationComparisonEntryImpl _$$QuotationComparisonEntryImplFromJson(
+_QuotationComparisonEntry _$QuotationComparisonEntryFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$QuotationComparisonEntryImpl',
+      '_QuotationComparisonEntry',
       json,
       ($checkedConvert) {
-        final val = _$QuotationComparisonEntryImpl(
+        final val = _QuotationComparisonEntry(
           quotationId: $checkedConvert('quotationId', (v) => v as String),
           supplierId: $checkedConvert('supplierId', (v) => v as String),
           supplierName: $checkedConvert('supplierName', (v) => v as String),
@@ -440,8 +426,8 @@ _$QuotationComparisonEntryImpl _$$QuotationComparisonEntryImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$QuotationComparisonEntryImplToJson(
-        _$QuotationComparisonEntryImpl instance) =>
+Map<String, dynamic> _$QuotationComparisonEntryToJson(
+        _QuotationComparisonEntry instance) =>
     <String, dynamic>{
       'quotationId': instance.quotationId,
       'supplierId': instance.supplierId,

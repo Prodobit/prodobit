@@ -5,7 +5,7 @@ part 'sales_order_models.g.dart';
 
 /// Sales order line item model
 @freezed
-class SalesOrderLineItem with _$SalesOrderLineItem {
+sealed class SalesOrderLineItem with _$SalesOrderLineItem {
   const factory SalesOrderLineItem({
     required String id,
     required String salesOrderId,
@@ -38,7 +38,7 @@ class SalesOrderLineItem with _$SalesOrderLineItem {
 
 /// Create sales order line item request
 @freezed
-class CreateSalesOrderLineItemRequest with _$CreateSalesOrderLineItemRequest {
+sealed class CreateSalesOrderLineItemRequest with _$CreateSalesOrderLineItemRequest {
   const factory CreateSalesOrderLineItemRequest({
     required String itemId,
     required double quantity,
@@ -60,7 +60,7 @@ class CreateSalesOrderLineItemRequest with _$CreateSalesOrderLineItemRequest {
 
 /// Update sales order line item request
 @freezed
-class UpdateSalesOrderLineItemRequest with _$UpdateSalesOrderLineItemRequest {
+sealed class UpdateSalesOrderLineItemRequest with _$UpdateSalesOrderLineItemRequest {
   const factory UpdateSalesOrderLineItemRequest({
     double? quantity,
     String? unit,
@@ -82,7 +82,7 @@ class UpdateSalesOrderLineItemRequest with _$UpdateSalesOrderLineItemRequest {
 
 /// Update sales order status request
 @freezed
-class UpdateSalesOrderStatusRequest with _$UpdateSalesOrderStatusRequest {
+sealed class UpdateSalesOrderStatusRequest with _$UpdateSalesOrderStatusRequest {
   const factory UpdateSalesOrderStatusRequest({
     required String status,
     String? notes,
@@ -95,7 +95,7 @@ class UpdateSalesOrderStatusRequest with _$UpdateSalesOrderStatusRequest {
 
 /// Sales order history entry
 @freezed
-class SalesOrderHistory with _$SalesOrderHistory {
+sealed class SalesOrderHistory with _$SalesOrderHistory {
   const factory SalesOrderHistory({
     required String id,
     required String salesOrderId,
@@ -115,7 +115,7 @@ class SalesOrderHistory with _$SalesOrderHistory {
 
 /// Sales order filters
 @freezed
-class SalesOrderFilters with _$SalesOrderFilters {
+sealed class SalesOrderFilters with _$SalesOrderFilters {
   const factory SalesOrderFilters({
     String? customerId,
     String? status,

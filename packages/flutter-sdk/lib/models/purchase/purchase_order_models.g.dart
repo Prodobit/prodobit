@@ -6,12 +6,12 @@ part of 'purchase_order_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PurchaseOrderImpl _$$PurchaseOrderImplFromJson(Map<String, dynamic> json) =>
+_PurchaseOrder _$PurchaseOrderFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PurchaseOrderImpl',
+      '_PurchaseOrder',
       json,
       ($checkedConvert) {
-        final val = _$PurchaseOrderImpl(
+        final val = _PurchaseOrder(
           id: $checkedConvert('id', (v) => v as String),
           orderNumber: $checkedConvert('orderNumber', (v) => v as String),
           supplierId: $checkedConvert('supplierId', (v) => v as String),
@@ -56,7 +56,7 @@ _$PurchaseOrderImpl _$$PurchaseOrderImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$PurchaseOrderImplToJson(_$PurchaseOrderImpl instance) =>
+Map<String, dynamic> _$PurchaseOrderToJson(_PurchaseOrder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderNumber': instance.orderNumber,
@@ -85,13 +85,13 @@ Map<String, dynamic> _$$PurchaseOrderImplToJson(_$PurchaseOrderImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$PurchaseOrderLineItemImpl _$$PurchaseOrderLineItemImplFromJson(
+_PurchaseOrderLineItem _$PurchaseOrderLineItemFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PurchaseOrderLineItemImpl',
+      '_PurchaseOrderLineItem',
       json,
       ($checkedConvert) {
-        final val = _$PurchaseOrderLineItemImpl(
+        final val = _PurchaseOrderLineItem(
           id: $checkedConvert('id', (v) => v as String),
           purchaseOrderId:
               $checkedConvert('purchaseOrderId', (v) => v as String),
@@ -126,8 +126,8 @@ _$PurchaseOrderLineItemImpl _$$PurchaseOrderLineItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PurchaseOrderLineItemImplToJson(
-        _$PurchaseOrderLineItemImpl instance) =>
+Map<String, dynamic> _$PurchaseOrderLineItemToJson(
+        _PurchaseOrderLineItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'purchaseOrderId': instance.purchaseOrderId,
@@ -153,13 +153,13 @@ Map<String, dynamic> _$$PurchaseOrderLineItemImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreatePurchaseOrderRequestImpl _$$CreatePurchaseOrderRequestImplFromJson(
+_CreatePurchaseOrderRequest _$CreatePurchaseOrderRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreatePurchaseOrderRequestImpl',
+      '_CreatePurchaseOrderRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreatePurchaseOrderRequestImpl(
+        final val = _CreatePurchaseOrderRequest(
           supplierId: $checkedConvert('supplierId', (v) => v as String),
           orderDate:
               $checkedConvert('orderDate', (v) => DateTime.parse(v as String)),
@@ -186,8 +186,8 @@ _$CreatePurchaseOrderRequestImpl _$$CreatePurchaseOrderRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreatePurchaseOrderRequestImplToJson(
-        _$CreatePurchaseOrderRequestImpl instance) =>
+Map<String, dynamic> _$CreatePurchaseOrderRequestToJson(
+        _CreatePurchaseOrderRequest instance) =>
     <String, dynamic>{
       'supplierId': instance.supplierId,
       'orderDate': instance.orderDate.toIso8601String(),
@@ -201,14 +201,13 @@ Map<String, dynamic> _$$CreatePurchaseOrderRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreatePurchaseOrderLineItemRequestImpl
-    _$$CreatePurchaseOrderLineItemRequestImplFromJson(
-            Map<String, dynamic> json) =>
+_CreatePurchaseOrderLineItemRequest
+    _$CreatePurchaseOrderLineItemRequestFromJson(Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$CreatePurchaseOrderLineItemRequestImpl',
+          '_CreatePurchaseOrderLineItemRequest',
           json,
           ($checkedConvert) {
-            final val = _$CreatePurchaseOrderLineItemRequestImpl(
+            final val = _CreatePurchaseOrderLineItemRequest(
               itemId: $checkedConvert('itemId', (v) => v as String),
               quantity:
                   $checkedConvert('quantity', (v) => (v as num).toDouble()),
@@ -233,8 +232,8 @@ _$CreatePurchaseOrderLineItemRequestImpl
           },
         );
 
-Map<String, dynamic> _$$CreatePurchaseOrderLineItemRequestImplToJson(
-        _$CreatePurchaseOrderLineItemRequestImpl instance) =>
+Map<String, dynamic> _$CreatePurchaseOrderLineItemRequestToJson(
+        _CreatePurchaseOrderLineItemRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -250,13 +249,13 @@ Map<String, dynamic> _$$CreatePurchaseOrderLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdatePurchaseOrderRequestImpl _$$UpdatePurchaseOrderRequestImplFromJson(
+_UpdatePurchaseOrderRequest _$UpdatePurchaseOrderRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdatePurchaseOrderRequestImpl',
+      '_UpdatePurchaseOrderRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdatePurchaseOrderRequestImpl(
+        final val = _UpdatePurchaseOrderRequest(
           orderDate: $checkedConvert('orderDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
           deliveryDate: $checkedConvert('deliveryDate',
@@ -276,8 +275,8 @@ _$UpdatePurchaseOrderRequestImpl _$$UpdatePurchaseOrderRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdatePurchaseOrderRequestImplToJson(
-        _$UpdatePurchaseOrderRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePurchaseOrderRequestToJson(
+        _UpdatePurchaseOrderRequest instance) =>
     <String, dynamic>{
       'orderDate': instance.orderDate?.toIso8601String(),
       'deliveryDate': instance.deliveryDate?.toIso8601String(),
@@ -289,14 +288,13 @@ Map<String, dynamic> _$$UpdatePurchaseOrderRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdatePurchaseOrderLineItemRequestImpl
-    _$$UpdatePurchaseOrderLineItemRequestImplFromJson(
-            Map<String, dynamic> json) =>
+_UpdatePurchaseOrderLineItemRequest
+    _$UpdatePurchaseOrderLineItemRequestFromJson(Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$UpdatePurchaseOrderLineItemRequestImpl',
+          '_UpdatePurchaseOrderLineItemRequest',
           json,
           ($checkedConvert) {
-            final val = _$UpdatePurchaseOrderLineItemRequestImpl(
+            final val = _UpdatePurchaseOrderLineItemRequest(
               quantity:
                   $checkedConvert('quantity', (v) => (v as num?)?.toDouble()),
               unit: $checkedConvert('unit', (v) => v as String?),
@@ -322,8 +320,8 @@ _$UpdatePurchaseOrderLineItemRequestImpl
           },
         );
 
-Map<String, dynamic> _$$UpdatePurchaseOrderLineItemRequestImplToJson(
-        _$UpdatePurchaseOrderLineItemRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePurchaseOrderLineItemRequestToJson(
+        _UpdatePurchaseOrderLineItemRequest instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'unit': instance.unit,
@@ -340,13 +338,13 @@ Map<String, dynamic> _$$UpdatePurchaseOrderLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$PurchaseOrderFiltersImpl _$$PurchaseOrderFiltersImplFromJson(
+_PurchaseOrderFilters _$PurchaseOrderFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PurchaseOrderFiltersImpl',
+      '_PurchaseOrderFilters',
       json,
       ($checkedConvert) {
-        final val = _$PurchaseOrderFiltersImpl(
+        final val = _PurchaseOrderFilters(
           supplierId: $checkedConvert('supplierId', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           orderNumber: $checkedConvert('orderNumber', (v) => v as String?),
@@ -374,8 +372,8 @@ _$PurchaseOrderFiltersImpl _$$PurchaseOrderFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PurchaseOrderFiltersImplToJson(
-        _$PurchaseOrderFiltersImpl instance) =>
+Map<String, dynamic> _$PurchaseOrderFiltersToJson(
+        _PurchaseOrderFilters instance) =>
     <String, dynamic>{
       'supplierId': instance.supplierId,
       'status': instance.status,

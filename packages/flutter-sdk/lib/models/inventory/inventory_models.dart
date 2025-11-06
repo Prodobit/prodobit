@@ -6,7 +6,7 @@ part 'inventory_models.g.dart';
 
 /// Item model
 @freezed
-class Item with _$Item {
+sealed class Item with _$Item {
   const factory Item({
     required String id,
     required String name,
@@ -31,7 +31,7 @@ class Item with _$Item {
 
 /// Item creation/update request
 @freezed
-class ItemRequest with _$ItemRequest {
+sealed class ItemRequest with _$ItemRequest {
   const factory ItemRequest({
     required String name,
     required String code,
@@ -55,7 +55,7 @@ class ItemRequest with _$ItemRequest {
 
 /// Location model
 @freezed
-class Location with _$Location {
+sealed class Location with _$Location {
   const factory Location({
     required String id,
     required String name,
@@ -81,7 +81,7 @@ class Location with _$Location {
 
 /// Stock adjustment request
 @freezed
-class StockAdjustmentRequest with _$StockAdjustmentRequest {
+sealed class StockAdjustmentRequest with _$StockAdjustmentRequest {
   const factory StockAdjustmentRequest({
     required String itemId,
     required String locationId,
@@ -97,7 +97,7 @@ class StockAdjustmentRequest with _$StockAdjustmentRequest {
 
 /// Stock entry model
 @freezed
-class StockEntry with _$StockEntry {
+sealed class StockEntry with _$StockEntry {
   const factory StockEntry({
     required String id,
     required String itemId,
@@ -118,7 +118,7 @@ class StockEntry with _$StockEntry {
 
 /// Stock movement model
 @freezed
-class StockMovement with _$StockMovement {
+sealed class StockMovement with _$StockMovement {
   const factory StockMovement({
     required String id,
     required String itemId,
@@ -139,7 +139,7 @@ class StockMovement with _$StockMovement {
 
 /// Stock transfer request
 @freezed
-class StockTransferRequest with _$StockTransferRequest {
+sealed class StockTransferRequest with _$StockTransferRequest {
   const factory StockTransferRequest({
     required String itemId,
     required String fromLocationId,

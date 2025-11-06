@@ -6,13 +6,12 @@ part of 'enhanced_party_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreatePersonRequestImpl _$$CreatePersonRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreatePersonRequest _$CreatePersonRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreatePersonRequestImpl',
+      '_CreatePersonRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreatePersonRequestImpl(
+        final val = _CreatePersonRequest(
           firstName: $checkedConvert('firstName', (v) => v as String),
           lastName: $checkedConvert('lastName', (v) => v as String),
           middleName: $checkedConvert('middleName', (v) => v as String?),
@@ -34,8 +33,8 @@ _$CreatePersonRequestImpl _$$CreatePersonRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreatePersonRequestImplToJson(
-        _$CreatePersonRequestImpl instance) =>
+Map<String, dynamic> _$CreatePersonRequestToJson(
+        _CreatePersonRequest instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -52,13 +51,13 @@ Map<String, dynamic> _$$CreatePersonRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$CreateOrganizationRequestImpl _$$CreateOrganizationRequestImplFromJson(
+_CreateOrganizationRequest _$CreateOrganizationRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateOrganizationRequestImpl',
+      '_CreateOrganizationRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateOrganizationRequestImpl(
+        final val = _CreateOrganizationRequest(
           name: $checkedConvert('name', (v) => v as String),
           legalName: $checkedConvert('legalName', (v) => v as String?),
           shortName: $checkedConvert('shortName', (v) => v as String?),
@@ -80,8 +79,8 @@ _$CreateOrganizationRequestImpl _$$CreateOrganizationRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateOrganizationRequestImplToJson(
-        _$CreateOrganizationRequestImpl instance) =>
+Map<String, dynamic> _$CreateOrganizationRequestToJson(
+        _CreateOrganizationRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'legalName': instance.legalName,
@@ -97,13 +96,13 @@ Map<String, dynamic> _$$CreateOrganizationRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$CreatePersonWithRolesRequestImpl _$$CreatePersonWithRolesRequestImplFromJson(
+_CreatePersonWithRolesRequest _$CreatePersonWithRolesRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreatePersonWithRolesRequestImpl',
+      '_CreatePersonWithRolesRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreatePersonWithRolesRequestImpl(
+        final val = _CreatePersonWithRolesRequest(
           firstName: $checkedConvert('firstName', (v) => v as String),
           lastName: $checkedConvert('lastName', (v) => v as String),
           roles: $checkedConvert('roles',
@@ -118,8 +117,8 @@ _$CreatePersonWithRolesRequestImpl _$$CreatePersonWithRolesRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreatePersonWithRolesRequestImplToJson(
-        _$CreatePersonWithRolesRequestImpl instance) =>
+Map<String, dynamic> _$CreatePersonWithRolesRequestToJson(
+        _CreatePersonWithRolesRequest instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -130,13 +129,13 @@ Map<String, dynamic> _$$CreatePersonWithRolesRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$CreatePersonCustomerRequestImpl _$$CreatePersonCustomerRequestImplFromJson(
+_CreatePersonCustomerRequest _$CreatePersonCustomerRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreatePersonCustomerRequestImpl',
+      '_CreatePersonCustomerRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreatePersonCustomerRequestImpl(
+        final val = _CreatePersonCustomerRequest(
           firstName: $checkedConvert('firstName', (v) => v as String),
           lastName: $checkedConvert('lastName', (v) => v as String),
           middleName: $checkedConvert('middleName', (v) => v as String?),
@@ -150,8 +149,8 @@ _$CreatePersonCustomerRequestImpl _$$CreatePersonCustomerRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreatePersonCustomerRequestImplToJson(
-        _$CreatePersonCustomerRequestImpl instance) =>
+Map<String, dynamic> _$CreatePersonCustomerRequestToJson(
+        _CreatePersonCustomerRequest instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -162,13 +161,13 @@ Map<String, dynamic> _$$CreatePersonCustomerRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$CreatePersonSupplierRequestImpl _$$CreatePersonSupplierRequestImplFromJson(
+_CreatePersonSupplierRequest _$CreatePersonSupplierRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreatePersonSupplierRequestImpl',
+      '_CreatePersonSupplierRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreatePersonSupplierRequestImpl(
+        final val = _CreatePersonSupplierRequest(
           firstName: $checkedConvert('firstName', (v) => v as String),
           lastName: $checkedConvert('lastName', (v) => v as String),
           middleName: $checkedConvert('middleName', (v) => v as String?),
@@ -184,8 +183,8 @@ _$CreatePersonSupplierRequestImpl _$$CreatePersonSupplierRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreatePersonSupplierRequestImplToJson(
-        _$CreatePersonSupplierRequestImpl instance) =>
+Map<String, dynamic> _$CreatePersonSupplierRequestToJson(
+        _CreatePersonSupplierRequest instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -198,33 +197,32 @@ Map<String, dynamic> _$$CreatePersonSupplierRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$CreateOrganizationCustomerRequestImpl
-    _$$CreateOrganizationCustomerRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreateOrganizationCustomerRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreateOrganizationCustomerRequestImpl(
-              name: $checkedConvert('name', (v) => v as String),
-              legalName: $checkedConvert('legalName', (v) => v as String?),
-              email: $checkedConvert('email', (v) => v as String?),
-              phone: $checkedConvert('phone', (v) => v as String?),
-              website: $checkedConvert('website', (v) => v as String?),
-              taxId: $checkedConvert('taxId', (v) => v as String?),
-              registrationNumber:
-                  $checkedConvert('registrationNumber', (v) => v as String?),
-              industry: $checkedConvert('industry', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              attributes: $checkedConvert(
-                  'attributes', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreateOrganizationCustomerRequest _$CreateOrganizationCustomerRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreateOrganizationCustomerRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreateOrganizationCustomerRequest(
+          name: $checkedConvert('name', (v) => v as String),
+          legalName: $checkedConvert('legalName', (v) => v as String?),
+          email: $checkedConvert('email', (v) => v as String?),
+          phone: $checkedConvert('phone', (v) => v as String?),
+          website: $checkedConvert('website', (v) => v as String?),
+          taxId: $checkedConvert('taxId', (v) => v as String?),
+          registrationNumber:
+              $checkedConvert('registrationNumber', (v) => v as String?),
+          industry: $checkedConvert('industry', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          attributes:
+              $checkedConvert('attributes', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreateOrganizationCustomerRequestImplToJson(
-        _$CreateOrganizationCustomerRequestImpl instance) =>
+Map<String, dynamic> _$CreateOrganizationCustomerRequestToJson(
+        _CreateOrganizationCustomerRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'legalName': instance.legalName,
@@ -238,35 +236,33 @@ Map<String, dynamic> _$$CreateOrganizationCustomerRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$CreateOrganizationSupplierRequestImpl
-    _$$CreateOrganizationSupplierRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreateOrganizationSupplierRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreateOrganizationSupplierRequestImpl(
-              name: $checkedConvert('name', (v) => v as String),
-              legalName: $checkedConvert('legalName', (v) => v as String?),
-              email: $checkedConvert('email', (v) => v as String?),
-              phone: $checkedConvert('phone', (v) => v as String?),
-              website: $checkedConvert('website', (v) => v as String?),
-              taxId: $checkedConvert('taxId', (v) => v as String?),
-              registrationNumber:
-                  $checkedConvert('registrationNumber', (v) => v as String?),
-              industry: $checkedConvert('industry', (v) => v as String?),
-              paymentTerms:
-                  $checkedConvert('paymentTerms', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              attributes: $checkedConvert(
-                  'attributes', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreateOrganizationSupplierRequest _$CreateOrganizationSupplierRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreateOrganizationSupplierRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreateOrganizationSupplierRequest(
+          name: $checkedConvert('name', (v) => v as String),
+          legalName: $checkedConvert('legalName', (v) => v as String?),
+          email: $checkedConvert('email', (v) => v as String?),
+          phone: $checkedConvert('phone', (v) => v as String?),
+          website: $checkedConvert('website', (v) => v as String?),
+          taxId: $checkedConvert('taxId', (v) => v as String?),
+          registrationNumber:
+              $checkedConvert('registrationNumber', (v) => v as String?),
+          industry: $checkedConvert('industry', (v) => v as String?),
+          paymentTerms: $checkedConvert('paymentTerms', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          attributes:
+              $checkedConvert('attributes', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreateOrganizationSupplierRequestImplToJson(
-        _$CreateOrganizationSupplierRequestImpl instance) =>
+Map<String, dynamic> _$CreateOrganizationSupplierRequestToJson(
+        _CreateOrganizationSupplierRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'legalName': instance.legalName,
@@ -281,13 +277,12 @@ Map<String, dynamic> _$$CreateOrganizationSupplierRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$PartySearchFiltersImpl _$$PartySearchFiltersImplFromJson(
-        Map<String, dynamic> json) =>
+_PartySearchFilters _$PartySearchFiltersFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PartySearchFiltersImpl',
+      '_PartySearchFilters',
       json,
       ($checkedConvert) {
-        final val = _$PartySearchFiltersImpl(
+        final val = _PartySearchFilters(
           name: $checkedConvert('name', (v) => v as String?),
           email: $checkedConvert('email', (v) => v as String?),
           phone: $checkedConvert('phone', (v) => v as String?),
@@ -311,8 +306,7 @@ _$PartySearchFiltersImpl _$$PartySearchFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PartySearchFiltersImplToJson(
-        _$PartySearchFiltersImpl instance) =>
+Map<String, dynamic> _$PartySearchFiltersToJson(_PartySearchFilters instance) =>
     <String, dynamic>{
       'name': instance.name,
       'email': instance.email,

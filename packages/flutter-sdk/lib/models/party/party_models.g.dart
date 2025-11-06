@@ -6,13 +6,12 @@ part of 'party_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreatePartyRequestImpl _$$CreatePartyRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreatePartyRequest _$CreatePartyRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreatePartyRequestImpl',
+      '_CreatePartyRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreatePartyRequestImpl(
+        final val = _CreatePartyRequest(
           name: $checkedConvert('name', (v) => v as String),
           type: $checkedConvert('type', (v) => v as String),
           code: $checkedConvert('code', (v) => v as String?),
@@ -36,8 +35,7 @@ _$CreatePartyRequestImpl _$$CreatePartyRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreatePartyRequestImplToJson(
-        _$CreatePartyRequestImpl instance) =>
+Map<String, dynamic> _$CreatePartyRequestToJson(_CreatePartyRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'type': instance.type,
@@ -50,11 +48,11 @@ Map<String, dynamic> _$$CreatePartyRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$PartyImpl _$$PartyImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$PartyImpl',
+_Party _$PartyFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Party',
       json,
       ($checkedConvert) {
-        final val = _$PartyImpl(
+        final val = _Party(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           type: $checkedConvert('type', (v) => v as String),
@@ -86,8 +84,7 @@ _$PartyImpl _$$PartyImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$PartyImplToJson(_$PartyImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PartyToJson(_Party instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'type': instance.type,
@@ -104,13 +101,12 @@ Map<String, dynamic> _$$PartyImplToJson(_$PartyImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$UpdatePartyRequestImpl _$$UpdatePartyRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UpdatePartyRequest _$UpdatePartyRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdatePartyRequestImpl',
+      '_UpdatePartyRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdatePartyRequestImpl(
+        final val = _UpdatePartyRequest(
           name: $checkedConvert('name', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           isActive: $checkedConvert('isActive', (v) => v as bool?),
@@ -123,8 +119,7 @@ _$UpdatePartyRequestImpl _$$UpdatePartyRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdatePartyRequestImplToJson(
-        _$UpdatePartyRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePartyRequestToJson(_UpdatePartyRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,

@@ -5,7 +5,7 @@ part 'enhanced_party_models.g.dart';
 
 /// Create person request
 @freezed
-class CreatePersonRequest with _$CreatePersonRequest {
+sealed class CreatePersonRequest with _$CreatePersonRequest {
   const factory CreatePersonRequest({
     required String firstName,
     required String lastName,
@@ -28,7 +28,7 @@ class CreatePersonRequest with _$CreatePersonRequest {
 
 /// Create organization request
 @freezed
-class CreateOrganizationRequest with _$CreateOrganizationRequest {
+sealed class CreateOrganizationRequest with _$CreateOrganizationRequest {
   const factory CreateOrganizationRequest({
     required String name,
     String? legalName,
@@ -50,7 +50,7 @@ class CreateOrganizationRequest with _$CreateOrganizationRequest {
 
 /// Create person with roles request
 @freezed
-class CreatePersonWithRolesRequest with _$CreatePersonWithRolesRequest {
+sealed class CreatePersonWithRolesRequest with _$CreatePersonWithRolesRequest {
   const factory CreatePersonWithRolesRequest({
     required String firstName,
     required String lastName,
@@ -67,7 +67,7 @@ class CreatePersonWithRolesRequest with _$CreatePersonWithRolesRequest {
 
 /// Create person customer request
 @freezed
-class CreatePersonCustomerRequest with _$CreatePersonCustomerRequest {
+sealed class CreatePersonCustomerRequest with _$CreatePersonCustomerRequest {
   const factory CreatePersonCustomerRequest({
     required String firstName,
     required String lastName,
@@ -84,7 +84,7 @@ class CreatePersonCustomerRequest with _$CreatePersonCustomerRequest {
 
 /// Create person supplier request
 @freezed
-class CreatePersonSupplierRequest with _$CreatePersonSupplierRequest {
+sealed class CreatePersonSupplierRequest with _$CreatePersonSupplierRequest {
   const factory CreatePersonSupplierRequest({
     required String firstName,
     required String lastName,
@@ -103,7 +103,7 @@ class CreatePersonSupplierRequest with _$CreatePersonSupplierRequest {
 
 /// Create organization customer request
 @freezed
-class CreateOrganizationCustomerRequest with _$CreateOrganizationCustomerRequest {
+sealed class CreateOrganizationCustomerRequest with _$CreateOrganizationCustomerRequest {
   const factory CreateOrganizationCustomerRequest({
     required String name,
     String? legalName,
@@ -123,7 +123,7 @@ class CreateOrganizationCustomerRequest with _$CreateOrganizationCustomerRequest
 
 /// Create organization supplier request
 @freezed
-class CreateOrganizationSupplierRequest with _$CreateOrganizationSupplierRequest {
+sealed class CreateOrganizationSupplierRequest with _$CreateOrganizationSupplierRequest {
   const factory CreateOrganizationSupplierRequest({
     required String name,
     String? legalName,
@@ -144,7 +144,7 @@ class CreateOrganizationSupplierRequest with _$CreateOrganizationSupplierRequest
 
 /// Party search filters
 @freezed
-class PartySearchFilters with _$PartySearchFilters {
+sealed class PartySearchFilters with _$PartySearchFilters {
   const factory PartySearchFilters({
     String? name,
     String? email,

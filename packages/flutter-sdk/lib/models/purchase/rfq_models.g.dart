@@ -6,11 +6,11 @@ part of 'rfq_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RFQImpl _$$RFQImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$RFQImpl',
+_RFQ _$RFQFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_RFQ',
       json,
       ($checkedConvert) {
-        final val = _$RFQImpl(
+        final val = _RFQ(
           id: $checkedConvert('id', (v) => v as String),
           rfqNumber: $checkedConvert('rfqNumber', (v) => v as String),
           title: $checkedConvert('title', (v) => v as String),
@@ -52,7 +52,7 @@ _$RFQImpl _$$RFQImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$RFQImplToJson(_$RFQImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$RFQToJson(_RFQ instance) => <String, dynamic>{
       'id': instance.id,
       'rfqNumber': instance.rfqNumber,
       'title': instance.title,
@@ -79,12 +79,11 @@ Map<String, dynamic> _$$RFQImplToJson(_$RFQImpl instance) => <String, dynamic>{
       'metadata': instance.metadata,
     };
 
-_$RFQLineItemImpl _$$RFQLineItemImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$RFQLineItemImpl',
+_RFQLineItem _$RFQLineItemFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_RFQLineItem',
       json,
       ($checkedConvert) {
-        final val = _$RFQLineItemImpl(
+        final val = _RFQLineItem(
           id: $checkedConvert('id', (v) => v as String),
           rfqId: $checkedConvert('rfqId', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
@@ -111,7 +110,7 @@ _$RFQLineItemImpl _$$RFQLineItemImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$RFQLineItemImplToJson(_$RFQLineItemImpl instance) =>
+Map<String, dynamic> _$RFQLineItemToJson(_RFQLineItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'rfqId': instance.rfqId,
@@ -130,12 +129,11 @@ Map<String, dynamic> _$$RFQLineItemImplToJson(_$RFQLineItemImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$RFQSupplierImpl _$$RFQSupplierImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$RFQSupplierImpl',
+_RFQSupplier _$RFQSupplierFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_RFQSupplier',
       json,
       ($checkedConvert) {
-        final val = _$RFQSupplierImpl(
+        final val = _RFQSupplier(
           id: $checkedConvert('id', (v) => v as String),
           rfqId: $checkedConvert('rfqId', (v) => v as String),
           supplierId: $checkedConvert('supplierId', (v) => v as String),
@@ -161,7 +159,7 @@ _$RFQSupplierImpl _$$RFQSupplierImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$RFQSupplierImplToJson(_$RFQSupplierImpl instance) =>
+Map<String, dynamic> _$RFQSupplierToJson(_RFQSupplier instance) =>
     <String, dynamic>{
       'id': instance.id,
       'rfqId': instance.rfqId,
@@ -180,13 +178,12 @@ Map<String, dynamic> _$$RFQSupplierImplToJson(_$RFQSupplierImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$CreateRFQRequestImpl _$$CreateRFQRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreateRFQRequest _$CreateRFQRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateRFQRequestImpl',
+      '_CreateRFQRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateRFQRequestImpl(
+        final val = _CreateRFQRequest(
           title: $checkedConvert('title', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
           responseDeadline: $checkedConvert(
@@ -216,8 +213,7 @@ _$CreateRFQRequestImpl _$$CreateRFQRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateRFQRequestImplToJson(
-        _$CreateRFQRequestImpl instance) =>
+Map<String, dynamic> _$CreateRFQRequestToJson(_CreateRFQRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
@@ -234,13 +230,13 @@ Map<String, dynamic> _$$CreateRFQRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateRFQLineItemRequestImpl _$$CreateRFQLineItemRequestImplFromJson(
+_CreateRFQLineItemRequest _$CreateRFQLineItemRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateRFQLineItemRequestImpl',
+      '_CreateRFQLineItemRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateRFQLineItemRequestImpl(
+        final val = _CreateRFQLineItemRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
           unit: $checkedConvert('unit', (v) => v as String),
@@ -263,8 +259,8 @@ _$CreateRFQLineItemRequestImpl _$$CreateRFQLineItemRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateRFQLineItemRequestImplToJson(
-        _$CreateRFQLineItemRequestImpl instance) =>
+Map<String, dynamic> _$CreateRFQLineItemRequestToJson(
+        _CreateRFQLineItemRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -280,13 +276,12 @@ Map<String, dynamic> _$$CreateRFQLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdateRFQRequestImpl _$$UpdateRFQRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UpdateRFQRequest _$UpdateRFQRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateRFQRequestImpl',
+      '_UpdateRFQRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateRFQRequestImpl(
+        final val = _UpdateRFQRequest(
           title: $checkedConvert('title', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           responseDeadline: $checkedConvert('responseDeadline',
@@ -308,8 +303,7 @@ _$UpdateRFQRequestImpl _$$UpdateRFQRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateRFQRequestImplToJson(
-        _$UpdateRFQRequestImpl instance) =>
+Map<String, dynamic> _$UpdateRFQRequestToJson(_UpdateRFQRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
@@ -324,12 +318,11 @@ Map<String, dynamic> _$$UpdateRFQRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$RFQFiltersImpl _$$RFQFiltersImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$RFQFiltersImpl',
+_RFQFilters _$RFQFiltersFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_RFQFilters',
       json,
       ($checkedConvert) {
-        final val = _$RFQFiltersImpl(
+        final val = _RFQFilters(
           status: $checkedConvert('status', (v) => v as String?),
           createdBy: $checkedConvert('createdBy', (v) => v as String?),
           department: $checkedConvert('department', (v) => v as String?),
@@ -355,7 +348,7 @@ _$RFQFiltersImpl _$$RFQFiltersImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$RFQFiltersImplToJson(_$RFQFiltersImpl instance) =>
+Map<String, dynamic> _$RFQFiltersToJson(_RFQFilters instance) =>
     <String, dynamic>{
       'status': instance.status,
       'createdBy': instance.createdBy,
@@ -375,13 +368,13 @@ Map<String, dynamic> _$$RFQFiltersImplToJson(_$RFQFiltersImpl instance) =>
       'sortOrder': instance.sortOrder,
     };
 
-_$AddRFQSupplierRequestImpl _$$AddRFQSupplierRequestImplFromJson(
+_AddRFQSupplierRequest _$AddRFQSupplierRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AddRFQSupplierRequestImpl',
+      '_AddRFQSupplierRequest',
       json,
       ($checkedConvert) {
-        final val = _$AddRFQSupplierRequestImpl(
+        final val = _AddRFQSupplierRequest(
           supplierId: $checkedConvert('supplierId', (v) => v as String),
           contactPerson: $checkedConvert('contactPerson', (v) => v as String?),
           contactEmail: $checkedConvert('contactEmail', (v) => v as String?),
@@ -392,8 +385,8 @@ _$AddRFQSupplierRequestImpl _$$AddRFQSupplierRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$AddRFQSupplierRequestImplToJson(
-        _$AddRFQSupplierRequestImpl instance) =>
+Map<String, dynamic> _$AddRFQSupplierRequestToJson(
+        _AddRFQSupplierRequest instance) =>
     <String, dynamic>{
       'supplierId': instance.supplierId,
       'contactPerson': instance.contactPerson,

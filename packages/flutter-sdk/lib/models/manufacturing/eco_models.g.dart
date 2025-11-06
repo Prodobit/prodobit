@@ -6,11 +6,11 @@ part of 'eco_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EcoImpl _$$EcoImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$EcoImpl',
+_Eco _$EcoFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Eco',
       json,
       ($checkedConvert) {
-        final val = _$EcoImpl(
+        final val = _Eco(
           id: $checkedConvert('id', (v) => v as String),
           ecoNumber: $checkedConvert('ecoNumber', (v) => v as String),
           title: $checkedConvert('title', (v) => v as String),
@@ -60,7 +60,7 @@ _$EcoImpl _$$EcoImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$EcoImplToJson(_$EcoImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$EcoToJson(_Eco instance) => <String, dynamic>{
       'id': instance.id,
       'ecoNumber': instance.ecoNumber,
       'title': instance.title,
@@ -93,13 +93,12 @@ Map<String, dynamic> _$$EcoImplToJson(_$EcoImpl instance) => <String, dynamic>{
       'metadata': instance.metadata,
     };
 
-_$CreateEcoRequestImpl _$$CreateEcoRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreateEcoRequest _$CreateEcoRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateEcoRequestImpl',
+      '_CreateEcoRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateEcoRequestImpl(
+        final val = _CreateEcoRequest(
           ecoNumber: $checkedConvert('ecoNumber', (v) => v as String),
           title: $checkedConvert('title', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
@@ -123,8 +122,7 @@ _$CreateEcoRequestImpl _$$CreateEcoRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateEcoRequestImplToJson(
-        _$CreateEcoRequestImpl instance) =>
+Map<String, dynamic> _$CreateEcoRequestToJson(_CreateEcoRequest instance) =>
     <String, dynamic>{
       'ecoNumber': instance.ecoNumber,
       'title': instance.title,
@@ -141,13 +139,12 @@ Map<String, dynamic> _$$CreateEcoRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateEcoRequestImpl _$$UpdateEcoRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UpdateEcoRequest _$UpdateEcoRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateEcoRequestImpl',
+      '_UpdateEcoRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateEcoRequestImpl(
+        final val = _UpdateEcoRequest(
           title: $checkedConvert('title', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           type: $checkedConvert('type', (v) => v as String?),
@@ -170,8 +167,7 @@ _$UpdateEcoRequestImpl _$$UpdateEcoRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateEcoRequestImplToJson(
-        _$UpdateEcoRequestImpl instance) =>
+Map<String, dynamic> _$UpdateEcoRequestToJson(_UpdateEcoRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
       'description': instance.description,
@@ -187,13 +183,12 @@ Map<String, dynamic> _$$UpdateEcoRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$ApproveEcoRequestImpl _$$ApproveEcoRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_ApproveEcoRequest _$ApproveEcoRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ApproveEcoRequestImpl',
+      '_ApproveEcoRequest',
       json,
       ($checkedConvert) {
-        final val = _$ApproveEcoRequestImpl(
+        final val = _ApproveEcoRequest(
           notes: $checkedConvert('notes', (v) => v as String?),
           targetImplementationDate: $checkedConvert('targetImplementationDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -202,21 +197,19 @@ _$ApproveEcoRequestImpl _$$ApproveEcoRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$ApproveEcoRequestImplToJson(
-        _$ApproveEcoRequestImpl instance) =>
+Map<String, dynamic> _$ApproveEcoRequestToJson(_ApproveEcoRequest instance) =>
     <String, dynamic>{
       'notes': instance.notes,
       'targetImplementationDate':
           instance.targetImplementationDate?.toIso8601String(),
     };
 
-_$RejectEcoRequestImpl _$$RejectEcoRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_RejectEcoRequest _$RejectEcoRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$RejectEcoRequestImpl',
+      '_RejectEcoRequest',
       json,
       ($checkedConvert) {
-        final val = _$RejectEcoRequestImpl(
+        final val = _RejectEcoRequest(
           reason: $checkedConvert('reason', (v) => v as String),
           notes: $checkedConvert('notes', (v) => v as String?),
         );
@@ -224,19 +217,17 @@ _$RejectEcoRequestImpl _$$RejectEcoRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$RejectEcoRequestImplToJson(
-        _$RejectEcoRequestImpl instance) =>
+Map<String, dynamic> _$RejectEcoRequestToJson(_RejectEcoRequest instance) =>
     <String, dynamic>{
       'reason': instance.reason,
       'notes': instance.notes,
     };
 
-_$EcoFiltersImpl _$$EcoFiltersImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$EcoFiltersImpl',
+_EcoFilters _$EcoFiltersFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_EcoFilters',
       json,
       ($checkedConvert) {
-        final val = _$EcoFiltersImpl(
+        final val = _EcoFilters(
           type: $checkedConvert('type', (v) => v as String?),
           priority: $checkedConvert('priority', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
@@ -265,7 +256,7 @@ _$EcoFiltersImpl _$$EcoFiltersImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$EcoFiltersImplToJson(_$EcoFiltersImpl instance) =>
+Map<String, dynamic> _$EcoFiltersToJson(_EcoFilters instance) =>
     <String, dynamic>{
       'type': instance.type,
       'priority': instance.priority,

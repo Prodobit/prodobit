@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,151 +9,90 @@ part of 'contact_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ContactMechanism _$ContactMechanismFromJson(Map<String, dynamic> json) {
-  return _ContactMechanism.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ContactMechanism {
-  String get id => throw _privateConstructorUsedError;
-  String get partyId => throw _privateConstructorUsedError;
-  String get type =>
-      throw _privateConstructorUsedError; // 'email', 'phone', 'mobile', 'fax', 'website', 'social'
-  String get value => throw _privateConstructorUsedError;
-  bool get isPrimary => throw _privateConstructorUsedError;
-  bool get isActive => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get extension => throw _privateConstructorUsedError;
-  String? get countryCode => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  DateTime? get validFrom => throw _privateConstructorUsedError;
-  DateTime? get validTo => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get partyId;
+  String get type; // 'email', 'phone', 'mobile', 'fax', 'website', 'social'
+  String get value;
+  bool get isPrimary;
+  bool get isActive;
+  String? get label;
+  String? get extension;
+  String? get countryCode;
+  String? get notes;
+  DateTime? get validFrom;
+  DateTime? get validTo;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ContactMechanismCopyWith<ContactMechanism> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ContactMechanismCopyWith<$Res> {
-  factory $ContactMechanismCopyWith(
-          ContactMechanism value, $Res Function(ContactMechanism) then) =
-      _$ContactMechanismCopyWithImpl<$Res, ContactMechanism>;
-  @useResult
-  $Res call(
-      {String id,
-      String partyId,
-      String type,
-      String value,
-      bool isPrimary,
-      bool isActive,
-      String? label,
-      String? extension,
-      String? countryCode,
-      String? notes,
-      DateTime? validFrom,
-      DateTime? validTo,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$ContactMechanismCopyWithImpl<$Res, $Val extends ContactMechanism>
-    implements $ContactMechanismCopyWith<$Res> {
-  _$ContactMechanismCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ContactMechanism
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ContactMechanismCopyWith<ContactMechanism> get copyWith =>
+      _$ContactMechanismCopyWithImpl<ContactMechanism>(
+          this as ContactMechanism, _$identity);
+
+  /// Serializes this ContactMechanism to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? partyId = null,
-    Object? type = null,
-    Object? value = null,
-    Object? isPrimary = null,
-    Object? isActive = null,
-    Object? label = freezed,
-    Object? extension = freezed,
-    Object? countryCode = freezed,
-    Object? notes = freezed,
-    Object? validFrom = freezed,
-    Object? validTo = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      partyId: null == partyId
-          ? _value.partyId
-          : partyId // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-      isPrimary: null == isPrimary
-          ? _value.isPrimary
-          : isPrimary // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      label: freezed == label
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      extension: freezed == extension
-          ? _value.extension
-          : extension // ignore: cast_nullable_to_non_nullable
-              as String?,
-      countryCode: freezed == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validFrom: freezed == validFrom
-          ? _value.validFrom
-          : validFrom // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validTo: freezed == validTo
-          ? _value.validTo
-          : validTo // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ContactMechanism &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.partyId, partyId) || other.partyId == partyId) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.isPrimary, isPrimary) ||
+                other.isPrimary == isPrimary) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.extension, extension) ||
+                other.extension == extension) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.validFrom, validFrom) ||
+                other.validFrom == validFrom) &&
+            (identical(other.validTo, validTo) || other.validTo == validTo) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      partyId,
+      type,
+      value,
+      isPrimary,
+      isActive,
+      label,
+      extension,
+      countryCode,
+      notes,
+      validFrom,
+      validTo,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'ContactMechanism(id: $id, partyId: $partyId, type: $type, value: $value, isPrimary: $isPrimary, isActive: $isActive, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$ContactMechanismImplCopyWith<$Res>
-    implements $ContactMechanismCopyWith<$Res> {
-  factory _$$ContactMechanismImplCopyWith(_$ContactMechanismImpl value,
-          $Res Function(_$ContactMechanismImpl) then) =
-      __$$ContactMechanismImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ContactMechanismCopyWith<$Res> {
+  factory $ContactMechanismCopyWith(
+          ContactMechanism value, $Res Function(ContactMechanism) _then) =
+      _$ContactMechanismCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -172,13 +111,15 @@ abstract class _$$ContactMechanismImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ContactMechanismImplCopyWithImpl<$Res>
-    extends _$ContactMechanismCopyWithImpl<$Res, _$ContactMechanismImpl>
-    implements _$$ContactMechanismImplCopyWith<$Res> {
-  __$$ContactMechanismImplCopyWithImpl(_$ContactMechanismImpl _value,
-      $Res Function(_$ContactMechanismImpl) _then)
-      : super(_value, _then);
+class _$ContactMechanismCopyWithImpl<$Res>
+    implements $ContactMechanismCopyWith<$Res> {
+  _$ContactMechanismCopyWithImpl(this._self, this._then);
 
+  final ContactMechanism _self;
+  final $Res Function(ContactMechanism) _then;
+
+  /// Create a copy of ContactMechanism
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -196,67 +137,301 @@ class __$$ContactMechanismImplCopyWithImpl<$Res>
     Object? validTo = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$ContactMechanismImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       partyId: null == partyId
-          ? _value.partyId
+          ? _self.partyId
           : partyId // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
       isPrimary: null == isPrimary
-          ? _value.isPrimary
+          ? _self.isPrimary
           : isPrimary // ignore: cast_nullable_to_non_nullable
               as bool,
       isActive: null == isActive
-          ? _value.isActive
+          ? _self.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
       label: freezed == label
-          ? _value.label
+          ? _self.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
       extension: freezed == extension
-          ? _value.extension
+          ? _self.extension
           : extension // ignore: cast_nullable_to_non_nullable
               as String?,
       countryCode: freezed == countryCode
-          ? _value.countryCode
+          ? _self.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       validFrom: freezed == validFrom
-          ? _value.validFrom
+          ? _self.validFrom
           : validFrom // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validTo: freezed == validTo
-          ? _value.validTo
+          ? _self.validTo
           : validTo // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [ContactMechanism].
+extension ContactMechanismPatterns on ContactMechanism {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ContactMechanism value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ContactMechanism() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ContactMechanism value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContactMechanism():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ContactMechanism value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContactMechanism() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String partyId,
+            String type,
+            String value,
+            bool isPrimary,
+            bool isActive,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ContactMechanism() when $default != null:
+        return $default(
+            _that.id,
+            _that.partyId,
+            _that.type,
+            _that.value,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String partyId,
+            String type,
+            String value,
+            bool isPrimary,
+            bool isActive,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContactMechanism():
+        return $default(
+            _that.id,
+            _that.partyId,
+            _that.type,
+            _that.value,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String partyId,
+            String type,
+            String value,
+            bool isPrimary,
+            bool isActive,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContactMechanism() when $default != null:
+        return $default(
+            _that.id,
+            _that.partyId,
+            _that.type,
+            _that.value,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$ContactMechanismImpl implements _ContactMechanism {
-  const _$ContactMechanismImpl(
+class _ContactMechanism implements ContactMechanism {
+  const _ContactMechanism(
       {required this.id,
       required this.partyId,
       required this.type,
@@ -271,9 +446,8 @@ class _$ContactMechanismImpl implements _ContactMechanism {
       this.validTo,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$ContactMechanismImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ContactMechanismImplFromJson(json);
+  factory _ContactMechanism.fromJson(Map<String, dynamic> json) =>
+      _$ContactMechanismFromJson(json);
 
   @override
   final String id;
@@ -310,16 +484,26 @@ class _$ContactMechanismImpl implements _ContactMechanism {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of ContactMechanism
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ContactMechanism(id: $id, partyId: $partyId, type: $type, value: $value, isPrimary: $isPrimary, isActive: $isActive, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ContactMechanismCopyWith<_ContactMechanism> get copyWith =>
+      __$ContactMechanismCopyWithImpl<_ContactMechanism>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ContactMechanismToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ContactMechanismImpl &&
+            other is _ContactMechanism &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.partyId, partyId) || other.partyId == partyId) &&
             (identical(other.type, type) || other.type == type) &&
@@ -340,7 +524,7 @@ class _$ContactMechanismImpl implements _ContactMechanism {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -358,396 +542,114 @@ class _$ContactMechanismImpl implements _ContactMechanism {
       validTo,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ContactMechanismImplCopyWith<_$ContactMechanismImpl> get copyWith =>
-      __$$ContactMechanismImplCopyWithImpl<_$ContactMechanismImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ContactMechanismImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ContactMechanism implements ContactMechanism {
-  const factory _ContactMechanism(
-      {required final String id,
-      required final String partyId,
-      required final String type,
-      required final String value,
-      required final bool isPrimary,
-      required final bool isActive,
-      final String? label,
-      final String? extension,
-      final String? countryCode,
-      final String? notes,
-      final DateTime? validFrom,
-      final DateTime? validTo,
-      final Map<String, dynamic>? metadata}) = _$ContactMechanismImpl;
-
-  factory _ContactMechanism.fromJson(Map<String, dynamic> json) =
-      _$ContactMechanismImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get partyId;
-  @override
-  String get type;
-  @override // 'email', 'phone', 'mobile', 'fax', 'website', 'social'
-  String get value;
-  @override
-  bool get isPrimary;
-  @override
-  bool get isActive;
-  @override
-  String? get label;
-  @override
-  String? get extension;
-  @override
-  String? get countryCode;
-  @override
-  String? get notes;
-  @override
-  DateTime? get validFrom;
-  @override
-  DateTime? get validTo;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$ContactMechanismImplCopyWith<_$ContactMechanismImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-PartyAddress _$PartyAddressFromJson(Map<String, dynamic> json) {
-  return _PartyAddress.fromJson(json);
-}
-
-/// @nodoc
-mixin _$PartyAddress {
-  String get id => throw _privateConstructorUsedError;
-  String get partyId => throw _privateConstructorUsedError;
-  String get type =>
-      throw _privateConstructorUsedError; // 'billing', 'shipping', 'home', 'work', 'warehouse', 'office'
-  String get addressLine1 => throw _privateConstructorUsedError;
-  bool get isPrimary => throw _privateConstructorUsedError;
-  bool get isActive => throw _privateConstructorUsedError;
-  String? get addressLine2 => throw _privateConstructorUsedError;
-  String? get addressLine3 => throw _privateConstructorUsedError;
-  String? get city => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
-  String? get postalCode => throw _privateConstructorUsedError;
-  String? get country => throw _privateConstructorUsedError;
-  String? get region => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  double? get latitude => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  DateTime? get validFrom => throw _privateConstructorUsedError;
-  DateTime? get validTo => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PartyAddressCopyWith<PartyAddress> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PartyAddressCopyWith<$Res> {
-  factory $PartyAddressCopyWith(
-          PartyAddress value, $Res Function(PartyAddress) then) =
-      _$PartyAddressCopyWithImpl<$Res, PartyAddress>;
-  @useResult
-  $Res call(
-      {String id,
-      String partyId,
-      String type,
-      String addressLine1,
-      bool isPrimary,
-      bool isActive,
-      String? addressLine2,
-      String? addressLine3,
-      String? city,
-      String? state,
-      String? postalCode,
-      String? country,
-      String? region,
-      String? label,
-      String? notes,
-      double? latitude,
-      double? longitude,
-      DateTime? validFrom,
-      DateTime? validTo,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$PartyAddressCopyWithImpl<$Res, $Val extends PartyAddress>
-    implements $PartyAddressCopyWith<$Res> {
-  _$PartyAddressCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? partyId = null,
-    Object? type = null,
-    Object? addressLine1 = null,
-    Object? isPrimary = null,
-    Object? isActive = null,
-    Object? addressLine2 = freezed,
-    Object? addressLine3 = freezed,
-    Object? city = freezed,
-    Object? state = freezed,
-    Object? postalCode = freezed,
-    Object? country = freezed,
-    Object? region = freezed,
-    Object? label = freezed,
-    Object? notes = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? validFrom = freezed,
-    Object? validTo = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      partyId: null == partyId
-          ? _value.partyId
-          : partyId // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      addressLine1: null == addressLine1
-          ? _value.addressLine1
-          : addressLine1 // ignore: cast_nullable_to_non_nullable
-              as String,
-      isPrimary: null == isPrimary
-          ? _value.isPrimary
-          : isPrimary // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isActive: null == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool,
-      addressLine2: freezed == addressLine2
-          ? _value.addressLine2
-          : addressLine2 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addressLine3: freezed == addressLine3
-          ? _value.addressLine3
-          : addressLine3 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postalCode: freezed == postalCode
-          ? _value.postalCode
-          : postalCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String?,
-      label: freezed == label
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      validFrom: freezed == validFrom
-          ? _value.validFrom
-          : validFrom // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validTo: freezed == validTo
-          ? _value.validTo
-          : validTo // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'ContactMechanism(id: $id, partyId: $partyId, type: $type, value: $value, isPrimary: $isPrimary, isActive: $isActive, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$PartyAddressImplCopyWith<$Res>
-    implements $PartyAddressCopyWith<$Res> {
-  factory _$$PartyAddressImplCopyWith(
-          _$PartyAddressImpl value, $Res Function(_$PartyAddressImpl) then) =
-      __$$PartyAddressImplCopyWithImpl<$Res>;
+abstract mixin class _$ContactMechanismCopyWith<$Res>
+    implements $ContactMechanismCopyWith<$Res> {
+  factory _$ContactMechanismCopyWith(
+          _ContactMechanism value, $Res Function(_ContactMechanism) _then) =
+      __$ContactMechanismCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       String partyId,
       String type,
-      String addressLine1,
+      String value,
       bool isPrimary,
       bool isActive,
-      String? addressLine2,
-      String? addressLine3,
-      String? city,
-      String? state,
-      String? postalCode,
-      String? country,
-      String? region,
       String? label,
+      String? extension,
+      String? countryCode,
       String? notes,
-      double? latitude,
-      double? longitude,
       DateTime? validFrom,
       DateTime? validTo,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$PartyAddressImplCopyWithImpl<$Res>
-    extends _$PartyAddressCopyWithImpl<$Res, _$PartyAddressImpl>
-    implements _$$PartyAddressImplCopyWith<$Res> {
-  __$$PartyAddressImplCopyWithImpl(
-      _$PartyAddressImpl _value, $Res Function(_$PartyAddressImpl) _then)
-      : super(_value, _then);
+class __$ContactMechanismCopyWithImpl<$Res>
+    implements _$ContactMechanismCopyWith<$Res> {
+  __$ContactMechanismCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _ContactMechanism _self;
+  final $Res Function(_ContactMechanism) _then;
+
+  /// Create a copy of ContactMechanism
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? partyId = null,
     Object? type = null,
-    Object? addressLine1 = null,
+    Object? value = null,
     Object? isPrimary = null,
     Object? isActive = null,
-    Object? addressLine2 = freezed,
-    Object? addressLine3 = freezed,
-    Object? city = freezed,
-    Object? state = freezed,
-    Object? postalCode = freezed,
-    Object? country = freezed,
-    Object? region = freezed,
     Object? label = freezed,
+    Object? extension = freezed,
+    Object? countryCode = freezed,
     Object? notes = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
     Object? validFrom = freezed,
     Object? validTo = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$PartyAddressImpl(
+    return _then(_ContactMechanism(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       partyId: null == partyId
-          ? _value.partyId
+          ? _self.partyId
           : partyId // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      addressLine1: null == addressLine1
-          ? _value.addressLine1
-          : addressLine1 // ignore: cast_nullable_to_non_nullable
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String,
       isPrimary: null == isPrimary
-          ? _value.isPrimary
+          ? _self.isPrimary
           : isPrimary // ignore: cast_nullable_to_non_nullable
               as bool,
       isActive: null == isActive
-          ? _value.isActive
+          ? _self.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      addressLine2: freezed == addressLine2
-          ? _value.addressLine2
-          : addressLine2 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addressLine3: freezed == addressLine3
-          ? _value.addressLine3
-          : addressLine3 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postalCode: freezed == postalCode
-          ? _value.postalCode
-          : postalCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String?,
       label: freezed == label
-          ? _value.label
+          ? _self.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
+      extension: freezed == extension
+          ? _self.extension
+          : extension // ignore: cast_nullable_to_non_nullable
+              as String?,
+      countryCode: freezed == countryCode
+          ? _self.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
       validFrom: freezed == validFrom
-          ? _value.validFrom
+          ? _self.validFrom
           : validFrom // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validTo: freezed == validTo
-          ? _value.validTo
+          ? _self.validTo
           : validTo // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -755,9 +657,535 @@ class __$$PartyAddressImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$PartyAddress {
+  String get id;
+  String get partyId;
+  String
+      get type; // 'billing', 'shipping', 'home', 'work', 'warehouse', 'office'
+  String get addressLine1;
+  bool get isPrimary;
+  bool get isActive;
+  String? get addressLine2;
+  String? get addressLine3;
+  String? get city;
+  String? get state;
+  String? get postalCode;
+  String? get country;
+  String? get region;
+  String? get label;
+  String? get notes;
+  double? get latitude;
+  double? get longitude;
+  DateTime? get validFrom;
+  DateTime? get validTo;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of PartyAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PartyAddressCopyWith<PartyAddress> get copyWith =>
+      _$PartyAddressCopyWithImpl<PartyAddress>(
+          this as PartyAddress, _$identity);
+
+  /// Serializes this PartyAddress to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PartyAddress &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.partyId, partyId) || other.partyId == partyId) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.addressLine1, addressLine1) ||
+                other.addressLine1 == addressLine1) &&
+            (identical(other.isPrimary, isPrimary) ||
+                other.isPrimary == isPrimary) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.addressLine2, addressLine2) ||
+                other.addressLine2 == addressLine2) &&
+            (identical(other.addressLine3, addressLine3) ||
+                other.addressLine3 == addressLine3) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.postalCode, postalCode) ||
+                other.postalCode == postalCode) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.region, region) || other.region == region) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.validFrom, validFrom) ||
+                other.validFrom == validFrom) &&
+            (identical(other.validTo, validTo) || other.validTo == validTo) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        partyId,
+        type,
+        addressLine1,
+        isPrimary,
+        isActive,
+        addressLine2,
+        addressLine3,
+        city,
+        state,
+        postalCode,
+        country,
+        region,
+        label,
+        notes,
+        latitude,
+        longitude,
+        validFrom,
+        validTo,
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'PartyAddress(id: $id, partyId: $partyId, type: $type, addressLine1: $addressLine1, isPrimary: $isPrimary, isActive: $isActive, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $PartyAddressCopyWith<$Res> {
+  factory $PartyAddressCopyWith(
+          PartyAddress value, $Res Function(PartyAddress) _then) =
+      _$PartyAddressCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String partyId,
+      String type,
+      String addressLine1,
+      bool isPrimary,
+      bool isActive,
+      String? addressLine2,
+      String? addressLine3,
+      String? city,
+      String? state,
+      String? postalCode,
+      String? country,
+      String? region,
+      String? label,
+      String? notes,
+      double? latitude,
+      double? longitude,
+      DateTime? validFrom,
+      DateTime? validTo,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$PartyAddressCopyWithImpl<$Res> implements $PartyAddressCopyWith<$Res> {
+  _$PartyAddressCopyWithImpl(this._self, this._then);
+
+  final PartyAddress _self;
+  final $Res Function(PartyAddress) _then;
+
+  /// Create a copy of PartyAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? partyId = null,
+    Object? type = null,
+    Object? addressLine1 = null,
+    Object? isPrimary = null,
+    Object? isActive = null,
+    Object? addressLine2 = freezed,
+    Object? addressLine3 = freezed,
+    Object? city = freezed,
+    Object? state = freezed,
+    Object? postalCode = freezed,
+    Object? country = freezed,
+    Object? region = freezed,
+    Object? label = freezed,
+    Object? notes = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? validFrom = freezed,
+    Object? validTo = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      partyId: null == partyId
+          ? _self.partyId
+          : partyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      addressLine1: null == addressLine1
+          ? _self.addressLine1
+          : addressLine1 // ignore: cast_nullable_to_non_nullable
+              as String,
+      isPrimary: null == isPrimary
+          ? _self.isPrimary
+          : isPrimary // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isActive: null == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      addressLine2: freezed == addressLine2
+          ? _self.addressLine2
+          : addressLine2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine3: freezed == addressLine3
+          ? _self.addressLine3
+          : addressLine3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postalCode: freezed == postalCode
+          ? _self.postalCode
+          : postalCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      country: freezed == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _self.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      label: freezed == label
+          ? _self.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      validFrom: freezed == validFrom
+          ? _self.validFrom
+          : validFrom // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validTo: freezed == validTo
+          ? _self.validTo
+          : validTo // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [PartyAddress].
+extension PartyAddressPatterns on PartyAddress {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PartyAddress value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PartyAddress() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PartyAddress value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartyAddress():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PartyAddress value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartyAddress() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String partyId,
+            String type,
+            String addressLine1,
+            bool isPrimary,
+            bool isActive,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PartyAddress() when $default != null:
+        return $default(
+            _that.id,
+            _that.partyId,
+            _that.type,
+            _that.addressLine1,
+            _that.isPrimary,
+            _that.isActive,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String partyId,
+            String type,
+            String addressLine1,
+            bool isPrimary,
+            bool isActive,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartyAddress():
+        return $default(
+            _that.id,
+            _that.partyId,
+            _that.type,
+            _that.addressLine1,
+            _that.isPrimary,
+            _that.isActive,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String partyId,
+            String type,
+            String addressLine1,
+            bool isPrimary,
+            bool isActive,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartyAddress() when $default != null:
+        return $default(
+            _that.id,
+            _that.partyId,
+            _that.type,
+            _that.addressLine1,
+            _that.isPrimary,
+            _that.isActive,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$PartyAddressImpl implements _PartyAddress {
-  const _$PartyAddressImpl(
+class _PartyAddress implements PartyAddress {
+  const _PartyAddress(
       {required this.id,
       required this.partyId,
       required this.type,
@@ -779,9 +1207,8 @@ class _$PartyAddressImpl implements _PartyAddress {
       this.validTo,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$PartyAddressImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PartyAddressImplFromJson(json);
+  factory _PartyAddress.fromJson(Map<String, dynamic> json) =>
+      _$PartyAddressFromJson(json);
 
   @override
   final String id;
@@ -832,16 +1259,26 @@ class _$PartyAddressImpl implements _PartyAddress {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of PartyAddress
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PartyAddress(id: $id, partyId: $partyId, type: $type, addressLine1: $addressLine1, isPrimary: $isPrimary, isActive: $isActive, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PartyAddressCopyWith<_PartyAddress> get copyWith =>
+      __$PartyAddressCopyWithImpl<_PartyAddress>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PartyAddressToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PartyAddressImpl &&
+            other is _PartyAddress &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.partyId, partyId) || other.partyId == partyId) &&
             (identical(other.type, type) || other.type == type) &&
@@ -873,7 +1310,7 @@ class _$PartyAddressImpl implements _PartyAddress {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -899,208 +1336,223 @@ class _$PartyAddressImpl implements _PartyAddress {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PartyAddressImplCopyWith<_$PartyAddressImpl> get copyWith =>
-      __$$PartyAddressImplCopyWithImpl<_$PartyAddressImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PartyAddressImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PartyAddress(id: $id, partyId: $partyId, type: $type, addressLine1: $addressLine1, isPrimary: $isPrimary, isActive: $isActive, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo, metadata: $metadata)';
   }
 }
 
-abstract class _PartyAddress implements PartyAddress {
-  const factory _PartyAddress(
-      {required final String id,
-      required final String partyId,
-      required final String type,
-      required final String addressLine1,
-      required final bool isPrimary,
-      required final bool isActive,
-      final String? addressLine2,
-      final String? addressLine3,
-      final String? city,
-      final String? state,
-      final String? postalCode,
-      final String? country,
-      final String? region,
-      final String? label,
-      final String? notes,
-      final double? latitude,
-      final double? longitude,
-      final DateTime? validFrom,
-      final DateTime? validTo,
-      final Map<String, dynamic>? metadata}) = _$PartyAddressImpl;
-
-  factory _PartyAddress.fromJson(Map<String, dynamic> json) =
-      _$PartyAddressImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$PartyAddressCopyWith<$Res>
+    implements $PartyAddressCopyWith<$Res> {
+  factory _$PartyAddressCopyWith(
+          _PartyAddress value, $Res Function(_PartyAddress) _then) =
+      __$PartyAddressCopyWithImpl;
   @override
-  String get id;
-  @override
-  String get partyId;
-  @override
-  String get type;
-  @override // 'billing', 'shipping', 'home', 'work', 'warehouse', 'office'
-  String get addressLine1;
-  @override
-  bool get isPrimary;
-  @override
-  bool get isActive;
-  @override
-  String? get addressLine2;
-  @override
-  String? get addressLine3;
-  @override
-  String? get city;
-  @override
-  String? get state;
-  @override
-  String? get postalCode;
-  @override
-  String? get country;
-  @override
-  String? get region;
-  @override
-  String? get label;
-  @override
-  String? get notes;
-  @override
-  double? get latitude;
-  @override
-  double? get longitude;
-  @override
-  DateTime? get validFrom;
-  @override
-  DateTime? get validTo;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$PartyAddressImplCopyWith<_$PartyAddressImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      String partyId,
+      String type,
+      String addressLine1,
+      bool isPrimary,
+      bool isActive,
+      String? addressLine2,
+      String? addressLine3,
+      String? city,
+      String? state,
+      String? postalCode,
+      String? country,
+      String? region,
+      String? label,
+      String? notes,
+      double? latitude,
+      double? longitude,
+      DateTime? validFrom,
+      DateTime? validTo,
+      Map<String, dynamic>? metadata});
 }
 
-CreateContactMechanismRequest _$CreateContactMechanismRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateContactMechanismRequest.fromJson(json);
+/// @nodoc
+class __$PartyAddressCopyWithImpl<$Res>
+    implements _$PartyAddressCopyWith<$Res> {
+  __$PartyAddressCopyWithImpl(this._self, this._then);
+
+  final _PartyAddress _self;
+  final $Res Function(_PartyAddress) _then;
+
+  /// Create a copy of PartyAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? partyId = null,
+    Object? type = null,
+    Object? addressLine1 = null,
+    Object? isPrimary = null,
+    Object? isActive = null,
+    Object? addressLine2 = freezed,
+    Object? addressLine3 = freezed,
+    Object? city = freezed,
+    Object? state = freezed,
+    Object? postalCode = freezed,
+    Object? country = freezed,
+    Object? region = freezed,
+    Object? label = freezed,
+    Object? notes = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? validFrom = freezed,
+    Object? validTo = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_PartyAddress(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      partyId: null == partyId
+          ? _self.partyId
+          : partyId // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      addressLine1: null == addressLine1
+          ? _self.addressLine1
+          : addressLine1 // ignore: cast_nullable_to_non_nullable
+              as String,
+      isPrimary: null == isPrimary
+          ? _self.isPrimary
+          : isPrimary // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isActive: null == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      addressLine2: freezed == addressLine2
+          ? _self.addressLine2
+          : addressLine2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine3: freezed == addressLine3
+          ? _self.addressLine3
+          : addressLine3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postalCode: freezed == postalCode
+          ? _self.postalCode
+          : postalCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      country: freezed == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _self.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      label: freezed == label
+          ? _self.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      validFrom: freezed == validFrom
+          ? _self.validFrom
+          : validFrom // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validTo: freezed == validTo
+          ? _self.validTo
+          : validTo // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$CreateContactMechanismRequest {
-  String get type => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
-  bool? get isPrimary => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get extension => throw _privateConstructorUsedError;
-  String? get countryCode => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  DateTime? get validFrom => throw _privateConstructorUsedError;
-  DateTime? get validTo => throw _privateConstructorUsedError;
+  String get type;
+  String get value;
+  bool? get isPrimary;
+  String? get label;
+  String? get extension;
+  String? get countryCode;
+  String? get notes;
+  DateTime? get validFrom;
+  DateTime? get validTo;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateContactMechanismRequestCopyWith<CreateContactMechanismRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateContactMechanismRequestCopyWith<$Res> {
-  factory $CreateContactMechanismRequestCopyWith(
-          CreateContactMechanismRequest value,
-          $Res Function(CreateContactMechanismRequest) then) =
-      _$CreateContactMechanismRequestCopyWithImpl<$Res,
-          CreateContactMechanismRequest>;
-  @useResult
-  $Res call(
-      {String type,
-      String value,
-      bool? isPrimary,
-      String? label,
-      String? extension,
-      String? countryCode,
-      String? notes,
-      DateTime? validFrom,
-      DateTime? validTo});
-}
-
-/// @nodoc
-class _$CreateContactMechanismRequestCopyWithImpl<$Res,
-        $Val extends CreateContactMechanismRequest>
-    implements $CreateContactMechanismRequestCopyWith<$Res> {
-  _$CreateContactMechanismRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of CreateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CreateContactMechanismRequestCopyWith<CreateContactMechanismRequest>
+      get copyWith => _$CreateContactMechanismRequestCopyWithImpl<
+              CreateContactMechanismRequest>(
+          this as CreateContactMechanismRequest, _$identity);
+
+  /// Serializes this CreateContactMechanismRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? type = null,
-    Object? value = null,
-    Object? isPrimary = freezed,
-    Object? label = freezed,
-    Object? extension = freezed,
-    Object? countryCode = freezed,
-    Object? notes = freezed,
-    Object? validFrom = freezed,
-    Object? validTo = freezed,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-      isPrimary: freezed == isPrimary
-          ? _value.isPrimary
-          : isPrimary // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      label: freezed == label
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      extension: freezed == extension
-          ? _value.extension
-          : extension // ignore: cast_nullable_to_non_nullable
-              as String?,
-      countryCode: freezed == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validFrom: freezed == validFrom
-          ? _value.validFrom
-          : validFrom // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validTo: freezed == validTo
-          ? _value.validTo
-          : validTo // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateContactMechanismRequest &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.isPrimary, isPrimary) ||
+                other.isPrimary == isPrimary) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.extension, extension) ||
+                other.extension == extension) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.validFrom, validFrom) ||
+                other.validFrom == validFrom) &&
+            (identical(other.validTo, validTo) || other.validTo == validTo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, value, isPrimary, label,
+      extension, countryCode, notes, validFrom, validTo);
+
+  @override
+  String toString() {
+    return 'CreateContactMechanismRequest(type: $type, value: $value, isPrimary: $isPrimary, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateContactMechanismRequestImplCopyWith<$Res>
-    implements $CreateContactMechanismRequestCopyWith<$Res> {
-  factory _$$CreateContactMechanismRequestImplCopyWith(
-          _$CreateContactMechanismRequestImpl value,
-          $Res Function(_$CreateContactMechanismRequestImpl) then) =
-      __$$CreateContactMechanismRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CreateContactMechanismRequestCopyWith<$Res> {
+  factory $CreateContactMechanismRequestCopyWith(
+          CreateContactMechanismRequest value,
+          $Res Function(CreateContactMechanismRequest) _then) =
+      _$CreateContactMechanismRequestCopyWithImpl;
   @useResult
   $Res call(
       {String type,
@@ -1115,15 +1567,15 @@ abstract class _$$CreateContactMechanismRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreateContactMechanismRequestImplCopyWithImpl<$Res>
-    extends _$CreateContactMechanismRequestCopyWithImpl<$Res,
-        _$CreateContactMechanismRequestImpl>
-    implements _$$CreateContactMechanismRequestImplCopyWith<$Res> {
-  __$$CreateContactMechanismRequestImplCopyWithImpl(
-      _$CreateContactMechanismRequestImpl _value,
-      $Res Function(_$CreateContactMechanismRequestImpl) _then)
-      : super(_value, _then);
+class _$CreateContactMechanismRequestCopyWithImpl<$Res>
+    implements $CreateContactMechanismRequestCopyWith<$Res> {
+  _$CreateContactMechanismRequestCopyWithImpl(this._self, this._then);
 
+  final CreateContactMechanismRequest _self;
+  final $Res Function(CreateContactMechanismRequest) _then;
+
+  /// Create a copy of CreateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1137,52 +1589,262 @@ class __$$CreateContactMechanismRequestImplCopyWithImpl<$Res>
     Object? validFrom = freezed,
     Object? validTo = freezed,
   }) {
-    return _then(_$CreateContactMechanismRequestImpl(
+    return _then(_self.copyWith(
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
       isPrimary: freezed == isPrimary
-          ? _value.isPrimary
+          ? _self.isPrimary
           : isPrimary // ignore: cast_nullable_to_non_nullable
               as bool?,
       label: freezed == label
-          ? _value.label
+          ? _self.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
       extension: freezed == extension
-          ? _value.extension
+          ? _self.extension
           : extension // ignore: cast_nullable_to_non_nullable
               as String?,
       countryCode: freezed == countryCode
-          ? _value.countryCode
+          ? _self.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       validFrom: freezed == validFrom
-          ? _value.validFrom
+          ? _self.validFrom
           : validFrom // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validTo: freezed == validTo
-          ? _value.validTo
+          ? _self.validTo
           : validTo // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [CreateContactMechanismRequest].
+extension CreateContactMechanismRequestPatterns
+    on CreateContactMechanismRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateContactMechanismRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateContactMechanismRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateContactMechanismRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateContactMechanismRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateContactMechanismRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateContactMechanismRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String type,
+            String value,
+            bool? isPrimary,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateContactMechanismRequest() when $default != null:
+        return $default(
+            _that.type,
+            _that.value,
+            _that.isPrimary,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String type,
+            String value,
+            bool? isPrimary,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateContactMechanismRequest():
+        return $default(
+            _that.type,
+            _that.value,
+            _that.isPrimary,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String type,
+            String value,
+            bool? isPrimary,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateContactMechanismRequest() when $default != null:
+        return $default(
+            _that.type,
+            _that.value,
+            _that.isPrimary,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CreateContactMechanismRequestImpl
-    implements _CreateContactMechanismRequest {
-  const _$CreateContactMechanismRequestImpl(
+class _CreateContactMechanismRequest implements CreateContactMechanismRequest {
+  const _CreateContactMechanismRequest(
       {required this.type,
       required this.value,
       this.isPrimary,
@@ -1192,10 +1854,8 @@ class _$CreateContactMechanismRequestImpl
       this.notes,
       this.validFrom,
       this.validTo});
-
-  factory _$CreateContactMechanismRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreateContactMechanismRequestImplFromJson(json);
+  factory _CreateContactMechanismRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateContactMechanismRequestFromJson(json);
 
   @override
   final String type;
@@ -1216,16 +1876,27 @@ class _$CreateContactMechanismRequestImpl
   @override
   final DateTime? validTo;
 
+  /// Create a copy of CreateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateContactMechanismRequest(type: $type, value: $value, isPrimary: $isPrimary, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateContactMechanismRequestCopyWith<_CreateContactMechanismRequest>
+      get copyWith => __$CreateContactMechanismRequestCopyWithImpl<
+          _CreateContactMechanismRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateContactMechanismRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateContactMechanismRequestImpl &&
+            other is _CreateContactMechanismRequest &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.isPrimary, isPrimary) ||
@@ -1241,103 +1912,30 @@ class _$CreateContactMechanismRequestImpl
             (identical(other.validTo, validTo) || other.validTo == validTo));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, value, isPrimary, label,
       extension, countryCode, notes, validFrom, validTo);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateContactMechanismRequestImplCopyWith<
-          _$CreateContactMechanismRequestImpl>
-      get copyWith => __$$CreateContactMechanismRequestImplCopyWithImpl<
-          _$CreateContactMechanismRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateContactMechanismRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateContactMechanismRequest(type: $type, value: $value, isPrimary: $isPrimary, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo)';
   }
 }
 
-abstract class _CreateContactMechanismRequest
-    implements CreateContactMechanismRequest {
-  const factory _CreateContactMechanismRequest(
-      {required final String type,
-      required final String value,
-      final bool? isPrimary,
-      final String? label,
-      final String? extension,
-      final String? countryCode,
-      final String? notes,
-      final DateTime? validFrom,
-      final DateTime? validTo}) = _$CreateContactMechanismRequestImpl;
-
-  factory _CreateContactMechanismRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateContactMechanismRequestImpl.fromJson;
-
-  @override
-  String get type;
-  @override
-  String get value;
-  @override
-  bool? get isPrimary;
-  @override
-  String? get label;
-  @override
-  String? get extension;
-  @override
-  String? get countryCode;
-  @override
-  String? get notes;
-  @override
-  DateTime? get validFrom;
-  @override
-  DateTime? get validTo;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateContactMechanismRequestImplCopyWith<
-          _$CreateContactMechanismRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateContactMechanismRequest _$UpdateContactMechanismRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateContactMechanismRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateContactMechanismRequest {
-  String? get value => throw _privateConstructorUsedError;
-  bool? get isPrimary => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get extension => throw _privateConstructorUsedError;
-  String? get countryCode => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  DateTime? get validFrom => throw _privateConstructorUsedError;
-  DateTime? get validTo => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateContactMechanismRequestCopyWith<UpdateContactMechanismRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateContactMechanismRequestCopyWith<$Res> {
-  factory $UpdateContactMechanismRequestCopyWith(
-          UpdateContactMechanismRequest value,
-          $Res Function(UpdateContactMechanismRequest) then) =
-      _$UpdateContactMechanismRequestCopyWithImpl<$Res,
-          UpdateContactMechanismRequest>;
+abstract mixin class _$CreateContactMechanismRequestCopyWith<$Res>
+    implements $CreateContactMechanismRequestCopyWith<$Res> {
+  factory _$CreateContactMechanismRequestCopyWith(
+          _CreateContactMechanismRequest value,
+          $Res Function(_CreateContactMechanismRequest) _then) =
+      __$CreateContactMechanismRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? value,
+      {String type,
+      String value,
       bool? isPrimary,
-      bool? isActive,
       String? label,
       String? extension,
       String? countryCode,
@@ -1347,22 +1945,21 @@ abstract class $UpdateContactMechanismRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateContactMechanismRequestCopyWithImpl<$Res,
-        $Val extends UpdateContactMechanismRequest>
-    implements $UpdateContactMechanismRequestCopyWith<$Res> {
-  _$UpdateContactMechanismRequestCopyWithImpl(this._value, this._then);
+class __$CreateContactMechanismRequestCopyWithImpl<$Res>
+    implements _$CreateContactMechanismRequestCopyWith<$Res> {
+  __$CreateContactMechanismRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateContactMechanismRequest _self;
+  final $Res Function(_CreateContactMechanismRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? value = freezed,
+    Object? type = null,
+    Object? value = null,
     Object? isPrimary = freezed,
-    Object? isActive = freezed,
     Object? label = freezed,
     Object? extension = freezed,
     Object? countryCode = freezed,
@@ -1370,126 +1967,41 @@ class _$UpdateContactMechanismRequestCopyWithImpl<$Res,
     Object? validFrom = freezed,
     Object? validTo = freezed,
   }) {
-    return _then(_value.copyWith(
-      value: freezed == value
-          ? _value.value
+    return _then(_CreateContactMechanismRequest(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       isPrimary: freezed == isPrimary
-          ? _value.isPrimary
+          ? _self.isPrimary
           : isPrimary // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
       label: freezed == label
-          ? _value.label
+          ? _self.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
       extension: freezed == extension
-          ? _value.extension
+          ? _self.extension
           : extension // ignore: cast_nullable_to_non_nullable
               as String?,
       countryCode: freezed == countryCode
-          ? _value.countryCode
+          ? _self.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       validFrom: freezed == validFrom
-          ? _value.validFrom
+          ? _self.validFrom
           : validFrom // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validTo: freezed == validTo
-          ? _value.validTo
-          : validTo // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateContactMechanismRequestImplCopyWith<$Res>
-    implements $UpdateContactMechanismRequestCopyWith<$Res> {
-  factory _$$UpdateContactMechanismRequestImplCopyWith(
-          _$UpdateContactMechanismRequestImpl value,
-          $Res Function(_$UpdateContactMechanismRequestImpl) then) =
-      __$$UpdateContactMechanismRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? value,
-      bool? isPrimary,
-      bool? isActive,
-      String? label,
-      String? extension,
-      String? countryCode,
-      String? notes,
-      DateTime? validFrom,
-      DateTime? validTo});
-}
-
-/// @nodoc
-class __$$UpdateContactMechanismRequestImplCopyWithImpl<$Res>
-    extends _$UpdateContactMechanismRequestCopyWithImpl<$Res,
-        _$UpdateContactMechanismRequestImpl>
-    implements _$$UpdateContactMechanismRequestImplCopyWith<$Res> {
-  __$$UpdateContactMechanismRequestImplCopyWithImpl(
-      _$UpdateContactMechanismRequestImpl _value,
-      $Res Function(_$UpdateContactMechanismRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = freezed,
-    Object? isPrimary = freezed,
-    Object? isActive = freezed,
-    Object? label = freezed,
-    Object? extension = freezed,
-    Object? countryCode = freezed,
-    Object? notes = freezed,
-    Object? validFrom = freezed,
-    Object? validTo = freezed,
-  }) {
-    return _then(_$UpdateContactMechanismRequestImpl(
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isPrimary: freezed == isPrimary
-          ? _value.isPrimary
-          : isPrimary // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      label: freezed == label
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      extension: freezed == extension
-          ? _value.extension
-          : extension // ignore: cast_nullable_to_non_nullable
-              as String?,
-      countryCode: freezed == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validFrom: freezed == validFrom
-          ? _value.validFrom
-          : validFrom // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validTo: freezed == validTo
-          ? _value.validTo
+          ? _self.validTo
           : validTo // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -1497,10 +2009,359 @@ class __$$UpdateContactMechanismRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateContactMechanismRequest {
+  String? get value;
+  bool? get isPrimary;
+  bool? get isActive;
+  String? get label;
+  String? get extension;
+  String? get countryCode;
+  String? get notes;
+  DateTime? get validFrom;
+  DateTime? get validTo;
+
+  /// Create a copy of UpdateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateContactMechanismRequestCopyWith<UpdateContactMechanismRequest>
+      get copyWith => _$UpdateContactMechanismRequestCopyWithImpl<
+              UpdateContactMechanismRequest>(
+          this as UpdateContactMechanismRequest, _$identity);
+
+  /// Serializes this UpdateContactMechanismRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateContactMechanismRequest &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.isPrimary, isPrimary) ||
+                other.isPrimary == isPrimary) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.extension, extension) ||
+                other.extension == extension) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.validFrom, validFrom) ||
+                other.validFrom == validFrom) &&
+            (identical(other.validTo, validTo) || other.validTo == validTo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, value, isPrimary, isActive,
+      label, extension, countryCode, notes, validFrom, validTo);
+
+  @override
+  String toString() {
+    return 'UpdateContactMechanismRequest(value: $value, isPrimary: $isPrimary, isActive: $isActive, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateContactMechanismRequestCopyWith<$Res> {
+  factory $UpdateContactMechanismRequestCopyWith(
+          UpdateContactMechanismRequest value,
+          $Res Function(UpdateContactMechanismRequest) _then) =
+      _$UpdateContactMechanismRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? value,
+      bool? isPrimary,
+      bool? isActive,
+      String? label,
+      String? extension,
+      String? countryCode,
+      String? notes,
+      DateTime? validFrom,
+      DateTime? validTo});
+}
+
+/// @nodoc
+class _$UpdateContactMechanismRequestCopyWithImpl<$Res>
+    implements $UpdateContactMechanismRequestCopyWith<$Res> {
+  _$UpdateContactMechanismRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateContactMechanismRequest _self;
+  final $Res Function(UpdateContactMechanismRequest) _then;
+
+  /// Create a copy of UpdateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? value = freezed,
+    Object? isPrimary = freezed,
+    Object? isActive = freezed,
+    Object? label = freezed,
+    Object? extension = freezed,
+    Object? countryCode = freezed,
+    Object? notes = freezed,
+    Object? validFrom = freezed,
+    Object? validTo = freezed,
+  }) {
+    return _then(_self.copyWith(
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPrimary: freezed == isPrimary
+          ? _self.isPrimary
+          : isPrimary // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isActive: freezed == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      label: freezed == label
+          ? _self.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extension: freezed == extension
+          ? _self.extension
+          : extension // ignore: cast_nullable_to_non_nullable
+              as String?,
+      countryCode: freezed == countryCode
+          ? _self.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      validFrom: freezed == validFrom
+          ? _self.validFrom
+          : validFrom // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validTo: freezed == validTo
+          ? _self.validTo
+          : validTo // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateContactMechanismRequest].
+extension UpdateContactMechanismRequestPatterns
+    on UpdateContactMechanismRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateContactMechanismRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateContactMechanismRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateContactMechanismRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateContactMechanismRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateContactMechanismRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateContactMechanismRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? value,
+            bool? isPrimary,
+            bool? isActive,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateContactMechanismRequest() when $default != null:
+        return $default(
+            _that.value,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? value,
+            bool? isPrimary,
+            bool? isActive,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateContactMechanismRequest():
+        return $default(
+            _that.value,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? value,
+            bool? isPrimary,
+            bool? isActive,
+            String? label,
+            String? extension,
+            String? countryCode,
+            String? notes,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateContactMechanismRequest() when $default != null:
+        return $default(
+            _that.value,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.extension,
+            _that.countryCode,
+            _that.notes,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateContactMechanismRequestImpl
-    implements _UpdateContactMechanismRequest {
-  const _$UpdateContactMechanismRequestImpl(
+class _UpdateContactMechanismRequest implements UpdateContactMechanismRequest {
+  const _UpdateContactMechanismRequest(
       {this.value,
       this.isPrimary,
       this.isActive,
@@ -1510,10 +2371,8 @@ class _$UpdateContactMechanismRequestImpl
       this.notes,
       this.validFrom,
       this.validTo});
-
-  factory _$UpdateContactMechanismRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$UpdateContactMechanismRequestImplFromJson(json);
+  factory _UpdateContactMechanismRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateContactMechanismRequestFromJson(json);
 
   @override
   final String? value;
@@ -1534,16 +2393,27 @@ class _$UpdateContactMechanismRequestImpl
   @override
   final DateTime? validTo;
 
+  /// Create a copy of UpdateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateContactMechanismRequest(value: $value, isPrimary: $isPrimary, isActive: $isActive, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateContactMechanismRequestCopyWith<_UpdateContactMechanismRequest>
+      get copyWith => __$UpdateContactMechanismRequestCopyWithImpl<
+          _UpdateContactMechanismRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateContactMechanismRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateContactMechanismRequestImpl &&
+            other is _UpdateContactMechanismRequest &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.isPrimary, isPrimary) ||
                 other.isPrimary == isPrimary) &&
@@ -1560,340 +2430,96 @@ class _$UpdateContactMechanismRequestImpl
             (identical(other.validTo, validTo) || other.validTo == validTo));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, value, isPrimary, isActive,
       label, extension, countryCode, notes, validFrom, validTo);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateContactMechanismRequestImplCopyWith<
-          _$UpdateContactMechanismRequestImpl>
-      get copyWith => __$$UpdateContactMechanismRequestImplCopyWithImpl<
-          _$UpdateContactMechanismRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateContactMechanismRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateContactMechanismRequest(value: $value, isPrimary: $isPrimary, isActive: $isActive, label: $label, extension: $extension, countryCode: $countryCode, notes: $notes, validFrom: $validFrom, validTo: $validTo)';
   }
 }
 
-abstract class _UpdateContactMechanismRequest
-    implements UpdateContactMechanismRequest {
-  const factory _UpdateContactMechanismRequest(
-      {final String? value,
-      final bool? isPrimary,
-      final bool? isActive,
-      final String? label,
-      final String? extension,
-      final String? countryCode,
-      final String? notes,
-      final DateTime? validFrom,
-      final DateTime? validTo}) = _$UpdateContactMechanismRequestImpl;
-
-  factory _UpdateContactMechanismRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateContactMechanismRequestImpl.fromJson;
-
-  @override
-  String? get value;
-  @override
-  bool? get isPrimary;
-  @override
-  bool? get isActive;
-  @override
-  String? get label;
-  @override
-  String? get extension;
-  @override
-  String? get countryCode;
-  @override
-  String? get notes;
-  @override
-  DateTime? get validFrom;
-  @override
-  DateTime? get validTo;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateContactMechanismRequestImplCopyWith<
-          _$UpdateContactMechanismRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateAddressRequest _$CreateAddressRequestFromJson(Map<String, dynamic> json) {
-  return _CreateAddressRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateAddressRequest {
-  String get type => throw _privateConstructorUsedError;
-  String get addressLine1 => throw _privateConstructorUsedError;
-  String? get addressLine2 => throw _privateConstructorUsedError;
-  String? get addressLine3 => throw _privateConstructorUsedError;
-  String? get city => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
-  String? get postalCode => throw _privateConstructorUsedError;
-  String? get country => throw _privateConstructorUsedError;
-  String? get region => throw _privateConstructorUsedError;
-  bool? get isPrimary => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  double? get latitude => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  DateTime? get validFrom => throw _privateConstructorUsedError;
-  DateTime? get validTo => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateAddressRequestCopyWith<CreateAddressRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateAddressRequestCopyWith<$Res> {
-  factory $CreateAddressRequestCopyWith(CreateAddressRequest value,
-          $Res Function(CreateAddressRequest) then) =
-      _$CreateAddressRequestCopyWithImpl<$Res, CreateAddressRequest>;
+abstract mixin class _$UpdateContactMechanismRequestCopyWith<$Res>
+    implements $UpdateContactMechanismRequestCopyWith<$Res> {
+  factory _$UpdateContactMechanismRequestCopyWith(
+          _UpdateContactMechanismRequest value,
+          $Res Function(_UpdateContactMechanismRequest) _then) =
+      __$UpdateContactMechanismRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String type,
-      String addressLine1,
-      String? addressLine2,
-      String? addressLine3,
-      String? city,
-      String? state,
-      String? postalCode,
-      String? country,
-      String? region,
+      {String? value,
       bool? isPrimary,
+      bool? isActive,
       String? label,
+      String? extension,
+      String? countryCode,
       String? notes,
-      double? latitude,
-      double? longitude,
       DateTime? validFrom,
       DateTime? validTo});
 }
 
 /// @nodoc
-class _$CreateAddressRequestCopyWithImpl<$Res,
-        $Val extends CreateAddressRequest>
-    implements $CreateAddressRequestCopyWith<$Res> {
-  _$CreateAddressRequestCopyWithImpl(this._value, this._then);
+class __$UpdateContactMechanismRequestCopyWithImpl<$Res>
+    implements _$UpdateContactMechanismRequestCopyWith<$Res> {
+  __$UpdateContactMechanismRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _UpdateContactMechanismRequest _self;
+  final $Res Function(_UpdateContactMechanismRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of UpdateContactMechanismRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? type = null,
-    Object? addressLine1 = null,
-    Object? addressLine2 = freezed,
-    Object? addressLine3 = freezed,
-    Object? city = freezed,
-    Object? state = freezed,
-    Object? postalCode = freezed,
-    Object? country = freezed,
-    Object? region = freezed,
+    Object? value = freezed,
     Object? isPrimary = freezed,
+    Object? isActive = freezed,
     Object? label = freezed,
+    Object? extension = freezed,
+    Object? countryCode = freezed,
     Object? notes = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
     Object? validFrom = freezed,
     Object? validTo = freezed,
   }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      addressLine1: null == addressLine1
-          ? _value.addressLine1
-          : addressLine1 // ignore: cast_nullable_to_non_nullable
-              as String,
-      addressLine2: freezed == addressLine2
-          ? _value.addressLine2
-          : addressLine2 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addressLine3: freezed == addressLine3
-          ? _value.addressLine3
-          : addressLine3 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postalCode: freezed == postalCode
-          ? _value.postalCode
-          : postalCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
+    return _then(_UpdateContactMechanismRequest(
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
               as String?,
       isPrimary: freezed == isPrimary
-          ? _value.isPrimary
+          ? _self.isPrimary
           : isPrimary // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isActive: freezed == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
       label: freezed == label
-          ? _value.label
+          ? _self.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
+      extension: freezed == extension
+          ? _self.extension
+          : extension // ignore: cast_nullable_to_non_nullable
+              as String?,
+      countryCode: freezed == countryCode
+          ? _self.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
       validFrom: freezed == validFrom
-          ? _value.validFrom
+          ? _self.validFrom
           : validFrom // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validTo: freezed == validTo
-          ? _value.validTo
-          : validTo // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateAddressRequestImplCopyWith<$Res>
-    implements $CreateAddressRequestCopyWith<$Res> {
-  factory _$$CreateAddressRequestImplCopyWith(_$CreateAddressRequestImpl value,
-          $Res Function(_$CreateAddressRequestImpl) then) =
-      __$$CreateAddressRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String type,
-      String addressLine1,
-      String? addressLine2,
-      String? addressLine3,
-      String? city,
-      String? state,
-      String? postalCode,
-      String? country,
-      String? region,
-      bool? isPrimary,
-      String? label,
-      String? notes,
-      double? latitude,
-      double? longitude,
-      DateTime? validFrom,
-      DateTime? validTo});
-}
-
-/// @nodoc
-class __$$CreateAddressRequestImplCopyWithImpl<$Res>
-    extends _$CreateAddressRequestCopyWithImpl<$Res, _$CreateAddressRequestImpl>
-    implements _$$CreateAddressRequestImplCopyWith<$Res> {
-  __$$CreateAddressRequestImplCopyWithImpl(_$CreateAddressRequestImpl _value,
-      $Res Function(_$CreateAddressRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? addressLine1 = null,
-    Object? addressLine2 = freezed,
-    Object? addressLine3 = freezed,
-    Object? city = freezed,
-    Object? state = freezed,
-    Object? postalCode = freezed,
-    Object? country = freezed,
-    Object? region = freezed,
-    Object? isPrimary = freezed,
-    Object? label = freezed,
-    Object? notes = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? validFrom = freezed,
-    Object? validTo = freezed,
-  }) {
-    return _then(_$CreateAddressRequestImpl(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      addressLine1: null == addressLine1
-          ? _value.addressLine1
-          : addressLine1 // ignore: cast_nullable_to_non_nullable
-              as String,
-      addressLine2: freezed == addressLine2
-          ? _value.addressLine2
-          : addressLine2 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addressLine3: freezed == addressLine3
-          ? _value.addressLine3
-          : addressLine3 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postalCode: freezed == postalCode
-          ? _value.postalCode
-          : postalCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isPrimary: freezed == isPrimary
-          ? _value.isPrimary
-          : isPrimary // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      label: freezed == label
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      validFrom: freezed == validFrom
-          ? _value.validFrom
-          : validFrom // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validTo: freezed == validTo
-          ? _value.validTo
+          ? _self.validTo
           : validTo // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -1901,9 +2527,473 @@ class __$$CreateAddressRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateAddressRequest {
+  String get type;
+  String get addressLine1;
+  String? get addressLine2;
+  String? get addressLine3;
+  String? get city;
+  String? get state;
+  String? get postalCode;
+  String? get country;
+  String? get region;
+  bool? get isPrimary;
+  String? get label;
+  String? get notes;
+  double? get latitude;
+  double? get longitude;
+  DateTime? get validFrom;
+  DateTime? get validTo;
+
+  /// Create a copy of CreateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateAddressRequestCopyWith<CreateAddressRequest> get copyWith =>
+      _$CreateAddressRequestCopyWithImpl<CreateAddressRequest>(
+          this as CreateAddressRequest, _$identity);
+
+  /// Serializes this CreateAddressRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateAddressRequest &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.addressLine1, addressLine1) ||
+                other.addressLine1 == addressLine1) &&
+            (identical(other.addressLine2, addressLine2) ||
+                other.addressLine2 == addressLine2) &&
+            (identical(other.addressLine3, addressLine3) ||
+                other.addressLine3 == addressLine3) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.postalCode, postalCode) ||
+                other.postalCode == postalCode) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.region, region) || other.region == region) &&
+            (identical(other.isPrimary, isPrimary) ||
+                other.isPrimary == isPrimary) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.validFrom, validFrom) ||
+                other.validFrom == validFrom) &&
+            (identical(other.validTo, validTo) || other.validTo == validTo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      type,
+      addressLine1,
+      addressLine2,
+      addressLine3,
+      city,
+      state,
+      postalCode,
+      country,
+      region,
+      isPrimary,
+      label,
+      notes,
+      latitude,
+      longitude,
+      validFrom,
+      validTo);
+
+  @override
+  String toString() {
+    return 'CreateAddressRequest(type: $type, addressLine1: $addressLine1, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, isPrimary: $isPrimary, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateAddressRequestCopyWith<$Res> {
+  factory $CreateAddressRequestCopyWith(CreateAddressRequest value,
+          $Res Function(CreateAddressRequest) _then) =
+      _$CreateAddressRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String type,
+      String addressLine1,
+      String? addressLine2,
+      String? addressLine3,
+      String? city,
+      String? state,
+      String? postalCode,
+      String? country,
+      String? region,
+      bool? isPrimary,
+      String? label,
+      String? notes,
+      double? latitude,
+      double? longitude,
+      DateTime? validFrom,
+      DateTime? validTo});
+}
+
+/// @nodoc
+class _$CreateAddressRequestCopyWithImpl<$Res>
+    implements $CreateAddressRequestCopyWith<$Res> {
+  _$CreateAddressRequestCopyWithImpl(this._self, this._then);
+
+  final CreateAddressRequest _self;
+  final $Res Function(CreateAddressRequest) _then;
+
+  /// Create a copy of CreateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? addressLine1 = null,
+    Object? addressLine2 = freezed,
+    Object? addressLine3 = freezed,
+    Object? city = freezed,
+    Object? state = freezed,
+    Object? postalCode = freezed,
+    Object? country = freezed,
+    Object? region = freezed,
+    Object? isPrimary = freezed,
+    Object? label = freezed,
+    Object? notes = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? validFrom = freezed,
+    Object? validTo = freezed,
+  }) {
+    return _then(_self.copyWith(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      addressLine1: null == addressLine1
+          ? _self.addressLine1
+          : addressLine1 // ignore: cast_nullable_to_non_nullable
+              as String,
+      addressLine2: freezed == addressLine2
+          ? _self.addressLine2
+          : addressLine2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine3: freezed == addressLine3
+          ? _self.addressLine3
+          : addressLine3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postalCode: freezed == postalCode
+          ? _self.postalCode
+          : postalCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      country: freezed == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _self.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPrimary: freezed == isPrimary
+          ? _self.isPrimary
+          : isPrimary // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      label: freezed == label
+          ? _self.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      validFrom: freezed == validFrom
+          ? _self.validFrom
+          : validFrom // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validTo: freezed == validTo
+          ? _self.validTo
+          : validTo // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateAddressRequest].
+extension CreateAddressRequestPatterns on CreateAddressRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateAddressRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAddressRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateAddressRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAddressRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateAddressRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAddressRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String type,
+            String addressLine1,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            bool? isPrimary,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAddressRequest() when $default != null:
+        return $default(
+            _that.type,
+            _that.addressLine1,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.isPrimary,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String type,
+            String addressLine1,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            bool? isPrimary,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAddressRequest():
+        return $default(
+            _that.type,
+            _that.addressLine1,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.isPrimary,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String type,
+            String addressLine1,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            bool? isPrimary,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateAddressRequest() when $default != null:
+        return $default(
+            _that.type,
+            _that.addressLine1,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.isPrimary,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateAddressRequestImpl implements _CreateAddressRequest {
-  const _$CreateAddressRequestImpl(
+class _CreateAddressRequest implements CreateAddressRequest {
+  const _CreateAddressRequest(
       {required this.type,
       required this.addressLine1,
       this.addressLine2,
@@ -1920,9 +3010,8 @@ class _$CreateAddressRequestImpl implements _CreateAddressRequest {
       this.longitude,
       this.validFrom,
       this.validTo});
-
-  factory _$CreateAddressRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateAddressRequestImplFromJson(json);
+  factory _CreateAddressRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateAddressRequestFromJson(json);
 
   @override
   final String type;
@@ -1957,16 +3046,27 @@ class _$CreateAddressRequestImpl implements _CreateAddressRequest {
   @override
   final DateTime? validTo;
 
+  /// Create a copy of CreateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateAddressRequest(type: $type, addressLine1: $addressLine1, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, isPrimary: $isPrimary, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateAddressRequestCopyWith<_CreateAddressRequest> get copyWith =>
+      __$CreateAddressRequestCopyWithImpl<_CreateAddressRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateAddressRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateAddressRequestImpl &&
+            other is _CreateAddressRequest &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.addressLine1, addressLine1) ||
                 other.addressLine1 == addressLine1) &&
@@ -1993,7 +3093,7 @@ class _$CreateAddressRequestImpl implements _CreateAddressRequest {
             (identical(other.validTo, validTo) || other.validTo == validTo));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2014,119 +3114,23 @@ class _$CreateAddressRequestImpl implements _CreateAddressRequest {
       validFrom,
       validTo);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateAddressRequestImplCopyWith<_$CreateAddressRequestImpl>
-      get copyWith =>
-          __$$CreateAddressRequestImplCopyWithImpl<_$CreateAddressRequestImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateAddressRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateAddressRequest(type: $type, addressLine1: $addressLine1, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, isPrimary: $isPrimary, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo)';
   }
 }
 
-abstract class _CreateAddressRequest implements CreateAddressRequest {
-  const factory _CreateAddressRequest(
-      {required final String type,
-      required final String addressLine1,
-      final String? addressLine2,
-      final String? addressLine3,
-      final String? city,
-      final String? state,
-      final String? postalCode,
-      final String? country,
-      final String? region,
-      final bool? isPrimary,
-      final String? label,
-      final String? notes,
-      final double? latitude,
-      final double? longitude,
-      final DateTime? validFrom,
-      final DateTime? validTo}) = _$CreateAddressRequestImpl;
-
-  factory _CreateAddressRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateAddressRequestImpl.fromJson;
-
-  @override
-  String get type;
-  @override
-  String get addressLine1;
-  @override
-  String? get addressLine2;
-  @override
-  String? get addressLine3;
-  @override
-  String? get city;
-  @override
-  String? get state;
-  @override
-  String? get postalCode;
-  @override
-  String? get country;
-  @override
-  String? get region;
-  @override
-  bool? get isPrimary;
-  @override
-  String? get label;
-  @override
-  String? get notes;
-  @override
-  double? get latitude;
-  @override
-  double? get longitude;
-  @override
-  DateTime? get validFrom;
-  @override
-  DateTime? get validTo;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateAddressRequestImplCopyWith<_$CreateAddressRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdateAddressRequest _$UpdateAddressRequestFromJson(Map<String, dynamic> json) {
-  return _UpdateAddressRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateAddressRequest {
-  String? get addressLine1 => throw _privateConstructorUsedError;
-  String? get addressLine2 => throw _privateConstructorUsedError;
-  String? get addressLine3 => throw _privateConstructorUsedError;
-  String? get city => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
-  String? get postalCode => throw _privateConstructorUsedError;
-  String? get country => throw _privateConstructorUsedError;
-  String? get region => throw _privateConstructorUsedError;
-  bool? get isPrimary => throw _privateConstructorUsedError;
-  bool? get isActive => throw _privateConstructorUsedError;
-  String? get label => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  double? get latitude => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  DateTime? get validFrom => throw _privateConstructorUsedError;
-  DateTime? get validTo => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateAddressRequestCopyWith<UpdateAddressRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateAddressRequestCopyWith<$Res> {
-  factory $UpdateAddressRequestCopyWith(UpdateAddressRequest value,
-          $Res Function(UpdateAddressRequest) then) =
-      _$UpdateAddressRequestCopyWithImpl<$Res, UpdateAddressRequest>;
+abstract mixin class _$CreateAddressRequestCopyWith<$Res>
+    implements $CreateAddressRequestCopyWith<$Res> {
+  factory _$CreateAddressRequestCopyWith(_CreateAddressRequest value,
+          $Res Function(_CreateAddressRequest) _then) =
+      __$CreateAddressRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? addressLine1,
+      {String type,
+      String addressLine1,
       String? addressLine2,
       String? addressLine3,
       String? city,
@@ -2135,7 +3139,6 @@ abstract class $UpdateAddressRequestCopyWith<$Res> {
       String? country,
       String? region,
       bool? isPrimary,
-      bool? isActive,
       String? label,
       String? notes,
       double? latitude,
@@ -2145,20 +3148,20 @@ abstract class $UpdateAddressRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateAddressRequestCopyWithImpl<$Res,
-        $Val extends UpdateAddressRequest>
-    implements $UpdateAddressRequestCopyWith<$Res> {
-  _$UpdateAddressRequestCopyWithImpl(this._value, this._then);
+class __$CreateAddressRequestCopyWithImpl<$Res>
+    implements _$CreateAddressRequestCopyWith<$Res> {
+  __$CreateAddressRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreateAddressRequest _self;
+  final $Res Function(_CreateAddressRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? addressLine1 = freezed,
+    Object? type = null,
+    Object? addressLine1 = null,
     Object? addressLine2 = freezed,
     Object? addressLine3 = freezed,
     Object? city = freezed,
@@ -2167,7 +3170,6 @@ class _$UpdateAddressRequestCopyWithImpl<$Res,
     Object? country = freezed,
     Object? region = freezed,
     Object? isPrimary = freezed,
-    Object? isActive = freezed,
     Object? label = freezed,
     Object? notes = freezed,
     Object? latitude = freezed,
@@ -2175,193 +3177,69 @@ class _$UpdateAddressRequestCopyWithImpl<$Res,
     Object? validFrom = freezed,
     Object? validTo = freezed,
   }) {
-    return _then(_value.copyWith(
-      addressLine1: freezed == addressLine1
-          ? _value.addressLine1
+    return _then(_CreateAddressRequest(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      addressLine1: null == addressLine1
+          ? _self.addressLine1
           : addressLine1 // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       addressLine2: freezed == addressLine2
-          ? _value.addressLine2
+          ? _self.addressLine2
           : addressLine2 // ignore: cast_nullable_to_non_nullable
               as String?,
       addressLine3: freezed == addressLine3
-          ? _value.addressLine3
+          ? _self.addressLine3
           : addressLine3 // ignore: cast_nullable_to_non_nullable
               as String?,
       city: freezed == city
-          ? _value.city
+          ? _self.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
       state: freezed == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as String?,
       postalCode: freezed == postalCode
-          ? _value.postalCode
+          ? _self.postalCode
           : postalCode // ignore: cast_nullable_to_non_nullable
               as String?,
       country: freezed == country
-          ? _value.country
+          ? _self.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
       region: freezed == region
-          ? _value.region
+          ? _self.region
           : region // ignore: cast_nullable_to_non_nullable
               as String?,
       isPrimary: freezed == isPrimary
-          ? _value.isPrimary
+          ? _self.isPrimary
           : isPrimary // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
       label: freezed == label
-          ? _value.label
+          ? _self.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       latitude: freezed == latitude
-          ? _value.latitude
+          ? _self.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
       longitude: freezed == longitude
-          ? _value.longitude
+          ? _self.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
       validFrom: freezed == validFrom
-          ? _value.validFrom
+          ? _self.validFrom
           : validFrom // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       validTo: freezed == validTo
-          ? _value.validTo
-          : validTo // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateAddressRequestImplCopyWith<$Res>
-    implements $UpdateAddressRequestCopyWith<$Res> {
-  factory _$$UpdateAddressRequestImplCopyWith(_$UpdateAddressRequestImpl value,
-          $Res Function(_$UpdateAddressRequestImpl) then) =
-      __$$UpdateAddressRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? addressLine1,
-      String? addressLine2,
-      String? addressLine3,
-      String? city,
-      String? state,
-      String? postalCode,
-      String? country,
-      String? region,
-      bool? isPrimary,
-      bool? isActive,
-      String? label,
-      String? notes,
-      double? latitude,
-      double? longitude,
-      DateTime? validFrom,
-      DateTime? validTo});
-}
-
-/// @nodoc
-class __$$UpdateAddressRequestImplCopyWithImpl<$Res>
-    extends _$UpdateAddressRequestCopyWithImpl<$Res, _$UpdateAddressRequestImpl>
-    implements _$$UpdateAddressRequestImplCopyWith<$Res> {
-  __$$UpdateAddressRequestImplCopyWithImpl(_$UpdateAddressRequestImpl _value,
-      $Res Function(_$UpdateAddressRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? addressLine1 = freezed,
-    Object? addressLine2 = freezed,
-    Object? addressLine3 = freezed,
-    Object? city = freezed,
-    Object? state = freezed,
-    Object? postalCode = freezed,
-    Object? country = freezed,
-    Object? region = freezed,
-    Object? isPrimary = freezed,
-    Object? isActive = freezed,
-    Object? label = freezed,
-    Object? notes = freezed,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? validFrom = freezed,
-    Object? validTo = freezed,
-  }) {
-    return _then(_$UpdateAddressRequestImpl(
-      addressLine1: freezed == addressLine1
-          ? _value.addressLine1
-          : addressLine1 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addressLine2: freezed == addressLine2
-          ? _value.addressLine2
-          : addressLine2 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addressLine3: freezed == addressLine3
-          ? _value.addressLine3
-          : addressLine3 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      postalCode: freezed == postalCode
-          ? _value.postalCode
-          : postalCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isPrimary: freezed == isPrimary
-          ? _value.isPrimary
-          : isPrimary // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isActive: freezed == isActive
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      label: freezed == label
-          ? _value.label
-          : label // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      validFrom: freezed == validFrom
-          ? _value.validFrom
-          : validFrom // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      validTo: freezed == validTo
-          ? _value.validTo
+          ? _self.validTo
           : validTo // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
@@ -2369,9 +3247,474 @@ class __$$UpdateAddressRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateAddressRequest {
+  String? get addressLine1;
+  String? get addressLine2;
+  String? get addressLine3;
+  String? get city;
+  String? get state;
+  String? get postalCode;
+  String? get country;
+  String? get region;
+  bool? get isPrimary;
+  bool? get isActive;
+  String? get label;
+  String? get notes;
+  double? get latitude;
+  double? get longitude;
+  DateTime? get validFrom;
+  DateTime? get validTo;
+
+  /// Create a copy of UpdateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateAddressRequestCopyWith<UpdateAddressRequest> get copyWith =>
+      _$UpdateAddressRequestCopyWithImpl<UpdateAddressRequest>(
+          this as UpdateAddressRequest, _$identity);
+
+  /// Serializes this UpdateAddressRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateAddressRequest &&
+            (identical(other.addressLine1, addressLine1) ||
+                other.addressLine1 == addressLine1) &&
+            (identical(other.addressLine2, addressLine2) ||
+                other.addressLine2 == addressLine2) &&
+            (identical(other.addressLine3, addressLine3) ||
+                other.addressLine3 == addressLine3) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.postalCode, postalCode) ||
+                other.postalCode == postalCode) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.region, region) || other.region == region) &&
+            (identical(other.isPrimary, isPrimary) ||
+                other.isPrimary == isPrimary) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.label, label) || other.label == label) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.validFrom, validFrom) ||
+                other.validFrom == validFrom) &&
+            (identical(other.validTo, validTo) || other.validTo == validTo));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      addressLine1,
+      addressLine2,
+      addressLine3,
+      city,
+      state,
+      postalCode,
+      country,
+      region,
+      isPrimary,
+      isActive,
+      label,
+      notes,
+      latitude,
+      longitude,
+      validFrom,
+      validTo);
+
+  @override
+  String toString() {
+    return 'UpdateAddressRequest(addressLine1: $addressLine1, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, isPrimary: $isPrimary, isActive: $isActive, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateAddressRequestCopyWith<$Res> {
+  factory $UpdateAddressRequestCopyWith(UpdateAddressRequest value,
+          $Res Function(UpdateAddressRequest) _then) =
+      _$UpdateAddressRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? addressLine1,
+      String? addressLine2,
+      String? addressLine3,
+      String? city,
+      String? state,
+      String? postalCode,
+      String? country,
+      String? region,
+      bool? isPrimary,
+      bool? isActive,
+      String? label,
+      String? notes,
+      double? latitude,
+      double? longitude,
+      DateTime? validFrom,
+      DateTime? validTo});
+}
+
+/// @nodoc
+class _$UpdateAddressRequestCopyWithImpl<$Res>
+    implements $UpdateAddressRequestCopyWith<$Res> {
+  _$UpdateAddressRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateAddressRequest _self;
+  final $Res Function(UpdateAddressRequest) _then;
+
+  /// Create a copy of UpdateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? addressLine1 = freezed,
+    Object? addressLine2 = freezed,
+    Object? addressLine3 = freezed,
+    Object? city = freezed,
+    Object? state = freezed,
+    Object? postalCode = freezed,
+    Object? country = freezed,
+    Object? region = freezed,
+    Object? isPrimary = freezed,
+    Object? isActive = freezed,
+    Object? label = freezed,
+    Object? notes = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? validFrom = freezed,
+    Object? validTo = freezed,
+  }) {
+    return _then(_self.copyWith(
+      addressLine1: freezed == addressLine1
+          ? _self.addressLine1
+          : addressLine1 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine2: freezed == addressLine2
+          ? _self.addressLine2
+          : addressLine2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine3: freezed == addressLine3
+          ? _self.addressLine3
+          : addressLine3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postalCode: freezed == postalCode
+          ? _self.postalCode
+          : postalCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      country: freezed == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _self.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPrimary: freezed == isPrimary
+          ? _self.isPrimary
+          : isPrimary // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isActive: freezed == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      label: freezed == label
+          ? _self.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      validFrom: freezed == validFrom
+          ? _self.validFrom
+          : validFrom // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validTo: freezed == validTo
+          ? _self.validTo
+          : validTo // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateAddressRequest].
+extension UpdateAddressRequestPatterns on UpdateAddressRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateAddressRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAddressRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateAddressRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAddressRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateAddressRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAddressRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? addressLine1,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            bool? isPrimary,
+            bool? isActive,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAddressRequest() when $default != null:
+        return $default(
+            _that.addressLine1,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? addressLine1,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            bool? isPrimary,
+            bool? isActive,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAddressRequest():
+        return $default(
+            _that.addressLine1,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? addressLine1,
+            String? addressLine2,
+            String? addressLine3,
+            String? city,
+            String? state,
+            String? postalCode,
+            String? country,
+            String? region,
+            bool? isPrimary,
+            bool? isActive,
+            String? label,
+            String? notes,
+            double? latitude,
+            double? longitude,
+            DateTime? validFrom,
+            DateTime? validTo)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateAddressRequest() when $default != null:
+        return $default(
+            _that.addressLine1,
+            _that.addressLine2,
+            _that.addressLine3,
+            _that.city,
+            _that.state,
+            _that.postalCode,
+            _that.country,
+            _that.region,
+            _that.isPrimary,
+            _that.isActive,
+            _that.label,
+            _that.notes,
+            _that.latitude,
+            _that.longitude,
+            _that.validFrom,
+            _that.validTo);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateAddressRequestImpl implements _UpdateAddressRequest {
-  const _$UpdateAddressRequestImpl(
+class _UpdateAddressRequest implements UpdateAddressRequest {
+  const _UpdateAddressRequest(
       {this.addressLine1,
       this.addressLine2,
       this.addressLine3,
@@ -2388,9 +3731,8 @@ class _$UpdateAddressRequestImpl implements _UpdateAddressRequest {
       this.longitude,
       this.validFrom,
       this.validTo});
-
-  factory _$UpdateAddressRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateAddressRequestImplFromJson(json);
+  factory _UpdateAddressRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateAddressRequestFromJson(json);
 
   @override
   final String? addressLine1;
@@ -2425,16 +3767,27 @@ class _$UpdateAddressRequestImpl implements _UpdateAddressRequest {
   @override
   final DateTime? validTo;
 
+  /// Create a copy of UpdateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateAddressRequest(addressLine1: $addressLine1, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, isPrimary: $isPrimary, isActive: $isActive, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateAddressRequestCopyWith<_UpdateAddressRequest> get copyWith =>
+      __$UpdateAddressRequestCopyWithImpl<_UpdateAddressRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateAddressRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateAddressRequestImpl &&
+            other is _UpdateAddressRequest &&
             (identical(other.addressLine1, addressLine1) ||
                 other.addressLine1 == addressLine1) &&
             (identical(other.addressLine2, addressLine2) ||
@@ -2462,7 +3815,7 @@ class _$UpdateAddressRequestImpl implements _UpdateAddressRequest {
             (identical(other.validTo, validTo) || other.validTo == validTo));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2483,78 +3836,136 @@ class _$UpdateAddressRequestImpl implements _UpdateAddressRequest {
       validFrom,
       validTo);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateAddressRequestImplCopyWith<_$UpdateAddressRequestImpl>
-      get copyWith =>
-          __$$UpdateAddressRequestImplCopyWithImpl<_$UpdateAddressRequestImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateAddressRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateAddressRequest(addressLine1: $addressLine1, addressLine2: $addressLine2, addressLine3: $addressLine3, city: $city, state: $state, postalCode: $postalCode, country: $country, region: $region, isPrimary: $isPrimary, isActive: $isActive, label: $label, notes: $notes, latitude: $latitude, longitude: $longitude, validFrom: $validFrom, validTo: $validTo)';
   }
 }
 
-abstract class _UpdateAddressRequest implements UpdateAddressRequest {
-  const factory _UpdateAddressRequest(
-      {final String? addressLine1,
-      final String? addressLine2,
-      final String? addressLine3,
-      final String? city,
-      final String? state,
-      final String? postalCode,
-      final String? country,
-      final String? region,
-      final bool? isPrimary,
-      final bool? isActive,
-      final String? label,
-      final String? notes,
-      final double? latitude,
-      final double? longitude,
-      final DateTime? validFrom,
-      final DateTime? validTo}) = _$UpdateAddressRequestImpl;
-
-  factory _UpdateAddressRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateAddressRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateAddressRequestCopyWith<$Res>
+    implements $UpdateAddressRequestCopyWith<$Res> {
+  factory _$UpdateAddressRequestCopyWith(_UpdateAddressRequest value,
+          $Res Function(_UpdateAddressRequest) _then) =
+      __$UpdateAddressRequestCopyWithImpl;
   @override
-  String? get addressLine1;
-  @override
-  String? get addressLine2;
-  @override
-  String? get addressLine3;
-  @override
-  String? get city;
-  @override
-  String? get state;
-  @override
-  String? get postalCode;
-  @override
-  String? get country;
-  @override
-  String? get region;
-  @override
-  bool? get isPrimary;
-  @override
-  bool? get isActive;
-  @override
-  String? get label;
-  @override
-  String? get notes;
-  @override
-  double? get latitude;
-  @override
-  double? get longitude;
-  @override
-  DateTime? get validFrom;
-  @override
-  DateTime? get validTo;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateAddressRequestImplCopyWith<_$UpdateAddressRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? addressLine1,
+      String? addressLine2,
+      String? addressLine3,
+      String? city,
+      String? state,
+      String? postalCode,
+      String? country,
+      String? region,
+      bool? isPrimary,
+      bool? isActive,
+      String? label,
+      String? notes,
+      double? latitude,
+      double? longitude,
+      DateTime? validFrom,
+      DateTime? validTo});
 }
+
+/// @nodoc
+class __$UpdateAddressRequestCopyWithImpl<$Res>
+    implements _$UpdateAddressRequestCopyWith<$Res> {
+  __$UpdateAddressRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateAddressRequest _self;
+  final $Res Function(_UpdateAddressRequest) _then;
+
+  /// Create a copy of UpdateAddressRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? addressLine1 = freezed,
+    Object? addressLine2 = freezed,
+    Object? addressLine3 = freezed,
+    Object? city = freezed,
+    Object? state = freezed,
+    Object? postalCode = freezed,
+    Object? country = freezed,
+    Object? region = freezed,
+    Object? isPrimary = freezed,
+    Object? isActive = freezed,
+    Object? label = freezed,
+    Object? notes = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? validFrom = freezed,
+    Object? validTo = freezed,
+  }) {
+    return _then(_UpdateAddressRequest(
+      addressLine1: freezed == addressLine1
+          ? _self.addressLine1
+          : addressLine1 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine2: freezed == addressLine2
+          ? _self.addressLine2
+          : addressLine2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addressLine3: freezed == addressLine3
+          ? _self.addressLine3
+          : addressLine3 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String?,
+      postalCode: freezed == postalCode
+          ? _self.postalCode
+          : postalCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      country: freezed == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      region: freezed == region
+          ? _self.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPrimary: freezed == isPrimary
+          ? _self.isPrimary
+          : isPrimary // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isActive: freezed == isActive
+          ? _self.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      label: freezed == label
+          ? _self.label
+          : label // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      validFrom: freezed == validFrom
+          ? _self.validFrom
+          : validFrom // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      validTo: freezed == validTo
+          ? _self.validTo
+          : validTo // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+// dart format on

@@ -6,7 +6,7 @@ part 'sales_models.g.dart';
 
 /// Sales order item creation request
 @freezed
-class CreateSalesOrderItemRequest with _$CreateSalesOrderItemRequest {
+sealed class CreateSalesOrderItemRequest with _$CreateSalesOrderItemRequest {
   const factory CreateSalesOrderItemRequest({
     required String itemId,
     required double quantity,
@@ -20,7 +20,7 @@ class CreateSalesOrderItemRequest with _$CreateSalesOrderItemRequest {
 
 /// Sales order creation request
 @freezed
-class CreateSalesOrderRequest with _$CreateSalesOrderRequest {
+sealed class CreateSalesOrderRequest with _$CreateSalesOrderRequest {
   const factory CreateSalesOrderRequest({
     required String customerId,
     required DateTime orderDate,
@@ -35,7 +35,7 @@ class CreateSalesOrderRequest with _$CreateSalesOrderRequest {
 
 /// Sales order model
 @freezed
-class SalesOrder with _$SalesOrder {
+sealed class SalesOrder with _$SalesOrder {
   const factory SalesOrder({
     required String id,
     required String orderNumber,
@@ -58,7 +58,7 @@ class SalesOrder with _$SalesOrder {
 
 /// Update sales order request
 @freezed
-class UpdateSalesOrderRequest with _$UpdateSalesOrderRequest {
+sealed class UpdateSalesOrderRequest with _$UpdateSalesOrderRequest {
   const factory UpdateSalesOrderRequest({
     String? orderNumber,
     DateTime? orderDate,
@@ -74,7 +74,7 @@ class UpdateSalesOrderRequest with _$UpdateSalesOrderRequest {
 
 /// Sales order item model
 @freezed
-class SalesOrderItem with _$SalesOrderItem {
+sealed class SalesOrderItem with _$SalesOrderItem {
   const factory SalesOrderItem({
     required String id,
     required String itemId,

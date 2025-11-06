@@ -6,11 +6,11 @@ part of 'manufacturing_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BomImpl _$$BomImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$BomImpl',
+_Bom _$BomFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Bom',
       json,
       ($checkedConvert) {
-        final val = _$BomImpl(
+        final val = _Bom(
           id: $checkedConvert('id', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
@@ -35,7 +35,7 @@ _$BomImpl _$$BomImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$BomImplToJson(_$BomImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$BomToJson(_Bom instance) => <String, dynamic>{
       'id': instance.id,
       'itemId': instance.itemId,
       'name': instance.name,
@@ -51,13 +51,12 @@ Map<String, dynamic> _$$BomImplToJson(_$BomImpl instance) => <String, dynamic>{
       'metadata': instance.metadata,
     };
 
-_$CreateBomRequestImpl _$$CreateBomRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreateBomRequest _$CreateBomRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateBomRequestImpl',
+      '_CreateBomRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateBomRequestImpl(
+        final val = _CreateBomRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           version: $checkedConvert('version', (v) => v as String),
@@ -73,8 +72,7 @@ _$CreateBomRequestImpl _$$CreateBomRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateBomRequestImplToJson(
-        _$CreateBomRequestImpl instance) =>
+Map<String, dynamic> _$CreateBomRequestToJson(_CreateBomRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'name': instance.name,
@@ -85,13 +83,12 @@ Map<String, dynamic> _$$CreateBomRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateBomRequestImpl _$$UpdateBomRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UpdateBomRequest _$UpdateBomRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateBomRequestImpl',
+      '_UpdateBomRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateBomRequestImpl(
+        final val = _UpdateBomRequest(
           name: $checkedConvert('name', (v) => v as String?),
           version: $checkedConvert('version', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
@@ -107,8 +104,7 @@ _$UpdateBomRequestImpl _$$UpdateBomRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateBomRequestImplToJson(
-        _$UpdateBomRequestImpl instance) =>
+Map<String, dynamic> _$UpdateBomRequestToJson(_UpdateBomRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'version': instance.version,
@@ -119,12 +115,11 @@ Map<String, dynamic> _$$UpdateBomRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$WorkOrderImpl _$$WorkOrderImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$WorkOrderImpl',
+_WorkOrder _$WorkOrderFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_WorkOrder',
       json,
       ($checkedConvert) {
-        final val = _$WorkOrderImpl(
+        final val = _WorkOrder(
           id: $checkedConvert('id', (v) => v as String),
           workOrderNumber:
               $checkedConvert('workOrderNumber', (v) => v as String),
@@ -149,7 +144,7 @@ _$WorkOrderImpl _$$WorkOrderImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$WorkOrderImplToJson(_$WorkOrderImpl instance) =>
+Map<String, dynamic> _$WorkOrderToJson(_WorkOrder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'workOrderNumber': instance.workOrderNumber,
@@ -166,14 +161,13 @@ Map<String, dynamic> _$$WorkOrderImplToJson(_$WorkOrderImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$CreateProductionOrderMaterialRequestImpl
-    _$$CreateProductionOrderMaterialRequestImplFromJson(
-            Map<String, dynamic> json) =>
+_CreateProductionOrderMaterialRequest
+    _$CreateProductionOrderMaterialRequestFromJson(Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$CreateProductionOrderMaterialRequestImpl',
+          '_CreateProductionOrderMaterialRequest',
           json,
           ($checkedConvert) {
-            final val = _$CreateProductionOrderMaterialRequestImpl(
+            final val = _CreateProductionOrderMaterialRequest(
               itemId: $checkedConvert('itemId', (v) => v as String),
               requiredQuantity: $checkedConvert(
                   'requiredQuantity', (v) => (v as num).toDouble()),
@@ -182,20 +176,20 @@ _$CreateProductionOrderMaterialRequestImpl
           },
         );
 
-Map<String, dynamic> _$$CreateProductionOrderMaterialRequestImplToJson(
-        _$CreateProductionOrderMaterialRequestImpl instance) =>
+Map<String, dynamic> _$CreateProductionOrderMaterialRequestToJson(
+        _CreateProductionOrderMaterialRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'requiredQuantity': instance.requiredQuantity,
     };
 
-_$CreateProductionOrderRequestImpl _$$CreateProductionOrderRequestImplFromJson(
+_CreateProductionOrderRequest _$CreateProductionOrderRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateProductionOrderRequestImpl',
+      '_CreateProductionOrderRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateProductionOrderRequestImpl(
+        final val = _CreateProductionOrderRequest(
           itemId: $checkedConvert('itemId', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
           startDate:
@@ -214,8 +208,8 @@ _$CreateProductionOrderRequestImpl _$$CreateProductionOrderRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateProductionOrderRequestImplToJson(
-        _$CreateProductionOrderRequestImpl instance) =>
+Map<String, dynamic> _$CreateProductionOrderRequestToJson(
+        _CreateProductionOrderRequest instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'quantity': instance.quantity,
@@ -225,13 +219,12 @@ Map<String, dynamic> _$$CreateProductionOrderRequestImplToJson(
       'notes': instance.notes,
     };
 
-_$ProductionOrderImpl _$$ProductionOrderImplFromJson(
-        Map<String, dynamic> json) =>
+_ProductionOrder _$ProductionOrderFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ProductionOrderImpl',
+      '_ProductionOrder',
       json,
       ($checkedConvert) {
-        final val = _$ProductionOrderImpl(
+        final val = _ProductionOrder(
           id: $checkedConvert('id', (v) => v as String),
           orderNumber: $checkedConvert('orderNumber', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
@@ -260,8 +253,7 @@ _$ProductionOrderImpl _$$ProductionOrderImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$ProductionOrderImplToJson(
-        _$ProductionOrderImpl instance) =>
+Map<String, dynamic> _$ProductionOrderToJson(_ProductionOrder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderNumber': instance.orderNumber,
@@ -278,13 +270,13 @@ Map<String, dynamic> _$$ProductionOrderImplToJson(
       'updatedAt': instance.updatedAt?.toIso8601String(),
     };
 
-_$ProductionOrderMaterialImpl _$$ProductionOrderMaterialImplFromJson(
+_ProductionOrderMaterial _$ProductionOrderMaterialFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ProductionOrderMaterialImpl',
+      '_ProductionOrderMaterial',
       json,
       ($checkedConvert) {
-        final val = _$ProductionOrderMaterialImpl(
+        final val = _ProductionOrderMaterial(
           id: $checkedConvert('id', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
           itemName: $checkedConvert('itemName', (v) => v as String),
@@ -298,8 +290,8 @@ _$ProductionOrderMaterialImpl _$$ProductionOrderMaterialImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$ProductionOrderMaterialImplToJson(
-        _$ProductionOrderMaterialImpl instance) =>
+Map<String, dynamic> _$ProductionOrderMaterialToJson(
+        _ProductionOrderMaterial instance) =>
     <String, dynamic>{
       'id': instance.id,
       'itemId': instance.itemId,

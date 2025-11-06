@@ -6,13 +6,12 @@ part of 'physical_inventory_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PhysicalInventoryImpl _$$PhysicalInventoryImplFromJson(
-        Map<String, dynamic> json) =>
+_PhysicalInventory _$PhysicalInventoryFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PhysicalInventoryImpl',
+      '_PhysicalInventory',
       json,
       ($checkedConvert) {
-        final val = _$PhysicalInventoryImpl(
+        final val = _PhysicalInventory(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
@@ -39,8 +38,7 @@ _$PhysicalInventoryImpl _$$PhysicalInventoryImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PhysicalInventoryImplToJson(
-        _$PhysicalInventoryImpl instance) =>
+Map<String, dynamic> _$PhysicalInventoryToJson(_PhysicalInventory instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -59,13 +57,13 @@ Map<String, dynamic> _$$PhysicalInventoryImplToJson(
       'metadata': instance.metadata,
     };
 
-_$PhysicalInventoryItemImpl _$$PhysicalInventoryItemImplFromJson(
+_PhysicalInventoryItem _$PhysicalInventoryItemFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PhysicalInventoryItemImpl',
+      '_PhysicalInventoryItem',
       json,
       ($checkedConvert) {
-        final val = _$PhysicalInventoryItemImpl(
+        final val = _PhysicalInventoryItem(
           id: $checkedConvert('id', (v) => v as String),
           physicalInventoryId:
               $checkedConvert('physicalInventoryId', (v) => v as String),
@@ -93,8 +91,8 @@ _$PhysicalInventoryItemImpl _$$PhysicalInventoryItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PhysicalInventoryItemImplToJson(
-        _$PhysicalInventoryItemImpl instance) =>
+Map<String, dynamic> _$PhysicalInventoryItemToJson(
+        _PhysicalInventoryItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'physicalInventoryId': instance.physicalInventoryId,
@@ -113,25 +111,25 @@ Map<String, dynamic> _$$PhysicalInventoryItemImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreatePhysicalInventoryRequestImpl
-    _$$CreatePhysicalInventoryRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreatePhysicalInventoryRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreatePhysicalInventoryRequestImpl(
-              name: $checkedConvert('name', (v) => v as String),
-              description: $checkedConvert('description', (v) => v as String),
-              locationId: $checkedConvert('locationId', (v) => v as String),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreatePhysicalInventoryRequest _$CreatePhysicalInventoryRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreatePhysicalInventoryRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreatePhysicalInventoryRequest(
+          name: $checkedConvert('name', (v) => v as String),
+          description: $checkedConvert('description', (v) => v as String),
+          locationId: $checkedConvert('locationId', (v) => v as String),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreatePhysicalInventoryRequestImplToJson(
-        _$CreatePhysicalInventoryRequestImpl instance) =>
+Map<String, dynamic> _$CreatePhysicalInventoryRequestToJson(
+        _CreatePhysicalInventoryRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
@@ -139,37 +137,37 @@ Map<String, dynamic> _$$CreatePhysicalInventoryRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdatePhysicalInventoryRequestImpl
-    _$$UpdatePhysicalInventoryRequestImplFromJson(Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$UpdatePhysicalInventoryRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$UpdatePhysicalInventoryRequestImpl(
-              name: $checkedConvert('name', (v) => v as String?),
-              description: $checkedConvert('description', (v) => v as String?),
-              metadata: $checkedConvert(
-                  'metadata', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_UpdatePhysicalInventoryRequest _$UpdatePhysicalInventoryRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_UpdatePhysicalInventoryRequest',
+      json,
+      ($checkedConvert) {
+        final val = _UpdatePhysicalInventoryRequest(
+          name: $checkedConvert('name', (v) => v as String?),
+          description: $checkedConvert('description', (v) => v as String?),
+          metadata:
+              $checkedConvert('metadata', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$UpdatePhysicalInventoryRequestImplToJson(
-        _$UpdatePhysicalInventoryRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePhysicalInventoryRequestToJson(
+        _UpdatePhysicalInventoryRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
       'metadata': instance.metadata,
     };
 
-_$PhysicalInventoryFiltersImpl _$$PhysicalInventoryFiltersImplFromJson(
+_PhysicalInventoryFilters _$PhysicalInventoryFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PhysicalInventoryFiltersImpl',
+      '_PhysicalInventoryFilters',
       json,
       ($checkedConvert) {
-        final val = _$PhysicalInventoryFiltersImpl(
+        final val = _PhysicalInventoryFilters(
           locationId: $checkedConvert('locationId', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           createdBy: $checkedConvert('createdBy', (v) => v as String?),
@@ -194,8 +192,8 @@ _$PhysicalInventoryFiltersImpl _$$PhysicalInventoryFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PhysicalInventoryFiltersImplToJson(
-        _$PhysicalInventoryFiltersImpl instance) =>
+Map<String, dynamic> _$PhysicalInventoryFiltersToJson(
+        _PhysicalInventoryFilters instance) =>
     <String, dynamic>{
       'locationId': instance.locationId,
       'status': instance.status,
@@ -212,14 +210,13 @@ Map<String, dynamic> _$$PhysicalInventoryFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$UpdatePhysicalInventoryItemRequestImpl
-    _$$UpdatePhysicalInventoryItemRequestImplFromJson(
-            Map<String, dynamic> json) =>
+_UpdatePhysicalInventoryItemRequest
+    _$UpdatePhysicalInventoryItemRequestFromJson(Map<String, dynamic> json) =>
         $checkedCreate(
-          r'_$UpdatePhysicalInventoryItemRequestImpl',
+          '_UpdatePhysicalInventoryItemRequest',
           json,
           ($checkedConvert) {
-            final val = _$UpdatePhysicalInventoryItemRequestImpl(
+            final val = _UpdatePhysicalInventoryItemRequest(
               countedQuantity: $checkedConvert(
                   'countedQuantity', (v) => (v as num).toDouble()),
               notes: $checkedConvert('notes', (v) => v as String?),
@@ -231,8 +228,8 @@ _$UpdatePhysicalInventoryItemRequestImpl
           },
         );
 
-Map<String, dynamic> _$$UpdatePhysicalInventoryItemRequestImplToJson(
-        _$UpdatePhysicalInventoryItemRequestImpl instance) =>
+Map<String, dynamic> _$UpdatePhysicalInventoryItemRequestToJson(
+        _UpdatePhysicalInventoryItemRequest instance) =>
     <String, dynamic>{
       'countedQuantity': instance.countedQuantity,
       'notes': instance.notes,
@@ -240,13 +237,13 @@ Map<String, dynamic> _$$UpdatePhysicalInventoryItemRequestImplToJson(
       'serialNumber': instance.serialNumber,
     };
 
-_$PhysicalInventoryAdjustmentImpl _$$PhysicalInventoryAdjustmentImplFromJson(
+_PhysicalInventoryAdjustment _$PhysicalInventoryAdjustmentFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$PhysicalInventoryAdjustmentImpl',
+      '_PhysicalInventoryAdjustment',
       json,
       ($checkedConvert) {
-        final val = _$PhysicalInventoryAdjustmentImpl(
+        final val = _PhysicalInventoryAdjustment(
           id: $checkedConvert('id', (v) => v as String),
           physicalInventoryId:
               $checkedConvert('physicalInventoryId', (v) => v as String),
@@ -270,8 +267,8 @@ _$PhysicalInventoryAdjustmentImpl _$$PhysicalInventoryAdjustmentImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$PhysicalInventoryAdjustmentImplToJson(
-        _$PhysicalInventoryAdjustmentImpl instance) =>
+Map<String, dynamic> _$PhysicalInventoryAdjustmentToJson(
+        _PhysicalInventoryAdjustment instance) =>
     <String, dynamic>{
       'id': instance.id,
       'physicalInventoryId': instance.physicalInventoryId,

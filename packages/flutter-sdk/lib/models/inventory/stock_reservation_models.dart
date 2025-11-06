@@ -5,7 +5,7 @@ part 'stock_reservation_models.g.dart';
 
 /// Stock reservation model
 @freezed
-class StockReservation with _$StockReservation {
+sealed class StockReservation with _$StockReservation {
   const factory StockReservation({
     required String id,
     required String itemId,
@@ -32,7 +32,7 @@ class StockReservation with _$StockReservation {
 
 /// Create stock reservation request
 @freezed
-class CreateStockReservationRequest with _$CreateStockReservationRequest {
+sealed class CreateStockReservationRequest with _$CreateStockReservationRequest {
   const factory CreateStockReservationRequest({
     required String itemId,
     required String locationId,
@@ -51,7 +51,7 @@ class CreateStockReservationRequest with _$CreateStockReservationRequest {
 
 /// Update stock reservation request
 @freezed
-class UpdateStockReservationRequest with _$UpdateStockReservationRequest {
+sealed class UpdateStockReservationRequest with _$UpdateStockReservationRequest {
   const factory UpdateStockReservationRequest({
     double? quantity,
     String? notes,
@@ -65,7 +65,7 @@ class UpdateStockReservationRequest with _$UpdateStockReservationRequest {
 
 /// Stock reservation filters
 @freezed
-class StockReservationFilters with _$StockReservationFilters {
+sealed class StockReservationFilters with _$StockReservationFilters {
   const factory StockReservationFilters({
     String? itemId,
     String? locationId,
@@ -111,7 +111,7 @@ class StockReservationFilters with _$StockReservationFilters {
 
 /// Consume stock reservation request
 @freezed
-class ConsumeStockReservationRequest with _$ConsumeStockReservationRequest {
+sealed class ConsumeStockReservationRequest with _$ConsumeStockReservationRequest {
   const factory ConsumeStockReservationRequest({
     required double quantity,
     String? notes,

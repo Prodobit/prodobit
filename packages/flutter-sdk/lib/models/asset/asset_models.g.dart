@@ -6,11 +6,11 @@ part of 'asset_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$AssetImpl',
+_Asset _$AssetFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Asset',
       json,
       ($checkedConvert) {
-        final val = _$AssetImpl(
+        final val = _Asset(
           id: $checkedConvert('id', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String),
           locationId: $checkedConvert('locationId', (v) => v as String),
@@ -33,8 +33,7 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
       'id': instance.id,
       'tenantId': instance.tenantId,
       'locationId': instance.locationId,
@@ -51,13 +50,12 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'deletedAt': instance.deletedAt?.toIso8601String(),
     };
 
-_$CreateAssetRequestImpl _$$CreateAssetRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_CreateAssetRequest _$CreateAssetRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateAssetRequestImpl',
+      '_CreateAssetRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateAssetRequestImpl(
+        final val = _CreateAssetRequest(
           locationId: $checkedConvert('locationId', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           code: $checkedConvert('code', (v) => v as String),
@@ -71,8 +69,7 @@ _$CreateAssetRequestImpl _$$CreateAssetRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateAssetRequestImplToJson(
-        _$CreateAssetRequestImpl instance) =>
+Map<String, dynamic> _$CreateAssetRequestToJson(_CreateAssetRequest instance) =>
     <String, dynamic>{
       'locationId': instance.locationId,
       'name': instance.name,
@@ -84,13 +81,12 @@ Map<String, dynamic> _$$CreateAssetRequestImplToJson(
       'imageUrl': instance.imageUrl,
     };
 
-_$UpdateAssetRequestImpl _$$UpdateAssetRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UpdateAssetRequest _$UpdateAssetRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateAssetRequestImpl',
+      '_UpdateAssetRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateAssetRequestImpl(
+        final val = _UpdateAssetRequest(
           locationId: $checkedConvert('locationId', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
           code: $checkedConvert('code', (v) => v as String?),
@@ -105,8 +101,7 @@ _$UpdateAssetRequestImpl _$$UpdateAssetRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateAssetRequestImplToJson(
-        _$UpdateAssetRequestImpl instance) =>
+Map<String, dynamic> _$UpdateAssetRequestToJson(_UpdateAssetRequest instance) =>
     <String, dynamic>{
       'locationId': instance.locationId,
       'name': instance.name,

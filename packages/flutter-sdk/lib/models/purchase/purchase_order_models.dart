@@ -5,7 +5,7 @@ part 'purchase_order_models.g.dart';
 
 /// Purchase order model
 @freezed
-class PurchaseOrder with _$PurchaseOrder {
+sealed class PurchaseOrder with _$PurchaseOrder {
   const factory PurchaseOrder({
     required String id,
     required String orderNumber,
@@ -40,7 +40,7 @@ class PurchaseOrder with _$PurchaseOrder {
 
 /// Purchase order line item model
 @freezed
-class PurchaseOrderLineItem with _$PurchaseOrderLineItem {
+sealed class PurchaseOrderLineItem with _$PurchaseOrderLineItem {
   const factory PurchaseOrderLineItem({
     required String id,
     required String purchaseOrderId,
@@ -70,7 +70,7 @@ class PurchaseOrderLineItem with _$PurchaseOrderLineItem {
 
 /// Create purchase order request
 @freezed
-class CreatePurchaseOrderRequest with _$CreatePurchaseOrderRequest {
+sealed class CreatePurchaseOrderRequest with _$CreatePurchaseOrderRequest {
   const factory CreatePurchaseOrderRequest({
     required String supplierId,
     required DateTime orderDate,
@@ -90,7 +90,7 @@ class CreatePurchaseOrderRequest with _$CreatePurchaseOrderRequest {
 
 /// Create purchase order line item request
 @freezed
-class CreatePurchaseOrderLineItemRequest with _$CreatePurchaseOrderLineItemRequest {
+sealed class CreatePurchaseOrderLineItemRequest with _$CreatePurchaseOrderLineItemRequest {
   const factory CreatePurchaseOrderLineItemRequest({
     required String itemId,
     required double quantity,
@@ -111,7 +111,7 @@ class CreatePurchaseOrderLineItemRequest with _$CreatePurchaseOrderLineItemReque
 
 /// Update purchase order request
 @freezed
-class UpdatePurchaseOrderRequest with _$UpdatePurchaseOrderRequest {
+sealed class UpdatePurchaseOrderRequest with _$UpdatePurchaseOrderRequest {
   const factory UpdatePurchaseOrderRequest({
     DateTime? orderDate,
     DateTime? deliveryDate,
@@ -129,7 +129,7 @@ class UpdatePurchaseOrderRequest with _$UpdatePurchaseOrderRequest {
 
 /// Update purchase order line item request
 @freezed
-class UpdatePurchaseOrderLineItemRequest with _$UpdatePurchaseOrderLineItemRequest {
+sealed class UpdatePurchaseOrderLineItemRequest with _$UpdatePurchaseOrderLineItemRequest {
   const factory UpdatePurchaseOrderLineItemRequest({
     double? quantity,
     String? unit,
@@ -150,7 +150,7 @@ class UpdatePurchaseOrderLineItemRequest with _$UpdatePurchaseOrderLineItemReque
 
 /// Purchase order filters
 @freezed
-class PurchaseOrderFilters with _$PurchaseOrderFilters {
+sealed class PurchaseOrderFilters with _$PurchaseOrderFilters {
   const factory PurchaseOrderFilters({
     String? supplierId,
     String? status,

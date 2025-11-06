@@ -6,12 +6,11 @@ part of 'employee_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EmployeeImpl _$$EmployeeImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$EmployeeImpl',
+_Employee _$EmployeeFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_Employee',
       json,
       ($checkedConvert) {
-        final val = _$EmployeeImpl(
+        final val = _Employee(
           id: $checkedConvert('id', (v) => v as String),
           tenantId: $checkedConvert('tenantId', (v) => v as String),
           userId: $checkedConvert('userId', (v) => v as String),
@@ -54,8 +53,7 @@ _$EmployeeImpl _$$EmployeeImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$EmployeeToJson(_Employee instance) => <String, dynamic>{
       'id': instance.id,
       'tenantId': instance.tenantId,
       'userId': instance.userId,
@@ -85,13 +83,13 @@ Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$CreateEmployeeRequestImpl _$$CreateEmployeeRequestImplFromJson(
+_CreateEmployeeRequest _$CreateEmployeeRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateEmployeeRequestImpl',
+      '_CreateEmployeeRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateEmployeeRequestImpl(
+        final val = _CreateEmployeeRequest(
           userId: $checkedConvert('userId', (v) => v as String),
           employeeId: $checkedConvert('employeeId', (v) => v as String),
           firstName: $checkedConvert('firstName', (v) => v as String),
@@ -123,8 +121,8 @@ _$CreateEmployeeRequestImpl _$$CreateEmployeeRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateEmployeeRequestImplToJson(
-        _$CreateEmployeeRequestImpl instance) =>
+Map<String, dynamic> _$CreateEmployeeRequestToJson(
+        _CreateEmployeeRequest instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'employeeId': instance.employeeId,
@@ -148,13 +146,13 @@ Map<String, dynamic> _$$CreateEmployeeRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateEmployeeRequestImpl _$$UpdateEmployeeRequestImplFromJson(
+_UpdateEmployeeRequest _$UpdateEmployeeRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateEmployeeRequestImpl',
+      '_UpdateEmployeeRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateEmployeeRequestImpl(
+        final val = _UpdateEmployeeRequest(
           firstName: $checkedConvert('firstName', (v) => v as String?),
           lastName: $checkedConvert('lastName', (v) => v as String?),
           email: $checkedConvert('email', (v) => v as String?),
@@ -187,8 +185,8 @@ _$UpdateEmployeeRequestImpl _$$UpdateEmployeeRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateEmployeeRequestImplToJson(
-        _$UpdateEmployeeRequestImpl instance) =>
+Map<String, dynamic> _$UpdateEmployeeRequestToJson(
+        _UpdateEmployeeRequest instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -212,13 +210,12 @@ Map<String, dynamic> _$$UpdateEmployeeRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$EmployeeFiltersImpl _$$EmployeeFiltersImplFromJson(
-        Map<String, dynamic> json) =>
+_EmployeeFilters _$EmployeeFiltersFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$EmployeeFiltersImpl',
+      '_EmployeeFilters',
       json,
       ($checkedConvert) {
-        final val = _$EmployeeFiltersImpl(
+        final val = _EmployeeFilters(
           status: $checkedConvert('status', (v) => v as String?),
           department: $checkedConvert('department', (v) => v as String?),
           position: $checkedConvert('position', (v) => v as String?),
@@ -239,8 +236,7 @@ _$EmployeeFiltersImpl _$$EmployeeFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$EmployeeFiltersImplToJson(
-        _$EmployeeFiltersImpl instance) =>
+Map<String, dynamic> _$EmployeeFiltersToJson(_EmployeeFilters instance) =>
     <String, dynamic>{
       'status': instance.status,
       'department': instance.department,

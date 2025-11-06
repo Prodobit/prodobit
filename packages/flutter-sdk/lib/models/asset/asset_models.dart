@@ -5,7 +5,7 @@ part 'asset_models.g.dart';
 
 /// Asset model
 @freezed
-class Asset with _$Asset {
+sealed class Asset with _$Asset {
   const factory Asset({
     required String id,
     required String tenantId,
@@ -28,7 +28,7 @@ class Asset with _$Asset {
 
 /// Asset creation request
 @freezed
-class CreateAssetRequest with _$CreateAssetRequest {
+sealed class CreateAssetRequest with _$CreateAssetRequest {
   const factory CreateAssetRequest({
     required String locationId,
     required String name,
@@ -46,7 +46,7 @@ class CreateAssetRequest with _$CreateAssetRequest {
 
 /// Asset update request
 @freezed
-class UpdateAssetRequest with _$UpdateAssetRequest {
+sealed class UpdateAssetRequest with _$UpdateAssetRequest {
   const factory UpdateAssetRequest({
     String? locationId,
     String? name,

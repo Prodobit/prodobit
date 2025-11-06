@@ -6,7 +6,7 @@ part 'response_models.g.dart';
 /// Authentication response model (deprecated - use auth models)
 @Deprecated('Use LoginOTPResponse from auth_models.dart instead')
 @freezed
-class AuthResponse with _$AuthResponse {
+sealed class AuthResponse with _$AuthResponse {
   @Deprecated('Use LoginOTPResponse from auth_models.dart instead')
   const factory AuthResponse({
     required String accessToken,
@@ -24,7 +24,7 @@ class AuthResponse with _$AuthResponse {
 
 /// Password reset response model
 @freezed
-class PasswordResetResponse with _$PasswordResetResponse {
+sealed class PasswordResetResponse with _$PasswordResetResponse {
   const factory PasswordResetResponse({
     required String message,
     required bool success,
@@ -36,7 +36,7 @@ class PasswordResetResponse with _$PasswordResetResponse {
 
 /// Generic success response model
 @freezed
-class SuccessResponse with _$SuccessResponse {
+sealed class SuccessResponse with _$SuccessResponse {
   const factory SuccessResponse({
     required String message,
     required bool success,

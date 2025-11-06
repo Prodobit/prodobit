@@ -5,7 +5,7 @@ part 'eco_models.g.dart';
 
 /// ECO (Engineering Change Order) model
 @freezed
-class Eco with _$Eco {
+sealed class Eco with _$Eco {
   const factory Eco({
     required String id,
     required String ecoNumber,
@@ -42,7 +42,7 @@ class Eco with _$Eco {
 
 /// Create ECO request
 @freezed
-class CreateEcoRequest with _$CreateEcoRequest {
+sealed class CreateEcoRequest with _$CreateEcoRequest {
   const factory CreateEcoRequest({
     required String ecoNumber,
     required String title,
@@ -64,7 +64,7 @@ class CreateEcoRequest with _$CreateEcoRequest {
 
 /// Update ECO request
 @freezed
-class UpdateEcoRequest with _$UpdateEcoRequest {
+sealed class UpdateEcoRequest with _$UpdateEcoRequest {
   const factory UpdateEcoRequest({
     String? title,
     String? description,
@@ -85,7 +85,7 @@ class UpdateEcoRequest with _$UpdateEcoRequest {
 
 /// Approve ECO request
 @freezed
-class ApproveEcoRequest with _$ApproveEcoRequest {
+sealed class ApproveEcoRequest with _$ApproveEcoRequest {
   const factory ApproveEcoRequest({
     String? notes,
     DateTime? targetImplementationDate,
@@ -97,7 +97,7 @@ class ApproveEcoRequest with _$ApproveEcoRequest {
 
 /// Reject ECO request
 @freezed
-class RejectEcoRequest with _$RejectEcoRequest {
+sealed class RejectEcoRequest with _$RejectEcoRequest {
   const factory RejectEcoRequest({
     required String reason,
     String? notes,
@@ -109,7 +109,7 @@ class RejectEcoRequest with _$RejectEcoRequest {
 
 /// ECO filters
 @freezed
-class EcoFilters with _$EcoFilters {
+sealed class EcoFilters with _$EcoFilters {
   const factory EcoFilters({
     String? type,
     String? priority,

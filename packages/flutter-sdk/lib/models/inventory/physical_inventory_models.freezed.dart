@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,165 +9,102 @@ part of 'physical_inventory_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-PhysicalInventory _$PhysicalInventoryFromJson(Map<String, dynamic> json) {
-  return _PhysicalInventory.fromJson(json);
-}
 
 /// @nodoc
 mixin _$PhysicalInventory {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'draft', 'in_progress', 'completed', 'cancelled'
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  DateTime? get startedAt => throw _privateConstructorUsedError;
-  DateTime? get completedAt => throw _privateConstructorUsedError;
-  DateTime? get cancelledAt => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
-  String? get startedBy => throw _privateConstructorUsedError;
-  String? get completedBy => throw _privateConstructorUsedError;
-  String? get cancelledBy => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get description;
+  String get locationId;
+  String get status; // 'draft', 'in_progress', 'completed', 'cancelled'
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  DateTime? get startedAt;
+  DateTime? get completedAt;
+  DateTime? get cancelledAt;
+  String? get createdBy;
+  String? get startedBy;
+  String? get completedBy;
+  String? get cancelledBy;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PhysicalInventoryCopyWith<PhysicalInventory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PhysicalInventoryCopyWith<$Res> {
-  factory $PhysicalInventoryCopyWith(
-          PhysicalInventory value, $Res Function(PhysicalInventory) then) =
-      _$PhysicalInventoryCopyWithImpl<$Res, PhysicalInventory>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      String locationId,
-      String status,
-      DateTime createdAt,
-      DateTime updatedAt,
-      DateTime? startedAt,
-      DateTime? completedAt,
-      DateTime? cancelledAt,
-      String? createdBy,
-      String? startedBy,
-      String? completedBy,
-      String? cancelledBy,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$PhysicalInventoryCopyWithImpl<$Res, $Val extends PhysicalInventory>
-    implements $PhysicalInventoryCopyWith<$Res> {
-  _$PhysicalInventoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of PhysicalInventory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $PhysicalInventoryCopyWith<PhysicalInventory> get copyWith =>
+      _$PhysicalInventoryCopyWithImpl<PhysicalInventory>(
+          this as PhysicalInventory, _$identity);
+
+  /// Serializes this PhysicalInventory to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? description = null,
-    Object? locationId = null,
-    Object? status = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? startedAt = freezed,
-    Object? completedAt = freezed,
-    Object? cancelledAt = freezed,
-    Object? createdBy = freezed,
-    Object? startedBy = freezed,
-    Object? completedBy = freezed,
-    Object? cancelledBy = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      startedAt: freezed == startedAt
-          ? _value.startedAt
-          : startedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      completedAt: freezed == completedAt
-          ? _value.completedAt
-          : completedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      cancelledAt: freezed == cancelledAt
-          ? _value.cancelledAt
-          : cancelledAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBy: freezed == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      startedBy: freezed == startedBy
-          ? _value.startedBy
-          : startedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      completedBy: freezed == completedBy
-          ? _value.completedBy
-          : completedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cancelledBy: freezed == cancelledBy
-          ? _value.cancelledBy
-          : cancelledBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PhysicalInventory &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt) &&
+            (identical(other.completedAt, completedAt) ||
+                other.completedAt == completedAt) &&
+            (identical(other.cancelledAt, cancelledAt) ||
+                other.cancelledAt == cancelledAt) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.startedBy, startedBy) ||
+                other.startedBy == startedBy) &&
+            (identical(other.completedBy, completedBy) ||
+                other.completedBy == completedBy) &&
+            (identical(other.cancelledBy, cancelledBy) ||
+                other.cancelledBy == cancelledBy) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      description,
+      locationId,
+      status,
+      createdAt,
+      updatedAt,
+      startedAt,
+      completedAt,
+      cancelledAt,
+      createdBy,
+      startedBy,
+      completedBy,
+      cancelledBy,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'PhysicalInventory(id: $id, name: $name, description: $description, locationId: $locationId, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, startedAt: $startedAt, completedAt: $completedAt, cancelledAt: $cancelledAt, createdBy: $createdBy, startedBy: $startedBy, completedBy: $completedBy, cancelledBy: $cancelledBy, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$PhysicalInventoryImplCopyWith<$Res>
-    implements $PhysicalInventoryCopyWith<$Res> {
-  factory _$$PhysicalInventoryImplCopyWith(_$PhysicalInventoryImpl value,
-          $Res Function(_$PhysicalInventoryImpl) then) =
-      __$$PhysicalInventoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PhysicalInventoryCopyWith<$Res> {
+  factory $PhysicalInventoryCopyWith(
+          PhysicalInventory value, $Res Function(PhysicalInventory) _then) =
+      _$PhysicalInventoryCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -188,13 +125,15 @@ abstract class _$$PhysicalInventoryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PhysicalInventoryImplCopyWithImpl<$Res>
-    extends _$PhysicalInventoryCopyWithImpl<$Res, _$PhysicalInventoryImpl>
-    implements _$$PhysicalInventoryImplCopyWith<$Res> {
-  __$$PhysicalInventoryImplCopyWithImpl(_$PhysicalInventoryImpl _value,
-      $Res Function(_$PhysicalInventoryImpl) _then)
-      : super(_value, _then);
+class _$PhysicalInventoryCopyWithImpl<$Res>
+    implements $PhysicalInventoryCopyWith<$Res> {
+  _$PhysicalInventoryCopyWithImpl(this._self, this._then);
 
+  final PhysicalInventory _self;
+  final $Res Function(PhysicalInventory) _then;
+
+  /// Create a copy of PhysicalInventory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -214,75 +153,321 @@ class __$$PhysicalInventoryImplCopyWithImpl<$Res>
     Object? cancelledBy = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$PhysicalInventoryImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       startedAt: freezed == startedAt
-          ? _value.startedAt
+          ? _self.startedAt
           : startedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       completedAt: freezed == completedAt
-          ? _value.completedAt
+          ? _self.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       cancelledAt: freezed == cancelledAt
-          ? _value.cancelledAt
+          ? _self.cancelledAt
           : cancelledAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBy: freezed == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
       startedBy: freezed == startedBy
-          ? _value.startedBy
+          ? _self.startedBy
           : startedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       completedBy: freezed == completedBy
-          ? _value.completedBy
+          ? _self.completedBy
           : completedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       cancelledBy: freezed == cancelledBy
-          ? _value.cancelledBy
+          ? _self.cancelledBy
           : cancelledBy // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [PhysicalInventory].
+extension PhysicalInventoryPatterns on PhysicalInventory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PhysicalInventory value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventory() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PhysicalInventory value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventory():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PhysicalInventory value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventory() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String description,
+            String locationId,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? startedAt,
+            DateTime? completedAt,
+            DateTime? cancelledAt,
+            String? createdBy,
+            String? startedBy,
+            String? completedBy,
+            String? cancelledBy,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventory() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.description,
+            _that.locationId,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.startedAt,
+            _that.completedAt,
+            _that.cancelledAt,
+            _that.createdBy,
+            _that.startedBy,
+            _that.completedBy,
+            _that.cancelledBy,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String description,
+            String locationId,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? startedAt,
+            DateTime? completedAt,
+            DateTime? cancelledAt,
+            String? createdBy,
+            String? startedBy,
+            String? completedBy,
+            String? cancelledBy,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventory():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.description,
+            _that.locationId,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.startedAt,
+            _that.completedAt,
+            _that.cancelledAt,
+            _that.createdBy,
+            _that.startedBy,
+            _that.completedBy,
+            _that.cancelledBy,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String description,
+            String locationId,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? startedAt,
+            DateTime? completedAt,
+            DateTime? cancelledAt,
+            String? createdBy,
+            String? startedBy,
+            String? completedBy,
+            String? cancelledBy,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventory() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.description,
+            _that.locationId,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.startedAt,
+            _that.completedAt,
+            _that.cancelledAt,
+            _that.createdBy,
+            _that.startedBy,
+            _that.completedBy,
+            _that.cancelledBy,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$PhysicalInventoryImpl implements _PhysicalInventory {
-  const _$PhysicalInventoryImpl(
+class _PhysicalInventory implements PhysicalInventory {
+  const _PhysicalInventory(
       {required this.id,
       required this.name,
       required this.description,
@@ -299,9 +484,8 @@ class _$PhysicalInventoryImpl implements _PhysicalInventory {
       this.cancelledBy,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$PhysicalInventoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PhysicalInventoryImplFromJson(json);
+  factory _PhysicalInventory.fromJson(Map<String, dynamic> json) =>
+      _$PhysicalInventoryFromJson(json);
 
   @override
   final String id;
@@ -342,16 +526,26 @@ class _$PhysicalInventoryImpl implements _PhysicalInventory {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of PhysicalInventory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PhysicalInventory(id: $id, name: $name, description: $description, locationId: $locationId, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, startedAt: $startedAt, completedAt: $completedAt, cancelledAt: $cancelledAt, createdBy: $createdBy, startedBy: $startedBy, completedBy: $completedBy, cancelledBy: $cancelledBy, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PhysicalInventoryCopyWith<_PhysicalInventory> get copyWith =>
+      __$PhysicalInventoryCopyWithImpl<_PhysicalInventory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PhysicalInventoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PhysicalInventoryImpl &&
+            other is _PhysicalInventory &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
@@ -380,7 +574,7 @@ class _$PhysicalInventoryImpl implements _PhysicalInventory {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -400,341 +594,126 @@ class _$PhysicalInventoryImpl implements _PhysicalInventory {
       cancelledBy,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PhysicalInventoryImplCopyWith<_$PhysicalInventoryImpl> get copyWith =>
-      __$$PhysicalInventoryImplCopyWithImpl<_$PhysicalInventoryImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PhysicalInventoryImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _PhysicalInventory implements PhysicalInventory {
-  const factory _PhysicalInventory(
-      {required final String id,
-      required final String name,
-      required final String description,
-      required final String locationId,
-      required final String status,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final DateTime? startedAt,
-      final DateTime? completedAt,
-      final DateTime? cancelledAt,
-      final String? createdBy,
-      final String? startedBy,
-      final String? completedBy,
-      final String? cancelledBy,
-      final Map<String, dynamic>? metadata}) = _$PhysicalInventoryImpl;
-
-  factory _PhysicalInventory.fromJson(Map<String, dynamic> json) =
-      _$PhysicalInventoryImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get description;
-  @override
-  String get locationId;
-  @override
-  String get status;
-  @override // 'draft', 'in_progress', 'completed', 'cancelled'
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  DateTime? get startedAt;
-  @override
-  DateTime? get completedAt;
-  @override
-  DateTime? get cancelledAt;
-  @override
-  String? get createdBy;
-  @override
-  String? get startedBy;
-  @override
-  String? get completedBy;
-  @override
-  String? get cancelledBy;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$PhysicalInventoryImplCopyWith<_$PhysicalInventoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-PhysicalInventoryItem _$PhysicalInventoryItemFromJson(
-    Map<String, dynamic> json) {
-  return _PhysicalInventoryItem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$PhysicalInventoryItem {
-  String get id => throw _privateConstructorUsedError;
-  String get physicalInventoryId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  double get systemQuantity => throw _privateConstructorUsedError;
-  double get countedQuantity => throw _privateConstructorUsedError;
-  double get varianceQuantity => throw _privateConstructorUsedError;
-  double get varianceValue => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'pending', 'counted', 'adjusted'
-  DateTime? get countedAt => throw _privateConstructorUsedError;
-  String? get countedBy => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PhysicalInventoryItemCopyWith<PhysicalInventoryItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PhysicalInventoryItemCopyWith<$Res> {
-  factory $PhysicalInventoryItemCopyWith(PhysicalInventoryItem value,
-          $Res Function(PhysicalInventoryItem) then) =
-      _$PhysicalInventoryItemCopyWithImpl<$Res, PhysicalInventoryItem>;
-  @useResult
-  $Res call(
-      {String id,
-      String physicalInventoryId,
-      String itemId,
-      String locationId,
-      double systemQuantity,
-      double countedQuantity,
-      double varianceQuantity,
-      double varianceValue,
-      String status,
-      DateTime? countedAt,
-      String? countedBy,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$PhysicalInventoryItemCopyWithImpl<$Res,
-        $Val extends PhysicalInventoryItem>
-    implements $PhysicalInventoryItemCopyWith<$Res> {
-  _$PhysicalInventoryItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? physicalInventoryId = null,
-    Object? itemId = null,
-    Object? locationId = null,
-    Object? systemQuantity = null,
-    Object? countedQuantity = null,
-    Object? varianceQuantity = null,
-    Object? varianceValue = null,
-    Object? status = null,
-    Object? countedAt = freezed,
-    Object? countedBy = freezed,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      physicalInventoryId: null == physicalInventoryId
-          ? _value.physicalInventoryId
-          : physicalInventoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      systemQuantity: null == systemQuantity
-          ? _value.systemQuantity
-          : systemQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      countedQuantity: null == countedQuantity
-          ? _value.countedQuantity
-          : countedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      varianceQuantity: null == varianceQuantity
-          ? _value.varianceQuantity
-          : varianceQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      varianceValue: null == varianceValue
-          ? _value.varianceValue
-          : varianceValue // ignore: cast_nullable_to_non_nullable
-              as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      countedAt: freezed == countedAt
-          ? _value.countedAt
-          : countedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      countedBy: freezed == countedBy
-          ? _value.countedBy
-          : countedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'PhysicalInventory(id: $id, name: $name, description: $description, locationId: $locationId, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, startedAt: $startedAt, completedAt: $completedAt, cancelledAt: $cancelledAt, createdBy: $createdBy, startedBy: $startedBy, completedBy: $completedBy, cancelledBy: $cancelledBy, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$PhysicalInventoryItemImplCopyWith<$Res>
-    implements $PhysicalInventoryItemCopyWith<$Res> {
-  factory _$$PhysicalInventoryItemImplCopyWith(
-          _$PhysicalInventoryItemImpl value,
-          $Res Function(_$PhysicalInventoryItemImpl) then) =
-      __$$PhysicalInventoryItemImplCopyWithImpl<$Res>;
+abstract mixin class _$PhysicalInventoryCopyWith<$Res>
+    implements $PhysicalInventoryCopyWith<$Res> {
+  factory _$PhysicalInventoryCopyWith(
+          _PhysicalInventory value, $Res Function(_PhysicalInventory) _then) =
+      __$PhysicalInventoryCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
-      String physicalInventoryId,
-      String itemId,
+      String name,
+      String description,
       String locationId,
-      double systemQuantity,
-      double countedQuantity,
-      double varianceQuantity,
-      double varianceValue,
       String status,
-      DateTime? countedAt,
-      String? countedBy,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber,
+      DateTime createdAt,
+      DateTime updatedAt,
+      DateTime? startedAt,
+      DateTime? completedAt,
+      DateTime? cancelledAt,
+      String? createdBy,
+      String? startedBy,
+      String? completedBy,
+      String? cancelledBy,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$PhysicalInventoryItemImplCopyWithImpl<$Res>
-    extends _$PhysicalInventoryItemCopyWithImpl<$Res,
-        _$PhysicalInventoryItemImpl>
-    implements _$$PhysicalInventoryItemImplCopyWith<$Res> {
-  __$$PhysicalInventoryItemImplCopyWithImpl(_$PhysicalInventoryItemImpl _value,
-      $Res Function(_$PhysicalInventoryItemImpl) _then)
-      : super(_value, _then);
+class __$PhysicalInventoryCopyWithImpl<$Res>
+    implements _$PhysicalInventoryCopyWith<$Res> {
+  __$PhysicalInventoryCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _PhysicalInventory _self;
+  final $Res Function(_PhysicalInventory) _then;
+
+  /// Create a copy of PhysicalInventory
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? physicalInventoryId = null,
-    Object? itemId = null,
+    Object? name = null,
+    Object? description = null,
     Object? locationId = null,
-    Object? systemQuantity = null,
-    Object? countedQuantity = null,
-    Object? varianceQuantity = null,
-    Object? varianceValue = null,
     Object? status = null,
-    Object? countedAt = freezed,
-    Object? countedBy = freezed,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? startedAt = freezed,
+    Object? completedAt = freezed,
+    Object? cancelledAt = freezed,
+    Object? createdBy = freezed,
+    Object? startedBy = freezed,
+    Object? completedBy = freezed,
+    Object? cancelledBy = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$PhysicalInventoryItemImpl(
+    return _then(_PhysicalInventory(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      physicalInventoryId: null == physicalInventoryId
-          ? _value.physicalInventoryId
-          : physicalInventoryId // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
-      systemQuantity: null == systemQuantity
-          ? _value.systemQuantity
-          : systemQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      countedQuantity: null == countedQuantity
-          ? _value.countedQuantity
-          : countedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      varianceQuantity: null == varianceQuantity
-          ? _value.varianceQuantity
-          : varianceQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      varianceValue: null == varianceValue
-          ? _value.varianceValue
-          : varianceValue // ignore: cast_nullable_to_non_nullable
-              as double,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      countedAt: freezed == countedAt
-          ? _value.countedAt
-          : countedAt // ignore: cast_nullable_to_non_nullable
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      startedAt: freezed == startedAt
+          ? _self.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      countedBy: freezed == countedBy
-          ? _value.countedBy
-          : countedBy // ignore: cast_nullable_to_non_nullable
+      completedAt: freezed == completedAt
+          ? _self.completedAt
+          : completedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      cancelledAt: freezed == cancelledAt
+          ? _self.cancelledAt
+          : cancelledAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
+      startedBy: freezed == startedBy
+          ? _self.startedBy
+          : startedBy // ignore: cast_nullable_to_non_nullable
               as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
+      completedBy: freezed == completedBy
+          ? _self.completedBy
+          : completedBy // ignore: cast_nullable_to_non_nullable
               as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
+      cancelledBy: freezed == cancelledBy
+          ? _self.cancelledBy
+          : cancelledBy // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -742,9 +721,460 @@ class __$$PhysicalInventoryItemImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$PhysicalInventoryItem {
+  String get id;
+  String get physicalInventoryId;
+  String get itemId;
+  String get locationId;
+  double get systemQuantity;
+  double get countedQuantity;
+  double get varianceQuantity;
+  double get varianceValue;
+  String get status; // 'pending', 'counted', 'adjusted'
+  DateTime? get countedAt;
+  String? get countedBy;
+  String? get notes;
+  String? get lotNumber;
+  String? get serialNumber;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of PhysicalInventoryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PhysicalInventoryItemCopyWith<PhysicalInventoryItem> get copyWith =>
+      _$PhysicalInventoryItemCopyWithImpl<PhysicalInventoryItem>(
+          this as PhysicalInventoryItem, _$identity);
+
+  /// Serializes this PhysicalInventoryItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PhysicalInventoryItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.physicalInventoryId, physicalInventoryId) ||
+                other.physicalInventoryId == physicalInventoryId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.systemQuantity, systemQuantity) ||
+                other.systemQuantity == systemQuantity) &&
+            (identical(other.countedQuantity, countedQuantity) ||
+                other.countedQuantity == countedQuantity) &&
+            (identical(other.varianceQuantity, varianceQuantity) ||
+                other.varianceQuantity == varianceQuantity) &&
+            (identical(other.varianceValue, varianceValue) ||
+                other.varianceValue == varianceValue) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.countedAt, countedAt) ||
+                other.countedAt == countedAt) &&
+            (identical(other.countedBy, countedBy) ||
+                other.countedBy == countedBy) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      physicalInventoryId,
+      itemId,
+      locationId,
+      systemQuantity,
+      countedQuantity,
+      varianceQuantity,
+      varianceValue,
+      status,
+      countedAt,
+      countedBy,
+      notes,
+      lotNumber,
+      serialNumber,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'PhysicalInventoryItem(id: $id, physicalInventoryId: $physicalInventoryId, itemId: $itemId, locationId: $locationId, systemQuantity: $systemQuantity, countedQuantity: $countedQuantity, varianceQuantity: $varianceQuantity, varianceValue: $varianceValue, status: $status, countedAt: $countedAt, countedBy: $countedBy, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $PhysicalInventoryItemCopyWith<$Res> {
+  factory $PhysicalInventoryItemCopyWith(PhysicalInventoryItem value,
+          $Res Function(PhysicalInventoryItem) _then) =
+      _$PhysicalInventoryItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String physicalInventoryId,
+      String itemId,
+      String locationId,
+      double systemQuantity,
+      double countedQuantity,
+      double varianceQuantity,
+      double varianceValue,
+      String status,
+      DateTime? countedAt,
+      String? countedBy,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$PhysicalInventoryItemCopyWithImpl<$Res>
+    implements $PhysicalInventoryItemCopyWith<$Res> {
+  _$PhysicalInventoryItemCopyWithImpl(this._self, this._then);
+
+  final PhysicalInventoryItem _self;
+  final $Res Function(PhysicalInventoryItem) _then;
+
+  /// Create a copy of PhysicalInventoryItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? physicalInventoryId = null,
+    Object? itemId = null,
+    Object? locationId = null,
+    Object? systemQuantity = null,
+    Object? countedQuantity = null,
+    Object? varianceQuantity = null,
+    Object? varianceValue = null,
+    Object? status = null,
+    Object? countedAt = freezed,
+    Object? countedBy = freezed,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      physicalInventoryId: null == physicalInventoryId
+          ? _self.physicalInventoryId
+          : physicalInventoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      systemQuantity: null == systemQuantity
+          ? _self.systemQuantity
+          : systemQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      countedQuantity: null == countedQuantity
+          ? _self.countedQuantity
+          : countedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      varianceQuantity: null == varianceQuantity
+          ? _self.varianceQuantity
+          : varianceQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      varianceValue: null == varianceValue
+          ? _self.varianceValue
+          : varianceValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      countedAt: freezed == countedAt
+          ? _self.countedAt
+          : countedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      countedBy: freezed == countedBy
+          ? _self.countedBy
+          : countedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [PhysicalInventoryItem].
+extension PhysicalInventoryItemPatterns on PhysicalInventoryItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PhysicalInventoryItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PhysicalInventoryItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PhysicalInventoryItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String physicalInventoryId,
+            String itemId,
+            String locationId,
+            double systemQuantity,
+            double countedQuantity,
+            double varianceQuantity,
+            double varianceValue,
+            String status,
+            DateTime? countedAt,
+            String? countedBy,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.physicalInventoryId,
+            _that.itemId,
+            _that.locationId,
+            _that.systemQuantity,
+            _that.countedQuantity,
+            _that.varianceQuantity,
+            _that.varianceValue,
+            _that.status,
+            _that.countedAt,
+            _that.countedBy,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String physicalInventoryId,
+            String itemId,
+            String locationId,
+            double systemQuantity,
+            double countedQuantity,
+            double varianceQuantity,
+            double varianceValue,
+            String status,
+            DateTime? countedAt,
+            String? countedBy,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryItem():
+        return $default(
+            _that.id,
+            _that.physicalInventoryId,
+            _that.itemId,
+            _that.locationId,
+            _that.systemQuantity,
+            _that.countedQuantity,
+            _that.varianceQuantity,
+            _that.varianceValue,
+            _that.status,
+            _that.countedAt,
+            _that.countedBy,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String physicalInventoryId,
+            String itemId,
+            String locationId,
+            double systemQuantity,
+            double countedQuantity,
+            double varianceQuantity,
+            double varianceValue,
+            String status,
+            DateTime? countedAt,
+            String? countedBy,
+            String? notes,
+            String? lotNumber,
+            String? serialNumber,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryItem() when $default != null:
+        return $default(
+            _that.id,
+            _that.physicalInventoryId,
+            _that.itemId,
+            _that.locationId,
+            _that.systemQuantity,
+            _that.countedQuantity,
+            _that.varianceQuantity,
+            _that.varianceValue,
+            _that.status,
+            _that.countedAt,
+            _that.countedBy,
+            _that.notes,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$PhysicalInventoryItemImpl implements _PhysicalInventoryItem {
-  const _$PhysicalInventoryItemImpl(
+class _PhysicalInventoryItem implements PhysicalInventoryItem {
+  const _PhysicalInventoryItem(
       {required this.id,
       required this.physicalInventoryId,
       required this.itemId,
@@ -761,9 +1191,8 @@ class _$PhysicalInventoryItemImpl implements _PhysicalInventoryItem {
       this.serialNumber,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$PhysicalInventoryItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PhysicalInventoryItemImplFromJson(json);
+  factory _PhysicalInventoryItem.fromJson(Map<String, dynamic> json) =>
+      _$PhysicalInventoryItemFromJson(json);
 
   @override
   final String id;
@@ -804,16 +1233,27 @@ class _$PhysicalInventoryItemImpl implements _PhysicalInventoryItem {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of PhysicalInventoryItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PhysicalInventoryItem(id: $id, physicalInventoryId: $physicalInventoryId, itemId: $itemId, locationId: $locationId, systemQuantity: $systemQuantity, countedQuantity: $countedQuantity, varianceQuantity: $varianceQuantity, varianceValue: $varianceValue, status: $status, countedAt: $countedAt, countedBy: $countedBy, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PhysicalInventoryItemCopyWith<_PhysicalInventoryItem> get copyWith =>
+      __$PhysicalInventoryItemCopyWithImpl<_PhysicalInventoryItem>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PhysicalInventoryItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PhysicalInventoryItemImpl &&
+            other is _PhysicalInventoryItem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.physicalInventoryId, physicalInventoryId) ||
                 other.physicalInventoryId == physicalInventoryId) &&
@@ -841,7 +1281,7 @@ class _$PhysicalInventoryItemImpl implements _PhysicalInventoryItem {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -861,200 +1301,126 @@ class _$PhysicalInventoryItemImpl implements _PhysicalInventoryItem {
       serialNumber,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PhysicalInventoryItemImplCopyWith<_$PhysicalInventoryItemImpl>
-      get copyWith => __$$PhysicalInventoryItemImplCopyWithImpl<
-          _$PhysicalInventoryItemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PhysicalInventoryItemImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _PhysicalInventoryItem implements PhysicalInventoryItem {
-  const factory _PhysicalInventoryItem(
-      {required final String id,
-      required final String physicalInventoryId,
-      required final String itemId,
-      required final String locationId,
-      required final double systemQuantity,
-      required final double countedQuantity,
-      required final double varianceQuantity,
-      required final double varianceValue,
-      required final String status,
-      final DateTime? countedAt,
-      final String? countedBy,
-      final String? notes,
-      final String? lotNumber,
-      final String? serialNumber,
-      final Map<String, dynamic>? metadata}) = _$PhysicalInventoryItemImpl;
-
-  factory _PhysicalInventoryItem.fromJson(Map<String, dynamic> json) =
-      _$PhysicalInventoryItemImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get physicalInventoryId;
-  @override
-  String get itemId;
-  @override
-  String get locationId;
-  @override
-  double get systemQuantity;
-  @override
-  double get countedQuantity;
-  @override
-  double get varianceQuantity;
-  @override
-  double get varianceValue;
-  @override
-  String get status;
-  @override // 'pending', 'counted', 'adjusted'
-  DateTime? get countedAt;
-  @override
-  String? get countedBy;
-  @override
-  String? get notes;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$PhysicalInventoryItemImplCopyWith<_$PhysicalInventoryItemImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreatePhysicalInventoryRequest _$CreatePhysicalInventoryRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreatePhysicalInventoryRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreatePhysicalInventoryRequest {
-  String get name => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreatePhysicalInventoryRequestCopyWith<CreatePhysicalInventoryRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreatePhysicalInventoryRequestCopyWith<$Res> {
-  factory $CreatePhysicalInventoryRequestCopyWith(
-          CreatePhysicalInventoryRequest value,
-          $Res Function(CreatePhysicalInventoryRequest) then) =
-      _$CreatePhysicalInventoryRequestCopyWithImpl<$Res,
-          CreatePhysicalInventoryRequest>;
-  @useResult
-  $Res call(
-      {String name,
-      String description,
-      String locationId,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$CreatePhysicalInventoryRequestCopyWithImpl<$Res,
-        $Val extends CreatePhysicalInventoryRequest>
-    implements $CreatePhysicalInventoryRequestCopyWith<$Res> {
-  _$CreatePhysicalInventoryRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? description = null,
-    Object? locationId = null,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'PhysicalInventoryItem(id: $id, physicalInventoryId: $physicalInventoryId, itemId: $itemId, locationId: $locationId, systemQuantity: $systemQuantity, countedQuantity: $countedQuantity, varianceQuantity: $varianceQuantity, varianceValue: $varianceValue, status: $status, countedAt: $countedAt, countedBy: $countedBy, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreatePhysicalInventoryRequestImplCopyWith<$Res>
-    implements $CreatePhysicalInventoryRequestCopyWith<$Res> {
-  factory _$$CreatePhysicalInventoryRequestImplCopyWith(
-          _$CreatePhysicalInventoryRequestImpl value,
-          $Res Function(_$CreatePhysicalInventoryRequestImpl) then) =
-      __$$CreatePhysicalInventoryRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$PhysicalInventoryItemCopyWith<$Res>
+    implements $PhysicalInventoryItemCopyWith<$Res> {
+  factory _$PhysicalInventoryItemCopyWith(_PhysicalInventoryItem value,
+          $Res Function(_PhysicalInventoryItem) _then) =
+      __$PhysicalInventoryItemCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String name,
-      String description,
+      {String id,
+      String physicalInventoryId,
+      String itemId,
       String locationId,
+      double systemQuantity,
+      double countedQuantity,
+      double varianceQuantity,
+      double varianceValue,
+      String status,
+      DateTime? countedAt,
+      String? countedBy,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$CreatePhysicalInventoryRequestImplCopyWithImpl<$Res>
-    extends _$CreatePhysicalInventoryRequestCopyWithImpl<$Res,
-        _$CreatePhysicalInventoryRequestImpl>
-    implements _$$CreatePhysicalInventoryRequestImplCopyWith<$Res> {
-  __$$CreatePhysicalInventoryRequestImplCopyWithImpl(
-      _$CreatePhysicalInventoryRequestImpl _value,
-      $Res Function(_$CreatePhysicalInventoryRequestImpl) _then)
-      : super(_value, _then);
+class __$PhysicalInventoryItemCopyWithImpl<$Res>
+    implements _$PhysicalInventoryItemCopyWith<$Res> {
+  __$PhysicalInventoryItemCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _PhysicalInventoryItem _self;
+  final $Res Function(_PhysicalInventoryItem) _then;
+
+  /// Create a copy of PhysicalInventoryItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
-    Object? description = null,
+    Object? id = null,
+    Object? physicalInventoryId = null,
+    Object? itemId = null,
     Object? locationId = null,
+    Object? systemQuantity = null,
+    Object? countedQuantity = null,
+    Object? varianceQuantity = null,
+    Object? varianceValue = null,
+    Object? status = null,
+    Object? countedAt = freezed,
+    Object? countedBy = freezed,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$CreatePhysicalInventoryRequestImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+    return _then(_PhysicalInventoryItem(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      physicalInventoryId: null == physicalInventoryId
+          ? _self.physicalInventoryId
+          : physicalInventoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
+      systemQuantity: null == systemQuantity
+          ? _self.systemQuantity
+          : systemQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      countedQuantity: null == countedQuantity
+          ? _self.countedQuantity
+          : countedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      varianceQuantity: null == varianceQuantity
+          ? _self.varianceQuantity
+          : varianceQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      varianceValue: null == varianceValue
+          ? _self.varianceValue
+          : varianceValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      countedAt: freezed == countedAt
+          ? _self.countedAt
+          : countedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      countedBy: freezed == countedBy
+          ? _self.countedBy
+          : countedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1062,19 +1428,276 @@ class __$$CreatePhysicalInventoryRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreatePhysicalInventoryRequest {
+  String get name;
+  String get description;
+  String get locationId;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of CreatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreatePhysicalInventoryRequestCopyWith<CreatePhysicalInventoryRequest>
+      get copyWith => _$CreatePhysicalInventoryRequestCopyWithImpl<
+              CreatePhysicalInventoryRequest>(
+          this as CreatePhysicalInventoryRequest, _$identity);
+
+  /// Serializes this CreatePhysicalInventoryRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreatePhysicalInventoryRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, description, locationId,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'CreatePhysicalInventoryRequest(name: $name, description: $description, locationId: $locationId, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreatePhysicalInventoryRequestCopyWith<$Res> {
+  factory $CreatePhysicalInventoryRequestCopyWith(
+          CreatePhysicalInventoryRequest value,
+          $Res Function(CreatePhysicalInventoryRequest) _then) =
+      _$CreatePhysicalInventoryRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String name,
+      String description,
+      String locationId,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$CreatePhysicalInventoryRequestCopyWithImpl<$Res>
+    implements $CreatePhysicalInventoryRequestCopyWith<$Res> {
+  _$CreatePhysicalInventoryRequestCopyWithImpl(this._self, this._then);
+
+  final CreatePhysicalInventoryRequest _self;
+  final $Res Function(CreatePhysicalInventoryRequest) _then;
+
+  /// Create a copy of CreatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? description = null,
+    Object? locationId = null,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreatePhysicalInventoryRequest].
+extension CreatePhysicalInventoryRequestPatterns
+    on CreatePhysicalInventoryRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreatePhysicalInventoryRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePhysicalInventoryRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreatePhysicalInventoryRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePhysicalInventoryRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreatePhysicalInventoryRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePhysicalInventoryRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String name, String description, String locationId,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePhysicalInventoryRequest() when $default != null:
+        return $default(
+            _that.name, _that.description, _that.locationId, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String name, String description, String locationId,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePhysicalInventoryRequest():
+        return $default(
+            _that.name, _that.description, _that.locationId, _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String name, String description, String locationId,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePhysicalInventoryRequest() when $default != null:
+        return $default(
+            _that.name, _that.description, _that.locationId, _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreatePhysicalInventoryRequestImpl
-    implements _CreatePhysicalInventoryRequest {
-  const _$CreatePhysicalInventoryRequestImpl(
+class _CreatePhysicalInventoryRequest
+    implements CreatePhysicalInventoryRequest {
+  const _CreatePhysicalInventoryRequest(
       {required this.name,
       required this.description,
       required this.locationId,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$CreatePhysicalInventoryRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreatePhysicalInventoryRequestImplFromJson(json);
+  factory _CreatePhysicalInventoryRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePhysicalInventoryRequestFromJson(json);
 
   @override
   final String name;
@@ -1092,16 +1715,27 @@ class _$CreatePhysicalInventoryRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreatePhysicalInventoryRequest(name: $name, description: $description, locationId: $locationId, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreatePhysicalInventoryRequestCopyWith<_CreatePhysicalInventoryRequest>
+      get copyWith => __$CreatePhysicalInventoryRequestCopyWithImpl<
+          _CreatePhysicalInventoryRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreatePhysicalInventoryRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreatePhysicalInventoryRequestImpl &&
+            other is _CreatePhysicalInventoryRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -1110,159 +1744,66 @@ class _$CreatePhysicalInventoryRequestImpl
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, description, locationId,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreatePhysicalInventoryRequestImplCopyWith<
-          _$CreatePhysicalInventoryRequestImpl>
-      get copyWith => __$$CreatePhysicalInventoryRequestImplCopyWithImpl<
-          _$CreatePhysicalInventoryRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreatePhysicalInventoryRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreatePhysicalInventoryRequest
-    implements CreatePhysicalInventoryRequest {
-  const factory _CreatePhysicalInventoryRequest(
-          {required final String name,
-          required final String description,
-          required final String locationId,
-          final Map<String, dynamic>? metadata}) =
-      _$CreatePhysicalInventoryRequestImpl;
-
-  factory _CreatePhysicalInventoryRequest.fromJson(Map<String, dynamic> json) =
-      _$CreatePhysicalInventoryRequestImpl.fromJson;
-
-  @override
-  String get name;
-  @override
-  String get description;
-  @override
-  String get locationId;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreatePhysicalInventoryRequestImplCopyWith<
-          _$CreatePhysicalInventoryRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdatePhysicalInventoryRequest _$UpdatePhysicalInventoryRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdatePhysicalInventoryRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UpdatePhysicalInventoryRequest {
-  String? get name => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdatePhysicalInventoryRequestCopyWith<UpdatePhysicalInventoryRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdatePhysicalInventoryRequestCopyWith<$Res> {
-  factory $UpdatePhysicalInventoryRequestCopyWith(
-          UpdatePhysicalInventoryRequest value,
-          $Res Function(UpdatePhysicalInventoryRequest) then) =
-      _$UpdatePhysicalInventoryRequestCopyWithImpl<$Res,
-          UpdatePhysicalInventoryRequest>;
-  @useResult
-  $Res call(
-      {String? name, String? description, Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$UpdatePhysicalInventoryRequestCopyWithImpl<$Res,
-        $Val extends UpdatePhysicalInventoryRequest>
-    implements $UpdatePhysicalInventoryRequestCopyWith<$Res> {
-  _$UpdatePhysicalInventoryRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreatePhysicalInventoryRequest(name: $name, description: $description, locationId: $locationId, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdatePhysicalInventoryRequestImplCopyWith<$Res>
-    implements $UpdatePhysicalInventoryRequestCopyWith<$Res> {
-  factory _$$UpdatePhysicalInventoryRequestImplCopyWith(
-          _$UpdatePhysicalInventoryRequestImpl value,
-          $Res Function(_$UpdatePhysicalInventoryRequestImpl) then) =
-      __$$UpdatePhysicalInventoryRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreatePhysicalInventoryRequestCopyWith<$Res>
+    implements $CreatePhysicalInventoryRequestCopyWith<$Res> {
+  factory _$CreatePhysicalInventoryRequestCopyWith(
+          _CreatePhysicalInventoryRequest value,
+          $Res Function(_CreatePhysicalInventoryRequest) _then) =
+      __$CreatePhysicalInventoryRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String? name, String? description, Map<String, dynamic>? metadata});
+      {String name,
+      String description,
+      String locationId,
+      Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$UpdatePhysicalInventoryRequestImplCopyWithImpl<$Res>
-    extends _$UpdatePhysicalInventoryRequestCopyWithImpl<$Res,
-        _$UpdatePhysicalInventoryRequestImpl>
-    implements _$$UpdatePhysicalInventoryRequestImplCopyWith<$Res> {
-  __$$UpdatePhysicalInventoryRequestImplCopyWithImpl(
-      _$UpdatePhysicalInventoryRequestImpl _value,
-      $Res Function(_$UpdatePhysicalInventoryRequestImpl) _then)
-      : super(_value, _then);
+class __$CreatePhysicalInventoryRequestCopyWithImpl<$Res>
+    implements _$CreatePhysicalInventoryRequestCopyWith<$Res> {
+  __$CreatePhysicalInventoryRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreatePhysicalInventoryRequest _self;
+  final $Res Function(_CreatePhysicalInventoryRequest) _then;
+
+  /// Create a copy of CreatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = freezed,
-    Object? description = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? locationId = null,
     Object? metadata = freezed,
   }) {
-    return _then(_$UpdatePhysicalInventoryRequestImpl(
-      name: freezed == name
-          ? _value.name
+    return _then(_CreatePhysicalInventoryRequest(
+      name: null == name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
+              as String,
+      description: null == description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1270,16 +1811,259 @@ class __$$UpdatePhysicalInventoryRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdatePhysicalInventoryRequest {
+  String? get name;
+  String? get description;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of UpdatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdatePhysicalInventoryRequestCopyWith<UpdatePhysicalInventoryRequest>
+      get copyWith => _$UpdatePhysicalInventoryRequestCopyWithImpl<
+              UpdatePhysicalInventoryRequest>(
+          this as UpdatePhysicalInventoryRequest, _$identity);
+
+  /// Serializes this UpdatePhysicalInventoryRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdatePhysicalInventoryRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, description,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'UpdatePhysicalInventoryRequest(name: $name, description: $description, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdatePhysicalInventoryRequestCopyWith<$Res> {
+  factory $UpdatePhysicalInventoryRequestCopyWith(
+          UpdatePhysicalInventoryRequest value,
+          $Res Function(UpdatePhysicalInventoryRequest) _then) =
+      _$UpdatePhysicalInventoryRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? name, String? description, Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$UpdatePhysicalInventoryRequestCopyWithImpl<$Res>
+    implements $UpdatePhysicalInventoryRequestCopyWith<$Res> {
+  _$UpdatePhysicalInventoryRequestCopyWithImpl(this._self, this._then);
+
+  final UpdatePhysicalInventoryRequest _self;
+  final $Res Function(UpdatePhysicalInventoryRequest) _then;
+
+  /// Create a copy of UpdatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdatePhysicalInventoryRequest].
+extension UpdatePhysicalInventoryRequestPatterns
+    on UpdatePhysicalInventoryRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdatePhysicalInventoryRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdatePhysicalInventoryRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdatePhysicalInventoryRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? name, String? description, Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryRequest() when $default != null:
+        return $default(_that.name, _that.description, _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? name, String? description, Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryRequest():
+        return $default(_that.name, _that.description, _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? name, String? description, Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryRequest() when $default != null:
+        return $default(_that.name, _that.description, _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdatePhysicalInventoryRequestImpl
-    implements _UpdatePhysicalInventoryRequest {
-  const _$UpdatePhysicalInventoryRequestImpl(
+class _UpdatePhysicalInventoryRequest
+    implements UpdatePhysicalInventoryRequest {
+  const _UpdatePhysicalInventoryRequest(
       {this.name, this.description, final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$UpdatePhysicalInventoryRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$UpdatePhysicalInventoryRequestImplFromJson(json);
+  factory _UpdatePhysicalInventoryRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdatePhysicalInventoryRequestFromJson(json);
 
   @override
   final String? name;
@@ -1295,209 +2079,176 @@ class _$UpdatePhysicalInventoryRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdatePhysicalInventoryRequest(name: $name, description: $description, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdatePhysicalInventoryRequestCopyWith<_UpdatePhysicalInventoryRequest>
+      get copyWith => __$UpdatePhysicalInventoryRequestCopyWithImpl<
+          _UpdatePhysicalInventoryRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdatePhysicalInventoryRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatePhysicalInventoryRequestImpl &&
+            other is _UpdatePhysicalInventoryRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, description,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdatePhysicalInventoryRequestImplCopyWith<
-          _$UpdatePhysicalInventoryRequestImpl>
-      get copyWith => __$$UpdatePhysicalInventoryRequestImplCopyWithImpl<
-          _$UpdatePhysicalInventoryRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdatePhysicalInventoryRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdatePhysicalInventoryRequest(name: $name, description: $description, metadata: $metadata)';
   }
 }
 
-abstract class _UpdatePhysicalInventoryRequest
-    implements UpdatePhysicalInventoryRequest {
-  const factory _UpdatePhysicalInventoryRequest(
-          {final String? name,
-          final String? description,
-          final Map<String, dynamic>? metadata}) =
-      _$UpdatePhysicalInventoryRequestImpl;
-
-  factory _UpdatePhysicalInventoryRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdatePhysicalInventoryRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdatePhysicalInventoryRequestCopyWith<$Res>
+    implements $UpdatePhysicalInventoryRequestCopyWith<$Res> {
+  factory _$UpdatePhysicalInventoryRequestCopyWith(
+          _UpdatePhysicalInventoryRequest value,
+          $Res Function(_UpdatePhysicalInventoryRequest) _then) =
+      __$UpdatePhysicalInventoryRequestCopyWithImpl;
   @override
-  String? get name;
-  @override
-  String? get description;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdatePhysicalInventoryRequestImplCopyWith<
-          _$UpdatePhysicalInventoryRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? name, String? description, Map<String, dynamic>? metadata});
 }
 
-PhysicalInventoryFilters _$PhysicalInventoryFiltersFromJson(
-    Map<String, dynamic> json) {
-  return _PhysicalInventoryFilters.fromJson(json);
+/// @nodoc
+class __$UpdatePhysicalInventoryRequestCopyWithImpl<$Res>
+    implements _$UpdatePhysicalInventoryRequestCopyWith<$Res> {
+  __$UpdatePhysicalInventoryRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdatePhysicalInventoryRequest _self;
+  final $Res Function(_UpdatePhysicalInventoryRequest) _then;
+
+  /// Create a copy of UpdatePhysicalInventoryRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = freezed,
+    Object? description = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_UpdatePhysicalInventoryRequest(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$PhysicalInventoryFilters {
-  String? get locationId => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  DateTime? get startedAfter => throw _privateConstructorUsedError;
-  DateTime? get startedBefore => throw _privateConstructorUsedError;
-  DateTime? get completedAfter => throw _privateConstructorUsedError;
-  DateTime? get completedBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get locationId;
+  String? get status;
+  String? get createdBy;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  DateTime? get startedAfter;
+  DateTime? get startedBefore;
+  DateTime? get completedAfter;
+  DateTime? get completedBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PhysicalInventoryFiltersCopyWith<PhysicalInventoryFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PhysicalInventoryFiltersCopyWith<$Res> {
-  factory $PhysicalInventoryFiltersCopyWith(PhysicalInventoryFilters value,
-          $Res Function(PhysicalInventoryFilters) then) =
-      _$PhysicalInventoryFiltersCopyWithImpl<$Res, PhysicalInventoryFilters>;
-  @useResult
-  $Res call(
-      {String? locationId,
-      String? status,
-      String? createdBy,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      DateTime? startedAfter,
-      DateTime? startedBefore,
-      DateTime? completedAfter,
-      DateTime? completedBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$PhysicalInventoryFiltersCopyWithImpl<$Res,
-        $Val extends PhysicalInventoryFilters>
-    implements $PhysicalInventoryFiltersCopyWith<$Res> {
-  _$PhysicalInventoryFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of PhysicalInventoryFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $PhysicalInventoryFiltersCopyWith<PhysicalInventoryFilters> get copyWith =>
+      _$PhysicalInventoryFiltersCopyWithImpl<PhysicalInventoryFilters>(
+          this as PhysicalInventoryFilters, _$identity);
+
+  /// Serializes this PhysicalInventoryFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? locationId = freezed,
-    Object? status = freezed,
-    Object? createdBy = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? startedAfter = freezed,
-    Object? startedBefore = freezed,
-    Object? completedAfter = freezed,
-    Object? completedBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdBy: freezed == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      startedAfter: freezed == startedAfter
-          ? _value.startedAfter
-          : startedAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      startedBefore: freezed == startedBefore
-          ? _value.startedBefore
-          : startedBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      completedAfter: freezed == completedAfter
-          ? _value.completedAfter
-          : completedAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      completedBefore: freezed == completedBefore
-          ? _value.completedBefore
-          : completedBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PhysicalInventoryFilters &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            (identical(other.startedAfter, startedAfter) ||
+                other.startedAfter == startedAfter) &&
+            (identical(other.startedBefore, startedBefore) ||
+                other.startedBefore == startedBefore) &&
+            (identical(other.completedAfter, completedAfter) ||
+                other.completedAfter == completedAfter) &&
+            (identical(other.completedBefore, completedBefore) ||
+                other.completedBefore == completedBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      locationId,
+      status,
+      createdBy,
+      createdAfter,
+      createdBefore,
+      startedAfter,
+      startedBefore,
+      completedAfter,
+      completedBefore,
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'PhysicalInventoryFilters(locationId: $locationId, status: $status, createdBy: $createdBy, createdAfter: $createdAfter, createdBefore: $createdBefore, startedAfter: $startedAfter, startedBefore: $startedBefore, completedAfter: $completedAfter, completedBefore: $completedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$PhysicalInventoryFiltersImplCopyWith<$Res>
-    implements $PhysicalInventoryFiltersCopyWith<$Res> {
-  factory _$$PhysicalInventoryFiltersImplCopyWith(
-          _$PhysicalInventoryFiltersImpl value,
-          $Res Function(_$PhysicalInventoryFiltersImpl) then) =
-      __$$PhysicalInventoryFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PhysicalInventoryFiltersCopyWith<$Res> {
+  factory $PhysicalInventoryFiltersCopyWith(PhysicalInventoryFilters value,
+          $Res Function(PhysicalInventoryFilters) _then) =
+      _$PhysicalInventoryFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? locationId,
@@ -1516,15 +2267,15 @@ abstract class _$$PhysicalInventoryFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PhysicalInventoryFiltersImplCopyWithImpl<$Res>
-    extends _$PhysicalInventoryFiltersCopyWithImpl<$Res,
-        _$PhysicalInventoryFiltersImpl>
-    implements _$$PhysicalInventoryFiltersImplCopyWith<$Res> {
-  __$$PhysicalInventoryFiltersImplCopyWithImpl(
-      _$PhysicalInventoryFiltersImpl _value,
-      $Res Function(_$PhysicalInventoryFiltersImpl) _then)
-      : super(_value, _then);
+class _$PhysicalInventoryFiltersCopyWithImpl<$Res>
+    implements $PhysicalInventoryFiltersCopyWith<$Res> {
+  _$PhysicalInventoryFiltersCopyWithImpl(this._self, this._then);
 
+  final PhysicalInventoryFilters _self;
+  final $Res Function(PhysicalInventoryFilters) _then;
+
+  /// Create a copy of PhysicalInventoryFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1542,67 +2293,301 @@ class __$$PhysicalInventoryFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$PhysicalInventoryFiltersImpl(
+    return _then(_self.copyWith(
       locationId: freezed == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       createdBy: freezed == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAfter: freezed == createdAfter
-          ? _value.createdAfter
+          ? _self.createdAfter
           : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBefore: freezed == createdBefore
-          ? _value.createdBefore
+          ? _self.createdBefore
           : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       startedAfter: freezed == startedAfter
-          ? _value.startedAfter
+          ? _self.startedAfter
           : startedAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       startedBefore: freezed == startedBefore
-          ? _value.startedBefore
+          ? _self.startedBefore
           : startedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       completedAfter: freezed == completedAfter
-          ? _value.completedAfter
+          ? _self.completedAfter
           : completedAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       completedBefore: freezed == completedBefore
-          ? _value.completedBefore
+          ? _self.completedBefore
           : completedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [PhysicalInventoryFilters].
+extension PhysicalInventoryFiltersPatterns on PhysicalInventoryFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PhysicalInventoryFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PhysicalInventoryFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PhysicalInventoryFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? locationId,
+            String? status,
+            String? createdBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? startedAfter,
+            DateTime? startedBefore,
+            DateTime? completedAfter,
+            DateTime? completedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryFilters() when $default != null:
+        return $default(
+            _that.locationId,
+            _that.status,
+            _that.createdBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.startedAfter,
+            _that.startedBefore,
+            _that.completedAfter,
+            _that.completedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? locationId,
+            String? status,
+            String? createdBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? startedAfter,
+            DateTime? startedBefore,
+            DateTime? completedAfter,
+            DateTime? completedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryFilters():
+        return $default(
+            _that.locationId,
+            _that.status,
+            _that.createdBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.startedAfter,
+            _that.startedBefore,
+            _that.completedAfter,
+            _that.completedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? locationId,
+            String? status,
+            String? createdBy,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? startedAfter,
+            DateTime? startedBefore,
+            DateTime? completedAfter,
+            DateTime? completedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryFilters() when $default != null:
+        return $default(
+            _that.locationId,
+            _that.status,
+            _that.createdBy,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.startedAfter,
+            _that.startedBefore,
+            _that.completedAfter,
+            _that.completedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$PhysicalInventoryFiltersImpl extends _PhysicalInventoryFilters {
-  const _$PhysicalInventoryFiltersImpl(
+class _PhysicalInventoryFilters extends PhysicalInventoryFilters {
+  const _PhysicalInventoryFilters(
       {this.locationId,
       this.status,
       this.createdBy,
@@ -1617,9 +2602,8 @@ class _$PhysicalInventoryFiltersImpl extends _PhysicalInventoryFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$PhysicalInventoryFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PhysicalInventoryFiltersImplFromJson(json);
+  factory _PhysicalInventoryFilters.fromJson(Map<String, dynamic> json) =>
+      _$PhysicalInventoryFiltersFromJson(json);
 
   @override
   final String? locationId;
@@ -1648,16 +2632,27 @@ class _$PhysicalInventoryFiltersImpl extends _PhysicalInventoryFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of PhysicalInventoryFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PhysicalInventoryFilters(locationId: $locationId, status: $status, createdBy: $createdBy, createdAfter: $createdAfter, createdBefore: $createdBefore, startedAfter: $startedAfter, startedBefore: $startedBefore, completedAfter: $completedAfter, completedBefore: $completedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PhysicalInventoryFiltersCopyWith<_PhysicalInventoryFilters> get copyWith =>
+      __$PhysicalInventoryFiltersCopyWithImpl<_PhysicalInventoryFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PhysicalInventoryFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PhysicalInventoryFiltersImpl &&
+            other is _PhysicalInventoryFilters &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
             (identical(other.status, status) || other.status == status) &&
@@ -1682,7 +2677,7 @@ class _$PhysicalInventoryFiltersImpl extends _PhysicalInventoryFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1700,215 +2695,393 @@ class _$PhysicalInventoryFiltersImpl extends _PhysicalInventoryFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PhysicalInventoryFiltersImplCopyWith<_$PhysicalInventoryFiltersImpl>
-      get copyWith => __$$PhysicalInventoryFiltersImplCopyWithImpl<
-          _$PhysicalInventoryFiltersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PhysicalInventoryFiltersImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _PhysicalInventoryFilters extends PhysicalInventoryFilters {
-  const factory _PhysicalInventoryFilters(
-      {final String? locationId,
-      final String? status,
-      final String? createdBy,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final DateTime? startedAfter,
-      final DateTime? startedBefore,
-      final DateTime? completedAfter,
-      final DateTime? completedBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$PhysicalInventoryFiltersImpl;
-  const _PhysicalInventoryFilters._() : super._();
-
-  factory _PhysicalInventoryFilters.fromJson(Map<String, dynamic> json) =
-      _$PhysicalInventoryFiltersImpl.fromJson;
-
-  @override
-  String? get locationId;
-  @override
-  String? get status;
-  @override
-  String? get createdBy;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  DateTime? get startedAfter;
-  @override
-  DateTime? get startedBefore;
-  @override
-  DateTime? get completedAfter;
-  @override
-  DateTime? get completedBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$PhysicalInventoryFiltersImplCopyWith<_$PhysicalInventoryFiltersImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-UpdatePhysicalInventoryItemRequest _$UpdatePhysicalInventoryItemRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdatePhysicalInventoryItemRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UpdatePhysicalInventoryItemRequest {
-  double get countedQuantity => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdatePhysicalInventoryItemRequestCopyWith<
-          UpdatePhysicalInventoryItemRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
-  factory $UpdatePhysicalInventoryItemRequestCopyWith(
-          UpdatePhysicalInventoryItemRequest value,
-          $Res Function(UpdatePhysicalInventoryItemRequest) then) =
-      _$UpdatePhysicalInventoryItemRequestCopyWithImpl<$Res,
-          UpdatePhysicalInventoryItemRequest>;
-  @useResult
-  $Res call(
-      {double countedQuantity,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber});
-}
-
-/// @nodoc
-class _$UpdatePhysicalInventoryItemRequestCopyWithImpl<$Res,
-        $Val extends UpdatePhysicalInventoryItemRequest>
-    implements $UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
-  _$UpdatePhysicalInventoryItemRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? countedQuantity = null,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-  }) {
-    return _then(_value.copyWith(
-      countedQuantity: null == countedQuantity
-          ? _value.countedQuantity
-          : countedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'PhysicalInventoryFilters(locationId: $locationId, status: $status, createdBy: $createdBy, createdAfter: $createdAfter, createdBefore: $createdBefore, startedAfter: $startedAfter, startedBefore: $startedBefore, completedAfter: $completedAfter, completedBefore: $completedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$UpdatePhysicalInventoryItemRequestImplCopyWith<$Res>
-    implements $UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
-  factory _$$UpdatePhysicalInventoryItemRequestImplCopyWith(
-          _$UpdatePhysicalInventoryItemRequestImpl value,
-          $Res Function(_$UpdatePhysicalInventoryItemRequestImpl) then) =
-      __$$UpdatePhysicalInventoryItemRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$PhysicalInventoryFiltersCopyWith<$Res>
+    implements $PhysicalInventoryFiltersCopyWith<$Res> {
+  factory _$PhysicalInventoryFiltersCopyWith(_PhysicalInventoryFilters value,
+          $Res Function(_PhysicalInventoryFilters) _then) =
+      __$PhysicalInventoryFiltersCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {double countedQuantity,
-      String? notes,
-      String? lotNumber,
-      String? serialNumber});
+      {String? locationId,
+      String? status,
+      String? createdBy,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      DateTime? startedAfter,
+      DateTime? startedBefore,
+      DateTime? completedAfter,
+      DateTime? completedBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
 
 /// @nodoc
-class __$$UpdatePhysicalInventoryItemRequestImplCopyWithImpl<$Res>
-    extends _$UpdatePhysicalInventoryItemRequestCopyWithImpl<$Res,
-        _$UpdatePhysicalInventoryItemRequestImpl>
-    implements _$$UpdatePhysicalInventoryItemRequestImplCopyWith<$Res> {
-  __$$UpdatePhysicalInventoryItemRequestImplCopyWithImpl(
-      _$UpdatePhysicalInventoryItemRequestImpl _value,
-      $Res Function(_$UpdatePhysicalInventoryItemRequestImpl) _then)
-      : super(_value, _then);
+class __$PhysicalInventoryFiltersCopyWithImpl<$Res>
+    implements _$PhysicalInventoryFiltersCopyWith<$Res> {
+  __$PhysicalInventoryFiltersCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _PhysicalInventoryFilters _self;
+  final $Res Function(_PhysicalInventoryFilters) _then;
+
+  /// Create a copy of PhysicalInventoryFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? countedQuantity = null,
-    Object? notes = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
+    Object? locationId = freezed,
+    Object? status = freezed,
+    Object? createdBy = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? startedAfter = freezed,
+    Object? startedBefore = freezed,
+    Object? completedAfter = freezed,
+    Object? completedBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
   }) {
-    return _then(_$UpdatePhysicalInventoryItemRequestImpl(
-      countedQuantity: null == countedQuantity
-          ? _value.countedQuantity
-          : countedQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
+    return _then(_PhysicalInventoryFilters(
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
+      createdBy: freezed == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      startedAfter: freezed == startedAfter
+          ? _self.startedAfter
+          : startedAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      startedBefore: freezed == startedBefore
+          ? _self.startedBefore
+          : startedBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      completedAfter: freezed == completedAfter
+          ? _self.completedAfter
+          : completedAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      completedBefore: freezed == completedBefore
+          ? _self.completedBefore
+          : completedBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$UpdatePhysicalInventoryItemRequest {
+  double get countedQuantity;
+  String? get notes;
+  String? get lotNumber;
+  String? get serialNumber;
+
+  /// Create a copy of UpdatePhysicalInventoryItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdatePhysicalInventoryItemRequestCopyWith<
+          UpdatePhysicalInventoryItemRequest>
+      get copyWith => _$UpdatePhysicalInventoryItemRequestCopyWithImpl<
+              UpdatePhysicalInventoryItemRequest>(
+          this as UpdatePhysicalInventoryItemRequest, _$identity);
+
+  /// Serializes this UpdatePhysicalInventoryItemRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdatePhysicalInventoryItemRequest &&
+            (identical(other.countedQuantity, countedQuantity) ||
+                other.countedQuantity == countedQuantity) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, countedQuantity, notes, lotNumber, serialNumber);
+
+  @override
+  String toString() {
+    return 'UpdatePhysicalInventoryItemRequest(countedQuantity: $countedQuantity, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
+  factory $UpdatePhysicalInventoryItemRequestCopyWith(
+          UpdatePhysicalInventoryItemRequest value,
+          $Res Function(UpdatePhysicalInventoryItemRequest) _then) =
+      _$UpdatePhysicalInventoryItemRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {double countedQuantity,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber});
+}
+
+/// @nodoc
+class _$UpdatePhysicalInventoryItemRequestCopyWithImpl<$Res>
+    implements $UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
+  _$UpdatePhysicalInventoryItemRequestCopyWithImpl(this._self, this._then);
+
+  final UpdatePhysicalInventoryItemRequest _self;
+  final $Res Function(UpdatePhysicalInventoryItemRequest) _then;
+
+  /// Create a copy of UpdatePhysicalInventoryItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? countedQuantity = null,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+  }) {
+    return _then(_self.copyWith(
+      countedQuantity: null == countedQuantity
+          ? _self.countedQuantity
+          : countedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdatePhysicalInventoryItemRequest].
+extension UpdatePhysicalInventoryItemRequestPatterns
+    on UpdatePhysicalInventoryItemRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdatePhysicalInventoryItemRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdatePhysicalInventoryItemRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryItemRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdatePhysicalInventoryItemRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryItemRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(double countedQuantity, String? notes, String? lotNumber,
+            String? serialNumber)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryItemRequest() when $default != null:
+        return $default(_that.countedQuantity, _that.notes, _that.lotNumber,
+            _that.serialNumber);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(double countedQuantity, String? notes, String? lotNumber,
+            String? serialNumber)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryItemRequest():
+        return $default(_that.countedQuantity, _that.notes, _that.lotNumber,
+            _that.serialNumber);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(double countedQuantity, String? notes, String? lotNumber,
+            String? serialNumber)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdatePhysicalInventoryItemRequest() when $default != null:
+        return $default(_that.countedQuantity, _that.notes, _that.lotNumber,
+            _that.serialNumber);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdatePhysicalInventoryItemRequestImpl
-    implements _UpdatePhysicalInventoryItemRequest {
-  const _$UpdatePhysicalInventoryItemRequestImpl(
+class _UpdatePhysicalInventoryItemRequest
+    implements UpdatePhysicalInventoryItemRequest {
+  const _UpdatePhysicalInventoryItemRequest(
       {required this.countedQuantity,
       this.notes,
       this.lotNumber,
       this.serialNumber});
-
-  factory _$UpdatePhysicalInventoryItemRequestImpl.fromJson(
+  factory _UpdatePhysicalInventoryItemRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$UpdatePhysicalInventoryItemRequestImplFromJson(json);
+      _$UpdatePhysicalInventoryItemRequestFromJson(json);
 
   @override
   final double countedQuantity;
@@ -1919,16 +3092,28 @@ class _$UpdatePhysicalInventoryItemRequestImpl
   @override
   final String? serialNumber;
 
+  /// Create a copy of UpdatePhysicalInventoryItemRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdatePhysicalInventoryItemRequest(countedQuantity: $countedQuantity, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdatePhysicalInventoryItemRequestCopyWith<
+          _UpdatePhysicalInventoryItemRequest>
+      get copyWith => __$UpdatePhysicalInventoryItemRequestCopyWithImpl<
+          _UpdatePhysicalInventoryItemRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdatePhysicalInventoryItemRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatePhysicalInventoryItemRequestImpl &&
+            other is _UpdatePhysicalInventoryItemRequest &&
             (identical(other.countedQuantity, countedQuantity) ||
                 other.countedQuantity == countedQuantity) &&
             (identical(other.notes, notes) || other.notes == notes) &&
@@ -1938,198 +3123,158 @@ class _$UpdatePhysicalInventoryItemRequestImpl
                 other.serialNumber == serialNumber));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, countedQuantity, notes, lotNumber, serialNumber);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdatePhysicalInventoryItemRequestImplCopyWith<
-          _$UpdatePhysicalInventoryItemRequestImpl>
-      get copyWith => __$$UpdatePhysicalInventoryItemRequestImplCopyWithImpl<
-          _$UpdatePhysicalInventoryItemRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdatePhysicalInventoryItemRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdatePhysicalInventoryItemRequest(countedQuantity: $countedQuantity, notes: $notes, lotNumber: $lotNumber, serialNumber: $serialNumber)';
   }
 }
 
-abstract class _UpdatePhysicalInventoryItemRequest
-    implements UpdatePhysicalInventoryItemRequest {
-  const factory _UpdatePhysicalInventoryItemRequest(
-      {required final double countedQuantity,
-      final String? notes,
-      final String? lotNumber,
-      final String? serialNumber}) = _$UpdatePhysicalInventoryItemRequestImpl;
-
-  factory _UpdatePhysicalInventoryItemRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$UpdatePhysicalInventoryItemRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdatePhysicalInventoryItemRequestCopyWith<$Res>
+    implements $UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
+  factory _$UpdatePhysicalInventoryItemRequestCopyWith(
+          _UpdatePhysicalInventoryItemRequest value,
+          $Res Function(_UpdatePhysicalInventoryItemRequest) _then) =
+      __$UpdatePhysicalInventoryItemRequestCopyWithImpl;
   @override
-  double get countedQuantity;
-  @override
-  String? get notes;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdatePhysicalInventoryItemRequestImplCopyWith<
-          _$UpdatePhysicalInventoryItemRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {double countedQuantity,
+      String? notes,
+      String? lotNumber,
+      String? serialNumber});
 }
 
-PhysicalInventoryAdjustment _$PhysicalInventoryAdjustmentFromJson(
-    Map<String, dynamic> json) {
-  return _PhysicalInventoryAdjustment.fromJson(json);
+/// @nodoc
+class __$UpdatePhysicalInventoryItemRequestCopyWithImpl<$Res>
+    implements _$UpdatePhysicalInventoryItemRequestCopyWith<$Res> {
+  __$UpdatePhysicalInventoryItemRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdatePhysicalInventoryItemRequest _self;
+  final $Res Function(_UpdatePhysicalInventoryItemRequest) _then;
+
+  /// Create a copy of UpdatePhysicalInventoryItemRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? countedQuantity = null,
+    Object? notes = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+  }) {
+    return _then(_UpdatePhysicalInventoryItemRequest(
+      countedQuantity: null == countedQuantity
+          ? _self.countedQuantity
+          : countedQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$PhysicalInventoryAdjustment {
-  String get id => throw _privateConstructorUsedError;
-  String get physicalInventoryId => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  double get adjustmentQuantity => throw _privateConstructorUsedError;
-  double get adjustmentValue => throw _privateConstructorUsedError;
-  String get reason => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  String? get createdBy => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get serialNumber => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get physicalInventoryId;
+  String get itemId;
+  String get locationId;
+  double get adjustmentQuantity;
+  double get adjustmentValue;
+  String get reason;
+  DateTime get createdAt;
+  String? get createdBy;
+  String? get lotNumber;
+  String? get serialNumber;
+  String? get notes;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PhysicalInventoryAdjustmentCopyWith<PhysicalInventoryAdjustment>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PhysicalInventoryAdjustmentCopyWith<$Res> {
-  factory $PhysicalInventoryAdjustmentCopyWith(
-          PhysicalInventoryAdjustment value,
-          $Res Function(PhysicalInventoryAdjustment) then) =
-      _$PhysicalInventoryAdjustmentCopyWithImpl<$Res,
-          PhysicalInventoryAdjustment>;
-  @useResult
-  $Res call(
-      {String id,
-      String physicalInventoryId,
-      String itemId,
-      String locationId,
-      double adjustmentQuantity,
-      double adjustmentValue,
-      String reason,
-      DateTime createdAt,
-      String? createdBy,
-      String? lotNumber,
-      String? serialNumber,
-      String? notes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$PhysicalInventoryAdjustmentCopyWithImpl<$Res,
-        $Val extends PhysicalInventoryAdjustment>
-    implements $PhysicalInventoryAdjustmentCopyWith<$Res> {
-  _$PhysicalInventoryAdjustmentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of PhysicalInventoryAdjustment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $PhysicalInventoryAdjustmentCopyWith<PhysicalInventoryAdjustment>
+      get copyWith => _$PhysicalInventoryAdjustmentCopyWithImpl<
+              PhysicalInventoryAdjustment>(
+          this as PhysicalInventoryAdjustment, _$identity);
+
+  /// Serializes this PhysicalInventoryAdjustment to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? physicalInventoryId = null,
-    Object? itemId = null,
-    Object? locationId = null,
-    Object? adjustmentQuantity = null,
-    Object? adjustmentValue = null,
-    Object? reason = null,
-    Object? createdAt = null,
-    Object? createdBy = freezed,
-    Object? lotNumber = freezed,
-    Object? serialNumber = freezed,
-    Object? notes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      physicalInventoryId: null == physicalInventoryId
-          ? _value.physicalInventoryId
-          : physicalInventoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      adjustmentQuantity: null == adjustmentQuantity
-          ? _value.adjustmentQuantity
-          : adjustmentQuantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      adjustmentValue: null == adjustmentValue
-          ? _value.adjustmentValue
-          : adjustmentValue // ignore: cast_nullable_to_non_nullable
-              as double,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdBy: freezed == createdBy
-          ? _value.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serialNumber: freezed == serialNumber
-          ? _value.serialNumber
-          : serialNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PhysicalInventoryAdjustment &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.physicalInventoryId, physicalInventoryId) ||
+                other.physicalInventoryId == physicalInventoryId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.adjustmentQuantity, adjustmentQuantity) ||
+                other.adjustmentQuantity == adjustmentQuantity) &&
+            (identical(other.adjustmentValue, adjustmentValue) ||
+                other.adjustmentValue == adjustmentValue) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.serialNumber, serialNumber) ||
+                other.serialNumber == serialNumber) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      physicalInventoryId,
+      itemId,
+      locationId,
+      adjustmentQuantity,
+      adjustmentValue,
+      reason,
+      createdAt,
+      createdBy,
+      lotNumber,
+      serialNumber,
+      notes,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'PhysicalInventoryAdjustment(id: $id, physicalInventoryId: $physicalInventoryId, itemId: $itemId, locationId: $locationId, adjustmentQuantity: $adjustmentQuantity, adjustmentValue: $adjustmentValue, reason: $reason, createdAt: $createdAt, createdBy: $createdBy, lotNumber: $lotNumber, serialNumber: $serialNumber, notes: $notes, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$PhysicalInventoryAdjustmentImplCopyWith<$Res>
-    implements $PhysicalInventoryAdjustmentCopyWith<$Res> {
-  factory _$$PhysicalInventoryAdjustmentImplCopyWith(
-          _$PhysicalInventoryAdjustmentImpl value,
-          $Res Function(_$PhysicalInventoryAdjustmentImpl) then) =
-      __$$PhysicalInventoryAdjustmentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PhysicalInventoryAdjustmentCopyWith<$Res> {
+  factory $PhysicalInventoryAdjustmentCopyWith(
+          PhysicalInventoryAdjustment value,
+          $Res Function(PhysicalInventoryAdjustment) _then) =
+      _$PhysicalInventoryAdjustmentCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -2148,15 +3293,15 @@ abstract class _$$PhysicalInventoryAdjustmentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PhysicalInventoryAdjustmentImplCopyWithImpl<$Res>
-    extends _$PhysicalInventoryAdjustmentCopyWithImpl<$Res,
-        _$PhysicalInventoryAdjustmentImpl>
-    implements _$$PhysicalInventoryAdjustmentImplCopyWith<$Res> {
-  __$$PhysicalInventoryAdjustmentImplCopyWithImpl(
-      _$PhysicalInventoryAdjustmentImpl _value,
-      $Res Function(_$PhysicalInventoryAdjustmentImpl) _then)
-      : super(_value, _then);
+class _$PhysicalInventoryAdjustmentCopyWithImpl<$Res>
+    implements $PhysicalInventoryAdjustmentCopyWith<$Res> {
+  _$PhysicalInventoryAdjustmentCopyWithImpl(this._self, this._then);
 
+  final PhysicalInventoryAdjustment _self;
+  final $Res Function(PhysicalInventoryAdjustment) _then;
+
+  /// Create a copy of PhysicalInventoryAdjustment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2174,68 +3319,301 @@ class __$$PhysicalInventoryAdjustmentImplCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$PhysicalInventoryAdjustmentImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       physicalInventoryId: null == physicalInventoryId
-          ? _value.physicalInventoryId
+          ? _self.physicalInventoryId
           : physicalInventoryId // ignore: cast_nullable_to_non_nullable
               as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       adjustmentQuantity: null == adjustmentQuantity
-          ? _value.adjustmentQuantity
+          ? _self.adjustmentQuantity
           : adjustmentQuantity // ignore: cast_nullable_to_non_nullable
               as double,
       adjustmentValue: null == adjustmentValue
-          ? _value.adjustmentValue
+          ? _self.adjustmentValue
           : adjustmentValue // ignore: cast_nullable_to_non_nullable
               as double,
       reason: null == reason
-          ? _value.reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       createdBy: freezed == createdBy
-          ? _value.createdBy
+          ? _self.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as String?,
       lotNumber: freezed == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       serialNumber: freezed == serialNumber
-          ? _value.serialNumber
+          ? _self.serialNumber
           : serialNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [PhysicalInventoryAdjustment].
+extension PhysicalInventoryAdjustmentPatterns on PhysicalInventoryAdjustment {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PhysicalInventoryAdjustment value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryAdjustment() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PhysicalInventoryAdjustment value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryAdjustment():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PhysicalInventoryAdjustment value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryAdjustment() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String physicalInventoryId,
+            String itemId,
+            String locationId,
+            double adjustmentQuantity,
+            double adjustmentValue,
+            String reason,
+            DateTime createdAt,
+            String? createdBy,
+            String? lotNumber,
+            String? serialNumber,
+            String? notes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryAdjustment() when $default != null:
+        return $default(
+            _that.id,
+            _that.physicalInventoryId,
+            _that.itemId,
+            _that.locationId,
+            _that.adjustmentQuantity,
+            _that.adjustmentValue,
+            _that.reason,
+            _that.createdAt,
+            _that.createdBy,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.notes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String physicalInventoryId,
+            String itemId,
+            String locationId,
+            double adjustmentQuantity,
+            double adjustmentValue,
+            String reason,
+            DateTime createdAt,
+            String? createdBy,
+            String? lotNumber,
+            String? serialNumber,
+            String? notes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryAdjustment():
+        return $default(
+            _that.id,
+            _that.physicalInventoryId,
+            _that.itemId,
+            _that.locationId,
+            _that.adjustmentQuantity,
+            _that.adjustmentValue,
+            _that.reason,
+            _that.createdAt,
+            _that.createdBy,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.notes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String physicalInventoryId,
+            String itemId,
+            String locationId,
+            double adjustmentQuantity,
+            double adjustmentValue,
+            String reason,
+            DateTime createdAt,
+            String? createdBy,
+            String? lotNumber,
+            String? serialNumber,
+            String? notes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PhysicalInventoryAdjustment() when $default != null:
+        return $default(
+            _that.id,
+            _that.physicalInventoryId,
+            _that.itemId,
+            _that.locationId,
+            _that.adjustmentQuantity,
+            _that.adjustmentValue,
+            _that.reason,
+            _that.createdAt,
+            _that.createdBy,
+            _that.lotNumber,
+            _that.serialNumber,
+            _that.notes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$PhysicalInventoryAdjustmentImpl
-    implements _PhysicalInventoryAdjustment {
-  const _$PhysicalInventoryAdjustmentImpl(
+class _PhysicalInventoryAdjustment implements PhysicalInventoryAdjustment {
+  const _PhysicalInventoryAdjustment(
       {required this.id,
       required this.physicalInventoryId,
       required this.itemId,
@@ -2250,10 +3628,8 @@ class _$PhysicalInventoryAdjustmentImpl
       this.notes,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$PhysicalInventoryAdjustmentImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$PhysicalInventoryAdjustmentImplFromJson(json);
+  factory _PhysicalInventoryAdjustment.fromJson(Map<String, dynamic> json) =>
+      _$PhysicalInventoryAdjustmentFromJson(json);
 
   @override
   final String id;
@@ -2289,16 +3665,27 @@ class _$PhysicalInventoryAdjustmentImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of PhysicalInventoryAdjustment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PhysicalInventoryAdjustment(id: $id, physicalInventoryId: $physicalInventoryId, itemId: $itemId, locationId: $locationId, adjustmentQuantity: $adjustmentQuantity, adjustmentValue: $adjustmentValue, reason: $reason, createdAt: $createdAt, createdBy: $createdBy, lotNumber: $lotNumber, serialNumber: $serialNumber, notes: $notes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PhysicalInventoryAdjustmentCopyWith<_PhysicalInventoryAdjustment>
+      get copyWith => __$PhysicalInventoryAdjustmentCopyWithImpl<
+          _PhysicalInventoryAdjustment>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PhysicalInventoryAdjustmentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PhysicalInventoryAdjustmentImpl &&
+            other is _PhysicalInventoryAdjustment &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.physicalInventoryId, physicalInventoryId) ||
                 other.physicalInventoryId == physicalInventoryId) &&
@@ -2322,7 +3709,7 @@ class _$PhysicalInventoryAdjustmentImpl
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2340,70 +3727,119 @@ class _$PhysicalInventoryAdjustmentImpl
       notes,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PhysicalInventoryAdjustmentImplCopyWith<_$PhysicalInventoryAdjustmentImpl>
-      get copyWith => __$$PhysicalInventoryAdjustmentImplCopyWithImpl<
-          _$PhysicalInventoryAdjustmentImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PhysicalInventoryAdjustmentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PhysicalInventoryAdjustment(id: $id, physicalInventoryId: $physicalInventoryId, itemId: $itemId, locationId: $locationId, adjustmentQuantity: $adjustmentQuantity, adjustmentValue: $adjustmentValue, reason: $reason, createdAt: $createdAt, createdBy: $createdBy, lotNumber: $lotNumber, serialNumber: $serialNumber, notes: $notes, metadata: $metadata)';
   }
 }
 
-abstract class _PhysicalInventoryAdjustment
-    implements PhysicalInventoryAdjustment {
-  const factory _PhysicalInventoryAdjustment(
-          {required final String id,
-          required final String physicalInventoryId,
-          required final String itemId,
-          required final String locationId,
-          required final double adjustmentQuantity,
-          required final double adjustmentValue,
-          required final String reason,
-          required final DateTime createdAt,
-          final String? createdBy,
-          final String? lotNumber,
-          final String? serialNumber,
-          final String? notes,
-          final Map<String, dynamic>? metadata}) =
-      _$PhysicalInventoryAdjustmentImpl;
-
-  factory _PhysicalInventoryAdjustment.fromJson(Map<String, dynamic> json) =
-      _$PhysicalInventoryAdjustmentImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$PhysicalInventoryAdjustmentCopyWith<$Res>
+    implements $PhysicalInventoryAdjustmentCopyWith<$Res> {
+  factory _$PhysicalInventoryAdjustmentCopyWith(
+          _PhysicalInventoryAdjustment value,
+          $Res Function(_PhysicalInventoryAdjustment) _then) =
+      __$PhysicalInventoryAdjustmentCopyWithImpl;
   @override
-  String get id;
-  @override
-  String get physicalInventoryId;
-  @override
-  String get itemId;
-  @override
-  String get locationId;
-  @override
-  double get adjustmentQuantity;
-  @override
-  double get adjustmentValue;
-  @override
-  String get reason;
-  @override
-  DateTime get createdAt;
-  @override
-  String? get createdBy;
-  @override
-  String? get lotNumber;
-  @override
-  String? get serialNumber;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$PhysicalInventoryAdjustmentImplCopyWith<_$PhysicalInventoryAdjustmentImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      String physicalInventoryId,
+      String itemId,
+      String locationId,
+      double adjustmentQuantity,
+      double adjustmentValue,
+      String reason,
+      DateTime createdAt,
+      String? createdBy,
+      String? lotNumber,
+      String? serialNumber,
+      String? notes,
+      Map<String, dynamic>? metadata});
 }
+
+/// @nodoc
+class __$PhysicalInventoryAdjustmentCopyWithImpl<$Res>
+    implements _$PhysicalInventoryAdjustmentCopyWith<$Res> {
+  __$PhysicalInventoryAdjustmentCopyWithImpl(this._self, this._then);
+
+  final _PhysicalInventoryAdjustment _self;
+  final $Res Function(_PhysicalInventoryAdjustment) _then;
+
+  /// Create a copy of PhysicalInventoryAdjustment
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? physicalInventoryId = null,
+    Object? itemId = null,
+    Object? locationId = null,
+    Object? adjustmentQuantity = null,
+    Object? adjustmentValue = null,
+    Object? reason = null,
+    Object? createdAt = null,
+    Object? createdBy = freezed,
+    Object? lotNumber = freezed,
+    Object? serialNumber = freezed,
+    Object? notes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_PhysicalInventoryAdjustment(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      physicalInventoryId: null == physicalInventoryId
+          ? _self.physicalInventoryId
+          : physicalInventoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      adjustmentQuantity: null == adjustmentQuantity
+          ? _self.adjustmentQuantity
+          : adjustmentQuantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      adjustmentValue: null == adjustmentValue
+          ? _self.adjustmentValue
+          : adjustmentValue // ignore: cast_nullable_to_non_nullable
+              as double,
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdBy: freezed == createdBy
+          ? _self.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serialNumber: freezed == serialNumber
+          ? _self.serialNumber
+          : serialNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+// dart format on

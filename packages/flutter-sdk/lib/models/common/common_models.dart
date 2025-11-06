@@ -5,7 +5,7 @@ part 'common_models.g.dart';
 
 /// Address model
 @freezed
-class Address with _$Address {
+sealed class Address with _$Address {
   const factory Address({
     String? street,
     String? city,
@@ -22,7 +22,7 @@ class Address with _$Address {
 
 /// Generic API response wrapper
 @Freezed(genericArgumentFactories: true)
-class ApiResponse<T> with _$ApiResponse<T> {
+sealed class ApiResponse<T> with _$ApiResponse<T> {
   const factory ApiResponse({
     required bool success,
     T? data,
@@ -41,7 +41,7 @@ class ApiResponse<T> with _$ApiResponse<T> {
 
 /// Audit information
 @freezed
-class AuditInfo with _$AuditInfo {
+sealed class AuditInfo with _$AuditInfo {
   const factory AuditInfo({
     required DateTime createdAt,
     required String createdBy,
@@ -56,7 +56,7 @@ class AuditInfo with _$AuditInfo {
 
 /// Contact information model
 @freezed
-class ContactInfo with _$ContactInfo {
+sealed class ContactInfo with _$ContactInfo {
   const factory ContactInfo({
     String? email,
     String? phone,
@@ -71,7 +71,7 @@ class ContactInfo with _$ContactInfo {
 
 /// File upload response
 @freezed
-class FileUploadResponse with _$FileUploadResponse {
+sealed class FileUploadResponse with _$FileUploadResponse {
   const factory FileUploadResponse({
     required String id,
     required String filename,
@@ -88,7 +88,7 @@ class FileUploadResponse with _$FileUploadResponse {
 
 /// Money/Currency model
 @freezed
-class Money with _$Money {
+sealed class Money with _$Money {
   const factory Money({
     required double amount,
     @Default('USD') String currency,
@@ -99,7 +99,7 @@ class Money with _$Money {
 
 /// Paginated response model
 @Freezed(genericArgumentFactories: true)
-class PaginatedResponse<T> with _$PaginatedResponse<T> {
+sealed class PaginatedResponse<T> with _$PaginatedResponse<T> {
   const factory PaginatedResponse({
     required List<T> data,
     required PaginationMeta pagination,
@@ -114,7 +114,7 @@ class PaginatedResponse<T> with _$PaginatedResponse<T> {
 
 /// Pagination metadata
 @freezed
-class PaginationMeta with _$PaginationMeta {
+sealed class PaginationMeta with _$PaginationMeta {
   const factory PaginationMeta({
     required int total,
     required int page,
@@ -130,7 +130,7 @@ class PaginationMeta with _$PaginationMeta {
 
 /// Query parameters for list requests
 @freezed
-class QueryParams with _$QueryParams {
+sealed class QueryParams with _$QueryParams {
   const factory QueryParams({
     @Default(1) int page,
     @Default(20) int limit,

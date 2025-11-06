@@ -6,11 +6,11 @@ part of 'user_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => $checkedCreate(
-      r'_$UserImpl',
+_User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_User',
       json,
       ($checkedConvert) {
-        final val = _$UserImpl(
+        final val = _User(
           id: $checkedConvert('id', (v) => v as String),
           email: $checkedConvert('email', (v) => v as String),
           firstName: $checkedConvert('firstName', (v) => v as String),
@@ -33,8 +33,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
       'firstName': instance.firstName,
@@ -50,13 +49,12 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'language': instance.language,
     };
 
-_$UserUpdateRequestImpl _$$UserUpdateRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_UserUpdateRequest _$UserUpdateRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UserUpdateRequestImpl',
+      '_UserUpdateRequest',
       json,
       ($checkedConvert) {
-        final val = _$UserUpdateRequestImpl(
+        final val = _UserUpdateRequest(
           firstName: $checkedConvert('firstName', (v) => v as String?),
           lastName: $checkedConvert('lastName', (v) => v as String?),
           phone: $checkedConvert('phone', (v) => v as String?),
@@ -67,8 +65,7 @@ _$UserUpdateRequestImpl _$$UserUpdateRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UserUpdateRequestImplToJson(
-        _$UserUpdateRequestImpl instance) =>
+Map<String, dynamic> _$UserUpdateRequestToJson(_UserUpdateRequest instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,

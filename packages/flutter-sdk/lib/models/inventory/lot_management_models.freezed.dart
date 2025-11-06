@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,200 +9,123 @@ part of 'lot_management_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-LotGenealogy _$LotGenealogyFromJson(Map<String, dynamic> json) {
-  return _LotGenealogy.fromJson(json);
-}
 
 /// @nodoc
 mixin _$LotGenealogy {
-  String get id => throw _privateConstructorUsedError;
-  String get lotNumber => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String get status =>
-      throw _privateConstructorUsedError; // 'active', 'consumed', 'quarantined', 'expired', 'recalled'
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  DateTime? get expiryDate => throw _privateConstructorUsedError;
-  DateTime? get quarantinedAt => throw _privateConstructorUsedError;
-  DateTime? get releasedAt => throw _privateConstructorUsedError;
-  String? get parentLotId => throw _privateConstructorUsedError;
-  String? get supplierLotNumber => throw _privateConstructorUsedError;
-  String? get supplierName => throw _privateConstructorUsedError;
-  String? get receiptNumber => throw _privateConstructorUsedError;
-  String? get quarantineReason => throw _privateConstructorUsedError;
-  String? get releaseReason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+  String get id;
+  String get lotNumber;
+  String get itemId;
+  String get locationId;
+  double get quantity;
+  String
+      get status; // 'active', 'consumed', 'quarantined', 'expired', 'recalled'
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  DateTime? get expiryDate;
+  DateTime? get quarantinedAt;
+  DateTime? get releasedAt;
+  String? get parentLotId;
+  String? get supplierLotNumber;
+  String? get supplierName;
+  String? get receiptNumber;
+  String? get quarantineReason;
+  String? get releaseReason;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+  Map<String, dynamic>? get metadata;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LotGenealogyCopyWith<LotGenealogy> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LotGenealogyCopyWith<$Res> {
-  factory $LotGenealogyCopyWith(
-          LotGenealogy value, $Res Function(LotGenealogy) then) =
-      _$LotGenealogyCopyWithImpl<$Res, LotGenealogy>;
-  @useResult
-  $Res call(
-      {String id,
-      String lotNumber,
-      String itemId,
-      String locationId,
-      double quantity,
-      String status,
-      DateTime createdAt,
-      DateTime updatedAt,
-      DateTime? expiryDate,
-      DateTime? quarantinedAt,
-      DateTime? releasedAt,
-      String? parentLotId,
-      String? supplierLotNumber,
-      String? supplierName,
-      String? receiptNumber,
-      String? quarantineReason,
-      String? releaseReason,
-      String? notes,
-      Map<String, dynamic>? attributes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$LotGenealogyCopyWithImpl<$Res, $Val extends LotGenealogy>
-    implements $LotGenealogyCopyWith<$Res> {
-  _$LotGenealogyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of LotGenealogy
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $LotGenealogyCopyWith<LotGenealogy> get copyWith =>
+      _$LotGenealogyCopyWithImpl<LotGenealogy>(
+          this as LotGenealogy, _$identity);
+
+  /// Serializes this LotGenealogy to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? lotNumber = null,
-    Object? itemId = null,
-    Object? locationId = null,
-    Object? quantity = null,
-    Object? status = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? expiryDate = freezed,
-    Object? quarantinedAt = freezed,
-    Object? releasedAt = freezed,
-    Object? parentLotId = freezed,
-    Object? supplierLotNumber = freezed,
-    Object? supplierName = freezed,
-    Object? receiptNumber = freezed,
-    Object? quarantineReason = freezed,
-    Object? releaseReason = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      lotNumber: null == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      quarantinedAt: freezed == quarantinedAt
-          ? _value.quarantinedAt
-          : quarantinedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      releasedAt: freezed == releasedAt
-          ? _value.releasedAt
-          : releasedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      parentLotId: freezed == parentLotId
-          ? _value.parentLotId
-          : parentLotId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierLotNumber: freezed == supplierLotNumber
-          ? _value.supplierLotNumber
-          : supplierLotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierName: freezed == supplierName
-          ? _value.supplierName
-          : supplierName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receiptNumber: freezed == receiptNumber
-          ? _value.receiptNumber
-          : receiptNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quarantineReason: freezed == quarantineReason
-          ? _value.quarantineReason
-          : quarantineReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      releaseReason: freezed == releaseReason
-          ? _value.releaseReason
-          : releaseReason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LotGenealogy &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            (identical(other.quarantinedAt, quarantinedAt) ||
+                other.quarantinedAt == quarantinedAt) &&
+            (identical(other.releasedAt, releasedAt) ||
+                other.releasedAt == releasedAt) &&
+            (identical(other.parentLotId, parentLotId) ||
+                other.parentLotId == parentLotId) &&
+            (identical(other.supplierLotNumber, supplierLotNumber) ||
+                other.supplierLotNumber == supplierLotNumber) &&
+            (identical(other.supplierName, supplierName) ||
+                other.supplierName == supplierName) &&
+            (identical(other.receiptNumber, receiptNumber) ||
+                other.receiptNumber == receiptNumber) &&
+            (identical(other.quarantineReason, quarantineReason) ||
+                other.quarantineReason == quarantineReason) &&
+            (identical(other.releaseReason, releaseReason) ||
+                other.releaseReason == releaseReason) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        lotNumber,
+        itemId,
+        locationId,
+        quantity,
+        status,
+        createdAt,
+        updatedAt,
+        expiryDate,
+        quarantinedAt,
+        releasedAt,
+        parentLotId,
+        supplierLotNumber,
+        supplierName,
+        receiptNumber,
+        quarantineReason,
+        releaseReason,
+        notes,
+        const DeepCollectionEquality().hash(attributes),
+        const DeepCollectionEquality().hash(metadata)
+      ]);
+
+  @override
+  String toString() {
+    return 'LotGenealogy(id: $id, lotNumber: $lotNumber, itemId: $itemId, locationId: $locationId, quantity: $quantity, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, expiryDate: $expiryDate, quarantinedAt: $quarantinedAt, releasedAt: $releasedAt, parentLotId: $parentLotId, supplierLotNumber: $supplierLotNumber, supplierName: $supplierName, receiptNumber: $receiptNumber, quarantineReason: $quarantineReason, releaseReason: $releaseReason, notes: $notes, attributes: $attributes, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$LotGenealogyImplCopyWith<$Res>
-    implements $LotGenealogyCopyWith<$Res> {
-  factory _$$LotGenealogyImplCopyWith(
-          _$LotGenealogyImpl value, $Res Function(_$LotGenealogyImpl) then) =
-      __$$LotGenealogyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $LotGenealogyCopyWith<$Res> {
+  factory $LotGenealogyCopyWith(
+          LotGenealogy value, $Res Function(LotGenealogy) _then) =
+      _$LotGenealogyCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -228,13 +151,14 @@ abstract class _$$LotGenealogyImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LotGenealogyImplCopyWithImpl<$Res>
-    extends _$LotGenealogyCopyWithImpl<$Res, _$LotGenealogyImpl>
-    implements _$$LotGenealogyImplCopyWith<$Res> {
-  __$$LotGenealogyImplCopyWithImpl(
-      _$LotGenealogyImpl _value, $Res Function(_$LotGenealogyImpl) _then)
-      : super(_value, _then);
+class _$LotGenealogyCopyWithImpl<$Res> implements $LotGenealogyCopyWith<$Res> {
+  _$LotGenealogyCopyWithImpl(this._self, this._then);
 
+  final LotGenealogy _self;
+  final $Res Function(LotGenealogy) _then;
+
+  /// Create a copy of LotGenealogy
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -259,95 +183,371 @@ class __$$LotGenealogyImplCopyWithImpl<$Res>
     Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$LotGenealogyImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       lotNumber: null == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String,
       itemId: null == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String,
       locationId: null == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       expiryDate: freezed == expiryDate
-          ? _value.expiryDate
+          ? _self.expiryDate
           : expiryDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       quarantinedAt: freezed == quarantinedAt
-          ? _value.quarantinedAt
+          ? _self.quarantinedAt
           : quarantinedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       releasedAt: freezed == releasedAt
-          ? _value.releasedAt
+          ? _self.releasedAt
           : releasedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       parentLotId: freezed == parentLotId
-          ? _value.parentLotId
+          ? _self.parentLotId
           : parentLotId // ignore: cast_nullable_to_non_nullable
               as String?,
       supplierLotNumber: freezed == supplierLotNumber
-          ? _value.supplierLotNumber
+          ? _self.supplierLotNumber
           : supplierLotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       supplierName: freezed == supplierName
-          ? _value.supplierName
+          ? _self.supplierName
           : supplierName // ignore: cast_nullable_to_non_nullable
               as String?,
       receiptNumber: freezed == receiptNumber
-          ? _value.receiptNumber
+          ? _self.receiptNumber
           : receiptNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       quarantineReason: freezed == quarantineReason
-          ? _value.quarantineReason
+          ? _self.quarantineReason
           : quarantineReason // ignore: cast_nullable_to_non_nullable
               as String?,
       releaseReason: freezed == releaseReason
-          ? _value.releaseReason
+          ? _self.releaseReason
           : releaseReason // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [LotGenealogy].
+extension LotGenealogyPatterns on LotGenealogy {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_LotGenealogy value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogy() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_LotGenealogy value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogy():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_LotGenealogy value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogy() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String lotNumber,
+            String itemId,
+            String locationId,
+            double quantity,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? expiryDate,
+            DateTime? quarantinedAt,
+            DateTime? releasedAt,
+            String? parentLotId,
+            String? supplierLotNumber,
+            String? supplierName,
+            String? receiptNumber,
+            String? quarantineReason,
+            String? releaseReason,
+            String? notes,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogy() when $default != null:
+        return $default(
+            _that.id,
+            _that.lotNumber,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.expiryDate,
+            _that.quarantinedAt,
+            _that.releasedAt,
+            _that.parentLotId,
+            _that.supplierLotNumber,
+            _that.supplierName,
+            _that.receiptNumber,
+            _that.quarantineReason,
+            _that.releaseReason,
+            _that.notes,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String lotNumber,
+            String itemId,
+            String locationId,
+            double quantity,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? expiryDate,
+            DateTime? quarantinedAt,
+            DateTime? releasedAt,
+            String? parentLotId,
+            String? supplierLotNumber,
+            String? supplierName,
+            String? receiptNumber,
+            String? quarantineReason,
+            String? releaseReason,
+            String? notes,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogy():
+        return $default(
+            _that.id,
+            _that.lotNumber,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.expiryDate,
+            _that.quarantinedAt,
+            _that.releasedAt,
+            _that.parentLotId,
+            _that.supplierLotNumber,
+            _that.supplierName,
+            _that.receiptNumber,
+            _that.quarantineReason,
+            _that.releaseReason,
+            _that.notes,
+            _that.attributes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String lotNumber,
+            String itemId,
+            String locationId,
+            double quantity,
+            String status,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? expiryDate,
+            DateTime? quarantinedAt,
+            DateTime? releasedAt,
+            String? parentLotId,
+            String? supplierLotNumber,
+            String? supplierName,
+            String? receiptNumber,
+            String? quarantineReason,
+            String? releaseReason,
+            String? notes,
+            Map<String, dynamic>? attributes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogy() when $default != null:
+        return $default(
+            _that.id,
+            _that.lotNumber,
+            _that.itemId,
+            _that.locationId,
+            _that.quantity,
+            _that.status,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.expiryDate,
+            _that.quarantinedAt,
+            _that.releasedAt,
+            _that.parentLotId,
+            _that.supplierLotNumber,
+            _that.supplierName,
+            _that.receiptNumber,
+            _that.quarantineReason,
+            _that.releaseReason,
+            _that.notes,
+            _that.attributes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$LotGenealogyImpl implements _LotGenealogy {
-  const _$LotGenealogyImpl(
+class _LotGenealogy implements LotGenealogy {
+  const _LotGenealogy(
       {required this.id,
       required this.lotNumber,
       required this.itemId,
@@ -370,9 +570,8 @@ class _$LotGenealogyImpl implements _LotGenealogy {
       final Map<String, dynamic>? metadata})
       : _attributes = attributes,
         _metadata = metadata;
-
-  factory _$LotGenealogyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LotGenealogyImplFromJson(json);
+  factory _LotGenealogy.fromJson(Map<String, dynamic> json) =>
+      _$LotGenealogyFromJson(json);
 
   @override
   final String id;
@@ -431,16 +630,26 @@ class _$LotGenealogyImpl implements _LotGenealogy {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of LotGenealogy
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LotGenealogy(id: $id, lotNumber: $lotNumber, itemId: $itemId, locationId: $locationId, quantity: $quantity, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, expiryDate: $expiryDate, quarantinedAt: $quarantinedAt, releasedAt: $releasedAt, parentLotId: $parentLotId, supplierLotNumber: $supplierLotNumber, supplierName: $supplierName, receiptNumber: $receiptNumber, quarantineReason: $quarantineReason, releaseReason: $releaseReason, notes: $notes, attributes: $attributes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LotGenealogyCopyWith<_LotGenealogy> get copyWith =>
+      __$LotGenealogyCopyWithImpl<_LotGenealogy>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LotGenealogyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LotGenealogyImpl &&
+            other is _LotGenealogy &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lotNumber, lotNumber) ||
                 other.lotNumber == lotNumber) &&
@@ -478,7 +687,7 @@ class _$LotGenealogyImpl implements _LotGenealogy {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -504,326 +713,156 @@ class _$LotGenealogyImpl implements _LotGenealogy {
         const DeepCollectionEquality().hash(_metadata)
       ]);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LotGenealogyImplCopyWith<_$LotGenealogyImpl> get copyWith =>
-      __$$LotGenealogyImplCopyWithImpl<_$LotGenealogyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LotGenealogyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LotGenealogy(id: $id, lotNumber: $lotNumber, itemId: $itemId, locationId: $locationId, quantity: $quantity, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, expiryDate: $expiryDate, quarantinedAt: $quarantinedAt, releasedAt: $releasedAt, parentLotId: $parentLotId, supplierLotNumber: $supplierLotNumber, supplierName: $supplierName, receiptNumber: $receiptNumber, quarantineReason: $quarantineReason, releaseReason: $releaseReason, notes: $notes, attributes: $attributes, metadata: $metadata)';
   }
 }
 
-abstract class _LotGenealogy implements LotGenealogy {
-  const factory _LotGenealogy(
-      {required final String id,
-      required final String lotNumber,
-      required final String itemId,
-      required final String locationId,
-      required final double quantity,
-      required final String status,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final DateTime? expiryDate,
-      final DateTime? quarantinedAt,
-      final DateTime? releasedAt,
-      final String? parentLotId,
-      final String? supplierLotNumber,
-      final String? supplierName,
-      final String? receiptNumber,
-      final String? quarantineReason,
-      final String? releaseReason,
-      final String? notes,
-      final Map<String, dynamic>? attributes,
-      final Map<String, dynamic>? metadata}) = _$LotGenealogyImpl;
-
-  factory _LotGenealogy.fromJson(Map<String, dynamic> json) =
-      _$LotGenealogyImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get lotNumber;
-  @override
-  String get itemId;
-  @override
-  String get locationId;
-  @override
-  double get quantity;
-  @override
-  String get status;
-  @override // 'active', 'consumed', 'quarantined', 'expired', 'recalled'
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  DateTime? get expiryDate;
-  @override
-  DateTime? get quarantinedAt;
-  @override
-  DateTime? get releasedAt;
-  @override
-  String? get parentLotId;
-  @override
-  String? get supplierLotNumber;
-  @override
-  String? get supplierName;
-  @override
-  String? get receiptNumber;
-  @override
-  String? get quarantineReason;
-  @override
-  String? get releaseReason;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$LotGenealogyImplCopyWith<_$LotGenealogyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LotTrackingHistory _$LotTrackingHistoryFromJson(Map<String, dynamic> json) {
-  return _LotTrackingHistory.fromJson(json);
-}
-
 /// @nodoc
-mixin _$LotTrackingHistory {
-  String get id => throw _privateConstructorUsedError;
-  String get lotId => throw _privateConstructorUsedError;
-  String get eventType =>
-      throw _privateConstructorUsedError; // 'created', 'moved', 'consumed', 'split', 'merged', 'quarantined', 'released'
-  String get fromLocationId => throw _privateConstructorUsedError;
-  String get toLocationId => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  DateTime get eventDate => throw _privateConstructorUsedError;
-  String? get referenceType =>
-      throw _privateConstructorUsedError; // 'sales_order', 'production_order', 'transfer', 'adjustment'
-  String? get referenceId => throw _privateConstructorUsedError;
-  String? get performedBy => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LotTrackingHistoryCopyWith<LotTrackingHistory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LotTrackingHistoryCopyWith<$Res> {
-  factory $LotTrackingHistoryCopyWith(
-          LotTrackingHistory value, $Res Function(LotTrackingHistory) then) =
-      _$LotTrackingHistoryCopyWithImpl<$Res, LotTrackingHistory>;
+abstract mixin class _$LotGenealogyCopyWith<$Res>
+    implements $LotGenealogyCopyWith<$Res> {
+  factory _$LotGenealogyCopyWith(
+          _LotGenealogy value, $Res Function(_LotGenealogy) _then) =
+      __$LotGenealogyCopyWithImpl;
+  @override
   @useResult
   $Res call(
       {String id,
-      String lotId,
-      String eventType,
-      String fromLocationId,
-      String toLocationId,
+      String lotNumber,
+      String itemId,
+      String locationId,
       double quantity,
-      DateTime eventDate,
-      String? referenceType,
-      String? referenceId,
-      String? performedBy,
-      String? reason,
+      String status,
+      DateTime createdAt,
+      DateTime updatedAt,
+      DateTime? expiryDate,
+      DateTime? quarantinedAt,
+      DateTime? releasedAt,
+      String? parentLotId,
+      String? supplierLotNumber,
+      String? supplierName,
+      String? receiptNumber,
+      String? quarantineReason,
+      String? releaseReason,
       String? notes,
+      Map<String, dynamic>? attributes,
       Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class _$LotTrackingHistoryCopyWithImpl<$Res, $Val extends LotTrackingHistory>
-    implements $LotTrackingHistoryCopyWith<$Res> {
-  _$LotTrackingHistoryCopyWithImpl(this._value, this._then);
+class __$LotGenealogyCopyWithImpl<$Res>
+    implements _$LotGenealogyCopyWith<$Res> {
+  __$LotGenealogyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _LotGenealogy _self;
+  final $Res Function(_LotGenealogy) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of LotGenealogy
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? lotId = null,
-    Object? eventType = null,
-    Object? fromLocationId = null,
-    Object? toLocationId = null,
+    Object? lotNumber = null,
+    Object? itemId = null,
+    Object? locationId = null,
     Object? quantity = null,
-    Object? eventDate = null,
-    Object? referenceType = freezed,
-    Object? referenceId = freezed,
-    Object? performedBy = freezed,
-    Object? reason = freezed,
+    Object? status = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? expiryDate = freezed,
+    Object? quarantinedAt = freezed,
+    Object? releasedAt = freezed,
+    Object? parentLotId = freezed,
+    Object? supplierLotNumber = freezed,
+    Object? supplierName = freezed,
+    Object? receiptNumber = freezed,
+    Object? quarantineReason = freezed,
+    Object? releaseReason = freezed,
     Object? notes = freezed,
+    Object? attributes = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_LotGenealogy(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      lotId: null == lotId
-          ? _value.lotId
-          : lotId // ignore: cast_nullable_to_non_nullable
+      lotNumber: null == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      eventType: null == eventType
-          ? _value.eventType
-          : eventType // ignore: cast_nullable_to_non_nullable
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String,
-      fromLocationId: null == fromLocationId
-          ? _value.fromLocationId
-          : fromLocationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      toLocationId: null == toLocationId
-          ? _value.toLocationId
-          : toLocationId // ignore: cast_nullable_to_non_nullable
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
-      eventDate: null == eventDate
-          ? _value.eventDate
-          : eventDate // ignore: cast_nullable_to_non_nullable
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      referenceType: freezed == referenceType
-          ? _value.referenceType
-          : referenceType // ignore: cast_nullable_to_non_nullable
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      quarantinedAt: freezed == quarantinedAt
+          ? _self.quarantinedAt
+          : quarantinedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      releasedAt: freezed == releasedAt
+          ? _self.releasedAt
+          : releasedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      parentLotId: freezed == parentLotId
+          ? _self.parentLotId
+          : parentLotId // ignore: cast_nullable_to_non_nullable
               as String?,
-      referenceId: freezed == referenceId
-          ? _value.referenceId
-          : referenceId // ignore: cast_nullable_to_non_nullable
+      supplierLotNumber: freezed == supplierLotNumber
+          ? _self.supplierLotNumber
+          : supplierLotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      performedBy: freezed == performedBy
-          ? _value.performedBy
-          : performedBy // ignore: cast_nullable_to_non_nullable
+      supplierName: freezed == supplierName
+          ? _self.supplierName
+          : supplierName // ignore: cast_nullable_to_non_nullable
               as String?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
+      receiptNumber: freezed == receiptNumber
+          ? _self.receiptNumber
+          : receiptNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quarantineReason: freezed == quarantineReason
+          ? _self.quarantineReason
+          : quarantineReason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      releaseReason: freezed == releaseReason
+          ? _self.releaseReason
+          : releaseReason // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LotTrackingHistoryImplCopyWith<$Res>
-    implements $LotTrackingHistoryCopyWith<$Res> {
-  factory _$$LotTrackingHistoryImplCopyWith(_$LotTrackingHistoryImpl value,
-          $Res Function(_$LotTrackingHistoryImpl) then) =
-      __$$LotTrackingHistoryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String lotId,
-      String eventType,
-      String fromLocationId,
-      String toLocationId,
-      double quantity,
-      DateTime eventDate,
-      String? referenceType,
-      String? referenceId,
-      String? performedBy,
-      String? reason,
-      String? notes,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class __$$LotTrackingHistoryImplCopyWithImpl<$Res>
-    extends _$LotTrackingHistoryCopyWithImpl<$Res, _$LotTrackingHistoryImpl>
-    implements _$$LotTrackingHistoryImplCopyWith<$Res> {
-  __$$LotTrackingHistoryImplCopyWithImpl(_$LotTrackingHistoryImpl _value,
-      $Res Function(_$LotTrackingHistoryImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? lotId = null,
-    Object? eventType = null,
-    Object? fromLocationId = null,
-    Object? toLocationId = null,
-    Object? quantity = null,
-    Object? eventDate = null,
-    Object? referenceType = freezed,
-    Object? referenceId = freezed,
-    Object? performedBy = freezed,
-    Object? reason = freezed,
-    Object? notes = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_$LotTrackingHistoryImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      lotId: null == lotId
-          ? _value.lotId
-          : lotId // ignore: cast_nullable_to_non_nullable
-              as String,
-      eventType: null == eventType
-          ? _value.eventType
-          : eventType // ignore: cast_nullable_to_non_nullable
-              as String,
-      fromLocationId: null == fromLocationId
-          ? _value.fromLocationId
-          : fromLocationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      toLocationId: null == toLocationId
-          ? _value.toLocationId
-          : toLocationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      eventDate: null == eventDate
-          ? _value.eventDate
-          : eventDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      referenceType: freezed == referenceType
-          ? _value.referenceType
-          : referenceType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      referenceId: freezed == referenceId
-          ? _value.referenceId
-          : referenceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      performedBy: freezed == performedBy
-          ? _value.performedBy
-          : performedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -831,9 +870,430 @@ class __$$LotTrackingHistoryImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$LotTrackingHistory {
+  String get id;
+  String get lotId;
+  String
+      get eventType; // 'created', 'moved', 'consumed', 'split', 'merged', 'quarantined', 'released'
+  String get fromLocationId;
+  String get toLocationId;
+  double get quantity;
+  DateTime get eventDate;
+  String?
+      get referenceType; // 'sales_order', 'production_order', 'transfer', 'adjustment'
+  String? get referenceId;
+  String? get performedBy;
+  String? get reason;
+  String? get notes;
+  Map<String, dynamic>? get metadata;
+
+  /// Create a copy of LotTrackingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LotTrackingHistoryCopyWith<LotTrackingHistory> get copyWith =>
+      _$LotTrackingHistoryCopyWithImpl<LotTrackingHistory>(
+          this as LotTrackingHistory, _$identity);
+
+  /// Serializes this LotTrackingHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LotTrackingHistory &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lotId, lotId) || other.lotId == lotId) &&
+            (identical(other.eventType, eventType) ||
+                other.eventType == eventType) &&
+            (identical(other.fromLocationId, fromLocationId) ||
+                other.fromLocationId == fromLocationId) &&
+            (identical(other.toLocationId, toLocationId) ||
+                other.toLocationId == toLocationId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.eventDate, eventDate) ||
+                other.eventDate == eventDate) &&
+            (identical(other.referenceType, referenceType) ||
+                other.referenceType == referenceType) &&
+            (identical(other.referenceId, referenceId) ||
+                other.referenceId == referenceId) &&
+            (identical(other.performedBy, performedBy) ||
+                other.performedBy == performedBy) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      lotId,
+      eventType,
+      fromLocationId,
+      toLocationId,
+      quantity,
+      eventDate,
+      referenceType,
+      referenceId,
+      performedBy,
+      reason,
+      notes,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'LotTrackingHistory(id: $id, lotId: $lotId, eventType: $eventType, fromLocationId: $fromLocationId, toLocationId: $toLocationId, quantity: $quantity, eventDate: $eventDate, referenceType: $referenceType, referenceId: $referenceId, performedBy: $performedBy, reason: $reason, notes: $notes, metadata: $metadata)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $LotTrackingHistoryCopyWith<$Res> {
+  factory $LotTrackingHistoryCopyWith(
+          LotTrackingHistory value, $Res Function(LotTrackingHistory) _then) =
+      _$LotTrackingHistoryCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String lotId,
+      String eventType,
+      String fromLocationId,
+      String toLocationId,
+      double quantity,
+      DateTime eventDate,
+      String? referenceType,
+      String? referenceId,
+      String? performedBy,
+      String? reason,
+      String? notes,
+      Map<String, dynamic>? metadata});
+}
+
+/// @nodoc
+class _$LotTrackingHistoryCopyWithImpl<$Res>
+    implements $LotTrackingHistoryCopyWith<$Res> {
+  _$LotTrackingHistoryCopyWithImpl(this._self, this._then);
+
+  final LotTrackingHistory _self;
+  final $Res Function(LotTrackingHistory) _then;
+
+  /// Create a copy of LotTrackingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? lotId = null,
+    Object? eventType = null,
+    Object? fromLocationId = null,
+    Object? toLocationId = null,
+    Object? quantity = null,
+    Object? eventDate = null,
+    Object? referenceType = freezed,
+    Object? referenceId = freezed,
+    Object? performedBy = freezed,
+    Object? reason = freezed,
+    Object? notes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      lotId: null == lotId
+          ? _self.lotId
+          : lotId // ignore: cast_nullable_to_non_nullable
+              as String,
+      eventType: null == eventType
+          ? _self.eventType
+          : eventType // ignore: cast_nullable_to_non_nullable
+              as String,
+      fromLocationId: null == fromLocationId
+          ? _self.fromLocationId
+          : fromLocationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      toLocationId: null == toLocationId
+          ? _self.toLocationId
+          : toLocationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      eventDate: null == eventDate
+          ? _self.eventDate
+          : eventDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      referenceType: freezed == referenceType
+          ? _self.referenceType
+          : referenceType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceId: freezed == referenceId
+          ? _self.referenceId
+          : referenceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      performedBy: freezed == performedBy
+          ? _self.performedBy
+          : performedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [LotTrackingHistory].
+extension LotTrackingHistoryPatterns on LotTrackingHistory {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_LotTrackingHistory value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_LotTrackingHistory value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistory():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_LotTrackingHistory value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistory() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String lotId,
+            String eventType,
+            String fromLocationId,
+            String toLocationId,
+            double quantity,
+            DateTime eventDate,
+            String? referenceType,
+            String? referenceId,
+            String? performedBy,
+            String? reason,
+            String? notes,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistory() when $default != null:
+        return $default(
+            _that.id,
+            _that.lotId,
+            _that.eventType,
+            _that.fromLocationId,
+            _that.toLocationId,
+            _that.quantity,
+            _that.eventDate,
+            _that.referenceType,
+            _that.referenceId,
+            _that.performedBy,
+            _that.reason,
+            _that.notes,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String lotId,
+            String eventType,
+            String fromLocationId,
+            String toLocationId,
+            double quantity,
+            DateTime eventDate,
+            String? referenceType,
+            String? referenceId,
+            String? performedBy,
+            String? reason,
+            String? notes,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistory():
+        return $default(
+            _that.id,
+            _that.lotId,
+            _that.eventType,
+            _that.fromLocationId,
+            _that.toLocationId,
+            _that.quantity,
+            _that.eventDate,
+            _that.referenceType,
+            _that.referenceId,
+            _that.performedBy,
+            _that.reason,
+            _that.notes,
+            _that.metadata);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String lotId,
+            String eventType,
+            String fromLocationId,
+            String toLocationId,
+            double quantity,
+            DateTime eventDate,
+            String? referenceType,
+            String? referenceId,
+            String? performedBy,
+            String? reason,
+            String? notes,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistory() when $default != null:
+        return $default(
+            _that.id,
+            _that.lotId,
+            _that.eventType,
+            _that.fromLocationId,
+            _that.toLocationId,
+            _that.quantity,
+            _that.eventDate,
+            _that.referenceType,
+            _that.referenceId,
+            _that.performedBy,
+            _that.reason,
+            _that.notes,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$LotTrackingHistoryImpl implements _LotTrackingHistory {
-  const _$LotTrackingHistoryImpl(
+class _LotTrackingHistory implements LotTrackingHistory {
+  const _LotTrackingHistory(
       {required this.id,
       required this.lotId,
       required this.eventType,
@@ -848,9 +1308,8 @@ class _$LotTrackingHistoryImpl implements _LotTrackingHistory {
       this.notes,
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
-
-  factory _$LotTrackingHistoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LotTrackingHistoryImplFromJson(json);
+  factory _LotTrackingHistory.fromJson(Map<String, dynamic> json) =>
+      _$LotTrackingHistoryFromJson(json);
 
   @override
   final String id;
@@ -888,16 +1347,26 @@ class _$LotTrackingHistoryImpl implements _LotTrackingHistory {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of LotTrackingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LotTrackingHistory(id: $id, lotId: $lotId, eventType: $eventType, fromLocationId: $fromLocationId, toLocationId: $toLocationId, quantity: $quantity, eventDate: $eventDate, referenceType: $referenceType, referenceId: $referenceId, performedBy: $performedBy, reason: $reason, notes: $notes, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LotTrackingHistoryCopyWith<_LotTrackingHistory> get copyWith =>
+      __$LotTrackingHistoryCopyWithImpl<_LotTrackingHistory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LotTrackingHistoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LotTrackingHistoryImpl &&
+            other is _LotTrackingHistory &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lotId, lotId) || other.lotId == lotId) &&
             (identical(other.eventType, eventType) ||
@@ -921,7 +1390,7 @@ class _$LotTrackingHistoryImpl implements _LotTrackingHistory {
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -939,148 +1408,167 @@ class _$LotTrackingHistoryImpl implements _LotTrackingHistory {
       notes,
       const DeepCollectionEquality().hash(_metadata));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LotTrackingHistoryImplCopyWith<_$LotTrackingHistoryImpl> get copyWith =>
-      __$$LotTrackingHistoryImplCopyWithImpl<_$LotTrackingHistoryImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LotTrackingHistoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LotTrackingHistory(id: $id, lotId: $lotId, eventType: $eventType, fromLocationId: $fromLocationId, toLocationId: $toLocationId, quantity: $quantity, eventDate: $eventDate, referenceType: $referenceType, referenceId: $referenceId, performedBy: $performedBy, reason: $reason, notes: $notes, metadata: $metadata)';
   }
 }
 
-abstract class _LotTrackingHistory implements LotTrackingHistory {
-  const factory _LotTrackingHistory(
-      {required final String id,
-      required final String lotId,
-      required final String eventType,
-      required final String fromLocationId,
-      required final String toLocationId,
-      required final double quantity,
-      required final DateTime eventDate,
-      final String? referenceType,
-      final String? referenceId,
-      final String? performedBy,
-      final String? reason,
-      final String? notes,
-      final Map<String, dynamic>? metadata}) = _$LotTrackingHistoryImpl;
-
-  factory _LotTrackingHistory.fromJson(Map<String, dynamic> json) =
-      _$LotTrackingHistoryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$LotTrackingHistoryCopyWith<$Res>
+    implements $LotTrackingHistoryCopyWith<$Res> {
+  factory _$LotTrackingHistoryCopyWith(
+          _LotTrackingHistory value, $Res Function(_LotTrackingHistory) _then) =
+      __$LotTrackingHistoryCopyWithImpl;
   @override
-  String get id;
-  @override
-  String get lotId;
-  @override
-  String get eventType;
-  @override // 'created', 'moved', 'consumed', 'split', 'merged', 'quarantined', 'released'
-  String get fromLocationId;
-  @override
-  String get toLocationId;
-  @override
-  double get quantity;
-  @override
-  DateTime get eventDate;
-  @override
-  String? get referenceType;
-  @override // 'sales_order', 'production_order', 'transfer', 'adjustment'
-  String? get referenceId;
-  @override
-  String? get performedBy;
-  @override
-  String? get reason;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get metadata;
-  @override
-  @JsonKey(ignore: true)
-  _$$LotTrackingHistoryImplCopyWith<_$LotTrackingHistoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      String lotId,
+      String eventType,
+      String fromLocationId,
+      String toLocationId,
+      double quantity,
+      DateTime eventDate,
+      String? referenceType,
+      String? referenceId,
+      String? performedBy,
+      String? reason,
+      String? notes,
+      Map<String, dynamic>? metadata});
 }
 
-SplitLotRequest _$SplitLotRequestFromJson(Map<String, dynamic> json) {
-  return _SplitLotRequest.fromJson(json);
+/// @nodoc
+class __$LotTrackingHistoryCopyWithImpl<$Res>
+    implements _$LotTrackingHistoryCopyWith<$Res> {
+  __$LotTrackingHistoryCopyWithImpl(this._self, this._then);
+
+  final _LotTrackingHistory _self;
+  final $Res Function(_LotTrackingHistory) _then;
+
+  /// Create a copy of LotTrackingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? lotId = null,
+    Object? eventType = null,
+    Object? fromLocationId = null,
+    Object? toLocationId = null,
+    Object? quantity = null,
+    Object? eventDate = null,
+    Object? referenceType = freezed,
+    Object? referenceId = freezed,
+    Object? performedBy = freezed,
+    Object? reason = freezed,
+    Object? notes = freezed,
+    Object? metadata = freezed,
+  }) {
+    return _then(_LotTrackingHistory(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      lotId: null == lotId
+          ? _self.lotId
+          : lotId // ignore: cast_nullable_to_non_nullable
+              as String,
+      eventType: null == eventType
+          ? _self.eventType
+          : eventType // ignore: cast_nullable_to_non_nullable
+              as String,
+      fromLocationId: null == fromLocationId
+          ? _self.fromLocationId
+          : fromLocationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      toLocationId: null == toLocationId
+          ? _self.toLocationId
+          : toLocationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      eventDate: null == eventDate
+          ? _self.eventDate
+          : eventDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      referenceType: freezed == referenceType
+          ? _self.referenceType
+          : referenceType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceId: freezed == referenceId
+          ? _self.referenceId
+          : referenceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      performedBy: freezed == performedBy
+          ? _self.performedBy
+          : performedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$SplitLotRequest {
-  String get sourceLotId => throw _privateConstructorUsedError;
-  List<LotSplitItem> get splitItems => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
+  String get sourceLotId;
+  List<LotSplitItem> get splitItems;
+  String? get reason;
+  String? get notes;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SplitLotRequestCopyWith<SplitLotRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SplitLotRequestCopyWith<$Res> {
-  factory $SplitLotRequestCopyWith(
-          SplitLotRequest value, $Res Function(SplitLotRequest) then) =
-      _$SplitLotRequestCopyWithImpl<$Res, SplitLotRequest>;
-  @useResult
-  $Res call(
-      {String sourceLotId,
-      List<LotSplitItem> splitItems,
-      String? reason,
-      String? notes});
-}
-
-/// @nodoc
-class _$SplitLotRequestCopyWithImpl<$Res, $Val extends SplitLotRequest>
-    implements $SplitLotRequestCopyWith<$Res> {
-  _$SplitLotRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of SplitLotRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SplitLotRequestCopyWith<SplitLotRequest> get copyWith =>
+      _$SplitLotRequestCopyWithImpl<SplitLotRequest>(
+          this as SplitLotRequest, _$identity);
+
+  /// Serializes this SplitLotRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? sourceLotId = null,
-    Object? splitItems = null,
-    Object? reason = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      sourceLotId: null == sourceLotId
-          ? _value.sourceLotId
-          : sourceLotId // ignore: cast_nullable_to_non_nullable
-              as String,
-      splitItems: null == splitItems
-          ? _value.splitItems
-          : splitItems // ignore: cast_nullable_to_non_nullable
-              as List<LotSplitItem>,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SplitLotRequest &&
+            (identical(other.sourceLotId, sourceLotId) ||
+                other.sourceLotId == sourceLotId) &&
+            const DeepCollectionEquality()
+                .equals(other.splitItems, splitItems) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, sourceLotId,
+      const DeepCollectionEquality().hash(splitItems), reason, notes);
+
+  @override
+  String toString() {
+    return 'SplitLotRequest(sourceLotId: $sourceLotId, splitItems: $splitItems, reason: $reason, notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$SplitLotRequestImplCopyWith<$Res>
-    implements $SplitLotRequestCopyWith<$Res> {
-  factory _$$SplitLotRequestImplCopyWith(_$SplitLotRequestImpl value,
-          $Res Function(_$SplitLotRequestImpl) then) =
-      __$$SplitLotRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SplitLotRequestCopyWith<$Res> {
+  factory $SplitLotRequestCopyWith(
+          SplitLotRequest value, $Res Function(SplitLotRequest) _then) =
+      _$SplitLotRequestCopyWithImpl;
   @useResult
   $Res call(
       {String sourceLotId,
@@ -1090,13 +1578,15 @@ abstract class _$$SplitLotRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SplitLotRequestImplCopyWithImpl<$Res>
-    extends _$SplitLotRequestCopyWithImpl<$Res, _$SplitLotRequestImpl>
-    implements _$$SplitLotRequestImplCopyWith<$Res> {
-  __$$SplitLotRequestImplCopyWithImpl(
-      _$SplitLotRequestImpl _value, $Res Function(_$SplitLotRequestImpl) _then)
-      : super(_value, _then);
+class _$SplitLotRequestCopyWithImpl<$Res>
+    implements $SplitLotRequestCopyWith<$Res> {
+  _$SplitLotRequestCopyWithImpl(this._self, this._then);
 
+  final SplitLotRequest _self;
+  final $Res Function(SplitLotRequest) _then;
+
+  /// Create a copy of SplitLotRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1105,39 +1595,200 @@ class __$$SplitLotRequestImplCopyWithImpl<$Res>
     Object? reason = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_$SplitLotRequestImpl(
+    return _then(_self.copyWith(
       sourceLotId: null == sourceLotId
-          ? _value.sourceLotId
+          ? _self.sourceLotId
           : sourceLotId // ignore: cast_nullable_to_non_nullable
               as String,
       splitItems: null == splitItems
-          ? _value._splitItems
+          ? _self.splitItems
           : splitItems // ignore: cast_nullable_to_non_nullable
               as List<LotSplitItem>,
       reason: freezed == reason
-          ? _value.reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [SplitLotRequest].
+extension SplitLotRequestPatterns on SplitLotRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SplitLotRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SplitLotRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SplitLotRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SplitLotRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SplitLotRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SplitLotRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String sourceLotId, List<LotSplitItem> splitItems,
+            String? reason, String? notes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SplitLotRequest() when $default != null:
+        return $default(
+            _that.sourceLotId, _that.splitItems, _that.reason, _that.notes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String sourceLotId, List<LotSplitItem> splitItems,
+            String? reason, String? notes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SplitLotRequest():
+        return $default(
+            _that.sourceLotId, _that.splitItems, _that.reason, _that.notes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String sourceLotId, List<LotSplitItem> splitItems,
+            String? reason, String? notes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SplitLotRequest() when $default != null:
+        return $default(
+            _that.sourceLotId, _that.splitItems, _that.reason, _that.notes);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$SplitLotRequestImpl implements _SplitLotRequest {
-  const _$SplitLotRequestImpl(
+class _SplitLotRequest implements SplitLotRequest {
+  const _SplitLotRequest(
       {required this.sourceLotId,
       required final List<LotSplitItem> splitItems,
       this.reason,
       this.notes})
       : _splitItems = splitItems;
-
-  factory _$SplitLotRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SplitLotRequestImplFromJson(json);
+  factory _SplitLotRequest.fromJson(Map<String, dynamic> json) =>
+      _$SplitLotRequestFromJson(json);
 
   @override
   final String sourceLotId;
@@ -1154,16 +1805,26 @@ class _$SplitLotRequestImpl implements _SplitLotRequest {
   @override
   final String? notes;
 
+  /// Create a copy of SplitLotRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SplitLotRequest(sourceLotId: $sourceLotId, splitItems: $splitItems, reason: $reason, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SplitLotRequestCopyWith<_SplitLotRequest> get copyWith =>
+      __$SplitLotRequestCopyWithImpl<_SplitLotRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SplitLotRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SplitLotRequestImpl &&
+            other is _SplitLotRequest &&
             (identical(other.sourceLotId, sourceLotId) ||
                 other.sourceLotId == sourceLotId) &&
             const DeepCollectionEquality()
@@ -1172,133 +1833,123 @@ class _$SplitLotRequestImpl implements _SplitLotRequest {
             (identical(other.notes, notes) || other.notes == notes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, sourceLotId,
       const DeepCollectionEquality().hash(_splitItems), reason, notes);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SplitLotRequestImplCopyWith<_$SplitLotRequestImpl> get copyWith =>
-      __$$SplitLotRequestImplCopyWithImpl<_$SplitLotRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SplitLotRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SplitLotRequest(sourceLotId: $sourceLotId, splitItems: $splitItems, reason: $reason, notes: $notes)';
   }
 }
 
-abstract class _SplitLotRequest implements SplitLotRequest {
-  const factory _SplitLotRequest(
-      {required final String sourceLotId,
-      required final List<LotSplitItem> splitItems,
-      final String? reason,
-      final String? notes}) = _$SplitLotRequestImpl;
-
-  factory _SplitLotRequest.fromJson(Map<String, dynamic> json) =
-      _$SplitLotRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SplitLotRequestCopyWith<$Res>
+    implements $SplitLotRequestCopyWith<$Res> {
+  factory _$SplitLotRequestCopyWith(
+          _SplitLotRequest value, $Res Function(_SplitLotRequest) _then) =
+      __$SplitLotRequestCopyWithImpl;
   @override
-  String get sourceLotId;
-  @override
-  List<LotSplitItem> get splitItems;
-  @override
-  String? get reason;
-  @override
-  String? get notes;
-  @override
-  @JsonKey(ignore: true)
-  _$$SplitLotRequestImplCopyWith<_$SplitLotRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String sourceLotId,
+      List<LotSplitItem> splitItems,
+      String? reason,
+      String? notes});
 }
 
-LotSplitItem _$LotSplitItemFromJson(Map<String, dynamic> json) {
-  return _LotSplitItem.fromJson(json);
+/// @nodoc
+class __$SplitLotRequestCopyWithImpl<$Res>
+    implements _$SplitLotRequestCopyWith<$Res> {
+  __$SplitLotRequestCopyWithImpl(this._self, this._then);
+
+  final _SplitLotRequest _self;
+  final $Res Function(_SplitLotRequest) _then;
+
+  /// Create a copy of SplitLotRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? sourceLotId = null,
+    Object? splitItems = null,
+    Object? reason = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_SplitLotRequest(
+      sourceLotId: null == sourceLotId
+          ? _self.sourceLotId
+          : sourceLotId // ignore: cast_nullable_to_non_nullable
+              as String,
+      splitItems: null == splitItems
+          ? _self._splitItems
+          : splitItems // ignore: cast_nullable_to_non_nullable
+              as List<LotSplitItem>,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$LotSplitItem {
-  String get newLotNumber => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  String? get locationId => throw _privateConstructorUsedError;
-  DateTime? get expiryDate => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
+  String get newLotNumber;
+  double get quantity;
+  String? get locationId;
+  DateTime? get expiryDate;
+  Map<String, dynamic>? get attributes;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LotSplitItemCopyWith<LotSplitItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LotSplitItemCopyWith<$Res> {
-  factory $LotSplitItemCopyWith(
-          LotSplitItem value, $Res Function(LotSplitItem) then) =
-      _$LotSplitItemCopyWithImpl<$Res, LotSplitItem>;
-  @useResult
-  $Res call(
-      {String newLotNumber,
-      double quantity,
-      String? locationId,
-      DateTime? expiryDate,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$LotSplitItemCopyWithImpl<$Res, $Val extends LotSplitItem>
-    implements $LotSplitItemCopyWith<$Res> {
-  _$LotSplitItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of LotSplitItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $LotSplitItemCopyWith<LotSplitItem> get copyWith =>
+      _$LotSplitItemCopyWithImpl<LotSplitItem>(
+          this as LotSplitItem, _$identity);
+
+  /// Serializes this LotSplitItem to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? newLotNumber = null,
-    Object? quantity = null,
-    Object? locationId = freezed,
-    Object? expiryDate = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      newLotNumber: null == newLotNumber
-          ? _value.newLotNumber
-          : newLotNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LotSplitItem &&
+            (identical(other.newLotNumber, newLotNumber) ||
+                other.newLotNumber == newLotNumber) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, newLotNumber, quantity,
+      locationId, expiryDate, const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'LotSplitItem(newLotNumber: $newLotNumber, quantity: $quantity, locationId: $locationId, expiryDate: $expiryDate, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$LotSplitItemImplCopyWith<$Res>
-    implements $LotSplitItemCopyWith<$Res> {
-  factory _$$LotSplitItemImplCopyWith(
-          _$LotSplitItemImpl value, $Res Function(_$LotSplitItemImpl) then) =
-      __$$LotSplitItemImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $LotSplitItemCopyWith<$Res> {
+  factory $LotSplitItemCopyWith(
+          LotSplitItem value, $Res Function(LotSplitItem) _then) =
+      _$LotSplitItemCopyWithImpl;
   @useResult
   $Res call(
       {String newLotNumber,
@@ -1309,13 +1960,14 @@ abstract class _$$LotSplitItemImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LotSplitItemImplCopyWithImpl<$Res>
-    extends _$LotSplitItemCopyWithImpl<$Res, _$LotSplitItemImpl>
-    implements _$$LotSplitItemImplCopyWith<$Res> {
-  __$$LotSplitItemImplCopyWithImpl(
-      _$LotSplitItemImpl _value, $Res Function(_$LotSplitItemImpl) _then)
-      : super(_value, _then);
+class _$LotSplitItemCopyWithImpl<$Res> implements $LotSplitItemCopyWith<$Res> {
+  _$LotSplitItemCopyWithImpl(this._self, this._then);
 
+  final LotSplitItem _self;
+  final $Res Function(LotSplitItem) _then;
+
+  /// Create a copy of LotSplitItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1325,44 +1977,205 @@ class __$$LotSplitItemImplCopyWithImpl<$Res>
     Object? expiryDate = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$LotSplitItemImpl(
+    return _then(_self.copyWith(
       newLotNumber: null == newLotNumber
-          ? _value.newLotNumber
+          ? _self.newLotNumber
           : newLotNumber // ignore: cast_nullable_to_non_nullable
               as String,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as double,
       locationId: freezed == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
       expiryDate: freezed == expiryDate
-          ? _value.expiryDate
+          ? _self.expiryDate
           : expiryDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [LotSplitItem].
+extension LotSplitItemPatterns on LotSplitItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_LotSplitItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotSplitItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_LotSplitItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotSplitItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_LotSplitItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotSplitItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String newLotNumber, double quantity, String? locationId,
+            DateTime? expiryDate, Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotSplitItem() when $default != null:
+        return $default(_that.newLotNumber, _that.quantity, _that.locationId,
+            _that.expiryDate, _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String newLotNumber, double quantity, String? locationId,
+            DateTime? expiryDate, Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotSplitItem():
+        return $default(_that.newLotNumber, _that.quantity, _that.locationId,
+            _that.expiryDate, _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String newLotNumber, double quantity, String? locationId,
+            DateTime? expiryDate, Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotSplitItem() when $default != null:
+        return $default(_that.newLotNumber, _that.quantity, _that.locationId,
+            _that.expiryDate, _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$LotSplitItemImpl implements _LotSplitItem {
-  const _$LotSplitItemImpl(
+class _LotSplitItem implements LotSplitItem {
+  const _LotSplitItem(
       {required this.newLotNumber,
       required this.quantity,
       this.locationId,
       this.expiryDate,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$LotSplitItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LotSplitItemImplFromJson(json);
+  factory _LotSplitItem.fromJson(Map<String, dynamic> json) =>
+      _$LotSplitItemFromJson(json);
 
   @override
   final String newLotNumber;
@@ -1382,16 +2195,26 @@ class _$LotSplitItemImpl implements _LotSplitItem {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of LotSplitItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LotSplitItem(newLotNumber: $newLotNumber, quantity: $quantity, locationId: $locationId, expiryDate: $expiryDate, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LotSplitItemCopyWith<_LotSplitItem> get copyWith =>
+      __$LotSplitItemCopyWithImpl<_LotSplitItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LotSplitItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LotSplitItemImpl &&
+            other is _LotSplitItem &&
             (identical(other.newLotNumber, newLotNumber) ||
                 other.newLotNumber == newLotNumber) &&
             (identical(other.quantity, quantity) ||
@@ -1404,206 +2227,71 @@ class _$LotSplitItemImpl implements _LotSplitItem {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, newLotNumber, quantity,
       locationId, expiryDate, const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LotSplitItemImplCopyWith<_$LotSplitItemImpl> get copyWith =>
-      __$$LotSplitItemImplCopyWithImpl<_$LotSplitItemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LotSplitItemImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LotSplitItem implements LotSplitItem {
-  const factory _LotSplitItem(
-      {required final String newLotNumber,
-      required final double quantity,
-      final String? locationId,
-      final DateTime? expiryDate,
-      final Map<String, dynamic>? attributes}) = _$LotSplitItemImpl;
-
-  factory _LotSplitItem.fromJson(Map<String, dynamic> json) =
-      _$LotSplitItemImpl.fromJson;
-
-  @override
-  String get newLotNumber;
-  @override
-  double get quantity;
-  @override
-  String? get locationId;
-  @override
-  DateTime? get expiryDate;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$LotSplitItemImplCopyWith<_$LotSplitItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-MergeLotsRequest _$MergeLotsRequestFromJson(Map<String, dynamic> json) {
-  return _MergeLotsRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$MergeLotsRequest {
-  List<String> get sourceLotIds => throw _privateConstructorUsedError;
-  String get targetLotNumber => throw _privateConstructorUsedError;
-  String get targetLocationId => throw _privateConstructorUsedError;
-  DateTime? get targetExpiryDate => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MergeLotsRequestCopyWith<MergeLotsRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MergeLotsRequestCopyWith<$Res> {
-  factory $MergeLotsRequestCopyWith(
-          MergeLotsRequest value, $Res Function(MergeLotsRequest) then) =
-      _$MergeLotsRequestCopyWithImpl<$Res, MergeLotsRequest>;
-  @useResult
-  $Res call(
-      {List<String> sourceLotIds,
-      String targetLotNumber,
-      String targetLocationId,
-      DateTime? targetExpiryDate,
-      String? reason,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$MergeLotsRequestCopyWithImpl<$Res, $Val extends MergeLotsRequest>
-    implements $MergeLotsRequestCopyWith<$Res> {
-  _$MergeLotsRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sourceLotIds = null,
-    Object? targetLotNumber = null,
-    Object? targetLocationId = null,
-    Object? targetExpiryDate = freezed,
-    Object? reason = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      sourceLotIds: null == sourceLotIds
-          ? _value.sourceLotIds
-          : sourceLotIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      targetLotNumber: null == targetLotNumber
-          ? _value.targetLotNumber
-          : targetLotNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      targetLocationId: null == targetLocationId
-          ? _value.targetLocationId
-          : targetLocationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      targetExpiryDate: freezed == targetExpiryDate
-          ? _value.targetExpiryDate
-          : targetExpiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'LotSplitItem(newLotNumber: $newLotNumber, quantity: $quantity, locationId: $locationId, expiryDate: $expiryDate, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$MergeLotsRequestImplCopyWith<$Res>
-    implements $MergeLotsRequestCopyWith<$Res> {
-  factory _$$MergeLotsRequestImplCopyWith(_$MergeLotsRequestImpl value,
-          $Res Function(_$MergeLotsRequestImpl) then) =
-      __$$MergeLotsRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$LotSplitItemCopyWith<$Res>
+    implements $LotSplitItemCopyWith<$Res> {
+  factory _$LotSplitItemCopyWith(
+          _LotSplitItem value, $Res Function(_LotSplitItem) _then) =
+      __$LotSplitItemCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {List<String> sourceLotIds,
-      String targetLotNumber,
-      String targetLocationId,
-      DateTime? targetExpiryDate,
-      String? reason,
-      String? notes,
+      {String newLotNumber,
+      double quantity,
+      String? locationId,
+      DateTime? expiryDate,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class __$$MergeLotsRequestImplCopyWithImpl<$Res>
-    extends _$MergeLotsRequestCopyWithImpl<$Res, _$MergeLotsRequestImpl>
-    implements _$$MergeLotsRequestImplCopyWith<$Res> {
-  __$$MergeLotsRequestImplCopyWithImpl(_$MergeLotsRequestImpl _value,
-      $Res Function(_$MergeLotsRequestImpl) _then)
-      : super(_value, _then);
+class __$LotSplitItemCopyWithImpl<$Res>
+    implements _$LotSplitItemCopyWith<$Res> {
+  __$LotSplitItemCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _LotSplitItem _self;
+  final $Res Function(_LotSplitItem) _then;
+
+  /// Create a copy of LotSplitItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? sourceLotIds = null,
-    Object? targetLotNumber = null,
-    Object? targetLocationId = null,
-    Object? targetExpiryDate = freezed,
-    Object? reason = freezed,
-    Object? notes = freezed,
+    Object? newLotNumber = null,
+    Object? quantity = null,
+    Object? locationId = freezed,
+    Object? expiryDate = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$MergeLotsRequestImpl(
-      sourceLotIds: null == sourceLotIds
-          ? _value._sourceLotIds
-          : sourceLotIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      targetLotNumber: null == targetLotNumber
-          ? _value.targetLotNumber
-          : targetLotNumber // ignore: cast_nullable_to_non_nullable
+    return _then(_LotSplitItem(
+      newLotNumber: null == newLotNumber
+          ? _self.newLotNumber
+          : newLotNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      targetLocationId: null == targetLocationId
-          ? _value.targetLocationId
-          : targetLocationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      targetExpiryDate: freezed == targetExpiryDate
-          ? _value.targetExpiryDate
-          : targetExpiryDate // ignore: cast_nullable_to_non_nullable
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1611,9 +2299,335 @@ class __$$MergeLotsRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$MergeLotsRequest {
+  List<String> get sourceLotIds;
+  String get targetLotNumber;
+  String get targetLocationId;
+  DateTime? get targetExpiryDate;
+  String? get reason;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of MergeLotsRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MergeLotsRequestCopyWith<MergeLotsRequest> get copyWith =>
+      _$MergeLotsRequestCopyWithImpl<MergeLotsRequest>(
+          this as MergeLotsRequest, _$identity);
+
+  /// Serializes this MergeLotsRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MergeLotsRequest &&
+            const DeepCollectionEquality()
+                .equals(other.sourceLotIds, sourceLotIds) &&
+            (identical(other.targetLotNumber, targetLotNumber) ||
+                other.targetLotNumber == targetLotNumber) &&
+            (identical(other.targetLocationId, targetLocationId) ||
+                other.targetLocationId == targetLocationId) &&
+            (identical(other.targetExpiryDate, targetExpiryDate) ||
+                other.targetExpiryDate == targetExpiryDate) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(sourceLotIds),
+      targetLotNumber,
+      targetLocationId,
+      targetExpiryDate,
+      reason,
+      notes,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'MergeLotsRequest(sourceLotIds: $sourceLotIds, targetLotNumber: $targetLotNumber, targetLocationId: $targetLocationId, targetExpiryDate: $targetExpiryDate, reason: $reason, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $MergeLotsRequestCopyWith<$Res> {
+  factory $MergeLotsRequestCopyWith(
+          MergeLotsRequest value, $Res Function(MergeLotsRequest) _then) =
+      _$MergeLotsRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {List<String> sourceLotIds,
+      String targetLotNumber,
+      String targetLocationId,
+      DateTime? targetExpiryDate,
+      String? reason,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$MergeLotsRequestCopyWithImpl<$Res>
+    implements $MergeLotsRequestCopyWith<$Res> {
+  _$MergeLotsRequestCopyWithImpl(this._self, this._then);
+
+  final MergeLotsRequest _self;
+  final $Res Function(MergeLotsRequest) _then;
+
+  /// Create a copy of MergeLotsRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sourceLotIds = null,
+    Object? targetLotNumber = null,
+    Object? targetLocationId = null,
+    Object? targetExpiryDate = freezed,
+    Object? reason = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      sourceLotIds: null == sourceLotIds
+          ? _self.sourceLotIds
+          : sourceLotIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      targetLotNumber: null == targetLotNumber
+          ? _self.targetLotNumber
+          : targetLotNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      targetLocationId: null == targetLocationId
+          ? _self.targetLocationId
+          : targetLocationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      targetExpiryDate: freezed == targetExpiryDate
+          ? _self.targetExpiryDate
+          : targetExpiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [MergeLotsRequest].
+extension MergeLotsRequestPatterns on MergeLotsRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MergeLotsRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MergeLotsRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_MergeLotsRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MergeLotsRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MergeLotsRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MergeLotsRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            List<String> sourceLotIds,
+            String targetLotNumber,
+            String targetLocationId,
+            DateTime? targetExpiryDate,
+            String? reason,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _MergeLotsRequest() when $default != null:
+        return $default(
+            _that.sourceLotIds,
+            _that.targetLotNumber,
+            _that.targetLocationId,
+            _that.targetExpiryDate,
+            _that.reason,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            List<String> sourceLotIds,
+            String targetLotNumber,
+            String targetLocationId,
+            DateTime? targetExpiryDate,
+            String? reason,
+            String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MergeLotsRequest():
+        return $default(
+            _that.sourceLotIds,
+            _that.targetLotNumber,
+            _that.targetLocationId,
+            _that.targetExpiryDate,
+            _that.reason,
+            _that.notes,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            List<String> sourceLotIds,
+            String targetLotNumber,
+            String targetLocationId,
+            DateTime? targetExpiryDate,
+            String? reason,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _MergeLotsRequest() when $default != null:
+        return $default(
+            _that.sourceLotIds,
+            _that.targetLotNumber,
+            _that.targetLocationId,
+            _that.targetExpiryDate,
+            _that.reason,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$MergeLotsRequestImpl implements _MergeLotsRequest {
-  const _$MergeLotsRequestImpl(
+class _MergeLotsRequest implements MergeLotsRequest {
+  const _MergeLotsRequest(
       {required final List<String> sourceLotIds,
       required this.targetLotNumber,
       required this.targetLocationId,
@@ -1623,9 +2637,8 @@ class _$MergeLotsRequestImpl implements _MergeLotsRequest {
       final Map<String, dynamic>? attributes})
       : _sourceLotIds = sourceLotIds,
         _attributes = attributes;
-
-  factory _$MergeLotsRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MergeLotsRequestImplFromJson(json);
+  factory _MergeLotsRequest.fromJson(Map<String, dynamic> json) =>
+      _$MergeLotsRequestFromJson(json);
 
   final List<String> _sourceLotIds;
   @override
@@ -1655,16 +2668,26 @@ class _$MergeLotsRequestImpl implements _MergeLotsRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of MergeLotsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MergeLotsRequest(sourceLotIds: $sourceLotIds, targetLotNumber: $targetLotNumber, targetLocationId: $targetLocationId, targetExpiryDate: $targetExpiryDate, reason: $reason, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MergeLotsRequestCopyWith<_MergeLotsRequest> get copyWith =>
+      __$MergeLotsRequestCopyWithImpl<_MergeLotsRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MergeLotsRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MergeLotsRequestImpl &&
+            other is _MergeLotsRequest &&
             const DeepCollectionEquality()
                 .equals(other._sourceLotIds, _sourceLotIds) &&
             (identical(other.targetLotNumber, targetLotNumber) ||
@@ -1679,7 +2702,7 @@ class _$MergeLotsRequestImpl implements _MergeLotsRequest {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1691,174 +2714,78 @@ class _$MergeLotsRequestImpl implements _MergeLotsRequest {
       notes,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MergeLotsRequestImplCopyWith<_$MergeLotsRequestImpl> get copyWith =>
-      __$$MergeLotsRequestImplCopyWithImpl<_$MergeLotsRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MergeLotsRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MergeLotsRequest(sourceLotIds: $sourceLotIds, targetLotNumber: $targetLotNumber, targetLocationId: $targetLocationId, targetExpiryDate: $targetExpiryDate, reason: $reason, notes: $notes, attributes: $attributes)';
   }
 }
 
-abstract class _MergeLotsRequest implements MergeLotsRequest {
-  const factory _MergeLotsRequest(
-      {required final List<String> sourceLotIds,
-      required final String targetLotNumber,
-      required final String targetLocationId,
-      final DateTime? targetExpiryDate,
-      final String? reason,
-      final String? notes,
-      final Map<String, dynamic>? attributes}) = _$MergeLotsRequestImpl;
-
-  factory _MergeLotsRequest.fromJson(Map<String, dynamic> json) =
-      _$MergeLotsRequestImpl.fromJson;
-
-  @override
-  List<String> get sourceLotIds;
-  @override
-  String get targetLotNumber;
-  @override
-  String get targetLocationId;
-  @override
-  DateTime? get targetExpiryDate;
-  @override
-  String? get reason;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$MergeLotsRequestImplCopyWith<_$MergeLotsRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-UpdateLotTrackingRequest _$UpdateLotTrackingRequestFromJson(
-    Map<String, dynamic> json) {
-  return _UpdateLotTrackingRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$UpdateLotTrackingRequest {
-  String? get status => throw _privateConstructorUsedError;
-  DateTime? get expiryDate => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UpdateLotTrackingRequestCopyWith<UpdateLotTrackingRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UpdateLotTrackingRequestCopyWith<$Res> {
-  factory $UpdateLotTrackingRequestCopyWith(UpdateLotTrackingRequest value,
-          $Res Function(UpdateLotTrackingRequest) then) =
-      _$UpdateLotTrackingRequestCopyWithImpl<$Res, UpdateLotTrackingRequest>;
+abstract mixin class _$MergeLotsRequestCopyWith<$Res>
+    implements $MergeLotsRequestCopyWith<$Res> {
+  factory _$MergeLotsRequestCopyWith(
+          _MergeLotsRequest value, $Res Function(_MergeLotsRequest) _then) =
+      __$MergeLotsRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? status,
-      DateTime? expiryDate,
+      {List<String> sourceLotIds,
+      String targetLotNumber,
+      String targetLocationId,
+      DateTime? targetExpiryDate,
+      String? reason,
       String? notes,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class _$UpdateLotTrackingRequestCopyWithImpl<$Res,
-        $Val extends UpdateLotTrackingRequest>
-    implements $UpdateLotTrackingRequestCopyWith<$Res> {
-  _$UpdateLotTrackingRequestCopyWithImpl(this._value, this._then);
+class __$MergeLotsRequestCopyWithImpl<$Res>
+    implements _$MergeLotsRequestCopyWith<$Res> {
+  __$MergeLotsRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _MergeLotsRequest _self;
+  final $Res Function(_MergeLotsRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of MergeLotsRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? status = freezed,
-    Object? expiryDate = freezed,
+    Object? sourceLotIds = null,
+    Object? targetLotNumber = null,
+    Object? targetLocationId = null,
+    Object? targetExpiryDate = freezed,
+    Object? reason = freezed,
     Object? notes = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_value.copyWith(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
+    return _then(_MergeLotsRequest(
+      sourceLotIds: null == sourceLotIds
+          ? _self._sourceLotIds
+          : sourceLotIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      targetLotNumber: null == targetLotNumber
+          ? _self.targetLotNumber
+          : targetLotNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      targetLocationId: null == targetLocationId
+          ? _self.targetLocationId
+          : targetLocationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      targetExpiryDate: freezed == targetExpiryDate
+          ? _self.targetExpiryDate
+          : targetExpiryDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$UpdateLotTrackingRequestImplCopyWith<$Res>
-    implements $UpdateLotTrackingRequestCopyWith<$Res> {
-  factory _$$UpdateLotTrackingRequestImplCopyWith(
-          _$UpdateLotTrackingRequestImpl value,
-          $Res Function(_$UpdateLotTrackingRequestImpl) then) =
-      __$$UpdateLotTrackingRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? status,
-      DateTime? expiryDate,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class __$$UpdateLotTrackingRequestImplCopyWithImpl<$Res>
-    extends _$UpdateLotTrackingRequestCopyWithImpl<$Res,
-        _$UpdateLotTrackingRequestImpl>
-    implements _$$UpdateLotTrackingRequestImplCopyWith<$Res> {
-  __$$UpdateLotTrackingRequestImplCopyWithImpl(
-      _$UpdateLotTrackingRequestImpl _value,
-      $Res Function(_$UpdateLotTrackingRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = freezed,
-    Object? expiryDate = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_$UpdateLotTrackingRequestImpl(
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expiryDate: freezed == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1866,17 +2793,272 @@ class __$$UpdateLotTrackingRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$UpdateLotTrackingRequest {
+  String? get status;
+  DateTime? get expiryDate;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of UpdateLotTrackingRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $UpdateLotTrackingRequestCopyWith<UpdateLotTrackingRequest> get copyWith =>
+      _$UpdateLotTrackingRequestCopyWithImpl<UpdateLotTrackingRequest>(
+          this as UpdateLotTrackingRequest, _$identity);
+
+  /// Serializes this UpdateLotTrackingRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateLotTrackingRequest &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, status, expiryDate, notes,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'UpdateLotTrackingRequest(status: $status, expiryDate: $expiryDate, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $UpdateLotTrackingRequestCopyWith<$Res> {
+  factory $UpdateLotTrackingRequestCopyWith(UpdateLotTrackingRequest value,
+          $Res Function(UpdateLotTrackingRequest) _then) =
+      _$UpdateLotTrackingRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? status,
+      DateTime? expiryDate,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$UpdateLotTrackingRequestCopyWithImpl<$Res>
+    implements $UpdateLotTrackingRequestCopyWith<$Res> {
+  _$UpdateLotTrackingRequestCopyWithImpl(this._self, this._then);
+
+  final UpdateLotTrackingRequest _self;
+  final $Res Function(UpdateLotTrackingRequest) _then;
+
+  /// Create a copy of UpdateLotTrackingRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? expiryDate = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UpdateLotTrackingRequest].
+extension UpdateLotTrackingRequestPatterns on UpdateLotTrackingRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UpdateLotTrackingRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateLotTrackingRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UpdateLotTrackingRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateLotTrackingRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UpdateLotTrackingRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateLotTrackingRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String? status, DateTime? expiryDate, String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateLotTrackingRequest() when $default != null:
+        return $default(
+            _that.status, _that.expiryDate, _that.notes, _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String? status, DateTime? expiryDate, String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateLotTrackingRequest():
+        return $default(
+            _that.status, _that.expiryDate, _that.notes, _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String? status, DateTime? expiryDate, String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UpdateLotTrackingRequest() when $default != null:
+        return $default(
+            _that.status, _that.expiryDate, _that.notes, _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$UpdateLotTrackingRequestImpl implements _UpdateLotTrackingRequest {
-  const _$UpdateLotTrackingRequestImpl(
+class _UpdateLotTrackingRequest implements UpdateLotTrackingRequest {
+  const _UpdateLotTrackingRequest(
       {this.status,
       this.expiryDate,
       this.notes,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$UpdateLotTrackingRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateLotTrackingRequestImplFromJson(json);
+  factory _UpdateLotTrackingRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateLotTrackingRequestFromJson(json);
 
   @override
   final String? status;
@@ -1894,16 +3076,27 @@ class _$UpdateLotTrackingRequestImpl implements _UpdateLotTrackingRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of UpdateLotTrackingRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UpdateLotTrackingRequest(status: $status, expiryDate: $expiryDate, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UpdateLotTrackingRequestCopyWith<_UpdateLotTrackingRequest> get copyWith =>
+      __$UpdateLotTrackingRequestCopyWithImpl<_UpdateLotTrackingRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UpdateLotTrackingRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateLotTrackingRequestImpl &&
+            other is _UpdateLotTrackingRequest &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.expiryDate, expiryDate) ||
                 other.expiryDate == expiryDate) &&
@@ -1912,129 +3105,128 @@ class _$UpdateLotTrackingRequestImpl implements _UpdateLotTrackingRequest {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, status, expiryDate, notes,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateLotTrackingRequestImplCopyWith<_$UpdateLotTrackingRequestImpl>
-      get copyWith => __$$UpdateLotTrackingRequestImplCopyWithImpl<
-          _$UpdateLotTrackingRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UpdateLotTrackingRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'UpdateLotTrackingRequest(status: $status, expiryDate: $expiryDate, notes: $notes, attributes: $attributes)';
   }
 }
 
-abstract class _UpdateLotTrackingRequest implements UpdateLotTrackingRequest {
-  const factory _UpdateLotTrackingRequest(
-      {final String? status,
-      final DateTime? expiryDate,
-      final String? notes,
-      final Map<String, dynamic>? attributes}) = _$UpdateLotTrackingRequestImpl;
-
-  factory _UpdateLotTrackingRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateLotTrackingRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$UpdateLotTrackingRequestCopyWith<$Res>
+    implements $UpdateLotTrackingRequestCopyWith<$Res> {
+  factory _$UpdateLotTrackingRequestCopyWith(_UpdateLotTrackingRequest value,
+          $Res Function(_UpdateLotTrackingRequest) _then) =
+      __$UpdateLotTrackingRequestCopyWithImpl;
   @override
-  String? get status;
-  @override
-  DateTime? get expiryDate;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$UpdateLotTrackingRequestImplCopyWith<_$UpdateLotTrackingRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? status,
+      DateTime? expiryDate,
+      String? notes,
+      Map<String, dynamic>? attributes});
 }
 
-QuarantineLotRequest _$QuarantineLotRequestFromJson(Map<String, dynamic> json) {
-  return _QuarantineLotRequest.fromJson(json);
+/// @nodoc
+class __$UpdateLotTrackingRequestCopyWithImpl<$Res>
+    implements _$UpdateLotTrackingRequestCopyWith<$Res> {
+  __$UpdateLotTrackingRequestCopyWithImpl(this._self, this._then);
+
+  final _UpdateLotTrackingRequest _self;
+  final $Res Function(_UpdateLotTrackingRequest) _then;
+
+  /// Create a copy of UpdateLotTrackingRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = freezed,
+    Object? expiryDate = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_UpdateLotTrackingRequest(
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expiryDate: freezed == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$QuarantineLotRequest {
-  String get reason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  DateTime? get quarantinedUntil => throw _privateConstructorUsedError;
+  String get reason;
+  String? get notes;
+  DateTime? get quarantinedUntil;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $QuarantineLotRequestCopyWith<QuarantineLotRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $QuarantineLotRequestCopyWith<$Res> {
-  factory $QuarantineLotRequestCopyWith(QuarantineLotRequest value,
-          $Res Function(QuarantineLotRequest) then) =
-      _$QuarantineLotRequestCopyWithImpl<$Res, QuarantineLotRequest>;
-  @useResult
-  $Res call({String reason, String? notes, DateTime? quarantinedUntil});
-}
-
-/// @nodoc
-class _$QuarantineLotRequestCopyWithImpl<$Res,
-        $Val extends QuarantineLotRequest>
-    implements $QuarantineLotRequestCopyWith<$Res> {
-  _$QuarantineLotRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of QuarantineLotRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $QuarantineLotRequestCopyWith<QuarantineLotRequest> get copyWith =>
+      _$QuarantineLotRequestCopyWithImpl<QuarantineLotRequest>(
+          this as QuarantineLotRequest, _$identity);
+
+  /// Serializes this QuarantineLotRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? reason = null,
-    Object? notes = freezed,
-    Object? quarantinedUntil = freezed,
-  }) {
-    return _then(_value.copyWith(
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quarantinedUntil: freezed == quarantinedUntil
-          ? _value.quarantinedUntil
-          : quarantinedUntil // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is QuarantineLotRequest &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.quarantinedUntil, quarantinedUntil) ||
+                other.quarantinedUntil == quarantinedUntil));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reason, notes, quarantinedUntil);
+
+  @override
+  String toString() {
+    return 'QuarantineLotRequest(reason: $reason, notes: $notes, quarantinedUntil: $quarantinedUntil)';
   }
 }
 
 /// @nodoc
-abstract class _$$QuarantineLotRequestImplCopyWith<$Res>
-    implements $QuarantineLotRequestCopyWith<$Res> {
-  factory _$$QuarantineLotRequestImplCopyWith(_$QuarantineLotRequestImpl value,
-          $Res Function(_$QuarantineLotRequestImpl) then) =
-      __$$QuarantineLotRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $QuarantineLotRequestCopyWith<$Res> {
+  factory $QuarantineLotRequestCopyWith(QuarantineLotRequest value,
+          $Res Function(QuarantineLotRequest) _then) =
+      _$QuarantineLotRequestCopyWithImpl;
   @useResult
   $Res call({String reason, String? notes, DateTime? quarantinedUntil});
 }
 
 /// @nodoc
-class __$$QuarantineLotRequestImplCopyWithImpl<$Res>
-    extends _$QuarantineLotRequestCopyWithImpl<$Res, _$QuarantineLotRequestImpl>
-    implements _$$QuarantineLotRequestImplCopyWith<$Res> {
-  __$$QuarantineLotRequestImplCopyWithImpl(_$QuarantineLotRequestImpl _value,
-      $Res Function(_$QuarantineLotRequestImpl) _then)
-      : super(_value, _then);
+class _$QuarantineLotRequestCopyWithImpl<$Res>
+    implements $QuarantineLotRequestCopyWith<$Res> {
+  _$QuarantineLotRequestCopyWithImpl(this._self, this._then);
 
+  final QuarantineLotRequest _self;
+  final $Res Function(QuarantineLotRequest) _then;
+
+  /// Create a copy of QuarantineLotRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2042,31 +3234,186 @@ class __$$QuarantineLotRequestImplCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? quarantinedUntil = freezed,
   }) {
-    return _then(_$QuarantineLotRequestImpl(
+    return _then(_self.copyWith(
       reason: null == reason
-          ? _value.reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       quarantinedUntil: freezed == quarantinedUntil
-          ? _value.quarantinedUntil
+          ? _self.quarantinedUntil
           : quarantinedUntil // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [QuarantineLotRequest].
+extension QuarantineLotRequestPatterns on QuarantineLotRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_QuarantineLotRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QuarantineLotRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_QuarantineLotRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuarantineLotRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_QuarantineLotRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuarantineLotRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String reason, String? notes, DateTime? quarantinedUntil)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _QuarantineLotRequest() when $default != null:
+        return $default(_that.reason, _that.notes, _that.quarantinedUntil);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String reason, String? notes, DateTime? quarantinedUntil)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuarantineLotRequest():
+        return $default(_that.reason, _that.notes, _that.quarantinedUntil);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String reason, String? notes, DateTime? quarantinedUntil)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _QuarantineLotRequest() when $default != null:
+        return $default(_that.reason, _that.notes, _that.quarantinedUntil);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$QuarantineLotRequestImpl implements _QuarantineLotRequest {
-  const _$QuarantineLotRequestImpl(
+class _QuarantineLotRequest implements QuarantineLotRequest {
+  const _QuarantineLotRequest(
       {required this.reason, this.notes, this.quarantinedUntil});
-
-  factory _$QuarantineLotRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuarantineLotRequestImplFromJson(json);
+  factory _QuarantineLotRequest.fromJson(Map<String, dynamic> json) =>
+      _$QuarantineLotRequestFromJson(json);
 
   @override
   final String reason;
@@ -2075,195 +3422,355 @@ class _$QuarantineLotRequestImpl implements _QuarantineLotRequest {
   @override
   final DateTime? quarantinedUntil;
 
+  /// Create a copy of QuarantineLotRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'QuarantineLotRequest(reason: $reason, notes: $notes, quarantinedUntil: $quarantinedUntil)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$QuarantineLotRequestCopyWith<_QuarantineLotRequest> get copyWith =>
+      __$QuarantineLotRequestCopyWithImpl<_QuarantineLotRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$QuarantineLotRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$QuarantineLotRequestImpl &&
+            other is _QuarantineLotRequest &&
             (identical(other.reason, reason) || other.reason == reason) &&
             (identical(other.notes, notes) || other.notes == notes) &&
             (identical(other.quarantinedUntil, quarantinedUntil) ||
                 other.quarantinedUntil == quarantinedUntil));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reason, notes, quarantinedUntil);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$QuarantineLotRequestImplCopyWith<_$QuarantineLotRequestImpl>
-      get copyWith =>
-          __$$QuarantineLotRequestImplCopyWithImpl<_$QuarantineLotRequestImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuarantineLotRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _QuarantineLotRequest implements QuarantineLotRequest {
-  const factory _QuarantineLotRequest(
-      {required final String reason,
-      final String? notes,
-      final DateTime? quarantinedUntil}) = _$QuarantineLotRequestImpl;
-
-  factory _QuarantineLotRequest.fromJson(Map<String, dynamic> json) =
-      _$QuarantineLotRequestImpl.fromJson;
-
-  @override
-  String get reason;
-  @override
-  String? get notes;
-  @override
-  DateTime? get quarantinedUntil;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuarantineLotRequestImplCopyWith<_$QuarantineLotRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-ReleaseLotRequest _$ReleaseLotRequestFromJson(Map<String, dynamic> json) {
-  return _ReleaseLotRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ReleaseLotRequest {
-  String get releaseReason => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  String? get inspectedBy => throw _privateConstructorUsedError;
-  DateTime? get inspectionDate => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ReleaseLotRequestCopyWith<ReleaseLotRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ReleaseLotRequestCopyWith<$Res> {
-  factory $ReleaseLotRequestCopyWith(
-          ReleaseLotRequest value, $Res Function(ReleaseLotRequest) then) =
-      _$ReleaseLotRequestCopyWithImpl<$Res, ReleaseLotRequest>;
-  @useResult
-  $Res call(
-      {String releaseReason,
-      String? notes,
-      String? inspectedBy,
-      DateTime? inspectionDate});
-}
-
-/// @nodoc
-class _$ReleaseLotRequestCopyWithImpl<$Res, $Val extends ReleaseLotRequest>
-    implements $ReleaseLotRequestCopyWith<$Res> {
-  _$ReleaseLotRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? releaseReason = null,
-    Object? notes = freezed,
-    Object? inspectedBy = freezed,
-    Object? inspectionDate = freezed,
-  }) {
-    return _then(_value.copyWith(
-      releaseReason: null == releaseReason
-          ? _value.releaseReason
-          : releaseReason // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectedBy: freezed == inspectedBy
-          ? _value.inspectedBy
-          : inspectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectionDate: freezed == inspectionDate
-          ? _value.inspectionDate
-          : inspectionDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  String toString() {
+    return 'QuarantineLotRequest(reason: $reason, notes: $notes, quarantinedUntil: $quarantinedUntil)';
   }
 }
 
 /// @nodoc
-abstract class _$$ReleaseLotRequestImplCopyWith<$Res>
-    implements $ReleaseLotRequestCopyWith<$Res> {
-  factory _$$ReleaseLotRequestImplCopyWith(_$ReleaseLotRequestImpl value,
-          $Res Function(_$ReleaseLotRequestImpl) then) =
-      __$$ReleaseLotRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$QuarantineLotRequestCopyWith<$Res>
+    implements $QuarantineLotRequestCopyWith<$Res> {
+  factory _$QuarantineLotRequestCopyWith(_QuarantineLotRequest value,
+          $Res Function(_QuarantineLotRequest) _then) =
+      __$QuarantineLotRequestCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String releaseReason,
-      String? notes,
-      String? inspectedBy,
-      DateTime? inspectionDate});
+  $Res call({String reason, String? notes, DateTime? quarantinedUntil});
 }
 
 /// @nodoc
-class __$$ReleaseLotRequestImplCopyWithImpl<$Res>
-    extends _$ReleaseLotRequestCopyWithImpl<$Res, _$ReleaseLotRequestImpl>
-    implements _$$ReleaseLotRequestImplCopyWith<$Res> {
-  __$$ReleaseLotRequestImplCopyWithImpl(_$ReleaseLotRequestImpl _value,
-      $Res Function(_$ReleaseLotRequestImpl) _then)
-      : super(_value, _then);
+class __$QuarantineLotRequestCopyWithImpl<$Res>
+    implements _$QuarantineLotRequestCopyWith<$Res> {
+  __$QuarantineLotRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _QuarantineLotRequest _self;
+  final $Res Function(_QuarantineLotRequest) _then;
+
+  /// Create a copy of QuarantineLotRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? releaseReason = null,
+    Object? reason = null,
     Object? notes = freezed,
-    Object? inspectedBy = freezed,
-    Object? inspectionDate = freezed,
+    Object? quarantinedUntil = freezed,
   }) {
-    return _then(_$ReleaseLotRequestImpl(
-      releaseReason: null == releaseReason
-          ? _value.releaseReason
-          : releaseReason // ignore: cast_nullable_to_non_nullable
+    return _then(_QuarantineLotRequest(
+      reason: null == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
               as String,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
-      inspectedBy: freezed == inspectedBy
-          ? _value.inspectedBy
-          : inspectedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      inspectionDate: freezed == inspectionDate
-          ? _value.inspectionDate
-          : inspectionDate // ignore: cast_nullable_to_non_nullable
+      quarantinedUntil: freezed == quarantinedUntil
+          ? _self.quarantinedUntil
+          : quarantinedUntil // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$ReleaseLotRequest {
+  String get releaseReason;
+  String? get notes;
+  String? get inspectedBy;
+  DateTime? get inspectionDate;
+
+  /// Create a copy of ReleaseLotRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReleaseLotRequestCopyWith<ReleaseLotRequest> get copyWith =>
+      _$ReleaseLotRequestCopyWithImpl<ReleaseLotRequest>(
+          this as ReleaseLotRequest, _$identity);
+
+  /// Serializes this ReleaseLotRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ReleaseLotRequest &&
+            (identical(other.releaseReason, releaseReason) ||
+                other.releaseReason == releaseReason) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.inspectedBy, inspectedBy) ||
+                other.inspectedBy == inspectedBy) &&
+            (identical(other.inspectionDate, inspectionDate) ||
+                other.inspectionDate == inspectionDate));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, releaseReason, notes, inspectedBy, inspectionDate);
+
+  @override
+  String toString() {
+    return 'ReleaseLotRequest(releaseReason: $releaseReason, notes: $notes, inspectedBy: $inspectedBy, inspectionDate: $inspectionDate)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReleaseLotRequestCopyWith<$Res> {
+  factory $ReleaseLotRequestCopyWith(
+          ReleaseLotRequest value, $Res Function(ReleaseLotRequest) _then) =
+      _$ReleaseLotRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String releaseReason,
+      String? notes,
+      String? inspectedBy,
+      DateTime? inspectionDate});
+}
+
+/// @nodoc
+class _$ReleaseLotRequestCopyWithImpl<$Res>
+    implements $ReleaseLotRequestCopyWith<$Res> {
+  _$ReleaseLotRequestCopyWithImpl(this._self, this._then);
+
+  final ReleaseLotRequest _self;
+  final $Res Function(ReleaseLotRequest) _then;
+
+  /// Create a copy of ReleaseLotRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? releaseReason = null,
+    Object? notes = freezed,
+    Object? inspectedBy = freezed,
+    Object? inspectionDate = freezed,
+  }) {
+    return _then(_self.copyWith(
+      releaseReason: null == releaseReason
+          ? _self.releaseReason
+          : releaseReason // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectedBy: freezed == inspectedBy
+          ? _self.inspectedBy
+          : inspectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectionDate: freezed == inspectionDate
+          ? _self.inspectionDate
+          : inspectionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ReleaseLotRequest].
+extension ReleaseLotRequestPatterns on ReleaseLotRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ReleaseLotRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ReleaseLotRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ReleaseLotRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ReleaseLotRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ReleaseLotRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ReleaseLotRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String releaseReason, String? notes, String? inspectedBy,
+            DateTime? inspectionDate)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ReleaseLotRequest() when $default != null:
+        return $default(_that.releaseReason, _that.notes, _that.inspectedBy,
+            _that.inspectionDate);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String releaseReason, String? notes, String? inspectedBy,
+            DateTime? inspectionDate)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ReleaseLotRequest():
+        return $default(_that.releaseReason, _that.notes, _that.inspectedBy,
+            _that.inspectionDate);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String releaseReason, String? notes, String? inspectedBy,
+            DateTime? inspectionDate)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ReleaseLotRequest() when $default != null:
+        return $default(_that.releaseReason, _that.notes, _that.inspectedBy,
+            _that.inspectionDate);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$ReleaseLotRequestImpl implements _ReleaseLotRequest {
-  const _$ReleaseLotRequestImpl(
+class _ReleaseLotRequest implements ReleaseLotRequest {
+  const _ReleaseLotRequest(
       {required this.releaseReason,
       this.notes,
       this.inspectedBy,
       this.inspectionDate});
-
-  factory _$ReleaseLotRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReleaseLotRequestImplFromJson(json);
+  factory _ReleaseLotRequest.fromJson(Map<String, dynamic> json) =>
+      _$ReleaseLotRequestFromJson(json);
 
   @override
   final String releaseReason;
@@ -2274,16 +3781,26 @@ class _$ReleaseLotRequestImpl implements _ReleaseLotRequest {
   @override
   final DateTime? inspectionDate;
 
+  /// Create a copy of ReleaseLotRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ReleaseLotRequest(releaseReason: $releaseReason, notes: $notes, inspectedBy: $inspectedBy, inspectionDate: $inspectionDate)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReleaseLotRequestCopyWith<_ReleaseLotRequest> get copyWith =>
+      __$ReleaseLotRequestCopyWithImpl<_ReleaseLotRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReleaseLotRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReleaseLotRequestImpl &&
+            other is _ReleaseLotRequest &&
             (identical(other.releaseReason, releaseReason) ||
                 other.releaseReason == releaseReason) &&
             (identical(other.notes, notes) || other.notes == notes) &&
@@ -2293,210 +3810,167 @@ class _$ReleaseLotRequestImpl implements _ReleaseLotRequest {
                 other.inspectionDate == inspectionDate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, releaseReason, notes, inspectedBy, inspectionDate);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ReleaseLotRequestImplCopyWith<_$ReleaseLotRequestImpl> get copyWith =>
-      __$$ReleaseLotRequestImplCopyWithImpl<_$ReleaseLotRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ReleaseLotRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ReleaseLotRequest(releaseReason: $releaseReason, notes: $notes, inspectedBy: $inspectedBy, inspectionDate: $inspectionDate)';
   }
 }
 
-abstract class _ReleaseLotRequest implements ReleaseLotRequest {
-  const factory _ReleaseLotRequest(
-      {required final String releaseReason,
-      final String? notes,
-      final String? inspectedBy,
-      final DateTime? inspectionDate}) = _$ReleaseLotRequestImpl;
-
-  factory _ReleaseLotRequest.fromJson(Map<String, dynamic> json) =
-      _$ReleaseLotRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ReleaseLotRequestCopyWith<$Res>
+    implements $ReleaseLotRequestCopyWith<$Res> {
+  factory _$ReleaseLotRequestCopyWith(
+          _ReleaseLotRequest value, $Res Function(_ReleaseLotRequest) _then) =
+      __$ReleaseLotRequestCopyWithImpl;
   @override
-  String get releaseReason;
-  @override
-  String? get notes;
-  @override
-  String? get inspectedBy;
-  @override
-  DateTime? get inspectionDate;
-  @override
-  @JsonKey(ignore: true)
-  _$$ReleaseLotRequestImplCopyWith<_$ReleaseLotRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String releaseReason,
+      String? notes,
+      String? inspectedBy,
+      DateTime? inspectionDate});
 }
 
-LotGenealogyFilters _$LotGenealogyFiltersFromJson(Map<String, dynamic> json) {
-  return _LotGenealogyFilters.fromJson(json);
+/// @nodoc
+class __$ReleaseLotRequestCopyWithImpl<$Res>
+    implements _$ReleaseLotRequestCopyWith<$Res> {
+  __$ReleaseLotRequestCopyWithImpl(this._self, this._then);
+
+  final _ReleaseLotRequest _self;
+  final $Res Function(_ReleaseLotRequest) _then;
+
+  /// Create a copy of ReleaseLotRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? releaseReason = null,
+    Object? notes = freezed,
+    Object? inspectedBy = freezed,
+    Object? inspectionDate = freezed,
+  }) {
+    return _then(_ReleaseLotRequest(
+      releaseReason: null == releaseReason
+          ? _self.releaseReason
+          : releaseReason // ignore: cast_nullable_to_non_nullable
+              as String,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectedBy: freezed == inspectedBy
+          ? _self.inspectedBy
+          : inspectedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      inspectionDate: freezed == inspectionDate
+          ? _self.inspectionDate
+          : inspectionDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$LotGenealogyFilters {
-  String? get itemId => throw _privateConstructorUsedError;
-  String? get locationId => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get lotNumber => throw _privateConstructorUsedError;
-  String? get supplierLotNumber => throw _privateConstructorUsedError;
-  String? get parentLotId => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  DateTime? get expiryAfter => throw _privateConstructorUsedError;
-  DateTime? get expiryBefore => throw _privateConstructorUsedError;
-  DateTime? get quarantinedAfter => throw _privateConstructorUsedError;
-  DateTime? get quarantinedBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get itemId;
+  String? get locationId;
+  String? get status;
+  String? get lotNumber;
+  String? get supplierLotNumber;
+  String? get parentLotId;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  DateTime? get expiryAfter;
+  DateTime? get expiryBefore;
+  DateTime? get quarantinedAfter;
+  DateTime? get quarantinedBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LotGenealogyFiltersCopyWith<LotGenealogyFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LotGenealogyFiltersCopyWith<$Res> {
-  factory $LotGenealogyFiltersCopyWith(
-          LotGenealogyFilters value, $Res Function(LotGenealogyFilters) then) =
-      _$LotGenealogyFiltersCopyWithImpl<$Res, LotGenealogyFilters>;
-  @useResult
-  $Res call(
-      {String? itemId,
-      String? locationId,
-      String? status,
-      String? lotNumber,
-      String? supplierLotNumber,
-      String? parentLotId,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      DateTime? expiryAfter,
-      DateTime? expiryBefore,
-      DateTime? quarantinedAfter,
-      DateTime? quarantinedBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$LotGenealogyFiltersCopyWithImpl<$Res, $Val extends LotGenealogyFilters>
-    implements $LotGenealogyFiltersCopyWith<$Res> {
-  _$LotGenealogyFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of LotGenealogyFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $LotGenealogyFiltersCopyWith<LotGenealogyFilters> get copyWith =>
+      _$LotGenealogyFiltersCopyWithImpl<LotGenealogyFilters>(
+          this as LotGenealogyFilters, _$identity);
+
+  /// Serializes this LotGenealogyFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? itemId = freezed,
-    Object? locationId = freezed,
-    Object? status = freezed,
-    Object? lotNumber = freezed,
-    Object? supplierLotNumber = freezed,
-    Object? parentLotId = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? expiryAfter = freezed,
-    Object? expiryBefore = freezed,
-    Object? quarantinedAfter = freezed,
-    Object? quarantinedBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      itemId: freezed == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      locationId: freezed == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lotNumber: freezed == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      supplierLotNumber: freezed == supplierLotNumber
-          ? _value.supplierLotNumber
-          : supplierLotNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parentLotId: freezed == parentLotId
-          ? _value.parentLotId
-          : parentLotId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiryAfter: freezed == expiryAfter
-          ? _value.expiryAfter
-          : expiryAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiryBefore: freezed == expiryBefore
-          ? _value.expiryBefore
-          : expiryBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      quarantinedAfter: freezed == quarantinedAfter
-          ? _value.quarantinedAfter
-          : quarantinedAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      quarantinedBefore: freezed == quarantinedBefore
-          ? _value.quarantinedBefore
-          : quarantinedBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LotGenealogyFilters &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.supplierLotNumber, supplierLotNumber) ||
+                other.supplierLotNumber == supplierLotNumber) &&
+            (identical(other.parentLotId, parentLotId) ||
+                other.parentLotId == parentLotId) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            (identical(other.expiryAfter, expiryAfter) ||
+                other.expiryAfter == expiryAfter) &&
+            (identical(other.expiryBefore, expiryBefore) ||
+                other.expiryBefore == expiryBefore) &&
+            (identical(other.quarantinedAfter, quarantinedAfter) ||
+                other.quarantinedAfter == quarantinedAfter) &&
+            (identical(other.quarantinedBefore, quarantinedBefore) ||
+                other.quarantinedBefore == quarantinedBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      itemId,
+      locationId,
+      status,
+      lotNumber,
+      supplierLotNumber,
+      parentLotId,
+      createdAfter,
+      createdBefore,
+      expiryAfter,
+      expiryBefore,
+      quarantinedAfter,
+      quarantinedBefore,
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'LotGenealogyFilters(itemId: $itemId, locationId: $locationId, status: $status, lotNumber: $lotNumber, supplierLotNumber: $supplierLotNumber, parentLotId: $parentLotId, createdAfter: $createdAfter, createdBefore: $createdBefore, expiryAfter: $expiryAfter, expiryBefore: $expiryBefore, quarantinedAfter: $quarantinedAfter, quarantinedBefore: $quarantinedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$LotGenealogyFiltersImplCopyWith<$Res>
-    implements $LotGenealogyFiltersCopyWith<$Res> {
-  factory _$$LotGenealogyFiltersImplCopyWith(_$LotGenealogyFiltersImpl value,
-          $Res Function(_$LotGenealogyFiltersImpl) then) =
-      __$$LotGenealogyFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $LotGenealogyFiltersCopyWith<$Res> {
+  factory $LotGenealogyFiltersCopyWith(
+          LotGenealogyFilters value, $Res Function(LotGenealogyFilters) _then) =
+      _$LotGenealogyFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? itemId,
@@ -2518,13 +3992,15 @@ abstract class _$$LotGenealogyFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LotGenealogyFiltersImplCopyWithImpl<$Res>
-    extends _$LotGenealogyFiltersCopyWithImpl<$Res, _$LotGenealogyFiltersImpl>
-    implements _$$LotGenealogyFiltersImplCopyWith<$Res> {
-  __$$LotGenealogyFiltersImplCopyWithImpl(_$LotGenealogyFiltersImpl _value,
-      $Res Function(_$LotGenealogyFiltersImpl) _then)
-      : super(_value, _then);
+class _$LotGenealogyFiltersCopyWithImpl<$Res>
+    implements $LotGenealogyFiltersCopyWith<$Res> {
+  _$LotGenealogyFiltersCopyWithImpl(this._self, this._then);
 
+  final LotGenealogyFilters _self;
+  final $Res Function(LotGenealogyFilters) _then;
+
+  /// Create a copy of LotGenealogyFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2545,79 +4021,331 @@ class __$$LotGenealogyFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$LotGenealogyFiltersImpl(
+    return _then(_self.copyWith(
       itemId: freezed == itemId
-          ? _value.itemId
+          ? _self.itemId
           : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
       locationId: freezed == locationId
-          ? _value.locationId
+          ? _self.locationId
           : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       lotNumber: freezed == lotNumber
-          ? _value.lotNumber
+          ? _self.lotNumber
           : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       supplierLotNumber: freezed == supplierLotNumber
-          ? _value.supplierLotNumber
+          ? _self.supplierLotNumber
           : supplierLotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       parentLotId: freezed == parentLotId
-          ? _value.parentLotId
+          ? _self.parentLotId
           : parentLotId // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAfter: freezed == createdAfter
-          ? _value.createdAfter
+          ? _self.createdAfter
           : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBefore: freezed == createdBefore
-          ? _value.createdBefore
+          ? _self.createdBefore
           : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       expiryAfter: freezed == expiryAfter
-          ? _value.expiryAfter
+          ? _self.expiryAfter
           : expiryAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       expiryBefore: freezed == expiryBefore
-          ? _value.expiryBefore
+          ? _self.expiryBefore
           : expiryBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       quarantinedAfter: freezed == quarantinedAfter
-          ? _value.quarantinedAfter
+          ? _self.quarantinedAfter
           : quarantinedAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       quarantinedBefore: freezed == quarantinedBefore
-          ? _value.quarantinedBefore
+          ? _self.quarantinedBefore
           : quarantinedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [LotGenealogyFilters].
+extension LotGenealogyFiltersPatterns on LotGenealogyFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_LotGenealogyFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogyFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_LotGenealogyFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogyFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_LotGenealogyFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogyFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? itemId,
+            String? locationId,
+            String? status,
+            String? lotNumber,
+            String? supplierLotNumber,
+            String? parentLotId,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? expiryAfter,
+            DateTime? expiryBefore,
+            DateTime? quarantinedAfter,
+            DateTime? quarantinedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogyFilters() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.status,
+            _that.lotNumber,
+            _that.supplierLotNumber,
+            _that.parentLotId,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.expiryAfter,
+            _that.expiryBefore,
+            _that.quarantinedAfter,
+            _that.quarantinedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? itemId,
+            String? locationId,
+            String? status,
+            String? lotNumber,
+            String? supplierLotNumber,
+            String? parentLotId,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? expiryAfter,
+            DateTime? expiryBefore,
+            DateTime? quarantinedAfter,
+            DateTime? quarantinedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogyFilters():
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.status,
+            _that.lotNumber,
+            _that.supplierLotNumber,
+            _that.parentLotId,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.expiryAfter,
+            _that.expiryBefore,
+            _that.quarantinedAfter,
+            _that.quarantinedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? itemId,
+            String? locationId,
+            String? status,
+            String? lotNumber,
+            String? supplierLotNumber,
+            String? parentLotId,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            DateTime? expiryAfter,
+            DateTime? expiryBefore,
+            DateTime? quarantinedAfter,
+            DateTime? quarantinedBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotGenealogyFilters() when $default != null:
+        return $default(
+            _that.itemId,
+            _that.locationId,
+            _that.status,
+            _that.lotNumber,
+            _that.supplierLotNumber,
+            _that.parentLotId,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.expiryAfter,
+            _that.expiryBefore,
+            _that.quarantinedAfter,
+            _that.quarantinedBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$LotGenealogyFiltersImpl extends _LotGenealogyFilters {
-  const _$LotGenealogyFiltersImpl(
+class _LotGenealogyFilters extends LotGenealogyFilters {
+  const _LotGenealogyFilters(
       {this.itemId,
       this.locationId,
       this.status,
@@ -2635,9 +4363,8 @@ class _$LotGenealogyFiltersImpl extends _LotGenealogyFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$LotGenealogyFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LotGenealogyFiltersImplFromJson(json);
+  factory _LotGenealogyFilters.fromJson(Map<String, dynamic> json) =>
+      _$LotGenealogyFiltersFromJson(json);
 
   @override
   final String? itemId;
@@ -2672,16 +4399,27 @@ class _$LotGenealogyFiltersImpl extends _LotGenealogyFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of LotGenealogyFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LotGenealogyFilters(itemId: $itemId, locationId: $locationId, status: $status, lotNumber: $lotNumber, supplierLotNumber: $supplierLotNumber, parentLotId: $parentLotId, createdAfter: $createdAfter, createdBefore: $createdBefore, expiryAfter: $expiryAfter, expiryBefore: $expiryBefore, quarantinedAfter: $quarantinedAfter, quarantinedBefore: $quarantinedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LotGenealogyFiltersCopyWith<_LotGenealogyFilters> get copyWith =>
+      __$LotGenealogyFiltersCopyWithImpl<_LotGenealogyFilters>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LotGenealogyFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LotGenealogyFiltersImpl &&
+            other is _LotGenealogyFilters &&
             (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.locationId, locationId) ||
                 other.locationId == locationId) &&
@@ -2711,7 +4449,7 @@ class _$LotGenealogyFiltersImpl extends _LotGenealogyFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2732,125 +4470,33 @@ class _$LotGenealogyFiltersImpl extends _LotGenealogyFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LotGenealogyFiltersImplCopyWith<_$LotGenealogyFiltersImpl> get copyWith =>
-      __$$LotGenealogyFiltersImplCopyWithImpl<_$LotGenealogyFiltersImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LotGenealogyFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LotGenealogyFilters(itemId: $itemId, locationId: $locationId, status: $status, lotNumber: $lotNumber, supplierLotNumber: $supplierLotNumber, parentLotId: $parentLotId, createdAfter: $createdAfter, createdBefore: $createdBefore, expiryAfter: $expiryAfter, expiryBefore: $expiryBefore, quarantinedAfter: $quarantinedAfter, quarantinedBefore: $quarantinedBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _LotGenealogyFilters extends LotGenealogyFilters {
-  const factory _LotGenealogyFilters(
-      {final String? itemId,
-      final String? locationId,
-      final String? status,
-      final String? lotNumber,
-      final String? supplierLotNumber,
-      final String? parentLotId,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final DateTime? expiryAfter,
-      final DateTime? expiryBefore,
-      final DateTime? quarantinedAfter,
-      final DateTime? quarantinedBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$LotGenealogyFiltersImpl;
-  const _LotGenealogyFilters._() : super._();
-
-  factory _LotGenealogyFilters.fromJson(Map<String, dynamic> json) =
-      _$LotGenealogyFiltersImpl.fromJson;
-
-  @override
-  String? get itemId;
-  @override
-  String? get locationId;
-  @override
-  String? get status;
-  @override
-  String? get lotNumber;
-  @override
-  String? get supplierLotNumber;
-  @override
-  String? get parentLotId;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  DateTime? get expiryAfter;
-  @override
-  DateTime? get expiryBefore;
-  @override
-  DateTime? get quarantinedAfter;
-  @override
-  DateTime? get quarantinedBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$LotGenealogyFiltersImplCopyWith<_$LotGenealogyFiltersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LotTrackingHistoryFilters _$LotTrackingHistoryFiltersFromJson(
-    Map<String, dynamic> json) {
-  return _LotTrackingHistoryFilters.fromJson(json);
-}
-
 /// @nodoc
-mixin _$LotTrackingHistoryFilters {
-  String? get lotId => throw _privateConstructorUsedError;
-  String? get eventType => throw _privateConstructorUsedError;
-  String? get fromLocationId => throw _privateConstructorUsedError;
-  String? get toLocationId => throw _privateConstructorUsedError;
-  String? get referenceType => throw _privateConstructorUsedError;
-  String? get referenceId => throw _privateConstructorUsedError;
-  String? get performedBy => throw _privateConstructorUsedError;
-  DateTime? get eventAfter => throw _privateConstructorUsedError;
-  DateTime? get eventBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LotTrackingHistoryFiltersCopyWith<LotTrackingHistoryFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LotTrackingHistoryFiltersCopyWith<$Res> {
-  factory $LotTrackingHistoryFiltersCopyWith(LotTrackingHistoryFilters value,
-          $Res Function(LotTrackingHistoryFilters) then) =
-      _$LotTrackingHistoryFiltersCopyWithImpl<$Res, LotTrackingHistoryFilters>;
+abstract mixin class _$LotGenealogyFiltersCopyWith<$Res>
+    implements $LotGenealogyFiltersCopyWith<$Res> {
+  factory _$LotGenealogyFiltersCopyWith(_LotGenealogyFilters value,
+          $Res Function(_LotGenealogyFilters) _then) =
+      __$LotGenealogyFiltersCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String? lotId,
-      String? eventType,
-      String? fromLocationId,
-      String? toLocationId,
-      String? referenceType,
-      String? referenceId,
-      String? performedBy,
-      DateTime? eventAfter,
-      DateTime? eventBefore,
+      {String? itemId,
+      String? locationId,
+      String? status,
+      String? lotNumber,
+      String? supplierLotNumber,
+      String? parentLotId,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      DateTime? expiryAfter,
+      DateTime? expiryBefore,
+      DateTime? quarantinedAfter,
+      DateTime? quarantinedBefore,
       int? page,
       int? limit,
       String? sortBy,
@@ -2858,193 +4504,98 @@ abstract class $LotTrackingHistoryFiltersCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LotTrackingHistoryFiltersCopyWithImpl<$Res,
-        $Val extends LotTrackingHistoryFilters>
-    implements $LotTrackingHistoryFiltersCopyWith<$Res> {
-  _$LotTrackingHistoryFiltersCopyWithImpl(this._value, this._then);
+class __$LotGenealogyFiltersCopyWithImpl<$Res>
+    implements _$LotGenealogyFiltersCopyWith<$Res> {
+  __$LotGenealogyFiltersCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _LotGenealogyFilters _self;
+  final $Res Function(_LotGenealogyFilters) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of LotGenealogyFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? lotId = freezed,
-    Object? eventType = freezed,
-    Object? fromLocationId = freezed,
-    Object? toLocationId = freezed,
-    Object? referenceType = freezed,
-    Object? referenceId = freezed,
-    Object? performedBy = freezed,
-    Object? eventAfter = freezed,
-    Object? eventBefore = freezed,
+    Object? itemId = freezed,
+    Object? locationId = freezed,
+    Object? status = freezed,
+    Object? lotNumber = freezed,
+    Object? supplierLotNumber = freezed,
+    Object? parentLotId = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? expiryAfter = freezed,
+    Object? expiryBefore = freezed,
+    Object? quarantinedAfter = freezed,
+    Object? quarantinedBefore = freezed,
     Object? page = freezed,
     Object? limit = freezed,
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_value.copyWith(
-      lotId: freezed == lotId
-          ? _value.lotId
-          : lotId // ignore: cast_nullable_to_non_nullable
+    return _then(_LotGenealogyFilters(
+      itemId: freezed == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
               as String?,
-      eventType: freezed == eventType
-          ? _value.eventType
-          : eventType // ignore: cast_nullable_to_non_nullable
+      locationId: freezed == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
               as String?,
-      fromLocationId: freezed == fromLocationId
-          ? _value.fromLocationId
-          : fromLocationId // ignore: cast_nullable_to_non_nullable
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String?,
-      toLocationId: freezed == toLocationId
-          ? _value.toLocationId
-          : toLocationId // ignore: cast_nullable_to_non_nullable
+      lotNumber: freezed == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      referenceType: freezed == referenceType
-          ? _value.referenceType
-          : referenceType // ignore: cast_nullable_to_non_nullable
+      supplierLotNumber: freezed == supplierLotNumber
+          ? _self.supplierLotNumber
+          : supplierLotNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      referenceId: freezed == referenceId
-          ? _value.referenceId
-          : referenceId // ignore: cast_nullable_to_non_nullable
+      parentLotId: freezed == parentLotId
+          ? _self.parentLotId
+          : parentLotId // ignore: cast_nullable_to_non_nullable
               as String?,
-      performedBy: freezed == performedBy
-          ? _value.performedBy
-          : performedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventAfter: freezed == eventAfter
-          ? _value.eventAfter
-          : eventAfter // ignore: cast_nullable_to_non_nullable
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      eventBefore: freezed == eventBefore
-          ? _value.eventBefore
-          : eventBefore // ignore: cast_nullable_to_non_nullable
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiryAfter: freezed == expiryAfter
+          ? _self.expiryAfter
+          : expiryAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiryBefore: freezed == expiryBefore
+          ? _self.expiryBefore
+          : expiryBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      quarantinedAfter: freezed == quarantinedAfter
+          ? _self.quarantinedAfter
+          : quarantinedAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      quarantinedBefore: freezed == quarantinedBefore
+          ? _self.quarantinedBefore
+          : quarantinedBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LotTrackingHistoryFiltersImplCopyWith<$Res>
-    implements $LotTrackingHistoryFiltersCopyWith<$Res> {
-  factory _$$LotTrackingHistoryFiltersImplCopyWith(
-          _$LotTrackingHistoryFiltersImpl value,
-          $Res Function(_$LotTrackingHistoryFiltersImpl) then) =
-      __$$LotTrackingHistoryFiltersImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? lotId,
-      String? eventType,
-      String? fromLocationId,
-      String? toLocationId,
-      String? referenceType,
-      String? referenceId,
-      String? performedBy,
-      DateTime? eventAfter,
-      DateTime? eventBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class __$$LotTrackingHistoryFiltersImplCopyWithImpl<$Res>
-    extends _$LotTrackingHistoryFiltersCopyWithImpl<$Res,
-        _$LotTrackingHistoryFiltersImpl>
-    implements _$$LotTrackingHistoryFiltersImplCopyWith<$Res> {
-  __$$LotTrackingHistoryFiltersImplCopyWithImpl(
-      _$LotTrackingHistoryFiltersImpl _value,
-      $Res Function(_$LotTrackingHistoryFiltersImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lotId = freezed,
-    Object? eventType = freezed,
-    Object? fromLocationId = freezed,
-    Object? toLocationId = freezed,
-    Object? referenceType = freezed,
-    Object? referenceId = freezed,
-    Object? performedBy = freezed,
-    Object? eventAfter = freezed,
-    Object? eventBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_$LotTrackingHistoryFiltersImpl(
-      lotId: freezed == lotId
-          ? _value.lotId
-          : lotId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventType: freezed == eventType
-          ? _value.eventType
-          : eventType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromLocationId: freezed == fromLocationId
-          ? _value.fromLocationId
-          : fromLocationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toLocationId: freezed == toLocationId
-          ? _value.toLocationId
-          : toLocationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      referenceType: freezed == referenceType
-          ? _value.referenceType
-          : referenceType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      referenceId: freezed == referenceId
-          ? _value.referenceId
-          : referenceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      performedBy: freezed == performedBy
-          ? _value.performedBy
-          : performedBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventAfter: freezed == eventAfter
-          ? _value.eventAfter
-          : eventAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      eventBefore: freezed == eventBefore
-          ? _value.eventBefore
-          : eventBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3052,9 +4603,429 @@ class __$$LotTrackingHistoryFiltersImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$LotTrackingHistoryFilters {
+  String? get lotId;
+  String? get eventType;
+  String? get fromLocationId;
+  String? get toLocationId;
+  String? get referenceType;
+  String? get referenceId;
+  String? get performedBy;
+  DateTime? get eventAfter;
+  DateTime? get eventBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
+
+  /// Create a copy of LotTrackingHistoryFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LotTrackingHistoryFiltersCopyWith<LotTrackingHistoryFilters> get copyWith =>
+      _$LotTrackingHistoryFiltersCopyWithImpl<LotTrackingHistoryFilters>(
+          this as LotTrackingHistoryFilters, _$identity);
+
+  /// Serializes this LotTrackingHistoryFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LotTrackingHistoryFilters &&
+            (identical(other.lotId, lotId) || other.lotId == lotId) &&
+            (identical(other.eventType, eventType) ||
+                other.eventType == eventType) &&
+            (identical(other.fromLocationId, fromLocationId) ||
+                other.fromLocationId == fromLocationId) &&
+            (identical(other.toLocationId, toLocationId) ||
+                other.toLocationId == toLocationId) &&
+            (identical(other.referenceType, referenceType) ||
+                other.referenceType == referenceType) &&
+            (identical(other.referenceId, referenceId) ||
+                other.referenceId == referenceId) &&
+            (identical(other.performedBy, performedBy) ||
+                other.performedBy == performedBy) &&
+            (identical(other.eventAfter, eventAfter) ||
+                other.eventAfter == eventAfter) &&
+            (identical(other.eventBefore, eventBefore) ||
+                other.eventBefore == eventBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      lotId,
+      eventType,
+      fromLocationId,
+      toLocationId,
+      referenceType,
+      referenceId,
+      performedBy,
+      eventAfter,
+      eventBefore,
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'LotTrackingHistoryFilters(lotId: $lotId, eventType: $eventType, fromLocationId: $fromLocationId, toLocationId: $toLocationId, referenceType: $referenceType, referenceId: $referenceId, performedBy: $performedBy, eventAfter: $eventAfter, eventBefore: $eventBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $LotTrackingHistoryFiltersCopyWith<$Res> {
+  factory $LotTrackingHistoryFiltersCopyWith(LotTrackingHistoryFilters value,
+          $Res Function(LotTrackingHistoryFilters) _then) =
+      _$LotTrackingHistoryFiltersCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? lotId,
+      String? eventType,
+      String? fromLocationId,
+      String? toLocationId,
+      String? referenceType,
+      String? referenceId,
+      String? performedBy,
+      DateTime? eventAfter,
+      DateTime? eventBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
+}
+
+/// @nodoc
+class _$LotTrackingHistoryFiltersCopyWithImpl<$Res>
+    implements $LotTrackingHistoryFiltersCopyWith<$Res> {
+  _$LotTrackingHistoryFiltersCopyWithImpl(this._self, this._then);
+
+  final LotTrackingHistoryFilters _self;
+  final $Res Function(LotTrackingHistoryFilters) _then;
+
+  /// Create a copy of LotTrackingHistoryFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lotId = freezed,
+    Object? eventType = freezed,
+    Object? fromLocationId = freezed,
+    Object? toLocationId = freezed,
+    Object? referenceType = freezed,
+    Object? referenceId = freezed,
+    Object? performedBy = freezed,
+    Object? eventAfter = freezed,
+    Object? eventBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_self.copyWith(
+      lotId: freezed == lotId
+          ? _self.lotId
+          : lotId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventType: freezed == eventType
+          ? _self.eventType
+          : eventType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromLocationId: freezed == fromLocationId
+          ? _self.fromLocationId
+          : fromLocationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toLocationId: freezed == toLocationId
+          ? _self.toLocationId
+          : toLocationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceType: freezed == referenceType
+          ? _self.referenceType
+          : referenceType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceId: freezed == referenceId
+          ? _self.referenceId
+          : referenceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      performedBy: freezed == performedBy
+          ? _self.performedBy
+          : performedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventAfter: freezed == eventAfter
+          ? _self.eventAfter
+          : eventAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      eventBefore: freezed == eventBefore
+          ? _self.eventBefore
+          : eventBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [LotTrackingHistoryFilters].
+extension LotTrackingHistoryFiltersPatterns on LotTrackingHistoryFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_LotTrackingHistoryFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistoryFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_LotTrackingHistoryFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistoryFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_LotTrackingHistoryFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistoryFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? lotId,
+            String? eventType,
+            String? fromLocationId,
+            String? toLocationId,
+            String? referenceType,
+            String? referenceId,
+            String? performedBy,
+            DateTime? eventAfter,
+            DateTime? eventBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistoryFilters() when $default != null:
+        return $default(
+            _that.lotId,
+            _that.eventType,
+            _that.fromLocationId,
+            _that.toLocationId,
+            _that.referenceType,
+            _that.referenceId,
+            _that.performedBy,
+            _that.eventAfter,
+            _that.eventBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? lotId,
+            String? eventType,
+            String? fromLocationId,
+            String? toLocationId,
+            String? referenceType,
+            String? referenceId,
+            String? performedBy,
+            DateTime? eventAfter,
+            DateTime? eventBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistoryFilters():
+        return $default(
+            _that.lotId,
+            _that.eventType,
+            _that.fromLocationId,
+            _that.toLocationId,
+            _that.referenceType,
+            _that.referenceId,
+            _that.performedBy,
+            _that.eventAfter,
+            _that.eventBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? lotId,
+            String? eventType,
+            String? fromLocationId,
+            String? toLocationId,
+            String? referenceType,
+            String? referenceId,
+            String? performedBy,
+            DateTime? eventAfter,
+            DateTime? eventBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _LotTrackingHistoryFilters() when $default != null:
+        return $default(
+            _that.lotId,
+            _that.eventType,
+            _that.fromLocationId,
+            _that.toLocationId,
+            _that.referenceType,
+            _that.referenceId,
+            _that.performedBy,
+            _that.eventAfter,
+            _that.eventBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$LotTrackingHistoryFiltersImpl extends _LotTrackingHistoryFilters {
-  const _$LotTrackingHistoryFiltersImpl(
+class _LotTrackingHistoryFilters extends LotTrackingHistoryFilters {
+  const _LotTrackingHistoryFilters(
       {this.lotId,
       this.eventType,
       this.fromLocationId,
@@ -3069,9 +5040,8 @@ class _$LotTrackingHistoryFiltersImpl extends _LotTrackingHistoryFilters {
       this.sortBy,
       this.sortOrder})
       : super._();
-
-  factory _$LotTrackingHistoryFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LotTrackingHistoryFiltersImplFromJson(json);
+  factory _LotTrackingHistoryFilters.fromJson(Map<String, dynamic> json) =>
+      _$LotTrackingHistoryFiltersFromJson(json);
 
   @override
   final String? lotId;
@@ -3100,16 +5070,28 @@ class _$LotTrackingHistoryFiltersImpl extends _LotTrackingHistoryFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of LotTrackingHistoryFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LotTrackingHistoryFilters(lotId: $lotId, eventType: $eventType, fromLocationId: $fromLocationId, toLocationId: $toLocationId, referenceType: $referenceType, referenceId: $referenceId, performedBy: $performedBy, eventAfter: $eventAfter, eventBefore: $eventBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LotTrackingHistoryFiltersCopyWith<_LotTrackingHistoryFilters>
+      get copyWith =>
+          __$LotTrackingHistoryFiltersCopyWithImpl<_LotTrackingHistoryFilters>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LotTrackingHistoryFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LotTrackingHistoryFiltersImpl &&
+            other is _LotTrackingHistoryFilters &&
             (identical(other.lotId, lotId) || other.lotId == lotId) &&
             (identical(other.eventType, eventType) ||
                 other.eventType == eventType) &&
@@ -3134,7 +5116,7 @@ class _$LotTrackingHistoryFiltersImpl extends _LotTrackingHistoryFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3152,276 +5134,495 @@ class _$LotTrackingHistoryFiltersImpl extends _LotTrackingHistoryFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LotTrackingHistoryFiltersImplCopyWith<_$LotTrackingHistoryFiltersImpl>
-      get copyWith => __$$LotTrackingHistoryFiltersImplCopyWithImpl<
-          _$LotTrackingHistoryFiltersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LotTrackingHistoryFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LotTrackingHistoryFilters(lotId: $lotId, eventType: $eventType, fromLocationId: $fromLocationId, toLocationId: $toLocationId, referenceType: $referenceType, referenceId: $referenceId, performedBy: $performedBy, eventAfter: $eventAfter, eventBefore: $eventBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _LotTrackingHistoryFilters extends LotTrackingHistoryFilters {
-  const factory _LotTrackingHistoryFilters(
-      {final String? lotId,
-      final String? eventType,
-      final String? fromLocationId,
-      final String? toLocationId,
-      final String? referenceType,
-      final String? referenceId,
-      final String? performedBy,
-      final DateTime? eventAfter,
-      final DateTime? eventBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$LotTrackingHistoryFiltersImpl;
-  const _LotTrackingHistoryFilters._() : super._();
-
-  factory _LotTrackingHistoryFilters.fromJson(Map<String, dynamic> json) =
-      _$LotTrackingHistoryFiltersImpl.fromJson;
-
-  @override
-  String? get lotId;
-  @override
-  String? get eventType;
-  @override
-  String? get fromLocationId;
-  @override
-  String? get toLocationId;
-  @override
-  String? get referenceType;
-  @override
-  String? get referenceId;
-  @override
-  String? get performedBy;
-  @override
-  DateTime? get eventAfter;
-  @override
-  DateTime? get eventBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$LotTrackingHistoryFiltersImplCopyWith<_$LotTrackingHistoryFiltersImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-ExpiringLot _$ExpiringLotFromJson(Map<String, dynamic> json) {
-  return _ExpiringLot.fromJson(json);
-}
-
 /// @nodoc
-mixin _$ExpiringLot {
-  String get lotId => throw _privateConstructorUsedError;
-  String get lotNumber => throw _privateConstructorUsedError;
-  String get itemId => throw _privateConstructorUsedError;
-  String get itemName => throw _privateConstructorUsedError;
-  String get locationId => throw _privateConstructorUsedError;
-  String get locationName => throw _privateConstructorUsedError;
-  double get quantity => throw _privateConstructorUsedError;
-  DateTime get expiryDate => throw _privateConstructorUsedError;
-  int get daysUntilExpiry => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ExpiringLotCopyWith<ExpiringLot> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ExpiringLotCopyWith<$Res> {
-  factory $ExpiringLotCopyWith(
-          ExpiringLot value, $Res Function(ExpiringLot) then) =
-      _$ExpiringLotCopyWithImpl<$Res, ExpiringLot>;
+abstract mixin class _$LotTrackingHistoryFiltersCopyWith<$Res>
+    implements $LotTrackingHistoryFiltersCopyWith<$Res> {
+  factory _$LotTrackingHistoryFiltersCopyWith(_LotTrackingHistoryFilters value,
+          $Res Function(_LotTrackingHistoryFilters) _then) =
+      __$LotTrackingHistoryFiltersCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String lotId,
-      String lotNumber,
-      String itemId,
-      String itemName,
-      String locationId,
-      String locationName,
-      double quantity,
-      DateTime expiryDate,
-      int daysUntilExpiry,
-      String? status});
+      {String? lotId,
+      String? eventType,
+      String? fromLocationId,
+      String? toLocationId,
+      String? referenceType,
+      String? referenceId,
+      String? performedBy,
+      DateTime? eventAfter,
+      DateTime? eventBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
 
 /// @nodoc
-class _$ExpiringLotCopyWithImpl<$Res, $Val extends ExpiringLot>
-    implements $ExpiringLotCopyWith<$Res> {
-  _$ExpiringLotCopyWithImpl(this._value, this._then);
+class __$LotTrackingHistoryFiltersCopyWithImpl<$Res>
+    implements _$LotTrackingHistoryFiltersCopyWith<$Res> {
+  __$LotTrackingHistoryFiltersCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _LotTrackingHistoryFilters _self;
+  final $Res Function(_LotTrackingHistoryFilters) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of LotTrackingHistoryFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? lotId = null,
-    Object? lotNumber = null,
-    Object? itemId = null,
-    Object? itemName = null,
-    Object? locationId = null,
-    Object? locationName = null,
-    Object? quantity = null,
-    Object? expiryDate = null,
-    Object? daysUntilExpiry = null,
-    Object? status = freezed,
+    Object? lotId = freezed,
+    Object? eventType = freezed,
+    Object? fromLocationId = freezed,
+    Object? toLocationId = freezed,
+    Object? referenceType = freezed,
+    Object? referenceId = freezed,
+    Object? performedBy = freezed,
+    Object? eventAfter = freezed,
+    Object? eventBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
   }) {
-    return _then(_value.copyWith(
-      lotId: null == lotId
-          ? _value.lotId
+    return _then(_LotTrackingHistoryFilters(
+      lotId: freezed == lotId
+          ? _self.lotId
           : lotId // ignore: cast_nullable_to_non_nullable
-              as String,
-      lotNumber: null == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemName: null == itemName
-          ? _value.itemName
-          : itemName // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationName: null == locationName
-          ? _value.locationName
-          : locationName // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      expiryDate: null == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      daysUntilExpiry: null == daysUntilExpiry
-          ? _value.daysUntilExpiry
-          : daysUntilExpiry // ignore: cast_nullable_to_non_nullable
-              as int,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ExpiringLotImplCopyWith<$Res>
-    implements $ExpiringLotCopyWith<$Res> {
-  factory _$$ExpiringLotImplCopyWith(
-          _$ExpiringLotImpl value, $Res Function(_$ExpiringLotImpl) then) =
-      __$$ExpiringLotImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String lotId,
-      String lotNumber,
-      String itemId,
-      String itemName,
-      String locationId,
-      String locationName,
-      double quantity,
-      DateTime expiryDate,
-      int daysUntilExpiry,
-      String? status});
-}
-
-/// @nodoc
-class __$$ExpiringLotImplCopyWithImpl<$Res>
-    extends _$ExpiringLotCopyWithImpl<$Res, _$ExpiringLotImpl>
-    implements _$$ExpiringLotImplCopyWith<$Res> {
-  __$$ExpiringLotImplCopyWithImpl(
-      _$ExpiringLotImpl _value, $Res Function(_$ExpiringLotImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lotId = null,
-    Object? lotNumber = null,
-    Object? itemId = null,
-    Object? itemName = null,
-    Object? locationId = null,
-    Object? locationName = null,
-    Object? quantity = null,
-    Object? expiryDate = null,
-    Object? daysUntilExpiry = null,
-    Object? status = freezed,
-  }) {
-    return _then(_$ExpiringLotImpl(
-      lotId: null == lotId
-          ? _value.lotId
-          : lotId // ignore: cast_nullable_to_non_nullable
-              as String,
-      lotNumber: null == lotNumber
-          ? _value.lotNumber
-          : lotNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemName: null == itemName
-          ? _value.itemName
-          : itemName // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationId: null == locationId
-          ? _value.locationId
-          : locationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      locationName: null == locationName
-          ? _value.locationName
-          : locationName // ignore: cast_nullable_to_non_nullable
-              as String,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as double,
-      expiryDate: null == expiryDate
-          ? _value.expiryDate
-          : expiryDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      daysUntilExpiry: null == daysUntilExpiry
-          ? _value.daysUntilExpiry
-          : daysUntilExpiry // ignore: cast_nullable_to_non_nullable
-              as int,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      eventType: freezed == eventType
+          ? _self.eventType
+          : eventType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromLocationId: freezed == fromLocationId
+          ? _self.fromLocationId
+          : fromLocationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toLocationId: freezed == toLocationId
+          ? _self.toLocationId
+          : toLocationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceType: freezed == referenceType
+          ? _self.referenceType
+          : referenceType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      referenceId: freezed == referenceId
+          ? _self.referenceId
+          : referenceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      performedBy: freezed == performedBy
+          ? _self.performedBy
+          : performedBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      eventAfter: freezed == eventAfter
+          ? _self.eventAfter
+          : eventAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      eventBefore: freezed == eventBefore
+          ? _self.eventBefore
+          : eventBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$ExpiringLot {
+  String get lotId;
+  String get lotNumber;
+  String get itemId;
+  String get itemName;
+  String get locationId;
+  String get locationName;
+  double get quantity;
+  DateTime get expiryDate;
+  int get daysUntilExpiry;
+  String? get status;
+
+  /// Create a copy of ExpiringLot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ExpiringLotCopyWith<ExpiringLot> get copyWith =>
+      _$ExpiringLotCopyWithImpl<ExpiringLot>(this as ExpiringLot, _$identity);
+
+  /// Serializes this ExpiringLot to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ExpiringLot &&
+            (identical(other.lotId, lotId) || other.lotId == lotId) &&
+            (identical(other.lotNumber, lotNumber) ||
+                other.lotNumber == lotNumber) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
+            (identical(other.itemName, itemName) ||
+                other.itemName == itemName) &&
+            (identical(other.locationId, locationId) ||
+                other.locationId == locationId) &&
+            (identical(other.locationName, locationName) ||
+                other.locationName == locationName) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.expiryDate, expiryDate) ||
+                other.expiryDate == expiryDate) &&
+            (identical(other.daysUntilExpiry, daysUntilExpiry) ||
+                other.daysUntilExpiry == daysUntilExpiry) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      lotId,
+      lotNumber,
+      itemId,
+      itemName,
+      locationId,
+      locationName,
+      quantity,
+      expiryDate,
+      daysUntilExpiry,
+      status);
+
+  @override
+  String toString() {
+    return 'ExpiringLot(lotId: $lotId, lotNumber: $lotNumber, itemId: $itemId, itemName: $itemName, locationId: $locationId, locationName: $locationName, quantity: $quantity, expiryDate: $expiryDate, daysUntilExpiry: $daysUntilExpiry, status: $status)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ExpiringLotCopyWith<$Res> {
+  factory $ExpiringLotCopyWith(
+          ExpiringLot value, $Res Function(ExpiringLot) _then) =
+      _$ExpiringLotCopyWithImpl;
+  @useResult
+  $Res call(
+      {String lotId,
+      String lotNumber,
+      String itemId,
+      String itemName,
+      String locationId,
+      String locationName,
+      double quantity,
+      DateTime expiryDate,
+      int daysUntilExpiry,
+      String? status});
+}
+
+/// @nodoc
+class _$ExpiringLotCopyWithImpl<$Res> implements $ExpiringLotCopyWith<$Res> {
+  _$ExpiringLotCopyWithImpl(this._self, this._then);
+
+  final ExpiringLot _self;
+  final $Res Function(ExpiringLot) _then;
+
+  /// Create a copy of ExpiringLot
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lotId = null,
+    Object? lotNumber = null,
+    Object? itemId = null,
+    Object? itemName = null,
+    Object? locationId = null,
+    Object? locationName = null,
+    Object? quantity = null,
+    Object? expiryDate = null,
+    Object? daysUntilExpiry = null,
+    Object? status = freezed,
+  }) {
+    return _then(_self.copyWith(
+      lotId: null == lotId
+          ? _self.lotId
+          : lotId // ignore: cast_nullable_to_non_nullable
+              as String,
+      lotNumber: null == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemName: null == itemName
+          ? _self.itemName
+          : itemName // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationName: null == locationName
+          ? _self.locationName
+          : locationName // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      expiryDate: null == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      daysUntilExpiry: null == daysUntilExpiry
+          ? _self.daysUntilExpiry
+          : daysUntilExpiry // ignore: cast_nullable_to_non_nullable
+              as int,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ExpiringLot].
+extension ExpiringLotPatterns on ExpiringLot {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ExpiringLot value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ExpiringLot() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ExpiringLot value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExpiringLot():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ExpiringLot value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExpiringLot() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String lotId,
+            String lotNumber,
+            String itemId,
+            String itemName,
+            String locationId,
+            String locationName,
+            double quantity,
+            DateTime expiryDate,
+            int daysUntilExpiry,
+            String? status)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ExpiringLot() when $default != null:
+        return $default(
+            _that.lotId,
+            _that.lotNumber,
+            _that.itemId,
+            _that.itemName,
+            _that.locationId,
+            _that.locationName,
+            _that.quantity,
+            _that.expiryDate,
+            _that.daysUntilExpiry,
+            _that.status);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String lotId,
+            String lotNumber,
+            String itemId,
+            String itemName,
+            String locationId,
+            String locationName,
+            double quantity,
+            DateTime expiryDate,
+            int daysUntilExpiry,
+            String? status)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExpiringLot():
+        return $default(
+            _that.lotId,
+            _that.lotNumber,
+            _that.itemId,
+            _that.itemName,
+            _that.locationId,
+            _that.locationName,
+            _that.quantity,
+            _that.expiryDate,
+            _that.daysUntilExpiry,
+            _that.status);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String lotId,
+            String lotNumber,
+            String itemId,
+            String itemName,
+            String locationId,
+            String locationName,
+            double quantity,
+            DateTime expiryDate,
+            int daysUntilExpiry,
+            String? status)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ExpiringLot() when $default != null:
+        return $default(
+            _that.lotId,
+            _that.lotNumber,
+            _that.itemId,
+            _that.itemName,
+            _that.locationId,
+            _that.locationName,
+            _that.quantity,
+            _that.expiryDate,
+            _that.daysUntilExpiry,
+            _that.status);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$ExpiringLotImpl implements _ExpiringLot {
-  const _$ExpiringLotImpl(
+class _ExpiringLot implements ExpiringLot {
+  const _ExpiringLot(
       {required this.lotId,
       required this.lotNumber,
       required this.itemId,
@@ -3432,9 +5633,8 @@ class _$ExpiringLotImpl implements _ExpiringLot {
       required this.expiryDate,
       required this.daysUntilExpiry,
       this.status});
-
-  factory _$ExpiringLotImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ExpiringLotImplFromJson(json);
+  factory _ExpiringLot.fromJson(Map<String, dynamic> json) =>
+      _$ExpiringLotFromJson(json);
 
   @override
   final String lotId;
@@ -3457,16 +5657,26 @@ class _$ExpiringLotImpl implements _ExpiringLot {
   @override
   final String? status;
 
+  /// Create a copy of ExpiringLot
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ExpiringLot(lotId: $lotId, lotNumber: $lotNumber, itemId: $itemId, itemName: $itemName, locationId: $locationId, locationName: $locationName, quantity: $quantity, expiryDate: $expiryDate, daysUntilExpiry: $daysUntilExpiry, status: $status)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ExpiringLotCopyWith<_ExpiringLot> get copyWith =>
+      __$ExpiringLotCopyWithImpl<_ExpiringLot>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ExpiringLotToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExpiringLotImpl &&
+            other is _ExpiringLot &&
             (identical(other.lotId, lotId) || other.lotId == lotId) &&
             (identical(other.lotNumber, lotNumber) ||
                 other.lotNumber == lotNumber) &&
@@ -3486,7 +5696,7 @@ class _$ExpiringLotImpl implements _ExpiringLot {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3501,58 +5711,99 @@ class _$ExpiringLotImpl implements _ExpiringLot {
       daysUntilExpiry,
       status);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ExpiringLotImplCopyWith<_$ExpiringLotImpl> get copyWith =>
-      __$$ExpiringLotImplCopyWithImpl<_$ExpiringLotImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ExpiringLotImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ExpiringLot(lotId: $lotId, lotNumber: $lotNumber, itemId: $itemId, itemName: $itemName, locationId: $locationId, locationName: $locationName, quantity: $quantity, expiryDate: $expiryDate, daysUntilExpiry: $daysUntilExpiry, status: $status)';
   }
 }
 
-abstract class _ExpiringLot implements ExpiringLot {
-  const factory _ExpiringLot(
-      {required final String lotId,
-      required final String lotNumber,
-      required final String itemId,
-      required final String itemName,
-      required final String locationId,
-      required final String locationName,
-      required final double quantity,
-      required final DateTime expiryDate,
-      required final int daysUntilExpiry,
-      final String? status}) = _$ExpiringLotImpl;
-
-  factory _ExpiringLot.fromJson(Map<String, dynamic> json) =
-      _$ExpiringLotImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ExpiringLotCopyWith<$Res>
+    implements $ExpiringLotCopyWith<$Res> {
+  factory _$ExpiringLotCopyWith(
+          _ExpiringLot value, $Res Function(_ExpiringLot) _then) =
+      __$ExpiringLotCopyWithImpl;
   @override
-  String get lotId;
-  @override
-  String get lotNumber;
-  @override
-  String get itemId;
-  @override
-  String get itemName;
-  @override
-  String get locationId;
-  @override
-  String get locationName;
-  @override
-  double get quantity;
-  @override
-  DateTime get expiryDate;
-  @override
-  int get daysUntilExpiry;
-  @override
-  String? get status;
-  @override
-  @JsonKey(ignore: true)
-  _$$ExpiringLotImplCopyWith<_$ExpiringLotImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String lotId,
+      String lotNumber,
+      String itemId,
+      String itemName,
+      String locationId,
+      String locationName,
+      double quantity,
+      DateTime expiryDate,
+      int daysUntilExpiry,
+      String? status});
 }
+
+/// @nodoc
+class __$ExpiringLotCopyWithImpl<$Res> implements _$ExpiringLotCopyWith<$Res> {
+  __$ExpiringLotCopyWithImpl(this._self, this._then);
+
+  final _ExpiringLot _self;
+  final $Res Function(_ExpiringLot) _then;
+
+  /// Create a copy of ExpiringLot
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? lotId = null,
+    Object? lotNumber = null,
+    Object? itemId = null,
+    Object? itemName = null,
+    Object? locationId = null,
+    Object? locationName = null,
+    Object? quantity = null,
+    Object? expiryDate = null,
+    Object? daysUntilExpiry = null,
+    Object? status = freezed,
+  }) {
+    return _then(_ExpiringLot(
+      lotId: null == lotId
+          ? _self.lotId
+          : lotId // ignore: cast_nullable_to_non_nullable
+              as String,
+      lotNumber: null == lotNumber
+          ? _self.lotNumber
+          : lotNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemId: null == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String,
+      itemName: null == itemName
+          ? _self.itemName
+          : itemName // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationId: null == locationId
+          ? _self.locationId
+          : locationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      locationName: null == locationName
+          ? _self.locationName
+          : locationName // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double,
+      expiryDate: null == expiryDate
+          ? _self.expiryDate
+          : expiryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      daysUntilExpiry: null == daysUntilExpiry
+          ? _self.daysUntilExpiry
+          : daysUntilExpiry // ignore: cast_nullable_to_non_nullable
+              as int,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

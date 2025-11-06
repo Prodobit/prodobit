@@ -6,12 +6,12 @@ part of 'lot_management_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LotGenealogyImpl _$$LotGenealogyImplFromJson(Map<String, dynamic> json) =>
+_LotGenealogy _$LotGenealogyFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LotGenealogyImpl',
+      '_LotGenealogy',
       json,
       ($checkedConvert) {
-        final val = _$LotGenealogyImpl(
+        final val = _LotGenealogy(
           id: $checkedConvert('id', (v) => v as String),
           lotNumber: $checkedConvert('lotNumber', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
@@ -46,7 +46,7 @@ _$LotGenealogyImpl _$$LotGenealogyImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$LotGenealogyImplToJson(_$LotGenealogyImpl instance) =>
+Map<String, dynamic> _$LotGenealogyToJson(_LotGenealogy instance) =>
     <String, dynamic>{
       'id': instance.id,
       'lotNumber': instance.lotNumber,
@@ -70,13 +70,12 @@ Map<String, dynamic> _$$LotGenealogyImplToJson(_$LotGenealogyImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$LotTrackingHistoryImpl _$$LotTrackingHistoryImplFromJson(
-        Map<String, dynamic> json) =>
+_LotTrackingHistory _$LotTrackingHistoryFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LotTrackingHistoryImpl',
+      '_LotTrackingHistory',
       json,
       ($checkedConvert) {
-        final val = _$LotTrackingHistoryImpl(
+        final val = _LotTrackingHistory(
           id: $checkedConvert('id', (v) => v as String),
           lotId: $checkedConvert('lotId', (v) => v as String),
           eventType: $checkedConvert('eventType', (v) => v as String),
@@ -97,8 +96,7 @@ _$LotTrackingHistoryImpl _$$LotTrackingHistoryImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$LotTrackingHistoryImplToJson(
-        _$LotTrackingHistoryImpl instance) =>
+Map<String, dynamic> _$LotTrackingHistoryToJson(_LotTrackingHistory instance) =>
     <String, dynamic>{
       'id': instance.id,
       'lotId': instance.lotId,
@@ -115,13 +113,12 @@ Map<String, dynamic> _$$LotTrackingHistoryImplToJson(
       'metadata': instance.metadata,
     };
 
-_$SplitLotRequestImpl _$$SplitLotRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_SplitLotRequest _$SplitLotRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$SplitLotRequestImpl',
+      '_SplitLotRequest',
       json,
       ($checkedConvert) {
-        final val = _$SplitLotRequestImpl(
+        final val = _SplitLotRequest(
           sourceLotId: $checkedConvert('sourceLotId', (v) => v as String),
           splitItems: $checkedConvert(
               'splitItems',
@@ -135,8 +132,7 @@ _$SplitLotRequestImpl _$$SplitLotRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$SplitLotRequestImplToJson(
-        _$SplitLotRequestImpl instance) =>
+Map<String, dynamic> _$SplitLotRequestToJson(_SplitLotRequest instance) =>
     <String, dynamic>{
       'sourceLotId': instance.sourceLotId,
       'splitItems': instance.splitItems.map((e) => e.toJson()).toList(),
@@ -144,12 +140,12 @@ Map<String, dynamic> _$$SplitLotRequestImplToJson(
       'notes': instance.notes,
     };
 
-_$LotSplitItemImpl _$$LotSplitItemImplFromJson(Map<String, dynamic> json) =>
+_LotSplitItem _$LotSplitItemFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LotSplitItemImpl',
+      '_LotSplitItem',
       json,
       ($checkedConvert) {
-        final val = _$LotSplitItemImpl(
+        final val = _LotSplitItem(
           newLotNumber: $checkedConvert('newLotNumber', (v) => v as String),
           quantity: $checkedConvert('quantity', (v) => (v as num).toDouble()),
           locationId: $checkedConvert('locationId', (v) => v as String?),
@@ -162,7 +158,7 @@ _$LotSplitItemImpl _$$LotSplitItemImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$LotSplitItemImplToJson(_$LotSplitItemImpl instance) =>
+Map<String, dynamic> _$LotSplitItemToJson(_LotSplitItem instance) =>
     <String, dynamic>{
       'newLotNumber': instance.newLotNumber,
       'quantity': instance.quantity,
@@ -171,13 +167,12 @@ Map<String, dynamic> _$$LotSplitItemImplToJson(_$LotSplitItemImpl instance) =>
       'attributes': instance.attributes,
     };
 
-_$MergeLotsRequestImpl _$$MergeLotsRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_MergeLotsRequest _$MergeLotsRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$MergeLotsRequestImpl',
+      '_MergeLotsRequest',
       json,
       ($checkedConvert) {
-        final val = _$MergeLotsRequestImpl(
+        final val = _MergeLotsRequest(
           sourceLotIds: $checkedConvert('sourceLotIds',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
           targetLotNumber:
@@ -195,8 +190,7 @@ _$MergeLotsRequestImpl _$$MergeLotsRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$MergeLotsRequestImplToJson(
-        _$MergeLotsRequestImpl instance) =>
+Map<String, dynamic> _$MergeLotsRequestToJson(_MergeLotsRequest instance) =>
     <String, dynamic>{
       'sourceLotIds': instance.sourceLotIds,
       'targetLotNumber': instance.targetLotNumber,
@@ -207,13 +201,13 @@ Map<String, dynamic> _$$MergeLotsRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdateLotTrackingRequestImpl _$$UpdateLotTrackingRequestImplFromJson(
+_UpdateLotTrackingRequest _$UpdateLotTrackingRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateLotTrackingRequestImpl',
+      '_UpdateLotTrackingRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateLotTrackingRequestImpl(
+        final val = _UpdateLotTrackingRequest(
           status: $checkedConvert('status', (v) => v as String?),
           expiryDate: $checkedConvert('expiryDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -225,8 +219,8 @@ _$UpdateLotTrackingRequestImpl _$$UpdateLotTrackingRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateLotTrackingRequestImplToJson(
-        _$UpdateLotTrackingRequestImpl instance) =>
+Map<String, dynamic> _$UpdateLotTrackingRequestToJson(
+        _UpdateLotTrackingRequest instance) =>
     <String, dynamic>{
       'status': instance.status,
       'expiryDate': instance.expiryDate?.toIso8601String(),
@@ -234,13 +228,13 @@ Map<String, dynamic> _$$UpdateLotTrackingRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$QuarantineLotRequestImpl _$$QuarantineLotRequestImplFromJson(
+_QuarantineLotRequest _$QuarantineLotRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$QuarantineLotRequestImpl',
+      '_QuarantineLotRequest',
       json,
       ($checkedConvert) {
-        final val = _$QuarantineLotRequestImpl(
+        final val = _QuarantineLotRequest(
           reason: $checkedConvert('reason', (v) => v as String),
           notes: $checkedConvert('notes', (v) => v as String?),
           quarantinedUntil: $checkedConvert('quarantinedUntil',
@@ -250,21 +244,20 @@ _$QuarantineLotRequestImpl _$$QuarantineLotRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$QuarantineLotRequestImplToJson(
-        _$QuarantineLotRequestImpl instance) =>
+Map<String, dynamic> _$QuarantineLotRequestToJson(
+        _QuarantineLotRequest instance) =>
     <String, dynamic>{
       'reason': instance.reason,
       'notes': instance.notes,
       'quarantinedUntil': instance.quarantinedUntil?.toIso8601String(),
     };
 
-_$ReleaseLotRequestImpl _$$ReleaseLotRequestImplFromJson(
-        Map<String, dynamic> json) =>
+_ReleaseLotRequest _$ReleaseLotRequestFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$ReleaseLotRequestImpl',
+      '_ReleaseLotRequest',
       json,
       ($checkedConvert) {
-        final val = _$ReleaseLotRequestImpl(
+        final val = _ReleaseLotRequest(
           releaseReason: $checkedConvert('releaseReason', (v) => v as String),
           notes: $checkedConvert('notes', (v) => v as String?),
           inspectedBy: $checkedConvert('inspectedBy', (v) => v as String?),
@@ -275,8 +268,7 @@ _$ReleaseLotRequestImpl _$$ReleaseLotRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$ReleaseLotRequestImplToJson(
-        _$ReleaseLotRequestImpl instance) =>
+Map<String, dynamic> _$ReleaseLotRequestToJson(_ReleaseLotRequest instance) =>
     <String, dynamic>{
       'releaseReason': instance.releaseReason,
       'notes': instance.notes,
@@ -284,13 +276,12 @@ Map<String, dynamic> _$$ReleaseLotRequestImplToJson(
       'inspectionDate': instance.inspectionDate?.toIso8601String(),
     };
 
-_$LotGenealogyFiltersImpl _$$LotGenealogyFiltersImplFromJson(
-        Map<String, dynamic> json) =>
+_LotGenealogyFilters _$LotGenealogyFiltersFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LotGenealogyFiltersImpl',
+      '_LotGenealogyFilters',
       json,
       ($checkedConvert) {
-        final val = _$LotGenealogyFiltersImpl(
+        final val = _LotGenealogyFilters(
           itemId: $checkedConvert('itemId', (v) => v as String?),
           locationId: $checkedConvert('locationId', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
@@ -319,8 +310,8 @@ _$LotGenealogyFiltersImpl _$$LotGenealogyFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$LotGenealogyFiltersImplToJson(
-        _$LotGenealogyFiltersImpl instance) =>
+Map<String, dynamic> _$LotGenealogyFiltersToJson(
+        _LotGenealogyFilters instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'locationId': instance.locationId,
@@ -340,13 +331,13 @@ Map<String, dynamic> _$$LotGenealogyFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$LotTrackingHistoryFiltersImpl _$$LotTrackingHistoryFiltersImplFromJson(
+_LotTrackingHistoryFilters _$LotTrackingHistoryFiltersFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$LotTrackingHistoryFiltersImpl',
+      '_LotTrackingHistoryFilters',
       json,
       ($checkedConvert) {
-        final val = _$LotTrackingHistoryFiltersImpl(
+        final val = _LotTrackingHistoryFilters(
           lotId: $checkedConvert('lotId', (v) => v as String?),
           eventType: $checkedConvert('eventType', (v) => v as String?),
           fromLocationId:
@@ -368,8 +359,8 @@ _$LotTrackingHistoryFiltersImpl _$$LotTrackingHistoryFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$LotTrackingHistoryFiltersImplToJson(
-        _$LotTrackingHistoryFiltersImpl instance) =>
+Map<String, dynamic> _$LotTrackingHistoryFiltersToJson(
+        _LotTrackingHistoryFilters instance) =>
     <String, dynamic>{
       'lotId': instance.lotId,
       'eventType': instance.eventType,
@@ -386,12 +377,11 @@ Map<String, dynamic> _$$LotTrackingHistoryFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$ExpiringLotImpl _$$ExpiringLotImplFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      r'_$ExpiringLotImpl',
+_ExpiringLot _$ExpiringLotFromJson(Map<String, dynamic> json) => $checkedCreate(
+      '_ExpiringLot',
       json,
       ($checkedConvert) {
-        final val = _$ExpiringLotImpl(
+        final val = _ExpiringLot(
           lotId: $checkedConvert('lotId', (v) => v as String),
           lotNumber: $checkedConvert('lotNumber', (v) => v as String),
           itemId: $checkedConvert('itemId', (v) => v as String),
@@ -409,7 +399,7 @@ _$ExpiringLotImpl _$$ExpiringLotImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$ExpiringLotImplToJson(_$ExpiringLotImpl instance) =>
+Map<String, dynamic> _$ExpiringLotToJson(_ExpiringLot instance) =>
     <String, dynamic>{
       'lotId': instance.lotId,
       'lotNumber': instance.lotNumber,

@@ -5,7 +5,7 @@ part 'goods_receipt_models.g.dart';
 
 /// Goods receipt model
 @freezed
-class GoodsReceipt with _$GoodsReceipt {
+sealed class GoodsReceipt with _$GoodsReceipt {
   const factory GoodsReceipt({
     required String id,
     required String receiptNumber,
@@ -41,7 +41,7 @@ class GoodsReceipt with _$GoodsReceipt {
 
 /// Goods receipt line item model
 @freezed
-class GoodsReceiptLineItem with _$GoodsReceiptLineItem {
+sealed class GoodsReceiptLineItem with _$GoodsReceiptLineItem {
   const factory GoodsReceiptLineItem({
     required String id,
     required String goodsReceiptId,
@@ -73,7 +73,7 @@ class GoodsReceiptLineItem with _$GoodsReceiptLineItem {
 
 /// Create goods receipt request
 @freezed
-class CreateGoodsReceiptRequest with _$CreateGoodsReceiptRequest {
+sealed class CreateGoodsReceiptRequest with _$CreateGoodsReceiptRequest {
   const factory CreateGoodsReceiptRequest({
     required String purchaseOrderId,
     required DateTime receiptDate,
@@ -93,7 +93,7 @@ class CreateGoodsReceiptRequest with _$CreateGoodsReceiptRequest {
 
 /// Create goods receipt line item request
 @freezed
-class CreateGoodsReceiptLineItemRequest with _$CreateGoodsReceiptLineItemRequest {
+sealed class CreateGoodsReceiptLineItemRequest with _$CreateGoodsReceiptLineItemRequest {
   const factory CreateGoodsReceiptLineItemRequest({
     required String purchaseOrderLineItemId,
     required double receivedQuantity,
@@ -113,7 +113,7 @@ class CreateGoodsReceiptLineItemRequest with _$CreateGoodsReceiptLineItemRequest
 
 /// Update goods receipt request
 @freezed
-class UpdateGoodsReceiptRequest with _$UpdateGoodsReceiptRequest {
+sealed class UpdateGoodsReceiptRequest with _$UpdateGoodsReceiptRequest {
   const factory UpdateGoodsReceiptRequest({
     DateTime? receiptDate,
     String? deliveryNote,
@@ -131,7 +131,7 @@ class UpdateGoodsReceiptRequest with _$UpdateGoodsReceiptRequest {
 
 /// Update goods receipt line item request
 @freezed
-class UpdateGoodsReceiptLineItemRequest with _$UpdateGoodsReceiptLineItemRequest {
+sealed class UpdateGoodsReceiptLineItemRequest with _$UpdateGoodsReceiptLineItemRequest {
   const factory UpdateGoodsReceiptLineItemRequest({
     double? receivedQuantity,
     double? acceptedQuantity,
@@ -154,7 +154,7 @@ class UpdateGoodsReceiptLineItemRequest with _$UpdateGoodsReceiptLineItemRequest
 
 /// Goods receipt filters
 @freezed
-class GoodsReceiptFilters with _$GoodsReceiptFilters {
+sealed class GoodsReceiptFilters with _$GoodsReceiptFilters {
   const factory GoodsReceiptFilters({
     String? purchaseOrderId,
     String? supplierId,
@@ -198,7 +198,7 @@ class GoodsReceiptFilters with _$GoodsReceiptFilters {
 
 /// Inspect goods receipt request
 @freezed
-class InspectGoodsReceiptRequest with _$InspectGoodsReceiptRequest {
+sealed class InspectGoodsReceiptRequest with _$InspectGoodsReceiptRequest {
   const factory InspectGoodsReceiptRequest({
     String? inspectionNotes,
     Map<String, dynamic>? qualityMetrics,
@@ -210,7 +210,7 @@ class InspectGoodsReceiptRequest with _$InspectGoodsReceiptRequest {
 
 /// Accept goods receipt request
 @freezed
-class AcceptGoodsReceiptRequest with _$AcceptGoodsReceiptRequest {
+sealed class AcceptGoodsReceiptRequest with _$AcceptGoodsReceiptRequest {
   const factory AcceptGoodsReceiptRequest({
     String? notes,
   }) = _AcceptGoodsReceiptRequest;
@@ -221,7 +221,7 @@ class AcceptGoodsReceiptRequest with _$AcceptGoodsReceiptRequest {
 
 /// Reject goods receipt request
 @freezed
-class RejectGoodsReceiptRequest with _$RejectGoodsReceiptRequest {
+sealed class RejectGoodsReceiptRequest with _$RejectGoodsReceiptRequest {
   const factory RejectGoodsReceiptRequest({
     required String reason,
     String? notes,

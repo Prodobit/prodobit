@@ -5,7 +5,7 @@ part 'rfq_models.g.dart';
 
 /// Request for Quotation (RFQ) model
 @freezed
-class RFQ with _$RFQ {
+sealed class RFQ with _$RFQ {
   const factory RFQ({
     required String id,
     required String rfqNumber,
@@ -38,7 +38,7 @@ class RFQ with _$RFQ {
 
 /// RFQ line item model
 @freezed
-class RFQLineItem with _$RFQLineItem {
+sealed class RFQLineItem with _$RFQLineItem {
   const factory RFQLineItem({
     required String id,
     required String rfqId,
@@ -63,7 +63,7 @@ class RFQLineItem with _$RFQLineItem {
 
 /// RFQ supplier model
 @freezed
-class RFQSupplier with _$RFQSupplier {
+sealed class RFQSupplier with _$RFQSupplier {
   const factory RFQSupplier({
     required String id,
     required String rfqId,
@@ -88,7 +88,7 @@ class RFQSupplier with _$RFQSupplier {
 
 /// Create RFQ request
 @freezed
-class CreateRFQRequest with _$CreateRFQRequest {
+sealed class CreateRFQRequest with _$CreateRFQRequest {
   const factory CreateRFQRequest({
     required String title,
     required String description,
@@ -111,7 +111,7 @@ class CreateRFQRequest with _$CreateRFQRequest {
 
 /// Create RFQ line item request
 @freezed
-class CreateRFQLineItemRequest with _$CreateRFQLineItemRequest {
+sealed class CreateRFQLineItemRequest with _$CreateRFQLineItemRequest {
   const factory CreateRFQLineItemRequest({
     required String itemId,
     required double quantity,
@@ -133,7 +133,7 @@ class CreateRFQLineItemRequest with _$CreateRFQLineItemRequest {
 
 /// Update RFQ request
 @freezed
-class UpdateRFQRequest with _$UpdateRFQRequest {
+sealed class UpdateRFQRequest with _$UpdateRFQRequest {
   const factory UpdateRFQRequest({
     String? title,
     String? description,
@@ -154,7 +154,7 @@ class UpdateRFQRequest with _$UpdateRFQRequest {
 
 /// RFQ filters
 @freezed
-class RFQFilters with _$RFQFilters {
+sealed class RFQFilters with _$RFQFilters {
   const factory RFQFilters({
     String? status,
     String? createdBy,
@@ -200,7 +200,7 @@ class RFQFilters with _$RFQFilters {
 
 /// Add RFQ supplier request
 @freezed
-class AddRFQSupplierRequest with _$AddRFQSupplierRequest {
+sealed class AddRFQSupplierRequest with _$AddRFQSupplierRequest {
   const factory AddRFQSupplierRequest({
     required String supplierId,
     String? contactPerson,

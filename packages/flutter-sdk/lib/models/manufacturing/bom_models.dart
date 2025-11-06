@@ -5,7 +5,7 @@ part 'bom_models.g.dart';
 
 /// BOM (Bill of Materials) component model
 @freezed
-class BomComponent with _$BomComponent {
+sealed class BomComponent with _$BomComponent {
   const factory BomComponent({
     required String id,
     required String bomId,
@@ -31,7 +31,7 @@ class BomComponent with _$BomComponent {
 
 /// Create BOM component request
 @freezed
-class CreateBomComponentRequest with _$CreateBomComponentRequest {
+sealed class CreateBomComponentRequest with _$CreateBomComponentRequest {
   const factory CreateBomComponentRequest({
     required String itemId,
     required double quantity,
@@ -53,7 +53,7 @@ class CreateBomComponentRequest with _$CreateBomComponentRequest {
 
 /// Update BOM component request
 @freezed
-class UpdateBomComponentRequest with _$UpdateBomComponentRequest {
+sealed class UpdateBomComponentRequest with _$UpdateBomComponentRequest {
   const factory UpdateBomComponentRequest({
     double? quantity,
     String? unit,
@@ -74,7 +74,7 @@ class UpdateBomComponentRequest with _$UpdateBomComponentRequest {
 
 /// BOM explosion item
 @freezed
-class BomExplosionItem with _$BomExplosionItem {
+sealed class BomExplosionItem with _$BomExplosionItem {
   const factory BomExplosionItem({
     required String itemId,
     required String itemName,
@@ -99,7 +99,7 @@ class BomExplosionItem with _$BomExplosionItem {
 
 /// BOM statistics
 @freezed
-class BomStats with _$BomStats {
+sealed class BomStats with _$BomStats {
   const factory BomStats({
     required String bomId,
     required int totalComponents,
@@ -116,7 +116,7 @@ class BomStats with _$BomStats {
 
 /// BOM lead time analysis
 @freezed
-class BomLeadTimeAnalysis with _$BomLeadTimeAnalysis {
+sealed class BomLeadTimeAnalysis with _$BomLeadTimeAnalysis {
   const factory BomLeadTimeAnalysis({
     required String bomId,
     required double totalLeadTime,
@@ -131,7 +131,7 @@ class BomLeadTimeAnalysis with _$BomLeadTimeAnalysis {
 
 /// BOM lead time item
 @freezed
-class BomLeadTimeItem with _$BomLeadTimeItem {
+sealed class BomLeadTimeItem with _$BomLeadTimeItem {
   const factory BomLeadTimeItem({
     required String itemId,
     required String itemName,
@@ -146,7 +146,7 @@ class BomLeadTimeItem with _$BomLeadTimeItem {
 
 /// Clone BOM request
 @freezed
-class CloneBomRequest with _$CloneBomRequest {
+sealed class CloneBomRequest with _$CloneBomRequest {
   const factory CloneBomRequest({
     required String name,
     required String version,
@@ -161,7 +161,7 @@ class CloneBomRequest with _$CloneBomRequest {
 
 /// Create BOM quick request
 @freezed
-class CreateBomQuickRequest with _$CreateBomQuickRequest {
+sealed class CreateBomQuickRequest with _$CreateBomQuickRequest {
   const factory CreateBomQuickRequest({
     required String itemId,
     required String name,
@@ -176,7 +176,7 @@ class CreateBomQuickRequest with _$CreateBomQuickRequest {
 
 /// BOM quick component
 @freezed
-class BomQuickComponent with _$BomQuickComponent {
+sealed class BomQuickComponent with _$BomQuickComponent {
   const factory BomQuickComponent({
     required String itemId,
     required double quantity,

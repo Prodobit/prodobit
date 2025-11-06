@@ -5,7 +5,7 @@ part 'auth_models.g.dart';
 
 /// Login OTP response model
 @freezed
-class LoginOTPResponse with _$LoginOTPResponse {
+sealed class LoginOTPResponse with _$LoginOTPResponse {
   const factory LoginOTPResponse({
     required bool success,
     LoginResponseData? data,
@@ -18,7 +18,7 @@ class LoginOTPResponse with _$LoginOTPResponse {
 
 /// Login response data model
 @freezed
-class LoginResponseData with _$LoginResponseData {
+sealed class LoginResponseData with _$LoginResponseData {
   const factory LoginResponseData({
     required UserData user,
     required SessionData session,
@@ -34,7 +34,7 @@ class LoginResponseData with _$LoginResponseData {
 
 /// Auth method data model
 @freezed
-class AuthMethodData with _$AuthMethodData {
+sealed class AuthMethodData with _$AuthMethodData {
   const factory AuthMethodData({
     required String id,
     required String provider,
@@ -50,7 +50,7 @@ class AuthMethodData with _$AuthMethodData {
 /// Organization info model (deprecated - use TenantInfo)
 @Deprecated('Use TenantInfo instead')
 @freezed
-class OrganizationInfo with _$OrganizationInfo {
+sealed class OrganizationInfo with _$OrganizationInfo {
   @Deprecated('Use TenantInfo instead')
   const factory OrganizationInfo({
     required String id,
@@ -69,7 +69,7 @@ class OrganizationInfo with _$OrganizationInfo {
 
 /// OTP request model
 @freezed
-class OTPRequest with _$OTPRequest {
+sealed class OTPRequest with _$OTPRequest {
   const factory OTPRequest({
     required String email,
     String? tenantId,
@@ -81,7 +81,7 @@ class OTPRequest with _$OTPRequest {
 
 /// OTP response model
 @freezed
-class OTPResponse with _$OTPResponse {
+sealed class OTPResponse with _$OTPResponse {
   const factory OTPResponse({
     required bool success,
     required String message,
@@ -104,7 +104,7 @@ class OTPResponse with _$OTPResponse {
 
 /// Token refresh request
 @freezed
-class RefreshTokenRequest with _$RefreshTokenRequest {
+sealed class RefreshTokenRequest with _$RefreshTokenRequest {
   const factory RefreshTokenRequest({
     required String refreshToken,
   }) = _RefreshTokenRequest;
@@ -115,7 +115,7 @@ class RefreshTokenRequest with _$RefreshTokenRequest {
 
 /// Session data model
 @freezed
-class SessionData with _$SessionData {
+sealed class SessionData with _$SessionData {
   const factory SessionData({
     required String accessToken,
     required String expiresAt,
@@ -128,7 +128,7 @@ class SessionData with _$SessionData {
 
 /// Tenant selection info for multi-tenant users
 @freezed
-class TenantInfo with _$TenantInfo {
+sealed class TenantInfo with _$TenantInfo {
   const factory TenantInfo({
     required String id,
     required String name,
@@ -141,7 +141,7 @@ class TenantInfo with _$TenantInfo {
 
 /// Tenant membership model (extended with role information from API responses)
 @freezed
-class TenantMembership with _$TenantMembership {
+sealed class TenantMembership with _$TenantMembership {
   const factory TenantMembership({
     required String id,
     required String userId,
@@ -172,7 +172,7 @@ class TenantMembership with _$TenantMembership {
 
 /// User data model
 @freezed
-class UserData with _$UserData {
+sealed class UserData with _$UserData {
   const factory UserData({
     required String id,
     required bool twoFactorEnabled,
@@ -191,7 +191,7 @@ class UserData with _$UserData {
 /// User profile model (deprecated - use UserData)
 @Deprecated('Use UserData instead')
 @freezed
-class UserProfile with _$UserProfile {
+sealed class UserProfile with _$UserProfile {
   @Deprecated('Use UserData instead')
   const factory UserProfile({
     required String id,
@@ -213,7 +213,7 @@ class UserProfile with _$UserProfile {
 
 /// OTP verification request model
 @freezed
-class VerifyOTPRequest with _$VerifyOTPRequest {
+sealed class VerifyOTPRequest with _$VerifyOTPRequest {
   const factory VerifyOTPRequest({
     required String email,
     required String code,

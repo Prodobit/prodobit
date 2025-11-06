@@ -6,12 +6,12 @@ part of 'goods_receipt_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GoodsReceiptImpl _$$GoodsReceiptImplFromJson(Map<String, dynamic> json) =>
+_GoodsReceipt _$GoodsReceiptFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GoodsReceiptImpl',
+      '_GoodsReceipt',
       json,
       ($checkedConvert) {
-        final val = _$GoodsReceiptImpl(
+        final val = _GoodsReceipt(
           id: $checkedConvert('id', (v) => v as String),
           receiptNumber: $checkedConvert('receiptNumber', (v) => v as String),
           purchaseOrderId:
@@ -55,7 +55,7 @@ _$GoodsReceiptImpl _$$GoodsReceiptImplFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$$GoodsReceiptImplToJson(_$GoodsReceiptImpl instance) =>
+Map<String, dynamic> _$GoodsReceiptToJson(_GoodsReceipt instance) =>
     <String, dynamic>{
       'id': instance.id,
       'receiptNumber': instance.receiptNumber,
@@ -85,13 +85,13 @@ Map<String, dynamic> _$$GoodsReceiptImplToJson(_$GoodsReceiptImpl instance) =>
       'metadata': instance.metadata,
     };
 
-_$GoodsReceiptLineItemImpl _$$GoodsReceiptLineItemImplFromJson(
+_GoodsReceiptLineItem _$GoodsReceiptLineItemFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GoodsReceiptLineItemImpl',
+      '_GoodsReceiptLineItem',
       json,
       ($checkedConvert) {
-        final val = _$GoodsReceiptLineItemImpl(
+        final val = _GoodsReceiptLineItem(
           id: $checkedConvert('id', (v) => v as String),
           goodsReceiptId: $checkedConvert('goodsReceiptId', (v) => v as String),
           purchaseOrderLineItemId:
@@ -131,8 +131,8 @@ _$GoodsReceiptLineItemImpl _$$GoodsReceiptLineItemImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$GoodsReceiptLineItemImplToJson(
-        _$GoodsReceiptLineItemImpl instance) =>
+Map<String, dynamic> _$GoodsReceiptLineItemToJson(
+        _GoodsReceiptLineItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'goodsReceiptId': instance.goodsReceiptId,
@@ -158,13 +158,13 @@ Map<String, dynamic> _$$GoodsReceiptLineItemImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateGoodsReceiptRequestImpl _$$CreateGoodsReceiptRequestImplFromJson(
+_CreateGoodsReceiptRequest _$CreateGoodsReceiptRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$CreateGoodsReceiptRequestImpl',
+      '_CreateGoodsReceiptRequest',
       json,
       ($checkedConvert) {
-        final val = _$CreateGoodsReceiptRequestImpl(
+        final val = _CreateGoodsReceiptRequest(
           purchaseOrderId:
               $checkedConvert('purchaseOrderId', (v) => v as String),
           receiptDate: $checkedConvert(
@@ -189,8 +189,8 @@ _$CreateGoodsReceiptRequestImpl _$$CreateGoodsReceiptRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$CreateGoodsReceiptRequestImplToJson(
-        _$CreateGoodsReceiptRequestImpl instance) =>
+Map<String, dynamic> _$CreateGoodsReceiptRequestToJson(
+        _CreateGoodsReceiptRequest instance) =>
     <String, dynamic>{
       'purchaseOrderId': instance.purchaseOrderId,
       'receiptDate': instance.receiptDate.toIso8601String(),
@@ -204,38 +204,36 @@ Map<String, dynamic> _$$CreateGoodsReceiptRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$CreateGoodsReceiptLineItemRequestImpl
-    _$$CreateGoodsReceiptLineItemRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$CreateGoodsReceiptLineItemRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$CreateGoodsReceiptLineItemRequestImpl(
-              purchaseOrderLineItemId: $checkedConvert(
-                  'purchaseOrderLineItemId', (v) => v as String),
-              receivedQuantity: $checkedConvert(
-                  'receivedQuantity', (v) => (v as num).toDouble()),
-              lotNumber: $checkedConvert('lotNumber', (v) => v as String?),
-              serialNumber:
-                  $checkedConvert('serialNumber', (v) => v as String?),
-              expiryDate: $checkedConvert('expiryDate',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              condition: $checkedConvert('condition', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              storageLocation:
-                  $checkedConvert('storageLocation', (v) => v as String?),
-              qualityMetrics: $checkedConvert(
-                  'qualityMetrics', (v) => v as Map<String, dynamic>?),
-              attributes: $checkedConvert(
-                  'attributes', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_CreateGoodsReceiptLineItemRequest _$CreateGoodsReceiptLineItemRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_CreateGoodsReceiptLineItemRequest',
+      json,
+      ($checkedConvert) {
+        final val = _CreateGoodsReceiptLineItemRequest(
+          purchaseOrderLineItemId:
+              $checkedConvert('purchaseOrderLineItemId', (v) => v as String),
+          receivedQuantity:
+              $checkedConvert('receivedQuantity', (v) => (v as num).toDouble()),
+          lotNumber: $checkedConvert('lotNumber', (v) => v as String?),
+          serialNumber: $checkedConvert('serialNumber', (v) => v as String?),
+          expiryDate: $checkedConvert('expiryDate',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          condition: $checkedConvert('condition', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          storageLocation:
+              $checkedConvert('storageLocation', (v) => v as String?),
+          qualityMetrics: $checkedConvert(
+              'qualityMetrics', (v) => v as Map<String, dynamic>?),
+          attributes:
+              $checkedConvert('attributes', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$CreateGoodsReceiptLineItemRequestImplToJson(
-        _$CreateGoodsReceiptLineItemRequestImpl instance) =>
+Map<String, dynamic> _$CreateGoodsReceiptLineItemRequestToJson(
+        _CreateGoodsReceiptLineItemRequest instance) =>
     <String, dynamic>{
       'purchaseOrderLineItemId': instance.purchaseOrderLineItemId,
       'receivedQuantity': instance.receivedQuantity,
@@ -249,13 +247,13 @@ Map<String, dynamic> _$$CreateGoodsReceiptLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$UpdateGoodsReceiptRequestImpl _$$UpdateGoodsReceiptRequestImplFromJson(
+_UpdateGoodsReceiptRequest _$UpdateGoodsReceiptRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$UpdateGoodsReceiptRequestImpl',
+      '_UpdateGoodsReceiptRequest',
       json,
       ($checkedConvert) {
-        final val = _$UpdateGoodsReceiptRequestImpl(
+        final val = _UpdateGoodsReceiptRequest(
           receiptDate: $checkedConvert('receiptDate',
               (v) => v == null ? null : DateTime.parse(v as String)),
           deliveryNote: $checkedConvert('deliveryNote', (v) => v as String?),
@@ -272,8 +270,8 @@ _$UpdateGoodsReceiptRequestImpl _$$UpdateGoodsReceiptRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$UpdateGoodsReceiptRequestImplToJson(
-        _$UpdateGoodsReceiptRequestImpl instance) =>
+Map<String, dynamic> _$UpdateGoodsReceiptRequestToJson(
+        _UpdateGoodsReceiptRequest instance) =>
     <String, dynamic>{
       'receiptDate': instance.receiptDate?.toIso8601String(),
       'deliveryNote': instance.deliveryNote,
@@ -285,44 +283,42 @@ Map<String, dynamic> _$$UpdateGoodsReceiptRequestImplToJson(
       'metadata': instance.metadata,
     };
 
-_$UpdateGoodsReceiptLineItemRequestImpl
-    _$$UpdateGoodsReceiptLineItemRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          r'_$UpdateGoodsReceiptLineItemRequestImpl',
-          json,
-          ($checkedConvert) {
-            final val = _$UpdateGoodsReceiptLineItemRequestImpl(
-              receivedQuantity: $checkedConvert(
-                  'receivedQuantity', (v) => (v as num?)?.toDouble()),
-              acceptedQuantity: $checkedConvert(
-                  'acceptedQuantity', (v) => (v as num?)?.toDouble()),
-              rejectedQuantity: $checkedConvert(
-                  'rejectedQuantity', (v) => (v as num?)?.toDouble()),
-              lotNumber: $checkedConvert('lotNumber', (v) => v as String?),
-              serialNumber:
-                  $checkedConvert('serialNumber', (v) => v as String?),
-              expiryDate: $checkedConvert('expiryDate',
-                  (v) => v == null ? null : DateTime.parse(v as String)),
-              condition: $checkedConvert('condition', (v) => v as String?),
-              notes: $checkedConvert('notes', (v) => v as String?),
-              inspectionNotes:
-                  $checkedConvert('inspectionNotes', (v) => v as String?),
-              rejectionReason:
-                  $checkedConvert('rejectionReason', (v) => v as String?),
-              storageLocation:
-                  $checkedConvert('storageLocation', (v) => v as String?),
-              qualityMetrics: $checkedConvert(
-                  'qualityMetrics', (v) => v as Map<String, dynamic>?),
-              attributes: $checkedConvert(
-                  'attributes', (v) => v as Map<String, dynamic>?),
-            );
-            return val;
-          },
+_UpdateGoodsReceiptLineItemRequest _$UpdateGoodsReceiptLineItemRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      '_UpdateGoodsReceiptLineItemRequest',
+      json,
+      ($checkedConvert) {
+        final val = _UpdateGoodsReceiptLineItemRequest(
+          receivedQuantity: $checkedConvert(
+              'receivedQuantity', (v) => (v as num?)?.toDouble()),
+          acceptedQuantity: $checkedConvert(
+              'acceptedQuantity', (v) => (v as num?)?.toDouble()),
+          rejectedQuantity: $checkedConvert(
+              'rejectedQuantity', (v) => (v as num?)?.toDouble()),
+          lotNumber: $checkedConvert('lotNumber', (v) => v as String?),
+          serialNumber: $checkedConvert('serialNumber', (v) => v as String?),
+          expiryDate: $checkedConvert('expiryDate',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          condition: $checkedConvert('condition', (v) => v as String?),
+          notes: $checkedConvert('notes', (v) => v as String?),
+          inspectionNotes:
+              $checkedConvert('inspectionNotes', (v) => v as String?),
+          rejectionReason:
+              $checkedConvert('rejectionReason', (v) => v as String?),
+          storageLocation:
+              $checkedConvert('storageLocation', (v) => v as String?),
+          qualityMetrics: $checkedConvert(
+              'qualityMetrics', (v) => v as Map<String, dynamic>?),
+          attributes:
+              $checkedConvert('attributes', (v) => v as Map<String, dynamic>?),
         );
+        return val;
+      },
+    );
 
-Map<String, dynamic> _$$UpdateGoodsReceiptLineItemRequestImplToJson(
-        _$UpdateGoodsReceiptLineItemRequestImpl instance) =>
+Map<String, dynamic> _$UpdateGoodsReceiptLineItemRequestToJson(
+        _UpdateGoodsReceiptLineItemRequest instance) =>
     <String, dynamic>{
       'receivedQuantity': instance.receivedQuantity,
       'acceptedQuantity': instance.acceptedQuantity,
@@ -339,13 +335,12 @@ Map<String, dynamic> _$$UpdateGoodsReceiptLineItemRequestImplToJson(
       'attributes': instance.attributes,
     };
 
-_$GoodsReceiptFiltersImpl _$$GoodsReceiptFiltersImplFromJson(
-        Map<String, dynamic> json) =>
+_GoodsReceiptFilters _$GoodsReceiptFiltersFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$GoodsReceiptFiltersImpl',
+      '_GoodsReceiptFilters',
       json,
       ($checkedConvert) {
-        final val = _$GoodsReceiptFiltersImpl(
+        final val = _GoodsReceiptFilters(
           purchaseOrderId:
               $checkedConvert('purchaseOrderId', (v) => v as String?),
           supplierId: $checkedConvert('supplierId', (v) => v as String?),
@@ -370,8 +365,8 @@ _$GoodsReceiptFiltersImpl _$$GoodsReceiptFiltersImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$GoodsReceiptFiltersImplToJson(
-        _$GoodsReceiptFiltersImpl instance) =>
+Map<String, dynamic> _$GoodsReceiptFiltersToJson(
+        _GoodsReceiptFilters instance) =>
     <String, dynamic>{
       'purchaseOrderId': instance.purchaseOrderId,
       'supplierId': instance.supplierId,
@@ -388,13 +383,13 @@ Map<String, dynamic> _$$GoodsReceiptFiltersImplToJson(
       'sortOrder': instance.sortOrder,
     };
 
-_$InspectGoodsReceiptRequestImpl _$$InspectGoodsReceiptRequestImplFromJson(
+_InspectGoodsReceiptRequest _$InspectGoodsReceiptRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$InspectGoodsReceiptRequestImpl',
+      '_InspectGoodsReceiptRequest',
       json,
       ($checkedConvert) {
-        final val = _$InspectGoodsReceiptRequestImpl(
+        final val = _InspectGoodsReceiptRequest(
           inspectionNotes:
               $checkedConvert('inspectionNotes', (v) => v as String?),
           qualityMetrics: $checkedConvert(
@@ -404,39 +399,39 @@ _$InspectGoodsReceiptRequestImpl _$$InspectGoodsReceiptRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$InspectGoodsReceiptRequestImplToJson(
-        _$InspectGoodsReceiptRequestImpl instance) =>
+Map<String, dynamic> _$InspectGoodsReceiptRequestToJson(
+        _InspectGoodsReceiptRequest instance) =>
     <String, dynamic>{
       'inspectionNotes': instance.inspectionNotes,
       'qualityMetrics': instance.qualityMetrics,
     };
 
-_$AcceptGoodsReceiptRequestImpl _$$AcceptGoodsReceiptRequestImplFromJson(
+_AcceptGoodsReceiptRequest _$AcceptGoodsReceiptRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$AcceptGoodsReceiptRequestImpl',
+      '_AcceptGoodsReceiptRequest',
       json,
       ($checkedConvert) {
-        final val = _$AcceptGoodsReceiptRequestImpl(
+        final val = _AcceptGoodsReceiptRequest(
           notes: $checkedConvert('notes', (v) => v as String?),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$$AcceptGoodsReceiptRequestImplToJson(
-        _$AcceptGoodsReceiptRequestImpl instance) =>
+Map<String, dynamic> _$AcceptGoodsReceiptRequestToJson(
+        _AcceptGoodsReceiptRequest instance) =>
     <String, dynamic>{
       'notes': instance.notes,
     };
 
-_$RejectGoodsReceiptRequestImpl _$$RejectGoodsReceiptRequestImplFromJson(
+_RejectGoodsReceiptRequest _$RejectGoodsReceiptRequestFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      r'_$RejectGoodsReceiptRequestImpl',
+      '_RejectGoodsReceiptRequest',
       json,
       ($checkedConvert) {
-        final val = _$RejectGoodsReceiptRequestImpl(
+        final val = _RejectGoodsReceiptRequest(
           reason: $checkedConvert('reason', (v) => v as String),
           notes: $checkedConvert('notes', (v) => v as String?),
         );
@@ -444,8 +439,8 @@ _$RejectGoodsReceiptRequestImpl _$$RejectGoodsReceiptRequestImplFromJson(
       },
     );
 
-Map<String, dynamic> _$$RejectGoodsReceiptRequestImplToJson(
-        _$RejectGoodsReceiptRequestImpl instance) =>
+Map<String, dynamic> _$RejectGoodsReceiptRequestToJson(
+        _RejectGoodsReceiptRequest instance) =>
     <String, dynamic>{
       'reason': instance.reason,
       'notes': instance.notes,

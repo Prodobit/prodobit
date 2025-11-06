@@ -6,21 +6,21 @@ part 'inventory_provider.g.dart';
 
 /// Individual item provider
 @riverpod
-Future<Item> item(ItemRef ref, String itemId) async {
+Future<Item> item(Ref ref, String itemId) async {
   final client = ref.read(prodobitClientProvider);
   return client.inventory.getItem(itemId);
 }
 
 /// Item stock provider
 @riverpod
-Future<List<StockEntry>> itemStock(ItemStockRef ref, String itemId) async {
+Future<List<StockEntry>> itemStock(Ref ref, String itemId) async {
   final client = ref.read(prodobitClientProvider);
   return client.inventory.getItemStock(itemId);
 }
 
 /// Individual location provider
 @riverpod
-Future<Location> location(LocationRef ref, String locationId) async {
+Future<Location> location(Ref ref, String locationId) async {
   final client = ref.read(prodobitClientProvider);
   return client.inventory.getLocation(locationId);
 }
@@ -28,7 +28,7 @@ Future<Location> location(LocationRef ref, String locationId) async {
 /// Location stock provider
 @riverpod
 Future<PaginatedResponse<StockEntry>> locationStock(
-  LocationStockRef ref,
+  Ref ref,
   String locationId, {
   QueryParams? query,
 }) async {
@@ -38,7 +38,7 @@ Future<PaginatedResponse<StockEntry>> locationStock(
 
 /// Low stock items provider
 @riverpod
-Future<List<StockEntry>> lowStockItems(LowStockItemsRef ref) async {
+Future<List<StockEntry>> lowStockItems(Ref ref) async {
   final client = ref.read(prodobitClientProvider);
   return client.inventory.getLowStockItems();
 }
@@ -46,7 +46,7 @@ Future<List<StockEntry>> lowStockItems(LowStockItemsRef ref) async {
 /// Stock movements provider
 @riverpod
 Future<PaginatedResponse<StockMovement>> stockMovements(
-  StockMovementsRef ref, {
+  Ref ref, {
   String? itemId,
   String? locationId,
   QueryParams? query,
@@ -62,7 +62,7 @@ Future<PaginatedResponse<StockMovement>> stockMovements(
 /// Stock value by location provider
 @riverpod
 Future<Map<String, double>> stockValueByLocation(
-  StockValueByLocationRef ref,
+  Ref ref,
 ) async {
   final client = ref.read(prodobitClientProvider);
   return client.inventory.getStockValueByLocation();

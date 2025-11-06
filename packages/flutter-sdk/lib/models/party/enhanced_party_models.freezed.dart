@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,150 +9,94 @@ part of 'enhanced_party_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CreatePersonRequest _$CreatePersonRequestFromJson(Map<String, dynamic> json) {
-  return _CreatePersonRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CreatePersonRequest {
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  String? get middleName => throw _privateConstructorUsedError;
-  String? get salutation => throw _privateConstructorUsedError;
-  String? get suffix => throw _privateConstructorUsedError;
-  String? get nickname => throw _privateConstructorUsedError;
-  DateTime? get birthDate => throw _privateConstructorUsedError;
-  String? get gender => throw _privateConstructorUsedError;
-  String? get maritalStatus => throw _privateConstructorUsedError;
-  String? get occupation => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  List<String>? get roles => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
+  String get firstName;
+  String get lastName;
+  String? get middleName;
+  String? get salutation;
+  String? get suffix;
+  String? get nickname;
+  DateTime? get birthDate;
+  String? get gender;
+  String? get maritalStatus;
+  String? get occupation;
+  String? get notes;
+  List<String>? get roles;
+  Map<String, dynamic>? get attributes;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreatePersonRequestCopyWith<CreatePersonRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreatePersonRequestCopyWith<$Res> {
-  factory $CreatePersonRequestCopyWith(
-          CreatePersonRequest value, $Res Function(CreatePersonRequest) then) =
-      _$CreatePersonRequestCopyWithImpl<$Res, CreatePersonRequest>;
-  @useResult
-  $Res call(
-      {String firstName,
-      String lastName,
-      String? middleName,
-      String? salutation,
-      String? suffix,
-      String? nickname,
-      DateTime? birthDate,
-      String? gender,
-      String? maritalStatus,
-      String? occupation,
-      String? notes,
-      List<String>? roles,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreatePersonRequestCopyWithImpl<$Res, $Val extends CreatePersonRequest>
-    implements $CreatePersonRequestCopyWith<$Res> {
-  _$CreatePersonRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of CreatePersonRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CreatePersonRequestCopyWith<CreatePersonRequest> get copyWith =>
+      _$CreatePersonRequestCopyWithImpl<CreatePersonRequest>(
+          this as CreatePersonRequest, _$identity);
+
+  /// Serializes this CreatePersonRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? middleName = freezed,
-    Object? salutation = freezed,
-    Object? suffix = freezed,
-    Object? nickname = freezed,
-    Object? birthDate = freezed,
-    Object? gender = freezed,
-    Object? maritalStatus = freezed,
-    Object? occupation = freezed,
-    Object? notes = freezed,
-    Object? roles = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      salutation: freezed == salutation
-          ? _value.salutation
-          : salutation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      suffix: freezed == suffix
-          ? _value.suffix
-          : suffix // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nickname: freezed == nickname
-          ? _value.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
-              as String?,
-      birthDate: freezed == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      gender: freezed == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maritalStatus: freezed == maritalStatus
-          ? _value.maritalStatus
-          : maritalStatus // ignore: cast_nullable_to_non_nullable
-              as String?,
-      occupation: freezed == occupation
-          ? _value.occupation
-          : occupation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roles: freezed == roles
-          ? _value.roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreatePersonRequest &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.middleName, middleName) ||
+                other.middleName == middleName) &&
+            (identical(other.salutation, salutation) ||
+                other.salutation == salutation) &&
+            (identical(other.suffix, suffix) || other.suffix == suffix) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.birthDate, birthDate) ||
+                other.birthDate == birthDate) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.maritalStatus, maritalStatus) ||
+                other.maritalStatus == maritalStatus) &&
+            (identical(other.occupation, occupation) ||
+                other.occupation == occupation) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.roles, roles) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      firstName,
+      lastName,
+      middleName,
+      salutation,
+      suffix,
+      nickname,
+      birthDate,
+      gender,
+      maritalStatus,
+      occupation,
+      notes,
+      const DeepCollectionEquality().hash(roles),
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreatePersonRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, salutation: $salutation, suffix: $suffix, nickname: $nickname, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, occupation: $occupation, notes: $notes, roles: $roles, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreatePersonRequestImplCopyWith<$Res>
-    implements $CreatePersonRequestCopyWith<$Res> {
-  factory _$$CreatePersonRequestImplCopyWith(_$CreatePersonRequestImpl value,
-          $Res Function(_$CreatePersonRequestImpl) then) =
-      __$$CreatePersonRequestImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CreatePersonRequestCopyWith<$Res> {
+  factory $CreatePersonRequestCopyWith(
+          CreatePersonRequest value, $Res Function(CreatePersonRequest) _then) =
+      _$CreatePersonRequestCopyWithImpl;
   @useResult
   $Res call(
       {String firstName,
@@ -171,13 +115,15 @@ abstract class _$$CreatePersonRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CreatePersonRequestImplCopyWithImpl<$Res>
-    extends _$CreatePersonRequestCopyWithImpl<$Res, _$CreatePersonRequestImpl>
-    implements _$$CreatePersonRequestImplCopyWith<$Res> {
-  __$$CreatePersonRequestImplCopyWithImpl(_$CreatePersonRequestImpl _value,
-      $Res Function(_$CreatePersonRequestImpl) _then)
-      : super(_value, _then);
+class _$CreatePersonRequestCopyWithImpl<$Res>
+    implements $CreatePersonRequestCopyWith<$Res> {
+  _$CreatePersonRequestCopyWithImpl(this._self, this._then);
 
+  final CreatePersonRequest _self;
+  final $Res Function(CreatePersonRequest) _then;
+
+  /// Create a copy of CreatePersonRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -195,67 +141,301 @@ class __$$CreatePersonRequestImplCopyWithImpl<$Res>
     Object? roles = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$CreatePersonRequestImpl(
+    return _then(_self.copyWith(
       firstName: null == firstName
-          ? _value.firstName
+          ? _self.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
-          ? _value.lastName
+          ? _self.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       middleName: freezed == middleName
-          ? _value.middleName
+          ? _self.middleName
           : middleName // ignore: cast_nullable_to_non_nullable
               as String?,
       salutation: freezed == salutation
-          ? _value.salutation
+          ? _self.salutation
           : salutation // ignore: cast_nullable_to_non_nullable
               as String?,
       suffix: freezed == suffix
-          ? _value.suffix
+          ? _self.suffix
           : suffix // ignore: cast_nullable_to_non_nullable
               as String?,
       nickname: freezed == nickname
-          ? _value.nickname
+          ? _self.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as String?,
       birthDate: freezed == birthDate
-          ? _value.birthDate
+          ? _self.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       gender: freezed == gender
-          ? _value.gender
+          ? _self.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as String?,
       maritalStatus: freezed == maritalStatus
-          ? _value.maritalStatus
+          ? _self.maritalStatus
           : maritalStatus // ignore: cast_nullable_to_non_nullable
               as String?,
       occupation: freezed == occupation
-          ? _value.occupation
+          ? _self.occupation
           : occupation // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       roles: freezed == roles
-          ? _value._roles
+          ? _self.roles
           : roles // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [CreatePersonRequest].
+extension CreatePersonRequestPatterns on CreatePersonRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreatePersonRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreatePersonRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreatePersonRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? salutation,
+            String? suffix,
+            String? nickname,
+            DateTime? birthDate,
+            String? gender,
+            String? maritalStatus,
+            String? occupation,
+            String? notes,
+            List<String>? roles,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonRequest() when $default != null:
+        return $default(
+            _that.firstName,
+            _that.lastName,
+            _that.middleName,
+            _that.salutation,
+            _that.suffix,
+            _that.nickname,
+            _that.birthDate,
+            _that.gender,
+            _that.maritalStatus,
+            _that.occupation,
+            _that.notes,
+            _that.roles,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? salutation,
+            String? suffix,
+            String? nickname,
+            DateTime? birthDate,
+            String? gender,
+            String? maritalStatus,
+            String? occupation,
+            String? notes,
+            List<String>? roles,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonRequest():
+        return $default(
+            _that.firstName,
+            _that.lastName,
+            _that.middleName,
+            _that.salutation,
+            _that.suffix,
+            _that.nickname,
+            _that.birthDate,
+            _that.gender,
+            _that.maritalStatus,
+            _that.occupation,
+            _that.notes,
+            _that.roles,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? salutation,
+            String? suffix,
+            String? nickname,
+            DateTime? birthDate,
+            String? gender,
+            String? maritalStatus,
+            String? occupation,
+            String? notes,
+            List<String>? roles,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonRequest() when $default != null:
+        return $default(
+            _that.firstName,
+            _that.lastName,
+            _that.middleName,
+            _that.salutation,
+            _that.suffix,
+            _that.nickname,
+            _that.birthDate,
+            _that.gender,
+            _that.maritalStatus,
+            _that.occupation,
+            _that.notes,
+            _that.roles,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CreatePersonRequestImpl implements _CreatePersonRequest {
-  const _$CreatePersonRequestImpl(
+class _CreatePersonRequest implements CreatePersonRequest {
+  const _CreatePersonRequest(
       {required this.firstName,
       required this.lastName,
       this.middleName,
@@ -271,9 +451,8 @@ class _$CreatePersonRequestImpl implements _CreatePersonRequest {
       final Map<String, dynamic>? attributes})
       : _roles = roles,
         _attributes = attributes;
-
-  factory _$CreatePersonRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreatePersonRequestImplFromJson(json);
+  factory _CreatePersonRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePersonRequestFromJson(json);
 
   @override
   final String firstName;
@@ -317,16 +496,27 @@ class _$CreatePersonRequestImpl implements _CreatePersonRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreatePersonRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreatePersonRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, salutation: $salutation, suffix: $suffix, nickname: $nickname, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, occupation: $occupation, notes: $notes, roles: $roles, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreatePersonRequestCopyWith<_CreatePersonRequest> get copyWith =>
+      __$CreatePersonRequestCopyWithImpl<_CreatePersonRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreatePersonRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreatePersonRequestImpl &&
+            other is _CreatePersonRequest &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -351,7 +541,7 @@ class _$CreatePersonRequestImpl implements _CreatePersonRequest {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -369,296 +559,114 @@ class _$CreatePersonRequestImpl implements _CreatePersonRequest {
       const DeepCollectionEquality().hash(_roles),
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreatePersonRequestImplCopyWith<_$CreatePersonRequestImpl> get copyWith =>
-      __$$CreatePersonRequestImplCopyWithImpl<_$CreatePersonRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreatePersonRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreatePersonRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, salutation: $salutation, suffix: $suffix, nickname: $nickname, birthDate: $birthDate, gender: $gender, maritalStatus: $maritalStatus, occupation: $occupation, notes: $notes, roles: $roles, attributes: $attributes)';
   }
 }
 
-abstract class _CreatePersonRequest implements CreatePersonRequest {
-  const factory _CreatePersonRequest(
-      {required final String firstName,
-      required final String lastName,
-      final String? middleName,
-      final String? salutation,
-      final String? suffix,
-      final String? nickname,
-      final DateTime? birthDate,
-      final String? gender,
-      final String? maritalStatus,
-      final String? occupation,
-      final String? notes,
-      final List<String>? roles,
-      final Map<String, dynamic>? attributes}) = _$CreatePersonRequestImpl;
-
-  factory _CreatePersonRequest.fromJson(Map<String, dynamic> json) =
-      _$CreatePersonRequestImpl.fromJson;
-
-  @override
-  String get firstName;
-  @override
-  String get lastName;
-  @override
-  String? get middleName;
-  @override
-  String? get salutation;
-  @override
-  String? get suffix;
-  @override
-  String? get nickname;
-  @override
-  DateTime? get birthDate;
-  @override
-  String? get gender;
-  @override
-  String? get maritalStatus;
-  @override
-  String? get occupation;
-  @override
-  String? get notes;
-  @override
-  List<String>? get roles;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreatePersonRequestImplCopyWith<_$CreatePersonRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CreateOrganizationRequest _$CreateOrganizationRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateOrganizationRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateOrganizationRequest {
-  String get name => throw _privateConstructorUsedError;
-  String? get legalName => throw _privateConstructorUsedError;
-  String? get shortName => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get taxId => throw _privateConstructorUsedError;
-  String? get registrationNumber => throw _privateConstructorUsedError;
-  String? get industry => throw _privateConstructorUsedError;
-  String? get website => throw _privateConstructorUsedError;
-  DateTime? get establishedDate => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  List<String>? get roles => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateOrganizationRequestCopyWith<CreateOrganizationRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateOrganizationRequestCopyWith<$Res> {
-  factory $CreateOrganizationRequestCopyWith(CreateOrganizationRequest value,
-          $Res Function(CreateOrganizationRequest) then) =
-      _$CreateOrganizationRequestCopyWithImpl<$Res, CreateOrganizationRequest>;
+abstract mixin class _$CreatePersonRequestCopyWith<$Res>
+    implements $CreatePersonRequestCopyWith<$Res> {
+  factory _$CreatePersonRequestCopyWith(_CreatePersonRequest value,
+          $Res Function(_CreatePersonRequest) _then) =
+      __$CreatePersonRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String name,
-      String? legalName,
-      String? shortName,
-      String? description,
-      String? taxId,
-      String? registrationNumber,
-      String? industry,
-      String? website,
-      DateTime? establishedDate,
+      {String firstName,
+      String lastName,
+      String? middleName,
+      String? salutation,
+      String? suffix,
+      String? nickname,
+      DateTime? birthDate,
+      String? gender,
+      String? maritalStatus,
+      String? occupation,
       String? notes,
       List<String>? roles,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class _$CreateOrganizationRequestCopyWithImpl<$Res,
-        $Val extends CreateOrganizationRequest>
-    implements $CreateOrganizationRequestCopyWith<$Res> {
-  _$CreateOrganizationRequestCopyWithImpl(this._value, this._then);
+class __$CreatePersonRequestCopyWithImpl<$Res>
+    implements _$CreatePersonRequestCopyWith<$Res> {
+  __$CreatePersonRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreatePersonRequest _self;
+  final $Res Function(_CreatePersonRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreatePersonRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
-    Object? legalName = freezed,
-    Object? shortName = freezed,
-    Object? description = freezed,
-    Object? taxId = freezed,
-    Object? registrationNumber = freezed,
-    Object? industry = freezed,
-    Object? website = freezed,
-    Object? establishedDate = freezed,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? middleName = freezed,
+    Object? salutation = freezed,
+    Object? suffix = freezed,
+    Object? nickname = freezed,
+    Object? birthDate = freezed,
+    Object? gender = freezed,
+    Object? maritalStatus = freezed,
+    Object? occupation = freezed,
     Object? notes = freezed,
     Object? roles = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+    return _then(_CreatePersonRequest(
+      firstName: null == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      legalName: freezed == legalName
-          ? _value.legalName
-          : legalName // ignore: cast_nullable_to_non_nullable
+      lastName: null == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleName: freezed == middleName
+          ? _self.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
               as String?,
-      shortName: freezed == shortName
-          ? _value.shortName
-          : shortName // ignore: cast_nullable_to_non_nullable
+      salutation: freezed == salutation
+          ? _self.salutation
+          : salutation // ignore: cast_nullable_to_non_nullable
               as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      suffix: freezed == suffix
+          ? _self.suffix
+          : suffix // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
+      nickname: freezed == nickname
+          ? _self.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
               as String?,
-      registrationNumber: freezed == registrationNumber
-          ? _value.registrationNumber
-          : registrationNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      industry: freezed == industry
-          ? _value.industry
-          : industry // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      establishedDate: freezed == establishedDate
-          ? _value.establishedDate
-          : establishedDate // ignore: cast_nullable_to_non_nullable
+      birthDate: freezed == birthDate
+          ? _self.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      gender: freezed == gender
+          ? _self.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String?,
+      maritalStatus: freezed == maritalStatus
+          ? _self.maritalStatus
+          : maritalStatus // ignore: cast_nullable_to_non_nullable
+              as String?,
+      occupation: freezed == occupation
+          ? _self.occupation
+          : occupation // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       roles: freezed == roles
-          ? _value.roles
+          ? _self._roles
           : roles // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateOrganizationRequestImplCopyWith<$Res>
-    implements $CreateOrganizationRequestCopyWith<$Res> {
-  factory _$$CreateOrganizationRequestImplCopyWith(
-          _$CreateOrganizationRequestImpl value,
-          $Res Function(_$CreateOrganizationRequestImpl) then) =
-      __$$CreateOrganizationRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String name,
-      String? legalName,
-      String? shortName,
-      String? description,
-      String? taxId,
-      String? registrationNumber,
-      String? industry,
-      String? website,
-      DateTime? establishedDate,
-      String? notes,
-      List<String>? roles,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class __$$CreateOrganizationRequestImplCopyWithImpl<$Res>
-    extends _$CreateOrganizationRequestCopyWithImpl<$Res,
-        _$CreateOrganizationRequestImpl>
-    implements _$$CreateOrganizationRequestImplCopyWith<$Res> {
-  __$$CreateOrganizationRequestImplCopyWithImpl(
-      _$CreateOrganizationRequestImpl _value,
-      $Res Function(_$CreateOrganizationRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? legalName = freezed,
-    Object? shortName = freezed,
-    Object? description = freezed,
-    Object? taxId = freezed,
-    Object? registrationNumber = freezed,
-    Object? industry = freezed,
-    Object? website = freezed,
-    Object? establishedDate = freezed,
-    Object? notes = freezed,
-    Object? roles = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_$CreateOrganizationRequestImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      legalName: freezed == legalName
-          ? _value.legalName
-          : legalName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      shortName: freezed == shortName
-          ? _value.shortName
-          : shortName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      registrationNumber: freezed == registrationNumber
-          ? _value.registrationNumber
-          : registrationNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      industry: freezed == industry
-          ? _value.industry
-          : industry // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      establishedDate: freezed == establishedDate
-          ? _value.establishedDate
-          : establishedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roles: freezed == roles
-          ? _value._roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -666,9 +674,412 @@ class __$$CreateOrganizationRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateOrganizationRequest {
+  String get name;
+  String? get legalName;
+  String? get shortName;
+  String? get description;
+  String? get taxId;
+  String? get registrationNumber;
+  String? get industry;
+  String? get website;
+  DateTime? get establishedDate;
+  String? get notes;
+  List<String>? get roles;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreateOrganizationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateOrganizationRequestCopyWith<CreateOrganizationRequest> get copyWith =>
+      _$CreateOrganizationRequestCopyWithImpl<CreateOrganizationRequest>(
+          this as CreateOrganizationRequest, _$identity);
+
+  /// Serializes this CreateOrganizationRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateOrganizationRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.legalName, legalName) ||
+                other.legalName == legalName) &&
+            (identical(other.shortName, shortName) ||
+                other.shortName == shortName) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.taxId, taxId) || other.taxId == taxId) &&
+            (identical(other.registrationNumber, registrationNumber) ||
+                other.registrationNumber == registrationNumber) &&
+            (identical(other.industry, industry) ||
+                other.industry == industry) &&
+            (identical(other.website, website) || other.website == website) &&
+            (identical(other.establishedDate, establishedDate) ||
+                other.establishedDate == establishedDate) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality().equals(other.roles, roles) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      legalName,
+      shortName,
+      description,
+      taxId,
+      registrationNumber,
+      industry,
+      website,
+      establishedDate,
+      notes,
+      const DeepCollectionEquality().hash(roles),
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreateOrganizationRequest(name: $name, legalName: $legalName, shortName: $shortName, description: $description, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, website: $website, establishedDate: $establishedDate, notes: $notes, roles: $roles, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateOrganizationRequestCopyWith<$Res> {
+  factory $CreateOrganizationRequestCopyWith(CreateOrganizationRequest value,
+          $Res Function(CreateOrganizationRequest) _then) =
+      _$CreateOrganizationRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String name,
+      String? legalName,
+      String? shortName,
+      String? description,
+      String? taxId,
+      String? registrationNumber,
+      String? industry,
+      String? website,
+      DateTime? establishedDate,
+      String? notes,
+      List<String>? roles,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreateOrganizationRequestCopyWithImpl<$Res>
+    implements $CreateOrganizationRequestCopyWith<$Res> {
+  _$CreateOrganizationRequestCopyWithImpl(this._self, this._then);
+
+  final CreateOrganizationRequest _self;
+  final $Res Function(CreateOrganizationRequest) _then;
+
+  /// Create a copy of CreateOrganizationRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? legalName = freezed,
+    Object? shortName = freezed,
+    Object? description = freezed,
+    Object? taxId = freezed,
+    Object? registrationNumber = freezed,
+    Object? industry = freezed,
+    Object? website = freezed,
+    Object? establishedDate = freezed,
+    Object? notes = freezed,
+    Object? roles = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      legalName: freezed == legalName
+          ? _self.legalName
+          : legalName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shortName: freezed == shortName
+          ? _self.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      registrationNumber: freezed == registrationNumber
+          ? _self.registrationNumber
+          : registrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      industry: freezed == industry
+          ? _self.industry
+          : industry // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _self.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      establishedDate: freezed == establishedDate
+          ? _self.establishedDate
+          : establishedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roles: freezed == roles
+          ? _self.roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateOrganizationRequest].
+extension CreateOrganizationRequestPatterns on CreateOrganizationRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateOrganizationRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateOrganizationRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateOrganizationRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String? legalName,
+            String? shortName,
+            String? description,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? website,
+            DateTime? establishedDate,
+            String? notes,
+            List<String>? roles,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.shortName,
+            _that.description,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.website,
+            _that.establishedDate,
+            _that.notes,
+            _that.roles,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String? legalName,
+            String? shortName,
+            String? description,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? website,
+            DateTime? establishedDate,
+            String? notes,
+            List<String>? roles,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationRequest():
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.shortName,
+            _that.description,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.website,
+            _that.establishedDate,
+            _that.notes,
+            _that.roles,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            String? legalName,
+            String? shortName,
+            String? description,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? website,
+            DateTime? establishedDate,
+            String? notes,
+            List<String>? roles,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.shortName,
+            _that.description,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.website,
+            _that.establishedDate,
+            _that.notes,
+            _that.roles,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateOrganizationRequestImpl implements _CreateOrganizationRequest {
-  const _$CreateOrganizationRequestImpl(
+class _CreateOrganizationRequest implements CreateOrganizationRequest {
+  const _CreateOrganizationRequest(
       {required this.name,
       this.legalName,
       this.shortName,
@@ -683,9 +1094,8 @@ class _$CreateOrganizationRequestImpl implements _CreateOrganizationRequest {
       final Map<String, dynamic>? attributes})
       : _roles = roles,
         _attributes = attributes;
-
-  factory _$CreateOrganizationRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CreateOrganizationRequestImplFromJson(json);
+  factory _CreateOrganizationRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateOrganizationRequestFromJson(json);
 
   @override
   final String name;
@@ -727,16 +1137,28 @@ class _$CreateOrganizationRequestImpl implements _CreateOrganizationRequest {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateOrganizationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateOrganizationRequest(name: $name, legalName: $legalName, shortName: $shortName, description: $description, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, website: $website, establishedDate: $establishedDate, notes: $notes, roles: $roles, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateOrganizationRequestCopyWith<_CreateOrganizationRequest>
+      get copyWith =>
+          __$CreateOrganizationRequestCopyWithImpl<_CreateOrganizationRequest>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateOrganizationRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateOrganizationRequestImpl &&
+            other is _CreateOrganizationRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.legalName, legalName) ||
                 other.legalName == legalName) &&
@@ -758,7 +1180,7 @@ class _$CreateOrganizationRequestImpl implements _CreateOrganizationRequest {
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -775,231 +1197,108 @@ class _$CreateOrganizationRequestImpl implements _CreateOrganizationRequest {
       const DeepCollectionEquality().hash(_roles),
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateOrganizationRequestImplCopyWith<_$CreateOrganizationRequestImpl>
-      get copyWith => __$$CreateOrganizationRequestImplCopyWithImpl<
-          _$CreateOrganizationRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateOrganizationRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreateOrganizationRequest implements CreateOrganizationRequest {
-  const factory _CreateOrganizationRequest(
-          {required final String name,
-          final String? legalName,
-          final String? shortName,
-          final String? description,
-          final String? taxId,
-          final String? registrationNumber,
-          final String? industry,
-          final String? website,
-          final DateTime? establishedDate,
-          final String? notes,
-          final List<String>? roles,
-          final Map<String, dynamic>? attributes}) =
-      _$CreateOrganizationRequestImpl;
-
-  factory _CreateOrganizationRequest.fromJson(Map<String, dynamic> json) =
-      _$CreateOrganizationRequestImpl.fromJson;
-
-  @override
-  String get name;
-  @override
-  String? get legalName;
-  @override
-  String? get shortName;
-  @override
-  String? get description;
-  @override
-  String? get taxId;
-  @override
-  String? get registrationNumber;
-  @override
-  String? get industry;
-  @override
-  String? get website;
-  @override
-  DateTime? get establishedDate;
-  @override
-  String? get notes;
-  @override
-  List<String>? get roles;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateOrganizationRequestImplCopyWith<_$CreateOrganizationRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreatePersonWithRolesRequest _$CreatePersonWithRolesRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreatePersonWithRolesRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreatePersonWithRolesRequest {
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  List<String> get roles => throw _privateConstructorUsedError;
-  String? get middleName => throw _privateConstructorUsedError;
-  String? get salutation => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreatePersonWithRolesRequestCopyWith<CreatePersonWithRolesRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreatePersonWithRolesRequestCopyWith<$Res> {
-  factory $CreatePersonWithRolesRequestCopyWith(
-          CreatePersonWithRolesRequest value,
-          $Res Function(CreatePersonWithRolesRequest) then) =
-      _$CreatePersonWithRolesRequestCopyWithImpl<$Res,
-          CreatePersonWithRolesRequest>;
-  @useResult
-  $Res call(
-      {String firstName,
-      String lastName,
-      List<String> roles,
-      String? middleName,
-      String? salutation,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreatePersonWithRolesRequestCopyWithImpl<$Res,
-        $Val extends CreatePersonWithRolesRequest>
-    implements $CreatePersonWithRolesRequestCopyWith<$Res> {
-  _$CreatePersonWithRolesRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? roles = null,
-    Object? middleName = freezed,
-    Object? salutation = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      roles: null == roles
-          ? _value.roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      salutation: freezed == salutation
-          ? _value.salutation
-          : salutation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreateOrganizationRequest(name: $name, legalName: $legalName, shortName: $shortName, description: $description, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, website: $website, establishedDate: $establishedDate, notes: $notes, roles: $roles, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreatePersonWithRolesRequestImplCopyWith<$Res>
-    implements $CreatePersonWithRolesRequestCopyWith<$Res> {
-  factory _$$CreatePersonWithRolesRequestImplCopyWith(
-          _$CreatePersonWithRolesRequestImpl value,
-          $Res Function(_$CreatePersonWithRolesRequestImpl) then) =
-      __$$CreatePersonWithRolesRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreateOrganizationRequestCopyWith<$Res>
+    implements $CreateOrganizationRequestCopyWith<$Res> {
+  factory _$CreateOrganizationRequestCopyWith(_CreateOrganizationRequest value,
+          $Res Function(_CreateOrganizationRequest) _then) =
+      __$CreateOrganizationRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {String firstName,
-      String lastName,
-      List<String> roles,
-      String? middleName,
-      String? salutation,
+      {String name,
+      String? legalName,
+      String? shortName,
+      String? description,
+      String? taxId,
+      String? registrationNumber,
+      String? industry,
+      String? website,
+      DateTime? establishedDate,
       String? notes,
+      List<String>? roles,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class __$$CreatePersonWithRolesRequestImplCopyWithImpl<$Res>
-    extends _$CreatePersonWithRolesRequestCopyWithImpl<$Res,
-        _$CreatePersonWithRolesRequestImpl>
-    implements _$$CreatePersonWithRolesRequestImplCopyWith<$Res> {
-  __$$CreatePersonWithRolesRequestImplCopyWithImpl(
-      _$CreatePersonWithRolesRequestImpl _value,
-      $Res Function(_$CreatePersonWithRolesRequestImpl) _then)
-      : super(_value, _then);
+class __$CreateOrganizationRequestCopyWithImpl<$Res>
+    implements _$CreateOrganizationRequestCopyWith<$Res> {
+  __$CreateOrganizationRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreateOrganizationRequest _self;
+  final $Res Function(_CreateOrganizationRequest) _then;
+
+  /// Create a copy of CreateOrganizationRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? roles = null,
-    Object? middleName = freezed,
-    Object? salutation = freezed,
+    Object? name = null,
+    Object? legalName = freezed,
+    Object? shortName = freezed,
+    Object? description = freezed,
+    Object? taxId = freezed,
+    Object? registrationNumber = freezed,
+    Object? industry = freezed,
+    Object? website = freezed,
+    Object? establishedDate = freezed,
     Object? notes = freezed,
+    Object? roles = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$CreatePersonWithRolesRequestImpl(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+    return _then(_CreateOrganizationRequest(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      roles: null == roles
-          ? _value._roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
+      legalName: freezed == legalName
+          ? _self.legalName
+          : legalName // ignore: cast_nullable_to_non_nullable
               as String?,
-      salutation: freezed == salutation
-          ? _value.salutation
-          : salutation // ignore: cast_nullable_to_non_nullable
+      shortName: freezed == shortName
+          ? _self.shortName
+          : shortName // ignore: cast_nullable_to_non_nullable
               as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      registrationNumber: freezed == registrationNumber
+          ? _self.registrationNumber
+          : registrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      industry: freezed == industry
+          ? _self.industry
+          : industry // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _self.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      establishedDate: freezed == establishedDate
+          ? _self.establishedDate
+          : establishedDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
+      roles: freezed == roles
+          ? _self._roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1007,10 +1306,319 @@ class __$$CreatePersonWithRolesRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreatePersonWithRolesRequest {
+  String get firstName;
+  String get lastName;
+  List<String> get roles;
+  String? get middleName;
+  String? get salutation;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreatePersonWithRolesRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreatePersonWithRolesRequestCopyWith<CreatePersonWithRolesRequest>
+      get copyWith => _$CreatePersonWithRolesRequestCopyWithImpl<
+              CreatePersonWithRolesRequest>(
+          this as CreatePersonWithRolesRequest, _$identity);
+
+  /// Serializes this CreatePersonWithRolesRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreatePersonWithRolesRequest &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            const DeepCollectionEquality().equals(other.roles, roles) &&
+            (identical(other.middleName, middleName) ||
+                other.middleName == middleName) &&
+            (identical(other.salutation, salutation) ||
+                other.salutation == salutation) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      firstName,
+      lastName,
+      const DeepCollectionEquality().hash(roles),
+      middleName,
+      salutation,
+      notes,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreatePersonWithRolesRequest(firstName: $firstName, lastName: $lastName, roles: $roles, middleName: $middleName, salutation: $salutation, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreatePersonWithRolesRequestCopyWith<$Res> {
+  factory $CreatePersonWithRolesRequestCopyWith(
+          CreatePersonWithRolesRequest value,
+          $Res Function(CreatePersonWithRolesRequest) _then) =
+      _$CreatePersonWithRolesRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String firstName,
+      String lastName,
+      List<String> roles,
+      String? middleName,
+      String? salutation,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreatePersonWithRolesRequestCopyWithImpl<$Res>
+    implements $CreatePersonWithRolesRequestCopyWith<$Res> {
+  _$CreatePersonWithRolesRequestCopyWithImpl(this._self, this._then);
+
+  final CreatePersonWithRolesRequest _self;
+  final $Res Function(CreatePersonWithRolesRequest) _then;
+
+  /// Create a copy of CreatePersonWithRolesRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? roles = null,
+    Object? middleName = freezed,
+    Object? salutation = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      firstName: null == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      roles: null == roles
+          ? _self.roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      middleName: freezed == middleName
+          ? _self.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      salutation: freezed == salutation
+          ? _self.salutation
+          : salutation // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreatePersonWithRolesRequest].
+extension CreatePersonWithRolesRequestPatterns on CreatePersonWithRolesRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreatePersonWithRolesRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonWithRolesRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreatePersonWithRolesRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonWithRolesRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreatePersonWithRolesRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonWithRolesRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            List<String> roles,
+            String? middleName,
+            String? salutation,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonWithRolesRequest() when $default != null:
+        return $default(_that.firstName, _that.lastName, _that.roles,
+            _that.middleName, _that.salutation, _that.notes, _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            List<String> roles,
+            String? middleName,
+            String? salutation,
+            String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonWithRolesRequest():
+        return $default(_that.firstName, _that.lastName, _that.roles,
+            _that.middleName, _that.salutation, _that.notes, _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String firstName,
+            String lastName,
+            List<String> roles,
+            String? middleName,
+            String? salutation,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonWithRolesRequest() when $default != null:
+        return $default(_that.firstName, _that.lastName, _that.roles,
+            _that.middleName, _that.salutation, _that.notes, _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreatePersonWithRolesRequestImpl
-    implements _CreatePersonWithRolesRequest {
-  const _$CreatePersonWithRolesRequestImpl(
+class _CreatePersonWithRolesRequest implements CreatePersonWithRolesRequest {
+  const _CreatePersonWithRolesRequest(
       {required this.firstName,
       required this.lastName,
       required final List<String> roles,
@@ -1020,10 +1628,8 @@ class _$CreatePersonWithRolesRequestImpl
       final Map<String, dynamic>? attributes})
       : _roles = roles,
         _attributes = attributes;
-
-  factory _$CreatePersonWithRolesRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreatePersonWithRolesRequestImplFromJson(json);
+  factory _CreatePersonWithRolesRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePersonWithRolesRequestFromJson(json);
 
   @override
   final String firstName;
@@ -1053,16 +1659,27 @@ class _$CreatePersonWithRolesRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreatePersonWithRolesRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreatePersonWithRolesRequest(firstName: $firstName, lastName: $lastName, roles: $roles, middleName: $middleName, salutation: $salutation, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreatePersonWithRolesRequestCopyWith<_CreatePersonWithRolesRequest>
+      get copyWith => __$CreatePersonWithRolesRequestCopyWithImpl<
+          _CreatePersonWithRolesRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreatePersonWithRolesRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreatePersonWithRolesRequestImpl &&
+            other is _CreatePersonWithRolesRequest &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -1077,7 +1694,7 @@ class _$CreatePersonWithRolesRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1089,219 +1706,79 @@ class _$CreatePersonWithRolesRequestImpl
       notes,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreatePersonWithRolesRequestImplCopyWith<
-          _$CreatePersonWithRolesRequestImpl>
-      get copyWith => __$$CreatePersonWithRolesRequestImplCopyWithImpl<
-          _$CreatePersonWithRolesRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreatePersonWithRolesRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreatePersonWithRolesRequest
-    implements CreatePersonWithRolesRequest {
-  const factory _CreatePersonWithRolesRequest(
-          {required final String firstName,
-          required final String lastName,
-          required final List<String> roles,
-          final String? middleName,
-          final String? salutation,
-          final String? notes,
-          final Map<String, dynamic>? attributes}) =
-      _$CreatePersonWithRolesRequestImpl;
-
-  factory _CreatePersonWithRolesRequest.fromJson(Map<String, dynamic> json) =
-      _$CreatePersonWithRolesRequestImpl.fromJson;
-
-  @override
-  String get firstName;
-  @override
-  String get lastName;
-  @override
-  List<String> get roles;
-  @override
-  String? get middleName;
-  @override
-  String? get salutation;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreatePersonWithRolesRequestImplCopyWith<
-          _$CreatePersonWithRolesRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreatePersonCustomerRequest _$CreatePersonCustomerRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreatePersonCustomerRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreatePersonCustomerRequest {
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  String? get middleName => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreatePersonCustomerRequestCopyWith<CreatePersonCustomerRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreatePersonCustomerRequestCopyWith<$Res> {
-  factory $CreatePersonCustomerRequestCopyWith(
-          CreatePersonCustomerRequest value,
-          $Res Function(CreatePersonCustomerRequest) then) =
-      _$CreatePersonCustomerRequestCopyWithImpl<$Res,
-          CreatePersonCustomerRequest>;
-  @useResult
-  $Res call(
-      {String firstName,
-      String lastName,
-      String? middleName,
-      String? email,
-      String? phone,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreatePersonCustomerRequestCopyWithImpl<$Res,
-        $Val extends CreatePersonCustomerRequest>
-    implements $CreatePersonCustomerRequestCopyWith<$Res> {
-  _$CreatePersonCustomerRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? middleName = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreatePersonWithRolesRequest(firstName: $firstName, lastName: $lastName, roles: $roles, middleName: $middleName, salutation: $salutation, notes: $notes, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreatePersonCustomerRequestImplCopyWith<$Res>
-    implements $CreatePersonCustomerRequestCopyWith<$Res> {
-  factory _$$CreatePersonCustomerRequestImplCopyWith(
-          _$CreatePersonCustomerRequestImpl value,
-          $Res Function(_$CreatePersonCustomerRequestImpl) then) =
-      __$$CreatePersonCustomerRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreatePersonWithRolesRequestCopyWith<$Res>
+    implements $CreatePersonWithRolesRequestCopyWith<$Res> {
+  factory _$CreatePersonWithRolesRequestCopyWith(
+          _CreatePersonWithRolesRequest value,
+          $Res Function(_CreatePersonWithRolesRequest) _then) =
+      __$CreatePersonWithRolesRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String firstName,
       String lastName,
+      List<String> roles,
       String? middleName,
-      String? email,
-      String? phone,
+      String? salutation,
       String? notes,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class __$$CreatePersonCustomerRequestImplCopyWithImpl<$Res>
-    extends _$CreatePersonCustomerRequestCopyWithImpl<$Res,
-        _$CreatePersonCustomerRequestImpl>
-    implements _$$CreatePersonCustomerRequestImplCopyWith<$Res> {
-  __$$CreatePersonCustomerRequestImplCopyWithImpl(
-      _$CreatePersonCustomerRequestImpl _value,
-      $Res Function(_$CreatePersonCustomerRequestImpl) _then)
-      : super(_value, _then);
+class __$CreatePersonWithRolesRequestCopyWithImpl<$Res>
+    implements _$CreatePersonWithRolesRequestCopyWith<$Res> {
+  __$CreatePersonWithRolesRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreatePersonWithRolesRequest _self;
+  final $Res Function(_CreatePersonWithRolesRequest) _then;
+
+  /// Create a copy of CreatePersonWithRolesRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? firstName = null,
     Object? lastName = null,
+    Object? roles = null,
     Object? middleName = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
+    Object? salutation = freezed,
     Object? notes = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$CreatePersonCustomerRequestImpl(
+    return _then(_CreatePersonWithRolesRequest(
       firstName: null == firstName
-          ? _value.firstName
+          ? _self.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
-          ? _value.lastName
+          ? _self.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
+      roles: null == roles
+          ? _self._roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       middleName: freezed == middleName
-          ? _value.middleName
+          ? _self.middleName
           : middleName // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      salutation: freezed == salutation
+          ? _self.salutation
+          : salutation // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1309,10 +1786,311 @@ class __$$CreatePersonCustomerRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreatePersonCustomerRequest {
+  String get firstName;
+  String get lastName;
+  String? get middleName;
+  String? get email;
+  String? get phone;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreatePersonCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreatePersonCustomerRequestCopyWith<CreatePersonCustomerRequest>
+      get copyWith => _$CreatePersonCustomerRequestCopyWithImpl<
+              CreatePersonCustomerRequest>(
+          this as CreatePersonCustomerRequest, _$identity);
+
+  /// Serializes this CreatePersonCustomerRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreatePersonCustomerRequest &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.middleName, middleName) ||
+                other.middleName == middleName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, firstName, lastName, middleName,
+      email, phone, notes, const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreatePersonCustomerRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, email: $email, phone: $phone, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreatePersonCustomerRequestCopyWith<$Res> {
+  factory $CreatePersonCustomerRequestCopyWith(
+          CreatePersonCustomerRequest value,
+          $Res Function(CreatePersonCustomerRequest) _then) =
+      _$CreatePersonCustomerRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String firstName,
+      String lastName,
+      String? middleName,
+      String? email,
+      String? phone,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreatePersonCustomerRequestCopyWithImpl<$Res>
+    implements $CreatePersonCustomerRequestCopyWith<$Res> {
+  _$CreatePersonCustomerRequestCopyWithImpl(this._self, this._then);
+
+  final CreatePersonCustomerRequest _self;
+  final $Res Function(CreatePersonCustomerRequest) _then;
+
+  /// Create a copy of CreatePersonCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? middleName = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      firstName: null == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleName: freezed == middleName
+          ? _self.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreatePersonCustomerRequest].
+extension CreatePersonCustomerRequestPatterns on CreatePersonCustomerRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreatePersonCustomerRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonCustomerRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreatePersonCustomerRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonCustomerRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreatePersonCustomerRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonCustomerRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? email,
+            String? phone,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonCustomerRequest() when $default != null:
+        return $default(_that.firstName, _that.lastName, _that.middleName,
+            _that.email, _that.phone, _that.notes, _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? email,
+            String? phone,
+            String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonCustomerRequest():
+        return $default(_that.firstName, _that.lastName, _that.middleName,
+            _that.email, _that.phone, _that.notes, _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? email,
+            String? phone,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonCustomerRequest() when $default != null:
+        return $default(_that.firstName, _that.lastName, _that.middleName,
+            _that.email, _that.phone, _that.notes, _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreatePersonCustomerRequestImpl
-    implements _CreatePersonCustomerRequest {
-  const _$CreatePersonCustomerRequestImpl(
+class _CreatePersonCustomerRequest implements CreatePersonCustomerRequest {
+  const _CreatePersonCustomerRequest(
       {required this.firstName,
       required this.lastName,
       this.middleName,
@@ -1321,10 +2099,8 @@ class _$CreatePersonCustomerRequestImpl
       this.notes,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$CreatePersonCustomerRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreatePersonCustomerRequestImplFromJson(json);
+  factory _CreatePersonCustomerRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePersonCustomerRequestFromJson(json);
 
   @override
   final String firstName;
@@ -1348,16 +2124,27 @@ class _$CreatePersonCustomerRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreatePersonCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreatePersonCustomerRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, email: $email, phone: $phone, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreatePersonCustomerRequestCopyWith<_CreatePersonCustomerRequest>
+      get copyWith => __$CreatePersonCustomerRequestCopyWithImpl<
+          _CreatePersonCustomerRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreatePersonCustomerRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreatePersonCustomerRequestImpl &&
+            other is _CreatePersonCustomerRequest &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -1371,176 +2158,24 @@ class _$CreatePersonCustomerRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, firstName, lastName, middleName,
       email, phone, notes, const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreatePersonCustomerRequestImplCopyWith<_$CreatePersonCustomerRequestImpl>
-      get copyWith => __$$CreatePersonCustomerRequestImplCopyWithImpl<
-          _$CreatePersonCustomerRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreatePersonCustomerRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreatePersonCustomerRequest
-    implements CreatePersonCustomerRequest {
-  const factory _CreatePersonCustomerRequest(
-          {required final String firstName,
-          required final String lastName,
-          final String? middleName,
-          final String? email,
-          final String? phone,
-          final String? notes,
-          final Map<String, dynamic>? attributes}) =
-      _$CreatePersonCustomerRequestImpl;
-
-  factory _CreatePersonCustomerRequest.fromJson(Map<String, dynamic> json) =
-      _$CreatePersonCustomerRequestImpl.fromJson;
-
-  @override
-  String get firstName;
-  @override
-  String get lastName;
-  @override
-  String? get middleName;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreatePersonCustomerRequestImplCopyWith<_$CreatePersonCustomerRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreatePersonSupplierRequest _$CreatePersonSupplierRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreatePersonSupplierRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreatePersonSupplierRequest {
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  String? get middleName => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get businessName => throw _privateConstructorUsedError;
-  String? get taxId => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreatePersonSupplierRequestCopyWith<CreatePersonSupplierRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreatePersonSupplierRequestCopyWith<$Res> {
-  factory $CreatePersonSupplierRequestCopyWith(
-          CreatePersonSupplierRequest value,
-          $Res Function(CreatePersonSupplierRequest) then) =
-      _$CreatePersonSupplierRequestCopyWithImpl<$Res,
-          CreatePersonSupplierRequest>;
-  @useResult
-  $Res call(
-      {String firstName,
-      String lastName,
-      String? middleName,
-      String? email,
-      String? phone,
-      String? businessName,
-      String? taxId,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreatePersonSupplierRequestCopyWithImpl<$Res,
-        $Val extends CreatePersonSupplierRequest>
-    implements $CreatePersonSupplierRequestCopyWith<$Res> {
-  _$CreatePersonSupplierRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? middleName = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? businessName = freezed,
-    Object? taxId = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      middleName: freezed == middleName
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      businessName: freezed == businessName
-          ? _value.businessName
-          : businessName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreatePersonCustomerRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, email: $email, phone: $phone, notes: $notes, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreatePersonSupplierRequestImplCopyWith<$Res>
-    implements $CreatePersonSupplierRequestCopyWith<$Res> {
-  factory _$$CreatePersonSupplierRequestImplCopyWith(
-          _$CreatePersonSupplierRequestImpl value,
-          $Res Function(_$CreatePersonSupplierRequestImpl) then) =
-      __$$CreatePersonSupplierRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreatePersonCustomerRequestCopyWith<$Res>
+    implements $CreatePersonCustomerRequestCopyWith<$Res> {
+  factory _$CreatePersonCustomerRequestCopyWith(
+          _CreatePersonCustomerRequest value,
+          $Res Function(_CreatePersonCustomerRequest) _then) =
+      __$CreatePersonCustomerRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -1549,70 +2184,58 @@ abstract class _$$CreatePersonSupplierRequestImplCopyWith<$Res>
       String? middleName,
       String? email,
       String? phone,
-      String? businessName,
-      String? taxId,
       String? notes,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class __$$CreatePersonSupplierRequestImplCopyWithImpl<$Res>
-    extends _$CreatePersonSupplierRequestCopyWithImpl<$Res,
-        _$CreatePersonSupplierRequestImpl>
-    implements _$$CreatePersonSupplierRequestImplCopyWith<$Res> {
-  __$$CreatePersonSupplierRequestImplCopyWithImpl(
-      _$CreatePersonSupplierRequestImpl _value,
-      $Res Function(_$CreatePersonSupplierRequestImpl) _then)
-      : super(_value, _then);
+class __$CreatePersonCustomerRequestCopyWithImpl<$Res>
+    implements _$CreatePersonCustomerRequestCopyWith<$Res> {
+  __$CreatePersonCustomerRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreatePersonCustomerRequest _self;
+  final $Res Function(_CreatePersonCustomerRequest) _then;
+
+  /// Create a copy of CreatePersonCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? firstName = null,
     Object? lastName = null,
     Object? middleName = freezed,
     Object? email = freezed,
     Object? phone = freezed,
-    Object? businessName = freezed,
-    Object? taxId = freezed,
     Object? notes = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$CreatePersonSupplierRequestImpl(
+    return _then(_CreatePersonCustomerRequest(
       firstName: null == firstName
-          ? _value.firstName
+          ? _self.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
-          ? _value.lastName
+          ? _self.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       middleName: freezed == middleName
-          ? _value.middleName
+          ? _self.middleName
           : middleName // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      businessName: freezed == businessName
-          ? _value.businessName
-          : businessName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1620,10 +2243,367 @@ class __$$CreatePersonSupplierRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreatePersonSupplierRequest {
+  String get firstName;
+  String get lastName;
+  String? get middleName;
+  String? get email;
+  String? get phone;
+  String? get businessName;
+  String? get taxId;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreatePersonSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreatePersonSupplierRequestCopyWith<CreatePersonSupplierRequest>
+      get copyWith => _$CreatePersonSupplierRequestCopyWithImpl<
+              CreatePersonSupplierRequest>(
+          this as CreatePersonSupplierRequest, _$identity);
+
+  /// Serializes this CreatePersonSupplierRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreatePersonSupplierRequest &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.middleName, middleName) ||
+                other.middleName == middleName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.businessName, businessName) ||
+                other.businessName == businessName) &&
+            (identical(other.taxId, taxId) || other.taxId == taxId) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      firstName,
+      lastName,
+      middleName,
+      email,
+      phone,
+      businessName,
+      taxId,
+      notes,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreatePersonSupplierRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, email: $email, phone: $phone, businessName: $businessName, taxId: $taxId, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreatePersonSupplierRequestCopyWith<$Res> {
+  factory $CreatePersonSupplierRequestCopyWith(
+          CreatePersonSupplierRequest value,
+          $Res Function(CreatePersonSupplierRequest) _then) =
+      _$CreatePersonSupplierRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String firstName,
+      String lastName,
+      String? middleName,
+      String? email,
+      String? phone,
+      String? businessName,
+      String? taxId,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreatePersonSupplierRequestCopyWithImpl<$Res>
+    implements $CreatePersonSupplierRequestCopyWith<$Res> {
+  _$CreatePersonSupplierRequestCopyWithImpl(this._self, this._then);
+
+  final CreatePersonSupplierRequest _self;
+  final $Res Function(CreatePersonSupplierRequest) _then;
+
+  /// Create a copy of CreatePersonSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? middleName = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? businessName = freezed,
+    Object? taxId = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      firstName: null == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleName: freezed == middleName
+          ? _self.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      businessName: freezed == businessName
+          ? _self.businessName
+          : businessName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreatePersonSupplierRequest].
+extension CreatePersonSupplierRequestPatterns on CreatePersonSupplierRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreatePersonSupplierRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonSupplierRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreatePersonSupplierRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonSupplierRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreatePersonSupplierRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonSupplierRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? email,
+            String? phone,
+            String? businessName,
+            String? taxId,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonSupplierRequest() when $default != null:
+        return $default(
+            _that.firstName,
+            _that.lastName,
+            _that.middleName,
+            _that.email,
+            _that.phone,
+            _that.businessName,
+            _that.taxId,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? email,
+            String? phone,
+            String? businessName,
+            String? taxId,
+            String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonSupplierRequest():
+        return $default(
+            _that.firstName,
+            _that.lastName,
+            _that.middleName,
+            _that.email,
+            _that.phone,
+            _that.businessName,
+            _that.taxId,
+            _that.notes,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String firstName,
+            String lastName,
+            String? middleName,
+            String? email,
+            String? phone,
+            String? businessName,
+            String? taxId,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreatePersonSupplierRequest() when $default != null:
+        return $default(
+            _that.firstName,
+            _that.lastName,
+            _that.middleName,
+            _that.email,
+            _that.phone,
+            _that.businessName,
+            _that.taxId,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreatePersonSupplierRequestImpl
-    implements _CreatePersonSupplierRequest {
-  const _$CreatePersonSupplierRequestImpl(
+class _CreatePersonSupplierRequest implements CreatePersonSupplierRequest {
+  const _CreatePersonSupplierRequest(
       {required this.firstName,
       required this.lastName,
       this.middleName,
@@ -1634,10 +2614,8 @@ class _$CreatePersonSupplierRequestImpl
       this.notes,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$CreatePersonSupplierRequestImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CreatePersonSupplierRequestImplFromJson(json);
+  factory _CreatePersonSupplierRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreatePersonSupplierRequestFromJson(json);
 
   @override
   final String firstName;
@@ -1665,16 +2643,27 @@ class _$CreatePersonSupplierRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreatePersonSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreatePersonSupplierRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, email: $email, phone: $phone, businessName: $businessName, taxId: $taxId, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreatePersonSupplierRequestCopyWith<_CreatePersonSupplierRequest>
+      get copyWith => __$CreatePersonSupplierRequestCopyWithImpl<
+          _CreatePersonSupplierRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreatePersonSupplierRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreatePersonSupplierRequestImpl &&
+            other is _CreatePersonSupplierRequest &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -1691,7 +2680,7 @@ class _$CreatePersonSupplierRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1705,262 +2694,91 @@ class _$CreatePersonSupplierRequestImpl
       notes,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreatePersonSupplierRequestImplCopyWith<_$CreatePersonSupplierRequestImpl>
-      get copyWith => __$$CreatePersonSupplierRequestImplCopyWithImpl<
-          _$CreatePersonSupplierRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreatePersonSupplierRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreatePersonSupplierRequest(firstName: $firstName, lastName: $lastName, middleName: $middleName, email: $email, phone: $phone, businessName: $businessName, taxId: $taxId, notes: $notes, attributes: $attributes)';
   }
 }
 
-abstract class _CreatePersonSupplierRequest
-    implements CreatePersonSupplierRequest {
-  const factory _CreatePersonSupplierRequest(
-          {required final String firstName,
-          required final String lastName,
-          final String? middleName,
-          final String? email,
-          final String? phone,
-          final String? businessName,
-          final String? taxId,
-          final String? notes,
-          final Map<String, dynamic>? attributes}) =
-      _$CreatePersonSupplierRequestImpl;
-
-  factory _CreatePersonSupplierRequest.fromJson(Map<String, dynamic> json) =
-      _$CreatePersonSupplierRequestImpl.fromJson;
-
-  @override
-  String get firstName;
-  @override
-  String get lastName;
-  @override
-  String? get middleName;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get businessName;
-  @override
-  String? get taxId;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreatePersonSupplierRequestImplCopyWith<_$CreatePersonSupplierRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateOrganizationCustomerRequest _$CreateOrganizationCustomerRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateOrganizationCustomerRequest.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CreateOrganizationCustomerRequest {
-  String get name => throw _privateConstructorUsedError;
-  String? get legalName => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get website => throw _privateConstructorUsedError;
-  String? get taxId => throw _privateConstructorUsedError;
-  String? get registrationNumber => throw _privateConstructorUsedError;
-  String? get industry => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateOrganizationCustomerRequestCopyWith<CreateOrganizationCustomerRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateOrganizationCustomerRequestCopyWith<$Res> {
-  factory $CreateOrganizationCustomerRequestCopyWith(
-          CreateOrganizationCustomerRequest value,
-          $Res Function(CreateOrganizationCustomerRequest) then) =
-      _$CreateOrganizationCustomerRequestCopyWithImpl<$Res,
-          CreateOrganizationCustomerRequest>;
+abstract mixin class _$CreatePersonSupplierRequestCopyWith<$Res>
+    implements $CreatePersonSupplierRequestCopyWith<$Res> {
+  factory _$CreatePersonSupplierRequestCopyWith(
+          _CreatePersonSupplierRequest value,
+          $Res Function(_CreatePersonSupplierRequest) _then) =
+      __$CreatePersonSupplierRequestCopyWithImpl;
+  @override
   @useResult
   $Res call(
-      {String name,
-      String? legalName,
+      {String firstName,
+      String lastName,
+      String? middleName,
       String? email,
       String? phone,
-      String? website,
+      String? businessName,
       String? taxId,
-      String? registrationNumber,
-      String? industry,
       String? notes,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class _$CreateOrganizationCustomerRequestCopyWithImpl<$Res,
-        $Val extends CreateOrganizationCustomerRequest>
-    implements $CreateOrganizationCustomerRequestCopyWith<$Res> {
-  _$CreateOrganizationCustomerRequestCopyWithImpl(this._value, this._then);
+class __$CreatePersonSupplierRequestCopyWithImpl<$Res>
+    implements _$CreatePersonSupplierRequestCopyWith<$Res> {
+  __$CreatePersonSupplierRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final _CreatePersonSupplierRequest _self;
+  final $Res Function(_CreatePersonSupplierRequest) _then;
 
-  @pragma('vm:prefer-inline')
+  /// Create a copy of CreatePersonSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? name = null,
-    Object? legalName = freezed,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? middleName = freezed,
     Object? email = freezed,
     Object? phone = freezed,
-    Object? website = freezed,
+    Object? businessName = freezed,
     Object? taxId = freezed,
-    Object? registrationNumber = freezed,
-    Object? industry = freezed,
     Object? notes = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+    return _then(_CreatePersonSupplierRequest(
+      firstName: null == firstName
+          ? _self.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      legalName: freezed == legalName
-          ? _value.legalName
-          : legalName // ignore: cast_nullable_to_non_nullable
+      lastName: null == lastName
+          ? _self.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      middleName: freezed == middleName
+          ? _self.middleName
+          : middleName // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
+      businessName: freezed == businessName
+          ? _self.businessName
+          : businessName // ignore: cast_nullable_to_non_nullable
               as String?,
       taxId: freezed == taxId
-          ? _value.taxId
+          ? _self.taxId
           : taxId // ignore: cast_nullable_to_non_nullable
               as String?,
-      registrationNumber: freezed == registrationNumber
-          ? _value.registrationNumber
-          : registrationNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      industry: freezed == industry
-          ? _value.industry
-          : industry // ignore: cast_nullable_to_non_nullable
-              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CreateOrganizationCustomerRequestImplCopyWith<$Res>
-    implements $CreateOrganizationCustomerRequestCopyWith<$Res> {
-  factory _$$CreateOrganizationCustomerRequestImplCopyWith(
-          _$CreateOrganizationCustomerRequestImpl value,
-          $Res Function(_$CreateOrganizationCustomerRequestImpl) then) =
-      __$$CreateOrganizationCustomerRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String name,
-      String? legalName,
-      String? email,
-      String? phone,
-      String? website,
-      String? taxId,
-      String? registrationNumber,
-      String? industry,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class __$$CreateOrganizationCustomerRequestImplCopyWithImpl<$Res>
-    extends _$CreateOrganizationCustomerRequestCopyWithImpl<$Res,
-        _$CreateOrganizationCustomerRequestImpl>
-    implements _$$CreateOrganizationCustomerRequestImplCopyWith<$Res> {
-  __$$CreateOrganizationCustomerRequestImplCopyWithImpl(
-      _$CreateOrganizationCustomerRequestImpl _value,
-      $Res Function(_$CreateOrganizationCustomerRequestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? legalName = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? website = freezed,
-    Object? taxId = freezed,
-    Object? registrationNumber = freezed,
-    Object? industry = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_$CreateOrganizationCustomerRequestImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      legalName: freezed == legalName
-          ? _value.legalName
-          : legalName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      registrationNumber: freezed == registrationNumber
-          ? _value.registrationNumber
-          : registrationNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      industry: freezed == industry
-          ? _value.industry
-          : industry // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1968,10 +2786,383 @@ class __$$CreateOrganizationCustomerRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateOrganizationCustomerRequest {
+  String get name;
+  String? get legalName;
+  String? get email;
+  String? get phone;
+  String? get website;
+  String? get taxId;
+  String? get registrationNumber;
+  String? get industry;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreateOrganizationCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateOrganizationCustomerRequestCopyWith<CreateOrganizationCustomerRequest>
+      get copyWith => _$CreateOrganizationCustomerRequestCopyWithImpl<
+              CreateOrganizationCustomerRequest>(
+          this as CreateOrganizationCustomerRequest, _$identity);
+
+  /// Serializes this CreateOrganizationCustomerRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateOrganizationCustomerRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.legalName, legalName) ||
+                other.legalName == legalName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.website, website) || other.website == website) &&
+            (identical(other.taxId, taxId) || other.taxId == taxId) &&
+            (identical(other.registrationNumber, registrationNumber) ||
+                other.registrationNumber == registrationNumber) &&
+            (identical(other.industry, industry) ||
+                other.industry == industry) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      legalName,
+      email,
+      phone,
+      website,
+      taxId,
+      registrationNumber,
+      industry,
+      notes,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreateOrganizationCustomerRequest(name: $name, legalName: $legalName, email: $email, phone: $phone, website: $website, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateOrganizationCustomerRequestCopyWith<$Res> {
+  factory $CreateOrganizationCustomerRequestCopyWith(
+          CreateOrganizationCustomerRequest value,
+          $Res Function(CreateOrganizationCustomerRequest) _then) =
+      _$CreateOrganizationCustomerRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String name,
+      String? legalName,
+      String? email,
+      String? phone,
+      String? website,
+      String? taxId,
+      String? registrationNumber,
+      String? industry,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreateOrganizationCustomerRequestCopyWithImpl<$Res>
+    implements $CreateOrganizationCustomerRequestCopyWith<$Res> {
+  _$CreateOrganizationCustomerRequestCopyWithImpl(this._self, this._then);
+
+  final CreateOrganizationCustomerRequest _self;
+  final $Res Function(CreateOrganizationCustomerRequest) _then;
+
+  /// Create a copy of CreateOrganizationCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? legalName = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? website = freezed,
+    Object? taxId = freezed,
+    Object? registrationNumber = freezed,
+    Object? industry = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      legalName: freezed == legalName
+          ? _self.legalName
+          : legalName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _self.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      registrationNumber: freezed == registrationNumber
+          ? _self.registrationNumber
+          : registrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      industry: freezed == industry
+          ? _self.industry
+          : industry // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateOrganizationCustomerRequest].
+extension CreateOrganizationCustomerRequestPatterns
+    on CreateOrganizationCustomerRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateOrganizationCustomerRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationCustomerRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateOrganizationCustomerRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationCustomerRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateOrganizationCustomerRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationCustomerRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String? legalName,
+            String? email,
+            String? phone,
+            String? website,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationCustomerRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.email,
+            _that.phone,
+            _that.website,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String? legalName,
+            String? email,
+            String? phone,
+            String? website,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationCustomerRequest():
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.email,
+            _that.phone,
+            _that.website,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.notes,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            String? legalName,
+            String? email,
+            String? phone,
+            String? website,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationCustomerRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.email,
+            _that.phone,
+            _that.website,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateOrganizationCustomerRequestImpl
-    implements _CreateOrganizationCustomerRequest {
-  const _$CreateOrganizationCustomerRequestImpl(
+class _CreateOrganizationCustomerRequest
+    implements CreateOrganizationCustomerRequest {
+  const _CreateOrganizationCustomerRequest(
       {required this.name,
       this.legalName,
       this.email,
@@ -1983,10 +3174,9 @@ class _$CreateOrganizationCustomerRequestImpl
       this.notes,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$CreateOrganizationCustomerRequestImpl.fromJson(
+  factory _CreateOrganizationCustomerRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$CreateOrganizationCustomerRequestImplFromJson(json);
+      _$CreateOrganizationCustomerRequestFromJson(json);
 
   @override
   final String name;
@@ -2016,16 +3206,28 @@ class _$CreateOrganizationCustomerRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateOrganizationCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateOrganizationCustomerRequest(name: $name, legalName: $legalName, email: $email, phone: $phone, website: $website, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateOrganizationCustomerRequestCopyWith<
+          _CreateOrganizationCustomerRequest>
+      get copyWith => __$CreateOrganizationCustomerRequestCopyWithImpl<
+          _CreateOrganizationCustomerRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateOrganizationCustomerRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateOrganizationCustomerRequestImpl &&
+            other is _CreateOrganizationCustomerRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.legalName, legalName) ||
                 other.legalName == legalName) &&
@@ -2042,7 +3244,7 @@ class _$CreateOrganizationCustomerRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2057,197 +3259,19 @@ class _$CreateOrganizationCustomerRequestImpl
       notes,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateOrganizationCustomerRequestImplCopyWith<
-          _$CreateOrganizationCustomerRequestImpl>
-      get copyWith => __$$CreateOrganizationCustomerRequestImplCopyWithImpl<
-          _$CreateOrganizationCustomerRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateOrganizationCustomerRequestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _CreateOrganizationCustomerRequest
-    implements CreateOrganizationCustomerRequest {
-  const factory _CreateOrganizationCustomerRequest(
-          {required final String name,
-          final String? legalName,
-          final String? email,
-          final String? phone,
-          final String? website,
-          final String? taxId,
-          final String? registrationNumber,
-          final String? industry,
-          final String? notes,
-          final Map<String, dynamic>? attributes}) =
-      _$CreateOrganizationCustomerRequestImpl;
-
-  factory _CreateOrganizationCustomerRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$CreateOrganizationCustomerRequestImpl.fromJson;
-
-  @override
-  String get name;
-  @override
-  String? get legalName;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get website;
-  @override
-  String? get taxId;
-  @override
-  String? get registrationNumber;
-  @override
-  String? get industry;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateOrganizationCustomerRequestImplCopyWith<
-          _$CreateOrganizationCustomerRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-CreateOrganizationSupplierRequest _$CreateOrganizationSupplierRequestFromJson(
-    Map<String, dynamic> json) {
-  return _CreateOrganizationSupplierRequest.fromJson(json);
-}
-
-/// @nodoc
-mixin _$CreateOrganizationSupplierRequest {
-  String get name => throw _privateConstructorUsedError;
-  String? get legalName => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get website => throw _privateConstructorUsedError;
-  String? get taxId => throw _privateConstructorUsedError;
-  String? get registrationNumber => throw _privateConstructorUsedError;
-  String? get industry => throw _privateConstructorUsedError;
-  String? get paymentTerms => throw _privateConstructorUsedError;
-  String? get notes => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get attributes => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CreateOrganizationSupplierRequestCopyWith<CreateOrganizationSupplierRequest>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CreateOrganizationSupplierRequestCopyWith<$Res> {
-  factory $CreateOrganizationSupplierRequestCopyWith(
-          CreateOrganizationSupplierRequest value,
-          $Res Function(CreateOrganizationSupplierRequest) then) =
-      _$CreateOrganizationSupplierRequestCopyWithImpl<$Res,
-          CreateOrganizationSupplierRequest>;
-  @useResult
-  $Res call(
-      {String name,
-      String? legalName,
-      String? email,
-      String? phone,
-      String? website,
-      String? taxId,
-      String? registrationNumber,
-      String? industry,
-      String? paymentTerms,
-      String? notes,
-      Map<String, dynamic>? attributes});
-}
-
-/// @nodoc
-class _$CreateOrganizationSupplierRequestCopyWithImpl<$Res,
-        $Val extends CreateOrganizationSupplierRequest>
-    implements $CreateOrganizationSupplierRequestCopyWith<$Res> {
-  _$CreateOrganizationSupplierRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? legalName = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? website = freezed,
-    Object? taxId = freezed,
-    Object? registrationNumber = freezed,
-    Object? industry = freezed,
-    Object? paymentTerms = freezed,
-    Object? notes = freezed,
-    Object? attributes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      legalName: freezed == legalName
-          ? _value.legalName
-          : legalName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
-          ? _value.website
-          : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxId: freezed == taxId
-          ? _value.taxId
-          : taxId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      registrationNumber: freezed == registrationNumber
-          ? _value.registrationNumber
-          : registrationNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      industry: freezed == industry
-          ? _value.industry
-          : industry // ignore: cast_nullable_to_non_nullable
-              as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributes: freezed == attributes
-          ? _value.attributes
-          : attributes // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'CreateOrganizationCustomerRequest(name: $name, legalName: $legalName, email: $email, phone: $phone, website: $website, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, notes: $notes, attributes: $attributes)';
   }
 }
 
 /// @nodoc
-abstract class _$$CreateOrganizationSupplierRequestImplCopyWith<$Res>
-    implements $CreateOrganizationSupplierRequestCopyWith<$Res> {
-  factory _$$CreateOrganizationSupplierRequestImplCopyWith(
-          _$CreateOrganizationSupplierRequestImpl value,
-          $Res Function(_$CreateOrganizationSupplierRequestImpl) then) =
-      __$$CreateOrganizationSupplierRequestImplCopyWithImpl<$Res>;
+abstract mixin class _$CreateOrganizationCustomerRequestCopyWith<$Res>
+    implements $CreateOrganizationCustomerRequestCopyWith<$Res> {
+  factory _$CreateOrganizationCustomerRequestCopyWith(
+          _CreateOrganizationCustomerRequest value,
+          $Res Function(_CreateOrganizationCustomerRequest) _then) =
+      __$CreateOrganizationCustomerRequestCopyWithImpl;
   @override
   @useResult
   $Res call(
@@ -2259,23 +3283,22 @@ abstract class _$$CreateOrganizationSupplierRequestImplCopyWith<$Res>
       String? taxId,
       String? registrationNumber,
       String? industry,
-      String? paymentTerms,
       String? notes,
       Map<String, dynamic>? attributes});
 }
 
 /// @nodoc
-class __$$CreateOrganizationSupplierRequestImplCopyWithImpl<$Res>
-    extends _$CreateOrganizationSupplierRequestCopyWithImpl<$Res,
-        _$CreateOrganizationSupplierRequestImpl>
-    implements _$$CreateOrganizationSupplierRequestImplCopyWith<$Res> {
-  __$$CreateOrganizationSupplierRequestImplCopyWithImpl(
-      _$CreateOrganizationSupplierRequestImpl _value,
-      $Res Function(_$CreateOrganizationSupplierRequestImpl) _then)
-      : super(_value, _then);
+class __$CreateOrganizationCustomerRequestCopyWithImpl<$Res>
+    implements _$CreateOrganizationCustomerRequestCopyWith<$Res> {
+  __$CreateOrganizationCustomerRequestCopyWithImpl(this._self, this._then);
 
-  @pragma('vm:prefer-inline')
+  final _CreateOrganizationCustomerRequest _self;
+  final $Res Function(_CreateOrganizationCustomerRequest) _then;
+
+  /// Create a copy of CreateOrganizationCustomerRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? name = null,
     Object? legalName = freezed,
@@ -2285,53 +3308,48 @@ class __$$CreateOrganizationSupplierRequestImplCopyWithImpl<$Res>
     Object? taxId = freezed,
     Object? registrationNumber = freezed,
     Object? industry = freezed,
-    Object? paymentTerms = freezed,
     Object? notes = freezed,
     Object? attributes = freezed,
   }) {
-    return _then(_$CreateOrganizationSupplierRequestImpl(
+    return _then(_CreateOrganizationCustomerRequest(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       legalName: freezed == legalName
-          ? _value.legalName
+          ? _self.legalName
           : legalName // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
       website: freezed == website
-          ? _value.website
+          ? _self.website
           : website // ignore: cast_nullable_to_non_nullable
               as String?,
       taxId: freezed == taxId
-          ? _value.taxId
+          ? _self.taxId
           : taxId // ignore: cast_nullable_to_non_nullable
               as String?,
       registrationNumber: freezed == registrationNumber
-          ? _value.registrationNumber
+          ? _self.registrationNumber
           : registrationNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       industry: freezed == industry
-          ? _value.industry
+          ? _self.industry
           : industry // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentTerms: freezed == paymentTerms
-          ? _value.paymentTerms
-          : paymentTerms // ignore: cast_nullable_to_non_nullable
-              as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String?,
       attributes: freezed == attributes
-          ? _value._attributes
+          ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -2339,10 +3357,399 @@ class __$$CreateOrganizationSupplierRequestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CreateOrganizationSupplierRequest {
+  String get name;
+  String? get legalName;
+  String? get email;
+  String? get phone;
+  String? get website;
+  String? get taxId;
+  String? get registrationNumber;
+  String? get industry;
+  String? get paymentTerms;
+  String? get notes;
+  Map<String, dynamic>? get attributes;
+
+  /// Create a copy of CreateOrganizationSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CreateOrganizationSupplierRequestCopyWith<CreateOrganizationSupplierRequest>
+      get copyWith => _$CreateOrganizationSupplierRequestCopyWithImpl<
+              CreateOrganizationSupplierRequest>(
+          this as CreateOrganizationSupplierRequest, _$identity);
+
+  /// Serializes this CreateOrganizationSupplierRequest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateOrganizationSupplierRequest &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.legalName, legalName) ||
+                other.legalName == legalName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.website, website) || other.website == website) &&
+            (identical(other.taxId, taxId) || other.taxId == taxId) &&
+            (identical(other.registrationNumber, registrationNumber) ||
+                other.registrationNumber == registrationNumber) &&
+            (identical(other.industry, industry) ||
+                other.industry == industry) &&
+            (identical(other.paymentTerms, paymentTerms) ||
+                other.paymentTerms == paymentTerms) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other.attributes, attributes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      legalName,
+      email,
+      phone,
+      website,
+      taxId,
+      registrationNumber,
+      industry,
+      paymentTerms,
+      notes,
+      const DeepCollectionEquality().hash(attributes));
+
+  @override
+  String toString() {
+    return 'CreateOrganizationSupplierRequest(name: $name, legalName: $legalName, email: $email, phone: $phone, website: $website, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, paymentTerms: $paymentTerms, notes: $notes, attributes: $attributes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CreateOrganizationSupplierRequestCopyWith<$Res> {
+  factory $CreateOrganizationSupplierRequestCopyWith(
+          CreateOrganizationSupplierRequest value,
+          $Res Function(CreateOrganizationSupplierRequest) _then) =
+      _$CreateOrganizationSupplierRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String name,
+      String? legalName,
+      String? email,
+      String? phone,
+      String? website,
+      String? taxId,
+      String? registrationNumber,
+      String? industry,
+      String? paymentTerms,
+      String? notes,
+      Map<String, dynamic>? attributes});
+}
+
+/// @nodoc
+class _$CreateOrganizationSupplierRequestCopyWithImpl<$Res>
+    implements $CreateOrganizationSupplierRequestCopyWith<$Res> {
+  _$CreateOrganizationSupplierRequestCopyWithImpl(this._self, this._then);
+
+  final CreateOrganizationSupplierRequest _self;
+  final $Res Function(CreateOrganizationSupplierRequest) _then;
+
+  /// Create a copy of CreateOrganizationSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? legalName = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? website = freezed,
+    Object? taxId = freezed,
+    Object? registrationNumber = freezed,
+    Object? industry = freezed,
+    Object? paymentTerms = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      legalName: freezed == legalName
+          ? _self.legalName
+          : legalName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _self.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      registrationNumber: freezed == registrationNumber
+          ? _self.registrationNumber
+          : registrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      industry: freezed == industry
+          ? _self.industry
+          : industry // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self.attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CreateOrganizationSupplierRequest].
+extension CreateOrganizationSupplierRequestPatterns
+    on CreateOrganizationSupplierRequest {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CreateOrganizationSupplierRequest value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationSupplierRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CreateOrganizationSupplierRequest value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationSupplierRequest():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CreateOrganizationSupplierRequest value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationSupplierRequest() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String? legalName,
+            String? email,
+            String? phone,
+            String? website,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? paymentTerms,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationSupplierRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.email,
+            _that.phone,
+            _that.website,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.paymentTerms,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String name,
+            String? legalName,
+            String? email,
+            String? phone,
+            String? website,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? paymentTerms,
+            String? notes,
+            Map<String, dynamic>? attributes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationSupplierRequest():
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.email,
+            _that.phone,
+            _that.website,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.paymentTerms,
+            _that.notes,
+            _that.attributes);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String name,
+            String? legalName,
+            String? email,
+            String? phone,
+            String? website,
+            String? taxId,
+            String? registrationNumber,
+            String? industry,
+            String? paymentTerms,
+            String? notes,
+            Map<String, dynamic>? attributes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CreateOrganizationSupplierRequest() when $default != null:
+        return $default(
+            _that.name,
+            _that.legalName,
+            _that.email,
+            _that.phone,
+            _that.website,
+            _that.taxId,
+            _that.registrationNumber,
+            _that.industry,
+            _that.paymentTerms,
+            _that.notes,
+            _that.attributes);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$CreateOrganizationSupplierRequestImpl
-    implements _CreateOrganizationSupplierRequest {
-  const _$CreateOrganizationSupplierRequestImpl(
+class _CreateOrganizationSupplierRequest
+    implements CreateOrganizationSupplierRequest {
+  const _CreateOrganizationSupplierRequest(
       {required this.name,
       this.legalName,
       this.email,
@@ -2355,10 +3762,9 @@ class _$CreateOrganizationSupplierRequestImpl
       this.notes,
       final Map<String, dynamic>? attributes})
       : _attributes = attributes;
-
-  factory _$CreateOrganizationSupplierRequestImpl.fromJson(
+  factory _CreateOrganizationSupplierRequest.fromJson(
           Map<String, dynamic> json) =>
-      _$$CreateOrganizationSupplierRequestImplFromJson(json);
+      _$CreateOrganizationSupplierRequestFromJson(json);
 
   @override
   final String name;
@@ -2390,16 +3796,28 @@ class _$CreateOrganizationSupplierRequestImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of CreateOrganizationSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CreateOrganizationSupplierRequest(name: $name, legalName: $legalName, email: $email, phone: $phone, website: $website, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, paymentTerms: $paymentTerms, notes: $notes, attributes: $attributes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CreateOrganizationSupplierRequestCopyWith<
+          _CreateOrganizationSupplierRequest>
+      get copyWith => __$CreateOrganizationSupplierRequestCopyWithImpl<
+          _CreateOrganizationSupplierRequest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CreateOrganizationSupplierRequestToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreateOrganizationSupplierRequestImpl &&
+            other is _CreateOrganizationSupplierRequest &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.legalName, legalName) ||
                 other.legalName == legalName) &&
@@ -2418,7 +3836,7 @@ class _$CreateOrganizationSupplierRequestImpl
                 .equals(other._attributes, _attributes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2434,225 +3852,194 @@ class _$CreateOrganizationSupplierRequestImpl
       notes,
       const DeepCollectionEquality().hash(_attributes));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CreateOrganizationSupplierRequestImplCopyWith<
-          _$CreateOrganizationSupplierRequestImpl>
-      get copyWith => __$$CreateOrganizationSupplierRequestImplCopyWithImpl<
-          _$CreateOrganizationSupplierRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CreateOrganizationSupplierRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CreateOrganizationSupplierRequest(name: $name, legalName: $legalName, email: $email, phone: $phone, website: $website, taxId: $taxId, registrationNumber: $registrationNumber, industry: $industry, paymentTerms: $paymentTerms, notes: $notes, attributes: $attributes)';
   }
 }
 
-abstract class _CreateOrganizationSupplierRequest
-    implements CreateOrganizationSupplierRequest {
-  const factory _CreateOrganizationSupplierRequest(
-          {required final String name,
-          final String? legalName,
-          final String? email,
-          final String? phone,
-          final String? website,
-          final String? taxId,
-          final String? registrationNumber,
-          final String? industry,
-          final String? paymentTerms,
-          final String? notes,
-          final Map<String, dynamic>? attributes}) =
-      _$CreateOrganizationSupplierRequestImpl;
-
-  factory _CreateOrganizationSupplierRequest.fromJson(
-          Map<String, dynamic> json) =
-      _$CreateOrganizationSupplierRequestImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$CreateOrganizationSupplierRequestCopyWith<$Res>
+    implements $CreateOrganizationSupplierRequestCopyWith<$Res> {
+  factory _$CreateOrganizationSupplierRequestCopyWith(
+          _CreateOrganizationSupplierRequest value,
+          $Res Function(_CreateOrganizationSupplierRequest) _then) =
+      __$CreateOrganizationSupplierRequestCopyWithImpl;
   @override
-  String get name;
-  @override
-  String? get legalName;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get website;
-  @override
-  String? get taxId;
-  @override
-  String? get registrationNumber;
-  @override
-  String? get industry;
-  @override
-  String? get paymentTerms;
-  @override
-  String? get notes;
-  @override
-  Map<String, dynamic>? get attributes;
-  @override
-  @JsonKey(ignore: true)
-  _$$CreateOrganizationSupplierRequestImplCopyWith<
-          _$CreateOrganizationSupplierRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String name,
+      String? legalName,
+      String? email,
+      String? phone,
+      String? website,
+      String? taxId,
+      String? registrationNumber,
+      String? industry,
+      String? paymentTerms,
+      String? notes,
+      Map<String, dynamic>? attributes});
 }
 
-PartySearchFilters _$PartySearchFiltersFromJson(Map<String, dynamic> json) {
-  return _PartySearchFilters.fromJson(json);
+/// @nodoc
+class __$CreateOrganizationSupplierRequestCopyWithImpl<$Res>
+    implements _$CreateOrganizationSupplierRequestCopyWith<$Res> {
+  __$CreateOrganizationSupplierRequestCopyWithImpl(this._self, this._then);
+
+  final _CreateOrganizationSupplierRequest _self;
+  final $Res Function(_CreateOrganizationSupplierRequest) _then;
+
+  /// Create a copy of CreateOrganizationSupplierRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? legalName = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? website = freezed,
+    Object? taxId = freezed,
+    Object? registrationNumber = freezed,
+    Object? industry = freezed,
+    Object? paymentTerms = freezed,
+    Object? notes = freezed,
+    Object? attributes = freezed,
+  }) {
+    return _then(_CreateOrganizationSupplierRequest(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      legalName: freezed == legalName
+          ? _self.legalName
+          : legalName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      website: freezed == website
+          ? _self.website
+          : website // ignore: cast_nullable_to_non_nullable
+              as String?,
+      taxId: freezed == taxId
+          ? _self.taxId
+          : taxId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      registrationNumber: freezed == registrationNumber
+          ? _self.registrationNumber
+          : registrationNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      industry: freezed == industry
+          ? _self.industry
+          : industry // ignore: cast_nullable_to_non_nullable
+              as String?,
+      paymentTerms: freezed == paymentTerms
+          ? _self.paymentTerms
+          : paymentTerms // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributes: freezed == attributes
+          ? _self._attributes
+          : attributes // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$PartySearchFilters {
-  String? get name => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get type =>
-      throw _privateConstructorUsedError; // 'person', 'organization'
-  List<String>? get roles => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get city => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
-  String? get country => throw _privateConstructorUsedError;
-  DateTime? get createdAfter => throw _privateConstructorUsedError;
-  DateTime? get createdBefore => throw _privateConstructorUsedError;
-  int? get page => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get sortBy => throw _privateConstructorUsedError;
-  String? get sortOrder => throw _privateConstructorUsedError;
+  String? get name;
+  String? get email;
+  String? get phone;
+  String? get type; // 'person', 'organization'
+  List<String>? get roles;
+  String? get status;
+  String? get city;
+  String? get state;
+  String? get country;
+  DateTime? get createdAfter;
+  DateTime? get createdBefore;
+  int? get page;
+  int? get limit;
+  String? get sortBy;
+  String? get sortOrder;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PartySearchFiltersCopyWith<PartySearchFilters> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PartySearchFiltersCopyWith<$Res> {
-  factory $PartySearchFiltersCopyWith(
-          PartySearchFilters value, $Res Function(PartySearchFilters) then) =
-      _$PartySearchFiltersCopyWithImpl<$Res, PartySearchFilters>;
-  @useResult
-  $Res call(
-      {String? name,
-      String? email,
-      String? phone,
-      String? type,
-      List<String>? roles,
-      String? status,
-      String? city,
-      String? state,
-      String? country,
-      DateTime? createdAfter,
-      DateTime? createdBefore,
-      int? page,
-      int? limit,
-      String? sortBy,
-      String? sortOrder});
-}
-
-/// @nodoc
-class _$PartySearchFiltersCopyWithImpl<$Res, $Val extends PartySearchFilters>
-    implements $PartySearchFiltersCopyWith<$Res> {
-  _$PartySearchFiltersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of PartySearchFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $PartySearchFiltersCopyWith<PartySearchFilters> get copyWith =>
+      _$PartySearchFiltersCopyWithImpl<PartySearchFilters>(
+          this as PartySearchFilters, _$identity);
+
+  /// Serializes this PartySearchFilters to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = freezed,
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? type = freezed,
-    Object? roles = freezed,
-    Object? status = freezed,
-    Object? city = freezed,
-    Object? state = freezed,
-    Object? country = freezed,
-    Object? createdAfter = freezed,
-    Object? createdBefore = freezed,
-    Object? page = freezed,
-    Object? limit = freezed,
-    Object? sortBy = freezed,
-    Object? sortOrder = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roles: freezed == roles
-          ? _value.roles
-          : roles // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAfter: freezed == createdAfter
-          ? _value.createdAfter
-          : createdAfter // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBefore: freezed == createdBefore
-          ? _value.createdBefore
-          : createdBefore // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      page: freezed == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int?,
-      limit: freezed == limit
-          ? _value.limit
-          : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PartySearchFilters &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.roles, roles) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.createdAfter, createdAfter) ||
+                other.createdAfter == createdAfter) &&
+            (identical(other.createdBefore, createdBefore) ||
+                other.createdBefore == createdBefore) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sortBy, sortBy) || other.sortBy == sortBy) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      email,
+      phone,
+      type,
+      const DeepCollectionEquality().hash(roles),
+      status,
+      city,
+      state,
+      country,
+      createdAfter,
+      createdBefore,
+      page,
+      limit,
+      sortBy,
+      sortOrder);
+
+  @override
+  String toString() {
+    return 'PartySearchFilters(name: $name, email: $email, phone: $phone, type: $type, roles: $roles, status: $status, city: $city, state: $state, country: $country, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
 /// @nodoc
-abstract class _$$PartySearchFiltersImplCopyWith<$Res>
-    implements $PartySearchFiltersCopyWith<$Res> {
-  factory _$$PartySearchFiltersImplCopyWith(_$PartySearchFiltersImpl value,
-          $Res Function(_$PartySearchFiltersImpl) then) =
-      __$$PartySearchFiltersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PartySearchFiltersCopyWith<$Res> {
+  factory $PartySearchFiltersCopyWith(
+          PartySearchFilters value, $Res Function(PartySearchFilters) _then) =
+      _$PartySearchFiltersCopyWithImpl;
   @useResult
   $Res call(
       {String? name,
@@ -2673,13 +4060,15 @@ abstract class _$$PartySearchFiltersImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PartySearchFiltersImplCopyWithImpl<$Res>
-    extends _$PartySearchFiltersCopyWithImpl<$Res, _$PartySearchFiltersImpl>
-    implements _$$PartySearchFiltersImplCopyWith<$Res> {
-  __$$PartySearchFiltersImplCopyWithImpl(_$PartySearchFiltersImpl _value,
-      $Res Function(_$PartySearchFiltersImpl) _then)
-      : super(_value, _then);
+class _$PartySearchFiltersCopyWithImpl<$Res>
+    implements $PartySearchFiltersCopyWith<$Res> {
+  _$PartySearchFiltersCopyWithImpl(this._self, this._then);
 
+  final PartySearchFilters _self;
+  final $Res Function(PartySearchFilters) _then;
+
+  /// Create a copy of PartySearchFilters
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2699,75 +4088,321 @@ class __$$PartySearchFiltersImplCopyWithImpl<$Res>
     Object? sortBy = freezed,
     Object? sortOrder = freezed,
   }) {
-    return _then(_$PartySearchFiltersImpl(
+    return _then(_self.copyWith(
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
       roles: freezed == roles
-          ? _value._roles
+          ? _self.roles
           : roles // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       status: freezed == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String?,
       city: freezed == city
-          ? _value.city
+          ? _self.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
       state: freezed == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as String?,
       country: freezed == country
-          ? _value.country
+          ? _self.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAfter: freezed == createdAfter
-          ? _value.createdAfter
+          ? _self.createdAfter
           : createdAfter // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBefore: freezed == createdBefore
-          ? _value.createdBefore
+          ? _self.createdBefore
           : createdBefore // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       page: freezed == page
-          ? _value.page
+          ? _self.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
       limit: freezed == limit
-          ? _value.limit
+          ? _self.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
       sortBy: freezed == sortBy
-          ? _value.sortBy
+          ? _self.sortBy
           : sortBy // ignore: cast_nullable_to_non_nullable
               as String?,
       sortOrder: freezed == sortOrder
-          ? _value.sortOrder
+          ? _self.sortOrder
           : sortOrder // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [PartySearchFilters].
+extension PartySearchFiltersPatterns on PartySearchFilters {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PartySearchFilters value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PartySearchFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PartySearchFilters value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartySearchFilters():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PartySearchFilters value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartySearchFilters() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? name,
+            String? email,
+            String? phone,
+            String? type,
+            List<String>? roles,
+            String? status,
+            String? city,
+            String? state,
+            String? country,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PartySearchFilters() when $default != null:
+        return $default(
+            _that.name,
+            _that.email,
+            _that.phone,
+            _that.type,
+            _that.roles,
+            _that.status,
+            _that.city,
+            _that.state,
+            _that.country,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? name,
+            String? email,
+            String? phone,
+            String? type,
+            List<String>? roles,
+            String? status,
+            String? city,
+            String? state,
+            String? country,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartySearchFilters():
+        return $default(
+            _that.name,
+            _that.email,
+            _that.phone,
+            _that.type,
+            _that.roles,
+            _that.status,
+            _that.city,
+            _that.state,
+            _that.country,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? name,
+            String? email,
+            String? phone,
+            String? type,
+            List<String>? roles,
+            String? status,
+            String? city,
+            String? state,
+            String? country,
+            DateTime? createdAfter,
+            DateTime? createdBefore,
+            int? page,
+            int? limit,
+            String? sortBy,
+            String? sortOrder)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PartySearchFilters() when $default != null:
+        return $default(
+            _that.name,
+            _that.email,
+            _that.phone,
+            _that.type,
+            _that.roles,
+            _that.status,
+            _that.city,
+            _that.state,
+            _that.country,
+            _that.createdAfter,
+            _that.createdBefore,
+            _that.page,
+            _that.limit,
+            _that.sortBy,
+            _that.sortOrder);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$PartySearchFiltersImpl extends _PartySearchFilters {
-  const _$PartySearchFiltersImpl(
+class _PartySearchFilters extends PartySearchFilters {
+  const _PartySearchFilters(
       {this.name,
       this.email,
       this.phone,
@@ -2785,9 +4420,8 @@ class _$PartySearchFiltersImpl extends _PartySearchFilters {
       this.sortOrder})
       : _roles = roles,
         super._();
-
-  factory _$PartySearchFiltersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PartySearchFiltersImplFromJson(json);
+  factory _PartySearchFilters.fromJson(Map<String, dynamic> json) =>
+      _$PartySearchFiltersFromJson(json);
 
   @override
   final String? name;
@@ -2830,16 +4464,26 @@ class _$PartySearchFiltersImpl extends _PartySearchFilters {
   @override
   final String? sortOrder;
 
+  /// Create a copy of PartySearchFilters
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PartySearchFilters(name: $name, email: $email, phone: $phone, type: $type, roles: $roles, status: $status, city: $city, state: $state, country: $country, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PartySearchFiltersCopyWith<_PartySearchFilters> get copyWith =>
+      __$PartySearchFiltersCopyWithImpl<_PartySearchFilters>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PartySearchFiltersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PartySearchFiltersImpl &&
+            other is _PartySearchFilters &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phone, phone) || other.phone == phone) &&
@@ -2860,7 +4504,7 @@ class _$PartySearchFiltersImpl extends _PartySearchFilters {
                 other.sortOrder == sortOrder));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2880,75 +4524,130 @@ class _$PartySearchFiltersImpl extends _PartySearchFilters {
       sortBy,
       sortOrder);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PartySearchFiltersImplCopyWith<_$PartySearchFiltersImpl> get copyWith =>
-      __$$PartySearchFiltersImplCopyWithImpl<_$PartySearchFiltersImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PartySearchFiltersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PartySearchFilters(name: $name, email: $email, phone: $phone, type: $type, roles: $roles, status: $status, city: $city, state: $state, country: $country, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, limit: $limit, sortBy: $sortBy, sortOrder: $sortOrder)';
   }
 }
 
-abstract class _PartySearchFilters extends PartySearchFilters {
-  const factory _PartySearchFilters(
-      {final String? name,
-      final String? email,
-      final String? phone,
-      final String? type,
-      final List<String>? roles,
-      final String? status,
-      final String? city,
-      final String? state,
-      final String? country,
-      final DateTime? createdAfter,
-      final DateTime? createdBefore,
-      final int? page,
-      final int? limit,
-      final String? sortBy,
-      final String? sortOrder}) = _$PartySearchFiltersImpl;
-  const _PartySearchFilters._() : super._();
-
-  factory _PartySearchFilters.fromJson(Map<String, dynamic> json) =
-      _$PartySearchFiltersImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$PartySearchFiltersCopyWith<$Res>
+    implements $PartySearchFiltersCopyWith<$Res> {
+  factory _$PartySearchFiltersCopyWith(
+          _PartySearchFilters value, $Res Function(_PartySearchFilters) _then) =
+      __$PartySearchFiltersCopyWithImpl;
   @override
-  String? get name;
-  @override
-  String? get email;
-  @override
-  String? get phone;
-  @override
-  String? get type;
-  @override // 'person', 'organization'
-  List<String>? get roles;
-  @override
-  String? get status;
-  @override
-  String? get city;
-  @override
-  String? get state;
-  @override
-  String? get country;
-  @override
-  DateTime? get createdAfter;
-  @override
-  DateTime? get createdBefore;
-  @override
-  int? get page;
-  @override
-  int? get limit;
-  @override
-  String? get sortBy;
-  @override
-  String? get sortOrder;
-  @override
-  @JsonKey(ignore: true)
-  _$$PartySearchFiltersImplCopyWith<_$PartySearchFiltersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String? name,
+      String? email,
+      String? phone,
+      String? type,
+      List<String>? roles,
+      String? status,
+      String? city,
+      String? state,
+      String? country,
+      DateTime? createdAfter,
+      DateTime? createdBefore,
+      int? page,
+      int? limit,
+      String? sortBy,
+      String? sortOrder});
 }
+
+/// @nodoc
+class __$PartySearchFiltersCopyWithImpl<$Res>
+    implements _$PartySearchFiltersCopyWith<$Res> {
+  __$PartySearchFiltersCopyWithImpl(this._self, this._then);
+
+  final _PartySearchFilters _self;
+  final $Res Function(_PartySearchFilters) _then;
+
+  /// Create a copy of PartySearchFilters
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? type = freezed,
+    Object? roles = freezed,
+    Object? status = freezed,
+    Object? city = freezed,
+    Object? state = freezed,
+    Object? country = freezed,
+    Object? createdAfter = freezed,
+    Object? createdBefore = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sortBy = freezed,
+    Object? sortOrder = freezed,
+  }) {
+    return _then(_PartySearchFilters(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roles: freezed == roles
+          ? _self._roles
+          : roles // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      city: freezed == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String?,
+      state: freezed == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String?,
+      country: freezed == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAfter: freezed == createdAfter
+          ? _self.createdAfter
+          : createdAfter // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBefore: freezed == createdBefore
+          ? _self.createdBefore
+          : createdBefore // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      page: freezed == page
+          ? _self.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int?,
+      limit: freezed == limit
+          ? _self.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sortBy: freezed == sortBy
+          ? _self.sortBy
+          : sortBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sortOrder: freezed == sortOrder
+          ? _self.sortOrder
+          : sortOrder // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on
