@@ -31,7 +31,7 @@ class AuthInterceptor extends QueuedInterceptor {
         // Token is expired or will expire soon, refresh it proactively
         await _refreshTokenIfNeeded();
       }
-    } catch (e) {
+    } on Exception {
       // If token check fails, continue with the request
       // The 401 handler will catch it if needed
     }
@@ -63,7 +63,7 @@ class AuthInterceptor extends QueuedInterceptor {
       final response = await Dio().fetch(options);
 
       return handler.resolve(response);
-    } catch (e) {
+    } on Exception {
       // Refresh failed, pass the error to the next handler
       // This will trigger logout in the AuthService
       return handler.next(err);

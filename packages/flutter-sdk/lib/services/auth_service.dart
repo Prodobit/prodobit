@@ -10,9 +10,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthService {
   AuthService(this._apiClient) {
     _storage = const FlutterSecureStorage(
-      aOptions: AndroidOptions(
-        encryptedSharedPreferences: true,
-      ),
       iOptions: IOSOptions(
         accessibility: KeychainAccessibility.first_unlock_this_device,
       ),
@@ -52,7 +49,7 @@ class AuthService {
         {},
       );
       return UserData.fromJson(userMap);
-    } catch (e) {
+    } on Exception {
       return null;
     }
   }
@@ -102,7 +99,7 @@ class AuthService {
           },
         );
       }
-    } catch (e) {
+    } on Exception {
       // Ignore logout API errors, still clear local data
     } finally {
       // Clear all stored data
@@ -320,7 +317,7 @@ class AuthService {
       final expiresWithBuffer = expirationDate.subtract(buffer);
 
       return now.isAfter(expiresWithBuffer);
-    } catch (e) {
+    } on Exception {
       // If we can't parse the expiration date, consider token expired
       return true;
     }

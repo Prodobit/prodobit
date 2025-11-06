@@ -1,4 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:prodobit_flutter_sdk/exceptions/exceptions.dart';
 import 'package:prodobit_flutter_sdk/models/models.dart';
@@ -85,7 +84,7 @@ class Auth extends _$Auth {
         final user = await client.auth.getCurrentUser();
         final tenantId = client.auth.getCurrentTenantId();
         return AuthState.authenticated(user, tenantId);
-      } catch (e) {
+      } on Exception {
         // Token might be invalid, clear auth
         await client.auth.logout();
       }
@@ -103,7 +102,7 @@ class Auth extends _$Auth {
       await client.auth.logout(allDevices: allDevices);
       ref.read(otpProvider.notifier).reset();
       state = const AsyncValue.data(AuthState.unauthenticated());
-    } catch (e) {
+    } on Exception {
       // Even if logout fails, clear local state
       ref.read(otpProvider.notifier).reset();
       state = const AsyncValue.data(AuthState.unauthenticated());
@@ -164,7 +163,7 @@ class Auth extends _$Auth {
     } on AuthException catch (e) {
       ref.read(otpProvider.notifier).setError(e.message);
       // Don't change auth state for OTP errors
-    } catch (e) {
+    } on Exception catch (e) {
       final errorMessage = 'Failed to request OTP: $e';
       ref.read(otpProvider.notifier).setError(errorMessage);
       // Don't change auth state for OTP errors
@@ -195,7 +194,7 @@ class Auth extends _$Auth {
       }
     } on AuthException catch (e) {
       state = AsyncValue.data(AuthState.error(e.message));
-    } catch (e) {
+    } on Exception catch (e) {
       state = AsyncValue.data(AuthState.error('Failed to resend OTP: $e'));
     }
   }
@@ -252,7 +251,7 @@ class Auth extends _$Auth {
     } on AuthException catch (e) {
       ref.read(otpProvider.notifier).setError(e.message);
       state = AsyncValue.data(AuthState.error(e.message));
-    } catch (e) {
+    } on Exception catch (e) {
       final errorMessage = 'OTP verification failed: $e';
       ref.read(otpProvider.notifier).setError(errorMessage);
       state = AsyncValue.data(AuthState.error(errorMessage));

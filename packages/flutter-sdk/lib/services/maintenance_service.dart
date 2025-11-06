@@ -37,7 +37,7 @@ class MaintenanceService {
 
   /// Create new maintenance plan
   Future<MaintenancePlan> createMaintenancePlan(
-      CreateMaintenancePlanRequest request) async {
+      CreateMaintenancePlanRequest request,) async {
     final response = await _apiClient.post<Map<String, dynamic>>(
       '/api/v1/maintenance/plans',
       data: request.toJson(),
@@ -49,7 +49,7 @@ class MaintenanceService {
 
   /// Create new maintenance record
   Future<MaintenanceRecord> createMaintenanceRecord(
-      CreateMaintenanceRecordRequest request) async {
+      CreateMaintenanceRecordRequest request,) async {
     final response = await _apiClient.post<Map<String, dynamic>>(
       '/api/v1/maintenance-records',
       data: request.toJson(),
@@ -60,7 +60,7 @@ class MaintenanceService {
   }
 
   /// Delete maintenance plan
-  Future<void> deleteMaintenancePlan(String planId) async {
+  Future<void> deleteMaintenancePlan(String planId,) async {
     await _apiClient.delete('/api/v1/maintenance/plans/$planId');
   }
 
@@ -70,7 +70,7 @@ class MaintenanceService {
   }
 
   /// Get maintenance plan by ID
-  Future<MaintenancePlan> getMaintenancePlan(String planId) async {
+  Future<MaintenancePlan> getMaintenancePlan(String planId,) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
       '/api/v1/maintenance/plans/$planId',
     );
@@ -98,7 +98,7 @@ class MaintenanceService {
 
   /// Get maintenance plans by asset ID
   Future<List<MaintenancePlan>> getMaintenancePlansByAssetId(
-      String assetId) async {
+      String assetId,) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
       '/api/v1/maintenance/plans/asset/$assetId',
     );
@@ -136,7 +136,7 @@ class MaintenanceService {
 
   /// Get maintenance records by asset ID
   Future<List<MaintenanceRecord>> getMaintenanceRecordsByAssetId(
-      String assetId) async {
+      String assetId,) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
       '/api/v1/maintenance/records/asset/$assetId',
     );
@@ -149,7 +149,7 @@ class MaintenanceService {
 
   /// Get maintenance records by plan ID
   Future<List<MaintenanceRecord>> getMaintenanceRecordsByPlanId(
-      String planId) async {
+      String planId,) async {
     final response = await _apiClient.get<Map<String, dynamic>>(
       '/api/v1/maintenance/records/plan/$planId',
     );

@@ -1,4 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:prodobit_flutter_sdk/models/models.dart';
 import 'package:prodobit_flutter_sdk/providers/client_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

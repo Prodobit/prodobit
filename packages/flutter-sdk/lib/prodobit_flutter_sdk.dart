@@ -1,9 +1,3 @@
-/// Prodobit Flutter SDK
-///
-/// A modern, type-safe Flutter SDK for building manufacturing and business
-/// applications with the Prodobit framework.
-library prodobit_flutter_sdk;
-
 export 'core/api_client.dart';
 export 'core/cache_setup.dart';
 // Core exports
