@@ -13,3 +13,4 @@ export * from "./asset-issues.js";
 export * from "./tasks.js";
 export * from "./maintenance-plans.js";
 export * from "./calibration-plans.js";
+export * from "./integration.js";

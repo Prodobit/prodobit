@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import type { ModuleManifest, ServerContext } from "../../framework/types.js";
 import { salesRoutes } from "./routes.js";
+import { publicSalesRoutes } from "./public-routes.js";
 
 export const salesModule: ModuleManifest = {
   name: "sales",
@@ -24,7 +25,11 @@ export const salesModule: ModuleManifest = {
     "core", // Auth, tenants, parties
   ],
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
+    // Regular authenticated routes
     app.route("/api/v1/sales-orders", salesRoutes);
+
+    // Public integration API routes
+    app.route("/api/v1/public/sales", publicSalesRoutes);
   },
   async onEnable() {
     console.log("💰 Sales module enabled - Ready to process orders!");

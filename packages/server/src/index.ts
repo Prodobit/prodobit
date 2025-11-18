@@ -17,6 +17,7 @@ import { assetIssueModule } from "./modules/asset-issue/manifest.js";
 import { taskModule } from "./modules/task/manifest.js";
 import { maintenanceModule } from "./modules/maintenance/manifest.js";
 import { calibrationModule } from "./modules/calibration/manifest.js";
+import { integrationModule } from "./modules/integration/manifest.js";
 import { EmailService } from "./core/utils/email.js";
 import { SMSService } from "./core/utils/sms.js";
 import type { Database } from "@prodobit/database";
@@ -34,6 +35,7 @@ export { assetIssueModule } from "./modules/asset-issue/manifest.js";
 export { taskModule } from "./modules/task/manifest.js";
 export { maintenanceModule } from "./modules/maintenance/manifest.js";
 export { calibrationModule } from "./modules/calibration/manifest.js";
+export { integrationModule } from "./modules/integration/manifest.js";
 export { ModuleLoader, rbacManager, ServerConfigManager };
 export type { ModuleManifest, ServerConfig };
 export * from "./config/index.js";
@@ -42,6 +44,20 @@ export {
   optionalAuthMiddleware,
   tenantContextMiddleware,
 } from "./core/middleware/auth.js";
+export {
+  apiKeyAuthMiddleware,
+  optionalApiKeyAuthMiddleware,
+  requireScope,
+  requireAnyScope,
+  requireAllScopes,
+  rateLimitMiddleware,
+} from "./modules/integration/middleware/index.js";
+export { IntegrationService } from "./modules/integration/service.js";
+export {
+  createPublicRouter,
+  getIntegrationTenantId,
+  hasScope,
+} from "./modules/integration/public-routes-helper.js";
 export { SMSService } from "./core/utils/sms.js";
 export { EmailService } from "./core/utils/email.js";
 export type {
@@ -171,6 +187,7 @@ export async function createServerApp(
 if (process.argv[1] === new URL(import.meta.url).pathname) {
   const server = await createServerApp({
     modules: [
+      integrationModule, // Integration API - enable first
       employeeModule,
       salesModule,
       manufacturingModule,
@@ -198,6 +215,7 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
 
   try {
     // Enable modules in dependency order
+    await server.enableModule("integration"); // Integration API - enable first
     await server.enableModule("brand"); // brand can be enabled first (no dependencies)
     await server.enableModule("media"); // media can be enabled early
     await server.enableModule("inventory"); // manufacturing depends on this

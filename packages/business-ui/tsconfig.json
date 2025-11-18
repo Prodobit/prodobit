@@ -15,7 +15,9 @@
     "baseUrl": ".",
     "paths": {
       "styled-system/*": ["./styled-system/*"]
-    }
+    },
+    "strict": false,
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*"

@@ -4,6 +4,7 @@ import type {
   ServerContext,
 } from "../../framework/types.js";
 import { assetIssueRoutes } from "./routes.js";
+import { publicAssetIssueRoutes } from "./public-routes.js";
 
 export const assetIssueModule: ModuleManifest = {
   name: "asset-issue",
@@ -15,7 +16,11 @@ export const assetIssueModule: ModuleManifest = {
     "asset-issue:write": ["admin", "user"],
   },
   registerRoutes(app: Hono<{ Variables: ServerContext }>) {
+    // Regular authenticated routes
     app.route("/api/v1/asset-issues", assetIssueRoutes);
+
+    // Public integration API routes
+    app.route("/api/v1/public/asset-issues", publicAssetIssueRoutes);
   },
   async onEnable() {
     console.log("🔧 Asset Issue module enabled");

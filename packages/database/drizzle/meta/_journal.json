@@ -64,6 +64,13 @@
       "when": 1761634956508,
       "tag": "0008_fixed_kang",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1762863878273,
+      "tag": "0009_marvelous_cerise",
+      "breakpoints": true
     }
   ]
 }
