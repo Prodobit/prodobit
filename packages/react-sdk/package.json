@@ -1,13 +1,13 @@
 {
   "name": "@prodobit/react-sdk",
-  "version": "0.16.0",
+  "version": "0.16.3",
   "description": "React hooks and providers for Prodobit API",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },

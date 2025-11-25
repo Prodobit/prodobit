@@ -1,13 +1,13 @@
 {
   "name": "@prodobit/server",
-  "version": "0.16.0",
+  "version": "0.16.3",
   "description": "Prodobit modular server core",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
     }
   },
   "type": "module",
@@ -32,6 +32,9 @@
     "hono": "4.9.6",
     "jsonwebtoken": "^9.0.2",
     "nanoid": "^5.0.9",
+    "pino": "^9.5.0",
+    "pino-logflare": "^0.4.2",
+    "pino-pretty": "^13.0.0",
     "postgres": "^3.4.5",
     "resend": "^6.0.1",
     "sharp": "^0.33.5"

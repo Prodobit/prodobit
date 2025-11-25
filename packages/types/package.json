@@ -1,15 +1,14 @@
 {
   "name": "@prodobit/types",
-  "version": "0.16.0",
+  "version": "0.16.3",
   "description": "Core types and validation schemas for Prodobit",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs"
     }
   },
   "files": [

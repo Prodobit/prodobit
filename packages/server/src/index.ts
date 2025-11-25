@@ -21,6 +21,8 @@ import { integrationModule } from "./modules/integration/manifest.js";
 import { EmailService } from "./core/utils/email.js";
 import { SMSService } from "./core/utils/sms.js";
 import type { Database } from "@prodobit/database";
+import { logger } from "./core/logger/index.js";
+import { loggerMiddleware, tenantLoggerMiddleware } from "./core/logger/middleware.js";
 
 export { coreModule } from "./core/manifest.js";
 export { employeeModule } from "./modules/employee/manifest.js";
@@ -68,6 +70,9 @@ export type {
   EmailProvider,
   EmailProviderConfig,
 } from "./core/utils/email-provider.js";
+export { logger, createLogger, logError, measureTime, LogLevel } from "./core/logger/index.js";
+export type { Logger } from "./core/logger/index.js";
+export { loggerMiddleware, tenantLoggerMiddleware } from "./core/logger/middleware.js";
 
 export interface CreateServerAppOptions {
   modules?: ModuleManifest[];
@@ -133,8 +138,14 @@ export async function createServerApp(
 
   const app = moduleLoader.getApp();
 
+  // Add logger middleware (must be first)
+  app.use("*", loggerMiddleware());
+
   // Add tenant isolation middleware
   app.use("*", tenantIsolationMiddleware());
+
+  // Add tenant context to logger (after auth)
+  app.use("*", tenantLoggerMiddleware());
 
   return {
     app: app,
@@ -145,27 +156,24 @@ export async function createServerApp(
     start: (port?: number) => {
       const serverPort = port || config.port || 3001;
 
-      console.log(`🚀 Prodobit Server starting on port ${serverPort}`);
-      console.log(
-        `🌍 Environment: ${
-          configManager.isDevelopment()
-            ? "development"
-            : configManager.isProduction()
-            ? "production"
-            : "test"
-        }`
-      );
-      console.log(
-        `📦 Enabled modules: ${moduleLoader.getEnabledModules().join(", ")}`
-      );
-      console.log(
-        `🔧 Config modules: ${configManager.getEnabledModules().join(", ")}`
-      );
+      logger.info(`Prodobit Server starting on port ${serverPort}`);
+      logger.info({
+        environment: configManager.isDevelopment()
+          ? "development"
+          : configManager.isProduction()
+          ? "production"
+          : "test",
+        enabledModules: moduleLoader.getEnabledModules(),
+        configModules: configManager.getEnabledModules(),
+        port: serverPort,
+      }, "Server configuration");
 
       serve({
         fetch: app.fetch,
         port: serverPort,
       });
+
+      logger.info(`Server started successfully on port ${serverPort}`);
     },
     enableModule: async (moduleId: string) => {
       await configManager.enableModule(moduleId);

@@ -1,4 +1,5 @@
 export 'asset/asset_models.dart';
+export 'asset_assignment/asset_assignment_models.dart';
 export 'asset_issue/asset_issue_models.dart';
 export 'auth/auth_models.dart';
 export 'calibration/calibration_models.dart';

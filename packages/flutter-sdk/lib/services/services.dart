@@ -1,3 +1,4 @@
+export 'asset_assignment_service.dart';
 export 'asset_issue_service.dart';
 export 'asset_service.dart';
 export 'auth_service.dart';

@@ -10,6 +10,8 @@ customerRoutes.use("*", authMiddleware);
 
 // GET / - List all customers
 customerRoutes.get("/", requirePermission("customer", "read"), async (c) => {
+  const log = c.get("logger");
+
   try {
     const db = c.get("db");
     const user = c.get("user");
@@ -21,12 +23,14 @@ customerRoutes.get("/", requirePermission("customer", "read"), async (c) => {
       "customer"
     );
 
+    log.info({ count: customers.length }, "Customers listed successfully");
+
     return c.json({
       success: true,
       data: customers,
     });
   } catch (error) {
-    console.error("List customers error:", error);
+    log.error({ err: error }, "Failed to list customers");
     return c.json(
       {
         success: false,
@@ -43,6 +47,8 @@ customerRoutes.get("/", requirePermission("customer", "read"), async (c) => {
 
 // GET /:id - Get customer by ID
 customerRoutes.get("/:id", requirePermission("customer", "read"), async (c) => {
+  const log = c.get("logger");
+
   try {
     const db = c.get("db");
     const user = c.get("user");
@@ -52,6 +58,7 @@ customerRoutes.get("/:id", requirePermission("customer", "read"), async (c) => {
     const customer = await partyService.getPartyWithDetails(customerId, user.tenantId);
 
     if (!customer) {
+      log.warn({ customerId }, "Customer not found");
       return c.json(
         {
           success: false,
@@ -67,6 +74,7 @@ customerRoutes.get("/:id", requirePermission("customer", "read"), async (c) => {
     // Verify this party has customer role
     const hasCustomerRole = customer.roles?.some((role: { roleType: string }) => role.roleType === "customer");
     if (!hasCustomerRole) {
+      log.warn({ customerId }, "Party does not have customer role");
       return c.json(
         {
           success: false,
@@ -84,7 +92,7 @@ customerRoutes.get("/:id", requirePermission("customer", "read"), async (c) => {
       data: customer,
     });
   } catch (error) {
-    console.error("Get customer error:", error);
+    log.error({ err: error, customerId: c.req.param("id") }, "Failed to get customer");
     return c.json(
       {
         success: false,
@@ -142,7 +150,8 @@ customerRoutes.post("/", requirePermission("customer", "create"), async (c) => {
       201
     );
   } catch (error) {
-    console.error("Create customer error:", error);
+    const log = c.get("logger");
+    log.error({ err: error, partyType: (await c.req.json()).partyType }, "Failed to create customer");
     return c.json(
       {
         success: false,
@@ -174,9 +183,11 @@ customerRoutes.put("/:id", requirePermission("customer", "update"), async (c) =>
       message: "Customer updated successfully",
     });
   } catch (error) {
-    console.error("Update customer error:", error);
+    const log = c.get("logger");
+    const customerId = c.req.param("id");
 
     if (error instanceof Error && error.message === "Party not found") {
+      log.warn({ customerId }, "Customer not found for update");
       return c.json(
         {
           success: false,
@@ -189,6 +200,7 @@ customerRoutes.put("/:id", requirePermission("customer", "update"), async (c) =>
       );
     }
 
+    log.error({ err: error, customerId }, "Failed to update customer");
     return c.json(
       {
         success: false,
@@ -218,7 +230,9 @@ customerRoutes.delete("/:id", requirePermission("customer", "delete"), async (c)
       message: "Customer deleted successfully",
     });
   } catch (error) {
-    console.error("Delete customer error:", error);
+    const log = c.get("logger");
+    const customerId = c.req.param("id");
+    log.error({ err: error, customerId }, "Failed to delete customer");
     return c.json(
       {
         success: false,

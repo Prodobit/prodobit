@@ -46,6 +46,7 @@ class ProdobitClient {
   late final ManufacturingService manufacturing;
   late final PurchaseService purchase;
   late final AssetService asset;
+  late final AssetAssignmentService assetAssignment;
   late final AssetIssueService assetIssue;
   late final MaintenanceService maintenance;
   late final CalibrationService calibration;
@@ -95,6 +96,7 @@ class ProdobitClient {
     manufacturing = ManufacturingService(_apiClient);
     purchase = PurchaseService(_apiClient);
     asset = AssetService(_apiClient);
+    assetAssignment = AssetAssignmentService(_apiClient);
     assetIssue = AssetIssueService(_apiClient);
     maintenance = MaintenanceService(_apiClient);
     calibration = CalibrationService(_apiClient);
