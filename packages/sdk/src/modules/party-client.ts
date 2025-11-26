@@ -126,7 +126,7 @@ export class PartyClient extends BaseClient {
 
   // Get all employee parties
   async getEmployeeParties(config?: RequestConfig): Promise<PaginatedResponse<EmployeeListItem[]>> {
-    return this.request("GET", "/api/v1/parties/employees", undefined, config);
+    return this.request("GET", "/api/v1/employees", undefined, config);
   }
 
   // Legacy party methods for backward compatibility
