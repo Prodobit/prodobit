@@ -41,14 +41,6 @@ export class LocationAssetClient extends BaseClient {
     );
   }
 
-  // @deprecated Use getLocation instead
-  async getLocationById(
-    locationId: string,
-    config?: RequestConfig
-  ): Promise<Response<LocationBase>> {
-    return this.getLocation(locationId, config);
-  }
-
   // Get child locations
   async getChildLocations(
     parentLocationId: string,
@@ -179,14 +171,6 @@ export class LocationAssetClient extends BaseClient {
     config?: RequestConfig
   ): Promise<Response<AssetBase>> {
     return this.request("GET", `/api/v1/assets/${assetId}`, undefined, config);
-  }
-
-  // @deprecated Use getAsset instead
-  async getAssetById(
-    assetId: string,
-    config?: RequestConfig
-  ): Promise<Response<AssetBase>> {
-    return this.getAsset(assetId, config);
   }
 
   // Get child assets

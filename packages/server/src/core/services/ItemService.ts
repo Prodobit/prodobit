@@ -1,6 +1,7 @@
 import type { Database } from "@prodobit/database";
 import {
   components,
+  consumables,
   itemCategories,
   itemPrices,
   items,
@@ -8,6 +9,7 @@ import {
   products,
   rawMaterials,
   services,
+  spareParts,
 } from "@prodobit/database";
 import { ItemType } from "@prodobit/types";
 import { and, desc, eq, isNull, like, or, SQL } from "drizzle-orm";
@@ -16,7 +18,7 @@ export interface CreateItemRequest {
   tenantId: string;
   name: string;
   code?: string;
-  itemType: "product" | "service" | "raw_material" | "component";
+  itemType: "product" | "service" | "raw_material" | "component" | "spare_part" | "consumable";
   status?: string;
 
   // Flags
@@ -27,7 +29,7 @@ export interface CreateItemRequest {
   referenceItemId?: string;
 
   // Type-specific data
-  specificData?: ProductData | ServiceData | RawMaterialData | ComponentData;
+  specificData?: ProductData | ServiceData | RawMaterialData | ComponentData | SparePartData | ConsumableData;
 
   // Categories and pricing
   categoryId?: string;
@@ -55,6 +57,23 @@ export interface ComponentData {
   unit?: string;
 }
 
+export interface SparePartData {
+  unit?: string;
+  partNumber?: string;
+  manufacturer?: string;
+  warrantyPeriodDays?: number;
+  isCritical?: boolean;
+  leadTimeDays?: number;
+}
+
+export interface ConsumableData {
+  unit?: string;
+  shelfLifeDays?: number;
+  storageConditions?: string;
+  hazardClass?: string;
+  isHazardous?: boolean;
+}
+
 export interface ItemPriceData {
   priceType: "buy_price" | "sale_price" | "list_price" | "cost_price";
   price: number;
@@ -68,7 +87,7 @@ export interface CreateCategoryRequest {
   name: string;
   code?: string;
   description?: string;
-  itemType: "product" | "service" | "raw_material" | "component";
+  itemType: "product" | "service" | "raw_material" | "component" | "spare_part" | "consumable";
   parentCategoryId?: string;
 }
 
@@ -127,6 +146,22 @@ export class ItemService {
           item.id,
           data.tenantId,
           data.specificData as ComponentData,
+          data.categoryId
+        );
+        break;
+      case "spare_part":
+        specificRecord = await this.createSparePartRecord(
+          item.id,
+          data.tenantId,
+          data.specificData as SparePartData,
+          data.categoryId
+        );
+        break;
+      case "consumable":
+        specificRecord = await this.createConsumableRecord(
+          item.id,
+          data.tenantId,
+          data.specificData as ConsumableData,
           data.categoryId
         );
         break;
@@ -266,6 +301,20 @@ export class ItemService {
           .select()
           .from(components)
           .where(eq(components.itemId, itemId))
+          .limit(1);
+        break;
+      case "spare_part":
+        specificData = await this.db
+          .select()
+          .from(spareParts)
+          .where(eq(spareParts.itemId, itemId))
+          .limit(1);
+        break;
+      case "consumable":
+        specificData = await this.db
+          .select()
+          .from(consumables)
+          .where(eq(consumables.itemId, itemId))
           .limit(1);
         break;
     }
@@ -424,6 +473,53 @@ export class ItemService {
     return component;
   }
 
+  private async createSparePartRecord(
+    itemId: string,
+    tenantId: string,
+    data?: SparePartData,
+    categoryId?: string
+  ): Promise<any> {
+    const [sparePart] = await this.db
+      .insert(spareParts)
+      .values({
+        itemId,
+        tenantId,
+        unit: data?.unit,
+        itemCategoryId: categoryId,
+        partNumber: data?.partNumber,
+        manufacturer: data?.manufacturer,
+        warrantyPeriodDays: data?.warrantyPeriodDays?.toString(),
+        isCritical: data?.isCritical ?? false,
+        leadTimeDays: data?.leadTimeDays?.toString(),
+      })
+      .returning();
+
+    return sparePart;
+  }
+
+  private async createConsumableRecord(
+    itemId: string,
+    tenantId: string,
+    data?: ConsumableData,
+    categoryId?: string
+  ): Promise<any> {
+    const [consumable] = await this.db
+      .insert(consumables)
+      .values({
+        itemId,
+        tenantId,
+        unit: data?.unit,
+        itemCategoryId: categoryId,
+        shelfLifeDays: data?.shelfLifeDays?.toString(),
+        storageConditions: data?.storageConditions,
+        hazardClass: data?.hazardClass,
+        isHazardous: data?.isHazardous ?? false,
+      })
+      .returning();
+
+    return consumable;
+  }
+
   private async addItemPricing(
     itemId: string,
     tenantId: string,
@@ -472,6 +568,10 @@ export class ItemService {
         return "RAW";
       case "component":
         return "CMP";
+      case "spare_part":
+        return "SPR";
+      case "consumable":
+        return "CNS";
       default:
         return "ITM";
     }

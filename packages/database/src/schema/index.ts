@@ -14,3 +14,7 @@ export * from "./tasks.js";
 export * from "./maintenance-plans.js";
 export * from "./calibration-plans.js";
 export * from "./integration.js";
+export * from "./asset-stock-usages.js";
+export * from "./asset-meters.js";
+export * from "./asset-status-history.js";
+export * from "./service.js";

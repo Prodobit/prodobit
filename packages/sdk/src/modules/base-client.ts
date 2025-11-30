@@ -40,13 +40,14 @@ export abstract class BaseClient {
     config?: RequestConfig
   ): Promise<T> {
     // Check if token needs refresh before making the request
+    // This handles both expiring tokens AND missing access tokens (when only refresh token exists)
     // BUT skip this check for refresh requests to avoid infinite recursion
     if (
       this.tokenInfo &&
       this.autoRefresh &&
-      this.isTokenExpiring() &&
-      !config?.skipAuth && // Don't refresh during skipAuth requests
-      path !== '/api/v1/auth/refresh' // Don't refresh during refresh itself!
+      !config?.skipAuth &&
+      path !== '/api/v1/auth/refresh' &&
+      (this.isTokenExpiring() || !this.tokenInfo.accessToken)
     ) {
       await this.ensureTokenRefresh();
     }
@@ -56,9 +57,9 @@ export abstract class BaseClient {
     const timeout = config?.timeout ?? this.timeout;
 
     // Add access token and CSRF token if available
-    if (this.tokenInfo && !config?.skipAuth) {
+    if (this.tokenInfo?.accessToken && !config?.skipAuth) {
       headers["Authorization"] = `Bearer ${this.tokenInfo.accessToken}`;
-      
+
       // CSRF token is now HTTP-only cookie, browser will send it automatically
       // We don't need to set it manually in headers
     }
@@ -154,18 +155,7 @@ export abstract class BaseClient {
 
     // Check if token expires in the next 5 minutes
     const fiveMinutesFromNow = new Date(Date.now() + 5 * 60 * 1000);
-    const isExpiring = this.tokenInfo.expiresAt <= fiveMinutesFromNow;
-    
-    if (isExpiring) {
-      console.log('Token expiring soon:', {
-        expiresAt: this.tokenInfo.expiresAt,
-        now: new Date(),
-        fiveMinutesFromNow,
-        isExpiring
-      });
-    }
-    
-    return isExpiring;
+    return this.tokenInfo.expiresAt <= fiveMinutesFromNow;
   }
 
   private async ensureTokenRefresh(): Promise<void> {
@@ -183,14 +173,10 @@ export abstract class BaseClient {
 
   private async performTokenRefresh(): Promise<void> {
     try {
-      console.log('🔄 performTokenRefresh: Starting token refresh...');
-
       if (!this.tokenInfo?.refreshToken) {
-        console.error('❌ performTokenRefresh: No refresh token available');
         throw new Error('No refresh token available');
       }
 
-      console.log('🔄 performTokenRefresh: Calling refresh endpoint...');
       const response = await this.request<any>(
         "POST",
         "/api/v1/auth/refresh",
@@ -200,33 +186,20 @@ export abstract class BaseClient {
         { skipAuth: true }
       );
 
-      console.log('✅ performTokenRefresh: Refresh response received:', {
-        success: response.success,
-        hasData: !!response.data,
-      });
-
       if (response.success && response.data) {
         const newTokenInfo = {
           accessToken: response.data.session.accessToken,
           refreshToken: response.data.refreshToken || this.tokenInfo.refreshToken,
           expiresAt: new Date(response.data.session.expiresAt),
           csrfToken: response.data.session.csrfToken,
-          tenantId: this.tokenInfo.tenantId, // Preserve current tenantId
+          tenantId: this.tokenInfo.tenantId,
         };
-
-        console.log('✅ performTokenRefresh: Setting new token info:', {
-          expiresAt: newTokenInfo.expiresAt,
-          hasRefreshToken: !!newTokenInfo.refreshToken,
-        });
 
         this.setTokenInfo(newTokenInfo);
       } else {
-        console.error('❌ performTokenRefresh: Invalid refresh response:', response);
         throw new Error('Invalid refresh response');
       }
     } catch (error) {
-      console.error('❌ performTokenRefresh: Refresh failed:', error);
-      // Clear token on refresh failure
       this.clearTokenInfo();
       throw error;
     }
@@ -235,16 +208,27 @@ export abstract class BaseClient {
   // Token management methods - now using cookies
   private loadTokenFromCookies(): TokenInfo | undefined {
     if (typeof window === 'undefined') return undefined; // SSR guard
-    
+
     try {
       const tokenInfo = tokenCookies.getTokens();
-      
-      // Check if token is expired
-      if (tokenInfo?.expiresAt && tokenInfo.expiresAt <= new Date()) {
+
+      // If no token info at all (no access token AND no refresh token), return undefined
+      if (!tokenInfo) {
+        return undefined;
+      }
+
+      // If we have a refresh token, return token info even if access token is expired
+      // The auto-refresh mechanism will handle getting a new access token
+      if (tokenInfo.refreshToken) {
+        return tokenInfo;
+      }
+
+      // No refresh token and access token expired - clear everything
+      if (tokenInfo.expiresAt && tokenInfo.expiresAt <= new Date()) {
         this.clearTokenInfo();
         return undefined;
       }
-      
+
       return tokenInfo;
     } catch {
       this.clearTokenInfo();
@@ -301,7 +285,22 @@ export abstract class BaseClient {
   }
 
   isAuthenticated(): boolean {
-    return !!this.tokenInfo?.accessToken && this.isTokenValid();
+    // User is authenticated if they have a valid access token OR a refresh token
+    // (refresh token means we can get a new access token)
+    if (!this.tokenInfo) return false;
+
+    // If access token is valid, user is authenticated
+    if (this.tokenInfo.accessToken && this.isTokenValid()) {
+      return true;
+    }
+
+    // If access token is expired but refresh token exists, user is still authenticated
+    // (the next request will trigger auto-refresh)
+    if (this.tokenInfo.refreshToken) {
+      return true;
+    }
+
+    return false;
   }
 
   isTokenValid(): boolean {

@@ -240,6 +240,77 @@ export {
   useCreateCalibrationRecord,
   useUpdateCalibrationRecord
 } from './hooks/useCalibration';
+export {
+  useAssetStockUsages,
+  useAssetStockUsage,
+  useAssetStockUsagesByAsset,
+  useAssetStockUsagesByItem,
+  useAssetUsageStats,
+  useCreateAssetStockUsage,
+  useBulkCreateAssetStockUsages,
+  useUpdateAssetStockUsage,
+  useDeleteAssetStockUsage,
+  useSpareParts,
+  useCreateSparePart,
+  useConsumables,
+  useCreateConsumable
+} from './hooks/useAssetStockUsages';
+export {
+  useAssetMeters,
+  useAssetMeter,
+  useAssetMetersByAsset,
+  useMeterStats,
+  useCreateAssetMeter,
+  useUpdateAssetMeter,
+  useDeleteAssetMeter,
+  useMeterReadings,
+  useCreateMeterReading
+} from './hooks/useAssetMeters';
+export {
+  useAssetStatusHistory,
+  useAssetStatusHistoryById,
+  useAssetStatusHistoryByAsset,
+  useAssetLifecycleSummary,
+  useAssetsByStatus,
+  useUpdateAssetStatus
+} from './hooks/useAssetStatusHistory';
+export {
+  useMaintenancePlanTriggers,
+  useMaintenancePlanTrigger,
+  useDueTriggers,
+  useCreateMaintenancePlanTrigger,
+  useUpdateMaintenancePlanTrigger,
+  useDeleteMaintenancePlanTrigger,
+  useMarkTriggerTriggered
+} from './hooks/useMaintenancePlanTriggers';
+export {
+  useServiceContracts,
+  useServiceContract,
+  useServiceContractsByCustomer,
+  useServiceContractsForAsset,
+  useExpiringServiceContracts,
+  useCreateServiceContract,
+  useUpdateServiceContract,
+  useDeleteServiceContract,
+  useServiceContractAssets,
+  useAddServiceContractAsset,
+  useRemoveServiceContractAsset
+} from './hooks/useServiceContracts';
+export {
+  useServiceTickets,
+  useServiceTicket,
+  useServiceTicketsByContract,
+  useServiceTicketsByAsset,
+  useOpenServiceTickets,
+  useOverdueServiceTickets,
+  useServiceTicketStatistics,
+  useCreateServiceTicket,
+  useUpdateServiceTicket,
+  useDeleteServiceTicket,
+  useServiceTicketComments,
+  useAddServiceTicketComment,
+  useServiceTicketStatusHistory
+} from './hooks/useServiceTickets';
 
 export * from './types';
 export { queryKeys } from './utils/query-keys';

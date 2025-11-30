@@ -19,15 +19,27 @@ export interface TokenPair {
   refreshExpiresAt: Date;
 }
 
+export interface TokenPayloadInput {
+  sub: string;
+  tenantId: string;
+  sessionId?: string;
+  roles?: string[];
+  permissions?: string[];
+}
+
 export class JwtTokenManager {
   /**
    * Generate access token
    */
   static generateAccessToken(
-    payload: Omit<JwtPayload, "iat" | "exp" | "aud" | "iss">
+    payload: TokenPayloadInput
   ): string {
     const tokenPayload: JwtPayload = {
-      ...payload,
+      sub: payload.sub,
+      tenantId: payload.tenantId,
+      sessionId: payload.sessionId,
+      roles: payload.roles,
+      permissions: payload.permissions,
       iat: Math.floor(Date.now() / 1000),
       exp: Math.floor(Date.now() / 1000) + 15 * 60, // 15 minutes
       aud: JWT_AUDIENCE,
@@ -42,10 +54,11 @@ export class JwtTokenManager {
   /**
    * Generate refresh token
    */
-  static generateRefreshToken(userId: string, tenantId?: string): string {
+  static generateRefreshToken(userId: string, tenantId?: string, sessionId?: string): string {
     const payload = {
       sub: userId,
       tenantId,
+      sessionId,
       type: "refresh",
       iat: Math.floor(Date.now() / 1000),
       exp: Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60, // 7 days
@@ -62,16 +75,17 @@ export class JwtTokenManager {
    * Generate both access and refresh tokens
    */
   static generateTokenPair(
-    payload: Omit<JwtPayload, "iat" | "exp" | "aud" | "iss">
+    payload: TokenPayloadInput
   ): TokenPair {
     const accessToken = this.generateAccessToken(payload);
     const refreshToken = this.generateRefreshToken(
       payload.sub,
-      payload.tenantId
+      payload.tenantId,
+      payload.sessionId
     );
 
     const now = new Date();
-    const expiresAt = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours (1 day)
+    const expiresAt = new Date(now.getTime() + 15 * 60 * 1000); // 15 minutes (matches ACCESS_TOKEN_EXPIRES_IN)
     const refreshExpiresAt = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
     return {
@@ -111,6 +125,7 @@ export class JwtTokenManager {
   static verifyRefreshToken(token: string): {
     sub: string;
     tenantId?: string;
+    sessionId?: string;
     type: string;
   } {
     try {

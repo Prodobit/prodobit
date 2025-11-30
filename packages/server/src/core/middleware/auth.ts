@@ -1,6 +1,6 @@
 import type { Context, Next } from "hono";
 import { JwtTokenManager } from "../utils/jwt.js";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { users, sessions } from "@prodobit/database";
 import type { JwtPayload, User } from "@prodobit/types";
 
@@ -100,13 +100,36 @@ export const authMiddleware = async (c: Context, next: Next) => {
     }
 
     // Verify session exists and is active
-    const session = await db
-      .select()
-      .from(sessions)
-      .where(eq(sessions.userId, payload.sub))
-      .limit(1);
+    // If sessionId is in token payload, use it for precise validation
+    // Otherwise, fall back to userId-based lookup (for backwards compatibility)
+    let session;
+    if (payload.sessionId) {
+      session = await db
+        .select()
+        .from(sessions)
+        .where(
+          and(
+            eq(sessions.id, payload.sessionId),
+            eq(sessions.userId, payload.sub),
+            eq(sessions.status, "active")
+          )
+        )
+        .limit(1);
+    } else {
+      // Backwards compatibility: lookup by userId only
+      session = await db
+        .select()
+        .from(sessions)
+        .where(
+          and(
+            eq(sessions.userId, payload.sub),
+            eq(sessions.status, "active")
+          )
+        )
+        .limit(1);
+    }
 
-    if (session.length === 0 || session[0].status !== "active") {
+    if (session.length === 0) {
       return c.json(
         {
           success: false,

@@ -1,4 +1,5 @@
 import { randomInt } from "crypto";
+import { getRedisClient, isRedisConnected } from "./redis.js";
 
 export interface OTPOptions {
   length?: number;
@@ -10,15 +11,21 @@ export interface OTPRecord {
   code: string;
   identifier: string; // email or phone
   type: "email" | "phone";
-  expiresAt: Date;
+  expiresAt: string; // ISO string for Redis serialization
   attempts: number;
   maxAttempts: number;
+  createdAt: string;
 }
 
-export class OTPManager {
-  private static otpStore = new Map<string, OTPRecord>();
-  private static cleanupInterval: NodeJS.Timeout | null = null;
+// Rate limiting configuration
+const RATE_LIMIT_WINDOW_MINUTES = 15;
+const MAX_OTP_REQUESTS_PER_WINDOW = 5;
 
+// Redis key prefixes
+const OTP_KEY_PREFIX = "otp:";
+const RATE_LIMIT_KEY_PREFIX = "otp_rate:";
+
+export class OTPManager {
   /**
    * Generate 6-digit OTP code
    */
@@ -26,68 +33,162 @@ export class OTPManager {
     const { length = 6 } = options;
     const min = Math.pow(10, length - 1);
     const max = Math.pow(10, length) - 1;
-    
+
     return randomInt(min, max + 1).toString();
+  }
+
+  /**
+   * Get Redis key for OTP storage
+   */
+  private static getOTPKey(identifier: string, type: "email" | "phone"): string {
+    const key = type === "email" ? identifier.toLowerCase() : identifier;
+    return `${OTP_KEY_PREFIX}${type}:${key}`;
+  }
+
+  /**
+   * Get Redis key for rate limiting
+   */
+  private static getRateLimitKey(identifier: string, type: "email" | "phone"): string {
+    const key = type === "email" ? identifier.toLowerCase() : identifier;
+    return `${RATE_LIMIT_KEY_PREFIX}${type}:${key}`;
+  }
+
+  /**
+   * Check rate limit for OTP requests
+   */
+  static async checkRateLimit(
+    identifier: string,
+    type: "email" | "phone"
+  ): Promise<{
+    allowed: boolean;
+    remainingRequests: number;
+    resetAt: Date;
+    message?: string;
+  }> {
+    const redis = getRedisClient();
+    const rateLimitKey = this.getRateLimitKey(identifier, type);
+
+    const count = await redis.get(rateLimitKey);
+    const currentCount = count ? parseInt(count, 10) : 0;
+
+    const ttl = await redis.ttl(rateLimitKey);
+    const resetAt = new Date(Date.now() + (ttl > 0 ? ttl * 1000 : RATE_LIMIT_WINDOW_MINUTES * 60 * 1000));
+
+    if (currentCount >= MAX_OTP_REQUESTS_PER_WINDOW) {
+      return {
+        allowed: false,
+        remainingRequests: 0,
+        resetAt,
+        message: `Too many OTP requests. Please try again after ${Math.ceil(ttl / 60)} minutes.`,
+      };
+    }
+
+    return {
+      allowed: true,
+      remainingRequests: MAX_OTP_REQUESTS_PER_WINDOW - currentCount - 1,
+      resetAt,
+    };
+  }
+
+  /**
+   * Increment rate limit counter
+   */
+  private static async incrementRateLimit(identifier: string, type: "email" | "phone"): Promise<void> {
+    const redis = getRedisClient();
+    const rateLimitKey = this.getRateLimitKey(identifier, type);
+
+    const exists = await redis.exists(rateLimitKey);
+    if (exists) {
+      await redis.incr(rateLimitKey);
+    } else {
+      await redis.setex(rateLimitKey, RATE_LIMIT_WINDOW_MINUTES * 60, "1");
+    }
   }
 
   /**
    * Store OTP for email or phone verification
    */
-  static storeOTP(
+  static async storeOTP(
     identifier: string,
     type: "email" | "phone",
     options: OTPOptions = {}
-  ): { code: string; expiresAt: Date } {
+  ): Promise<{
+    success: boolean;
+    code?: string;
+    expiresAt?: Date;
+    error?: string;
+    remainingRequests?: number;
+  }> {
+    // Check rate limit first
+    const rateLimitCheck = await this.checkRateLimit(identifier, type);
+    if (!rateLimitCheck.allowed) {
+      return {
+        success: false,
+        error: rateLimitCheck.message,
+        remainingRequests: 0,
+      };
+    }
+
     const { expiresInMinutes = 10 } = options;
     const code = this.generateOTP(options);
-    const expiresAt = new Date(Date.now() + (expiresInMinutes * 60 * 1000));
+    const expiresAt = new Date(Date.now() + expiresInMinutes * 60 * 1000);
 
     const otpRecord: OTPRecord = {
       code,
       identifier,
       type,
-      expiresAt,
+      expiresAt: expiresAt.toISOString(),
       attempts: 0,
       maxAttempts: 3,
+      createdAt: new Date().toISOString(),
     };
 
-    // Use identifier as key for easy lookup (lowercase for email, as-is for phone)
-    const key = type === "email" ? identifier.toLowerCase() : identifier;
-    this.otpStore.set(key, otpRecord);
+    const redis = getRedisClient();
+    const otpKey = this.getOTPKey(identifier, type);
 
-    // Start cleanup if not already running
-    if (!this.cleanupInterval) {
-      this.startCleanup();
-    }
+    // Store OTP with expiration
+    await redis.setex(otpKey, expiresInMinutes * 60, JSON.stringify(otpRecord));
 
-    return { code, expiresAt };
+    // Increment rate limit counter
+    await this.incrementRateLimit(identifier, type);
+
+    return {
+      success: true,
+      code,
+      expiresAt,
+      remainingRequests: rateLimitCheck.remainingRequests,
+    };
   }
 
   /**
    * Verify OTP code
    */
-  static verifyOTP(
+  static async verifyOTP(
     identifier: string,
     type: "email" | "phone",
     code: string
-  ): {
+  ): Promise<{
     success: boolean;
     message: string;
     attemptsLeft?: number;
-  } {
-    const key = type === "email" ? identifier.toLowerCase() : identifier;
-    const otpRecord = this.otpStore.get(key);
+  }> {
+    const redis = getRedisClient();
+    const otpKey = this.getOTPKey(identifier, type);
 
-    if (!otpRecord) {
+    const otpData = await redis.get(otpKey);
+
+    if (!otpData) {
       return {
         success: false,
         message: `No OTP found for this ${type}. Please request a new one.`,
       };
     }
 
-    // Check if expired
-    if (new Date() > otpRecord.expiresAt) {
-      this.otpStore.delete(key);
+    const otpRecord: OTPRecord = JSON.parse(otpData);
+
+    // Check if expired (Redis should handle this, but double-check)
+    if (new Date() > new Date(otpRecord.expiresAt)) {
+      await redis.del(otpKey);
       return {
         success: false,
         message: "OTP has expired. Please request a new one.",
@@ -96,7 +197,7 @@ export class OTPManager {
 
     // Check attempts
     if (otpRecord.attempts >= otpRecord.maxAttempts) {
-      this.otpStore.delete(key);
+      await redis.del(otpKey);
       return {
         success: false,
         message: "Too many failed attempts. Please request a new OTP.",
@@ -104,17 +205,22 @@ export class OTPManager {
     }
 
     // Verify code
-    otpRecord.attempts++;
-
     if (otpRecord.code !== code) {
+      otpRecord.attempts++;
       const attemptsLeft = otpRecord.maxAttempts - otpRecord.attempts;
 
       if (attemptsLeft <= 0) {
-        this.otpStore.delete(key);
+        await redis.del(otpKey);
         return {
           success: false,
           message: "Invalid OTP. Too many failed attempts.",
         };
+      }
+
+      // Update attempts count in Redis
+      const ttl = await redis.ttl(otpKey);
+      if (ttl > 0) {
+        await redis.setex(otpKey, ttl, JSON.stringify(otpRecord));
       }
 
       return {
@@ -125,7 +231,7 @@ export class OTPManager {
     }
 
     // Success - remove from store
-    this.otpStore.delete(key);
+    await redis.del(otpKey);
     return {
       success: true,
       message: "OTP verified successfully.",
@@ -135,91 +241,86 @@ export class OTPManager {
   /**
    * Check if OTP exists and is valid
    */
-  static hasValidOTP(identifier: string, type: "email" | "phone"): boolean {
-    const key = type === "email" ? identifier.toLowerCase() : identifier;
-    const otpRecord = this.otpStore.get(key);
+  static async hasValidOTP(identifier: string, type: "email" | "phone"): Promise<boolean> {
+    const redis = getRedisClient();
+    const otpKey = this.getOTPKey(identifier, type);
 
-    if (!otpRecord) return false;
-    if (new Date() > otpRecord.expiresAt) {
-      this.otpStore.delete(key);
-      return false;
-    }
-
-    return true;
+    const exists = await redis.exists(otpKey);
+    return exists === 1;
   }
 
   /**
    * Get OTP info (for debugging/testing)
    */
-  static getOTPInfo(identifier: string, type: "email" | "phone"): {
+  static async getOTPInfo(
+    identifier: string,
+    type: "email" | "phone"
+  ): Promise<{
     exists: boolean;
     expiresAt?: Date;
     attempts?: number;
     attemptsLeft?: number;
-  } {
-    const key = type === "email" ? identifier.toLowerCase() : identifier;
-    const otpRecord = this.otpStore.get(key);
+  }> {
+    const redis = getRedisClient();
+    const otpKey = this.getOTPKey(identifier, type);
 
-    if (!otpRecord) {
+    const otpData = await redis.get(otpKey);
+
+    if (!otpData) {
       return { exists: false };
     }
 
+    const otpRecord: OTPRecord = JSON.parse(otpData);
+
     return {
       exists: true,
-      expiresAt: otpRecord.expiresAt,
+      expiresAt: new Date(otpRecord.expiresAt),
       attempts: otpRecord.attempts,
       attemptsLeft: otpRecord.maxAttempts - otpRecord.attempts,
     };
   }
 
   /**
-   * Remove expired OTPs
+   * Delete OTP (for manual cleanup or testing)
    */
-  static cleanup(): number {
-    const now = new Date();
-    let removedCount = 0;
-
-    for (const [email, record] of this.otpStore.entries()) {
-      if (now > record.expiresAt) {
-        this.otpStore.delete(email);
-        removedCount++;
-      }
-    }
-
-    return removedCount;
+  static async deleteOTP(identifier: string, type: "email" | "phone"): Promise<void> {
+    const redis = getRedisClient();
+    const otpKey = this.getOTPKey(identifier, type);
+    await redis.del(otpKey);
   }
 
   /**
-   * Start automatic cleanup of expired OTPs
+   * Get rate limit info
    */
-  private static startCleanup(): void {
-    this.cleanupInterval = setInterval(() => {
-      this.cleanup();
-    }, 5 * 60 * 1000); // Clean up every 5 minutes
+  static async getRateLimitInfo(
+    identifier: string,
+    type: "email" | "phone"
+  ): Promise<{
+    requestsUsed: number;
+    remainingRequests: number;
+    resetAt: Date;
+  }> {
+    const redis = getRedisClient();
+    const rateLimitKey = this.getRateLimitKey(identifier, type);
+
+    const count = await redis.get(rateLimitKey);
+    const currentCount = count ? parseInt(count, 10) : 0;
+
+    const ttl = await redis.ttl(rateLimitKey);
+    const resetAt = new Date(Date.now() + (ttl > 0 ? ttl * 1000 : RATE_LIMIT_WINDOW_MINUTES * 60 * 1000));
+
+    return {
+      requestsUsed: currentCount,
+      remainingRequests: Math.max(0, MAX_OTP_REQUESTS_PER_WINDOW - currentCount),
+      resetAt,
+    };
   }
 
   /**
-   * Stop automatic cleanup
+   * Check Redis connection status
    */
-  static stopCleanup(): void {
-    if (this.cleanupInterval) {
-      clearInterval(this.cleanupInterval);
-      this.cleanupInterval = null;
-    }
-  }
-
-  /**
-   * Clear all OTPs (for testing)
-   */
-  static clearAll(): void {
-    this.otpStore.clear();
-  }
-
-  /**
-   * Get current OTP count (for monitoring)
-   */
-  static getActiveCount(): number {
-    return this.otpStore.size;
+  static isConnected(): boolean {
+    return isRedisConnected();
   }
 }
 

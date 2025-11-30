@@ -54,6 +54,11 @@ class ProdobitClient {
   late final FileService file;
   late final TenantService tenant;
   late final EmployeeService employee;
+  late final AssetStockUsageService assetStockUsage;
+  late final AssetMeterService assetMeter;
+  late final AssetStatusHistoryService assetStatusHistory;
+  late final MaintenanceTriggerService maintenanceTrigger;
+  late final ServiceService service;
 
   /// Get the underlying API client (for advanced usage)
   ApiClient get apiClient => _apiClient;
@@ -104,5 +109,10 @@ class ProdobitClient {
     file = FileService(_apiClient);
     tenant = TenantService(_apiClient);
     employee = EmployeeService(_apiClient);
+    assetStockUsage = AssetStockUsageService(_apiClient);
+    assetMeter = AssetMeterService(_apiClient);
+    assetStatusHistory = AssetStatusHistoryService(_apiClient);
+    maintenanceTrigger = MaintenanceTriggerService(_apiClient);
+    service = ServiceService(_apiClient);
   }
 }

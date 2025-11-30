@@ -229,6 +229,7 @@ export const rolePermission = type({
 export const jwtPayload = type({
   sub: uuid, // user ID
   tenantId: uuid,
+  "sessionId?": uuid, // Session ID for validation
   "roles?": "string[]",
   "permissions?": "string[]",
   iat: "number",

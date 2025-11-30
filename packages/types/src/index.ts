@@ -22,3 +22,7 @@ export * from "./task";
 export * from "./maintenance-plan";
 export * from "./calibration-plan";
 export * from "./integration";
+export * from "./asset-stock-usage";
+export * from "./asset-meter";
+export * from "./asset-status-history";
+export * from "./service";

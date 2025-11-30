@@ -62,8 +62,8 @@ export const ProdobitProvider: React.FC<ProdobitProviderProps> = ({
           console.log('Auth initialized successfully from cookies:', newState);
         } catch (error) {
           console.warn('Auth initialization failed:', error);
-          // Clear invalid cookies and update state
-          tokenCookies.clearTokens();
+          // Don't clear tokens here - the auth-state.ts initialize() handles token cleanup
+          // when refresh actually fails. Network errors shouldn't clear valid tokens.
           const currentState = client.auth.getState();
           setAuthState(currentState);
         }

@@ -15,6 +15,10 @@ import { assignments } from "./assignments.js";
 import { assetPurchases } from "./asset-purchases.js";
 import { departments } from "./departments.js";
 import userManagement from "./user-management.js";
+import { assetStockUsages } from "./asset-stock-usages.js";
+import { assetMeters } from "./asset-meters.js";
+import { assetStatusHistory } from "./asset-status-history.js";
+import { maintenancePlanTriggers } from "./maintenance-plan-triggers.js";
 import { HealthService } from "./services/health-service.js";
 
 export const coreModule: ModuleManifest = {
@@ -47,6 +51,14 @@ export const coreModule: ModuleManifest = {
     "purchase:write": ["admin", "user"],
     "department:read": ["admin", "user"],
     "department:write": ["admin"],
+    "asset_stock_usage:read": ["admin", "user"],
+    "asset_stock_usage:write": ["admin", "user"],
+    "asset_meter:read": ["admin", "user"],
+    "asset_meter:write": ["admin", "user"],
+    "asset_status_history:read": ["admin", "user"],
+    "asset_status_history:write": ["admin", "user"],
+    "maintenance_trigger:read": ["admin", "user"],
+    "maintenance_trigger:write": ["admin"],
     "auth:login": ["guest"],
     "auth:register": ["guest"],
     "attribute:read": ["admin", "user"],
@@ -116,6 +128,10 @@ export const coreModule: ModuleManifest = {
     app.route("/api/v1/assignments", assignments);
     app.route("/api/v1/asset-purchases", assetPurchases);
     app.route("/api/v1/departments", departments);
+    app.route("/api/v1/asset-stock-usages", assetStockUsages);
+    app.route("/api/v1/asset-meters", assetMeters);
+    app.route("/api/v1/asset-status-history", assetStatusHistory);
+    app.route("/api/v1/maintenance-plan-triggers", maintenancePlanTriggers);
     app.route("/api/v1/auth", auth);
     app.route("/api/v1/attributes", attributes);
     app.route("/api/v1", userManagement);

@@ -50,22 +50,20 @@ export function loggerMiddleware() {
       const duration = Date.now() - start;
       const status = c.res.status;
 
-      const logFn =
-        status >= 500
-          ? requestLogger.error
-          : status >= 400
-          ? requestLogger.warn
-          : requestLogger.info;
+      const logData = {
+        method: c.req.method,
+        url: c.req.url,
+        status,
+        duration,
+      };
 
-      logFn(
-        {
-          method: c.req.method,
-          url: c.req.url,
-          status,
-          duration,
-        },
-        "Request completed"
-      );
+      if (status >= 500) {
+        requestLogger.error(logData, "Request completed");
+      } else if (status >= 400) {
+        requestLogger.warn(logData, "Request completed");
+      } else {
+        requestLogger.info(logData, "Request completed");
+      }
     }
   };
 }

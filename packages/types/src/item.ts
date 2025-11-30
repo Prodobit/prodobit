@@ -3,7 +3,7 @@ import { uuid, timestamp, status } from "./common";
 
 // Item Type enum
 export const itemTypeEnum = type(
-  "'product' | 'service' | 'raw_material' | 'component'"
+  "'product' | 'service' | 'raw_material' | 'component' | 'spare_part' | 'consumable'"
 );
 
 // Item schemas
@@ -78,6 +78,93 @@ export const updateItemCategoryRequest = type({
   "isActive?": "boolean",
 });
 
+// Spare Part schemas
+export const sparePart = type({
+  id: uuid,
+  itemId: uuid,
+  tenantId: uuid,
+  "unit?": "string",
+  "itemCategoryId?": uuid,
+  "partNumber?": "string",
+  "manufacturer?": "string",
+  "warrantyPeriodDays?": "number",
+  "isCritical?": "boolean",
+  "leadTimeDays?": "number",
+  insertedAt: timestamp,
+  updatedAt: timestamp,
+  "deletedAt?": timestamp,
+});
+
+export const createSparePartRequest = type({
+  name: "string >= 1",
+  "code?": "string",
+  "unit?": "string",
+  "categoryId?": uuid,
+  "brandId?": uuid,
+  "partNumber?": "string",
+  "manufacturer?": "string",
+  "warrantyPeriodDays?": "number",
+  "isCritical?": "boolean",
+  "leadTimeDays?": "number",
+  "status?": status,
+});
+
+export const updateSparePartRequest = type({
+  "name?": "string >= 1",
+  "code?": "string",
+  "unit?": "string",
+  "categoryId?": uuid,
+  "brandId?": uuid,
+  "partNumber?": "string",
+  "manufacturer?": "string",
+  "warrantyPeriodDays?": "number",
+  "isCritical?": "boolean",
+  "leadTimeDays?": "number",
+  "status?": status,
+});
+
+// Consumable schemas
+export const consumable = type({
+  id: uuid,
+  itemId: uuid,
+  tenantId: uuid,
+  "unit?": "string",
+  "itemCategoryId?": uuid,
+  "shelfLifeDays?": "number",
+  "storageConditions?": "string",
+  "hazardClass?": "string",
+  "isHazardous?": "boolean",
+  insertedAt: timestamp,
+  updatedAt: timestamp,
+  "deletedAt?": timestamp,
+});
+
+export const createConsumableRequest = type({
+  name: "string >= 1",
+  "code?": "string",
+  "unit?": "string",
+  "categoryId?": uuid,
+  "brandId?": uuid,
+  "shelfLifeDays?": "number",
+  "storageConditions?": "string",
+  "hazardClass?": "string",
+  "isHazardous?": "boolean",
+  "status?": status,
+});
+
+export const updateConsumableRequest = type({
+  "name?": "string >= 1",
+  "code?": "string",
+  "unit?": "string",
+  "categoryId?": uuid,
+  "brandId?": uuid,
+  "shelfLifeDays?": "number",
+  "storageConditions?": "string",
+  "hazardClass?": "string",
+  "isHazardous?": "boolean",
+  "status?": status,
+});
+
 // Item query filters
 export const itemQuery = type({
   "itemType?": itemTypeEnum,
@@ -97,3 +184,13 @@ export type ItemCategory = typeof itemCategory.infer;
 export type CreateItemCategoryRequest = typeof createItemCategoryRequest.infer;
 export type UpdateItemCategoryRequest = typeof updateItemCategoryRequest.infer;
 export type ItemQuery = typeof itemQuery.infer;
+
+// Spare Part types
+export type SparePart = typeof sparePart.infer;
+export type CreateSparePartRequest = typeof createSparePartRequest.infer;
+export type UpdateSparePartRequest = typeof updateSparePartRequest.infer;
+
+// Consumable types
+export type Consumable = typeof consumable.infer;
+export type CreateConsumableRequest = typeof createConsumableRequest.infer;
+export type UpdateConsumableRequest = typeof updateConsumableRequest.infer;

@@ -1,6 +1,10 @@
 export 'asset/asset_models.dart';
 export 'asset_assignment/asset_assignment_models.dart';
+export 'asset_meter/asset_meter_models.dart';
+export 'asset_status_history/asset_status_history_models.dart';
+export 'asset_stock_usage/asset_stock_usage_models.dart';
 export 'asset_issue/asset_issue_models.dart';
+export 'maintenance_trigger/maintenance_trigger_models.dart';
 export 'auth/auth_models.dart';
 export 'calibration/calibration_models.dart';
 export 'common/common_models.dart';
@@ -28,3 +32,4 @@ export 'sales/sales_order_models.dart';
 export 'task/task_models.dart';
 export 'tenant/tenant_models.dart';
 export 'user/user_models.dart';
+export 'service/service_models.dart';

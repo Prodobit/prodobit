@@ -569,10 +569,6 @@ app.get("/invitations/:token", async (c) => {
     const token = c.req.param("token");
     const db = c.get("db");
     
-    console.log('=== DEBUG: Get invitation by token ===');
-    console.log('Token:', token);
-    console.log('=====================================');
-
     const invitationData = await db
       .select({
         id: userInvitations.id,
@@ -598,17 +594,7 @@ app.get("/invitations/:token", async (c) => {
       )
       .limit(1);
 
-    console.log('Query result count:', invitationData.length);
-    if (invitationData.length > 0) {
-      console.log('Found invitation:', {
-        id: invitationData[0].id,
-        email: invitationData[0].email,
-        status: invitationData[0].status,
-      });
-    }
-
     if (invitationData.length === 0) {
-      console.log('No invitation found with token:', token);
       return c.json(
         {
           success: false,

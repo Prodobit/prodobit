@@ -66,7 +66,7 @@ export const items = pgTable(
     nameSearchIdx: index("items_name_search_idx").on(table.nameSearchTrimmed),
     
     // Constraints
-    itemTypeCheck: sql`CONSTRAINT item_type_check CHECK (item_type IN ('product', 'service', 'raw_material', 'component'))`,
+    itemTypeCheck: sql`CONSTRAINT item_type_check CHECK (item_type IN ('product', 'service', 'raw_material', 'component', 'spare_part', 'consumable'))`,
     variantReferenceCheck: sql`CONSTRAINT variant_reference_check CHECK ((is_variant = false AND reference_item_id IS NULL) OR (is_variant = true AND reference_item_id IS NOT NULL))`,
     noCircularReferenceCheck: sql`CONSTRAINT no_circular_reference_check CHECK (id != reference_item_id)`,
   })
@@ -108,7 +108,7 @@ export const itemCategories = pgTable(
       .on(table.tenantId, table.name, table.itemType),
     
     // Constraints
-    itemTypeCheck: sql`CONSTRAINT item_type_check_for_item_categories CHECK (item_type IN ('product', 'service', 'raw_material', 'component'))`,
+    itemTypeCheck: sql`CONSTRAINT item_type_check_for_item_categories CHECK (item_type IN ('product', 'service', 'raw_material', 'component', 'spare_part', 'consumable'))`,
   })
 );
 
@@ -236,6 +236,82 @@ export const components = pgTable(
     itemIdIdx: uniqueIndex("components_item_id_idx").on(table.itemId),
     tenantIdx: index("components_tenant_idx").on(table.tenantId),
     categoryIdx: index("components_category_idx").on(table.itemCategoryId),
+  })
+);
+
+// Spare Parts - Yedek parça bilgileri
+export const spareParts = pgTable(
+  "spare_parts",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    itemId: uuid("item_id")
+      .notNull()
+      .references(() => items.id, { onDelete: "cascade" }),
+    tenantId: uuid("tenant_id")
+      .notNull()
+      .references(() => tenants.id, { onDelete: "cascade" }),
+
+    unit: text("unit"),
+    itemCategoryId: uuid("item_category_id").references(() => itemCategories.id, { onDelete: "set null" }),
+
+    // Spare part specific fields
+    partNumber: text("part_number"), // Manufacturer part number
+    manufacturer: text("manufacturer"), // OEM manufacturer
+    warrantyPeriodDays: decimal("warranty_period_days", { precision: 6, scale: 0 }), // Garanti süresi (gün)
+    isCritical: boolean("is_critical").notNull().default(false), // Kritik parça mı?
+    leadTimeDays: decimal("lead_time_days", { precision: 6, scale: 0 }), // Tedarik süresi (gün)
+
+    insertedAt: timestamp("inserted_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    deletedAt: timestamp("deleted_at", { withTimezone: true, precision: 6 }),
+  },
+  (table) => ({
+    itemIdIdx: uniqueIndex("spare_parts_item_id_idx").on(table.itemId),
+    tenantIdx: index("spare_parts_tenant_idx").on(table.tenantId),
+    categoryIdx: index("spare_parts_category_idx").on(table.itemCategoryId),
+    partNumberIdx: index("spare_parts_part_number_idx").on(table.tenantId, table.partNumber),
+    criticalIdx: index("spare_parts_critical_idx").on(table.tenantId, table.isCritical),
+  })
+);
+
+// Consumables - Sarf malzeme bilgileri
+export const consumables = pgTable(
+  "consumables",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    itemId: uuid("item_id")
+      .notNull()
+      .references(() => items.id, { onDelete: "cascade" }),
+    tenantId: uuid("tenant_id")
+      .notNull()
+      .references(() => tenants.id, { onDelete: "cascade" }),
+
+    unit: text("unit"),
+    itemCategoryId: uuid("item_category_id").references(() => itemCategories.id, { onDelete: "set null" }),
+
+    // Consumable specific fields
+    shelfLifeDays: decimal("shelf_life_days", { precision: 6, scale: 0 }), // Raf ömrü (gün)
+    storageConditions: text("storage_conditions"), // Saklama koşulları
+    hazardClass: text("hazard_class"), // Tehlike sınıfı (yanıcı, aşındırıcı vb.)
+    isHazardous: boolean("is_hazardous").notNull().default(false), // Tehlikeli madde mi?
+
+    insertedAt: timestamp("inserted_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true, precision: 6 })
+      .notNull()
+      .defaultNow(),
+    deletedAt: timestamp("deleted_at", { withTimezone: true, precision: 6 }),
+  },
+  (table) => ({
+    itemIdIdx: uniqueIndex("consumables_item_id_idx").on(table.itemId),
+    tenantIdx: index("consumables_tenant_idx").on(table.tenantId),
+    categoryIdx: index("consumables_category_idx").on(table.itemCategoryId),
+    hazardousIdx: index("consumables_hazardous_idx").on(table.tenantId, table.isHazardous),
   })
 );
 

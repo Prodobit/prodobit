@@ -46,8 +46,6 @@ export class CookieManager {
     
     const domain = isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined;
     
-    console.log(`🍪 Setting access token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}, domain=${domain}`);
-    
     const cookieString = this.serializeCookie(this.getCookieName('access_token', c), accessToken, {
       httpOnly: false, // JavaScript needs access for auth state
       secure: isProduction,
@@ -56,8 +54,6 @@ export class CookieManager {
       path: '/',
       domain: domain,
     });
-    
-    console.log(`🍪 Access token cookie: ${cookieString}`);
     c.res.headers.append('Set-Cookie', cookieString);
   }
 
@@ -74,9 +70,6 @@ export class CookieManager {
     // For cross-subdomain sharing, use .prodobit.com domain in production
     const domain = isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined;
     
-    console.log(`🍪 Setting refresh token cookie: NODE_ENV=${process.env.NODE_ENV}, isProduction=${isProduction}, domain=${domain}`);
-    console.log(`🍪 Request host: ${c.req.header('host')}`);
-    
     const cookieString = this.serializeCookie(this.getCookieName('refresh_token', c), refreshToken, {
       httpOnly: false, // Changed: JavaScript needs access for client-side refresh
       secure: isProduction,
@@ -85,8 +78,6 @@ export class CookieManager {
       path: '/',
       domain: domain,
     });
-    
-    console.log(`🍪 Refresh token cookie: ${cookieString}`);
     c.res.headers.append('Set-Cookie', cookieString);
   }
 
@@ -108,8 +99,6 @@ export class CookieManager {
       path: '/',
       domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
     });
-    
-    console.log(`🍪 CSRF Cookie string: ${cookieString}`);
     c.res.headers.append('Set-Cookie', cookieString);
   }
 
@@ -131,8 +120,6 @@ export class CookieManager {
       path: '/',
       domain: isProduction ? (process.env.COOKIE_DOMAIN || '.prodobit.com') : undefined,
     });
-    
-    console.log(`🍪 Tenant ID cookie: ${cookieString}`);
     c.res.headers.append('Set-Cookie', cookieString);
   }
 
@@ -178,13 +165,7 @@ export class CookieManager {
    * Get refresh token from cookie
    */
   static getRefreshTokenFromCookie(c: Context): string | null {
-    const cookieHeader = c.req.header('Cookie');
-    console.log(`🍪 Reading cookies: Cookie header="${cookieHeader}"`);
-
-    const refreshToken = this.getCookieValue(c, this.getCookieName('refresh_token', c));
-    console.log(`🍪 Refresh token found: ${refreshToken ? 'YES' : 'NO'}`);
-
-    return refreshToken;
+    return this.getCookieValue(c, this.getCookieName('refresh_token', c));
   }
 
   /**

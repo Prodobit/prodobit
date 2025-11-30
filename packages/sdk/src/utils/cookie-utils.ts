@@ -155,19 +155,28 @@ export const tokenCookies = {
    * - CSRF token: HTTP-only (set by server, used in headers)
    */
   setTokens(tokenInfo: TokenInfo): void {
-    // Check both NODE_ENV and domain to determine production environment
-    const isProduction = process.env.NODE_ENV === 'production' || 
-                         (typeof window !== 'undefined' && window.location.hostname.includes('prodobit.com'));
-    
-    // Use same domain logic as server to prevent duplicates
-    const domain = isProduction ? '.prodobit.com' : undefined;
-    
+    // Determine production environment and domain from current hostname
+    const hostname = typeof window !== 'undefined' ? window.location.hostname : '';
+    const isProduction = process.env.NODE_ENV === 'production' ||
+                         (hostname && !hostname.includes('localhost'));
+
+    // Extract root domain for cookie sharing across subdomains
+    // e.g., app.assetspotter.com -> .assetspotter.com
+    let domain: string | undefined;
+    if (isProduction && hostname) {
+      const parts = hostname.split('.');
+      if (parts.length >= 2) {
+        // Get last two parts (e.g., assetspotter.com)
+        domain = '.' + parts.slice(-2).join('.');
+      }
+    }
+
     const cookieOptions: CookieOptions = {
       path: '/',
-      secure: isProduction, // Only secure in production
+      secure: isProduction || false,
       sameSite: 'lax',
       httpOnly: false, // These need to be accessible to JS
-      domain: domain // Match server domain setting
+      domain: domain
     };
 
     // Calculate maxAge from expiresAt
@@ -205,35 +214,41 @@ export const tokenCookies = {
 
   /**
    * Get token info from cookies
+   * Returns token info if either access token OR refresh token exists
+   * This allows token refresh even after access token cookie expires
    */
   getTokens(): TokenInfo | undefined {
     const accessToken = cookieUtils.get(this.ACCESS_TOKEN);
     const refreshToken = cookieUtils.get(this.REFRESH_TOKEN);
     const tenantId = cookieUtils.get(this.TENANT_ID);
 
-    if (!accessToken) {
+    // If neither token exists, return undefined
+    if (!accessToken && !refreshToken) {
       return undefined;
     }
 
     // Try to decode expiration from access token
     let expiresAt: Date | undefined;
-    try {
-      const payload = JSON.parse(atob(accessToken.split('.')[1]));
-      if (payload.exp) {
-        expiresAt = new Date(payload.exp * 1000);
+    if (accessToken) {
+      try {
+        const payload = JSON.parse(atob(accessToken.split('.')[1]));
+        if (payload.exp) {
+          expiresAt = new Date(payload.exp * 1000);
+        }
+      } catch {
+        // If we can't decode, token might be expired/invalid
+        expiresAt = new Date(0); // Mark as expired to trigger refresh
       }
-    } catch {
-      // If we can't decode, assume a reasonable expiry
-      expiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+    } else {
+      // No access token but have refresh token - mark as expired to trigger refresh
+      expiresAt = new Date(0);
     }
 
     return {
-      accessToken,
+      accessToken: accessToken || '', // Empty string if no access token
       refreshToken,
-      expiresAt: expiresAt || new Date(Date.now() + 60 * 60 * 1000),
+      expiresAt: expiresAt || new Date(0),
       tenantId,
-      // CSRF token is HTTP-only, we can't read it from cookies
-      // We'll omit it here since it's optional in TokenInfo
     } as TokenInfo;
   },
 
@@ -241,11 +256,20 @@ export const tokenCookies = {
    * Clear all auth cookies
    */
   clearTokens(): void {
-    // Check both NODE_ENV and domain to determine production environment
-    const isProduction = process.env.NODE_ENV === 'production' || 
-                         (typeof window !== 'undefined' && window.location.hostname.includes('prodobit.com'));
-    const domain = isProduction ? '.prodobit.com' : undefined;
-    
+    // Determine production environment and domain from current hostname
+    const hostname = typeof window !== 'undefined' ? window.location.hostname : '';
+    const isProduction = process.env.NODE_ENV === 'production' ||
+                         (hostname && !hostname.includes('localhost'));
+
+    // Extract root domain for cookie clearing
+    let domain: string | undefined;
+    if (isProduction && hostname) {
+      const parts = hostname.split('.');
+      if (parts.length >= 2) {
+        domain = '.' + parts.slice(-2).join('.');
+      }
+    }
+
     const cookieOptions = {
       path: '/',
       domain: domain // Use same domain as when setting
@@ -268,12 +292,23 @@ export const tokenCookies = {
 
   /**
    * Check if user appears to be authenticated based on cookies
+   * Returns true if either:
+   * - Access token exists and is not expired
+   * - Refresh token exists (can be used to get new access token)
    */
   hasValidTokens(): boolean {
     const accessToken = cookieUtils.get(this.ACCESS_TOKEN);
+    const refreshToken = cookieUtils.get(this.REFRESH_TOKEN);
+
+    // If we have a refresh token, user can be authenticated (via token refresh)
+    if (refreshToken) {
+      return true;
+    }
+
+    // No refresh token, check access token
     if (!accessToken) return false;
 
-    // Check token expiration
+    // Check access token expiration
     try {
       const payload = JSON.parse(atob(accessToken.split('.')[1]));
       if (payload.exp) {

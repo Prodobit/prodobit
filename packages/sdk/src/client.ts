@@ -20,6 +20,7 @@ import { AssetIssueClient } from "./modules/asset-issue-client";
 import { TaskClient } from "./modules/task-client";
 import { MaintenanceClient } from "./modules/maintenance-client";
 import { CalibrationClient } from "./modules/calibration-client";
+import { ServiceClient } from "./modules/service-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -118,6 +119,7 @@ export class ProdobitClient {
   private task: TaskClient;
   private maintenance: MaintenanceClient;
   private calibration: CalibrationClient;
+  private service: ServiceClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -141,6 +143,7 @@ export class ProdobitClient {
     this.task = new TaskClient(config);
     this.maintenance = new MaintenanceClient(config);
     this.calibration = new CalibrationClient(config);
+    this.service = new ServiceClient(config);
   }
 
   // Public request method for framework integrations
@@ -193,11 +196,6 @@ export class ProdobitClient {
 
   async getCurrentUser(config?: RequestConfig) {
     return this.auth.getCurrentUser(config);
-  }
-
-  // @deprecated Use getCurrentUser instead
-  async getMe(config?: RequestConfig) {
-    return this.auth.getMe(config);
   }
 
   async loginWithOTP(email: string, tenantId?: string) {
@@ -385,10 +383,6 @@ export class ProdobitClient {
     return this.locationAsset.getLocation(locationId, config);
   }
 
-  // @deprecated Use getLocation instead
-  async getLocationById(locationId: string, config?: RequestConfig) {
-    return this.locationAsset.getLocationById(locationId, config);
-  }
 
   async getChildLocations(parentLocationId: string, config?: RequestConfig) {
     return this.locationAsset.getChildLocations(parentLocationId, config);
@@ -434,10 +428,6 @@ export class ProdobitClient {
     return this.locationAsset.getAsset(assetId, config);
   }
 
-  // @deprecated Use getAsset instead
-  async getAssetById(assetId: string, config?: RequestConfig) {
-    return this.locationAsset.getAssetById(assetId, config);
-  }
 
   async getChildAssets(parentAssetId: string, config?: RequestConfig) {
     return this.locationAsset.getChildAssets(parentAssetId, config);
@@ -676,6 +666,377 @@ export class ProdobitClient {
     return this.auth.makeRequest("GET", "/api/v1/items/components", undefined, config);
   }
 
+  async getSpareParts(config?: RequestConfig): Promise<Response<ItemBase[]>> {
+    return this.auth.makeRequest("GET", "/api/v1/items/spare-parts", undefined, config);
+  }
+
+  async getConsumables(config?: RequestConfig): Promise<Response<ItemBase[]>> {
+    return this.auth.makeRequest("GET", "/api/v1/items/consumables", undefined, config);
+  }
+
+  async createSparePart(
+    data: CreateItemRequest,
+    config?: RequestConfig
+  ): Promise<Response<ItemBase>> {
+    return this.auth.makeRequest("POST", "/api/v1/items/spare-parts", data, config);
+  }
+
+  async createConsumable(
+    data: CreateItemRequest,
+    config?: RequestConfig
+  ): Promise<Response<ItemBase>> {
+    return this.auth.makeRequest("POST", "/api/v1/items/consumables", data, config);
+  }
+
+  // Asset Stock Usages methods
+  async getAssetStockUsages(
+    filters?: {
+      assetId?: string;
+      itemId?: string;
+      usageType?: "maintenance" | "repair" | "calibration" | "replacement" | "routine";
+      maintenanceRecordId?: string;
+      calibrationRecordId?: string;
+      usedById?: string;
+      fromDate?: string;
+      toDate?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    const queryString = buildQuery(filters);
+    const path = `/api/v1/asset-stock-usages${queryString ? `?${queryString}` : ""}`;
+    return this.auth.makeRequest("GET", path, undefined, config);
+  }
+
+  async getAssetStockUsage(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-stock-usages/${id}`, undefined, config);
+  }
+
+  async createAssetStockUsage(
+    data: {
+      assetId: string;
+      itemId: string;
+      usageType: "maintenance" | "repair" | "calibration" | "replacement" | "routine";
+      quantity: number;
+      unit?: string;
+      usedAt?: string;
+      usedById?: string;
+      unitCost?: number;
+      totalCost?: number;
+      currency?: string;
+      notes?: string;
+      lotNumber?: string;
+      serialNumber?: string;
+      maintenanceRecordId?: string;
+      calibrationRecordId?: string;
+      stockTransactionId?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("POST", "/api/v1/asset-stock-usages", data, config);
+  }
+
+  async bulkCreateAssetStockUsages(
+    usages: Array<{
+      assetId: string;
+      itemId: string;
+      usageType: "maintenance" | "repair" | "calibration" | "replacement" | "routine";
+      quantity: number;
+      unit?: string;
+      usedAt?: string;
+      usedById?: string;
+      unitCost?: number;
+      totalCost?: number;
+      currency?: string;
+      notes?: string;
+      lotNumber?: string;
+      serialNumber?: string;
+      maintenanceRecordId?: string;
+      calibrationRecordId?: string;
+      stockTransactionId?: string;
+    }>,
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    return this.auth.makeRequest("POST", "/api/v1/asset-stock-usages/bulk", { usages }, config);
+  }
+
+  async updateAssetStockUsage(
+    id: string,
+    data: {
+      usageType?: "maintenance" | "repair" | "calibration" | "replacement" | "routine";
+      quantity?: number;
+      unit?: string;
+      usedAt?: string;
+      usedById?: string;
+      unitCost?: number;
+      totalCost?: number;
+      currency?: string;
+      notes?: string;
+      lotNumber?: string;
+      serialNumber?: string;
+      maintenanceRecordId?: string;
+      calibrationRecordId?: string;
+      stockTransactionId?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("PUT", `/api/v1/asset-stock-usages/${id}`, data, config);
+  }
+
+  async deleteAssetStockUsage(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<void>> {
+    return this.auth.makeRequest("DELETE", `/api/v1/asset-stock-usages/${id}`, undefined, config);
+  }
+
+  async getAssetUsageStats(
+    assetId: string,
+    config?: RequestConfig
+  ): Promise<Response<{
+    totalUsages: number;
+    usagesByType: Record<string, number>;
+    totalCost: number;
+    recentUsages: any[];
+  }>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-stock-usages/stats/${assetId}`, undefined, config);
+  }
+
+  // ============ ASSET METERS ============
+
+  async getAssetMeters(
+    filters?: {
+      assetId?: string;
+      meterType?: string;
+      isActive?: boolean;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    const queryString = buildQuery(filters);
+    const path = `/api/v1/asset-meters${queryString ? `?${queryString}` : ""}`;
+    return this.auth.makeRequest("GET", path, undefined, config);
+  }
+
+  async getAssetMeter(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-meters/${id}`, undefined, config);
+  }
+
+  async createAssetMeter(
+    data: {
+      assetId: string;
+      meterType: string;
+      name: string;
+      unit: string;
+      description?: string;
+      initialReading?: number;
+      installationDate?: string;
+      rolloverValue?: number;
+      hasRollover?: boolean;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("POST", "/api/v1/asset-meters", data, config);
+  }
+
+  async updateAssetMeter(
+    id: string,
+    data: {
+      name?: string;
+      unit?: string;
+      description?: string | null;
+      rolloverValue?: number | null;
+      hasRollover?: boolean;
+      isActive?: boolean;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("PUT", `/api/v1/asset-meters/${id}`, data, config);
+  }
+
+  async deleteAssetMeter(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<void>> {
+    return this.auth.makeRequest("DELETE", `/api/v1/asset-meters/${id}`, undefined, config);
+  }
+
+  async getMeterStats(
+    meterId: string,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-meters/${meterId}/stats`, undefined, config);
+  }
+
+  async getMeterReadings(
+    meterId: string,
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-meters/${meterId}/readings`, undefined, config);
+  }
+
+  async createMeterReading(
+    meterId: string,
+    data: {
+      reading: number;
+      readingDate?: string;
+      readingSource?: string;
+      notes?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("POST", `/api/v1/asset-meters/${meterId}/readings`, data, config);
+  }
+
+  // ============ ASSET STATUS HISTORY ============
+
+  async getAssetStatusHistory(
+    filters?: {
+      assetId?: string;
+      status?: string;
+      changeReason?: string;
+      changedById?: string;
+      fromDate?: string;
+      toDate?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    const queryString = buildQuery(filters);
+    const path = `/api/v1/asset-status-history${queryString ? `?${queryString}` : ""}`;
+    return this.auth.makeRequest("GET", path, undefined, config);
+  }
+
+  async getAssetStatusHistoryById(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-status-history/${id}`, undefined, config);
+  }
+
+  async getAssetHistoryByAsset(
+    assetId: string,
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-status-history/asset/${assetId}`, undefined, config);
+  }
+
+  async getAssetLifecycleSummary(
+    assetId: string,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-status-history/asset/${assetId}/lifecycle`, undefined, config);
+  }
+
+  async updateAssetStatus(
+    assetId: string,
+    data: {
+      status: string;
+      changeReason?: string;
+      reasonDetails?: string;
+      notes?: string;
+      maintenanceRecordId?: string;
+      calibrationRecordId?: string;
+      issueId?: string;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("POST", `/api/v1/asset-status-history/asset/${assetId}/status`, data, config);
+  }
+
+  async getAssetsByStatus(
+    status: string,
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    return this.auth.makeRequest("GET", `/api/v1/asset-status-history/by-status/${status}`, undefined, config);
+  }
+
+  // ============ MAINTENANCE PLAN TRIGGERS ============
+
+  async getMaintenancePlanTriggers(
+    filters?: {
+      maintenancePlanId?: string;
+      triggerType?: string;
+      meterId?: string;
+      isActive?: boolean;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    const queryString = buildQuery(filters);
+    const path = `/api/v1/maintenance-plan-triggers${queryString ? `?${queryString}` : ""}`;
+    return this.auth.makeRequest("GET", path, undefined, config);
+  }
+
+  async getMaintenancePlanTrigger(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("GET", `/api/v1/maintenance-plan-triggers/${id}`, undefined, config);
+  }
+
+  async getDueTriggers(
+    config?: RequestConfig
+  ): Promise<Response<any[]>> {
+    return this.auth.makeRequest("GET", "/api/v1/maintenance-plan-triggers/due", undefined, config);
+  }
+
+  async createMaintenancePlanTrigger(
+    data: {
+      maintenancePlanId: string;
+      triggerType: "time" | "meter" | "both";
+      triggerMode?: "first" | "all";
+      name?: string;
+      description?: string;
+      intervalDays?: number;
+      intervalMonths?: number;
+      meterId?: string;
+      meterInterval?: number;
+      meterThreshold?: number;
+      priority?: number;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("POST", "/api/v1/maintenance-plan-triggers", data, config);
+  }
+
+  async updateMaintenancePlanTrigger(
+    id: string,
+    data: {
+      triggerType?: "time" | "meter" | "both";
+      triggerMode?: "first" | "all";
+      name?: string | null;
+      description?: string | null;
+      intervalDays?: number | null;
+      intervalMonths?: number | null;
+      meterId?: string | null;
+      meterInterval?: number | null;
+      meterThreshold?: number | null;
+      isActive?: boolean;
+      priority?: number | null;
+    },
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("PUT", `/api/v1/maintenance-plan-triggers/${id}`, data, config);
+  }
+
+  async deleteMaintenancePlanTrigger(
+    id: string,
+    config?: RequestConfig
+  ): Promise<Response<void>> {
+    return this.auth.makeRequest("DELETE", `/api/v1/maintenance-plan-triggers/${id}`, undefined, config);
+  }
+
+  async markTriggerTriggered(
+    id: string,
+    currentMeterReading?: number,
+    config?: RequestConfig
+  ): Promise<Response<any>> {
+    return this.auth.makeRequest("POST", `/api/v1/maintenance-plan-triggers/${id}/triggered`, { currentMeterReading }, config);
+  }
+
   async searchItems(
     searchTerm: string,
     filters?: {
@@ -815,6 +1176,13 @@ export class ProdobitClient {
     this.assignment.setTokenInfo(tokenInfo);
     this.assetPurchase.setTokenInfo(tokenInfo);
     this.department.setTokenInfo(tokenInfo);
+    this.locationType.setTokenInfo(tokenInfo);
+    this.assetType.setTokenInfo(tokenInfo);
+    this.assetIssue.setTokenInfo(tokenInfo);
+    this.task.setTokenInfo(tokenInfo);
+    this.maintenance.setTokenInfo(tokenInfo);
+    this.calibration.setTokenInfo(tokenInfo);
+    this.service.setTokenInfo(tokenInfo);
   }
 
   getTokenInfo(): TokenInfo | undefined {
@@ -838,6 +1206,13 @@ export class ProdobitClient {
     this.assignment.clearTokenInfo();
     this.assetPurchase.clearTokenInfo();
     this.department.clearTokenInfo();
+    this.locationType.clearTokenInfo();
+    this.assetType.clearTokenInfo();
+    this.assetIssue.clearTokenInfo();
+    this.task.clearTokenInfo();
+    this.maintenance.clearTokenInfo();
+    this.calibration.clearTokenInfo();
+    this.service.clearTokenInfo();
   }
 
   getCurrentTenantId(): string | undefined {
@@ -1886,6 +2261,109 @@ export class ProdobitClient {
 
   async deleteCalibrationRecord(id: string, config?: RequestConfig) {
     return this.calibration.deleteRecord(id, config);
+  }
+
+  // Service module getter
+  get serviceClient(): ServiceClient {
+    return this.service;
+  }
+
+  // Service Contract methods
+  async getServiceContracts(query?: any, config?: RequestConfig) {
+    return this.service.getContracts(query, config);
+  }
+
+  async getServiceContractById(id: string, config?: RequestConfig) {
+    return this.service.getContractById(id, config);
+  }
+
+  async getServiceContractsByCustomer(customerId: string, config?: RequestConfig) {
+    return this.service.getContractsByCustomer(customerId, config);
+  }
+
+  async getExpiringServiceContracts(days: number = 30, config?: RequestConfig) {
+    return this.service.getExpiringContracts(days, config);
+  }
+
+  async createServiceContract(data: any, config?: RequestConfig) {
+    return this.service.createContract(data, config);
+  }
+
+  async updateServiceContract(id: string, data: any, config?: RequestConfig) {
+    return this.service.updateContract(id, data, config);
+  }
+
+  async deleteServiceContract(id: string, config?: RequestConfig) {
+    return this.service.deleteContract(id, config);
+  }
+
+  async getServiceContractAssets(contractId: string, config?: RequestConfig) {
+    return this.service.getContractAssets(contractId, config);
+  }
+
+  async addServiceContractAsset(contractId: string, data: any, config?: RequestConfig) {
+    return this.service.addContractAsset(contractId, data, config);
+  }
+
+  async removeServiceContractAsset(contractId: string, assetId: string, config?: RequestConfig) {
+    return this.service.removeContractAsset(contractId, assetId, config);
+  }
+
+  async getServiceContractsForAsset(assetId: string, config?: RequestConfig) {
+    return this.service.getContractsForAsset(assetId, config);
+  }
+
+  // Service Ticket methods
+  async getServiceTickets(query?: any, config?: RequestConfig) {
+    return this.service.getTickets(query, config);
+  }
+
+  async getServiceTicketById(id: string, config?: RequestConfig) {
+    return this.service.getTicketById(id, config);
+  }
+
+  async getServiceTicketsByContract(contractId: string, config?: RequestConfig) {
+    return this.service.getTicketsByContract(contractId, config);
+  }
+
+  async getServiceTicketsByAsset(assetId: string, config?: RequestConfig) {
+    return this.service.getTicketsByAsset(assetId, config);
+  }
+
+  async getOpenServiceTickets(config?: RequestConfig) {
+    return this.service.getOpenTickets(config);
+  }
+
+  async getOverdueServiceTickets(config?: RequestConfig) {
+    return this.service.getOverdueTickets(config);
+  }
+
+  async getServiceTicketStatistics(config?: RequestConfig) {
+    return this.service.getTicketStatistics(config);
+  }
+
+  async createServiceTicket(data: any, config?: RequestConfig) {
+    return this.service.createTicket(data, config);
+  }
+
+  async updateServiceTicket(id: string, data: any, config?: RequestConfig) {
+    return this.service.updateTicket(id, data, config);
+  }
+
+  async deleteServiceTicket(id: string, config?: RequestConfig) {
+    return this.service.deleteTicket(id, config);
+  }
+
+  async getServiceTicketComments(ticketId: string, config?: RequestConfig) {
+    return this.service.getTicketComments(ticketId, config);
+  }
+
+  async addServiceTicketComment(ticketId: string, data: any, config?: RequestConfig) {
+    return this.service.addTicketComment(ticketId, data, config);
+  }
+
+  async getServiceTicketStatusHistory(ticketId: string, config?: RequestConfig) {
+    return this.service.getTicketStatusHistory(ticketId, config);
   }
 }
 

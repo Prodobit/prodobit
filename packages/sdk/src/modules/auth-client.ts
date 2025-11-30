@@ -260,11 +260,6 @@ export class AuthClient extends BaseClient {
     return this.request("GET", "/api/v1/auth/me", undefined, config);
   }
 
-  // @deprecated Use getCurrentUser instead
-  async getMe(config?: RequestConfig): Promise<CurrentUserResponse> {
-    return this.getCurrentUser(config);
-  }
-
   // Auth state methods
   async loginWithOTP(
     identifier: string, // email or phone

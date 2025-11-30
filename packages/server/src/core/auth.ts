@@ -471,8 +471,8 @@ auth.post("/verify-otp", async (c) => {
 
     const { provider, identifier } = providerInfo;
 
-    // Verify OTP
-    const otpResult = OTPManager.verifyOTP(identifier, provider, body.code);
+    // Verify OTP (now async with Redis)
+    const otpResult = await OTPManager.verifyOTP(identifier, provider, body.code);
 
     if (!otpResult.success) {
       return c.json(
@@ -621,30 +621,21 @@ auth.post("/verify-otp", async (c) => {
       throw new Error("tenantId is required for token generation");
     }
 
-    // Generate tokens and CSRF token
-    const tokenPayload = {
-      sub: user.id,
-      tenantId,
-      roles: roles.map((r) => r.name),
-      permissions,
-    };
-    const tokenPair = JwtTokenManager.generateTokenPair(tokenPayload);
+    // Generate CSRF token and device fingerprint first
     const csrfTokenPair = CSRFTokenManager.generateTokenPair();
     const deviceFingerprint = CookieManager.generateDeviceFingerprint(c);
 
-    // Create session
+    // Create session first to get sessionId
     const newSession = await db
       .insert(sessions)
       .values({
         userId: user.id,
         authMethodId: authMethod.id,
         currentTenantId: body.tenantId,
-        refreshTokenHash: tokenPair.refreshToken
-          ? TokenUtils.hashToken(tokenPair.refreshToken)
-          : null,
+        refreshTokenHash: null, // Will be updated after token generation
         csrfTokenHash: csrfTokenPair.hash,
-        expiresAt: tokenPair.expiresAt,
-        refreshExpiresAt: tokenPair.refreshExpiresAt,
+        expiresAt: new Date(Date.now() + 15 * 60 * 1000), // 15 minutes
+        refreshExpiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
         userAgent: c.req.header("User-Agent"),
         ipAddress:
           c.req.header("CF-Connecting-IP") || c.req.header("X-Forwarded-For"),
@@ -653,10 +644,32 @@ auth.post("/verify-otp", async (c) => {
       })
       .returning();
 
+    const sessionId = newSession[0].id;
+
+    // Generate tokens with sessionId
+    const tokenPayload = {
+      sub: user.id,
+      tenantId,
+      sessionId,
+      roles: roles.map((r) => r.name),
+      permissions,
+    };
+    const tokenPair = JwtTokenManager.generateTokenPair(tokenPayload);
+
+    // Update session with refresh token hash
+    await db
+      .update(sessions)
+      .set({
+        refreshTokenHash: TokenUtils.hashToken(tokenPair.refreshToken),
+        expiresAt: tokenPair.expiresAt,
+        refreshExpiresAt: tokenPair.refreshExpiresAt,
+      })
+      .where(eq(sessions.id, sessionId));
+
     // Set secure cookies - now includes access token for client-side auth state
     CookieManager.setAccessTokenCookie(c, tokenPair.accessToken, tokenPair.expiresAt);
     CookieManager.setRefreshTokenCookie(c, tokenPair.refreshToken, tokenPair.refreshExpiresAt);
-    CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.expiresAt);
+    CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.refreshExpiresAt); // CSRF should last as long as refresh token
     
     // Set tenant ID cookie for client-side access
     if (tenantId) {
@@ -708,7 +721,6 @@ auth.post("/verify-otp", async (c) => {
           expiresAt: tokenPair.expiresAt.toISOString(),
           csrfToken: csrfTokenPair.token,
         },
-        refreshToken: tokenPair.refreshToken, // Add refreshToken to response
         authMethod: {
           id: authMethod.id,
           provider: authMethod.provider,
@@ -873,6 +885,7 @@ auth.post("/refresh", async (c) => {
     const tokenPayloadForJwt = {
       sub: user[0].id,
       tenantId: tokenPayload.tenantId,
+      sessionId: session[0].id, // Include sessionId for proper validation
       roles: roles.map((r) => r.name),
       permissions,
     };
@@ -895,7 +908,7 @@ auth.post("/refresh", async (c) => {
     // Set new secure cookies - include access token for client-side auth state
     CookieManager.setAccessTokenCookie(c, tokenPair.accessToken, tokenPair.expiresAt);
     CookieManager.setRefreshTokenCookie(c, tokenPair.refreshToken, tokenPair.refreshExpiresAt);
-    CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.expiresAt);
+    CookieManager.setCSRFTokenCookie(c, csrfTokenPair.token, tokenPair.refreshExpiresAt); // CSRF should last as long as refresh token
     
     // Preserve tenant ID cookie
     if (tokenPayload.tenantId) {
@@ -918,7 +931,6 @@ auth.post("/refresh", async (c) => {
           expiresAt: tokenPair.expiresAt.toISOString(),
           csrfToken: csrfTokenPair.token,
         },
-        refreshToken: tokenPair.refreshToken, // Add refreshToken to refresh response
       },
     });
   } catch (error) {

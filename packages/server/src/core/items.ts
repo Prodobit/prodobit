@@ -176,6 +176,72 @@ items.get("/components", authMiddleware, async (c) => {
   }
 });
 
+// GET /api/v1/items/spare-parts - List all spare parts
+items.get("/spare-parts", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const search = c.req.query("search");
+
+    const itemService = new ItemService(db);
+    const result = await itemService.getItems(user.tenantId, {
+      itemType: "spare_part",
+      search,
+    });
+
+    return c.json({
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    console.error("List spare parts error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to list spare parts",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// GET /api/v1/items/consumables - List all consumables
+items.get("/consumables", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const search = c.req.query("search");
+
+    const itemService = new ItemService(db);
+    const result = await itemService.getItems(user.tenantId, {
+      itemType: "consumable",
+      search,
+    });
+
+    return c.json({
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    console.error("List consumables error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to list consumables",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
 // GET /api/v1/items/search - Search items
 items.get("/search", authMiddleware, async (c) => {
   try {
@@ -417,6 +483,76 @@ items.post("/components", authMiddleware, async (c) => {
         error: {
           code: "INTERNAL_ERROR",
           message: "Failed to create component",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// POST /api/v1/items/spare-parts - Create a new spare part
+items.post("/spare-parts", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const body = await c.req.json();
+
+    const itemService = new ItemService(db);
+    const result = await itemService.createItem({
+      tenantId: user.tenantId,
+      itemType: "spare_part",
+      ...body,
+    });
+
+    return c.json({
+      success: true,
+      data: result,
+      message: "Spare part created successfully",
+    });
+  } catch (error) {
+    console.error("Create spare part error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to create spare part",
+          details: error instanceof Error ? error.message : "Unknown error",
+        },
+      },
+      500
+    );
+  }
+});
+
+// POST /api/v1/items/consumables - Create a new consumable
+items.post("/consumables", authMiddleware, async (c) => {
+  try {
+    const db = c.get("db");
+    const user = c.get("user");
+    const body = await c.req.json();
+
+    const itemService = new ItemService(db);
+    const result = await itemService.createItem({
+      tenantId: user.tenantId,
+      itemType: "consumable",
+      ...body,
+    });
+
+    return c.json({
+      success: true,
+      data: result,
+      message: "Consumable created successfully",
+    });
+  } catch (error) {
+    console.error("Create consumable error:", error);
+    return c.json(
+      {
+        success: false,
+        error: {
+          code: "INTERNAL_ERROR",
+          message: "Failed to create consumable",
           details: error instanceof Error ? error.message : "Unknown error",
         },
       },

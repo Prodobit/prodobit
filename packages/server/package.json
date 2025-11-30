@@ -1,6 +1,6 @@
 {
   "name": "@prodobit/server",
-  "version": "0.16.4",
+  "version": "0.19.3",
   "description": "Prodobit modular server core",
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
@@ -30,6 +30,7 @@
     "decimal.js": "^10.6.0",
     "drizzle-orm": "^0.44.5",
     "hono": "4.9.6",
+    "ioredis": "^5.8.2",
     "jsonwebtoken": "^9.0.2",
     "nanoid": "^5.0.9",
     "pino": "^9.5.0",

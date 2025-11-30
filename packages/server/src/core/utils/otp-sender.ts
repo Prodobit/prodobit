@@ -13,29 +13,45 @@ export async function sendOTP(
   code: string;
   expiresAt: Date;
   error?: string;
+  remainingRequests?: number;
 }> {
-  // Generate and store OTP
-  const { code, expiresAt } = OTPManager.storeOTP(identifier, type, {
+  // Generate and store OTP (now async with Redis)
+  const storeResult = await OTPManager.storeOTP(identifier, type, {
     expiresInMinutes: 10,
   });
+
+  // Check if rate limited
+  if (!storeResult.success) {
+    return {
+      success: false,
+      code: "",
+      expiresAt: new Date(),
+      error: storeResult.error,
+      remainingRequests: storeResult.remainingRequests,
+    };
+  }
+
+  const { code, expiresAt } = storeResult;
 
   // Send OTP via email or SMS
   let sendResult: { success: boolean; error?: string };
   if (type === "email") {
     sendResult = await EmailService.sendOTPEmail({
       email: identifier,
-      code,
+      code: code!,
       expiresInMinutes: 10,
     });
   } else {
     sendResult = await SMSService.sendOTPSMS({
       phone: identifier,
-      code,
+      code: code!,
       expiresInMinutes: 10,
     });
   }
 
   if (!sendResult.success) {
+    // Delete the stored OTP if sending failed
+    await OTPManager.deleteOTP(identifier, type);
     return {
       success: false,
       code: "",
@@ -46,8 +62,9 @@ export async function sendOTP(
 
   return {
     success: true,
-    code,
-    expiresAt,
+    code: code!,
+    expiresAt: expiresAt!,
+    remainingRequests: storeResult.remainingRequests,
   };
 }
 
