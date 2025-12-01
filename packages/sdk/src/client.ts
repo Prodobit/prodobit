@@ -21,6 +21,7 @@ import { TaskClient } from "./modules/task-client";
 import { MaintenanceClient } from "./modules/maintenance-client";
 import { CalibrationClient } from "./modules/calibration-client";
 import { ServiceClient } from "./modules/service-client";
+import { AccountingClient } from "./modules/accounting-client";
 import { buildQuery } from "./utils/query-builder";
 import type {
   Attribute,
@@ -120,6 +121,7 @@ export class ProdobitClient {
   private maintenance: MaintenanceClient;
   private calibration: CalibrationClient;
   private service: ServiceClient;
+  private accounting: AccountingClient;
 
   constructor(config: ProdobitClientConfig) {
     this.auth = new AuthClient(config);
@@ -144,6 +146,7 @@ export class ProdobitClient {
     this.maintenance = new MaintenanceClient(config);
     this.calibration = new CalibrationClient(config);
     this.service = new ServiceClient(config);
+    this.accounting = new AccountingClient(config);
   }
 
   // Public request method for framework integrations
@@ -1183,6 +1186,7 @@ export class ProdobitClient {
     this.maintenance.setTokenInfo(tokenInfo);
     this.calibration.setTokenInfo(tokenInfo);
     this.service.setTokenInfo(tokenInfo);
+    this.accounting.setTokenInfo(tokenInfo);
   }
 
   getTokenInfo(): TokenInfo | undefined {
@@ -1213,6 +1217,7 @@ export class ProdobitClient {
     this.maintenance.clearTokenInfo();
     this.calibration.clearTokenInfo();
     this.service.clearTokenInfo();
+    this.accounting.clearTokenInfo();
   }
 
   getCurrentTenantId(): string | undefined {
@@ -2364,6 +2369,11 @@ export class ProdobitClient {
 
   async getServiceTicketStatusHistory(ticketId: string, config?: RequestConfig) {
     return this.service.getTicketStatusHistory(ticketId, config);
+  }
+
+  // Accounting module getter
+  get accountingClient(): AccountingClient {
+    return this.accounting;
   }
 }
 

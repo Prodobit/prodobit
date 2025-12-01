@@ -102,6 +102,9 @@ export const authMiddleware = async (c: Context, next: Next) => {
     // Verify session exists and is active
     // If sessionId is in token payload, use it for precise validation
     // Otherwise, fall back to userId-based lookup (for backwards compatibility)
+    // Note: We only check status="active" here, not expiresAt
+    // expiresAt tracks access token expiry, refreshExpiresAt tracks session validity
+    // The JWT verification already handles access token expiry
     let session;
     if (payload.sessionId) {
       session = await db
@@ -135,7 +138,23 @@ export const authMiddleware = async (c: Context, next: Next) => {
           success: false,
           error: {
             code: "UNAUTHORIZED",
-            message: "Session expired or invalid",
+            message: "Session not found or revoked",
+          },
+        },
+        401
+      );
+    }
+
+    // Check if the session's refresh token has expired (session is no longer valid)
+    // This is the true session expiry - not the access token expiry
+    const refreshExpiresAt = session[0].refreshExpiresAt;
+    if (refreshExpiresAt && new Date(refreshExpiresAt) < new Date()) {
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Session expired, please login again",
           },
         },
         401

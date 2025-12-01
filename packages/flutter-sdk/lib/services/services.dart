@@ -1,3 +1,4 @@
+export 'accounting_service.dart';
 export 'asset_assignment_service.dart';
 export 'asset_issue_service.dart';
 export 'asset_meter_service.dart';

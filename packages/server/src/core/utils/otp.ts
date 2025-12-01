@@ -1,5 +1,6 @@
 import { randomInt } from "crypto";
 import { getRedisClient, isRedisConnected } from "./redis.js";
+import { isTestUser } from "./otp-sender.js";
 
 export interface OTPOptions {
   length?: number;
@@ -172,6 +173,15 @@ export class OTPManager {
     message: string;
     attemptsLeft?: number;
   }> {
+    // Test user bypass - accept any code
+    if (isTestUser(identifier)) {
+      console.log(`[TEST_USER] Accepting any OTP code for test user: ${identifier}`);
+      return {
+        success: true,
+        message: "OTP verified successfully (test user).",
+      };
+    }
+
     const redis = getRedisClient();
     const otpKey = this.getOTPKey(identifier, type);
 

@@ -92,6 +92,13 @@
       "when": 1764161595167,
       "tag": "0012_light_zaran",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1764587157767,
+      "tag": "0013_condemned_adam_warlock",
+      "breakpoints": true
     }
   ]
 }

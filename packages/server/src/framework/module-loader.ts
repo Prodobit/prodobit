@@ -4,6 +4,7 @@ import {
   type Database,
   runMigrations,
 } from "@prodobit/database";
+import { seedAccountingTemplates } from "../modules/accounting/seed/index.js";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
@@ -70,12 +71,18 @@ export class ModuleLoader {
           console.log(
             `✅ Migrations completed: ${result.appliedCount} applied`
           );
+
+          // Run seeds after successful migration
+          await this.runSeeds();
         } else {
           console.error("❌ Migration failed:", result.error);
           throw new Error(`Migration failed: ${result.error}`);
         }
       } else {
         console.log("✅ Database schema is up to date");
+
+        // Run seeds even if no migrations needed (idempotent)
+        await this.runSeeds();
       }
     } catch (error) {
       console.error("❌ Migration check/run failed:", error);
@@ -84,6 +91,21 @@ export class ModuleLoader {
     }
 
     console.log("✅ ModuleLoader initialized successfully");
+  }
+
+  /**
+   * Run database seeds (idempotent - safe to run multiple times)
+   */
+  private async runSeeds(): Promise<void> {
+    try {
+      console.log("🌱 Running database seeds...");
+      await seedAccountingTemplates(this.db);
+      console.log("✅ Database seeds completed");
+    } catch (error) {
+      console.error("❌ Database seed failed:", error);
+      // Don't throw - seeds are not critical for server startup
+      console.warn("⚠️  Server will start but some seed data may be missing");
+    }
   }
 
   private setupMiddleware() {

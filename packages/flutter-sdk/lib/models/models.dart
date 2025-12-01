@@ -1,3 +1,4 @@
+export 'accounting/accounting_models.dart';
 export 'asset/asset_models.dart';
 export 'asset_assignment/asset_assignment_models.dart';
 export 'asset_meter/asset_meter_models.dart';

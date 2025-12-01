@@ -3,6 +3,7 @@ export * from "@prodobit/types";
 
 // Main SDK exports
 export { ProdobitClient, buildQuery } from "./client";
+export { AccountingClient } from "./modules/accounting-client";
 export * from "./types";
 
 // Framework integration

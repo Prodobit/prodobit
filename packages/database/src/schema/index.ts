@@ -18,3 +18,4 @@ export * from "./asset-stock-usages.js";
 export * from "./asset-meters.js";
 export * from "./asset-status-history.js";
 export * from "./service.js";
+export * from "./accounting.js";

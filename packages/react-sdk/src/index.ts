@@ -311,6 +311,79 @@ export {
   useAddServiceTicketComment,
   useServiceTicketStatusHistory
 } from './hooks/useServiceTickets';
+export {
+  // Settings
+  useAccountingSettings,
+  useUpdateAccountingSettings,
+  useInitializeAccountingFromTemplate,
+  // Chart of Accounts
+  useAccounts,
+  useAccountsTree,
+  useAccount,
+  useCreateAccount,
+  useUpdateAccount,
+  useDeleteAccount,
+  // Journal Entries
+  useJournalEntries,
+  useJournalEntry,
+  useCreateJournalEntry,
+  useUpdateJournalEntry,
+  usePostJournalEntry,
+  useReverseJournalEntry,
+  useDeleteJournalEntry,
+  // Ledger & Reports
+  useAccountLedger,
+  useTrialBalance,
+  useIncomeStatement,
+  useBalanceSheet,
+  // Fiscal Years & Periods
+  useFiscalYears,
+  useFiscalYear,
+  useCreateFiscalYear,
+  useFiscalPeriods,
+  useCreateFiscalPeriod,
+  useCloseFiscalPeriod,
+  useReopenFiscalPeriod,
+  // Tax Rates
+  useTaxRates,
+  useTaxRate,
+  useCreateTaxRate,
+  useUpdateTaxRate,
+  useDeleteTaxRate,
+  // Accounts Payable
+  usePayables,
+  usePayable,
+  useCreatePayable,
+  useUpdatePayable,
+  usePayPayable,
+  useDeletePayable,
+  // Accounts Receivable
+  useReceivables,
+  useReceivable,
+  useCreateReceivable,
+  useUpdateReceivable,
+  useReceivePayment,
+  useDeleteReceivable,
+  // Bank Accounts
+  useBankAccounts,
+  useBankAccount,
+  useCreateBankAccount,
+  useUpdateBankAccount,
+  useDeleteBankAccount,
+  // Cost Centers
+  useCostCenters,
+  useCostCenter,
+  useCreateCostCenter,
+  useUpdateCostCenter,
+  useDeleteCostCenter,
+  // Fixed Assets
+  useFixedAssets,
+  useFixedAsset,
+  useCreateFixedAsset,
+  useUpdateFixedAsset,
+  useDepreciateAsset,
+  useDeleteFixedAsset
+} from './hooks/useAccounting';
 
 export * from './types';
 export { queryKeys } from './utils/query-keys';

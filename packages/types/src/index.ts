@@ -26,3 +26,4 @@ export * from "./asset-stock-usage";
 export * from "./asset-meter";
 export * from "./asset-status-history";
 export * from "./service";
+export * from "./accounting";

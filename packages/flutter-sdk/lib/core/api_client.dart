@@ -112,6 +112,29 @@ class ApiClient {
     }
   }
 
+  /// Perform a PATCH request
+  Future<T> patch<T>(
+    String path, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+  }) async {
+    try {
+      final response = await _dio.patch<T>(
+        path,
+        data: data,
+        queryParameters: queryParameters,
+        options: options,
+      );
+      return response.data!;
+    } on DioException catch (e) {
+      if (e.error is ProdobitException) {
+        throw e.error! as ProdobitException;
+      }
+      rethrow;
+    }
+  }
+
   /// Remove authorization token
   void removeAuthToken() {
     _dio.options.headers.remove('Authorization');

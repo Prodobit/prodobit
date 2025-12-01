@@ -788,6 +788,8 @@ auth.post("/refresh", async (c) => {
     }
 
     // Find active session with this refresh token
+    // Note: We check status="active" and refreshExpiresAt > now
+    // The expiresAt field is for access token tracking, not session validity
     const session = await db
       .select()
       .from(sessions)
@@ -810,7 +812,32 @@ auth.post("/refresh", async (c) => {
           success: false,
           error: {
             code: "UNAUTHORIZED",
-            message: "Session not found or expired",
+            message: "Session not found",
+          },
+        },
+        401
+      );
+    }
+
+    // Check if refresh token has expired
+    const refreshExpiresAt = session[0].refreshExpiresAt;
+    if (refreshExpiresAt && new Date(refreshExpiresAt) < new Date()) {
+      // Mark session as expired
+      await db
+        .update(sessions)
+        .set({
+          status: "expired",
+          updatedAt: new Date(),
+        })
+        .where(eq(sessions.id, session[0].id));
+
+      CookieManager.clearAuthCookies(c);
+      return c.json(
+        {
+          success: false,
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Session expired, please login again",
           },
         },
         401

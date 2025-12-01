@@ -76,6 +76,9 @@ export { logger, createLogger, logError, measureTime, LogLevel } from "./core/lo
 export type { Logger } from "./core/logger/index.js";
 export { loggerMiddleware, tenantLoggerMiddleware } from "./core/logger/middleware.js";
 
+// Accounting seed functions
+export { seedAccountingTemplates, seedCoaTemplates, seedTaxTemplates } from "./modules/accounting/seed/index.js";
+
 export interface CreateServerAppOptions {
   modules?: ModuleManifest[];
   configOverrides?: Partial<ServerConfig>;
