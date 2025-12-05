@@ -13,12 +13,13 @@ export interface AssetStatusHistoryFilters {
 }
 
 export interface UpdateAssetStatusData {
-  newStatus: string;
+  status: string;
   changeReason?: string;
   reasonDetails?: string;
-  relatedMaintenanceRecordId?: string;
-  relatedIssueId?: string;
-  relatedAssignmentId?: string;
+  notes?: string;
+  maintenanceRecordId?: string;
+  calibrationRecordId?: string;
+  issueId?: string;
 }
 
 // Asset Status History hooks

@@ -958,6 +958,8 @@ auth.post("/refresh", async (c) => {
           expiresAt: tokenPair.expiresAt.toISOString(),
           csrfToken: csrfTokenPair.token,
         },
+        // Include new refresh token for token rotation
+        refreshToken: tokenPair.refreshToken,
       },
     });
   } catch (error) {
