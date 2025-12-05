@@ -14,12 +14,18 @@ import { tenants } from "./tenants";
 import { assets } from "./assets";
 import { users } from "./auth";
 import { tasks } from "./tasks";
+import { assetIssues } from "./asset-issues";
 
 /**
  * Maintenance Plans (Bakım Planları)
  *
- * Assetlerin düzenli bakımlarını planlamak ve takip etmek için kullanılır.
- * Preventive (önleyici) ve predictive (öngörülü) bakım stratejilerini destekler.
+ * Sadece PREVENTIVE (önleyici) bakım için plan oluşturulabilir.
+ * Diğer bakım tipleri farklı kaynaklardan tetiklenir:
+ *
+ * - preventive: Periyodik, zamanlanmış bakım → Plan ile yönetilir
+ * - corrective: Arıza sonrası reaktif bakım → Issue'dan oluşur, plan olmaz
+ * - predictive: AI/ML ile öngörülü bakım → Sistem tarafından tetiklenir (gelecek)
+ * - condition_based: Sensör/IoT bazlı bakım → Otomatik tetiklenir (gelecek)
  */
 export const maintenancePlans = pgTable(
   "maintenance_plans",
@@ -35,7 +41,7 @@ export const maintenancePlans = pgTable(
     name: text("name").notNull(),
     description: text("description"),
 
-    // Type: preventive, predictive, corrective, condition_based
+    // Type: Sadece 'preventive' - plan sadece önleyici bakım için oluşturulabilir
     type: text("type").notNull().default("preventive"),
     // Frequency: daily, weekly, biweekly, monthly, quarterly, semi_annually, annually, custom
     frequency: text("frequency").notNull(),
@@ -130,7 +136,8 @@ export const maintenancePlans = pgTable(
     ),
 
     // Constraints
-    typeCheck: sql`CONSTRAINT maintenance_plans_type_check CHECK (type IN ('preventive', 'predictive', 'corrective', 'condition_based'))`,
+    // Plan sadece 'preventive' tipinde olabilir - diğer bakım tipleri plan gerektirmez
+    typeCheck: sql`CONSTRAINT maintenance_plans_type_check CHECK (type = 'preventive')`,
     frequencyCheck: sql`CONSTRAINT maintenance_plans_frequency_check CHECK (frequency IN ('daily', 'weekly', 'biweekly', 'monthly', 'quarterly', 'semi_annually', 'annually', 'custom'))`,
     statusCheck: sql`CONSTRAINT maintenance_plans_status_check CHECK (status IN ('active', 'inactive', 'draft'))`,
     priorityCheck: sql`CONSTRAINT maintenance_plans_priority_check CHECK (priority IN ('critical', 'high', 'medium', 'low'))`,
@@ -141,6 +148,13 @@ export const maintenancePlans = pgTable(
  * Maintenance Records (Bakım Kayıtları)
  *
  * Gerçekleştirilen bakım işlemlerinin kayıtlarını tutar.
+ * Farklı kaynaklardan oluşturulabilir:
+ *
+ * - plan: Preventive bakım planından (type: 'preventive')
+ * - issue: Arıza/Issue'dan (type: 'corrective')
+ * - prediction: AI/ML tahmininden (type: 'predictive') - gelecek
+ * - condition: Sensör/IoT uyarısından (type: 'condition_based') - gelecek
+ * - manual: Manuel oluşturma (herhangi bir type)
  */
 export const maintenanceRecords = pgTable(
   "maintenance_records",
@@ -149,20 +163,35 @@ export const maintenanceRecords = pgTable(
     tenantId: uuid("tenant_id")
       .notNull()
       .references(() => tenants.id, { onDelete: "cascade" }),
-    maintenancePlanId: uuid("maintenance_plan_id")
-      .notNull()
-      .references(() => maintenancePlans.id, { onDelete: "cascade" }),
     assetId: uuid("asset_id")
       .notNull()
       .references(() => assets.id, { onDelete: "cascade" }),
-    taskId: uuid("task_id")
-      .notNull()
-      .references(() => tasks.id, { onDelete: "restrict" }),
+
+    // Bakım tipi ve kaynağı
+    // Type: preventive, corrective, predictive, condition_based
+    type: text("type").notNull().default("preventive"),
+    // Source: Kaydın nereden oluştuğu - plan, issue, prediction, condition, manual
+    source: text("source").notNull().default("plan"),
+
+    // İlişkili kayıtlar (source'a göre biri dolu olur)
+    maintenancePlanId: uuid("maintenance_plan_id").references(
+      () => maintenancePlans.id,
+      { onDelete: "set null" }
+    ), // source: 'plan' - artık opsiyonel
+    issueId: uuid("issue_id").references(() => assetIssues.id, {
+      onDelete: "set null",
+    }), // source: 'issue' (corrective bakım)
+    taskId: uuid("task_id").references(() => tasks.id, {
+      onDelete: "set null",
+    }), // İlişkili task - artık opsiyonel
+
+    // Öncelik (corrective ve manual için önemli)
+    priority: text("priority").default("medium"),
 
     scheduledDate: timestamp("scheduled_date", {
       withTimezone: true,
       precision: 6,
-    }).notNull(),
+    }),
     completedDate: timestamp("completed_date", {
       withTimezone: true,
       precision: 6,
@@ -208,6 +237,15 @@ export const maintenanceRecords = pgTable(
       table.tenantId,
       table.assetId
     ),
+    tenantTypeIdx: index("maintenance_records_tenant_type_idx").on(
+      table.tenantId,
+      table.type
+    ),
+    tenantSourceIdx: index("maintenance_records_tenant_source_idx").on(
+      table.tenantId,
+      table.source
+    ),
+    issueIdx: index("maintenance_records_issue_idx").on(table.issueId),
     taskIdx: index("maintenance_records_task_idx").on(table.taskId),
     performedByIdx: index("maintenance_records_performed_by_idx").on(
       table.performedBy
@@ -218,7 +256,10 @@ export const maintenanceRecords = pgTable(
     statusIdx: index("maintenance_records_status_idx").on(table.status),
 
     // Constraints
+    typeCheck: sql`CONSTRAINT maintenance_records_type_check CHECK (type IN ('preventive', 'corrective', 'predictive', 'condition_based'))`,
+    sourceCheck: sql`CONSTRAINT maintenance_records_source_check CHECK (source IN ('plan', 'issue', 'prediction', 'condition', 'manual'))`,
     statusCheck: sql`CONSTRAINT maintenance_records_status_check CHECK (status IN ('scheduled', 'in_progress', 'completed', 'skipped', 'cancelled'))`,
+    priorityCheck: sql`CONSTRAINT maintenance_records_priority_check CHECK (priority IN ('critical', 'high', 'medium', 'low'))`,
   })
 );
 
@@ -256,6 +297,10 @@ export const maintenanceRecordsRelations = relations(
     asset: one(assets, {
       fields: [maintenanceRecords.assetId],
       references: [assets.id],
+    }),
+    issue: one(assetIssues, {
+      fields: [maintenanceRecords.issueId],
+      references: [assetIssues.id],
     }),
     task: one(tasks, {
       fields: [maintenanceRecords.taskId],

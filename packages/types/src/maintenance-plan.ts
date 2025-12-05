@@ -4,8 +4,13 @@ import { uuid, timestamp } from "./common";
 /**
  * Maintenance Plan (Bakım Planı)
  *
- * Assetlerin düzenli bakımlarını planlamak ve takip etmek için kullanılır.
- * Preventive (önleyici) ve predictive (öngörülü) bakım stratejilerini destekler.
+ * Sadece PREVENTIVE (önleyici) bakım için plan oluşturulabilir.
+ * Diğer bakım tipleri farklı kaynaklardan tetiklenir:
+ *
+ * - preventive: Periyodik, zamanlanmış bakım → Plan ile yönetilir
+ * - corrective: Arıza sonrası reaktif bakım → Issue'dan oluşur, plan olmaz
+ * - predictive: AI/ML ile öngörülü bakım → Sistem tarafından tetiklenir (gelecek)
+ * - condition_based: Sensör/IoT bazlı bakım → Otomatik tetiklenir (gelecek)
  *
  * Özellikler:
  * - Periyodik bakım planlaması (zaman veya kullanım bazlı)
@@ -14,8 +19,18 @@ import { uuid, timestamp } from "./common";
  * - Bakım geçmişi takibi
  * - Malzeme ve yedek parça listesi
  */
+
+// Tüm bakım tipleri (record için)
 export const maintenanceType = type(
   "'preventive' | 'predictive' | 'corrective' | 'condition_based'"
+);
+
+// Plan için sadece preventive (planlanabilir bakım)
+export const maintenancePlanType = type("'preventive'");
+
+// Bakım kaydının kaynağı
+export const maintenanceRecordSource = type(
+  "'plan' | 'issue' | 'prediction' | 'condition' | 'manual'"
 );
 
 export const maintenanceFrequency = type(
@@ -30,7 +45,7 @@ export const maintenancePlan = type({
   assetId: uuid,
   name: "string >= 1",
   "description?": "string",
-  type: maintenanceType,
+  type: maintenancePlanType, // Sadece 'preventive' - plan sadece önleyici bakım için
   frequency: maintenanceFrequency,
   status: maintenancePlanStatus,
 
@@ -84,9 +99,19 @@ export const maintenancePlan = type({
 export const maintenanceRecord = type({
   id: uuid,
   tenantId: uuid,
-  maintenancePlanId: uuid,
   assetId: uuid,
-  taskId: uuid, // ilişkili task
+
+  // Bakım tipi ve kaynağı
+  type: maintenanceType, // 'preventive' | 'corrective' | 'predictive' | 'condition_based'
+  source: maintenanceRecordSource, // Kaydın nereden oluştuğu
+
+  // İlişkili kayıtlar (source'a göre biri dolu olur)
+  "maintenancePlanId?": uuid, // source: 'plan' ise
+  "issueId?": uuid, // source: 'issue' ise (corrective bakım)
+  "predictionId?": uuid, // source: 'prediction' ise (gelecek - AI/ML)
+  "conditionAlertId?": uuid, // source: 'condition' ise (gelecek - IoT)
+  "taskId?": uuid, // ilişkili task
+
   scheduledDate: timestamp,
   "completedDate?": timestamp,
   "performedBy?": uuid, // employee id
@@ -107,7 +132,7 @@ export const createMaintenancePlanRequest = type({
   assetId: uuid,
   name: "string >= 1",
   "description?": "string",
-  type: maintenanceType,
+  "type?": maintenancePlanType, // Opsiyonel, default 'preventive' - sadece önleyici bakım planlanabilir
   frequency: maintenanceFrequency,
   startDate: timestamp,
   "endDate?": timestamp,
@@ -134,7 +159,7 @@ export const createMaintenancePlanRequest = type({
 export const updateMaintenancePlanRequest = type({
   "name?": "string >= 1",
   "description?": "string",
-  "type?": maintenanceType,
+  // type güncellenemez - plan her zaman 'preventive' kalır
   "frequency?": maintenanceFrequency,
   "status?": maintenancePlanStatus,
   "startDate?": timestamp,
@@ -160,10 +185,41 @@ export const updateMaintenancePlanRequest = type({
   "procedureDocumentId?": "string",
 });
 
-export const createMaintenanceRecordRequest = type({
+// Preventive bakım kaydı - Plan'dan oluşturulur
+export const createPreventiveMaintenanceRecordRequest = type({
   maintenancePlanId: uuid,
   scheduledDate: timestamp,
   "notes?": "string",
+});
+
+// Corrective bakım kaydı - Issue'dan oluşturulur (arıza sonrası)
+export const createCorrectiveMaintenanceRecordRequest = type({
+  assetId: uuid,
+  issueId: uuid,
+  "scheduledDate?": timestamp, // opsiyonel, hemen başlanabilir
+  "notes?": "string",
+  "priority?": "'critical' | 'high' | 'medium' | 'low'",
+});
+
+// Manuel bakım kaydı - Doğrudan oluşturulur (genel amaçlı)
+export const createManualMaintenanceRecordRequest = type({
+  assetId: uuid,
+  type: maintenanceType,
+  scheduledDate: timestamp,
+  "notes?": "string",
+  "priority?": "'critical' | 'high' | 'medium' | 'low'",
+});
+
+// Birleşik request - source'a göre farklı alanlar
+export const createMaintenanceRecordRequest = type({
+  assetId: uuid,
+  type: maintenanceType,
+  source: maintenanceRecordSource,
+  "maintenancePlanId?": uuid, // source: 'plan'
+  "issueId?": uuid, // source: 'issue'
+  "scheduledDate?": timestamp,
+  "notes?": "string",
+  "priority?": "'critical' | 'high' | 'medium' | 'low'",
 });
 
 export const updateMaintenanceRecordRequest = type({
@@ -194,7 +250,10 @@ export const maintenanceRecordQuery = type({
   "maintenancePlanId?": uuid,
   "assetId?": uuid,
   "taskId?": uuid,
+  "issueId?": uuid,
   "performedBy?": uuid,
+  "type?": maintenanceType,
+  "source?": maintenanceRecordSource,
   "status?": "'scheduled' | 'in_progress' | 'completed' | 'skipped' | 'cancelled'",
   "scheduledAfter?": timestamp,
   "scheduledBefore?": timestamp,
@@ -202,6 +261,8 @@ export const maintenanceRecordQuery = type({
 
 // Type exports
 export type MaintenanceType = typeof maintenanceType.infer;
+export type MaintenancePlanType = typeof maintenancePlanType.infer;
+export type MaintenanceRecordSource = typeof maintenanceRecordSource.infer;
 export type MaintenanceFrequency = typeof maintenanceFrequency.infer;
 export type MaintenancePlanStatus = typeof maintenancePlanStatus.infer;
 export type MaintenancePlan = typeof maintenancePlan.infer;
@@ -212,6 +273,12 @@ export type UpdateMaintenancePlanRequest =
   typeof updateMaintenancePlanRequest.infer;
 export type CreateMaintenanceRecordRequest =
   typeof createMaintenanceRecordRequest.infer;
+export type CreatePreventiveMaintenanceRecordRequest =
+  typeof createPreventiveMaintenanceRecordRequest.infer;
+export type CreateCorrectiveMaintenanceRecordRequest =
+  typeof createCorrectiveMaintenanceRecordRequest.infer;
+export type CreateManualMaintenanceRecordRequest =
+  typeof createManualMaintenanceRecordRequest.infer;
 export type UpdateMaintenanceRecordRequest =
   typeof updateMaintenanceRecordRequest.infer;
 export type MaintenancePlanQuery = typeof maintenancePlanQuery.infer;

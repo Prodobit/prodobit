@@ -99,6 +99,13 @@
       "when": 1764587157767,
       "tag": "0013_condemned_adam_warlock",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1764942041579,
+      "tag": "0014_serious_the_twelve",
+      "breakpoints": true
     }
   ]
 }

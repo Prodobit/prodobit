@@ -314,13 +314,13 @@ export class MaintenanceService {
     data: CreateMaintenanceRecordRequest,
     tenantId: string,
     assetId: string,
-    taskId: string
+    taskId?: string
   ) {
     const [record] = await this.db
       .insert(maintenanceRecords)
       .values({
         ...data,
-        scheduledDate: new Date(data.scheduledDate),
+        scheduledDate: data.scheduledDate ? new Date(data.scheduledDate) : undefined,
         tenantId,
         assetId,
         taskId,
@@ -341,10 +341,10 @@ export class MaintenanceService {
   ) {
     const updateData: any = { ...data };
 
-    // If status changed to completed, update the maintenance plan
+    // If status changed to completed, update the maintenance plan (only if it exists)
     if (data.status === "completed") {
       const record = await this.getMaintenanceRecordById(id, tenantId);
-      if (record) {
+      if (record && record.maintenancePlanId) {
         await this.updateMaintenancePlanAfterCompletion(
           record.maintenancePlanId,
           tenantId
